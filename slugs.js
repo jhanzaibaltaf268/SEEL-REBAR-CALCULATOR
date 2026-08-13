@@ -1,0 +1,23 @@
+window.REBAR_SLUGS = {
+  "weight": "rebar-weight-calculator",
+  "slab": "concrete-slab-rebar-calculator",
+  "footing": "footing-rebar-calculator",
+  "mat": "rebar-mat-grid-calculator",
+  "spacing": "rebar-spacing-calculator",
+  "develop": "rebar-development-length-calculator",
+  "lap": "rebar-lap-length-calculator",
+  "hook": "rebar-hook-bend-cutting-length-calculator",
+  "stirrup": "stirrup-tie-cutting-length-calculator",
+  "column": "column-rebar-calculator",
+  "beam": "beam-rebar-calculator",
+  "cost": "rebar-cost-calculator",
+  "tonnage": "rebar-tonnage-calculator",
+  "area": "rebar-area-calculator",
+  "quantity": "rebar-quantity-calculator",
+  "concrete": "concrete-and-rebar-calculator",
+  "driveway": "driveway-rebar-calculator",
+  "wall": "wall-rebar-calculator",
+  "pool": "pool-rebar-calculator",
+  "chair": "rebar-chair-calculator",
+  "tiewire": "rebar-tie-wire-calculator"
+};
