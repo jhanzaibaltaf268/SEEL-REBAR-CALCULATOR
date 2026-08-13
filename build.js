@@ -8,7 +8,7 @@
 const fs = require("fs");
 const path = require("path");
 const OUT = __dirname;
-const SITE = "https://www.example.com"; // <-- change to your real domain
+const SITE = "https://steelrebarcalculator.com";
 
 /* ---- per-page SEO content. id MUST match a calculator in script.js ---- */
 const PAGES = [
@@ -670,19 +670,15 @@ LANGS.forEach(l => {
   PAGES.forEach(p => { fs.writeFileSync(path.join(outDir, p.slug+".html"), renderPage(p, lang)); pageCount++; });
 });
 
-/* hreflang sitemap: every URL with alternates (hub + silos + calculators) */
+/* sitemap: English pages only (hub + silos + calculators) */
 const allSlugs = ["index", ...SILOS.map(s=>s.slug), ...PAGES.map(p=>p.slug)];
-const entries = [];
-LANGS.forEach(l => allSlugs.forEach(slug => {
-  const alts = LANGS.map(a=>`    <xhtml:link rel="alternate" hreflang="${a.code}" href="${urlFor(a.code,slug)}"/>`).join("\n")
-    + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor('en',slug)}"/>`;
-  entries.push(`  <url>\n    <loc>${urlFor(l.code,slug)}</loc>\n${alts}\n  </url>`);
-}));
+const entries = allSlugs.map(slug => `  <url>\n    <loc>${urlFor("en", slug)}</loc>\n  </url>`);
 fs.writeFileSync(path.join(OUT,"sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   entries.join("\n") + `\n</urlset>\n`);
 fs.writeFileSync(path.join(OUT,"robots.txt"),
   `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 
 console.log(`Generated ${LANGS.length} languages × (${PAGES.length} pages + hub) = ${pageCount + LANGS.length} HTML files`);
-console.log(`Sitemap: ${entries.length} URLs with hreflang alternates`);
+console.log(`Sitemap: ${entries.length} English URLs generated in sitemap.xml`);
+
