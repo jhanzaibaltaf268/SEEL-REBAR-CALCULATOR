@@ -53,7 +53,7 @@ h1,h2{line-height:1.2}
 
 /* Hero */
 .hero{background:linear-gradient(160deg,#0f172a,#1e293b 60%,#0b3a52);
-  color:#fff;padding:3rem 0 0;text-align:center;margin-bottom:0;overflow:hidden}
+  color:#fff;padding:3rem 0 4.5rem;text-align:center;margin-bottom:0;overflow:hidden}
 .hero h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 .6rem}
 .hero-sub{max-width:640px;margin:0 auto 1.4rem;color:#cbd5e1;font-size:1.05rem}
 .hero-sub strong{color:#fff}
@@ -62,7 +62,7 @@ h1,h2{line-height:1.2}
   padding:.35rem .8rem;border-radius:999px;font-size:.85rem;color:#e2e8f0}
 
 /* Calculator shell */
-.calc-shell{display:grid;grid-template-columns:240px 1fr;gap:1.4rem;
+.calc-shell{display:grid;grid-template-columns:240px 1fr;gap:1.4rem;align-items:start;
   margin:0 auto 2.5rem;margin-top:0;padding-top:1.2rem;position:relative;z-index:5}
 .calc-tabs{display:flex;flex-direction:column;gap:.4rem;background:var(--card);
   padding:.7rem;border-radius:var(--radius);box-shadow:var(--shadow);height:fit-content}
