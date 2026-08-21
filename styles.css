@@ -62,7 +62,7 @@ h1,h2{line-height:1.2}
   padding:.35rem .8rem;border-radius:999px;font-size:.85rem;color:#e2e8f0}
 
 /* Calculator shell */
-.calc-shell{display:grid;grid-template-columns:240px 1fr;gap:1.4rem;
+.calc-shell{display:grid;grid-template-columns:240px 1fr;gap:1.4rem;align-items:start;
   margin:0 auto 2.5rem;margin-top:0;padding-top:1.2rem;position:relative;z-index:5}
 .calc-tabs{display:flex;flex-direction:column;gap:.4rem;background:var(--card);
   padding:.7rem;border-radius:var(--radius);box-shadow:var(--shadow);height:fit-content}
