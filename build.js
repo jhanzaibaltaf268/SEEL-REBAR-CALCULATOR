@@ -360,11 +360,14 @@ function header(lang, slug){
 }
 function footer(lang){
   const u = UI[lang];
+  const disclaimer = (lang === "en")
+    ? "Results are estimates for material planning and ordering. Verify against your structural drawings and local building code before construction; safety-critical designs require review by a qualified engineer."
+    : u.disclaimer;
   return `
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>Rebar Calculator</strong> — ${u.footer}</p>
-    <p class="muted">${u.disclaimer}</p>
+    <p class="muted">${disclaimer}</p>
   </div>
 </footer>`;
 }
@@ -431,6 +434,22 @@ function breadcrumbJsonLd(items){
     itemListElement: items.map((it,i)=>({"@type":"ListItem",position:i+1,name:it.name,item:it.url}))});
 }
 
+const TRACKING_HEAD = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLR474NHZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YLR474NHZW');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y5pzyawpgn");
+</script>`;
+
 /* ---------- calculator page ---------- */
 function renderPage(p, lang){
   const base = lang==="en" ? "" : "../";
@@ -454,6 +473,8 @@ function renderPage(p, lang){
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
+${TRACKING_HEAD}
+<link rel="icon" type="image/svg+xml" href="${base}favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${title}</title>
@@ -528,6 +549,8 @@ function renderSilo(silo, lang){
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
+${TRACKING_HEAD}
+<link rel="icon" type="image/svg+xml" href="${base}favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${title}</title>
@@ -571,6 +594,11 @@ function renderHub(lang){
   const base = lang==="en" ? "" : "../";
   const u = UI[lang];
   const h1 = HUB_H1[lang], title = `${h1} — ${HUB_TAG[lang]}`, desc = u.heroSub;
+  const hubH1 = (lang === "en") ? "Steel Rebar Calculator — 21 Free Tools for Weight, Spacing, Cost & Detailing" : h1;
+  const hubMetaTitle = (lang === "en") ? "Steel Rebar Calculator — 21 Free Tools for Weight, Cost & Detailing" : title;
+  const hubMetaDesc = (lang === "en") ? "21 free rebar calculators covering weight, slab & footing takeoff, spacing, lap & development length, cutting length, column & beam steel, tonnage and cost. IS 456 and ACI, metric and imperial, instant results." : desc;
+  const heroSub = (lang === "en") ? "Every rebar question a concrete job throws at you — how much steel a slab needs, what a bar schedule weighs, how long a lap splice has to be — solved by one of 21 purpose-built calculators. Metric and imperial, IS 456 and ACI, instant results with no signup." : u.heroSub;
+
   const cats = {};
   PAGES.forEach(p => (cats[p.cat] ||= []).push(p));
   const directory = Object.entries(cats).map(([cat, items]) => {
@@ -585,27 +613,78 @@ function renderHub(lang){
   }).join("\n");
 
   const hubFaqs = (lang==="en")
-    ? [["How do you calculate rebar weight?","Rebar weight per metre = d² ÷ 162.28, where d is the bar diameter in mm. Multiply by length and quantity for the total."],
-       ["How do I calculate rebar for a concrete slab?","Bars one way = floor((slab dimension − 2×cover) ÷ spacing) + 1, both directions, × the bar's kg/m."],
-       ["What is the development length of rebar?","Per IS 456, Ld = (φ × 0.87 × fy) ÷ (4 × τbd)."]]
+    ? [["How do you calculate rebar weight?","Multiply the bar's weight-per-metre (metric: d² ÷ 162.28) or weight-per-foot (imperial: use the ASTM table) by its total length, then by the number of bars."],
+       ["How much rebar does a concrete slab need?","Bars in each direction = floor((slab dimension − 2 × edge cover) ÷ spacing) + 1. Run the calculation in both directions and add the weight of each."],
+       ["What's the difference between development length and lap length?","Development length is how far a single bar must extend into concrete to transfer its full design force. Lap length is how far two bars must overlap when splicing — it's usually a multiple of development length, not a separate calculation from scratch."],
+       ["Should rebar be welded at joints?","Generally no. Standard reinforcing steel has a carbon content that makes it brittle under uncontrolled welding heat, which can leave a joint weaker than the bar itself. Tie wire is the standard method for holding a grid together at intersections."],
+       ["Do I need rebar for a patio or walkway?","Light pedestrian slabs with no vehicle loading often skip reinforcement or use it only at control joints. Anything expecting vehicle weight, freeze-thaw cycling, or expansive soil should be reinforced — check local code before skipping it."],
+       ["What bar size is standard for a residential slab?","#3 to #4 (10mm–12mm) is typical for residential slabs and driveways; heavier structural elements move up to #5–#8 (16mm–25mm) depending on load."],
+       ["How is rebar cost estimated?","Total weight (or tonnage) × current price per kg or per ton. Steel pricing moves with the market, so treat any calculator's cost output as an estimate to check against a current supplier quote, not a locked-in number."],
+       ["Can this calculator replace an engineer's design?","No. These tools estimate material quantities for ordering and budgeting. Structural design — bar size, spacing, and lap requirements for a specific load case — must come from engineered drawings and a qualified engineer."]]
     : TPL[lang].faq(h1, desc);
   const hubFaqHtml = hubFaqs.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><p>${a}</p></details>`).join("\n    ");
+
+  const enEducationSections = (lang === "en") ? `
+  <section class="content-block">
+    <h2>What is Rebar</h2>
+    <p>Reinforcing bar is the ribbed steel rod embedded in concrete to carry the tension loads plain concrete can't handle on its own. Concrete resists compression well and tension poorly; rebar reverses that weakness, so a slab, column, or beam can flex slightly under load instead of cracking. The ribs on the bar surface exist for one reason — they lock the steel to the surrounding concrete so the two materials move as one unit under stress.</p>
+  </section>
+
+  <section class="content-block">
+    <h2>Why One Calculator Isn't Enough</h2>
+    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it:</p>
+    <ul>
+      <li><strong>Weight & Takeoff</strong> — how much steel, by bar size and length</li>
+      <li><strong>Estimating</strong> — how much rebar a specific pour needs (slab, footing, driveway, mat)</li>
+      <li><strong>Detailing</strong> — spacing, development length, lap length, cutting length, chairs, tie wire</li>
+      <li><strong>Members</strong> — column, beam, wall, and pool-specific reinforcement</li>
+      <li><strong>Commercial</strong> — turning a bar schedule into tonnage and cost</li>
+    </ul>
+  </section>
+
+  <section class="content-block">
+    <h2>How Rebar Weight is Calculated</h2>
+    <p>For metric bar sizes, weight per metre follows a fixed relationship to the bar's diameter:</p>
+    <p class="formula-callout"><strong>kg/m = d² ÷ 162.28</strong><br>where d is the bar diameter in millimetres.</p>
+    <p>A 12mm bar weighs approximately 0.888 kg per metre; a 20mm bar weighs approximately 2.466 kg per metre. Multiply that figure by total bar length, then by quantity, to get total steel weight for a schedule.</p>
+    <p>For imperial bar sizes (#3–#18), use the published ASTM weight-per-foot table rather than the theoretical formula — mill tolerances and the ribbed profile mean the certified weight differs slightly from a pure cylinder calculation, and that certified figure is what a supplier will actually bill against.</p>
+  </section>
+
+  <section class="content-block">
+    <h2>Worked Example</h2>
+    <p>A 6m × 4m slab, 12mm bars, 200mm spacing each way, 40mm edge cover:</p>
+    <ul>
+      <li>Bars along the length: floor((6 − 2×0.04) / 0.2) + 1 = 30 bars</li>
+      <li>Bars along the width: floor((4 − 2×0.04) / 0.2) + 1 = 20 bars</li>
+      <li>Total bar length: (30 × 4m) + (20 × 6m) = 240m</li>
+      <li>Total weight: 240 × 0.888 kg/m ≈ 213 kg</li>
+    </ul>
+  </section>
+
+  <section class="content-block">
+    <h2>Standards This Site Covers</h2>
+    <p>Calculations follow IS 456:2000 for development and lap length (τbd-based anchorage) alongside ACI 318 conventions for US bar sizing and spacing practice, with BS 4449 bar designations noted where relevant. Pick the code your jurisdiction requires — the underlying steel doesn't change, but the required lap and development lengths do.</p>
+  </section>
+` : "";
 
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
+${TRACKING_HEAD}
+<link rel="icon" type="image/svg+xml" href="${base}favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>${title}</title>
-<meta name="description" content="${desc}" />
+<title>${hubMetaTitle}</title>
+<meta name="description" content="${hubMetaDesc}" />
 <meta name="keywords" content="rebar calculator, steel rebar calculator, rebar weight calculator, concrete slab rebar calculator, rebar spacing calculator, rebar cost calculator" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="${urlFor(lang,'index')}" />
 ${altLinks('index')}
-<meta property="og:title" content="${title}" />
-<meta property="og:description" content="${desc}" />
+<meta property="og:title" content="${hubMetaTitle}" />
+<meta property="og:description" content="${hubMetaDesc}" />
+<meta property="og:url" content="${urlFor(lang, 'index')}" />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebApplication",name:h1,applicationCategory:"BusinessApplication",operatingSystem:"All",inLanguage:lang,offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},description:desc})}</script>
+<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebApplication",name:h1,applicationCategory:"BusinessApplication",operatingSystem:"All",inLanguage:lang,offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},description:hubMetaDesc})}</script>
 <script type="application/ld+json">${faqJsonLd(hubFaqs)}</script>
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
@@ -613,15 +692,15 @@ ${altLinks('index')}
 ${header(lang, 'index')}
 <section class="hero">
   <div class="wrap">
-    <h1>${h1}</h1>
-    <p class="hero-sub">${u.heroSub}</p>
+    <h1>${hubH1}</h1>
+    <p class="hero-sub">${heroSub}</p>
     <ul class="hero-badges">${u.badges.map(b=>`<li>✔ ${b}</li>`).join("")}</ul>
   </div>
 </section>
 
 <main class="wrap" id="calculator">
 ${toolShell}
-
+${enEducationSections}
   <section class="related">
     <h2>${u.all}</h2>
     ${directory}
