@@ -670,15 +670,83 @@ LANGS.forEach(l => {
   PAGES.forEach(p => { fs.writeFileSync(path.join(outDir, p.slug+".html"), renderPage(p, lang)); pageCount++; });
 });
 
-/* sitemap: English pages only (hub + silos + calculators) */
-const allSlugs = ["index", ...SILOS.map(s=>s.slug), ...PAGES.map(p=>p.slug)];
-const entries = allSlugs.map(slug => `  <url>\n    <loc>${urlFor("en", slug)}</loc>\n  </url>`);
-fs.writeFileSync(path.join(OUT,"sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  entries.join("\n") + `\n</urlset>\n`);
-fs.writeFileSync(path.join(OUT,"robots.txt"),
-  `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
+/* ---------- sitemap generation ----------
+   Hierarchical & organized by Silo with SEO metadata:
+   - Priority & changefreq tailored per page level
+   - lastmod automatically set to build date
+   - Primary English pages grouped strictly by Silo hierarchy
+   - Full coverage for all 22 localized languages
+   ---------------------------------------- */
+const today = new Date().toISOString().slice(0, 10);
 
+function xmlUrl(loc, lastmod, changefreq, priority) {
+  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+}
+
+function buildEnglishSitemapSection() {
+  const chunks = [];
+  chunks.push(`  <!-- ============================================================ -->`);
+  chunks.push(`  <!-- ENGLISH PAGES (Primary Hub, Silos, and Calculators)          -->`);
+  chunks.push(`  <!-- ============================================================ -->`);
+  chunks.push(`  <!-- Main Hub / Homepage -->`);
+  chunks.push(xmlUrl(urlFor("en", "index"), today, "weekly", "1.0"));
+
+  SILOS.forEach(silo => {
+    chunks.push(`\n  <!-- Silo: ${silo.cat} Calculators -->`);
+    chunks.push(xmlUrl(urlFor("en", silo.slug), today, "weekly", "0.8"));
+    const children = PAGES.filter(p => p.cat === silo.cat);
+    children.forEach(p => {
+      chunks.push(xmlUrl(urlFor("en", p.slug), today, "monthly", "0.6"));
+    });
+  });
+  return chunks.join("\n");
+}
+
+function buildInternationalSitemapSection() {
+  const chunks = [];
+  chunks.push(`\n  <!-- ============================================================ -->`);
+  chunks.push(`  <!-- INTERNATIONAL / LOCALIZED PAGES                              -->`);
+  chunks.push(`  <!-- ============================================================ -->`);
+
+  LANGS.filter(l => l.code !== "en").forEach(l => {
+    chunks.push(`\n  <!-- Language: ${l.name} (${l.code}) -->`);
+    chunks.push(xmlUrl(urlFor(l.code, "index"), today, "weekly", "0.7"));
+    SILOS.forEach(silo => {
+      chunks.push(xmlUrl(urlFor(l.code, silo.slug), today, "weekly", "0.6"));
+      const children = PAGES.filter(p => p.cat === silo.cat);
+      children.forEach(p => {
+        chunks.push(xmlUrl(urlFor(l.code, p.slug), today, "monthly", "0.5"));
+      });
+    });
+  });
+  return chunks.join("\n");
+}
+
+const enXmlSection = buildEnglishSitemapSection();
+const intlXmlSection = buildInternationalSitemapSection();
+
+// 1. Comprehensive Master sitemap.xml (all pages: English + 21 international languages)
+const masterSitemapXml =
+  `<?xml version="1.0" encoding="UTF-8"?>\n` +
+  `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  enXmlSection + `\n` +
+  intlXmlSection + `\n` +
+  `</urlset>\n`;
+fs.writeFileSync(path.join(OUT, "sitemap.xml"), masterSitemapXml);
+
+// 2. Clean English-only sitemap (sitemap-en.xml)
+const enSitemapXml =
+  `<?xml version="1.0" encoding="UTF-8"?>\n` +
+  `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  enXmlSection + `\n` +
+  `</urlset>\n`;
+fs.writeFileSync(path.join(OUT, "sitemap-en.xml"), enSitemapXml);
+
+fs.writeFileSync(path.join(OUT, "robots.txt"),
+  `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\nSitemap: ${SITE}/sitemap-en.xml\n`);
+
+const totalUrls = (1 + SILOS.length + PAGES.length) * LANGS.length;
+const enUrls = 1 + SILOS.length + PAGES.length;
 console.log(`Generated ${LANGS.length} languages × (${PAGES.length} pages + hub) = ${pageCount + LANGS.length} HTML files`);
-console.log(`Sitemap: ${entries.length} English URLs generated in sitemap.xml`);
+console.log(`Sitemap: ${totalUrls} total URLs organized across ${LANGS.length} languages (${enUrls} English URLs in sitemap-en.xml)`);
 
