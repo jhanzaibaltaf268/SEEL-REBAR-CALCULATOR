@@ -314,13 +314,12 @@ const siloH1   = (silo, lang) => `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`
 const dirOf = lang => LANGS.find(l=>l.code===lang).dir;
 function urlFor(lang, slug){
   const prefix = lang==="en" ? "" : "/"+dirOf(lang);
-  return slug==="index" ? SITE+prefix+"/" : SITE+prefix+"/"+slug+".html";
+  return slug==="index" ? SITE+prefix+"/" : SITE+prefix+"/"+slug;
 }
 function switchHref(curLang, targetLang, slug){
-  const file = (slug==="index"?"index":slug)+".html";
-  const td = dirOf(targetLang);
-  if(curLang==="en") return targetLang==="en" ? file : td+"/"+file;
-  return targetLang==="en" ? "../"+file : "../"+td+"/"+file;
+  const targetSlug = (slug==="index" ? "" : slug);
+  const targetPrefix = targetLang==="en" ? "" : "/" + dirOf(targetLang);
+  return targetSlug ? `${targetPrefix}/${targetSlug}` : `${targetPrefix || "/"}`;
 }
 function altLinks(slug){
   return LANGS.map(l=>`<link rel="alternate" hreflang="${l.code}" href="${urlFor(l.code,slug)}" />`).join("\n")
@@ -344,15 +343,16 @@ function langSwitch(curLang, slug){
 }
 function header(lang, slug){
   const u = UI[lang];
+  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
   return `
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html"><span class="brand-mark">▦</span>
+    <a class="brand" href="${homeUrl}"><span class="brand-mark">▦</span>
       <span class="brand-text">Rebar<strong>Calc</strong></span></a>
     <nav class="top-nav">
-      <a href="index.html">${u.allCalcs}</a>
-      <a href="index.html#charts">${u.weightChart}</a>
-      <a href="index.html#faq">${u.faq}</a>
+      <a href="${homeUrl}">${u.allCalcs}</a>
+      <a href="${homeUrl}#charts">${u.weightChart}</a>
+      <a href="${homeUrl}#faq">${u.faq}</a>
     </nav>
     ${langSwitch(lang, slug)}
   </div>
@@ -406,7 +406,7 @@ function relatedGrid(currentId, lang){
   const silo = siloOfId(currentId);
   const siblings = siloPages(silo).filter(p => p.id !== currentId);
   const cards = siblings.map(p =>
-    `<a class="rel-card" href="${p.slug}.html"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,48)}…</span></a>`
+    `<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,48)}…</span></a>`
   ).join("\n      ");
   return `
   <section class="related">
@@ -414,7 +414,7 @@ function relatedGrid(currentId, lang){
     <div class="related-grid">
       ${cards}
     </div>
-    <p class="silo-all"><a href="${silo.slug}.html">↗ ${siloH1(silo,lang)}</a></p>
+    <p class="silo-all"><a href="${silo.slug}">↗ ${siloH1(silo,lang)}</a></p>
   </section>`;
 }
 
@@ -424,8 +424,9 @@ function faqJsonLd(faqs){
 }
 /* visible breadcrumb trail (links are same-dir relative within each language) */
 function crumbs(lang, trail){
+  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
   const parts = trail.map((c,i) => c.slug
-    ? `<a href="${c.slug==="index"?"index":c.slug}.html">${c.name}</a>`
+    ? `<a href="${c.slug==="index" ? homeUrl : c.slug}">${c.name}</a>`
     : `<span>${c.name}</span>`);
   return `<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb">${parts.join(" <i>›</i> ")}</nav></div>`;
 }
@@ -510,7 +511,7 @@ ${relatedGrid(p.id, lang)}
     <ol class="howto">${howHtml}</ol>
     <h3>${u.formulaH}</h3>
     <p class="formula-callout">${p.formula}</p>
-    <p><a href="index.html#charts">${u.seeChart}</a></p>
+    <p><a href="${lang==='en'?'/':`/${dirOf(lang)}/`}#charts">${u.seeChart}</a></p>
   </section>
 
   <section id="faq" class="content-block">
@@ -534,7 +535,7 @@ function renderSilo(silo, lang){
   const title = `${h1} | ${HUB_H1[lang]}`;
   const desc = `${CALCSWORD[lang]}: ${pages.map(p=>pH1(p,lang)).join(", ")}`.slice(0,158);
   const cards = pages.map(p =>
-    `<a class="rel-card" href="${p.slug}.html"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,70)}…</span></a>`
+    `<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,70)}…</span></a>`
   ).join("\n      ");
   const crumbTrail = crumbs(lang, [
     {name:HOMEWORD[lang], slug:"index"},
@@ -605,9 +606,9 @@ function renderHub(lang){
     const silo = siloOfCat(cat);
     return `
       <div class="dir-cat">
-        <h3><a href="${silo.slug}.html">${trG(cat,lang)} ${CALCSWORD[lang]} ↗</a></h3>
+        <h3><a href="${silo.slug}">${trG(cat,lang)} ${CALCSWORD[lang]} ↗</a></h3>
         <div class="related-grid">
-          ${items.map(p=>`<a class="rel-card" href="${p.slug}.html"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,52)}…</span></a>`).join("\n          ")}
+          ${items.map(p=>`<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,52)}…</span></a>`).join("\n          ")}
         </div>
       </div>`;
   }).join("\n");
