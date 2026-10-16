@@ -1244,31 +1244,62 @@ fs.writeFileSync(path.join(OUT, "vercel.json"), JSON.stringify(vercelConfig, nul
 
 /* ---------- sitemap generation ----------
    Hierarchical & organized by Silo with SEO metadata:
-   - Priority & changefreq tailored per page level
-   - lastmod automatically set to build date
-   - Primary English pages grouped strictly by Silo hierarchy
-   - Full coverage for all 22 localized languages
+   - Full reciprocal and self-referencing xhtml:link hreflang annotations
+   - Prioritized coverage for the 8 primary languages (en, es, fr, de, it, pt, nl, pl)
+   - x-default pointing to the canonical English URL
    ---------------------------------------- */
 const today = new Date().toISOString().slice(0, 10);
+const SITEMAP_LANGS = ["en", "es", "fr", "de", "it", "pt", "nl", "pl"];
 
-function xmlUrl(loc, lastmod, changefreq, priority) {
-  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+function renderSitemapUrl(type, item, lang, lastmod, changefreq, priority) {
+  let loc;
+  let enUrl;
+  if (type === "index") {
+    loc = urlFor(lang, "index");
+    enUrl = urlFor("en", "index");
+  } else if (type === "silo") {
+    loc = urlFor(lang, siloSlug(item, lang));
+    enUrl = urlFor("en", siloSlug(item, "en"));
+  } else if (type === "page") {
+    loc = urlFor(lang, pageSlug(item, lang));
+    enUrl = urlFor("en", pageSlug(item, "en"));
+  }
+
+  const lines = [];
+  lines.push("  <url>");
+  lines.push("    <loc>" + loc + "</loc>");
+
+  // Alternate links for all 8 languages: en, es, fr, de, it, pt, nl, pl
+  SITEMAP_LANGS.forEach(l => {
+    let href;
+    if (type === "index") href = urlFor(l, "index");
+    else if (type === "silo") href = urlFor(l, siloSlug(item, l));
+    else if (type === "page") href = urlFor(l, pageSlug(item, l));
+    lines.push("    <xhtml:link rel=\"alternate\" hreflang=\"" + l + "\" href=\"" + href + "\"/>");
+  });
+
+  // x-default pointing to English URL
+  lines.push("    <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"" + enUrl + "\"/>");
+  lines.push("    <lastmod>" + lastmod + "</lastmod>");
+  lines.push("    <changefreq>" + changefreq + "</changefreq>");
+  lines.push("    <priority>" + priority + "</priority>");
+  lines.push("  </url>");
+  return lines.join("\n");
 }
 
 function buildEnglishSitemapSection() {
   const chunks = [];
-  chunks.push(`  <!-- ============================================================ -->`);
-  chunks.push(`  <!-- ENGLISH PAGES (Primary Hub, Silos, and Calculators)          -->`);
-  chunks.push(`  <!-- ============================================================ -->`);
-  chunks.push(`  <!-- Main Hub / Homepage -->`);
-  chunks.push(xmlUrl(urlFor("en", "index"), today, "weekly", "1.0"));
+  chunks.push("  <!-- ============================================================ -->");
+  chunks.push("  <!-- ENGLISH PAGES (Primary Hub, Silos, and Calculators)          -->");
+  chunks.push("  <!-- ============================================================ -->");
+  chunks.push(renderSitemapUrl("index", null, "en", today, "weekly", "1.0"));
 
   SILOS.forEach(silo => {
-    chunks.push(`\n  <!-- Silo: ${silo.cat} Calculators -->`);
-    chunks.push(xmlUrl(urlFor("en", siloSlug(silo, "en")), today, "weekly", "0.8"));
+    chunks.push("\n  <!-- Silo: " + silo.cat + " Calculators -->");
+    chunks.push(renderSitemapUrl("silo", silo, "en", today, "weekly", "0.8"));
     const children = PAGES.filter(p => p.cat === silo.cat);
     children.forEach(p => {
-      chunks.push(xmlUrl(urlFor("en", pageSlug(p, "en")), today, "monthly", "0.6"));
+      chunks.push(renderSitemapUrl("page", p, "en", today, "monthly", "0.6"));
     });
   });
   return chunks.join("\n");
@@ -1276,18 +1307,18 @@ function buildEnglishSitemapSection() {
 
 function buildInternationalSitemapSection() {
   const chunks = [];
-  chunks.push(`\n  <!-- ============================================================ -->`);
-  chunks.push(`  <!-- INTERNATIONAL / LOCALIZED PAGES                              -->`);
-  chunks.push(`  <!-- ============================================================ -->`);
-
-  LANGS.filter(l => l.code !== "en").forEach(l => {
-    chunks.push(`\n  <!-- Language: ${l.name} (${l.code}) -->`);
-    chunks.push(xmlUrl(urlFor(l.code, "index"), today, "weekly", "0.7"));
+  SITEMAP_LANGS.filter(l => l !== "en").forEach(code => {
+    const langObj = LANGS.find(x => x.code === code);
+    chunks.push("\n  <!-- ============================================================ -->");
+    chunks.push("  <!-- Language: " + langObj.name + " (" + code + ") -->");
+    chunks.push("  <!-- ============================================================ -->");
+    chunks.push(renderSitemapUrl("index", null, code, today, "weekly", "0.7"));
     SILOS.forEach(silo => {
-      chunks.push(xmlUrl(urlFor(l.code, siloSlug(silo, l.code)), today, "weekly", "0.6"));
+      chunks.push("\n  <!-- Silo: " + silo.cat + " Calculators -->");
+      chunks.push(renderSitemapUrl("silo", silo, code, today, "weekly", "0.6"));
       const children = PAGES.filter(p => p.cat === silo.cat);
       children.forEach(p => {
-        chunks.push(xmlUrl(urlFor(l.code, pageSlug(p, l.code)), today, "monthly", "0.5"));
+        chunks.push(renderSitemapUrl("page", p, code, today, "monthly", "0.5"));
       });
     });
   });
@@ -1297,29 +1328,28 @@ function buildInternationalSitemapSection() {
 const enXmlSection = buildEnglishSitemapSection();
 const intlXmlSection = buildInternationalSitemapSection();
 
-// 1. Comprehensive Master sitemap.xml (all pages: English + 21 international languages)
+// 1. Comprehensive Master sitemap.xml with xhtml:link hreflang annotations across 8 languages
 const masterSitemapXml =
-  `<?xml version="1.0" encoding="UTF-8"?>\n` +
-  `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  enXmlSection + `\n` +
-  intlXmlSection + `\n` +
-  `</urlset>\n`;
+  '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+  enXmlSection + '\n' +
+  intlXmlSection + '\n' +
+  '</urlset>\n';
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), masterSitemapXml);
 
 // 2. Clean English-only sitemap (sitemap-en.xml)
 const enSitemapXml =
-  `<?xml version="1.0" encoding="UTF-8"?>\n` +
-  `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  enXmlSection + `\n` +
-  `</urlset>\n`;
+  '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+  enXmlSection + '\n' +
+  '</urlset>\n';
 fs.writeFileSync(path.join(OUT, "sitemap-en.xml"), enSitemapXml);
 
 fs.writeFileSync(path.join(OUT, "robots.txt"),
-  `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\nSitemap: ${SITE}/sitemap-en.xml\n`);
+  'User-agent: *\nAllow: /\nSitemap: ' + SITE + '/sitemap.xml\nSitemap: ' + SITE + '/sitemap-en.xml\n');
 
-const totalUrls = (1 + SILOS.length + PAGES.length) * LANGS.length;
+const totalSitemapUrls = (1 + SILOS.length + PAGES.length) * SITEMAP_LANGS.length;
 const enUrls = 1 + SILOS.length + PAGES.length;
-console.log(`Generated ${LANGS.length} languages × (${PAGES.length} pages + hub) = ${pageCount + LANGS.length} HTML files`);
-console.log(`Sitemap: ${totalUrls} total URLs organized across ${LANGS.length} languages (${enUrls} English URLs in sitemap-en.xml)`);
-console.log(`Vercel: Generated ${redirects.length} 301 redirects in vercel.json for legacy URLs`);
-
+console.log('Generated ' + LANGS.length + ' languages × (' + PAGES.length + ' pages + hub) = ' + (pageCount + LANGS.length) + ' HTML files');
+console.log('Sitemap: ' + totalSitemapUrls + ' total URLs organized across ' + SITEMAP_LANGS.length + ' languages (' + enUrls + ' English URLs in sitemap-en.xml) with hreflang annotations');
+console.log('Vercel: Generated ' + redirects.length + ' 301 redirects in vercel.json for legacy URLs');
