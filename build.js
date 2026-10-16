@@ -500,20 +500,95 @@ const HOMEWORD = { en:"Home", es:"Inicio", fr:"Accueil", de:"Startseite", it:"Ho
 const siloName = (silo, lang) => trG(silo.cat, lang);
 const siloH1   = (silo, lang) => `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
 
+/* ---------- Transliteration & Multilingual Slug Generation ---------- */
+const SPECIAL_CHARS = {
+  'ä':'ae','ö':'oe','ü':'ue','Ä':'ae','Ö':'oe','Ü':'ue',
+  'æ':'ae','ø':'oe','å':'aa','ß':'ss','œ':'oe','đ':'d','ð':'d','þ':'th',
+  'ł':'l','Ł':'l'
+};
+
+const GREEK_MULTI = {
+  'ου':'ou','ού':'ou','ει':'ei','εί':'ei','αι':'ai','αί':'ai','οι':'oi','oí':'oi',
+  'αυ':'av','αύ':'av','ευ':'ev','εύ':'ev'
+};
+
+const GREEK_MAP = {
+  'α':'a','β':'v','γ':'g','δ':'d','ε':'e','ζ':'z','η':'i','θ':'th','ι':'i',
+  'κ':'k','λ':'l','μ':'m','ν':'n','ξ':'x','ο':'o','π':'p','ρ':'r','σ':'s',
+  'ς':'s','τ':'t','υ':'y','φ':'f','χ':'ch','ψ':'ps','ω':'o',
+  'ά':'a','έ':'e','ή':'i','ί':'i','ό':'o','ύ':'y','ώ':'o','ϊ':'i','ϋ':'y',
+  'ΐ':'i','ΰ':'y'
+};
+
+const CYRILLIC_MAP = {
+  'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ж':'zh','з':'z','и':'i',
+  'й':'y','к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r',
+  'с':'s','т':'t','у':'u','ф':'f','х':'h','ц':'ts','ч':'ch','ш':'sh','щ':'sht',
+  'ъ':'a','ь':'y','ю':'yu','я':'ya'
+};
+
+function slugify(text) {
+  let s = String(text || '').toLowerCase();
+  for (const [k, v] of Object.entries(SPECIAL_CHARS)) {
+    s = s.replaceAll(k, v);
+  }
+  for (const [k, v] of Object.entries(GREEK_MULTI)) {
+    s = s.replaceAll(k, v);
+  }
+  s = s.split('').map(c => GREEK_MAP[c] || c).join('');
+  s = s.split('').map(c => CYRILLIC_MAP[c] || c).join('');
+  s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  s = s.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return s;
+}
+
+function pageSlug(p, lang) {
+  if (lang === "en") return p.slug;
+  const t = CALC[p.id] && CALC[p.id].title && CALC[p.id].title[lang];
+  return slugify(t || p.h1);
+}
+
+function siloSlug(silo, lang) {
+  if (lang === "en") return silo.slug;
+  const catName = trG(silo.cat, lang);
+  return slugify(`${catName} ${CALCSWORD[lang]}`);
+}
+
+function pageHref(p, lang) {
+  const prefix = lang === "en" ? "" : "/" + dirOf(lang);
+  return `${prefix}/${pageSlug(p, lang)}`;
+}
+
+function siloHref(silo, lang) {
+  const prefix = lang === "en" ? "" : "/" + dirOf(lang);
+  return `${prefix}/${siloSlug(silo, lang)}`;
+}
+
+function homeHref(lang) {
+  return lang === "en" ? "/" : `/${dirOf(lang)}/`;
+}
+
 /* ---------- URL + path helpers ---------- */
 const dirOf = lang => LANGS.find(l=>l.code===lang).dir;
 function urlFor(lang, slug){
   const prefix = lang==="en" ? "" : "/"+dirOf(lang);
   return slug==="index" ? SITE+prefix+"/" : SITE+prefix+"/"+slug;
 }
-function switchHref(curLang, targetLang, slug){
-  const targetSlug = (slug==="index" ? "" : slug);
-  const targetPrefix = targetLang==="en" ? "" : "/" + dirOf(targetLang);
-  return targetSlug ? `${targetPrefix}/${targetSlug}` : `${targetPrefix || "/"}`;
+function switchHref(curLang, targetLang, type, item){
+  if (type === 'index') return homeHref(targetLang);
+  if (type === 'page') return pageHref(item, targetLang);
+  if (type === 'silo') return siloHref(item, targetLang);
+  return homeHref(targetLang);
 }
-function altLinks(slug){
-  return LANGS.map(l=>`<link rel="alternate" hreflang="${l.code}" href="${urlFor(l.code,slug)}" />`).join("\n")
-    + `\n<link rel="alternate" hreflang="x-default" href="${urlFor('en',slug)}" />`;
+function altLinks(type, item){
+  return LANGS.map(l => {
+    let slug;
+    if (type === 'index') slug = 'index';
+    else if (type === 'page') slug = pageSlug(item, l.code);
+    else if (type === 'silo') slug = siloSlug(item, l.code);
+    return `<link rel="alternate" hreflang="${l.code}" href="${urlFor(l.code, slug)}" />`;
+  }).join("\n")
+    + `\n<link rel="alternate" hreflang="x-default" href="${urlFor('en', type === 'index' ? 'index' : (type === 'page' ? item.slug : item.slug))}" />`;
 }
 /* localized getters (en uses the rich PAGES content) */
 const pH1   = (p,lang) => lang==="en" ? p.h1 : CALC[p.id].title[lang];
@@ -524,20 +599,21 @@ const pHowto= (p,lang) => lang==="en" ? p.howto : TPL[lang].howto;
 const pFaqs = (p,lang) => lang==="en" ? p.faqs : TPL[lang].faq(CALC[p.id].title[lang], CALC[p.id].desc[lang]);
 
 /* ---------- shared HTML pieces ---------- */
-function langSwitch(curLang, slug){
+function langSwitch(curLang, type, item){
   const cur = LANGS.find(l=>l.code===curLang);
   return `<details class="lang-dropdown">
       <summary>🌐 ${cur.label} <span class="caret">▾</span></summary>
-      <div class="lang-menu">${LANGS.map(l=>`<a class="lang${l.code===curLang?' active':''}" hreflang="${l.code}" href="${switchHref(curLang,l.code,slug)}">${l.name}</a>`).join("")}</div>
+      <div class="lang-menu">${LANGS.map(l=>`<a class="lang${l.code===curLang?' active':''}" hreflang="${l.code}" href="${switchHref(curLang, l.code, type, item)}">${l.name}</a>`).join("")}</div>
     </details>`;
 }
 
-function header(lang, slug, activeSiloSlug){
+function header(lang, type, item, activeSiloSlug){
   const u = UI[lang];
-  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
+  const homeUrl = homeHref(lang);
   const siloPills = SILOS.map(s => {
-    const isActive = activeSiloSlug === s.slug;
-    return `<a class="silo-bar-pill${isActive ? ' active' : ''}" href="${s.slug}"><b>${siloName(s, lang)}</b></a>`;
+    const s_slug = siloSlug(s, lang);
+    const isActive = activeSiloSlug === s_slug || activeSiloSlug === s.slug;
+    return `<a class="silo-bar-pill${isActive ? ' active' : ''}" href="${siloHref(s, lang)}"><b>${siloName(s, lang)}</b></a>`;
   }).join("");
 
   return `
@@ -550,7 +626,7 @@ function header(lang, slug, activeSiloSlug){
       <a href="${homeUrl}#charts">${u.weightChart}</a>
       <a href="${homeUrl}#faq">${u.faq}</a>
     </nav>
-    ${langSwitch(lang, slug)}
+    ${langSwitch(lang, type, item)}
   </div>
   <div class="silos-bar">
     <div class="wrap silos-bar-inner">
@@ -563,17 +639,17 @@ function header(lang, slug, activeSiloSlug){
 
 function footer(lang){
   const u = UI[lang];
-  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
+  const homeUrl = homeHref(lang);
   const disclaimer = (lang === "en")
     ? "Results are estimates for material planning and ordering. Verify against your structural drawings and local building code before construction; safety-critical designs require review by a qualified engineer."
     : u.disclaimer;
 
   const cols = SILOS.map(s => {
     const children = siloPages(s);
-    const links = children.map(p => `<li><a href="${p.slug}">${pH1(p, lang)}</a></li>`).join("\n          ");
+    const links = children.map(p => `<li><a href="${pageHref(p, lang)}">${pH1(p, lang)}</a></li>`).join("\n          ");
     return `
       <div class="footer-col">
-        <h4><a href="${s.slug}">${siloName(s, lang)} ${CALCSWORD[lang]}</a></h4>
+        <h4><a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a></h4>
         <ul>
           ${links}
         </ul>
@@ -611,7 +687,7 @@ function renderToolShell(lang, activeCalcId){
     const catTitle = trG(cat, lang);
     const links = items.map(p => {
       const isActive = p.id === activeCalcId;
-      return `<a class="tab${isActive ? ' active' : ''}" href="${p.slug}" data-id="${p.id}">${pH1(p, lang)}</a>`;
+      return `<a class="tab${isActive ? ' active' : ''}" href="${pageHref(p, lang)}" data-id="${p.id}">${pH1(p, lang)}</a>`;
     }).join("\n      ");
     return `<div class="tab-group${isCatActive ? ' active-group' : ''}">${catTitle}</div>\n      ${links}`;
   }).join("\n    ");
@@ -653,7 +729,7 @@ function relatedGrid(currentId, lang){
   const silo = siloOfId(currentId);
   const siblings = siloPages(silo).filter(p => p.id !== currentId);
   const cards = siblings.map(p =>
-    `<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,48)}…</span></a>`
+    `<a class="rel-card" href="${pageHref(p, lang)}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,48)}…</span></a>`
   ).join("\n      ");
   return `
   <section class="related">
@@ -661,7 +737,7 @@ function relatedGrid(currentId, lang){
     <div class="related-grid">
       ${cards}
     </div>
-    <p class="silo-all"><a href="${silo.slug}">↗ ${siloH1(silo,lang)}</a></p>
+    <p class="silo-all"><a href="${siloHref(silo, lang)}">↗ ${siloH1(silo,lang)}</a></p>
   </section>`;
 }
 
@@ -678,7 +754,7 @@ function workflowGrid(currentId, lang){
 
   const cards = companionPages.map(p => {
     const pSilo = siloOfId(p.id);
-    return `<a class="rel-card workflow-card" href="${p.slug}">
+    return `<a class="rel-card workflow-card" href="${pageHref(p, lang)}">
         <span class="workflow-badge">${siloName(pSilo, lang)}</span>
         <b>${pH1(p, lang)}</b>
         <span>${pDesc(p, lang).slice(0, 52)}…</span>
@@ -699,11 +775,10 @@ function faqJsonLd(faqs){
   return JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
     mainEntity: faqs.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))});
 }
-/* visible breadcrumb trail (links are same-dir relative within each language) */
+/* visible breadcrumb trail */
 function crumbs(lang, trail){
-  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
-  const parts = trail.map((c,i) => c.slug
-    ? `<a href="${c.slug==="index" ? homeUrl : c.slug}">${c.name}</a>`
+  const parts = trail.map((c,i) => c.href
+    ? `<a href="${c.href}">${c.name}</a>`
     : `<span>${c.name}</span>`);
   return `<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb">${parts.join(" <i>›</i> ")}</nav></div>`;
 }
@@ -738,15 +813,17 @@ function renderPage(p, lang){
   const howHtml = pHowto(p,lang).map(s=>`<li>${s}</li>`).join("");
   const cleanH1 = h1.replace(/ \(.*/,"");
   const silo = siloOfId(p.id);
+  const curPageSlug = pageSlug(p, lang);
+  const curSiloSlug = siloSlug(silo, lang);
   const crumbTrail = crumbs(lang, [
-    {name:HOMEWORD[lang], slug:"index"},
-    {name:siloName(silo,lang), slug:silo.slug},
+    {name:HOMEWORD[lang], href:homeHref(lang)},
+    {name:siloName(silo,lang), href:siloHref(silo, lang)},
     {name:cleanH1}
   ]);
   const crumbLd = breadcrumbJsonLd([
     {name:HOMEWORD[lang], url:urlFor(lang,"index")},
-    {name:siloName(silo,lang), url:urlFor(lang,silo.slug)},
-    {name:h1, url:urlFor(lang,p.slug)}
+    {name:siloName(silo,lang), url:urlFor(lang,curSiloSlug)},
+    {name:h1, url:urlFor(lang,curPageSlug)}
   ]);
   return `<!DOCTYPE html>
 <html lang="${lang}">
@@ -759,8 +836,8 @@ ${TRACKING_HEAD}
 <meta name="description" content="${desc}" />
 <meta name="keywords" content="${p.kw}" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="${urlFor(lang,p.slug)}" />
-${altLinks(p.slug)}
+<link rel="canonical" href="${urlFor(lang,curPageSlug)}" />
+${altLinks('page', p)}
 <meta property="og:title" content="${title}" />
 <meta property="og:description" content="${desc}" />
 <meta property="og:type" content="website" />
@@ -770,7 +847,7 @@ ${altLinks(p.slug)}
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, p.slug, silo.slug)}
+${header(lang, 'page', p, curSiloSlug)}
 ${crumbTrail}
 <section class="hero">
   <div class="wrap">
@@ -789,7 +866,7 @@ ${workflowGrid(p.id, lang)}
     <ol class="howto">${howHtml}</ol>
     <h3>${u.formulaH}</h3>
     <p class="formula-callout">${p.formula}</p>
-    <p><a href="${lang==='en'?'/':`/${dirOf(lang)}/`}#charts">${u.seeChart}</a></p>
+    <p><a href="${homeHref(lang)}#charts">${u.seeChart}</a></p>
   </section>
 
   <section id="faq" class="content-block">
@@ -808,7 +885,7 @@ ${scripts(lang, p.id)}
 function renderSilo(silo, lang){
   const base = lang==="en" ? "" : "../";
   const u = UI[lang];
-  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
+  const homeUrl = homeHref(lang);
   const name = siloName(silo,lang), h1 = siloH1(silo,lang);
   const pages = siloPages(silo);
   const title = `${h1} | ${HUB_H1[lang]}`;
@@ -817,20 +894,22 @@ function renderSilo(silo, lang){
     ? sc.heroSub
     : `${CALCSWORD[lang]}: ${pages.map(p=>pH1(p,lang)).join(", ")}`.slice(0,158);
 
+  const curSiloSlug = siloSlug(silo, lang);
+
   const cards = pages.map(p =>
-    `<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,70)}…</span></a>`
+    `<a class="rel-card" href="${pageHref(p, lang)}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,70)}…</span></a>`
   ).join("\n      ");
 
   const crumbTrail = crumbs(lang, [
-    {name:HOMEWORD[lang], slug:"index"},
+    {name:HOMEWORD[lang], href:homeUrl},
     {name:name}
   ]);
   const crumbLd = breadcrumbJsonLd([
     {name:HOMEWORD[lang], url:urlFor(lang,"index")},
-    {name:name, url:urlFor(lang,silo.slug)}
+    {name:name, url:urlFor(lang,curSiloSlug)}
   ]);
   const itemList = JSON.stringify({"@context":"https://schema.org","@type":"ItemList",
-    itemListElement: pages.map((p,i)=>({"@type":"ListItem",position:i+1,name:pH1(p,lang),url:urlFor(lang,p.slug)}))});
+    itemListElement: pages.map((p,i)=>({"@type":"ListItem",position:i+1,name:pH1(p,lang),url:urlFor(lang,pageSlug(p, lang))}))});
 
   const faqs = (lang === "en" && sc.faqs)
     ? sc.faqs
@@ -841,13 +920,13 @@ function renderSilo(silo, lang){
     ? sc.table.map(row => {
         const matchingPage = pages.find(p => p.h1.includes(row.tool.split(" ")[0]) || row.tool.includes(p.h1.split(" ")[0])) || pages[0];
         return `<tr>
-          <td><a href="${matchingPage.slug}"><strong>${row.tool}</strong></a></td>
+          <td><a href="${pageHref(matchingPage, lang)}"><strong>${row.tool}</strong></a></td>
           <td>${row.bestFor}</td>
           <td><code>${row.output}</code></td>
         </tr>`;
       }).join("\n        ")
     : pages.map(p => `<tr>
-          <td><a href="${p.slug}"><strong>${pH1(p, lang)}</strong></a></td>
+          <td><a href="${pageHref(p, lang)}"><strong>${pH1(p, lang)}</strong></a></td>
           <td>${pDesc(p, lang).slice(0, 65)}…</td>
           <td><code>${trG("Quantity (pieces)", lang)} / ${trG("Total weight", lang)}</code></td>
         </tr>`).join("\n        ");
@@ -876,9 +955,10 @@ ${TRACKING_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${title}</title>
 <meta name="description" content="${desc}" />
+<meta name="keywords" content="${name}, ${CALCSWORD[lang]}, rebar calculators" />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="${urlFor(lang,silo.slug)}" />
-${altLinks(silo.slug)}
+<link rel="canonical" href="${urlFor(lang,curSiloSlug)}" />
+${altLinks('silo', silo)}
 <meta property="og:title" content="${title}" />
 <meta property="og:description" content="${desc}" />
 <meta property="og:type" content="website" />
@@ -888,7 +968,7 @@ ${altLinks(silo.slug)}
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, silo.slug, silo.slug)}
+${header(lang, 'silo', silo, curSiloSlug)}
 ${crumbTrail}
 <section class="hero">
   <div class="wrap">
@@ -956,9 +1036,9 @@ function renderHub(lang){
     const silo = siloOfCat(cat);
     return `
       <div class="dir-cat">
-        <h3><a href="${silo.slug}">${trG(cat,lang)} ${CALCSWORD[lang]} ↗</a></h3>
+        <h3><a href="${siloHref(silo, lang)}">${trG(cat,lang)} ${CALCSWORD[lang]} ↗</a></h3>
         <div class="related-grid">
-          ${items.map(p=>`<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,52)}…</span></a>`).join("\n          ")}
+          ${items.map(p=>`<a class="rel-card" href="${pageHref(p, lang)}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,52)}…</span></a>`).join("\n          ")}
         </div>
       </div>`;
   }).join("\n");
@@ -1030,7 +1110,7 @@ ${TRACKING_HEAD}
 <meta name="keywords" content="rebar calculator, steel rebar calculator, rebar weight calculator, concrete slab rebar calculator, rebar spacing calculator, rebar cost calculator" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="${urlFor(lang,'index')}" />
-${altLinks('index')}
+${altLinks('index', null)}
 <meta property="og:title" content="${hubMetaTitle}" />
 <meta property="og:description" content="${hubMetaDesc}" />
 <meta property="og:url" content="${urlFor(lang, 'index')}" />
@@ -1040,7 +1120,7 @@ ${altLinks('index')}
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, 'index', null)}
+${header(lang, 'index', null, null)}
 <section class="hero">
   <div class="wrap">
     <h1>${hubH1}</h1>
@@ -1086,19 +1166,81 @@ ${scripts(lang, null)}
 }
 
 /* ---------- write everything ---------- */
-const slugMap = {}; PAGES.forEach(p => slugMap[p.id] = p.slug);
+const slugMapByLang = {};
+LANGS.forEach(l => {
+  slugMapByLang[l.code] = {};
+  PAGES.forEach(p => {
+    slugMapByLang[l.code][p.id] = pageSlug(p, l.code);
+  });
+});
+PAGES.forEach(p => {
+  slugMapByLang[p.id] = p.slug;
+});
 fs.writeFileSync(path.join(OUT,"slugs.js"),
-  "window.REBAR_SLUGS = " + JSON.stringify(slugMap, null, 2) + ";\n");
+  "window.REBAR_SLUGS = " + JSON.stringify(slugMapByLang, null, 2) + ";\n");
 
 let pageCount = 0;
+const redirects = [];
+
 LANGS.forEach(l => {
   const lang = l.code;
   const outDir = lang==="en" ? OUT : path.join(OUT, l.dir);
-  if(lang!=="en") fs.mkdirSync(outDir, { recursive:true });
+  if(lang!=="en") {
+    fs.mkdirSync(outDir, { recursive:true });
+    // Clean up old html files in this language directory
+    const existing = fs.readdirSync(outDir);
+    existing.forEach(f => {
+      if (f.endsWith(".html") && f !== "index.html") {
+        fs.unlinkSync(path.join(outDir, f));
+      }
+    });
+  }
+
   fs.writeFileSync(path.join(outDir,"index.html"), renderHub(lang));
-  SILOS.forEach(s => { fs.writeFileSync(path.join(outDir, s.slug+".html"), renderSilo(s, lang)); pageCount++; });
-  PAGES.forEach(p => { fs.writeFileSync(path.join(outDir, p.slug+".html"), renderPage(p, lang)); pageCount++; });
+
+  SILOS.forEach(s => {
+    const slug = siloSlug(s, lang);
+    fs.writeFileSync(path.join(outDir, slug + ".html"), renderSilo(s, lang));
+    pageCount++;
+    if (lang !== "en") {
+      redirects.push({
+        source: `/${l.dir}/${s.slug}`,
+        destination: `/${l.dir}/${slug}`,
+        permanent: true
+      });
+      redirects.push({
+        source: `/${l.dir}/${s.slug}.html`,
+        destination: `/${l.dir}/${slug}`,
+        permanent: true
+      });
+    }
+  });
+
+  PAGES.forEach(p => {
+    const slug = pageSlug(p, lang);
+    fs.writeFileSync(path.join(outDir, slug + ".html"), renderPage(p, lang));
+    pageCount++;
+    if (lang !== "en") {
+      redirects.push({
+        source: `/${l.dir}/${p.slug}`,
+        destination: `/${l.dir}/${slug}`,
+        permanent: true
+      });
+      redirects.push({
+        source: `/${l.dir}/${p.slug}.html`,
+        destination: `/${l.dir}/${slug}`,
+        permanent: true
+      });
+    }
+  });
 });
+
+/* Write vercel.json with cleanUrls and 301 redirects */
+const vercelConfig = {
+  cleanUrls: true,
+  redirects: redirects
+};
+fs.writeFileSync(path.join(OUT, "vercel.json"), JSON.stringify(vercelConfig, null, 2) + "\n");
 
 /* ---------- sitemap generation ----------
    Hierarchical & organized by Silo with SEO metadata:
@@ -1123,10 +1265,10 @@ function buildEnglishSitemapSection() {
 
   SILOS.forEach(silo => {
     chunks.push(`\n  <!-- Silo: ${silo.cat} Calculators -->`);
-    chunks.push(xmlUrl(urlFor("en", silo.slug), today, "weekly", "0.8"));
+    chunks.push(xmlUrl(urlFor("en", siloSlug(silo, "en")), today, "weekly", "0.8"));
     const children = PAGES.filter(p => p.cat === silo.cat);
     children.forEach(p => {
-      chunks.push(xmlUrl(urlFor("en", p.slug), today, "monthly", "0.6"));
+      chunks.push(xmlUrl(urlFor("en", pageSlug(p, "en")), today, "monthly", "0.6"));
     });
   });
   return chunks.join("\n");
@@ -1142,10 +1284,10 @@ function buildInternationalSitemapSection() {
     chunks.push(`\n  <!-- Language: ${l.name} (${l.code}) -->`);
     chunks.push(xmlUrl(urlFor(l.code, "index"), today, "weekly", "0.7"));
     SILOS.forEach(silo => {
-      chunks.push(xmlUrl(urlFor(l.code, silo.slug), today, "weekly", "0.6"));
+      chunks.push(xmlUrl(urlFor(l.code, siloSlug(silo, l.code)), today, "weekly", "0.6"));
       const children = PAGES.filter(p => p.cat === silo.cat);
       children.forEach(p => {
-        chunks.push(xmlUrl(urlFor(l.code, p.slug), today, "monthly", "0.5"));
+        chunks.push(xmlUrl(urlFor(l.code, pageSlug(p, l.code)), today, "monthly", "0.5"));
       });
     });
   });
@@ -1179,4 +1321,5 @@ const totalUrls = (1 + SILOS.length + PAGES.length) * LANGS.length;
 const enUrls = 1 + SILOS.length + PAGES.length;
 console.log(`Generated ${LANGS.length} languages × (${PAGES.length} pages + hub) = ${pageCount + LANGS.length} HTML files`);
 console.log(`Sitemap: ${totalUrls} total URLs organized across ${LANGS.length} languages (${enUrls} English URLs in sitemap-en.xml)`);
+console.log(`Vercel: Generated ${redirects.length} 301 redirects in vercel.json for legacy URLs`);
 

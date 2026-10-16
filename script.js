@@ -578,7 +578,11 @@ const $ = id => document.getElementById(id);
 let CURRENT = (typeof window!=="undefined" && window.PAGE_CALC && CALCS[window.PAGE_CALC])
   ? window.PAGE_CALC : "weight";
 const SLUGS = (typeof window!=="undefined" && window.REBAR_SLUGS) || {};
-const hrefFor = id => (SLUGS[id] ? SLUGS[id] : "./");
+const hrefFor = id => {
+  if (SLUGS[LANG] && SLUGS[LANG][id]) return SLUGS[LANG][id];
+  if (SLUGS[id]) return SLUGS[id];
+  return "./";
+};
 
 /* ---- i18n: translate display strings (fallback to English) ---- */
 const LANG = (typeof window!=="undefined" && window.PAGE_LANG) || "en";
