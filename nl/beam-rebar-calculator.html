@@ -71,6 +71,12 @@
       <div class="lang-menu"><a class="lang" hreflang="en" href="/beam-rebar-calculator">English</a><a class="lang" hreflang="es" href="/es/beam-rebar-calculator">Español</a><a class="lang" hreflang="fr" href="/fr/beam-rebar-calculator">Français</a><a class="lang" hreflang="de" href="/de/beam-rebar-calculator">Deutsch</a><a class="lang" hreflang="it" href="/it/beam-rebar-calculator">Italiano</a><a class="lang" hreflang="pt" href="/pt/beam-rebar-calculator">Português</a><a class="lang active" hreflang="nl" href="/nl/beam-rebar-calculator">Nederlands</a><a class="lang" hreflang="pl" href="/pl/beam-rebar-calculator">Polski</a><a class="lang" hreflang="ro" href="/ro/beam-rebar-calculator">Română</a><a class="lang" hreflang="sv" href="/sv/beam-rebar-calculator">Svenska</a><a class="lang" hreflang="cs" href="/cs/beam-rebar-calculator">Čeština</a><a class="lang" hreflang="da" href="/da/beam-rebar-calculator">Dansk</a><a class="lang" hreflang="el" href="/el/beam-rebar-calculator">Ελληνικά</a><a class="lang" hreflang="hu" href="/hu/beam-rebar-calculator">Magyar</a><a class="lang" hreflang="fi" href="/fi/beam-rebar-calculator">Suomi</a><a class="lang" hreflang="bg" href="/bg/beam-rebar-calculator">Български</a><a class="lang" hreflang="hr" href="/hr/beam-rebar-calculator">Hrvatski</a><a class="lang" hreflang="sk" href="/sk/beam-rebar-calculator">Slovenčina</a><a class="lang" hreflang="sl" href="/sl/beam-rebar-calculator">Slovenščina</a><a class="lang" hreflang="et" href="/et/beam-rebar-calculator">Eesti</a><a class="lang" hreflang="lv" href="/lv/beam-rebar-calculator">Latviešu</a><a class="lang" hreflang="lt" href="/lt/beam-rebar-calculator">Lietuvių</a></div>
     </details>
   </div>
+  <div class="silos-bar">
+    <div class="wrap silos-bar-inner">
+      <span class="silos-bar-label">Calculators:</span>
+      <a class="silo-bar-pill" href="rebar-weight-calculators"><b>Gewicht</b></a><a class="silo-bar-pill" href="concrete-rebar-estimating-calculators"><b>Hoeveelheden</b></a><a class="silo-bar-pill active" href="structural-rebar-calculators"><b>Onderdelen</b></a><a class="silo-bar-pill" href="rebar-detailing-calculators"><b>Detaillering</b></a><a class="silo-bar-pill" href="rebar-cost-tonnage-calculators"><b>Commercieel</b></a>
+    </div>
+  </div>
 </header>
 <div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="/nl/">Home</a> <i>›</i> <a href="structural-rebar-calculators">Onderdelen</a> <i>›</i> <span>Balkwapening Calculator</span></nav></div>
 <section class="hero">
@@ -83,7 +89,34 @@
 <main class="wrap" id="calculator">
 
   <div class="calc-shell">
-    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator"></aside>
+    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator">
+      <div class="tab-group">Gewicht</div>
+      <a class="tab" href="rebar-weight-calculator" data-id="weight">Wapeningsgewicht Calculator</a>
+      <a class="tab" href="rebar-area-calculator" data-id="area">Staaloppervlak Calculator (Ast)</a>
+      <a class="tab" href="rebar-quantity-calculator" data-id="quantity">Wapeningshoeveelheid Calculator</a>
+    <div class="tab-group">Hoeveelheden</div>
+      <a class="tab" href="concrete-slab-rebar-calculator" data-id="slab">Wapeningscalculator voor Vloerplaten</a>
+      <a class="tab" href="footing-rebar-calculator" data-id="footing">Wapeningscalculator voor Funderingen</a>
+      <a class="tab" href="rebar-mat-grid-calculator" data-id="mat">Wapeningsnet Calculator</a>
+      <a class="tab" href="concrete-and-rebar-calculator" data-id="concrete">Beton- & Wapeningschatter</a>
+      <a class="tab" href="driveway-rebar-calculator" data-id="driveway">Opritwapening Calculator</a>
+    <div class="tab-group">Detaillering</div>
+      <a class="tab" href="rebar-spacing-calculator" data-id="spacing">Staafafstand Calculator</a>
+      <a class="tab" href="rebar-development-length-calculator" data-id="develop">Verankeringslengte Calculator</a>
+      <a class="tab" href="rebar-lap-length-calculator" data-id="lap">Overlaplengte Calculator</a>
+      <a class="tab" href="rebar-hook-bend-cutting-length-calculator" data-id="hook">Haken-, Buig- & Kniplengte Calculator</a>
+      <a class="tab" href="stirrup-tie-cutting-length-calculator" data-id="stirrup">Beugel-kniplengte Calculator</a>
+      <a class="tab" href="rebar-chair-calculator" data-id="chair">Afstandhouder Calculator</a>
+      <a class="tab" href="rebar-tie-wire-calculator" data-id="tiewire">Binddraad Calculator</a>
+    <div class="tab-group active-group">Onderdelen</div>
+      <a class="tab" href="column-rebar-calculator" data-id="column">Kolomwapening Calculator</a>
+      <a class="tab active" href="beam-rebar-calculator" data-id="beam">Balkwapening Calculator</a>
+      <a class="tab" href="wall-rebar-calculator" data-id="wall">Wandwapening Calculator</a>
+      <a class="tab" href="pool-rebar-calculator" data-id="pool">Zwembadwapening Calculator</a>
+    <div class="tab-group">Commercieel</div>
+      <a class="tab" href="rebar-cost-calculator" data-id="cost">Wapeningskosten Calculator</a>
+      <a class="tab" href="rebar-tonnage-calculator" data-id="tonnage">Wapeningstonnage Calculator</a>
+    </aside>
     <div class="calc-panel">
       <h2 id="calc-title"></h2>
       <p id="calc-desc" class="calc-desc"></p>
@@ -110,6 +143,33 @@
     <p class="silo-all"><a href="structural-rebar-calculators">↗ Onderdelen — Calculators</a></p>
   </section>
 
+  <section class="related workflow-section">
+    <h2>⚡ Aanbevolen tools voor de workflow</h2>
+    
+    <div class="related-grid">
+      <a class="rel-card workflow-card" href="stirrup-tie-cutting-length-calculator">
+        <span class="workflow-badge">Detaillering</span>
+        <b>Beugel-kniplengte Calculator</b>
+        <span>Kniplengte rechthoekige beugel = 2(a+b) + 2×10d − 3×…</span>
+      </a>
+      <a class="rel-card workflow-card" href="rebar-development-length-calculator">
+        <span class="workflow-badge">Detaillering</span>
+        <b>Verankeringslengte Calculator</b>
+        <span>Verankeringslengte Ld voor geribde staven: Ld = φ·0,…</span>
+      </a>
+      <a class="rel-card workflow-card" href="rebar-lap-length-calculator">
+        <span class="workflow-badge">Detaillering</span>
+        <b>Overlaplengte Calculator</b>
+        <span>Overlap op trek = max(Ld, 30d); op druk = max(Ld, 24…</span>
+      </a>
+      <a class="rel-card workflow-card" href="rebar-tonnage-calculator">
+        <span class="workflow-badge">Commercieel</span>
+        <b>Wapeningstonnage Calculator</b>
+        <span>Zet een staaflijst (diameter × lengte × aantal) om i…</span>
+      </a>
+    </div>
+  </section>
+
   <section class="content-block">
     <h2>Hoe te gebruiken: Balkwapening Calculator</h2>
     <ol class="howto"><li>Kies de staafdiameter en de eenheden.</li><li>Voer de afmetingen en het aantal in.</li><li>Lees het resultaat direct af.</li></ol>
@@ -127,8 +187,72 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Rebar Calculator</strong> — gratis tools voor wapeningsgewicht, hoeveelheden en detaillering.</p>
-    <p class="muted">Resultaten zijn schattingen ter indicatie. Controleer met uw constructietekeningen en rekennorm.</p>
+    <div class="footer-silos-grid">
+      
+      <div class="footer-col">
+        <h4><a href="rebar-weight-calculators">Gewicht Calculators</a></h4>
+        <ul>
+          <li><a href="rebar-weight-calculator">Wapeningsgewicht Calculator</a></li>
+          <li><a href="rebar-area-calculator">Staaloppervlak Calculator (Ast)</a></li>
+          <li><a href="rebar-quantity-calculator">Wapeningshoeveelheid Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="concrete-rebar-estimating-calculators">Hoeveelheden Calculators</a></h4>
+        <ul>
+          <li><a href="concrete-slab-rebar-calculator">Wapeningscalculator voor Vloerplaten</a></li>
+          <li><a href="footing-rebar-calculator">Wapeningscalculator voor Funderingen</a></li>
+          <li><a href="rebar-mat-grid-calculator">Wapeningsnet Calculator</a></li>
+          <li><a href="concrete-and-rebar-calculator">Beton- & Wapeningschatter</a></li>
+          <li><a href="driveway-rebar-calculator">Opritwapening Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="structural-rebar-calculators">Onderdelen Calculators</a></h4>
+        <ul>
+          <li><a href="column-rebar-calculator">Kolomwapening Calculator</a></li>
+          <li><a href="beam-rebar-calculator">Balkwapening Calculator</a></li>
+          <li><a href="wall-rebar-calculator">Wandwapening Calculator</a></li>
+          <li><a href="pool-rebar-calculator">Zwembadwapening Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="rebar-detailing-calculators">Detaillering Calculators</a></h4>
+        <ul>
+          <li><a href="rebar-spacing-calculator">Staafafstand Calculator</a></li>
+          <li><a href="rebar-development-length-calculator">Verankeringslengte Calculator</a></li>
+          <li><a href="rebar-lap-length-calculator">Overlaplengte Calculator</a></li>
+          <li><a href="rebar-hook-bend-cutting-length-calculator">Haken-, Buig- & Kniplengte Calculator</a></li>
+          <li><a href="stirrup-tie-cutting-length-calculator">Beugel-kniplengte Calculator</a></li>
+          <li><a href="rebar-chair-calculator">Afstandhouder Calculator</a></li>
+          <li><a href="rebar-tie-wire-calculator">Binddraad Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="rebar-cost-tonnage-calculators">Commercieel Calculators</a></h4>
+        <ul>
+          <li><a href="rebar-cost-calculator">Wapeningskosten Calculator</a></li>
+          <li><a href="rebar-tonnage-calculator">Wapeningstonnage Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <a class="brand" href="/nl/"><span class="brand-mark">▦</span>
+          <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+        <p><strong>Rebar Calculator</strong> — gratis tools voor wapeningsgewicht, hoeveelheden en detaillering.</p>
+      </div>
+      <div class="footer-quick-links">
+        <a href="/nl/">Alle calculators</a>
+        <a href="/nl/#charts">Gewichtstabel</a>
+        <a href="/nl/#faq">FAQ</a>
+      </div>
+      <p class="muted">Resultaten zijn schattingen ter indicatie. Controleer met uw constructietekeningen en rekennorm.</p>
+    </div>
   </div>
 </footer>
 <script>window.PAGE_LANG="nl";window.PAGE_CALC="beam";</script>

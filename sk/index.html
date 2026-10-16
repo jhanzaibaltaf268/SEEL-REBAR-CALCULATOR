@@ -71,6 +71,12 @@
       <div class="lang-menu"><a class="lang" hreflang="en" href="/">English</a><a class="lang" hreflang="es" href="/es">Español</a><a class="lang" hreflang="fr" href="/fr">Français</a><a class="lang" hreflang="de" href="/de">Deutsch</a><a class="lang" hreflang="it" href="/it">Italiano</a><a class="lang" hreflang="pt" href="/pt">Português</a><a class="lang" hreflang="nl" href="/nl">Nederlands</a><a class="lang" hreflang="pl" href="/pl">Polski</a><a class="lang" hreflang="ro" href="/ro">Română</a><a class="lang" hreflang="sv" href="/sv">Svenska</a><a class="lang" hreflang="cs" href="/cs">Čeština</a><a class="lang" hreflang="da" href="/da">Dansk</a><a class="lang" hreflang="el" href="/el">Ελληνικά</a><a class="lang" hreflang="hu" href="/hu">Magyar</a><a class="lang" hreflang="fi" href="/fi">Suomi</a><a class="lang" hreflang="bg" href="/bg">Български</a><a class="lang" hreflang="hr" href="/hr">Hrvatski</a><a class="lang active" hreflang="sk" href="/sk">Slovenčina</a><a class="lang" hreflang="sl" href="/sl">Slovenščina</a><a class="lang" hreflang="et" href="/et">Eesti</a><a class="lang" hreflang="lv" href="/lv">Latviešu</a><a class="lang" hreflang="lt" href="/lt">Lietuvių</a></div>
     </details>
   </div>
+  <div class="silos-bar">
+    <div class="wrap silos-bar-inner">
+      <span class="silos-bar-label">Kalkulačky:</span>
+      <a class="silo-bar-pill" href="rebar-weight-calculators"><b>Hmotnosť</b></a><a class="silo-bar-pill" href="concrete-rebar-estimating-calculators"><b>Výkazy</b></a><a class="silo-bar-pill" href="structural-rebar-calculators"><b>Prvky</b></a><a class="silo-bar-pill" href="rebar-detailing-calculators"><b>Detailovanie</b></a><a class="silo-bar-pill" href="rebar-cost-tonnage-calculators"><b>Obchodné</b></a>
+    </div>
+  </div>
 </header>
 <section class="hero">
   <div class="wrap">
@@ -83,7 +89,34 @@
 <main class="wrap" id="calculator">
 
   <div class="calc-shell">
-    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator"></aside>
+    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator">
+      <div class="tab-group">Hmotnosť</div>
+      <a class="tab" href="rebar-weight-calculator" data-id="weight">Kalkulačka Hmotnosti Výstuže</a>
+      <a class="tab" href="rebar-area-calculator" data-id="area">Kalkulačka Plochy Ocele (Ast)</a>
+      <a class="tab" href="rebar-quantity-calculator" data-id="quantity">Kalkulačka Množstva Výstuže</a>
+    <div class="tab-group">Výkazy</div>
+      <a class="tab" href="concrete-slab-rebar-calculator" data-id="slab">Kalkulačka Výstuže Dosky</a>
+      <a class="tab" href="footing-rebar-calculator" data-id="footing">Kalkulačka Výstuže Pätky</a>
+      <a class="tab" href="rebar-mat-grid-calculator" data-id="mat">Kalkulačka Výstužnej Siete</a>
+      <a class="tab" href="concrete-and-rebar-calculator" data-id="concrete">Kalkulačka Betónu a Výstuže</a>
+      <a class="tab" href="driveway-rebar-calculator" data-id="driveway">Kalkulačka Výstuže Príjazdu</a>
+    <div class="tab-group">Detailovanie</div>
+      <a class="tab" href="rebar-spacing-calculator" data-id="spacing">Kalkulačka Rozstupu Prútov</a>
+      <a class="tab" href="rebar-development-length-calculator" data-id="develop">Kalkulačka Kotevnej Dĺžky</a>
+      <a class="tab" href="rebar-lap-length-calculator" data-id="lap">Kalkulačka Dĺžky Presahu</a>
+      <a class="tab" href="rebar-hook-bend-cutting-length-calculator" data-id="hook">Kalkulačka Hákov, Ohybov a Strihania</a>
+      <a class="tab" href="stirrup-tie-cutting-length-calculator" data-id="stirrup">Kalkulačka Strihania Strmeňov</a>
+      <a class="tab" href="rebar-chair-calculator" data-id="chair">Kalkulačka Dištančníkov</a>
+      <a class="tab" href="rebar-tie-wire-calculator" data-id="tiewire">Kalkulačka Viazacieho Drôtu</a>
+    <div class="tab-group">Prvky</div>
+      <a class="tab" href="column-rebar-calculator" data-id="column">Kalkulačka Výstuže Stĺpa</a>
+      <a class="tab" href="beam-rebar-calculator" data-id="beam">Kalkulačka Výstuže Nosníka</a>
+      <a class="tab" href="wall-rebar-calculator" data-id="wall">Kalkulačka Výstuže Steny</a>
+      <a class="tab" href="pool-rebar-calculator" data-id="pool">Kalkulačka Výstuže Bazéna</a>
+    <div class="tab-group">Obchodné</div>
+      <a class="tab" href="rebar-cost-calculator" data-id="cost">Kalkulačka Ceny Výstuže</a>
+      <a class="tab" href="rebar-tonnage-calculator" data-id="tonnage">Kalkulačka Tonáže Výstuže</a>
+    </aside>
     <div class="calc-panel">
       <h2 id="calc-title"></h2>
       <p id="calc-desc" class="calc-desc"></p>
@@ -180,8 +213,72 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Rebar Calculator</strong> — bezplatné nástroje na hmotnosť, výkazy a detailovanie výstuže.</p>
-    <p class="muted">Výsledky sú orientačné odhady. Overte ich s výkresmi konštrukcie a návrhovou normou.</p>
+    <div class="footer-silos-grid">
+      
+      <div class="footer-col">
+        <h4><a href="rebar-weight-calculators">Hmotnosť Kalkulačky</a></h4>
+        <ul>
+          <li><a href="rebar-weight-calculator">Kalkulačka Hmotnosti Výstuže</a></li>
+          <li><a href="rebar-area-calculator">Kalkulačka Plochy Ocele (Ast)</a></li>
+          <li><a href="rebar-quantity-calculator">Kalkulačka Množstva Výstuže</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="concrete-rebar-estimating-calculators">Výkazy Kalkulačky</a></h4>
+        <ul>
+          <li><a href="concrete-slab-rebar-calculator">Kalkulačka Výstuže Dosky</a></li>
+          <li><a href="footing-rebar-calculator">Kalkulačka Výstuže Pätky</a></li>
+          <li><a href="rebar-mat-grid-calculator">Kalkulačka Výstužnej Siete</a></li>
+          <li><a href="concrete-and-rebar-calculator">Kalkulačka Betónu a Výstuže</a></li>
+          <li><a href="driveway-rebar-calculator">Kalkulačka Výstuže Príjazdu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="structural-rebar-calculators">Prvky Kalkulačky</a></h4>
+        <ul>
+          <li><a href="column-rebar-calculator">Kalkulačka Výstuže Stĺpa</a></li>
+          <li><a href="beam-rebar-calculator">Kalkulačka Výstuže Nosníka</a></li>
+          <li><a href="wall-rebar-calculator">Kalkulačka Výstuže Steny</a></li>
+          <li><a href="pool-rebar-calculator">Kalkulačka Výstuže Bazéna</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="rebar-detailing-calculators">Detailovanie Kalkulačky</a></h4>
+        <ul>
+          <li><a href="rebar-spacing-calculator">Kalkulačka Rozstupu Prútov</a></li>
+          <li><a href="rebar-development-length-calculator">Kalkulačka Kotevnej Dĺžky</a></li>
+          <li><a href="rebar-lap-length-calculator">Kalkulačka Dĺžky Presahu</a></li>
+          <li><a href="rebar-hook-bend-cutting-length-calculator">Kalkulačka Hákov, Ohybov a Strihania</a></li>
+          <li><a href="stirrup-tie-cutting-length-calculator">Kalkulačka Strihania Strmeňov</a></li>
+          <li><a href="rebar-chair-calculator">Kalkulačka Dištančníkov</a></li>
+          <li><a href="rebar-tie-wire-calculator">Kalkulačka Viazacieho Drôtu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="rebar-cost-tonnage-calculators">Obchodné Kalkulačky</a></h4>
+        <ul>
+          <li><a href="rebar-cost-calculator">Kalkulačka Ceny Výstuže</a></li>
+          <li><a href="rebar-tonnage-calculator">Kalkulačka Tonáže Výstuže</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <a class="brand" href="/sk/"><span class="brand-mark">▦</span>
+          <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+        <p><strong>Rebar Calculator</strong> — bezplatné nástroje na hmotnosť, výkazy a detailovanie výstuže.</p>
+      </div>
+      <div class="footer-quick-links">
+        <a href="/sk/">Všetky kalkulačky</a>
+        <a href="/sk/#charts">Tabuľka hmotností</a>
+        <a href="/sk/#faq">FAQ</a>
+      </div>
+      <p class="muted">Výsledky sú orientačné odhady. Overte ich s výkresmi konštrukcie a návrhovou normou.</p>
+    </div>
   </div>
 </footer>
 <script>window.PAGE_LANG="sk";</script>

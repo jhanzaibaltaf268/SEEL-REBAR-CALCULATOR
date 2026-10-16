@@ -600,6 +600,12 @@ function calcDesc(id){
 function buildSidebar(){
   const nav = $("calc-tabs");
   if(!nav) return;
+  if(nav.children && nav.children.length > 0){
+    nav.querySelectorAll(".tab").forEach(t => {
+      t.classList.toggle("active", t.dataset.id === CURRENT);
+    });
+    return;
+  }
   const cats = {};
   Object.entries(CALCS).forEach(([id,c])=>{ (cats[c.cat] ||= []).push([id,c]); });
   nav.innerHTML = "";

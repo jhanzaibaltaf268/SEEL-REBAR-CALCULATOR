@@ -297,6 +297,196 @@ const siloOfCat = cat => SILOS.find(s => s.cat === cat);
 const siloOfId  = id  => siloOfCat(PAGES.find(p => p.id === id).cat);
 const siloPages = silo => PAGES.filter(p => p.cat === silo.cat);
 
+/* Workflow companion tools for hybrid cross-silo linking */
+const WORKFLOW_COMPANIONS = {
+  slab:     ["spacing", "chair", "tiewire", "cost"],
+  footing:  ["column", "chair", "develop", "cost"],
+  mat:      ["tiewire", "chair", "lap", "quantity"],
+  spacing:  ["slab", "wall", "area", "quantity"],
+  develop:  ["lap", "hook", "column", "beam"],
+  lap:      ["develop", "column", "beam", "hook"],
+  hook:     ["stirrup", "weight", "beam", "column"],
+  stirrup:  ["column", "beam", "hook", "weight"],
+  column:   ["stirrup", "lap", "footing", "cost"],
+  beam:     ["stirrup", "develop", "lap", "tonnage"],
+  cost:     ["weight", "tonnage", "concrete", "slab"],
+  tonnage:  ["cost", "weight", "quantity", "slab"],
+  area:     ["spacing", "beam", "column", "weight"],
+  quantity: ["slab", "concrete", "cost", "tonnage"],
+  concrete: ["slab", "driveway", "cost", "quantity"],
+  driveway: ["chair", "tiewire", "concrete", "cost"],
+  wall:     ["footing", "develop", "spacing", "cost"],
+  pool:     ["slab", "wall", "tiewire", "chair"],
+  chair:    ["slab", "footing", "driveway", "mat"],
+  tiewire:  ["slab", "mat", "pool", "chair"],
+  weight:   ["cost", "tonnage", "area", "quantity"]
+};
+
+const WORKFLOW_HEADING = {
+  en: "Recommended Workflow & Companion Tools",
+  es: "Herramientas recomendadas del proceso",
+  fr: "Outils recommandés pour votre métré",
+  de: "Empfohlene Werkzeuge für den Arbeitsablauf",
+  it: "Strumenti correlati consigliati",
+  pt: "Ferramentas complementares recomendadas",
+  nl: "Aanbevolen tools voor de workflow",
+  pl: "Powiązane narzędzia do obliczeń",
+  ro: "Instrumente recomandate pentru fluxul de lucru",
+  sv: "Rekommenderade verktyg för arbetsflödet",
+  cs: "Doporučené nástroje pro pracovní postup",
+  da: "Anbefalede værktøjer til arbejdsgangen",
+  el: "Προτεινόμενα συνδεδεμένα εργαλεία",
+  hu: "Ajánlott kapcsolódó eszközök",
+  fi: "Suositellut liittyvät työkalut",
+  bg: "Препоръчани свързани инструменти",
+  hr: "Preporučeni povezani alati",
+  sk: "Odporúčané súvisiace nástroje",
+  sl: "Priporočena povezana orodja",
+  et: "Soovitatavad seotud tööriistad",
+  lv: "Ieteicamie saistītie rīki",
+  lt: "Rekomenduojami susiję įrankiai"
+};
+
+const SILO_CONTENT = {
+  Weight: {
+    heroSub: "Precision steel rebar weight, tensile cross-sectional area (Ast), and area takeoff density tools based on standard steel density and international building codes.",
+    overview: `
+      <h2>Engineering Fundamentals: Rebar Weight & Takeoff</h2>
+      <p>Reinforcement bar weight calculations form the foundation of structural material takeoffs, freight planning, and steel procurement. Structural carbon steel has a nominal density of 7,850 kg/m³. In metric jurisdictions governed by standards such as IS 456, BS 4449, or Eurocode 2, the unit weight per metre follows the direct mathematical relationship of bar diameter: <code>kg/m = d² ÷ 162.28</code>, where d is the nominal diameter in millimetres.</p>
+      <p>For US imperial reinforcement complying with ASTM A615 and ASTM A706, nominal bar designations (#3 through #18) are defined by eighths of an inch up to #8, transitioning to equivalent area cylinders for larger bars. Commercial suppliers bill against certified ASTM weight-per-foot specifications rather than pure volumetric cylinders to account for mill deformation ribs.</p>
+    `,
+    table: [
+      { tool: "Rebar Weight Calculator", bestFor: "Single bars, cut lengths & custom schedules", output: "kg, lb, metric tons & US tons" },
+      { tool: "Rebar Area Calculator (Ast)", bestFor: "Tensile steel area & reinforcement ratios", output: "Single bar area, Ast (mm²/in²), steel %" },
+      { tool: "Rebar Quantity Calculator", bestFor: "Rapid square-metre / square-foot takeoffs", output: "kg/m², kg/ft², total pour weight" }
+    ],
+    faqs: [
+      ["How is the metric rebar weight formula d² / 162.28 derived?", "Unit weight equals cross-sectional area multiplied by steel density: Area = (π/4)·d². Multiplying by density (7,850 kg/m³) and converting units gives (π/4)·(d/1000)² · 7850 · 1m = d² / 162.28 kg/m."],
+      ["What is the weight of common metric rebar sizes?", "8mm = 0.395 kg/m, 10mm = 0.617 kg/m, 12mm = 0.888 kg/m, 16mm = 1.578 kg/m, 20mm = 2.466 kg/m, 25mm = 3.853 kg/m, and 32mm = 6.313 kg/m."],
+      ["How do I convert steel weight into purchase orders?", "Sum your schedule's total weight in kilograms and convert to metric tons (divide by 1,000) or US short tons (divide by 907.2). Always add 3–5% for cutting offcuts and lap splices."]
+    ],
+    next: {
+      title: "Next Steps in Your Estimating Workflow",
+      text: "Once you know your bar weights and area densities, estimate exact element reinforcement or calculate purchase budgets:",
+      links: [
+        { name: "Concrete Pour Estimating", slug: "concrete-rebar-estimating-calculators" },
+        { name: "Commercial Tonnage & Cost", slug: "rebar-cost-tonnage-calculators" }
+      ]
+    }
+  },
+  Estimating: {
+    heroSub: "Calculate reinforcement bar counts, grid spacing, two-way mesh weights, and total steel quantities for slabs, footings, mats, and driveways.",
+    overview: `
+      <h2>Concrete Reinforcement Estimating Best Practices</h2>
+      <p>Estimating rebar for cast-in-place concrete requires balancing three governing factors: structural grid spacing, clear cover offsets to prevent environmental corrosion, and lap splices required when spans exceed standard stock lengths (6m, 9m, or 12m). While rough preliminary budgets often assume rule-of-thumb ratios (80–120 kg of steel per m³ of slab concrete), actual construction ordering demands precise piece takeoffs.</p>
+      <p>In two-way slabs, foundation mats, and footings, rebar is placed in orthogonal layers (bottom tension mats and suspended top mats). Our estimating tools automatically deduct edge cover on both sides before dividing by design spacing, giving you the exact piece counts and total bar lengths needed for orders.</p>
+    `,
+    table: [
+      { tool: "Concrete Slab Rebar Calculator", bestFor: "Two-way slab grids & suspended floors", output: "Bar counts each way, total length, ties, weight" },
+      { tool: "Footing Rebar Calculator", bestFor: "Pad, isolated & strip footings", output: "Mesh bar schedule, edge clearances, total steel" },
+      { tool: "Rebar Mat & Grid Calculator", bestFor: "General rectangular reinforcement grids", output: "Grid layout, intersection count, linear metres" },
+      { tool: "Concrete & Rebar Estimator", bestFor: "Combined pour volume & steel takeoff", output: "Volume (m³/yd³) + estimated reinforcement kg" },
+      { tool: "Driveway Rebar Calculator", bestFor: "Residential & commercial vehicle pavements", output: "Crack-control single mat counts & total steel" }
+    ],
+    faqs: [
+      ["What rebar size and spacing is typical for a concrete slab?", "Residential ground slabs commonly specify #3 (10mm) or #4 (12mm) bars at 150mm to 300mm (6\" to 12\") centres both ways, placed on bar chairs to maintain cover."],
+      ["What is clear cover and why is it deducted from slab dimensions?", "Clear cover is the distance between outer rebar and the concrete face. It protects steel against moisture and fire. Subtracting double the edge cover ensures bars fit within formwork."],
+      ["How much extra rebar should be ordered for lap splices?", "Whenever a slab dimension exceeds standard bar length (typically 12m or 40ft), bars must overlap. Plan an additional 5% to 10% steel allowance for splices and cutting scrap."]
+    ],
+    next: {
+      title: "Next Steps in Your Estimating Workflow",
+      text: "With element quantities estimated, calculate fabrication cutting lengths or determine on-site accessory requirements:",
+      links: [
+        { name: "Detailing & Splicing Calculators", slug: "rebar-detailing-calculators" },
+        { name: "Commercial Cost & Tonnage", slug: "rebar-cost-tonnage-calculators" }
+      ]
+    }
+  },
+  Members: {
+    heroSub: "Design and take-off reinforcement steel for primary structural members: columns, beams, retaining walls, and swimming pool shells.",
+    overview: `
+      <h2>Reinforced Concrete Member Design Principles</h2>
+      <p>Structural members must resist complex combinations of axial gravity loads, bending moments, and lateral shear forces. Under IS 456, ACI 318, and Eurocode 2, member detailing separates steel into two vital functions: primary longitudinal reinforcement to resist tension and compression, and transverse confinement steel (stirrups and column ties) to prevent diagonal shear failure and bar buckling.</p>
+      <p>In columns, vertical bars are confined within closed lateral ties that maintain column core integrity under extreme seismic and axial loads. In beams, bottom tensile bars carry positive sagging moments, while top bars carry negative hogging moments over supports. Our member calculators compute both longitudinal and transverse steel simultaneously.</p>
+    `,
+    table: [
+      { tool: "Column Rebar Calculator", bestFor: "Rectangular columns & pedestals", output: "Vertical bars + lateral tie count, lap, total weight" },
+      { tool: "Beam Rebar Calculator", bestFor: "Reinforced concrete beams & lintels", output: "Top & bottom main bars, stirrups, total weight" },
+      { tool: "Wall Rebar Calculator", bestFor: "Retaining, basement & block walls", output: "Vertical stem steel, horizontal distribution bars" },
+      { tool: "Swimming Pool Rebar Calculator", bestFor: "Pool shells & retaining water panels", output: "Dual-direction wall panel mesh and steel weight" }
+    ],
+    faqs: [
+      ["What is the minimum number of vertical bars in a column?", "Rectangular columns require a minimum of 4 longitudinal bars (one in each corner); circular columns require at least 6 bars. Minimum bar diameter is generally 12mm (#4)."],
+      ["Why are beam stirrups spaced closer near support faces?", "Shear forces peak at beam supports and decrease towards midspan. Tighter stirrup spacing (100–150mm) near supports prevents 45-degree diagonal shear cracks."],
+      ["How are wall vertical bars anchored into footings?", "Vertical bars in retaining walls must be lapped with starter dowels anchored into the footing pad by at least the full development length (Ld) to transfer bending moment."]
+    ],
+    next: {
+      title: "Next Steps in Your Estimating Workflow",
+      text: "Need exact cutting lengths for column ties or beam splices? Use our detailing tools or calculate purchase budgets:",
+      links: [
+        { name: "Stirrup & Tie Cutting Length", slug: "stirrup-tie-cutting-length-calculator" },
+        { name: "Rebar Detailing Calculators", slug: "rebar-detailing-calculators" }
+      ]
+    }
+  },
+  Detailing: {
+    heroSub: "Engineering detailing tools for rebar development length (Ld), lap splices, hooks, bends, stirrup cutting lengths, chairs, and tie wire.",
+    overview: `
+      <h2>Structural Detailing, Splicing & Fabrication Standards</h2>
+      <p>Structural integrity depends entirely on the mechanical bond between ribbed steel and surrounding concrete. Under IS 456:2000 and ACI 318-19, development length (Ld) determines how deeply a bar must be embedded into concrete so that it can develop its full yield strength without pullout. When two bars are spliced, lap length specifications ensure forces transfer seamlessly across the joint through surrounding concrete in tension or compression.</p>
+      <p>Furthermore, bar bending stretches steel along outer curves, requiring standardized bend deductions (1d for 45°, 2d for 90°, 3d for 135°) to prevent fabricated cages from exceeding formwork dimensions. On-site physical accessories—bar chairs and 16-gauge black annealed tie wire—are essential to preserve designed cover and secure mesh during concrete vibration.</p>
+    `,
+    table: [
+      { tool: "Rebar Spacing Calculator", bestFor: "Member bar distributions & clear gaps", output: "Bar count, actual c/c spacing, clear concrete gap" },
+      { tool: "Rebar Development Length (Ld)", bestFor: "Full anchorage embedment depth", output: "Ld in mm, tension/compression multiples of dia" },
+      { tool: "Rebar Lap / Splice Length", bestFor: "Tensile & compressive bar splices", output: "Tension lap (max Ld, 30d) & compression lap" },
+      { tool: "Hook, Bend & Cutting Length", bestFor: "Fabricated bar cutting dimensions", output: "Straight length + 9d hooks − bend deductions" },
+      { tool: "Stirrup & Tie Cutting Length", bestFor: "Rectangular closed shear ties", output: "Perimeter + dual 135° seismic hooks − deductions" },
+      { tool: "Rebar Chair Calculator", bestFor: "Top mat elevation & support density", output: "Total chair count, chairs per m² / square foot" },
+      { tool: "Rebar Tie Wire Calculator", bestFor: "Grid tying consumables & weight", output: "Total wire length, coil count, weight in kg/lb" }
+    ],
+    faqs: [
+      ["What is the difference between development length and lap length?", "Development length is the anchorage embedment a single bar needs to reach yield strength in concrete. Lap length is the overlap between two spliced bars so stress safely transfers from one bar to another."],
+      ["Why do rebar cutting formulas subtract deductions for bends?", "Bending steel stretches outer fibres while compressing inner fibres, increasing overall external length. Deducting 1d for 45°, 2d for 90°, and 3d for 135° ensures bent bars fit accurately into formwork."],
+      ["How many bar chairs are needed per square metre?", "For typical slab reinforcement, plan 1.0 to 1.5 bar chairs per square metre (spacing chairs approximately 0.8m to 1.0m on a square grid) to prevent sagging under foot traffic."],
+      ["What gauge tie wire is used for reinforcing steel?", "16-gauge (approx. 1.6mm) soft annealed black wire is the international standard, requiring approximately 250mm to 350mm of wire per tied intersection."]
+    ],
+    next: {
+      title: "Next Steps in Your Estimating Workflow",
+      text: "Turn your detailed cutting and bending schedules into supplier orders and project cost estimates:",
+      links: [
+        { name: "Rebar Cost & Tonnage", slug: "rebar-cost-tonnage-calculators" },
+        { name: "Structural Member Calculators", slug: "structural-rebar-calculators" }
+      ]
+    }
+  },
+  Commercial: {
+    heroSub: "Turn bar schedules into purchase orders, freight deliveries, and budgets: convert piece schedules into metric/US tons and calculate costs with wastage.",
+    overview: `
+      <h2>Commercial Procurement: Rebar Tonnage & Costing</h2>
+      <p>Commercial rebar estimating bridges structural engineering drawings and steel mill procurement. Reinforcing steel is quoted and sold by weight—either per metric ton (1,000 kg / 2,204.6 lbs) in metric markets or per US short ton (2,000 lbs / 907.2 kg) or hundredweight (cwt) in US imperial markets.</p>
+      <p>Accurate purchasing requires accounting for standard mill stock lengths (typically 12 metres in metric jurisdictions, or 20ft / 40ft / 60ft in imperial markets). Because standard bars must be cut and spliced on site, a cutting scrap and wastage allowance (typically 3% to 5% for simple slabs, rising to 7% to 10% for complex frames) must be budgeted to prevent project shortages.</p>
+    `,
+    table: [
+      { tool: "Rebar Cost Calculator", bestFor: "Budgeting & purchase quotes", output: "Material total, wastage allowance cost, rate per ton" },
+      { tool: "Rebar Tonnage Calculator", bestFor: "Bulk procurement & mill orders", output: "Metric tons, US short tons, total kilograms" }
+    ],
+    faqs: [
+      ["What wastage percentage should be allowed when ordering rebar?", "Allow 3% to 5% for standard foundations, footings, and slabs. For complex structures with numerous bends, cutouts, and lap splices, budget 7% to 10% to prevent site shortages."],
+      ["What is the difference between a metric ton and a US short ton?", "A metric ton is exactly 1,000 kg (2,204.6 lbs). A US short ton is 2,000 lbs (907.185 kg). Always verify which ton unit your steel supplier's quote is based on."],
+      ["How many 12-metre bars are in one metric ton?", "For 12mm bar (0.888 kg/m), each 12m bar weighs ~10.66 kg, giving ~94 bars per ton. For 16mm bar (1.578 kg/m), each 12m bar weighs ~18.94 kg, giving ~53 bars per ton."]
+    ],
+    next: {
+      title: "Next Steps in Your Estimating Workflow",
+      text: "Need to revise bar schedules or calculate specific member steel before placing an order?",
+      links: [
+        { name: "Rebar Weight Calculators", slug: "rebar-weight-calculators" },
+        { name: "Concrete Pour Estimating", slug: "concrete-rebar-estimating-calculators" }
+      ]
+    }
+  }
+};
+
 /* "Calculators" noun + "Home" label per language (one place, no i18n edits) */
 const CALCSWORD = { en:"Calculators", es:"Calculadoras", fr:"Calculateurs", de:"Rechner",
   it:"Calcolatori", pt:"Calculadoras", nl:"Calculators", pl:"Kalkulatory", ro:"Calculatoare",
@@ -341,9 +531,15 @@ function langSwitch(curLang, slug){
       <div class="lang-menu">${LANGS.map(l=>`<a class="lang${l.code===curLang?' active':''}" hreflang="${l.code}" href="${switchHref(curLang,l.code,slug)}">${l.name}</a>`).join("")}</div>
     </details>`;
 }
-function header(lang, slug){
+
+function header(lang, slug, activeSiloSlug){
   const u = UI[lang];
   const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
+  const siloPills = SILOS.map(s => {
+    const isActive = activeSiloSlug === s.slug;
+    return `<a class="silo-bar-pill${isActive ? ' active' : ''}" href="${s.slug}"><b>${siloName(s, lang)}</b></a>`;
+  }).join("");
+
   return `
 <header class="site-header">
   <div class="wrap header-inner">
@@ -356,24 +552,75 @@ function header(lang, slug){
     </nav>
     ${langSwitch(lang, slug)}
   </div>
+  <div class="silos-bar">
+    <div class="wrap silos-bar-inner">
+      <span class="silos-bar-label">${CALCSWORD[lang]}:</span>
+      ${siloPills}
+    </div>
+  </div>
 </header>`;
 }
+
 function footer(lang){
   const u = UI[lang];
+  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
   const disclaimer = (lang === "en")
     ? "Results are estimates for material planning and ordering. Verify against your structural drawings and local building code before construction; safety-critical designs require review by a qualified engineer."
     : u.disclaimer;
+
+  const cols = SILOS.map(s => {
+    const children = siloPages(s);
+    const links = children.map(p => `<li><a href="${p.slug}">${pH1(p, lang)}</a></li>`).join("\n          ");
+    return `
+      <div class="footer-col">
+        <h4><a href="${s.slug}">${siloName(s, lang)} ${CALCSWORD[lang]}</a></h4>
+        <ul>
+          ${links}
+        </ul>
+      </div>`;
+  }).join("\n");
+
   return `
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Rebar Calculator</strong> — ${u.footer}</p>
-    <p class="muted">${disclaimer}</p>
+    <div class="footer-silos-grid">
+      ${cols}
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <a class="brand" href="${homeUrl}"><span class="brand-mark">▦</span>
+          <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+        <p><strong>Rebar Calculator</strong> — ${u.footer}</p>
+      </div>
+      <div class="footer-quick-links">
+        <a href="${homeUrl}">${u.allCalcs}</a>
+        <a href="${homeUrl}#charts">${u.weightChart}</a>
+        <a href="${homeUrl}#faq">${u.faq}</a>
+      </div>
+      <p class="muted">${disclaimer}</p>
+    </div>
   </div>
 </footer>`;
 }
-const toolShell = `
+
+function renderToolShell(lang, activeCalcId){
+  const cats = {};
+  PAGES.forEach(p => (cats[p.cat] ||= []).push(p));
+  const tabsHtml = Object.entries(cats).map(([cat, items]) => {
+    const isCatActive = activeCalcId && items.some(p => p.id === activeCalcId);
+    const catTitle = trG(cat, lang);
+    const links = items.map(p => {
+      const isActive = p.id === activeCalcId;
+      return `<a class="tab${isActive ? ' active' : ''}" href="${p.slug}" data-id="${p.id}">${pH1(p, lang)}</a>`;
+    }).join("\n      ");
+    return `<div class="tab-group${isCatActive ? ' active-group' : ''}">${catTitle}</div>\n      ${links}`;
+  }).join("\n    ");
+
+  return `
   <div class="calc-shell">
-    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator"></aside>
+    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator">
+      ${tabsHtml}
+    </aside>
     <div class="calc-panel">
       <h2 id="calc-title"></h2>
       <p id="calc-desc" class="calc-desc"></p>
@@ -389,6 +636,7 @@ const toolShell = `
       </div>
     </div>
   </div>`;
+}
 
 /* scripts block: assets live at root, so sub-dir pages prefix ../ */
 function scripts(lang, calcId){
@@ -399,8 +647,7 @@ function scripts(lang, calcId){
 <script src="${base}script.js"></script>`;
 }
 
-/* silo interlinking: a calculator page links only to its silo siblings
-   and up to the silo landing page (concentrates topical authority). */
+/* In-silo sibling cards */
 function relatedGrid(currentId, lang){
   const u = UI[lang];
   const silo = siloOfId(currentId);
@@ -415,6 +662,36 @@ function relatedGrid(currentId, lang){
       ${cards}
     </div>
     <p class="silo-all"><a href="${silo.slug}">↗ ${siloH1(silo,lang)}</a></p>
+  </section>`;
+}
+
+/* Cross-silo workflow companion cards */
+function workflowGrid(currentId, lang){
+  const companionIds = WORKFLOW_COMPANIONS[currentId] || [];
+  if (!companionIds.length) return "";
+  const companionPages = companionIds.map(id => PAGES.find(p => p.id === id)).filter(Boolean);
+  
+  const heading = WORKFLOW_HEADING[lang] || WORKFLOW_HEADING.en;
+  const subtext = (lang === "en")
+    ? "Complete your reinforcement estimating sequence with these connected tools:"
+    : "";
+
+  const cards = companionPages.map(p => {
+    const pSilo = siloOfId(p.id);
+    return `<a class="rel-card workflow-card" href="${p.slug}">
+        <span class="workflow-badge">${siloName(pSilo, lang)}</span>
+        <b>${pH1(p, lang)}</b>
+        <span>${pDesc(p, lang).slice(0, 52)}…</span>
+      </a>`;
+  }).join("\n      ");
+
+  return `
+  <section class="related workflow-section">
+    <h2>⚡ ${heading}</h2>
+    ${subtext ? `<p class="workflow-sub">${subtext}</p>` : ''}
+    <div class="related-grid">
+      ${cards}
+    </div>
   </section>`;
 }
 
@@ -493,7 +770,7 @@ ${altLinks(p.slug)}
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, p.slug)}
+${header(lang, p.slug, silo.slug)}
 ${crumbTrail}
 <section class="hero">
   <div class="wrap">
@@ -503,8 +780,9 @@ ${crumbTrail}
 </section>
 
 <main class="wrap" id="calculator">
-${toolShell}
+${renderToolShell(lang, p.id)}
 ${relatedGrid(p.id, lang)}
+${workflowGrid(p.id, lang)}
 
   <section class="content-block">
     <h2>${u.howtoH}: ${cleanH1}</h2>
@@ -530,13 +808,19 @@ ${scripts(lang, p.id)}
 function renderSilo(silo, lang){
   const base = lang==="en" ? "" : "../";
   const u = UI[lang];
+  const homeUrl = lang==="en" ? "/" : `/${dirOf(lang)}/`;
   const name = siloName(silo,lang), h1 = siloH1(silo,lang);
   const pages = siloPages(silo);
   const title = `${h1} | ${HUB_H1[lang]}`;
-  const desc = `${CALCSWORD[lang]}: ${pages.map(p=>pH1(p,lang)).join(", ")}`.slice(0,158);
+  const sc = SILO_CONTENT[silo.cat] || {};
+  const desc = (lang === "en" && sc.heroSub)
+    ? sc.heroSub
+    : `${CALCSWORD[lang]}: ${pages.map(p=>pH1(p,lang)).join(", ")}`.slice(0,158);
+
   const cards = pages.map(p =>
     `<a class="rel-card" href="${p.slug}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,70)}…</span></a>`
   ).join("\n      ");
+
   const crumbTrail = crumbs(lang, [
     {name:HOMEWORD[lang], slug:"index"},
     {name:name}
@@ -547,6 +831,42 @@ function renderSilo(silo, lang){
   ]);
   const itemList = JSON.stringify({"@context":"https://schema.org","@type":"ItemList",
     itemListElement: pages.map((p,i)=>({"@type":"ListItem",position:i+1,name:pH1(p,lang),url:urlFor(lang,p.slug)}))});
+
+  const faqs = (lang === "en" && sc.faqs)
+    ? sc.faqs
+    : TPL[lang].faq(h1, desc);
+  const faqHtml = faqs.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><p>${a}</p></details>`).join("\n    ");
+
+  const matrixRows = (lang === "en" && sc.table)
+    ? sc.table.map(row => {
+        const matchingPage = pages.find(p => p.h1.includes(row.tool.split(" ")[0]) || row.tool.includes(p.h1.split(" ")[0])) || pages[0];
+        return `<tr>
+          <td><a href="${matchingPage.slug}"><strong>${row.tool}</strong></a></td>
+          <td>${row.bestFor}</td>
+          <td><code>${row.output}</code></td>
+        </tr>`;
+      }).join("\n        ")
+    : pages.map(p => `<tr>
+          <td><a href="${p.slug}"><strong>${pH1(p, lang)}</strong></a></td>
+          <td>${pDesc(p, lang).slice(0, 65)}…</td>
+          <td><code>${trG("Quantity (pieces)", lang)} / ${trG("Total weight", lang)}</code></td>
+        </tr>`).join("\n        ");
+
+  const nextStepsBlock = (lang === "en" && sc.next)
+    ? `
+  <section class="silo-next-steps">
+    <h3>🚀 ${sc.next.title}</h3>
+    <p>${sc.next.text}</p>
+    <div class="silo-next-links">
+      ${sc.next.links.map(l => `<a class="silo-btn-next" href="${l.slug}">↗ ${l.name}</a>`).join("")}
+    </div>
+  </section>`
+    : "";
+
+  const enOverviewBlock = (lang === "en" && sc.overview)
+    ? `<section class="content-block silo-hub-content">${sc.overview}</section>`
+    : "";
+
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -564,10 +884,11 @@ ${altLinks(silo.slug)}
 <meta property="og:type" content="website" />
 <script type="application/ld+json">${crumbLd}</script>
 <script type="application/ld+json">${itemList}</script>
+<script type="application/ld+json">${faqJsonLd(faqs)}</script>
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, silo.slug)}
+${header(lang, silo.slug, silo.slug)}
 ${crumbTrail}
 <section class="hero">
   <div class="wrap">
@@ -578,11 +899,40 @@ ${crumbTrail}
 
 <main class="wrap">
   <section class="related">
+    <h2>${CALCSWORD[lang]} in this Category</h2>
     <div class="related-grid">
       ${cards}
     </div>
-    <p class="silo-all"><a href="index.html">↗ ${u.all}</a></p>
   </section>
+
+  ${enOverviewBlock}
+
+  <section class="content-block">
+    <h2>Calculator Selection Guide</h2>
+    <div class="formula-table">
+      <table class="silo-matrix-table">
+        <thead>
+          <tr>
+            <th>Calculator</th>
+            <th>Best For</th>
+            <th>Primary Outputs</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${matrixRows}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  ${nextStepsBlock}
+
+  <section id="faq" class="content-block">
+    <h2>${name} — ${u.faq}</h2>
+    ${faqHtml}
+  </section>
+
+  <p class="silo-all" style="text-align:center;margin-top:2rem"><a href="${homeUrl}">↗ ${u.all}</a></p>
 </main>
 ${footer(lang)}
 </body>
@@ -633,13 +983,13 @@ function renderHub(lang){
 
   <section class="content-block">
     <h2>Why One Calculator Isn't Enough</h2>
-    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it:</p>
+    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it across 5 dedicated silos:</p>
     <ul>
-      <li><strong>Weight & Takeoff</strong> — how much steel, by bar size and length</li>
-      <li><strong>Estimating</strong> — how much rebar a specific pour needs (slab, footing, driveway, mat)</li>
-      <li><strong>Detailing</strong> — spacing, development length, lap length, cutting length, chairs, tie wire</li>
-      <li><strong>Members</strong> — column, beam, wall, and pool-specific reinforcement</li>
-      <li><strong>Commercial</strong> — turning a bar schedule into tonnage and cost</li>
+      <li><a href="/rebar-weight-calculators"><strong>Weight & Takeoff</strong></a> — how much steel, by bar size and length (use the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a> or <a href="/rebar-area-calculator">Rebar Area Calculator</a>)</li>
+      <li><a href="/concrete-rebar-estimating-calculators"><strong>Pour Estimating</strong></a> — how much rebar a specific pour needs (<a href="/concrete-slab-rebar-calculator">slab</a>, <a href="/footing-rebar-calculator">footing</a>, <a href="/driveway-rebar-calculator">driveway</a>, <a href="/rebar-mat-grid-calculator">mat</a>)</li>
+      <li><a href="/rebar-detailing-calculators"><strong>Detailing & Splicing</strong></a> — <a href="/rebar-spacing-calculator">spacing</a>, <a href="/rebar-development-length-calculator">development length</a>, <a href="/rebar-lap-length-calculator">lap length</a>, <a href="/rebar-hook-bend-cutting-length-calculator">cutting length</a>, <a href="/rebar-chair-calculator">chairs</a>, <a href="/rebar-tie-wire-calculator">tie wire</a></li>
+      <li><a href="/structural-rebar-calculators"><strong>Structural Members</strong></a> — <a href="/column-rebar-calculator">column</a>, <a href="/beam-rebar-calculator">beam</a>, <a href="/wall-rebar-calculator">wall</a>, and <a href="/pool-rebar-calculator">pool</a>-specific reinforcement</li>
+      <li><a href="/rebar-cost-tonnage-calculators"><strong>Commercial & Procurement</strong></a> — turning a bar schedule into <a href="/rebar-tonnage-calculator">tonnage</a> and <a href="/rebar-cost-calculator">cost</a></li>
     </ul>
   </section>
 
@@ -647,13 +997,13 @@ function renderHub(lang){
     <h2>How Rebar Weight is Calculated</h2>
     <p>For metric bar sizes, weight per metre follows a fixed relationship to the bar's diameter:</p>
     <p class="formula-callout"><strong>kg/m = d² ÷ 162.28</strong><br>where d is the bar diameter in millimetres.</p>
-    <p>A 12mm bar weighs approximately 0.888 kg per metre; a 20mm bar weighs approximately 2.466 kg per metre. Multiply that figure by total bar length, then by quantity, to get total steel weight for a schedule.</p>
-    <p>For imperial bar sizes (#3–#18), use the published ASTM weight-per-foot table rather than the theoretical formula — mill tolerances and the ribbed profile mean the certified weight differs slightly from a pure cylinder calculation, and that certified figure is what a supplier will actually bill against.</p>
+    <p>A 12mm bar weighs approximately 0.888 kg per metre; a 20mm bar weighs approximately 2.466 kg per metre. Multiply that figure by total bar length, then by quantity, to get total steel weight for a schedule. Calculate instantly with the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a>.</p>
+    <p>For imperial bar sizes (#3–#18), use the published <a href="#charts">ASTM weight-per-foot table</a> rather than the theoretical formula — mill tolerances and the ribbed profile mean the certified weight differs slightly from a pure cylinder calculation, and that certified figure is what a supplier will actually bill against.</p>
   </section>
 
   <section class="content-block">
-    <h2>Worked Example</h2>
-    <p>A 6m × 4m slab, 12mm bars, 200mm spacing each way, 40mm edge cover:</p>
+    <h2>Worked Example: Concrete Slab Steel</h2>
+    <p>A 6m × 4m slab, 12mm bars, 200mm spacing each way, 40mm edge cover (try it in the <a href="/concrete-slab-rebar-calculator">Concrete Slab Rebar Calculator</a>):</p>
     <ul>
       <li>Bars along the length: floor((6 − 2×0.04) / 0.2) + 1 = 30 bars</li>
       <li>Bars along the width: floor((4 − 2×0.04) / 0.2) + 1 = 20 bars</li>
@@ -690,7 +1040,7 @@ ${altLinks('index')}
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, 'index')}
+${header(lang, 'index', null)}
 <section class="hero">
   <div class="wrap">
     <h1>${hubH1}</h1>
@@ -700,7 +1050,7 @@ ${header(lang, 'index')}
 </section>
 
 <main class="wrap" id="calculator">
-${toolShell}
+${renderToolShell(lang, null)}
 ${enEducationSections}
   <section class="related">
     <h2>${u.all}</h2>

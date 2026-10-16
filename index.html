@@ -71,6 +71,12 @@
       <div class="lang-menu"><a class="lang active" hreflang="en" href="/">English</a><a class="lang" hreflang="es" href="/es">Español</a><a class="lang" hreflang="fr" href="/fr">Français</a><a class="lang" hreflang="de" href="/de">Deutsch</a><a class="lang" hreflang="it" href="/it">Italiano</a><a class="lang" hreflang="pt" href="/pt">Português</a><a class="lang" hreflang="nl" href="/nl">Nederlands</a><a class="lang" hreflang="pl" href="/pl">Polski</a><a class="lang" hreflang="ro" href="/ro">Română</a><a class="lang" hreflang="sv" href="/sv">Svenska</a><a class="lang" hreflang="cs" href="/cs">Čeština</a><a class="lang" hreflang="da" href="/da">Dansk</a><a class="lang" hreflang="el" href="/el">Ελληνικά</a><a class="lang" hreflang="hu" href="/hu">Magyar</a><a class="lang" hreflang="fi" href="/fi">Suomi</a><a class="lang" hreflang="bg" href="/bg">Български</a><a class="lang" hreflang="hr" href="/hr">Hrvatski</a><a class="lang" hreflang="sk" href="/sk">Slovenčina</a><a class="lang" hreflang="sl" href="/sl">Slovenščina</a><a class="lang" hreflang="et" href="/et">Eesti</a><a class="lang" hreflang="lv" href="/lv">Latviešu</a><a class="lang" hreflang="lt" href="/lt">Lietuvių</a></div>
     </details>
   </div>
+  <div class="silos-bar">
+    <div class="wrap silos-bar-inner">
+      <span class="silos-bar-label">Calculators:</span>
+      <a class="silo-bar-pill" href="rebar-weight-calculators"><b>Weight</b></a><a class="silo-bar-pill" href="concrete-rebar-estimating-calculators"><b>Estimating</b></a><a class="silo-bar-pill" href="structural-rebar-calculators"><b>Members</b></a><a class="silo-bar-pill" href="rebar-detailing-calculators"><b>Detailing</b></a><a class="silo-bar-pill" href="rebar-cost-tonnage-calculators"><b>Commercial</b></a>
+    </div>
+  </div>
 </header>
 <section class="hero">
   <div class="wrap">
@@ -83,7 +89,34 @@
 <main class="wrap" id="calculator">
 
   <div class="calc-shell">
-    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator"></aside>
+    <aside class="calc-tabs" id="calc-tabs" role="tablist" aria-label="Choose a calculator">
+      <div class="tab-group">Weight</div>
+      <a class="tab" href="rebar-weight-calculator" data-id="weight">Rebar Weight Calculator</a>
+      <a class="tab" href="rebar-area-calculator" data-id="area">Rebar Area Calculator (Ast)</a>
+      <a class="tab" href="rebar-quantity-calculator" data-id="quantity">Rebar Quantity & Takeoff Calculator</a>
+    <div class="tab-group">Estimating</div>
+      <a class="tab" href="concrete-slab-rebar-calculator" data-id="slab">Concrete Slab Rebar Calculator</a>
+      <a class="tab" href="footing-rebar-calculator" data-id="footing">Footing Rebar Calculator</a>
+      <a class="tab" href="rebar-mat-grid-calculator" data-id="mat">Rebar Mat & Grid Calculator</a>
+      <a class="tab" href="concrete-and-rebar-calculator" data-id="concrete">Concrete & Rebar Estimator</a>
+      <a class="tab" href="driveway-rebar-calculator" data-id="driveway">Driveway Rebar Calculator</a>
+    <div class="tab-group">Detailing</div>
+      <a class="tab" href="rebar-spacing-calculator" data-id="spacing">Rebar Spacing Calculator</a>
+      <a class="tab" href="rebar-development-length-calculator" data-id="develop">Rebar Development Length Calculator</a>
+      <a class="tab" href="rebar-lap-length-calculator" data-id="lap">Rebar Lap / Splice Length Calculator</a>
+      <a class="tab" href="rebar-hook-bend-cutting-length-calculator" data-id="hook">Rebar Hook, Bend & Cutting Length Calculator</a>
+      <a class="tab" href="stirrup-tie-cutting-length-calculator" data-id="stirrup">Stirrup & Tie Cutting Length Calculator</a>
+      <a class="tab" href="rebar-chair-calculator" data-id="chair">Rebar Chair / Bar Support Calculator</a>
+      <a class="tab" href="rebar-tie-wire-calculator" data-id="tiewire">Rebar Tie Wire Calculator</a>
+    <div class="tab-group">Members</div>
+      <a class="tab" href="column-rebar-calculator" data-id="column">Column Rebar Calculator</a>
+      <a class="tab" href="beam-rebar-calculator" data-id="beam">Beam Rebar Calculator</a>
+      <a class="tab" href="wall-rebar-calculator" data-id="wall">Wall Rebar Calculator</a>
+      <a class="tab" href="pool-rebar-calculator" data-id="pool">Swimming Pool Rebar Calculator</a>
+    <div class="tab-group">Commercial</div>
+      <a class="tab" href="rebar-cost-calculator" data-id="cost">Rebar Cost Calculator</a>
+      <a class="tab" href="rebar-tonnage-calculator" data-id="tonnage">Rebar Tonnage Calculator</a>
+    </aside>
     <div class="calc-panel">
       <h2 id="calc-title"></h2>
       <p id="calc-desc" class="calc-desc"></p>
@@ -107,13 +140,13 @@
 
   <section class="content-block">
     <h2>Why One Calculator Isn't Enough</h2>
-    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it:</p>
+    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it across 5 dedicated silos:</p>
     <ul>
-      <li><strong>Weight & Takeoff</strong> — how much steel, by bar size and length</li>
-      <li><strong>Estimating</strong> — how much rebar a specific pour needs (slab, footing, driveway, mat)</li>
-      <li><strong>Detailing</strong> — spacing, development length, lap length, cutting length, chairs, tie wire</li>
-      <li><strong>Members</strong> — column, beam, wall, and pool-specific reinforcement</li>
-      <li><strong>Commercial</strong> — turning a bar schedule into tonnage and cost</li>
+      <li><a href="/rebar-weight-calculators"><strong>Weight & Takeoff</strong></a> — how much steel, by bar size and length (use the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a> or <a href="/rebar-area-calculator">Rebar Area Calculator</a>)</li>
+      <li><a href="/concrete-rebar-estimating-calculators"><strong>Pour Estimating</strong></a> — how much rebar a specific pour needs (<a href="/concrete-slab-rebar-calculator">slab</a>, <a href="/footing-rebar-calculator">footing</a>, <a href="/driveway-rebar-calculator">driveway</a>, <a href="/rebar-mat-grid-calculator">mat</a>)</li>
+      <li><a href="/rebar-detailing-calculators"><strong>Detailing & Splicing</strong></a> — <a href="/rebar-spacing-calculator">spacing</a>, <a href="/rebar-development-length-calculator">development length</a>, <a href="/rebar-lap-length-calculator">lap length</a>, <a href="/rebar-hook-bend-cutting-length-calculator">cutting length</a>, <a href="/rebar-chair-calculator">chairs</a>, <a href="/rebar-tie-wire-calculator">tie wire</a></li>
+      <li><a href="/structural-rebar-calculators"><strong>Structural Members</strong></a> — <a href="/column-rebar-calculator">column</a>, <a href="/beam-rebar-calculator">beam</a>, <a href="/wall-rebar-calculator">wall</a>, and <a href="/pool-rebar-calculator">pool</a>-specific reinforcement</li>
+      <li><a href="/rebar-cost-tonnage-calculators"><strong>Commercial & Procurement</strong></a> — turning a bar schedule into <a href="/rebar-tonnage-calculator">tonnage</a> and <a href="/rebar-cost-calculator">cost</a></li>
     </ul>
   </section>
 
@@ -121,13 +154,13 @@
     <h2>How Rebar Weight is Calculated</h2>
     <p>For metric bar sizes, weight per metre follows a fixed relationship to the bar's diameter:</p>
     <p class="formula-callout"><strong>kg/m = d² ÷ 162.28</strong><br>where d is the bar diameter in millimetres.</p>
-    <p>A 12mm bar weighs approximately 0.888 kg per metre; a 20mm bar weighs approximately 2.466 kg per metre. Multiply that figure by total bar length, then by quantity, to get total steel weight for a schedule.</p>
-    <p>For imperial bar sizes (#3–#18), use the published ASTM weight-per-foot table rather than the theoretical formula — mill tolerances and the ribbed profile mean the certified weight differs slightly from a pure cylinder calculation, and that certified figure is what a supplier will actually bill against.</p>
+    <p>A 12mm bar weighs approximately 0.888 kg per metre; a 20mm bar weighs approximately 2.466 kg per metre. Multiply that figure by total bar length, then by quantity, to get total steel weight for a schedule. Calculate instantly with the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a>.</p>
+    <p>For imperial bar sizes (#3–#18), use the published <a href="#charts">ASTM weight-per-foot table</a> rather than the theoretical formula — mill tolerances and the ribbed profile mean the certified weight differs slightly from a pure cylinder calculation, and that certified figure is what a supplier will actually bill against.</p>
   </section>
 
   <section class="content-block">
-    <h2>Worked Example</h2>
-    <p>A 6m × 4m slab, 12mm bars, 200mm spacing each way, 40mm edge cover:</p>
+    <h2>Worked Example: Concrete Slab Steel</h2>
+    <p>A 6m × 4m slab, 12mm bars, 200mm spacing each way, 40mm edge cover (try it in the <a href="/concrete-slab-rebar-calculator">Concrete Slab Rebar Calculator</a>):</p>
     <ul>
       <li>Bars along the length: floor((6 − 2×0.04) / 0.2) + 1 = 30 bars</li>
       <li>Bars along the width: floor((4 − 2×0.04) / 0.2) + 1 = 20 bars</li>
@@ -227,8 +260,72 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Rebar Calculator</strong> — free steel rebar weight, estimating & detailing tools.</p>
-    <p class="muted">Results are estimates for material planning and ordering. Verify against your structural drawings and local building code before construction; safety-critical designs require review by a qualified engineer.</p>
+    <div class="footer-silos-grid">
+      
+      <div class="footer-col">
+        <h4><a href="rebar-weight-calculators">Weight Calculators</a></h4>
+        <ul>
+          <li><a href="rebar-weight-calculator">Rebar Weight Calculator</a></li>
+          <li><a href="rebar-area-calculator">Rebar Area Calculator (Ast)</a></li>
+          <li><a href="rebar-quantity-calculator">Rebar Quantity & Takeoff Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="concrete-rebar-estimating-calculators">Estimating Calculators</a></h4>
+        <ul>
+          <li><a href="concrete-slab-rebar-calculator">Concrete Slab Rebar Calculator</a></li>
+          <li><a href="footing-rebar-calculator">Footing Rebar Calculator</a></li>
+          <li><a href="rebar-mat-grid-calculator">Rebar Mat & Grid Calculator</a></li>
+          <li><a href="concrete-and-rebar-calculator">Concrete & Rebar Estimator</a></li>
+          <li><a href="driveway-rebar-calculator">Driveway Rebar Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="structural-rebar-calculators">Members Calculators</a></h4>
+        <ul>
+          <li><a href="column-rebar-calculator">Column Rebar Calculator</a></li>
+          <li><a href="beam-rebar-calculator">Beam Rebar Calculator</a></li>
+          <li><a href="wall-rebar-calculator">Wall Rebar Calculator</a></li>
+          <li><a href="pool-rebar-calculator">Swimming Pool Rebar Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="rebar-detailing-calculators">Detailing Calculators</a></h4>
+        <ul>
+          <li><a href="rebar-spacing-calculator">Rebar Spacing Calculator</a></li>
+          <li><a href="rebar-development-length-calculator">Rebar Development Length Calculator</a></li>
+          <li><a href="rebar-lap-length-calculator">Rebar Lap / Splice Length Calculator</a></li>
+          <li><a href="rebar-hook-bend-cutting-length-calculator">Rebar Hook, Bend & Cutting Length Calculator</a></li>
+          <li><a href="stirrup-tie-cutting-length-calculator">Stirrup & Tie Cutting Length Calculator</a></li>
+          <li><a href="rebar-chair-calculator">Rebar Chair / Bar Support Calculator</a></li>
+          <li><a href="rebar-tie-wire-calculator">Rebar Tie Wire Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="rebar-cost-tonnage-calculators">Commercial Calculators</a></h4>
+        <ul>
+          <li><a href="rebar-cost-calculator">Rebar Cost Calculator</a></li>
+          <li><a href="rebar-tonnage-calculator">Rebar Tonnage Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <a class="brand" href="/"><span class="brand-mark">▦</span>
+          <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+        <p><strong>Rebar Calculator</strong> — free steel rebar weight, estimating & detailing tools.</p>
+      </div>
+      <div class="footer-quick-links">
+        <a href="/">All calculators</a>
+        <a href="/#charts">Weight chart</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <p class="muted">Results are estimates for material planning and ordering. Verify against your structural drawings and local building code before construction; safety-critical designs require review by a qualified engineer.</p>
+    </div>
   </div>
 </footer>
 <script>window.PAGE_LANG="en";</script>
