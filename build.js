@@ -1238,6 +1238,25 @@ LANGS.forEach(l => {
 /* Write vercel.json with cleanUrls and 301 redirects */
 const vercelConfig = {
   cleanUrls: true,
+  headers: [
+    {
+      source: "/(.*sitemap.*\\.xml)",
+      headers: [
+        {
+          key: "Cache-Control",
+          value: "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0"
+        },
+        {
+          key: "Pragma",
+          value: "no-cache"
+        },
+        {
+          key: "Expires",
+          value: "0"
+        }
+      ]
+    }
+  ],
   redirects: redirects
 };
 fs.writeFileSync(path.join(OUT, "vercel.json"), JSON.stringify(vercelConfig, null, 2) + "\n");
