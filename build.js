@@ -1292,15 +1292,17 @@ function buildEnglishSitemapSection() {
   chunks.push("  <!-- ============================================================ -->");
   chunks.push("  <!-- ENGLISH PAGES (Primary Hub, Silos, and Calculators)          -->");
   chunks.push("  <!-- ============================================================ -->");
+  chunks.push("  <!-- Main Hub / Homepage -->");
   chunks.push(renderSitemapUrl("index", null, "en", today, "weekly", "1.0"));
 
+  chunks.push("\n  <!-- Category Silo Hub Pages (5 Silos in Sequence) -->");
   SILOS.forEach(silo => {
-    chunks.push("\n  <!-- Silo: " + silo.cat + " Calculators -->");
     chunks.push(renderSitemapUrl("silo", silo, "en", today, "weekly", "0.8"));
-    const children = PAGES.filter(p => p.cat === silo.cat);
-    children.forEach(p => {
-      chunks.push(renderSitemapUrl("page", p, "en", today, "monthly", "0.6"));
-    });
+  });
+
+  chunks.push("\n  <!-- Calculators in Sequential Order (1 to 21) -->");
+  PAGES.forEach(p => {
+    chunks.push(renderSitemapUrl("page", p, "en", today, "monthly", "0.6"));
   });
   return chunks.join("\n");
 }
@@ -1312,14 +1314,17 @@ function buildInternationalSitemapSection() {
     chunks.push("\n  <!-- ============================================================ -->");
     chunks.push("  <!-- Language: " + langObj.name + " (" + code + ") -->");
     chunks.push("  <!-- ============================================================ -->");
+    chunks.push("  <!-- Homepage (" + code + ") -->");
     chunks.push(renderSitemapUrl("index", null, code, today, "weekly", "0.7"));
+
+    chunks.push("\n  <!-- Category Silo Hub Pages (" + code + ") -->");
     SILOS.forEach(silo => {
-      chunks.push("\n  <!-- Silo: " + silo.cat + " Calculators -->");
       chunks.push(renderSitemapUrl("silo", silo, code, today, "weekly", "0.6"));
-      const children = PAGES.filter(p => p.cat === silo.cat);
-      children.forEach(p => {
-        chunks.push(renderSitemapUrl("page", p, code, today, "monthly", "0.5"));
-      });
+    });
+
+    chunks.push("\n  <!-- Calculators in Sequential Order (1 to 21, " + code + ") -->");
+    PAGES.forEach(p => {
+      chunks.push(renderSitemapUrl("page", p, code, today, "monthly", "0.5"));
     });
   });
   return chunks.join("\n");
