@@ -52,21 +52,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://steelrebarcalculator.com/structural-rebar-calculators</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/elementos-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/elements-calculateurs"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bauteile-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/elementi-calcolatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/elementos-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/onderdelen-calculators"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/elementy-kalkulatory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://steelrebarcalculator.com/rebar-detailing-calculators</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-detailing-calculators"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/detallado-calculadoras"/>
@@ -77,6 +62,21 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/detaillering-calculators"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/szczegolowanie-kalkulatory"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-detailing-calculators"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/structural-rebar-calculators</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/elementos-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/elements-calculateurs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bauteile-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/elementi-calcolatori"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/elementos-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/onderdelen-calculators"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/elementy-kalkulatory"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -98,6 +98,8 @@
   </url>
 
   <!-- Calculators in Sequential Order (1 to 21) -->
+
+  <!-- Weight Calculators -->
   <url>
     <loc>https://steelrebarcalculator.com/rebar-weight-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-weight-calculator"/>
@@ -113,6 +115,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/rebar-area-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-area-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-area-de-acero-ast"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-aire-d-acier-ast"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/stahlflaechen-rechner-ast"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-area-d-acciaio-ast"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-area-de-aco-ast"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/staaloppervlak-calculator-ast"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-pola-stali-ast"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-area-calculator"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/rebar-quantity-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-quantity-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-cantidad-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-quantite-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsmengen-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-quantita-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-quantidade-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningshoeveelheid-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-ilosci-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-quantity-calculator"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Estimating Calculators -->
   <url>
     <loc>https://steelrebarcalculator.com/concrete-slab-rebar-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-slab-rebar-calculator"/>
@@ -158,6 +192,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/concrete-and-rebar-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/estimador-de-hormigon-y-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/estimateur-beton-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/beton-bewehrungs-schaetzer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/stimatore-calcestruzzo-e-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/estimador-de-concreto-e-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/beton-wapeningschatter"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-betonu-i-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/driveway-rebar-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/driveway-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-entradas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-d-allee"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsrechner-fuer-einfahrten"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-vialetto"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-entrada"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/opritwapening-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-podjazdu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/driveway-rebar-calculator"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Detailing Calculators -->
   <url>
     <loc>https://steelrebarcalculator.com/rebar-spacing-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-spacing-calculator"/>
@@ -234,6 +300,38 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://steelrebarcalculator.com/rebar-chair-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-chair-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-soportes-separadores"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-cales-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/abstandhalter-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-distanziatori"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-espacadores"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/afstandhouder-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-dystansow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-chair-calculator"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/rebar-tie-wire-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-alambre-de-atar"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-fil-a-ligaturer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bindedraht-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-filo-di-legatura"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-arame-de-amarrar"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/binddraad-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-drutu-wiazalkowego"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"/>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Members Calculators -->
+  <url>
     <loc>https://steelrebarcalculator.com/column-rebar-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/column-rebar-calculator"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-columnas"/>
@@ -259,96 +357,6 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/balkwapening-calculator"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-belki"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/beam-rebar-calculator"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://steelrebarcalculator.com/rebar-cost-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-coste-de-acero"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-cout-d-armature"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungskosten-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-costo-acciaio"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-custo-de-aco"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningskosten-calculator"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-kosztu-zbrojenia"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://steelrebarcalculator.com/rebar-tonnage-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-tonelaje-de-acero"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-tonnage-d-armature"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungstonnage-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-tonnellaggio-acciaio"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-tonelagem-de-aco"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningstonnage-calculator"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-tonazu-zbrojenia"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://steelrebarcalculator.com/rebar-area-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-area-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-area-de-acero-ast"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-aire-d-acier-ast"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/stahlflaechen-rechner-ast"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-area-d-acciaio-ast"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-area-de-aco-ast"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/staaloppervlak-calculator-ast"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-pola-stali-ast"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-area-calculator"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://steelrebarcalculator.com/rebar-quantity-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-quantity-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-cantidad-de-acero"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-quantite-d-armature"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsmengen-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-quantita-acciaio"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-quantidade-de-aco"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningshoeveelheid-calculator"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-ilosci-zbrojenia"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-quantity-calculator"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://steelrebarcalculator.com/concrete-and-rebar-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/estimador-de-hormigon-y-acero"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/estimateur-beton-armature"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/beton-bewehrungs-schaetzer"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/stimatore-calcestruzzo-e-acciaio"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/estimador-de-concreto-e-aco"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/beton-wapeningschatter"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-betonu-i-zbrojenia"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"/>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://steelrebarcalculator.com/driveway-rebar-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/driveway-rebar-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-entradas"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-d-allee"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsrechner-fuer-einfahrten"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-vialetto"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-entrada"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/opritwapening-calculator"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-podjazdu"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/driveway-rebar-calculator"/>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -383,32 +391,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Commercial Calculators -->
   <url>
-    <loc>https://steelrebarcalculator.com/rebar-chair-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-chair-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-soportes-separadores"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-cales-d-armature"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/abstandhalter-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-distanziatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-espacadores"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/afstandhouder-calculator"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-dystansow"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-chair-calculator"/>
+    <loc>https://steelrebarcalculator.com/rebar-cost-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-coste-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-cout-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungskosten-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-costo-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-custo-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningskosten-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-kosztu-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://steelrebarcalculator.com/rebar-tie-wire-calculator</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-alambre-de-atar"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-fil-a-ligaturer"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bindedraht-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-filo-di-legatura"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-arame-de-amarrar"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/binddraad-calculator"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-drutu-wiazalkowego"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"/>
+    <loc>https://steelrebarcalculator.com/rebar-tonnage-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-tonelaje-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-tonnage-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungstonnage-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-tonnellaggio-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-tonelagem-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningstonnage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-tonazu-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"/>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
