@@ -1333,18 +1333,18 @@ function buildLanguageSitemapSection(code) {
   chunks.push("  <!-- " + (isEn ? "ENGLISH PAGES (Primary Hub, Silos, and Calculators)" : "Language: " + langObj.name + " (" + code + ")") + " -->");
   chunks.push("  <!-- ============================================================ -->");
   chunks.push("  <!-- Main Hub / Homepage (" + code + ") -->");
-  chunks.push(renderSitemapUrl("index", null, code, today, "weekly", hubPriority));
+  chunks.push(renderSitemapUrl("index", null, code, today, "monthly", hubPriority));
 
   // Hierarchical Silo Order: Each Silo Hub is immediately followed by its calculators
   SILOS.forEach(silo => {
     chunks.push("\n  <!-- Silo: " + silo.cat + " Calculators (" + code + ") -->");
     // 1. Silo Hub Page
-    chunks.push(renderSitemapUrl("silo", silo, code, today, "weekly", siloPriority));
+    chunks.push(renderSitemapUrl("silo", silo, code, today, "yearly", siloPriority));
 
     // 2. Calculators belonging to this specific Silo
     const childPages = PAGES.filter(p => p.cat === silo.cat);
     childPages.forEach(p => {
-      chunks.push(renderSitemapUrl("page", p, code, today, "monthly", pagePriority));
+      chunks.push(renderSitemapUrl("page", p, code, today, "yearly", pagePriority));
     });
   });
 
