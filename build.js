@@ -297,6 +297,15 @@ const siloOfCat = cat => SILOS.find(s => s.cat === cat);
 const siloOfId  = id  => siloOfCat(PAGES.find(p => p.id === id).cat);
 const siloPages = silo => PAGES.filter(p => p.cat === silo.cat);
 
+/* Primary calculator destination for 301 redirects of each silo */
+const SILO_PRIMARY_CALC = {
+  "Weight": "weight",         // rebar-weight-calculator
+  "Estimating": "slab",       // concrete-slab-rebar-calculator
+  "Detailing": "spacing",     // rebar-spacing-calculator
+  "Members": "column",        // column-rebar-calculator
+  "Commercial": "cost"        // rebar-cost-calculator
+};
+
 /* Workflow companion tools for hybrid cross-silo linking */
 const WORKFLOW_COMPANIONS = {
   slab:     ["spacing", "chair", "tiewire", "cost"],
@@ -607,14 +616,9 @@ function langSwitch(curLang, type, item){
     </details>`;
 }
 
-function header(lang, type, item, activeSiloSlug){
+function header(lang, type, item){
   const u = UI[lang];
   const homeUrl = homeHref(lang);
-  const siloPills = SILOS.map(s => {
-    const s_slug = siloSlug(s, lang);
-    const isActive = activeSiloSlug === s_slug || activeSiloSlug === s.slug;
-    return `<a class="silo-bar-pill${isActive ? ' active' : ''}" href="${siloHref(s, lang)}"><b>${siloName(s, lang)}</b></a>`;
-  }).join("");
 
   return `
 <header class="site-header">
@@ -627,12 +631,6 @@ function header(lang, type, item, activeSiloSlug){
       <a href="${homeUrl}#faq">${u.faq}</a>
     </nav>
     ${langSwitch(lang, type, item)}
-  </div>
-  <div class="silos-bar">
-    <div class="wrap silos-bar-inner">
-      <span class="silos-bar-label">${CALCSWORD[lang]}:</span>
-      ${siloPills}
-    </div>
   </div>
 </header>`;
 }
@@ -649,7 +647,7 @@ function footer(lang){
     const links = children.map(p => `<li><a href="${pageHref(p, lang)}">${pH1(p, lang)}</a></li>`).join("\n          ");
     return `
       <div class="footer-col">
-        <h4><a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a></h4>
+        <h4>${siloName(s, lang)} ${CALCSWORD[lang]}</h4>
         <ul>
           ${links}
         </ul>
@@ -737,7 +735,6 @@ function relatedGrid(currentId, lang){
     <div class="related-grid">
       ${cards}
     </div>
-    <p class="silo-all"><a href="${siloHref(silo, lang)}">↗ ${siloH1(silo,lang)}</a></p>
   </section>`;
 }
 
@@ -814,15 +811,13 @@ function renderPage(p, lang){
   const cleanH1 = h1.replace(/ \(.*/,"");
   const silo = siloOfId(p.id);
   const curPageSlug = pageSlug(p, lang);
-  const curSiloSlug = siloSlug(silo, lang);
   const crumbTrail = crumbs(lang, [
     {name:HOMEWORD[lang], href:homeHref(lang)},
-    {name:siloName(silo,lang), href:siloHref(silo, lang)},
+    {name:siloName(silo,lang)},
     {name:cleanH1}
   ]);
   const crumbLd = breadcrumbJsonLd([
     {name:HOMEWORD[lang], url:urlFor(lang,"index")},
-    {name:siloName(silo,lang), url:urlFor(lang,curSiloSlug)},
     {name:h1, url:urlFor(lang,curPageSlug)}
   ]);
   return `<!DOCTYPE html>
@@ -847,7 +842,7 @@ ${altLinks('page', p)}
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
 <body>
-${header(lang, 'page', p, curSiloSlug)}
+${header(lang, 'page', p)}
 ${crumbTrail}
 <section class="hero">
   <div class="wrap">
@@ -1033,10 +1028,9 @@ function renderHub(lang){
   const cats = {};
   PAGES.forEach(p => (cats[p.cat] ||= []).push(p));
   const directory = Object.entries(cats).map(([cat, items]) => {
-    const silo = siloOfCat(cat);
     return `
       <div class="dir-cat">
-        <h3><a href="${siloHref(silo, lang)}">${trG(cat,lang)} ${CALCSWORD[lang]} ↗</a></h3>
+        <h3>${trG(cat,lang)} ${CALCSWORD[lang]}</h3>
         <div class="related-grid">
           ${items.map(p=>`<a class="rel-card" href="${pageHref(p, lang)}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,52)}…</span></a>`).join("\n          ")}
         </div>
@@ -1063,13 +1057,13 @@ function renderHub(lang){
 
   <section class="content-block">
     <h2>Why One Calculator Isn't Enough</h2>
-    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it across 5 dedicated silos:</p>
+    <p>A single "rebar calculator" that only handles slab grids answers one question out of a dozen a real project asks. This site splits the problem the way an estimator actually works through it across 5 dedicated categories:</p>
     <ul>
-      <li><a href="/rebar-weight-calculators"><strong>Weight & Takeoff</strong></a> — how much steel, by bar size and length (use the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a> or <a href="/rebar-area-calculator">Rebar Area Calculator</a>)</li>
-      <li><a href="/concrete-rebar-estimating-calculators"><strong>Pour Estimating</strong></a> — how much rebar a specific pour needs (<a href="/concrete-slab-rebar-calculator">slab</a>, <a href="/footing-rebar-calculator">footing</a>, <a href="/driveway-rebar-calculator">driveway</a>, <a href="/rebar-mat-grid-calculator">mat</a>)</li>
-      <li><a href="/rebar-detailing-calculators"><strong>Detailing & Splicing</strong></a> — <a href="/rebar-spacing-calculator">spacing</a>, <a href="/rebar-development-length-calculator">development length</a>, <a href="/rebar-lap-length-calculator">lap length</a>, <a href="/rebar-hook-bend-cutting-length-calculator">cutting length</a>, <a href="/rebar-chair-calculator">chairs</a>, <a href="/rebar-tie-wire-calculator">tie wire</a></li>
-      <li><a href="/structural-rebar-calculators"><strong>Structural Members</strong></a> — <a href="/column-rebar-calculator">column</a>, <a href="/beam-rebar-calculator">beam</a>, <a href="/wall-rebar-calculator">wall</a>, and <a href="/pool-rebar-calculator">pool</a>-specific reinforcement</li>
-      <li><a href="/rebar-cost-tonnage-calculators"><strong>Commercial & Procurement</strong></a> — turning a bar schedule into <a href="/rebar-tonnage-calculator">tonnage</a> and <a href="/rebar-cost-calculator">cost</a></li>
+      <li><strong>Weight & Takeoff</strong> — how much steel, by bar size and length (use the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a> or <a href="/rebar-area-calculator">Rebar Area Calculator</a>)</li>
+      <li><strong>Pour Estimating</strong> — how much rebar a specific pour needs (<a href="/concrete-slab-rebar-calculator">slab</a>, <a href="/footing-rebar-calculator">footing</a>, <a href="/driveway-rebar-calculator">driveway</a>, <a href="/rebar-mat-grid-calculator">mat</a>)</li>
+      <li><strong>Detailing & Splicing</strong> — <a href="/rebar-spacing-calculator">spacing</a>, <a href="/rebar-development-length-calculator">development length</a>, <a href="/rebar-lap-length-calculator">lap length</a>, <a href="/rebar-hook-bend-cutting-length-calculator">cutting length</a>, <a href="/rebar-chair-calculator">chairs</a>, <a href="/rebar-tie-wire-calculator">tie wire</a></li>
+      <li><strong>Structural Members</strong> — <a href="/column-rebar-calculator">column</a>, <a href="/beam-rebar-calculator">beam</a>, <a href="/wall-rebar-calculator">wall</a>, and <a href="/pool-rebar-calculator">pool</a>-specific reinforcement</li>
+      <li><strong>Commercial & Procurement</strong> — turning a bar schedule into <a href="/rebar-tonnage-calculator">tonnage</a> and <a href="/rebar-cost-calculator">cost</a></li>
     </ul>
   </section>
 
@@ -1201,21 +1195,51 @@ LANGS.forEach(l => {
     fs.writeFileSync(path.join(outDir,"index.html"), renderHub(lang));
   }
 
+  // 301 Redirect each silo/category to its primary calculator
   SILOS.forEach(s => {
-    const slug = siloSlug(s, lang);
-    fs.writeFileSync(path.join(outDir, slug + ".html"), renderSilo(s, lang));
-    pageCount++;
-    if (lang !== "en") {
+    const primaryId = SILO_PRIMARY_CALC[s.cat];
+    const primaryPage = PAGES.find(p => p.id === primaryId);
+    const primarySlug = pageSlug(primaryPage, lang);
+    const curSiloSlug = siloSlug(s, lang);
+
+    if (lang === "en") {
+      const enFile = path.join(OUT, s.slug + ".html");
+      if (fs.existsSync(enFile)) {
+        fs.unlinkSync(enFile);
+      }
       redirects.push({
-        source: `/${l.dir}/${s.slug}`,
-        destination: `/${l.dir}/${slug}`,
+        source: `/${s.slug}`,
+        destination: `/${primarySlug}`,
         permanent: true
       });
       redirects.push({
-        source: `/${l.dir}/${s.slug}.html`,
-        destination: `/${l.dir}/${slug}`,
+        source: `/${s.slug}.html`,
+        destination: `/${primarySlug}`,
         permanent: true
       });
+    } else {
+      redirects.push({
+        source: `/${l.dir}/${curSiloSlug}`,
+        destination: `/${l.dir}/${primarySlug}`,
+        permanent: true
+      });
+      redirects.push({
+        source: `/${l.dir}/${curSiloSlug}.html`,
+        destination: `/${l.dir}/${primarySlug}`,
+        permanent: true
+      });
+      if (curSiloSlug !== s.slug) {
+        redirects.push({
+          source: `/${l.dir}/${s.slug}`,
+          destination: `/${l.dir}/${primarySlug}`,
+          permanent: true
+        });
+        redirects.push({
+          source: `/${l.dir}/${s.slug}.html`,
+          destination: `/${l.dir}/${primarySlug}`,
+          permanent: true
+        });
+      }
     }
   });
 
@@ -1326,22 +1350,19 @@ function buildLanguageSitemapSection(code) {
   const langObj = LANGS.find(x => x.code === code);
   const isEn = code === "en";
   const hubPriority = isEn ? "1.0" : "0.7";
-  const siloPriority = isEn ? "0.8" : "0.6";
   const pagePriority = isEn ? "0.6" : "0.5";
 
   chunks.push("  <!-- ============================================================ -->");
-  chunks.push("  <!-- " + (isEn ? "ENGLISH PAGES (Primary Hub, Silos, and Calculators)" : "Language: " + langObj.name + " (" + code + ")") + " -->");
+  chunks.push("  <!-- " + (isEn ? "ENGLISH PAGES (Primary Hub and Calculators)" : "Language: " + langObj.name + " (" + code + ")") + " -->");
   chunks.push("  <!-- ============================================================ -->");
   chunks.push("  <!-- Main Hub / Homepage (" + code + ") -->");
   chunks.push(renderSitemapUrl("index", null, code, today, "monthly", hubPriority));
 
-  // Hierarchical Silo Order: Each Silo Hub is immediately followed by its calculators
+  // Category Order: Calculators grouped by category
   SILOS.forEach(silo => {
-    chunks.push("\n  <!-- Silo: " + silo.cat + " Calculators (" + code + ") -->");
-    // 1. Silo Hub Page
-    chunks.push(renderSitemapUrl("silo", silo, code, today, "yearly", siloPriority));
+    chunks.push("\n  <!-- Category: " + silo.cat + " Calculators (" + code + ") -->");
 
-    // 2. Calculators belonging to this specific Silo
+    // Calculators belonging to this specific Category
     const childPages = PAGES.filter(p => p.cat === silo.cat);
     childPages.forEach(p => {
       chunks.push(renderSitemapUrl("page", p, code, today, "yearly", pagePriority));
@@ -1400,9 +1421,9 @@ fs.writeFileSync(path.join(OUT, "robots.txt"),
   'Sitemap: ' + SITE + '/sitemap_index.xml\n' +
   'Sitemap: ' + SITE + '/sitemap-en.xml\n');
 
-const totalSitemapUrls = (1 + SILOS.length + PAGES.length) * SITEMAP_LANGS.length;
-const enUrls = 1 + SILOS.length + PAGES.length;
+const totalSitemapUrls = (1 + PAGES.length) * SITEMAP_LANGS.length;
+const enUrls = 1 + PAGES.length;
 console.log('Generated ' + LANGS.length + ' languages × (' + PAGES.length + ' pages + hub) = ' + (pageCount + LANGS.length) + ' HTML files');
 console.log('Sitemap Index: Generated sitemap.xml and sitemap_index.xml indexing ' + SITEMAP_LANGS.length + ' language sitemaps');
-console.log('Sitemaps: ' + totalSitemapUrls + ' total URLs organized hierarchically by silo across ' + SITEMAP_LANGS.length + ' languages (' + enUrls + ' URLs in sitemap-en.xml)');
-console.log('Vercel: Generated ' + redirects.length + ' 301 redirects in vercel.json for legacy URLs');
+console.log('Sitemaps: ' + totalSitemapUrls + ' total URLs organized by category across ' + SITEMAP_LANGS.length + ' languages (' + enUrls + ' URLs in sitemap-en.xml)');
+console.log('Vercel: Generated ' + redirects.length + ' 301 redirects in vercel.json for legacy URLs and silos');

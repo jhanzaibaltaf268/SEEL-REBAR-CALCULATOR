@@ -30,53 +30,153 @@
   ],
   "redirects": [
     {
+      "source": "/rebar-weight-calculators",
+      "destination": "/rebar-weight-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rebar-weight-calculators.html",
+      "destination": "/rebar-weight-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/concrete-rebar-estimating-calculators",
+      "destination": "/concrete-slab-rebar-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/concrete-rebar-estimating-calculators.html",
+      "destination": "/concrete-slab-rebar-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rebar-detailing-calculators",
+      "destination": "/rebar-spacing-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rebar-detailing-calculators.html",
+      "destination": "/rebar-spacing-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/structural-rebar-calculators",
+      "destination": "/column-rebar-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/structural-rebar-calculators.html",
+      "destination": "/column-rebar-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rebar-cost-tonnage-calculators",
+      "destination": "/rebar-cost-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rebar-cost-tonnage-calculators.html",
+      "destination": "/rebar-cost-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/es/peso-calculadoras",
+      "destination": "/es/calculadora-de-peso-de-varilla",
+      "permanent": true
+    },
+    {
+      "source": "/es/peso-calculadoras.html",
+      "destination": "/es/calculadora-de-peso-de-varilla",
+      "permanent": true
+    },
+    {
       "source": "/es/rebar-weight-calculators",
-      "destination": "/es/peso-calculadoras",
+      "destination": "/es/calculadora-de-peso-de-varilla",
       "permanent": true
     },
     {
       "source": "/es/rebar-weight-calculators.html",
-      "destination": "/es/peso-calculadoras",
+      "destination": "/es/calculadora-de-peso-de-varilla",
+      "permanent": true
+    },
+    {
+      "source": "/es/mediciones-calculadoras",
+      "destination": "/es/calculadora-de-acero-para-losa",
+      "permanent": true
+    },
+    {
+      "source": "/es/mediciones-calculadoras.html",
+      "destination": "/es/calculadora-de-acero-para-losa",
       "permanent": true
     },
     {
       "source": "/es/concrete-rebar-estimating-calculators",
-      "destination": "/es/mediciones-calculadoras",
+      "destination": "/es/calculadora-de-acero-para-losa",
       "permanent": true
     },
     {
       "source": "/es/concrete-rebar-estimating-calculators.html",
-      "destination": "/es/mediciones-calculadoras",
+      "destination": "/es/calculadora-de-acero-para-losa",
+      "permanent": true
+    },
+    {
+      "source": "/es/detallado-calculadoras",
+      "destination": "/es/calculadora-de-separacion-de-barras",
+      "permanent": true
+    },
+    {
+      "source": "/es/detallado-calculadoras.html",
+      "destination": "/es/calculadora-de-separacion-de-barras",
       "permanent": true
     },
     {
       "source": "/es/rebar-detailing-calculators",
-      "destination": "/es/detallado-calculadoras",
+      "destination": "/es/calculadora-de-separacion-de-barras",
       "permanent": true
     },
     {
       "source": "/es/rebar-detailing-calculators.html",
-      "destination": "/es/detallado-calculadoras",
+      "destination": "/es/calculadora-de-separacion-de-barras",
+      "permanent": true
+    },
+    {
+      "source": "/es/elementos-calculadoras",
+      "destination": "/es/calculadora-de-acero-para-columnas",
+      "permanent": true
+    },
+    {
+      "source": "/es/elementos-calculadoras.html",
+      "destination": "/es/calculadora-de-acero-para-columnas",
       "permanent": true
     },
     {
       "source": "/es/structural-rebar-calculators",
-      "destination": "/es/elementos-calculadoras",
+      "destination": "/es/calculadora-de-acero-para-columnas",
       "permanent": true
     },
     {
       "source": "/es/structural-rebar-calculators.html",
-      "destination": "/es/elementos-calculadoras",
+      "destination": "/es/calculadora-de-acero-para-columnas",
+      "permanent": true
+    },
+    {
+      "source": "/es/comercial-calculadoras",
+      "destination": "/es/calculadora-de-coste-de-acero",
+      "permanent": true
+    },
+    {
+      "source": "/es/comercial-calculadoras.html",
+      "destination": "/es/calculadora-de-coste-de-acero",
       "permanent": true
     },
     {
       "source": "/es/rebar-cost-tonnage-calculators",
-      "destination": "/es/comercial-calculadoras",
+      "destination": "/es/calculadora-de-coste-de-acero",
       "permanent": true
     },
     {
       "source": "/es/rebar-cost-tonnage-calculators.html",
-      "destination": "/es/comercial-calculadoras",
+      "destination": "/es/calculadora-de-coste-de-acero",
       "permanent": true
     },
     {
@@ -290,53 +390,103 @@
       "permanent": true
     },
     {
+      "source": "/fr/poids-calculateurs",
+      "destination": "/fr/calculateur-de-poids-d-armature",
+      "permanent": true
+    },
+    {
+      "source": "/fr/poids-calculateurs.html",
+      "destination": "/fr/calculateur-de-poids-d-armature",
+      "permanent": true
+    },
+    {
       "source": "/fr/rebar-weight-calculators",
-      "destination": "/fr/poids-calculateurs",
+      "destination": "/fr/calculateur-de-poids-d-armature",
       "permanent": true
     },
     {
       "source": "/fr/rebar-weight-calculators.html",
-      "destination": "/fr/poids-calculateurs",
+      "destination": "/fr/calculateur-de-poids-d-armature",
+      "permanent": true
+    },
+    {
+      "source": "/fr/metre-calculateurs",
+      "destination": "/fr/calculateur-d-armature-de-dalle",
+      "permanent": true
+    },
+    {
+      "source": "/fr/metre-calculateurs.html",
+      "destination": "/fr/calculateur-d-armature-de-dalle",
       "permanent": true
     },
     {
       "source": "/fr/concrete-rebar-estimating-calculators",
-      "destination": "/fr/metre-calculateurs",
+      "destination": "/fr/calculateur-d-armature-de-dalle",
       "permanent": true
     },
     {
       "source": "/fr/concrete-rebar-estimating-calculators.html",
-      "destination": "/fr/metre-calculateurs",
+      "destination": "/fr/calculateur-d-armature-de-dalle",
+      "permanent": true
+    },
+    {
+      "source": "/fr/faconnage-calculateurs",
+      "destination": "/fr/calculateur-d-espacement-d-armature",
+      "permanent": true
+    },
+    {
+      "source": "/fr/faconnage-calculateurs.html",
+      "destination": "/fr/calculateur-d-espacement-d-armature",
       "permanent": true
     },
     {
       "source": "/fr/rebar-detailing-calculators",
-      "destination": "/fr/faconnage-calculateurs",
+      "destination": "/fr/calculateur-d-espacement-d-armature",
       "permanent": true
     },
     {
       "source": "/fr/rebar-detailing-calculators.html",
-      "destination": "/fr/faconnage-calculateurs",
+      "destination": "/fr/calculateur-d-espacement-d-armature",
+      "permanent": true
+    },
+    {
+      "source": "/fr/elements-calculateurs",
+      "destination": "/fr/calculateur-d-armature-de-poteau",
+      "permanent": true
+    },
+    {
+      "source": "/fr/elements-calculateurs.html",
+      "destination": "/fr/calculateur-d-armature-de-poteau",
       "permanent": true
     },
     {
       "source": "/fr/structural-rebar-calculators",
-      "destination": "/fr/elements-calculateurs",
+      "destination": "/fr/calculateur-d-armature-de-poteau",
       "permanent": true
     },
     {
       "source": "/fr/structural-rebar-calculators.html",
-      "destination": "/fr/elements-calculateurs",
+      "destination": "/fr/calculateur-d-armature-de-poteau",
+      "permanent": true
+    },
+    {
+      "source": "/fr/commercial-calculateurs",
+      "destination": "/fr/calculateur-de-cout-d-armature",
+      "permanent": true
+    },
+    {
+      "source": "/fr/commercial-calculateurs.html",
+      "destination": "/fr/calculateur-de-cout-d-armature",
       "permanent": true
     },
     {
       "source": "/fr/rebar-cost-tonnage-calculators",
-      "destination": "/fr/commercial-calculateurs",
+      "destination": "/fr/calculateur-de-cout-d-armature",
       "permanent": true
     },
     {
       "source": "/fr/rebar-cost-tonnage-calculators.html",
-      "destination": "/fr/commercial-calculateurs",
+      "destination": "/fr/calculateur-de-cout-d-armature",
       "permanent": true
     },
     {
@@ -550,53 +700,103 @@
       "permanent": true
     },
     {
+      "source": "/de/gewicht-rechner",
+      "destination": "/de/bewehrungsgewicht-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/gewicht-rechner.html",
+      "destination": "/de/bewehrungsgewicht-rechner",
+      "permanent": true
+    },
+    {
       "source": "/de/rebar-weight-calculators",
-      "destination": "/de/gewicht-rechner",
+      "destination": "/de/bewehrungsgewicht-rechner",
       "permanent": true
     },
     {
       "source": "/de/rebar-weight-calculators.html",
-      "destination": "/de/gewicht-rechner",
+      "destination": "/de/bewehrungsgewicht-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/mengenermittlung-rechner",
+      "destination": "/de/bewehrungsrechner-fuer-betonplatten",
+      "permanent": true
+    },
+    {
+      "source": "/de/mengenermittlung-rechner.html",
+      "destination": "/de/bewehrungsrechner-fuer-betonplatten",
       "permanent": true
     },
     {
       "source": "/de/concrete-rebar-estimating-calculators",
-      "destination": "/de/mengenermittlung-rechner",
+      "destination": "/de/bewehrungsrechner-fuer-betonplatten",
       "permanent": true
     },
     {
       "source": "/de/concrete-rebar-estimating-calculators.html",
-      "destination": "/de/mengenermittlung-rechner",
+      "destination": "/de/bewehrungsrechner-fuer-betonplatten",
+      "permanent": true
+    },
+    {
+      "source": "/de/bewehrungsfuehrung-rechner",
+      "destination": "/de/bewehrungsabstand-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/bewehrungsfuehrung-rechner.html",
+      "destination": "/de/bewehrungsabstand-rechner",
       "permanent": true
     },
     {
       "source": "/de/rebar-detailing-calculators",
-      "destination": "/de/bewehrungsfuehrung-rechner",
+      "destination": "/de/bewehrungsabstand-rechner",
       "permanent": true
     },
     {
       "source": "/de/rebar-detailing-calculators.html",
-      "destination": "/de/bewehrungsfuehrung-rechner",
+      "destination": "/de/bewehrungsabstand-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/bauteile-rechner",
+      "destination": "/de/stuetzenbewehrungs-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/bauteile-rechner.html",
+      "destination": "/de/stuetzenbewehrungs-rechner",
       "permanent": true
     },
     {
       "source": "/de/structural-rebar-calculators",
-      "destination": "/de/bauteile-rechner",
+      "destination": "/de/stuetzenbewehrungs-rechner",
       "permanent": true
     },
     {
       "source": "/de/structural-rebar-calculators.html",
-      "destination": "/de/bauteile-rechner",
+      "destination": "/de/stuetzenbewehrungs-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/kaufmaennisch-rechner",
+      "destination": "/de/bewehrungskosten-rechner",
+      "permanent": true
+    },
+    {
+      "source": "/de/kaufmaennisch-rechner.html",
+      "destination": "/de/bewehrungskosten-rechner",
       "permanent": true
     },
     {
       "source": "/de/rebar-cost-tonnage-calculators",
-      "destination": "/de/kaufmaennisch-rechner",
+      "destination": "/de/bewehrungskosten-rechner",
       "permanent": true
     },
     {
       "source": "/de/rebar-cost-tonnage-calculators.html",
-      "destination": "/de/kaufmaennisch-rechner",
+      "destination": "/de/bewehrungskosten-rechner",
       "permanent": true
     },
     {
@@ -810,53 +1010,103 @@
       "permanent": true
     },
     {
+      "source": "/it/peso-calcolatori",
+      "destination": "/it/calcolatore-peso-tondino",
+      "permanent": true
+    },
+    {
+      "source": "/it/peso-calcolatori.html",
+      "destination": "/it/calcolatore-peso-tondino",
+      "permanent": true
+    },
+    {
       "source": "/it/rebar-weight-calculators",
-      "destination": "/it/peso-calcolatori",
+      "destination": "/it/calcolatore-peso-tondino",
       "permanent": true
     },
     {
       "source": "/it/rebar-weight-calculators.html",
-      "destination": "/it/peso-calcolatori",
+      "destination": "/it/calcolatore-peso-tondino",
+      "permanent": true
+    },
+    {
+      "source": "/it/computo-calcolatori",
+      "destination": "/it/calcolatore-armatura-soletta",
+      "permanent": true
+    },
+    {
+      "source": "/it/computo-calcolatori.html",
+      "destination": "/it/calcolatore-armatura-soletta",
       "permanent": true
     },
     {
       "source": "/it/concrete-rebar-estimating-calculators",
-      "destination": "/it/computo-calcolatori",
+      "destination": "/it/calcolatore-armatura-soletta",
       "permanent": true
     },
     {
       "source": "/it/concrete-rebar-estimating-calculators.html",
-      "destination": "/it/computo-calcolatori",
+      "destination": "/it/calcolatore-armatura-soletta",
+      "permanent": true
+    },
+    {
+      "source": "/it/dettaglio-calcolatori",
+      "destination": "/it/calcolatore-interasse-barre",
+      "permanent": true
+    },
+    {
+      "source": "/it/dettaglio-calcolatori.html",
+      "destination": "/it/calcolatore-interasse-barre",
       "permanent": true
     },
     {
       "source": "/it/rebar-detailing-calculators",
-      "destination": "/it/dettaglio-calcolatori",
+      "destination": "/it/calcolatore-interasse-barre",
       "permanent": true
     },
     {
       "source": "/it/rebar-detailing-calculators.html",
-      "destination": "/it/dettaglio-calcolatori",
+      "destination": "/it/calcolatore-interasse-barre",
+      "permanent": true
+    },
+    {
+      "source": "/it/elementi-calcolatori",
+      "destination": "/it/calcolatore-armatura-pilastro",
+      "permanent": true
+    },
+    {
+      "source": "/it/elementi-calcolatori.html",
+      "destination": "/it/calcolatore-armatura-pilastro",
       "permanent": true
     },
     {
       "source": "/it/structural-rebar-calculators",
-      "destination": "/it/elementi-calcolatori",
+      "destination": "/it/calcolatore-armatura-pilastro",
       "permanent": true
     },
     {
       "source": "/it/structural-rebar-calculators.html",
-      "destination": "/it/elementi-calcolatori",
+      "destination": "/it/calcolatore-armatura-pilastro",
+      "permanent": true
+    },
+    {
+      "source": "/it/commerciale-calcolatori",
+      "destination": "/it/calcolatore-costo-acciaio",
+      "permanent": true
+    },
+    {
+      "source": "/it/commerciale-calcolatori.html",
+      "destination": "/it/calcolatore-costo-acciaio",
       "permanent": true
     },
     {
       "source": "/it/rebar-cost-tonnage-calculators",
-      "destination": "/it/commerciale-calcolatori",
+      "destination": "/it/calcolatore-costo-acciaio",
       "permanent": true
     },
     {
       "source": "/it/rebar-cost-tonnage-calculators.html",
-      "destination": "/it/commerciale-calcolatori",
+      "destination": "/it/calcolatore-costo-acciaio",
       "permanent": true
     },
     {
@@ -1070,53 +1320,103 @@
       "permanent": true
     },
     {
+      "source": "/pt/peso-calculadoras",
+      "destination": "/pt/calculadora-de-peso-de-vergalhao",
+      "permanent": true
+    },
+    {
+      "source": "/pt/peso-calculadoras.html",
+      "destination": "/pt/calculadora-de-peso-de-vergalhao",
+      "permanent": true
+    },
+    {
       "source": "/pt/rebar-weight-calculators",
-      "destination": "/pt/peso-calculadoras",
+      "destination": "/pt/calculadora-de-peso-de-vergalhao",
       "permanent": true
     },
     {
       "source": "/pt/rebar-weight-calculators.html",
-      "destination": "/pt/peso-calculadoras",
+      "destination": "/pt/calculadora-de-peso-de-vergalhao",
+      "permanent": true
+    },
+    {
+      "source": "/pt/quantitativos-calculadoras",
+      "destination": "/pt/calculadora-de-aco-para-laje",
+      "permanent": true
+    },
+    {
+      "source": "/pt/quantitativos-calculadoras.html",
+      "destination": "/pt/calculadora-de-aco-para-laje",
       "permanent": true
     },
     {
       "source": "/pt/concrete-rebar-estimating-calculators",
-      "destination": "/pt/quantitativos-calculadoras",
+      "destination": "/pt/calculadora-de-aco-para-laje",
       "permanent": true
     },
     {
       "source": "/pt/concrete-rebar-estimating-calculators.html",
-      "destination": "/pt/quantitativos-calculadoras",
+      "destination": "/pt/calculadora-de-aco-para-laje",
+      "permanent": true
+    },
+    {
+      "source": "/pt/detalhamento-calculadoras",
+      "destination": "/pt/calculadora-de-espacamento-de-barras",
+      "permanent": true
+    },
+    {
+      "source": "/pt/detalhamento-calculadoras.html",
+      "destination": "/pt/calculadora-de-espacamento-de-barras",
       "permanent": true
     },
     {
       "source": "/pt/rebar-detailing-calculators",
-      "destination": "/pt/detalhamento-calculadoras",
+      "destination": "/pt/calculadora-de-espacamento-de-barras",
       "permanent": true
     },
     {
       "source": "/pt/rebar-detailing-calculators.html",
-      "destination": "/pt/detalhamento-calculadoras",
+      "destination": "/pt/calculadora-de-espacamento-de-barras",
+      "permanent": true
+    },
+    {
+      "source": "/pt/elementos-calculadoras",
+      "destination": "/pt/calculadora-de-aco-para-pilar",
+      "permanent": true
+    },
+    {
+      "source": "/pt/elementos-calculadoras.html",
+      "destination": "/pt/calculadora-de-aco-para-pilar",
       "permanent": true
     },
     {
       "source": "/pt/structural-rebar-calculators",
-      "destination": "/pt/elementos-calculadoras",
+      "destination": "/pt/calculadora-de-aco-para-pilar",
       "permanent": true
     },
     {
       "source": "/pt/structural-rebar-calculators.html",
-      "destination": "/pt/elementos-calculadoras",
+      "destination": "/pt/calculadora-de-aco-para-pilar",
+      "permanent": true
+    },
+    {
+      "source": "/pt/comercial-calculadoras",
+      "destination": "/pt/calculadora-de-custo-de-aco",
+      "permanent": true
+    },
+    {
+      "source": "/pt/comercial-calculadoras.html",
+      "destination": "/pt/calculadora-de-custo-de-aco",
       "permanent": true
     },
     {
       "source": "/pt/rebar-cost-tonnage-calculators",
-      "destination": "/pt/comercial-calculadoras",
+      "destination": "/pt/calculadora-de-custo-de-aco",
       "permanent": true
     },
     {
       "source": "/pt/rebar-cost-tonnage-calculators.html",
-      "destination": "/pt/comercial-calculadoras",
+      "destination": "/pt/calculadora-de-custo-de-aco",
       "permanent": true
     },
     {
@@ -1330,53 +1630,103 @@
       "permanent": true
     },
     {
+      "source": "/nl/gewicht-calculators",
+      "destination": "/nl/wapeningsgewicht-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/gewicht-calculators.html",
+      "destination": "/nl/wapeningsgewicht-calculator",
+      "permanent": true
+    },
+    {
       "source": "/nl/rebar-weight-calculators",
-      "destination": "/nl/gewicht-calculators",
+      "destination": "/nl/wapeningsgewicht-calculator",
       "permanent": true
     },
     {
       "source": "/nl/rebar-weight-calculators.html",
-      "destination": "/nl/gewicht-calculators",
+      "destination": "/nl/wapeningsgewicht-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/hoeveelheden-calculators",
+      "destination": "/nl/wapeningscalculator-voor-vloerplaten",
+      "permanent": true
+    },
+    {
+      "source": "/nl/hoeveelheden-calculators.html",
+      "destination": "/nl/wapeningscalculator-voor-vloerplaten",
       "permanent": true
     },
     {
       "source": "/nl/concrete-rebar-estimating-calculators",
-      "destination": "/nl/hoeveelheden-calculators",
+      "destination": "/nl/wapeningscalculator-voor-vloerplaten",
       "permanent": true
     },
     {
       "source": "/nl/concrete-rebar-estimating-calculators.html",
-      "destination": "/nl/hoeveelheden-calculators",
+      "destination": "/nl/wapeningscalculator-voor-vloerplaten",
+      "permanent": true
+    },
+    {
+      "source": "/nl/detaillering-calculators",
+      "destination": "/nl/staafafstand-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/detaillering-calculators.html",
+      "destination": "/nl/staafafstand-calculator",
       "permanent": true
     },
     {
       "source": "/nl/rebar-detailing-calculators",
-      "destination": "/nl/detaillering-calculators",
+      "destination": "/nl/staafafstand-calculator",
       "permanent": true
     },
     {
       "source": "/nl/rebar-detailing-calculators.html",
-      "destination": "/nl/detaillering-calculators",
+      "destination": "/nl/staafafstand-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/onderdelen-calculators",
+      "destination": "/nl/kolomwapening-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/onderdelen-calculators.html",
+      "destination": "/nl/kolomwapening-calculator",
       "permanent": true
     },
     {
       "source": "/nl/structural-rebar-calculators",
-      "destination": "/nl/onderdelen-calculators",
+      "destination": "/nl/kolomwapening-calculator",
       "permanent": true
     },
     {
       "source": "/nl/structural-rebar-calculators.html",
-      "destination": "/nl/onderdelen-calculators",
+      "destination": "/nl/kolomwapening-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/commercieel-calculators",
+      "destination": "/nl/wapeningskosten-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/commercieel-calculators.html",
+      "destination": "/nl/wapeningskosten-calculator",
       "permanent": true
     },
     {
       "source": "/nl/rebar-cost-tonnage-calculators",
-      "destination": "/nl/commercieel-calculators",
+      "destination": "/nl/wapeningskosten-calculator",
       "permanent": true
     },
     {
       "source": "/nl/rebar-cost-tonnage-calculators.html",
-      "destination": "/nl/commercieel-calculators",
+      "destination": "/nl/wapeningskosten-calculator",
       "permanent": true
     },
     {
@@ -1590,53 +1940,103 @@
       "permanent": true
     },
     {
+      "source": "/pl/masa-kalkulatory",
+      "destination": "/pl/kalkulator-masy-zbrojenia",
+      "permanent": true
+    },
+    {
+      "source": "/pl/masa-kalkulatory.html",
+      "destination": "/pl/kalkulator-masy-zbrojenia",
+      "permanent": true
+    },
+    {
       "source": "/pl/rebar-weight-calculators",
-      "destination": "/pl/masa-kalkulatory",
+      "destination": "/pl/kalkulator-masy-zbrojenia",
       "permanent": true
     },
     {
       "source": "/pl/rebar-weight-calculators.html",
-      "destination": "/pl/masa-kalkulatory",
+      "destination": "/pl/kalkulator-masy-zbrojenia",
+      "permanent": true
+    },
+    {
+      "source": "/pl/przedmiar-kalkulatory",
+      "destination": "/pl/kalkulator-zbrojenia-plyty",
+      "permanent": true
+    },
+    {
+      "source": "/pl/przedmiar-kalkulatory.html",
+      "destination": "/pl/kalkulator-zbrojenia-plyty",
       "permanent": true
     },
     {
       "source": "/pl/concrete-rebar-estimating-calculators",
-      "destination": "/pl/przedmiar-kalkulatory",
+      "destination": "/pl/kalkulator-zbrojenia-plyty",
       "permanent": true
     },
     {
       "source": "/pl/concrete-rebar-estimating-calculators.html",
-      "destination": "/pl/przedmiar-kalkulatory",
+      "destination": "/pl/kalkulator-zbrojenia-plyty",
+      "permanent": true
+    },
+    {
+      "source": "/pl/szczegolowanie-kalkulatory",
+      "destination": "/pl/kalkulator-rozstawu-pretow",
+      "permanent": true
+    },
+    {
+      "source": "/pl/szczegolowanie-kalkulatory.html",
+      "destination": "/pl/kalkulator-rozstawu-pretow",
       "permanent": true
     },
     {
       "source": "/pl/rebar-detailing-calculators",
-      "destination": "/pl/szczegolowanie-kalkulatory",
+      "destination": "/pl/kalkulator-rozstawu-pretow",
       "permanent": true
     },
     {
       "source": "/pl/rebar-detailing-calculators.html",
-      "destination": "/pl/szczegolowanie-kalkulatory",
+      "destination": "/pl/kalkulator-rozstawu-pretow",
+      "permanent": true
+    },
+    {
+      "source": "/pl/elementy-kalkulatory",
+      "destination": "/pl/kalkulator-zbrojenia-slupa",
+      "permanent": true
+    },
+    {
+      "source": "/pl/elementy-kalkulatory.html",
+      "destination": "/pl/kalkulator-zbrojenia-slupa",
       "permanent": true
     },
     {
       "source": "/pl/structural-rebar-calculators",
-      "destination": "/pl/elementy-kalkulatory",
+      "destination": "/pl/kalkulator-zbrojenia-slupa",
       "permanent": true
     },
     {
       "source": "/pl/structural-rebar-calculators.html",
-      "destination": "/pl/elementy-kalkulatory",
+      "destination": "/pl/kalkulator-zbrojenia-slupa",
+      "permanent": true
+    },
+    {
+      "source": "/pl/handlowe-kalkulatory",
+      "destination": "/pl/kalkulator-kosztu-zbrojenia",
+      "permanent": true
+    },
+    {
+      "source": "/pl/handlowe-kalkulatory.html",
+      "destination": "/pl/kalkulator-kosztu-zbrojenia",
       "permanent": true
     },
     {
       "source": "/pl/rebar-cost-tonnage-calculators",
-      "destination": "/pl/handlowe-kalkulatory",
+      "destination": "/pl/kalkulator-kosztu-zbrojenia",
       "permanent": true
     },
     {
       "source": "/pl/rebar-cost-tonnage-calculators.html",
-      "destination": "/pl/handlowe-kalkulatory",
+      "destination": "/pl/kalkulator-kosztu-zbrojenia",
       "permanent": true
     },
     {
@@ -1850,53 +2250,103 @@
       "permanent": true
     },
     {
+      "source": "/ro/greutate-calculatoare",
+      "destination": "/ro/calculator-greutate-armatura",
+      "permanent": true
+    },
+    {
+      "source": "/ro/greutate-calculatoare.html",
+      "destination": "/ro/calculator-greutate-armatura",
+      "permanent": true
+    },
+    {
       "source": "/ro/rebar-weight-calculators",
-      "destination": "/ro/greutate-calculatoare",
+      "destination": "/ro/calculator-greutate-armatura",
       "permanent": true
     },
     {
       "source": "/ro/rebar-weight-calculators.html",
-      "destination": "/ro/greutate-calculatoare",
+      "destination": "/ro/calculator-greutate-armatura",
+      "permanent": true
+    },
+    {
+      "source": "/ro/antemasuratori-calculatoare",
+      "destination": "/ro/calculator-armatura-placa",
+      "permanent": true
+    },
+    {
+      "source": "/ro/antemasuratori-calculatoare.html",
+      "destination": "/ro/calculator-armatura-placa",
       "permanent": true
     },
     {
       "source": "/ro/concrete-rebar-estimating-calculators",
-      "destination": "/ro/antemasuratori-calculatoare",
+      "destination": "/ro/calculator-armatura-placa",
       "permanent": true
     },
     {
       "source": "/ro/concrete-rebar-estimating-calculators.html",
-      "destination": "/ro/antemasuratori-calculatoare",
+      "destination": "/ro/calculator-armatura-placa",
+      "permanent": true
+    },
+    {
+      "source": "/ro/detaliere-calculatoare",
+      "destination": "/ro/calculator-distanta-bare",
+      "permanent": true
+    },
+    {
+      "source": "/ro/detaliere-calculatoare.html",
+      "destination": "/ro/calculator-distanta-bare",
       "permanent": true
     },
     {
       "source": "/ro/rebar-detailing-calculators",
-      "destination": "/ro/detaliere-calculatoare",
+      "destination": "/ro/calculator-distanta-bare",
       "permanent": true
     },
     {
       "source": "/ro/rebar-detailing-calculators.html",
-      "destination": "/ro/detaliere-calculatoare",
+      "destination": "/ro/calculator-distanta-bare",
+      "permanent": true
+    },
+    {
+      "source": "/ro/elemente-calculatoare",
+      "destination": "/ro/calculator-armatura-stalp",
+      "permanent": true
+    },
+    {
+      "source": "/ro/elemente-calculatoare.html",
+      "destination": "/ro/calculator-armatura-stalp",
       "permanent": true
     },
     {
       "source": "/ro/structural-rebar-calculators",
-      "destination": "/ro/elemente-calculatoare",
+      "destination": "/ro/calculator-armatura-stalp",
       "permanent": true
     },
     {
       "source": "/ro/structural-rebar-calculators.html",
-      "destination": "/ro/elemente-calculatoare",
+      "destination": "/ro/calculator-armatura-stalp",
+      "permanent": true
+    },
+    {
+      "source": "/ro/comercial-calculatoare",
+      "destination": "/ro/calculator-cost-armatura",
+      "permanent": true
+    },
+    {
+      "source": "/ro/comercial-calculatoare.html",
+      "destination": "/ro/calculator-cost-armatura",
       "permanent": true
     },
     {
       "source": "/ro/rebar-cost-tonnage-calculators",
-      "destination": "/ro/comercial-calculatoare",
+      "destination": "/ro/calculator-cost-armatura",
       "permanent": true
     },
     {
       "source": "/ro/rebar-cost-tonnage-calculators.html",
-      "destination": "/ro/comercial-calculatoare",
+      "destination": "/ro/calculator-cost-armatura",
       "permanent": true
     },
     {
@@ -2110,53 +2560,103 @@
       "permanent": true
     },
     {
+      "source": "/sv/vikt-kalkylatorer",
+      "destination": "/sv/armeringsviktkalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/vikt-kalkylatorer.html",
+      "destination": "/sv/armeringsviktkalkylator",
+      "permanent": true
+    },
+    {
       "source": "/sv/rebar-weight-calculators",
-      "destination": "/sv/vikt-kalkylatorer",
+      "destination": "/sv/armeringsviktkalkylator",
       "permanent": true
     },
     {
       "source": "/sv/rebar-weight-calculators.html",
-      "destination": "/sv/vikt-kalkylatorer",
+      "destination": "/sv/armeringsviktkalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/maengdning-kalkylatorer",
+      "destination": "/sv/plattarmeringskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/maengdning-kalkylatorer.html",
+      "destination": "/sv/plattarmeringskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/concrete-rebar-estimating-calculators",
-      "destination": "/sv/maengdning-kalkylatorer",
+      "destination": "/sv/plattarmeringskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/concrete-rebar-estimating-calculators.html",
-      "destination": "/sv/maengdning-kalkylatorer",
+      "destination": "/sv/plattarmeringskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/detaljering-kalkylatorer",
+      "destination": "/sv/staangavstaandskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/detaljering-kalkylatorer.html",
+      "destination": "/sv/staangavstaandskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/rebar-detailing-calculators",
-      "destination": "/sv/detaljering-kalkylatorer",
+      "destination": "/sv/staangavstaandskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/rebar-detailing-calculators.html",
-      "destination": "/sv/detaljering-kalkylatorer",
+      "destination": "/sv/staangavstaandskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/byggdelar-kalkylatorer",
+      "destination": "/sv/pelararmeringskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/byggdelar-kalkylatorer.html",
+      "destination": "/sv/pelararmeringskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/structural-rebar-calculators",
-      "destination": "/sv/byggdelar-kalkylatorer",
+      "destination": "/sv/pelararmeringskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/structural-rebar-calculators.html",
-      "destination": "/sv/byggdelar-kalkylatorer",
+      "destination": "/sv/pelararmeringskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/kommersiellt-kalkylatorer",
+      "destination": "/sv/armeringskostnadskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/kommersiellt-kalkylatorer.html",
+      "destination": "/sv/armeringskostnadskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/rebar-cost-tonnage-calculators",
-      "destination": "/sv/kommersiellt-kalkylatorer",
+      "destination": "/sv/armeringskostnadskalkylator",
       "permanent": true
     },
     {
       "source": "/sv/rebar-cost-tonnage-calculators.html",
-      "destination": "/sv/kommersiellt-kalkylatorer",
+      "destination": "/sv/armeringskostnadskalkylator",
       "permanent": true
     },
     {
@@ -2370,53 +2870,103 @@
       "permanent": true
     },
     {
+      "source": "/cs/hmotnost-kalkulacky",
+      "destination": "/cs/kalkulator-hmotnosti-vyztuze",
+      "permanent": true
+    },
+    {
+      "source": "/cs/hmotnost-kalkulacky.html",
+      "destination": "/cs/kalkulator-hmotnosti-vyztuze",
+      "permanent": true
+    },
+    {
       "source": "/cs/rebar-weight-calculators",
-      "destination": "/cs/hmotnost-kalkulacky",
+      "destination": "/cs/kalkulator-hmotnosti-vyztuze",
       "permanent": true
     },
     {
       "source": "/cs/rebar-weight-calculators.html",
-      "destination": "/cs/hmotnost-kalkulacky",
+      "destination": "/cs/kalkulator-hmotnosti-vyztuze",
+      "permanent": true
+    },
+    {
+      "source": "/cs/vykazy-kalkulacky",
+      "destination": "/cs/kalkulator-vyztuze-desky",
+      "permanent": true
+    },
+    {
+      "source": "/cs/vykazy-kalkulacky.html",
+      "destination": "/cs/kalkulator-vyztuze-desky",
       "permanent": true
     },
     {
       "source": "/cs/concrete-rebar-estimating-calculators",
-      "destination": "/cs/vykazy-kalkulacky",
+      "destination": "/cs/kalkulator-vyztuze-desky",
       "permanent": true
     },
     {
       "source": "/cs/concrete-rebar-estimating-calculators.html",
-      "destination": "/cs/vykazy-kalkulacky",
+      "destination": "/cs/kalkulator-vyztuze-desky",
+      "permanent": true
+    },
+    {
+      "source": "/cs/detailovani-kalkulacky",
+      "destination": "/cs/kalkulator-roztece-prutu",
+      "permanent": true
+    },
+    {
+      "source": "/cs/detailovani-kalkulacky.html",
+      "destination": "/cs/kalkulator-roztece-prutu",
       "permanent": true
     },
     {
       "source": "/cs/rebar-detailing-calculators",
-      "destination": "/cs/detailovani-kalkulacky",
+      "destination": "/cs/kalkulator-roztece-prutu",
       "permanent": true
     },
     {
       "source": "/cs/rebar-detailing-calculators.html",
-      "destination": "/cs/detailovani-kalkulacky",
+      "destination": "/cs/kalkulator-roztece-prutu",
+      "permanent": true
+    },
+    {
+      "source": "/cs/prvky-kalkulacky",
+      "destination": "/cs/kalkulator-vyztuze-sloupu",
+      "permanent": true
+    },
+    {
+      "source": "/cs/prvky-kalkulacky.html",
+      "destination": "/cs/kalkulator-vyztuze-sloupu",
       "permanent": true
     },
     {
       "source": "/cs/structural-rebar-calculators",
-      "destination": "/cs/prvky-kalkulacky",
+      "destination": "/cs/kalkulator-vyztuze-sloupu",
       "permanent": true
     },
     {
       "source": "/cs/structural-rebar-calculators.html",
-      "destination": "/cs/prvky-kalkulacky",
+      "destination": "/cs/kalkulator-vyztuze-sloupu",
+      "permanent": true
+    },
+    {
+      "source": "/cs/obchodni-kalkulacky",
+      "destination": "/cs/kalkulator-ceny-vyztuze",
+      "permanent": true
+    },
+    {
+      "source": "/cs/obchodni-kalkulacky.html",
+      "destination": "/cs/kalkulator-ceny-vyztuze",
       "permanent": true
     },
     {
       "source": "/cs/rebar-cost-tonnage-calculators",
-      "destination": "/cs/obchodni-kalkulacky",
+      "destination": "/cs/kalkulator-ceny-vyztuze",
       "permanent": true
     },
     {
       "source": "/cs/rebar-cost-tonnage-calculators.html",
-      "destination": "/cs/obchodni-kalkulacky",
+      "destination": "/cs/kalkulator-ceny-vyztuze",
       "permanent": true
     },
     {
@@ -2630,53 +3180,103 @@
       "permanent": true
     },
     {
+      "source": "/da/vaegt-beregnere",
+      "destination": "/da/armeringsvaegt-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/vaegt-beregnere.html",
+      "destination": "/da/armeringsvaegt-beregner",
+      "permanent": true
+    },
+    {
       "source": "/da/rebar-weight-calculators",
-      "destination": "/da/vaegt-beregnere",
+      "destination": "/da/armeringsvaegt-beregner",
       "permanent": true
     },
     {
       "source": "/da/rebar-weight-calculators.html",
-      "destination": "/da/vaegt-beregnere",
+      "destination": "/da/armeringsvaegt-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/maengder-beregnere",
+      "destination": "/da/pladearmering-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/maengder-beregnere.html",
+      "destination": "/da/pladearmering-beregner",
       "permanent": true
     },
     {
       "source": "/da/concrete-rebar-estimating-calculators",
-      "destination": "/da/maengder-beregnere",
+      "destination": "/da/pladearmering-beregner",
       "permanent": true
     },
     {
       "source": "/da/concrete-rebar-estimating-calculators.html",
-      "destination": "/da/maengder-beregnere",
+      "destination": "/da/pladearmering-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/detaljering-beregnere",
+      "destination": "/da/stangafstand-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/detaljering-beregnere.html",
+      "destination": "/da/stangafstand-beregner",
       "permanent": true
     },
     {
       "source": "/da/rebar-detailing-calculators",
-      "destination": "/da/detaljering-beregnere",
+      "destination": "/da/stangafstand-beregner",
       "permanent": true
     },
     {
       "source": "/da/rebar-detailing-calculators.html",
-      "destination": "/da/detaljering-beregnere",
+      "destination": "/da/stangafstand-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/bygningsdele-beregnere",
+      "destination": "/da/soejlearmering-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/bygningsdele-beregnere.html",
+      "destination": "/da/soejlearmering-beregner",
       "permanent": true
     },
     {
       "source": "/da/structural-rebar-calculators",
-      "destination": "/da/bygningsdele-beregnere",
+      "destination": "/da/soejlearmering-beregner",
       "permanent": true
     },
     {
       "source": "/da/structural-rebar-calculators.html",
-      "destination": "/da/bygningsdele-beregnere",
+      "destination": "/da/soejlearmering-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/kommercielt-beregnere",
+      "destination": "/da/armeringspris-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/kommercielt-beregnere.html",
+      "destination": "/da/armeringspris-beregner",
       "permanent": true
     },
     {
       "source": "/da/rebar-cost-tonnage-calculators",
-      "destination": "/da/kommercielt-beregnere",
+      "destination": "/da/armeringspris-beregner",
       "permanent": true
     },
     {
       "source": "/da/rebar-cost-tonnage-calculators.html",
-      "destination": "/da/kommercielt-beregnere",
+      "destination": "/da/armeringspris-beregner",
       "permanent": true
     },
     {
@@ -2890,53 +3490,103 @@
       "permanent": true
     },
     {
+      "source": "/el/varos-ypologistes",
+      "destination": "/el/ypologistis-varous-oplismou",
+      "permanent": true
+    },
+    {
+      "source": "/el/varos-ypologistes.html",
+      "destination": "/el/ypologistis-varous-oplismou",
+      "permanent": true
+    },
+    {
       "source": "/el/rebar-weight-calculators",
-      "destination": "/el/varos-ypologistes",
+      "destination": "/el/ypologistis-varous-oplismou",
       "permanent": true
     },
     {
       "source": "/el/rebar-weight-calculators.html",
-      "destination": "/el/varos-ypologistes",
+      "destination": "/el/ypologistis-varous-oplismou",
+      "permanent": true
+    },
+    {
+      "source": "/el/epimetriseis-ypologistes",
+      "destination": "/el/ypologistis-oplismou-plakas",
+      "permanent": true
+    },
+    {
+      "source": "/el/epimetriseis-ypologistes.html",
+      "destination": "/el/ypologistis-oplismou-plakas",
       "permanent": true
     },
     {
       "source": "/el/concrete-rebar-estimating-calculators",
-      "destination": "/el/epimetriseis-ypologistes",
+      "destination": "/el/ypologistis-oplismou-plakas",
       "permanent": true
     },
     {
       "source": "/el/concrete-rebar-estimating-calculators.html",
-      "destination": "/el/epimetriseis-ypologistes",
+      "destination": "/el/ypologistis-oplismou-plakas",
+      "permanent": true
+    },
+    {
+      "source": "/el/leptomereies-ypologistes",
+      "destination": "/el/ypologistis-apostasis-ravdon",
+      "permanent": true
+    },
+    {
+      "source": "/el/leptomereies-ypologistes.html",
+      "destination": "/el/ypologistis-apostasis-ravdon",
       "permanent": true
     },
     {
       "source": "/el/rebar-detailing-calculators",
-      "destination": "/el/leptomereies-ypologistes",
+      "destination": "/el/ypologistis-apostasis-ravdon",
       "permanent": true
     },
     {
       "source": "/el/rebar-detailing-calculators.html",
-      "destination": "/el/leptomereies-ypologistes",
+      "destination": "/el/ypologistis-apostasis-ravdon",
+      "permanent": true
+    },
+    {
+      "source": "/el/stoicheia-ypologistes",
+      "destination": "/el/ypologistis-oplismou-ypostylomatos",
+      "permanent": true
+    },
+    {
+      "source": "/el/stoicheia-ypologistes.html",
+      "destination": "/el/ypologistis-oplismou-ypostylomatos",
       "permanent": true
     },
     {
       "source": "/el/structural-rebar-calculators",
-      "destination": "/el/stoicheia-ypologistes",
+      "destination": "/el/ypologistis-oplismou-ypostylomatos",
       "permanent": true
     },
     {
       "source": "/el/structural-rebar-calculators.html",
-      "destination": "/el/stoicheia-ypologistes",
+      "destination": "/el/ypologistis-oplismou-ypostylomatos",
+      "permanent": true
+    },
+    {
+      "source": "/el/emporika-ypologistes",
+      "destination": "/el/ypologistis-kostous-oplismou",
+      "permanent": true
+    },
+    {
+      "source": "/el/emporika-ypologistes.html",
+      "destination": "/el/ypologistis-kostous-oplismou",
       "permanent": true
     },
     {
       "source": "/el/rebar-cost-tonnage-calculators",
-      "destination": "/el/emporika-ypologistes",
+      "destination": "/el/ypologistis-kostous-oplismou",
       "permanent": true
     },
     {
       "source": "/el/rebar-cost-tonnage-calculators.html",
-      "destination": "/el/emporika-ypologistes",
+      "destination": "/el/ypologistis-kostous-oplismou",
       "permanent": true
     },
     {
@@ -3150,53 +3800,103 @@
       "permanent": true
     },
     {
+      "source": "/hu/toemeg-kalkulatorok",
+      "destination": "/hu/vasalas-toemeg-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/toemeg-kalkulatorok.html",
+      "destination": "/hu/vasalas-toemeg-kalkulator",
+      "permanent": true
+    },
+    {
       "source": "/hu/rebar-weight-calculators",
-      "destination": "/hu/toemeg-kalkulatorok",
+      "destination": "/hu/vasalas-toemeg-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/rebar-weight-calculators.html",
-      "destination": "/hu/toemeg-kalkulatorok",
+      "destination": "/hu/vasalas-toemeg-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/mennyiseg-kalkulatorok",
+      "destination": "/hu/lemez-vasalas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/mennyiseg-kalkulatorok.html",
+      "destination": "/hu/lemez-vasalas-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/concrete-rebar-estimating-calculators",
-      "destination": "/hu/mennyiseg-kalkulatorok",
+      "destination": "/hu/lemez-vasalas-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/concrete-rebar-estimating-calculators.html",
-      "destination": "/hu/mennyiseg-kalkulatorok",
+      "destination": "/hu/lemez-vasalas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/vasalasi-rajz-kalkulatorok",
+      "destination": "/hu/vas-kiosztas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/vasalasi-rajz-kalkulatorok.html",
+      "destination": "/hu/vas-kiosztas-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/rebar-detailing-calculators",
-      "destination": "/hu/vasalasi-rajz-kalkulatorok",
+      "destination": "/hu/vas-kiosztas-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/rebar-detailing-calculators.html",
-      "destination": "/hu/vasalasi-rajz-kalkulatorok",
+      "destination": "/hu/vas-kiosztas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/szerkezeti-elemek-kalkulatorok",
+      "destination": "/hu/oszlop-vasalas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/szerkezeti-elemek-kalkulatorok.html",
+      "destination": "/hu/oszlop-vasalas-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/structural-rebar-calculators",
-      "destination": "/hu/szerkezeti-elemek-kalkulatorok",
+      "destination": "/hu/oszlop-vasalas-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/structural-rebar-calculators.html",
-      "destination": "/hu/szerkezeti-elemek-kalkulatorok",
+      "destination": "/hu/oszlop-vasalas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/kereskedelmi-kalkulatorok",
+      "destination": "/hu/vasalas-koeltseg-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/kereskedelmi-kalkulatorok.html",
+      "destination": "/hu/vasalas-koeltseg-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/rebar-cost-tonnage-calculators",
-      "destination": "/hu/kereskedelmi-kalkulatorok",
+      "destination": "/hu/vasalas-koeltseg-kalkulator",
       "permanent": true
     },
     {
       "source": "/hu/rebar-cost-tonnage-calculators.html",
-      "destination": "/hu/kereskedelmi-kalkulatorok",
+      "destination": "/hu/vasalas-koeltseg-kalkulator",
       "permanent": true
     },
     {
@@ -3410,53 +4110,103 @@
       "permanent": true
     },
     {
+      "source": "/fi/paino-laskurit",
+      "destination": "/fi/raudoituksen-painolaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/paino-laskurit.html",
+      "destination": "/fi/raudoituksen-painolaskuri",
+      "permanent": true
+    },
+    {
       "source": "/fi/rebar-weight-calculators",
-      "destination": "/fi/paino-laskurit",
+      "destination": "/fi/raudoituksen-painolaskuri",
       "permanent": true
     },
     {
       "source": "/fi/rebar-weight-calculators.html",
-      "destination": "/fi/paino-laskurit",
+      "destination": "/fi/raudoituksen-painolaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/maeaeraelaskenta-laskurit",
+      "destination": "/fi/laatan-raudoituslaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/maeaeraelaskenta-laskurit.html",
+      "destination": "/fi/laatan-raudoituslaskuri",
       "permanent": true
     },
     {
       "source": "/fi/concrete-rebar-estimating-calculators",
-      "destination": "/fi/maeaeraelaskenta-laskurit",
+      "destination": "/fi/laatan-raudoituslaskuri",
       "permanent": true
     },
     {
       "source": "/fi/concrete-rebar-estimating-calculators.html",
-      "destination": "/fi/maeaeraelaskenta-laskurit",
+      "destination": "/fi/laatan-raudoituslaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/detaljointi-laskurit",
+      "destination": "/fi/tankojaon-laskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/detaljointi-laskurit.html",
+      "destination": "/fi/tankojaon-laskuri",
       "permanent": true
     },
     {
       "source": "/fi/rebar-detailing-calculators",
-      "destination": "/fi/detaljointi-laskurit",
+      "destination": "/fi/tankojaon-laskuri",
       "permanent": true
     },
     {
       "source": "/fi/rebar-detailing-calculators.html",
-      "destination": "/fi/detaljointi-laskurit",
+      "destination": "/fi/tankojaon-laskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/rakenneosat-laskurit",
+      "destination": "/fi/pilarin-raudoituslaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/rakenneosat-laskurit.html",
+      "destination": "/fi/pilarin-raudoituslaskuri",
       "permanent": true
     },
     {
       "source": "/fi/structural-rebar-calculators",
-      "destination": "/fi/rakenneosat-laskurit",
+      "destination": "/fi/pilarin-raudoituslaskuri",
       "permanent": true
     },
     {
       "source": "/fi/structural-rebar-calculators.html",
-      "destination": "/fi/rakenneosat-laskurit",
+      "destination": "/fi/pilarin-raudoituslaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/kaupallinen-laskurit",
+      "destination": "/fi/raudoituksen-hintalaskuri",
+      "permanent": true
+    },
+    {
+      "source": "/fi/kaupallinen-laskurit.html",
+      "destination": "/fi/raudoituksen-hintalaskuri",
       "permanent": true
     },
     {
       "source": "/fi/rebar-cost-tonnage-calculators",
-      "destination": "/fi/kaupallinen-laskurit",
+      "destination": "/fi/raudoituksen-hintalaskuri",
       "permanent": true
     },
     {
       "source": "/fi/rebar-cost-tonnage-calculators.html",
-      "destination": "/fi/kaupallinen-laskurit",
+      "destination": "/fi/raudoituksen-hintalaskuri",
       "permanent": true
     },
     {
@@ -3670,53 +4420,103 @@
       "permanent": true
     },
     {
+      "source": "/bg/teglo-kalkulatori",
+      "destination": "/bg/kalkulator-za-teglo-na-armirovka",
+      "permanent": true
+    },
+    {
+      "source": "/bg/teglo-kalkulatori.html",
+      "destination": "/bg/kalkulator-za-teglo-na-armirovka",
+      "permanent": true
+    },
+    {
       "source": "/bg/rebar-weight-calculators",
-      "destination": "/bg/teglo-kalkulatori",
+      "destination": "/bg/kalkulator-za-teglo-na-armirovka",
       "permanent": true
     },
     {
       "source": "/bg/rebar-weight-calculators.html",
-      "destination": "/bg/teglo-kalkulatori",
+      "destination": "/bg/kalkulator-za-teglo-na-armirovka",
+      "permanent": true
+    },
+    {
+      "source": "/bg/kolichestva-kalkulatori",
+      "destination": "/bg/kalkulator-za-armirovka-na-plocha",
+      "permanent": true
+    },
+    {
+      "source": "/bg/kolichestva-kalkulatori.html",
+      "destination": "/bg/kalkulator-za-armirovka-na-plocha",
       "permanent": true
     },
     {
       "source": "/bg/concrete-rebar-estimating-calculators",
-      "destination": "/bg/kolichestva-kalkulatori",
+      "destination": "/bg/kalkulator-za-armirovka-na-plocha",
       "permanent": true
     },
     {
       "source": "/bg/concrete-rebar-estimating-calculators.html",
-      "destination": "/bg/kolichestva-kalkulatori",
+      "destination": "/bg/kalkulator-za-armirovka-na-plocha",
+      "permanent": true
+    },
+    {
+      "source": "/bg/detaylirane-kalkulatori",
+      "destination": "/bg/kalkulator-za-razstoyanie-mezhdu-prati",
+      "permanent": true
+    },
+    {
+      "source": "/bg/detaylirane-kalkulatori.html",
+      "destination": "/bg/kalkulator-za-razstoyanie-mezhdu-prati",
       "permanent": true
     },
     {
       "source": "/bg/rebar-detailing-calculators",
-      "destination": "/bg/detaylirane-kalkulatori",
+      "destination": "/bg/kalkulator-za-razstoyanie-mezhdu-prati",
       "permanent": true
     },
     {
       "source": "/bg/rebar-detailing-calculators.html",
-      "destination": "/bg/detaylirane-kalkulatori",
+      "destination": "/bg/kalkulator-za-razstoyanie-mezhdu-prati",
+      "permanent": true
+    },
+    {
+      "source": "/bg/elementi-kalkulatori",
+      "destination": "/bg/kalkulator-za-armirovka-na-kolona",
+      "permanent": true
+    },
+    {
+      "source": "/bg/elementi-kalkulatori.html",
+      "destination": "/bg/kalkulator-za-armirovka-na-kolona",
       "permanent": true
     },
     {
       "source": "/bg/structural-rebar-calculators",
-      "destination": "/bg/elementi-kalkulatori",
+      "destination": "/bg/kalkulator-za-armirovka-na-kolona",
       "permanent": true
     },
     {
       "source": "/bg/structural-rebar-calculators.html",
-      "destination": "/bg/elementi-kalkulatori",
+      "destination": "/bg/kalkulator-za-armirovka-na-kolona",
+      "permanent": true
+    },
+    {
+      "source": "/bg/targovsko-kalkulatori",
+      "destination": "/bg/kalkulator-za-tsena-na-armirovka",
+      "permanent": true
+    },
+    {
+      "source": "/bg/targovsko-kalkulatori.html",
+      "destination": "/bg/kalkulator-za-tsena-na-armirovka",
       "permanent": true
     },
     {
       "source": "/bg/rebar-cost-tonnage-calculators",
-      "destination": "/bg/targovsko-kalkulatori",
+      "destination": "/bg/kalkulator-za-tsena-na-armirovka",
       "permanent": true
     },
     {
       "source": "/bg/rebar-cost-tonnage-calculators.html",
-      "destination": "/bg/targovsko-kalkulatori",
+      "destination": "/bg/kalkulator-za-tsena-na-armirovka",
       "permanent": true
     },
     {
@@ -3930,53 +4730,103 @@
       "permanent": true
     },
     {
+      "source": "/hr/tezina-kalkulatori",
+      "destination": "/hr/kalkulator-tezine-armature",
+      "permanent": true
+    },
+    {
+      "source": "/hr/tezina-kalkulatori.html",
+      "destination": "/hr/kalkulator-tezine-armature",
+      "permanent": true
+    },
+    {
       "source": "/hr/rebar-weight-calculators",
-      "destination": "/hr/tezina-kalkulatori",
+      "destination": "/hr/kalkulator-tezine-armature",
       "permanent": true
     },
     {
       "source": "/hr/rebar-weight-calculators.html",
-      "destination": "/hr/tezina-kalkulatori",
+      "destination": "/hr/kalkulator-tezine-armature",
+      "permanent": true
+    },
+    {
+      "source": "/hr/troskovnik-kalkulatori",
+      "destination": "/hr/kalkulator-armature-ploce",
+      "permanent": true
+    },
+    {
+      "source": "/hr/troskovnik-kalkulatori.html",
+      "destination": "/hr/kalkulator-armature-ploce",
       "permanent": true
     },
     {
       "source": "/hr/concrete-rebar-estimating-calculators",
-      "destination": "/hr/troskovnik-kalkulatori",
+      "destination": "/hr/kalkulator-armature-ploce",
       "permanent": true
     },
     {
       "source": "/hr/concrete-rebar-estimating-calculators.html",
-      "destination": "/hr/troskovnik-kalkulatori",
+      "destination": "/hr/kalkulator-armature-ploce",
+      "permanent": true
+    },
+    {
+      "source": "/hr/detaljiranje-kalkulatori",
+      "destination": "/hr/kalkulator-razmaka-sipki",
+      "permanent": true
+    },
+    {
+      "source": "/hr/detaljiranje-kalkulatori.html",
+      "destination": "/hr/kalkulator-razmaka-sipki",
       "permanent": true
     },
     {
       "source": "/hr/rebar-detailing-calculators",
-      "destination": "/hr/detaljiranje-kalkulatori",
+      "destination": "/hr/kalkulator-razmaka-sipki",
       "permanent": true
     },
     {
       "source": "/hr/rebar-detailing-calculators.html",
-      "destination": "/hr/detaljiranje-kalkulatori",
+      "destination": "/hr/kalkulator-razmaka-sipki",
+      "permanent": true
+    },
+    {
+      "source": "/hr/elementi-kalkulatori",
+      "destination": "/hr/kalkulator-armature-stupa",
+      "permanent": true
+    },
+    {
+      "source": "/hr/elementi-kalkulatori.html",
+      "destination": "/hr/kalkulator-armature-stupa",
       "permanent": true
     },
     {
       "source": "/hr/structural-rebar-calculators",
-      "destination": "/hr/elementi-kalkulatori",
+      "destination": "/hr/kalkulator-armature-stupa",
       "permanent": true
     },
     {
       "source": "/hr/structural-rebar-calculators.html",
-      "destination": "/hr/elementi-kalkulatori",
+      "destination": "/hr/kalkulator-armature-stupa",
+      "permanent": true
+    },
+    {
+      "source": "/hr/komercijalno-kalkulatori",
+      "destination": "/hr/kalkulator-troska-armature",
+      "permanent": true
+    },
+    {
+      "source": "/hr/komercijalno-kalkulatori.html",
+      "destination": "/hr/kalkulator-troska-armature",
       "permanent": true
     },
     {
       "source": "/hr/rebar-cost-tonnage-calculators",
-      "destination": "/hr/komercijalno-kalkulatori",
+      "destination": "/hr/kalkulator-troska-armature",
       "permanent": true
     },
     {
       "source": "/hr/rebar-cost-tonnage-calculators.html",
-      "destination": "/hr/komercijalno-kalkulatori",
+      "destination": "/hr/kalkulator-troska-armature",
       "permanent": true
     },
     {
@@ -4190,53 +5040,103 @@
       "permanent": true
     },
     {
+      "source": "/sk/hmotnost-kalkulacky",
+      "destination": "/sk/kalkulacka-hmotnosti-vystuze",
+      "permanent": true
+    },
+    {
+      "source": "/sk/hmotnost-kalkulacky.html",
+      "destination": "/sk/kalkulacka-hmotnosti-vystuze",
+      "permanent": true
+    },
+    {
       "source": "/sk/rebar-weight-calculators",
-      "destination": "/sk/hmotnost-kalkulacky",
+      "destination": "/sk/kalkulacka-hmotnosti-vystuze",
       "permanent": true
     },
     {
       "source": "/sk/rebar-weight-calculators.html",
-      "destination": "/sk/hmotnost-kalkulacky",
+      "destination": "/sk/kalkulacka-hmotnosti-vystuze",
+      "permanent": true
+    },
+    {
+      "source": "/sk/vykazy-kalkulacky",
+      "destination": "/sk/kalkulacka-vystuze-dosky",
+      "permanent": true
+    },
+    {
+      "source": "/sk/vykazy-kalkulacky.html",
+      "destination": "/sk/kalkulacka-vystuze-dosky",
       "permanent": true
     },
     {
       "source": "/sk/concrete-rebar-estimating-calculators",
-      "destination": "/sk/vykazy-kalkulacky",
+      "destination": "/sk/kalkulacka-vystuze-dosky",
       "permanent": true
     },
     {
       "source": "/sk/concrete-rebar-estimating-calculators.html",
-      "destination": "/sk/vykazy-kalkulacky",
+      "destination": "/sk/kalkulacka-vystuze-dosky",
+      "permanent": true
+    },
+    {
+      "source": "/sk/detailovanie-kalkulacky",
+      "destination": "/sk/kalkulacka-rozstupu-prutov",
+      "permanent": true
+    },
+    {
+      "source": "/sk/detailovanie-kalkulacky.html",
+      "destination": "/sk/kalkulacka-rozstupu-prutov",
       "permanent": true
     },
     {
       "source": "/sk/rebar-detailing-calculators",
-      "destination": "/sk/detailovanie-kalkulacky",
+      "destination": "/sk/kalkulacka-rozstupu-prutov",
       "permanent": true
     },
     {
       "source": "/sk/rebar-detailing-calculators.html",
-      "destination": "/sk/detailovanie-kalkulacky",
+      "destination": "/sk/kalkulacka-rozstupu-prutov",
+      "permanent": true
+    },
+    {
+      "source": "/sk/prvky-kalkulacky",
+      "destination": "/sk/kalkulacka-vystuze-stlpa",
+      "permanent": true
+    },
+    {
+      "source": "/sk/prvky-kalkulacky.html",
+      "destination": "/sk/kalkulacka-vystuze-stlpa",
       "permanent": true
     },
     {
       "source": "/sk/structural-rebar-calculators",
-      "destination": "/sk/prvky-kalkulacky",
+      "destination": "/sk/kalkulacka-vystuze-stlpa",
       "permanent": true
     },
     {
       "source": "/sk/structural-rebar-calculators.html",
-      "destination": "/sk/prvky-kalkulacky",
+      "destination": "/sk/kalkulacka-vystuze-stlpa",
+      "permanent": true
+    },
+    {
+      "source": "/sk/obchodne-kalkulacky",
+      "destination": "/sk/kalkulacka-ceny-vystuze",
+      "permanent": true
+    },
+    {
+      "source": "/sk/obchodne-kalkulacky.html",
+      "destination": "/sk/kalkulacka-ceny-vystuze",
       "permanent": true
     },
     {
       "source": "/sk/rebar-cost-tonnage-calculators",
-      "destination": "/sk/obchodne-kalkulacky",
+      "destination": "/sk/kalkulacka-ceny-vystuze",
       "permanent": true
     },
     {
       "source": "/sk/rebar-cost-tonnage-calculators.html",
-      "destination": "/sk/obchodne-kalkulacky",
+      "destination": "/sk/kalkulacka-ceny-vystuze",
       "permanent": true
     },
     {
@@ -4450,53 +5350,103 @@
       "permanent": true
     },
     {
+      "source": "/sl/teza-kalkulatorji",
+      "destination": "/sl/kalkulator-teze-armature",
+      "permanent": true
+    },
+    {
+      "source": "/sl/teza-kalkulatorji.html",
+      "destination": "/sl/kalkulator-teze-armature",
+      "permanent": true
+    },
+    {
       "source": "/sl/rebar-weight-calculators",
-      "destination": "/sl/teza-kalkulatorji",
+      "destination": "/sl/kalkulator-teze-armature",
       "permanent": true
     },
     {
       "source": "/sl/rebar-weight-calculators.html",
-      "destination": "/sl/teza-kalkulatorji",
+      "destination": "/sl/kalkulator-teze-armature",
+      "permanent": true
+    },
+    {
+      "source": "/sl/popisi-kalkulatorji",
+      "destination": "/sl/kalkulator-armature-plosce",
+      "permanent": true
+    },
+    {
+      "source": "/sl/popisi-kalkulatorji.html",
+      "destination": "/sl/kalkulator-armature-plosce",
       "permanent": true
     },
     {
       "source": "/sl/concrete-rebar-estimating-calculators",
-      "destination": "/sl/popisi-kalkulatorji",
+      "destination": "/sl/kalkulator-armature-plosce",
       "permanent": true
     },
     {
       "source": "/sl/concrete-rebar-estimating-calculators.html",
-      "destination": "/sl/popisi-kalkulatorji",
+      "destination": "/sl/kalkulator-armature-plosce",
+      "permanent": true
+    },
+    {
+      "source": "/sl/detajliranje-kalkulatorji",
+      "destination": "/sl/kalkulator-razmika-palic",
+      "permanent": true
+    },
+    {
+      "source": "/sl/detajliranje-kalkulatorji.html",
+      "destination": "/sl/kalkulator-razmika-palic",
       "permanent": true
     },
     {
       "source": "/sl/rebar-detailing-calculators",
-      "destination": "/sl/detajliranje-kalkulatorji",
+      "destination": "/sl/kalkulator-razmika-palic",
       "permanent": true
     },
     {
       "source": "/sl/rebar-detailing-calculators.html",
-      "destination": "/sl/detajliranje-kalkulatorji",
+      "destination": "/sl/kalkulator-razmika-palic",
+      "permanent": true
+    },
+    {
+      "source": "/sl/elementi-kalkulatorji",
+      "destination": "/sl/kalkulator-armature-stebra",
+      "permanent": true
+    },
+    {
+      "source": "/sl/elementi-kalkulatorji.html",
+      "destination": "/sl/kalkulator-armature-stebra",
       "permanent": true
     },
     {
       "source": "/sl/structural-rebar-calculators",
-      "destination": "/sl/elementi-kalkulatorji",
+      "destination": "/sl/kalkulator-armature-stebra",
       "permanent": true
     },
     {
       "source": "/sl/structural-rebar-calculators.html",
-      "destination": "/sl/elementi-kalkulatorji",
+      "destination": "/sl/kalkulator-armature-stebra",
+      "permanent": true
+    },
+    {
+      "source": "/sl/komercialno-kalkulatorji",
+      "destination": "/sl/kalkulator-stroska-armature",
+      "permanent": true
+    },
+    {
+      "source": "/sl/komercialno-kalkulatorji.html",
+      "destination": "/sl/kalkulator-stroska-armature",
       "permanent": true
     },
     {
       "source": "/sl/rebar-cost-tonnage-calculators",
-      "destination": "/sl/komercialno-kalkulatorji",
+      "destination": "/sl/kalkulator-stroska-armature",
       "permanent": true
     },
     {
       "source": "/sl/rebar-cost-tonnage-calculators.html",
-      "destination": "/sl/komercialno-kalkulatorji",
+      "destination": "/sl/kalkulator-stroska-armature",
       "permanent": true
     },
     {
@@ -4710,53 +5660,103 @@
       "permanent": true
     },
     {
+      "source": "/et/kaal-kalkulaatorid",
+      "destination": "/et/sarruse-kaalu-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/kaal-kalkulaatorid.html",
+      "destination": "/et/sarruse-kaalu-kalkulaator",
+      "permanent": true
+    },
+    {
       "source": "/et/rebar-weight-calculators",
-      "destination": "/et/kaal-kalkulaatorid",
+      "destination": "/et/sarruse-kaalu-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/rebar-weight-calculators.html",
-      "destination": "/et/kaal-kalkulaatorid",
+      "destination": "/et/sarruse-kaalu-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/mahud-kalkulaatorid",
+      "destination": "/et/plaadi-sarruse-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/mahud-kalkulaatorid.html",
+      "destination": "/et/plaadi-sarruse-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/concrete-rebar-estimating-calculators",
-      "destination": "/et/mahud-kalkulaatorid",
+      "destination": "/et/plaadi-sarruse-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/concrete-rebar-estimating-calculators.html",
-      "destination": "/et/mahud-kalkulaatorid",
+      "destination": "/et/plaadi-sarruse-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/detailimine-kalkulaatorid",
+      "destination": "/et/varraste-sammu-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/detailimine-kalkulaatorid.html",
+      "destination": "/et/varraste-sammu-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/rebar-detailing-calculators",
-      "destination": "/et/detailimine-kalkulaatorid",
+      "destination": "/et/varraste-sammu-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/rebar-detailing-calculators.html",
-      "destination": "/et/detailimine-kalkulaatorid",
+      "destination": "/et/varraste-sammu-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/elemendid-kalkulaatorid",
+      "destination": "/et/samba-sarruse-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/elemendid-kalkulaatorid.html",
+      "destination": "/et/samba-sarruse-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/structural-rebar-calculators",
-      "destination": "/et/elemendid-kalkulaatorid",
+      "destination": "/et/samba-sarruse-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/structural-rebar-calculators.html",
-      "destination": "/et/elemendid-kalkulaatorid",
+      "destination": "/et/samba-sarruse-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/aeriline-kalkulaatorid",
+      "destination": "/et/sarruse-maksumuse-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/aeriline-kalkulaatorid.html",
+      "destination": "/et/sarruse-maksumuse-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/rebar-cost-tonnage-calculators",
-      "destination": "/et/aeriline-kalkulaatorid",
+      "destination": "/et/sarruse-maksumuse-kalkulaator",
       "permanent": true
     },
     {
       "source": "/et/rebar-cost-tonnage-calculators.html",
-      "destination": "/et/aeriline-kalkulaatorid",
+      "destination": "/et/sarruse-maksumuse-kalkulaator",
       "permanent": true
     },
     {
@@ -4970,53 +5970,103 @@
       "permanent": true
     },
     {
+      "source": "/lv/svars-kalkulatori",
+      "destination": "/lv/stiegrojuma-svara-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/svars-kalkulatori.html",
+      "destination": "/lv/stiegrojuma-svara-kalkulators",
+      "permanent": true
+    },
+    {
       "source": "/lv/rebar-weight-calculators",
-      "destination": "/lv/svars-kalkulatori",
+      "destination": "/lv/stiegrojuma-svara-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/rebar-weight-calculators.html",
-      "destination": "/lv/svars-kalkulatori",
+      "destination": "/lv/stiegrojuma-svara-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/apjomi-kalkulatori",
+      "destination": "/lv/platnes-stiegrojuma-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/apjomi-kalkulatori.html",
+      "destination": "/lv/platnes-stiegrojuma-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/concrete-rebar-estimating-calculators",
-      "destination": "/lv/apjomi-kalkulatori",
+      "destination": "/lv/platnes-stiegrojuma-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/concrete-rebar-estimating-calculators.html",
-      "destination": "/lv/apjomi-kalkulatori",
+      "destination": "/lv/platnes-stiegrojuma-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/detalizacija-kalkulatori",
+      "destination": "/lv/stienu-atstatuma-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/detalizacija-kalkulatori.html",
+      "destination": "/lv/stienu-atstatuma-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/rebar-detailing-calculators",
-      "destination": "/lv/detalizacija-kalkulatori",
+      "destination": "/lv/stienu-atstatuma-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/rebar-detailing-calculators.html",
-      "destination": "/lv/detalizacija-kalkulatori",
+      "destination": "/lv/stienu-atstatuma-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/elementi-kalkulatori",
+      "destination": "/lv/kolonnas-stiegrojuma-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/elementi-kalkulatori.html",
+      "destination": "/lv/kolonnas-stiegrojuma-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/structural-rebar-calculators",
-      "destination": "/lv/elementi-kalkulatori",
+      "destination": "/lv/kolonnas-stiegrojuma-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/structural-rebar-calculators.html",
-      "destination": "/lv/elementi-kalkulatori",
+      "destination": "/lv/kolonnas-stiegrojuma-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/komercials-kalkulatori",
+      "destination": "/lv/stiegrojuma-izmaksu-kalkulators",
+      "permanent": true
+    },
+    {
+      "source": "/lv/komercials-kalkulatori.html",
+      "destination": "/lv/stiegrojuma-izmaksu-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/rebar-cost-tonnage-calculators",
-      "destination": "/lv/komercials-kalkulatori",
+      "destination": "/lv/stiegrojuma-izmaksu-kalkulators",
       "permanent": true
     },
     {
       "source": "/lv/rebar-cost-tonnage-calculators.html",
-      "destination": "/lv/komercials-kalkulatori",
+      "destination": "/lv/stiegrojuma-izmaksu-kalkulators",
       "permanent": true
     },
     {
@@ -5230,53 +6280,103 @@
       "permanent": true
     },
     {
+      "source": "/lt/svoris-skaiciuotuvai",
+      "destination": "/lt/armaturos-svorio-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/svoris-skaiciuotuvai.html",
+      "destination": "/lt/armaturos-svorio-skaiciuotuvas",
+      "permanent": true
+    },
+    {
       "source": "/lt/rebar-weight-calculators",
-      "destination": "/lt/svoris-skaiciuotuvai",
+      "destination": "/lt/armaturos-svorio-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/rebar-weight-calculators.html",
-      "destination": "/lt/svoris-skaiciuotuvai",
+      "destination": "/lt/armaturos-svorio-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/kiekiai-skaiciuotuvai",
+      "destination": "/lt/plokstes-armaturos-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/kiekiai-skaiciuotuvai.html",
+      "destination": "/lt/plokstes-armaturos-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/concrete-rebar-estimating-calculators",
-      "destination": "/lt/kiekiai-skaiciuotuvai",
+      "destination": "/lt/plokstes-armaturos-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/concrete-rebar-estimating-calculators.html",
-      "destination": "/lt/kiekiai-skaiciuotuvai",
+      "destination": "/lt/plokstes-armaturos-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/detalizavimas-skaiciuotuvai",
+      "destination": "/lt/strypu-zingsnio-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/detalizavimas-skaiciuotuvai.html",
+      "destination": "/lt/strypu-zingsnio-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/rebar-detailing-calculators",
-      "destination": "/lt/detalizavimas-skaiciuotuvai",
+      "destination": "/lt/strypu-zingsnio-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/rebar-detailing-calculators.html",
-      "destination": "/lt/detalizavimas-skaiciuotuvai",
+      "destination": "/lt/strypu-zingsnio-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/elementai-skaiciuotuvai",
+      "destination": "/lt/kolonos-armaturos-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/elementai-skaiciuotuvai.html",
+      "destination": "/lt/kolonos-armaturos-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/structural-rebar-calculators",
-      "destination": "/lt/elementai-skaiciuotuvai",
+      "destination": "/lt/kolonos-armaturos-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/structural-rebar-calculators.html",
-      "destination": "/lt/elementai-skaiciuotuvai",
+      "destination": "/lt/kolonos-armaturos-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/komercinis-skaiciuotuvai",
+      "destination": "/lt/armaturos-kainos-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/komercinis-skaiciuotuvai.html",
+      "destination": "/lt/armaturos-kainos-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/rebar-cost-tonnage-calculators",
-      "destination": "/lt/komercinis-skaiciuotuvai",
+      "destination": "/lt/armaturos-kainos-skaiciuotuvas",
       "permanent": true
     },
     {
       "source": "/lt/rebar-cost-tonnage-calculators.html",
-      "destination": "/lt/komercinis-skaiciuotuvai",
+      "destination": "/lt/armaturos-kainos-skaiciuotuvas",
       "permanent": true
     },
     {

@@ -21,22 +21,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Silo: Weight Calculators (it) -->
-  <url>
-    <loc>https://steelrebarcalculator.com/it/peso-calcolatori</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-weight-calculators"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/peso-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/poids-calculateurs"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/gewicht-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/peso-calcolatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/peso-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/gewicht-calculators"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/masa-kalkulatory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-weight-calculators"/>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Category: Weight Calculators (it) -->
   <url>
     <loc>https://steelrebarcalculator.com/it/calcolatore-peso-tondino</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-weight-calculator"/>
@@ -83,22 +68,7 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Silo: Estimating Calculators (it) -->
-  <url>
-    <loc>https://steelrebarcalculator.com/it/computo-calcolatori</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-rebar-estimating-calculators"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/mediciones-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/metre-calculateurs"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/mengenermittlung-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/computo-calcolatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/quantitativos-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/hoeveelheden-calculators"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/przedmiar-kalkulatory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/concrete-rebar-estimating-calculators"/>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Category: Estimating Calculators (it) -->
   <url>
     <loc>https://steelrebarcalculator.com/it/calcolatore-armatura-soletta</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-slab-rebar-calculator"/>
@@ -175,22 +145,7 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Silo: Detailing Calculators (it) -->
-  <url>
-    <loc>https://steelrebarcalculator.com/it/dettaglio-calcolatori</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-detailing-calculators"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/detallado-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/faconnage-calculateurs"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsfuehrung-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/dettaglio-calcolatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/detalhamento-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/detaillering-calculators"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/szczegolowanie-kalkulatory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-detailing-calculators"/>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Category: Detailing Calculators (it) -->
   <url>
     <loc>https://steelrebarcalculator.com/it/calcolatore-interasse-barre</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-spacing-calculator"/>
@@ -297,22 +252,7 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Silo: Members Calculators (it) -->
-  <url>
-    <loc>https://steelrebarcalculator.com/it/elementi-calcolatori</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/elementos-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/elements-calculateurs"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bauteile-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/elementi-calcolatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/elementos-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/onderdelen-calculators"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/elementy-kalkulatory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Category: Members Calculators (it) -->
   <url>
     <loc>https://steelrebarcalculator.com/it/calcolatore-armatura-pilastro</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/column-rebar-calculator"/>
@@ -374,22 +314,7 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Silo: Commercial Calculators (it) -->
-  <url>
-    <loc>https://steelrebarcalculator.com/it/commerciale-calcolatori</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-cost-tonnage-calculators"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/comercial-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/commercial-calculateurs"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/kaufmaennisch-rechner"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/commerciale-calcolatori"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/comercial-calculadoras"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/commercieel-calculators"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/handlowe-kalkulatory"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-cost-tonnage-calculators"/>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Category: Commercial Calculators (it) -->
   <url>
     <loc>https://steelrebarcalculator.com/it/calcolatore-costo-acciaio</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
