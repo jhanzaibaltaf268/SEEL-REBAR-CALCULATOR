@@ -56,96 +56,54 @@
   <div class="wrap header-inner">
     <!-- Brand Logo -->
     <a class="brand" href="/" aria-label="Steel Rebar Calculator Homepage">
-      <span class="brand-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-          <path d="M3 9h18"></path>
-          <path d="M3 15h18"></path>
-          <path d="M9 3v18"></path>
-          <path d="M15 3v18"></path>
-        </svg>
-      </span>
-      <span class="brand-text">Rebar<span>Calc</span></span>
+      <span class="brand-mark">▦</span>
+      <span class="brand-text">Rebar<strong>Calc</strong></span>
     </a>
-
-    <!-- Desktop Nav Links -->
-    <div class="nav-group">
       <nav class="top-nav" aria-label="Main Navigation">
         <a href="#calculator">Calculators</a>
-        <a href="#formula">Formula Derivation</a>
         <a href="#charts">Weight Tables</a>
         <a href="#examples">Worked Examples</a>
-        <a href="#mistakes">Common Mistakes</a>
         <a href="#faq">FAQ</a>
       </nav>
-
-      <!-- Accessible Language Dropdown -->
-      <div class="lang-dropdown" id="lang-dropdown">
-        <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-          <span>EN</span>
-          <svg class="lang-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <div class="lang-menu" id="lang-menu" role="menu">
-          <a class="active" hreflang="en" href="/" role="menuitem">English</a>
-          <a hreflang="es" href="/es/" role="menuitem">Español</a>
-          <a hreflang="fr" href="/fr/" role="menuitem">Français</a>
-          <a hreflang="de" href="/de/" role="menuitem">Deutsch</a>
-          <a hreflang="it" href="/it/" role="menuitem">Italiano</a>
-          <a hreflang="pt" href="/pt/" role="menuitem">Português</a>
-          <a hreflang="nl" href="/nl/" role="menuitem">Nederlands</a>
-          <a hreflang="pl" href="/pl/" role="menuitem">Polski</a>
+      <details class="lang-dropdown">
+        <summary>🌐 EN <span class="caret">▾</span></summary>
+        <div class="lang-menu">
+          <a class="lang active" hreflang="en" href="/">English</a>
+          <a class="lang" hreflang="es" href="/es/">Español</a>
+          <a class="lang" hreflang="fr" href="/fr/">Français</a>
+          <a class="lang" hreflang="de" href="/de/">Deutsch</a>
+          <a class="lang" hreflang="it" href="/it/">Italiano</a>
+          <a class="lang" hreflang="pt" href="/pt/">Português</a>
+          <a class="lang" hreflang="nl" href="/nl/">Nederlands</a>
+          <a class="lang" hreflang="pl" href="/pl/">Polski</a>
+          <a class="lang" hreflang="ro" href="/ro/">Română</a>
+          <a class="lang" hreflang="sv" href="/sv/">Svenska</a>
+          <a class="lang" hreflang="cs" href="/cs/">Čeština</a>
+          <a class="lang" hreflang="da" href="/da/">Dansk</a>
+          <a class="lang" hreflang="el" href="/el/">Ελληνικά</a>
+          <a class="lang" hreflang="hu" href="/hu/">Magyar</a>
+          <a class="lang" hreflang="fi" href="/fi/">Suomi</a>
+          <a class="lang" hreflang="bg" href="/bg/">Български</a>
+          <a class="lang" hreflang="hr" href="/hr/">Hrvatski</a>
+          <a class="lang" hreflang="sk" href="/sk/">Slovenčina</a>
+          <a class="lang" hreflang="sl" href="/sl/">Slovenščina</a>
+          <a class="lang" hreflang="et" href="/et/">Eesti</a>
+          <a class="lang" hreflang="lv" href="/lv/">Latviešu</a>
+          <a class="lang" hreflang="lt" href="/lt/">Lietuvių</a>
         </div>
+      </details>
+    </div>
+    <div class="silos-bar">
+      <div class="wrap silos-bar-inner">
+        <span class="silos-bar-label">Calculators:</span>
+        <a class="silo-bar-pill" href="/rebar-weight-calculators"><b>Weight</b></a>
+        <a class="silo-bar-pill" href="/concrete-rebar-estimating-calculators"><b>Estimating</b></a>
+        <a class="silo-bar-pill" href="/rebar-detailing-calculators"><b>Detailing</b></a>
+        <a class="silo-bar-pill" href="/structural-rebar-calculators"><b>Members</b></a>
+        <a class="silo-bar-pill" href="/rebar-cost-tonnage-calculators"><b>Commercial</b></a>
       </div>
-
-      <!-- Mobile Hamburger Button -->
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <svg id="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <svg id="close-icon" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
     </div>
-  </div>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobile-drawer">
-    <a href="#calculator">All 21 Calculators</a>
-    <a href="#formula">Formula Derivation (D²/162)</a>
-    <a href="#charts">Weight & Size Tables</a>
-    <a href="#examples">Worked Examples</a>
-    <a href="#mistakes">Common Mistakes to Avoid</a>
-    <a href="#faq">Frequently Asked Questions</a>
-    <a href="/rebar-weight-calculators">Weight Silo Hub</a>
-    <a href="/concrete-rebar-estimating-calculators">Estimating Silo Hub</a>
-    <a href="/rebar-detailing-calculators">Detailing Silo Hub</a>
-    <a href="/structural-rebar-calculators">Members Silo Hub</a>
-    <a href="/rebar-cost-tonnage-calculators">Commercial Silo Hub</a>
-  </div>
-
-  <!-- Silos Sub-Bar -->
-  <div class="silos-bar">
-    <div class="wrap silos-bar-inner">
-      <span class="silos-label">Categories:</span>
-      <a class="silo-pill" href="/rebar-weight-calculators">Weight</a>
-      <a class="silo-pill" href="/concrete-rebar-estimating-calculators">Estimating</a>
-      <a class="silo-pill" href="/rebar-detailing-calculators">Detailing</a>
-      <a class="silo-pill" href="/structural-rebar-calculators">Members</a>
-      <a class="silo-pill" href="/rebar-cost-tonnage-calculators">Commercial</a>
-    </div>
-  </div>
-</header>
+  </header>
 
 <!-- PHASE 1 HERO: Tool-first directness — H1 only, no eyebrow line, no sub-paragraph, no trust chips, no hero buttons -->
 <section class="hero hero-minimal">
@@ -937,64 +895,20 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
 <script src="slugs.js"></script>
 <script src="script.js"></script>
 
-<!-- UI Interaction Scripts: Mobile Drawer, Language Dropdown with Outside-Click & Escape -->
 <script>
   (function() {
-    // 1. Language Dropdown Controller (Outside Click & Escape Listener)
-    const langDropdown = document.getElementById('lang-dropdown');
-    const langBtn = document.getElementById('lang-btn');
-
-    if (langDropdown && langBtn) {
-      langBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const isOpen = langDropdown.classList.toggle('active');
-        langBtn.setAttribute('aria-expanded', isOpen);
+    // 1. Dynamic Calculation Pulse & Number Flash Animation
+    const inputsBox = document.getElementById('inputs');
+    const resultBox = document.querySelector('.result');
+    if (inputsBox && resultBox) {
+      inputsBox.addEventListener('input', function() {
+        resultBox.classList.remove('computed');
+        void resultBox.offsetWidth; // Trigger reflow for animation restart
+        resultBox.classList.add('computed');
       });
-
-      // Outside click handler
-      document.addEventListener('click', function(e) {
-        if (!langDropdown.contains(e.target)) {
-          langDropdown.classList.remove('active');
-          langBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      // Escape key handler
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          langDropdown.classList.remove('active');
-          langBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    // 2. Mobile Hamburger Menu Drawer Controller
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileDrawer = document.getElementById('mobile-drawer');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    if (mobileToggle && mobileDrawer) {
-      mobileToggle.addEventListener('click', function() {
-        const isOpen = mobileDrawer.classList.toggle('open');
-        mobileToggle.setAttribute('aria-expanded', isOpen);
-        if (hamburgerIcon && closeIcon) {
-          hamburgerIcon.style.display = isOpen ? 'none' : 'block';
-          closeIcon.style.display = isOpen ? 'block' : 'none';
-        }
-      });
-
-      // Close drawer when any link inside is clicked
-      mobileDrawer.querySelectorAll('a').forEach(function(link) {
-        link.addEventListener('click', function() {
-          mobileDrawer.classList.remove('open');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-          if (hamburgerIcon && closeIcon) {
-            hamburgerIcon.style.display = 'block';
-            closeIcon.style.display = 'none';
-          }
-        });
-      });
+      setTimeout(function() {
+        resultBox.classList.add('computed');
+      }, 500);
     }
 
     // 3. Dynamic Calculation Pulse & Number Flash Animation
