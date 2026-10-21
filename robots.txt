@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://steelrebarcalculator.com/sitemap.xml
+Sitemap: https://steelrebarcalculator.com/sitemap_index.xml
 Sitemap: https://steelrebarcalculator.com/sitemap-en.xml

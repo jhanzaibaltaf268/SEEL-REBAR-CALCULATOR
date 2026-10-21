@@ -50,23 +50,63 @@ const CALCS = {
   weight: {
     cat:"Weight", name:"Rebar Weight",
     title:"Rebar Weight Calculator",
-    desc:"Calculate the weight of steel rebar by bar size, length and quantity — in kg, lb and tons.",
+    desc:"Calculate the weight of steel rebar by bar size, length and quantity in kg, lb and tons — or reverse calculate total length and standard bars from weight.",
     fields:[
+      {k:"calcMode", label:"Calculation Mode", type:"select", options:[
+        {v:"standard", t:"Standard: Calculate Weight from Length & Qty"},
+        {v:"reverse", t:"Reverse: Calculate Length & Bars from Weight"}
+      ], default:"standard"},
       {k:"bar", label:"Bar size", type:"select", options:barOptions(), default:"0.888|12"},
       {k:"len", label:"Length per bar", type:"number", unit:"m", default:12},
       {k:"qty", label:"Quantity (pieces)", type:"number", unit:"pcs", default:100, step:1},
+      {k:"totalWeight", label:"Total steel weight", type:"number", unit:"kg", default:2000},
+      {k:"stockLen", label:"Standard stock bar length", type:"number", unit:"m", default:12}
     ],
     compute(v){
+      const isReverse = v.calcMode === "reverse";
       const kgm = barKgm(v.bar);
-      const each = kgm * v.len;
-      const total = each * v.qty;
+      const dia = barDia(v.bar);
+      const lbft = +(kgm * 0.671969).toFixed(3);
+
+      if(isReverse){
+        const totalKg = v.totalWeight || 0;
+        const totalLb = totalKg * 2.20462;
+        const totalLenM = kgm > 0 ? (totalKg / kgm) : 0;
+        const totalLenFt = totalLenM * 3.28084;
+        const stockM = v.stockLen > 0 ? v.stockLen : 12;
+        const fullBars = Math.floor(totalLenM / stockM);
+        const wholeBars = Math.ceil(totalLenM / stockM);
+        const remainderM = +(totalLenM - (fullBars * stockM)).toFixed(2);
+
+        return { rows:[
+          {label:"Total bar length", value:totalLenM, unit:"m", primary:true},
+          {label:"Total length (imperial)", value:totalLenFt, unit:"ft"},
+          {label:"Standard bars needed", value:wholeBars, unit:`bars (${stockM}m stock)`},
+          {label:"Full bars + offcut", value:fullBars, unit:`bars + ${remainderM}m`},
+          {label:"Bar unit weight", value:kgm, unit:`kg/m (${lbft} lb/ft)`},
+          {label:"Total weight entered", value:totalKg, unit:`kg (${fmt(totalLb)} lb)`},
+          {label:"Metric tonnage", value:totalKg/1000, unit:"metric ton"},
+        ], note:`Reverse derivation: ${fmt(totalKg)} kg ÷ ${kgm} kg/m = ${fmt(totalLenM)}m total length (${wholeBars} standard ${stockM}m bars).` };
+      }
+
+      // Standard mode
+      const len = v.len || 0;
+      const qty = v.qty || 0;
+      const eachKg = kgm * len;
+      const totalKg = eachKg * qty;
+      const totalLb = totalKg * 2.20462;
+      const eachLb = eachKg * 2.20462;
+      const tonsMetric = totalKg / 1000;
+      const tonsUS = totalLb / 2000;
+
       return { rows:[
-        {label:"Total weight", value:total, unit:"kg", primary:true},
-        {label:"Per piece", value:each, unit:"kg"},
-        {label:"Per metre", value:kgm, unit:"kg/m"},
-        {label:"Total", value:total*2.20462, unit:"lb"},
-        {label:"Total", value:total/1000, unit:"metric ton"},
-      ], note:`weight = ${kgm} kg/m × ${v.len} m × ${v.qty} pcs` };
+        {label:"Total steel weight", value:totalKg, unit:"kg", primary:true},
+        {label:"Total weight (imperial)", value:totalLb, unit:"lb"},
+        {label:"Weight per piece", value:eachKg, unit:`kg (${fmt(eachLb)} lb)`},
+        {label:"Unit weight", value:kgm, unit:`kg/m (${lbft} lb/ft)`},
+        {label:"Metric tonnage", value:tonsMetric, unit:"metric ton"},
+        {label:"US short tons", value:tonsUS, unit:"US ton"},
+      ], note:`Standard derivation: ${kgm} kg/m (${lbft} lb/ft) × ${len}m × ${qty} pcs = ${fmt(totalKg)} kg (${fmt(totalLb)} lb).` };
     }
   },
 
@@ -626,6 +666,24 @@ function buildSidebar(){
   });
 }
 
+function updateDynamicFields(){
+  if(CURRENT === "weight"){
+    const modeEl = document.querySelector('#inputs [data-key="calcMode"]');
+    const mode = modeEl ? modeEl.value : "standard";
+    const stdWraps = ["field-wrap-len", "field-wrap-qty"];
+    const revWraps = ["field-wrap-totalWeight", "field-wrap-stockLen"];
+
+    stdWraps.forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.style.display = (mode === "standard") ? "" : "none";
+    });
+    revWraps.forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.style.display = (mode === "reverse") ? "" : "none";
+    });
+  }
+}
+
 function renderCalc(){
   const c = CALCS[CURRENT];
   $("calc-title").textContent = calcTitle(CURRENT);
@@ -635,6 +693,7 @@ function renderCalc(){
   const box = $("inputs"); box.innerHTML = "";
   c.fields.forEach(f=>{
     const wrap = document.createElement("div"); wrap.className="field";
+    wrap.id = `field-wrap-${f.k}`;
     const unit = f.unit ? ` (${f.unit})` : "";
     if(f.type==="select"){
       const opts = f.options.map(o=>`<option value="${o.v}" ${o.v===f.default?"selected":""}>${tr(o.t)}</option>`).join("");
@@ -645,8 +704,15 @@ function renderCalc(){
     }
     box.appendChild(wrap);
   });
-  box.querySelectorAll("input,select").forEach(el=> el.addEventListener("input", compute));
+  box.querySelectorAll("input,select").forEach(el=> el.addEventListener("input", (e) => {
+    if(e.target.dataset.key === "calcMode"){
+      updateDynamicFields();
+    }
+    compute();
+  }));
+  updateDynamicFields();
   compute();
+  setupResultActions();
 }
 
 function readValues(){
@@ -677,22 +743,130 @@ function compute(){
   $("r-formula").textContent = res.note || "";
 }
 
+function showToast(msg){
+  let toast = document.getElementById("rebar-toast");
+  if(!toast){
+    toast = document.createElement("div");
+    toast.id = "rebar-toast";
+    toast.className = "rebar-toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(window._toastTimeout);
+  window._toastTimeout = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2800);
+}
+
+function setupResultActions(){
+  const copyBtn = $("btn-copy-result");
+  const printBtn = $("btn-print-result");
+  const shareBtn = $("btn-share-link");
+
+  if(copyBtn && !copyBtn.dataset.bound){
+    copyBtn.dataset.bound = "true";
+    copyBtn.addEventListener("click", () => {
+      const c = CALCS[CURRENT];
+      const mainVal = $("r-total") ? $("r-total").textContent : "";
+      const mainUnit = $("r-total-unit") ? $("r-total-unit").textContent : "";
+      const mainLabel = $("r-label") ? $("r-label").textContent : "";
+      const note = $("r-formula") ? $("r-formula").textContent : "";
+      
+      const gridItems = Array.from(document.querySelectorAll("#result-grid > div")).map(d => {
+        const val = d.querySelector("span")?.textContent || "";
+        const label = d.querySelector("small")?.textContent || "";
+        return `${label}: ${val}`;
+      }).join("\n");
+
+      const text = `--- ${c.title} Result ---
+${mainLabel}: ${mainVal} ${mainUnit}
+${gridItems}
+Calculation Basis: ${note}
+Calculated at https://steelrebarcalculator.com`;
+
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(() => {
+          showToast("✓ Calculation copied to clipboard!");
+        }).catch(() => {
+          showToast("Calculation ready!");
+        });
+      } else {
+        showToast("Calculation summary generated!");
+      }
+    });
+  }
+
+  if(printBtn && !printBtn.dataset.bound){
+    printBtn.dataset.bound = "true";
+    printBtn.addEventListener("click", () => {
+      window.print();
+    });
+  }
+
+  if(shareBtn && !shareBtn.dataset.bound){
+    shareBtn.dataset.bound = "true";
+    shareBtn.addEventListener("click", () => {
+      const url = new URL(window.location.href);
+      url.searchParams.set("tool", CURRENT);
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url.toString()).then(() => {
+          showToast("✓ Shareable calculation link copied!");
+        }).catch(() => {
+          showToast("Link: " + url.toString());
+        });
+      }
+    });
+  }
+}
+
+function setupTabSwitching(){
+  const nav = $("calc-tabs");
+  if(!nav || nav.dataset.switchBound) return;
+  nav.dataset.switchBound = "true";
+
+  nav.addEventListener("click", (e) => {
+    const tab = e.target.closest(".tab");
+    if(!tab || !tab.dataset.id) return;
+    const targetId = tab.dataset.id;
+    if(CALCS[targetId]){
+      e.preventDefault();
+      CURRENT = targetId;
+      renderCalc();
+      nav.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.id === CURRENT));
+      if(window.innerWidth <= 860){
+        document.querySelector(".calc-panel")?.scrollIntoView({ behavior:"smooth", block:"start" });
+      }
+    }
+  });
+}
+
 /* charts (only present on pages that include the tables) */
 function buildCharts(){
   const t1 = document.querySelector("#chart-metric tbody");
-  if(t1) REBAR_METRIC.forEach(b=>{
+  if(t1 && t1.children.length === 0) REBAR_METRIC.forEach(b=>{
     t1.insertAdjacentHTML("beforeend",
-      `<tr><td>${b.dia} mm</td><td>${b.kgm}</td><td>${(b.kgm*0.671969).toFixed(3)}</td><td>${(b.kgm*12).toFixed(2)}</td></tr>`);
+      `<tr><td>${b.dia} mm</td><td>${b.kgm}</td><td>${(b.kgm*0.671969).toFixed(3)}</td><td>${(b.kgm*12).toFixed(2)}</td><td>${Math.round(1000/(b.kgm*12))}</td></tr>`);
   });
   const t2 = document.querySelector("#chart-imperial tbody");
-  if(t2) REBAR_IMPERIAL.forEach(b=>{
+  if(t2 && t2.children.length === 0) REBAR_IMPERIAL.forEach(b=>{
     t2.insertAdjacentHTML("beforeend",
       `<tr><td>${b.n}</td><td>${b.dia} mm</td><td>${b.lbft}</td><td>${b.kgm}</td></tr>`);
   });
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
+  // Check URL param on load
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const toolParam = params.get("tool");
+    if(toolParam && CALCS[toolParam]){
+      CURRENT = toolParam;
+    }
+  } catch(e){}
+
   buildSidebar();
+  setupTabSwitching();
   if($("calc-title")) renderCalc();
   buildCharts();
 });

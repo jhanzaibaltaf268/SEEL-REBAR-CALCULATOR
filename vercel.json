@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/(.*sitemap.*\\.xml)",
+      "source": "/(.*sitemap.*\\.(?:xml|xsl))",
       "headers": [
         {
           "key": "Cache-Control",
@@ -15,6 +15,15 @@
         {
           "key": "Expires",
           "value": "0"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xsl",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/xsl; charset=UTF-8"
         }
       ]
     }
