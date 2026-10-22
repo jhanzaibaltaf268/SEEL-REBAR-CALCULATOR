@@ -1020,10 +1020,10 @@ function renderHub(lang){
   const base = lang==="en" ? "" : "../";
   const u = UI[lang];
   const h1 = HUB_H1[lang], title = `${h1} — ${HUB_TAG[lang]}`, desc = u.heroSub;
-  const hubH1 = (lang === "en") ? "Steel Rebar Calculator — 21 Free Tools for Weight, Spacing, Cost & Detailing" : h1;
-  const hubMetaTitle = (lang === "en") ? "Steel Rebar Calculator — 21 Free Tools for Weight, Cost & Detailing" : title;
-  const hubMetaDesc = (lang === "en") ? "21 free rebar calculators covering weight, slab & footing takeoff, spacing, lap & development length, cutting length, column & beam steel, tonnage and cost. IS 456 and ACI, metric and imperial, instant results." : desc;
-  const heroSub = (lang === "en") ? "Every rebar question a concrete job throws at you — how much steel a slab needs, what a bar schedule weighs, how long a lap splice has to be — solved by one of 21 purpose-built calculators. Metric and imperial, IS 456 and ACI, instant results with no signup." : u.heroSub;
+  const hubH1 = (lang === "en") ? "Steel Rebar Calculator — Weight, Spacing, Cost & Detailing" : h1;
+  const hubMetaTitle = (lang === "en") ? "Steel Rebar Calculator — Weight, Cost & Detailing" : title;
+  const hubMetaDesc = (lang === "en") ? "Free rebar calculators covering weight, slab & footing takeoff, spacing, lap & development length, cutting length, column & beam steel, tonnage and cost. IS 456 and ACI, metric and imperial, instant results." : desc;
+  const heroSub = (lang === "en") ? "Every rebar question a concrete job throws at you — how much steel a slab needs, what a bar schedule weighs, how long a lap splice has to be — solved by purpose-built calculators. Metric and imperial, IS 456 and ACI, instant results with no signup." : u.heroSub;
 
   const cats = {};
   PAGES.forEach(p => (cats[p.cat] ||= []).push(p));
