@@ -227,83 +227,139 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
     </div>
   </section>
 
-  <!-- HARD-CODED WEIGHT & SIZE TABLES (Page 2 Item 4) -->
+  <!-- HARD-CODED WEIGHT & SIZE TABLES (Mobile First) -->
   <section id="charts" class="charts-section">
-    <h2>Standard Rebar Weight &amp; Size Reference Tables</h2>
-    <p class="charts-sub">Hard-coded unit weights for metric reinforcement bars (6–40 mm) and US ASTM imperial sizes, verified against certified mill specifications.</p>
+    <div class="charts-header">
+      <span class="charts-badge">Certified Standards</span>
+      <h2>Standard Rebar Weight &amp; Size Reference Tables</h2>
+      <p class="charts-sub">Unit weights for metric reinforcement bars (6–40 mm) and US ASTM imperial sizes, verified against certified mill specifications.</p>
+    </div>
 
-    <div class="chart-2col">
+    <!-- Segmented Control Pills for Mobile & Desktop -->
+    <div class="chart-unit-switcher" role="tablist" aria-label="Rebar Weight Table Standard Selection">
+      <button type="button" class="unit-tab-btn active" data-unit="metric" role="tab" aria-selected="true" id="tab-metric" aria-controls="panel-metric">
+        <span class="tab-flag">🌐</span>
+        <span class="tab-label">Metric</span>
+        <span class="tab-sublabel">6–40 mm</span>
+      </button>
+      <button type="button" class="unit-tab-btn" data-unit="imperial" role="tab" aria-selected="false" id="tab-imperial" aria-controls="panel-imperial">
+        <span class="tab-flag">🇺🇸</span>
+        <span class="tab-label">Imperial</span>
+        <span class="tab-sublabel">#3–#18</span>
+      </button>
+      <button type="button" class="unit-tab-btn" data-unit="both" role="tab" aria-selected="false" id="tab-both" aria-controls="panel-metric panel-imperial">
+        <span class="tab-flag">⊞</span>
+        <span class="tab-label">Compare Both</span>
+        <span class="tab-sublabel">All Sizes</span>
+      </button>
+    </div>
+
+    <div class="chart-container" data-active-tab="metric">
       <!-- Metric Table (6-40 mm with 5 Columns + Common Use) -->
-      <div class="chart-col">
-        <h3>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Metric Bar Sizes (6–40 mm per IS 1786 / BS 4449 / ISO 6935)
-        </h3>
+      <div class="chart-col chart-col-metric" id="panel-metric" role="tabpanel" aria-labelledby="tab-metric">
+        <div class="chart-table-header">
+          <div class="chart-title-group">
+            <span class="chart-col-tag metric">IS 1786 / BS 4449 / ISO 6935</span>
+            <h3>Metric Bar Sizes (6–40 mm)</h3>
+          </div>
+          <div class="table-scroll-hint" aria-hidden="true">
+            <span class="swipe-icon">↔</span>
+            <span>Scroll table sideways</span>
+          </div>
+        </div>
         <div class="table-scroll-wrap">
           <table class="ref-table" id="chart-metric">
             <thead>
               <tr>
-                <th>Diameter (Ø)</th>
+                <th class="sticky-col">Diameter (Ø)</th>
                 <th class="num">kg / metre</th>
                 <th class="num">kg / foot</th>
                 <th class="num">12m Bar Wt</th>
                 <th class="num">Bars / Tonne</th>
-                <th>Common Structural Use</th>
+                <th class="common-use-hdr">Common Structural Use</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>6 mm</td><td class="num">0.222</td><td class="num">0.068</td><td class="num">2.66 kg</td><td class="num">375</td><td class="common-use-cell">Light stirrups &amp; ties, crack control mesh, thin decorative precast</td></tr>
-              <tr><td>8 mm</td><td class="num">0.395</td><td class="num">0.120</td><td class="num">4.74 kg</td><td class="num">211</td><td class="common-use-cell">Beam shear stirrups, column ties, light slab distribution mesh</td></tr>
-              <tr><td>10 mm</td><td class="num">0.617</td><td class="num">0.188</td><td class="num">7.40 kg</td><td class="num">135</td><td class="common-use-cell">Residential floor slabs, patio paving, footing mats, swimming pool shells</td></tr>
-              <tr><td>12 mm</td><td class="num">0.888</td><td class="num">0.270</td><td class="num">10.66 kg</td><td class="num">94</td><td class="common-use-cell">Primary steel for residential slabs, driveway grids, grade beams, lintels</td></tr>
-              <tr><td>16 mm</td><td class="num">1.578</td><td class="num">0.481</td><td class="num">18.94 kg</td><td class="num">53</td><td class="common-use-cell">Heavy raft foundations, column verticals, commercial beams, retaining walls</td></tr>
-              <tr><td>20 mm</td><td class="num">2.466</td><td class="num">0.752</td><td class="num">29.59 kg</td><td class="num">34</td><td class="common-use-cell">Multi-story building columns, heavy transfer beams, cantilever structures, pile caps</td></tr>
-              <tr><td>25 mm</td><td class="num">3.853</td><td class="num">1.174</td><td class="num">46.24 kg</td><td class="num">22</td><td class="common-use-cell">High-rise building columns, bridge decks &amp; piers, heavy industrial foundations</td></tr>
-              <tr><td>28 mm</td><td class="num">4.832</td><td class="num">1.473</td><td class="num">57.98 kg</td><td class="num">17</td><td class="common-use-cell">Bridge abutments, heavy civil substructures, massive retaining wall stems</td></tr>
-              <tr><td>32 mm</td><td class="num">6.313</td><td class="num">1.924</td><td class="num">75.76 kg</td><td class="num">13</td><td class="common-use-cell">Deep foundation piles, dam spillways, power plants, bridge caissons</td></tr>
-              <tr><td>36 mm</td><td class="num">7.990</td><td class="num">2.435</td><td class="num">95.88 kg</td><td class="num">10</td><td class="common-use-cell">Specialized civil infrastructure, marine quay walls, heavy transfer girders</td></tr>
-              <tr><td>40 mm</td><td class="num">9.864</td><td class="num">3.007</td><td class="num">118.37 kg</td><td class="num">8</td><td class="common-use-cell">Nuclear containment structures, massive bridge pylons, deep tunnel shafts</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">6 mm</span></td><td class="num">0.222</td><td class="num">0.068</td><td class="num">2.66 kg</td><td class="num">375</td><td class="common-use-cell">Light stirrups &amp; ties, crack control mesh, thin decorative precast</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">8 mm</span></td><td class="num">0.395</td><td class="num">0.120</td><td class="num">4.74 kg</td><td class="num">211</td><td class="common-use-cell">Beam shear stirrups, column ties, light slab distribution mesh</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">10 mm</span></td><td class="num">0.617</td><td class="num">0.188</td><td class="num">7.40 kg</td><td class="num">135</td><td class="common-use-cell">Residential floor slabs, patio paving, footing mats, swimming pool shells</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">12 mm</span></td><td class="num">0.888</td><td class="num">0.270</td><td class="num">10.66 kg</td><td class="num">94</td><td class="common-use-cell">Primary steel for residential slabs, driveway grids, grade beams, lintels</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">16 mm</span></td><td class="num">1.578</td><td class="num">0.481</td><td class="num">18.94 kg</td><td class="num">53</td><td class="common-use-cell">Heavy raft foundations, column verticals, commercial beams, retaining walls</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">20 mm</span></td><td class="num">2.466</td><td class="num">0.752</td><td class="num">29.59 kg</td><td class="num">34</td><td class="common-use-cell">Multi-story building columns, heavy transfer beams, cantilever structures, pile caps</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">25 mm</span></td><td class="num">3.853</td><td class="num">1.174</td><td class="num">46.24 kg</td><td class="num">22</td><td class="common-use-cell">High-rise building columns, bridge decks &amp; piers, heavy industrial foundations</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">28 mm</span></td><td class="num">4.832</td><td class="num">1.473</td><td class="num">57.98 kg</td><td class="num">17</td><td class="common-use-cell">Bridge abutments, heavy civil substructures, massive retaining wall stems</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">32 mm</span></td><td class="num">6.313</td><td class="num">1.924</td><td class="num">75.76 kg</td><td class="num">13</td><td class="common-use-cell">Deep foundation piles, dam spillways, power plants, bridge caissons</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">36 mm</span></td><td class="num">7.990</td><td class="num">2.435</td><td class="num">95.88 kg</td><td class="num">10</td><td class="common-use-cell">Specialized civil infrastructure, marine quay walls, heavy transfer girders</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill">40 mm</span></td><td class="num">9.864</td><td class="num">3.007</td><td class="num">118.37 kg</td><td class="num">8</td><td class="common-use-cell">Nuclear containment structures, massive bridge pylons, deep tunnel shafts</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
       <!-- Imperial Table -->
-      <div class="chart-col">
-        <h3>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Imperial Bar Sizes (US ASTM A615 / A706)
-        </h3>
+      <div class="chart-col chart-col-imperial" id="panel-imperial" role="tabpanel" aria-labelledby="tab-imperial">
+        <div class="chart-table-header">
+          <div class="chart-title-group">
+            <span class="chart-col-tag imperial">ASTM A615 / A706</span>
+            <h3>Imperial Bar Sizes (US ASTM)</h3>
+          </div>
+          <div class="table-scroll-hint" aria-hidden="true">
+            <span class="swipe-icon">↔</span>
+            <span>Scroll table sideways</span>
+          </div>
+        </div>
         <div class="table-scroll-wrap">
           <table class="ref-table" id="chart-imperial">
             <thead>
               <tr>
-                <th>US Bar #</th>
+                <th class="sticky-col">US Bar #</th>
                 <th>Nominal Dia</th>
                 <th class="num">lb / foot</th>
                 <th class="num">kg / metre</th>
                 <th class="num">40ft Bar Wt</th>
-                <th>Typical Structural Application</th>
+                <th class="common-use-hdr">Typical Structural Application</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>#3</td><td>0.375 in (9.5mm)</td><td class="num">0.376</td><td class="num">0.560</td><td class="num">15.04 lb</td><td class="common-use-cell">Residential sidewalks, patio mesh, column ties, light stirrups</td></tr>
-              <tr><td>#4</td><td>0.500 in (12.7mm)</td><td class="num">0.668</td><td class="num">0.994</td><td class="num">26.72 lb</td><td class="common-use-cell">Driveway reinforcement, residential basement walls, footings</td></tr>
-              <tr><td>#5</td><td>0.625 in (15.9mm)</td><td class="num">1.043</td><td class="num">1.552</td><td class="num">41.72 lb</td><td class="common-use-cell">Grade beams, retaining wall verticals, commercial slab grids</td></tr>
-              <tr><td>#6</td><td>0.750 in (19.1mm)</td><td class="num">1.502</td><td class="num">2.235</td><td class="num">60.08 lb</td><td class="common-use-cell">Primary beam bottom steel, medium columns, heavy footings</td></tr>
-              <tr><td>#7</td><td>0.875 in (22.2mm)</td><td class="num">2.044</td><td class="num">3.042</td><td class="num">81.76 lb</td><td class="common-use-cell">Commercial building columns, heavy transfer beams, bridge decks</td></tr>
-              <tr><td>#8</td><td>1.000 in (25.4mm)</td><td class="num">2.670</td><td class="num">3.973</td><td class="num">106.8 lb</td><td class="common-use-cell">Multi-story column reinforcement, bridge girders, foundation mats</td></tr>
-              <tr><td>#9</td><td>1.128 in (28.7mm)</td><td class="num">3.400</td><td class="num">5.060</td><td class="num">136.0 lb</td><td class="common-use-cell">Heavy industrial columns, deep foundation shafts, marine docks</td></tr>
-              <tr><td>#10</td><td>1.270 in (32.3mm)</td><td class="num">4.303</td><td class="num">6.404</td><td class="num">172.1 lb</td><td class="common-use-cell">Bridge piers, high-rise core walls, heavy equipment pads</td></tr>
-              <tr><td>#11</td><td>1.410 in (35.8mm)</td><td class="num">5.313</td><td class="num">7.907</td><td class="num">212.5 lb</td><td class="common-use-cell">Large diameter drilled shafts, power plant foundations, dam structures</td></tr>
-              <tr><td>#14</td><td>1.693 in (43.0mm)</td><td class="num">7.650</td><td class="num">11.384</td><td class="num">306.0 lb</td><td class="common-use-cell">High-capacity foundation caissons, monumental bridge towers</td></tr>
-              <tr><td>#18</td><td>2.257 in (57.3mm)</td><td class="num">13.600</td><td class="num">20.239</td><td class="num">544.0 lb</td><td class="common-use-cell">Heavy nuclear containment structures, mega-column foundations</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#3</span></td><td>0.375 in (9.5mm)</td><td class="num">0.376</td><td class="num">0.560</td><td class="num">15.04 lb</td><td class="common-use-cell">Residential sidewalks, patio mesh, column ties, light stirrups</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#4</span></td><td>0.500 in (12.7mm)</td><td class="num">0.668</td><td class="num">0.994</td><td class="num">26.72 lb</td><td class="common-use-cell">Driveway reinforcement, residential basement walls, footings</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#5</span></td><td>0.625 in (15.9mm)</td><td class="num">1.043</td><td class="num">1.552</td><td class="num">41.72 lb</td><td class="common-use-cell">Grade beams, retaining wall verticals, commercial slab grids</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#6</span></td><td>0.750 in (19.1mm)</td><td class="num">1.502</td><td class="num">2.235</td><td class="num">60.08 lb</td><td class="common-use-cell">Primary beam bottom steel, medium columns, heavy footings</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#7</span></td><td>0.875 in (22.2mm)</td><td class="num">2.044</td><td class="num">3.042</td><td class="num">81.76 lb</td><td class="common-use-cell">Commercial building columns, heavy transfer beams, bridge decks</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#8</span></td><td>1.000 in (25.4mm)</td><td class="num">2.670</td><td class="num">3.973</td><td class="num">106.8 lb</td><td class="common-use-cell">Multi-story column reinforcement, bridge girders, foundation mats</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#9</span></td><td>1.128 in (28.7mm)</td><td class="num">3.400</td><td class="num">5.060</td><td class="num">136.0 lb</td><td class="common-use-cell">Heavy industrial columns, deep foundation shafts, marine docks</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#10</span></td><td>1.270 in (32.3mm)</td><td class="num">4.303</td><td class="num">6.404</td><td class="num">172.1 lb</td><td class="common-use-cell">Bridge piers, high-rise core walls, heavy equipment pads</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#11</span></td><td>1.410 in (35.8mm)</td><td class="num">5.313</td><td class="num">7.907</td><td class="num">212.5 lb</td><td class="common-use-cell">Large diameter drilled shafts, power plant foundations, dam structures</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#14</span></td><td>1.693 in (43.0mm)</td><td class="num">7.650</td><td class="num">11.384</td><td class="num">306.0 lb</td><td class="common-use-cell">High-capacity foundation caissons, monumental bridge towers</td></tr>
+              <tr><td class="sticky-col"><span class="bar-pill bar-pill-us">#18</span></td><td>2.257 in (57.3mm)</td><td class="num">13.600</td><td class="num">20.239</td><td class="num">544.0 lb</td><td class="common-use-cell">Heavy nuclear containment structures, mega-column foundations</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    (function(){
+      var switcher = document.querySelector('.chart-unit-switcher');
+      var container = document.querySelector('.chart-container');
+      if (!switcher || !container) return;
+      var buttons = switcher.querySelectorAll('.unit-tab-btn');
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var unit = btn.getAttribute('data-unit');
+          if (!unit) return;
+          buttons.forEach(function(b){
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          container.setAttribute('data-active-tab', unit);
+        });
+      });
+    })();
+  </script>
 
   <!-- THREE WORKED EXAMPLES (Page 2 Item 5) -->
   <section id="examples" class="content-block">

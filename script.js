@@ -855,6 +855,26 @@ function buildCharts(){
   });
 }
 
+function setupChartUnitSwitcher(){
+  const switcher = document.querySelector(".chart-unit-switcher");
+  const container = document.querySelector(".chart-container");
+  if(!switcher || !container) return;
+  const buttons = switcher.querySelectorAll(".unit-tab-btn");
+  buttons.forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const unit = btn.getAttribute("data-unit");
+      if(!unit) return;
+      buttons.forEach(b=>{
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      container.setAttribute("data-active-tab", unit);
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", ()=>{
   // Check URL param on load
   try {
@@ -869,4 +889,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
   setupTabSwitching();
   if($("calc-title")) renderCalc();
   buildCharts();
+  setupChartUnitSwitcher();
 });

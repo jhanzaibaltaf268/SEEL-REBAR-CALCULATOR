@@ -128,10 +128,9 @@ h1,h2{line-height:1.2}
 .formula-table th{background:#e2e8f0;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em;color:var(--ink-soft);font-weight:600}
 .formula-table tbody tr:nth-child(odd){background:#f8fafc}
 .formula-table tbody tr:hover{background:#eff6ff}
-.formula-table td small{color:var(--ink-soft)}
-.chart-2col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.chart-2col{display:flex;flex-direction:column;gap:1.5rem;width:100%;min-width:0}
 .chart-2col h3{margin:.2rem 0 .5rem;font-size:1.05rem}
-@media(max-width:700px){.chart-2col{grid-template-columns:1fr}}
+@media(min-width:1280px){.chart-2col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 
 /* breadcrumbs */
 .crumbs{font-size:.82rem;color:var(--ink-soft);padding:.7rem 0 .1rem}

@@ -182,17 +182,50 @@
       </div>
   </section>
 
-  <section id="charts" class="content-block">
-    <h2>Tabuľka hmotnosti výstuže (kg na meter)</h2>
-    <div class="chart-2col">
-      <div><h3>Metric</h3>
-        <div class="formula-table"><table id="chart-metric">
-          <thead><tr><th>Ø</th><th>kg/m</th><th>kg/ft</th><th>12 m</th></tr></thead><tbody></tbody>
+  <section id="charts" class="content-block charts-section">
+    <div class="charts-header">
+      <span class="charts-badge">Standards</span>
+      <h2>Tabuľka hmotnosti výstuže (kg na meter)</h2>
+    </div>
+    <div class="chart-unit-switcher" role="tablist" aria-label="Units">
+      <button type="button" class="unit-tab-btn active" data-unit="metric" role="tab" aria-selected="true">
+        <span class="tab-flag">🌐</span>
+        <span class="tab-label">Metric</span>
+        <span class="tab-sublabel">mm</span>
+      </button>
+      <button type="button" class="unit-tab-btn" data-unit="imperial" role="tab" aria-selected="false">
+        <span class="tab-flag">🇺🇸</span>
+        <span class="tab-label">Imperial</span>
+        <span class="tab-sublabel">US #</span>
+      </button>
+      <button type="button" class="unit-tab-btn" data-unit="both" role="tab" aria-selected="false">
+        <span class="tab-flag">⊞</span>
+        <span class="tab-label">Compare Both</span>
+      </button>
+    </div>
+    <div class="chart-container" data-active-tab="metric">
+      <div class="chart-col chart-col-metric">
+        <div class="chart-table-header">
+          <div class="chart-title-group">
+            <span class="chart-col-tag metric">ISO / BS / IS</span>
+            <h3>Metric</h3>
+          </div>
+          <div class="table-scroll-hint" aria-hidden="true"><span class="swipe-icon">↔</span><span>Scroll</span></div>
+        </div>
+        <div class="table-scroll-wrap"><table class="ref-table" id="chart-metric">
+          <thead><tr><th class="sticky-col">Ø</th><th class="num">kg/m</th><th class="num">kg/ft</th><th class="num">12 m</th><th class="num">Bars/t</th></tr></thead><tbody></tbody>
         </table></div>
       </div>
-      <div><h3>Imperial (US #)</h3>
-        <div class="formula-table"><table id="chart-imperial">
-          <thead><tr><th>#</th><th>Ø</th><th>lb/ft</th><th>kg/m</th></tr></thead><tbody></tbody>
+      <div class="chart-col chart-col-imperial">
+        <div class="chart-table-header">
+          <div class="chart-title-group">
+            <span class="chart-col-tag imperial">ASTM</span>
+            <h3>Imperial (US #)</h3>
+          </div>
+          <div class="table-scroll-hint" aria-hidden="true"><span class="swipe-icon">↔</span><span>Scroll</span></div>
+        </div>
+        <div class="table-scroll-wrap"><table class="ref-table" id="chart-imperial">
+          <thead><tr><th class="sticky-col">#</th><th>Ø</th><th class="num">lb/ft</th><th class="num">kg/m</th></tr></thead><tbody></tbody>
         </table></div>
       </div>
     </div>
