@@ -820,27 +820,6 @@ Calculated at https://steelrebarcalculator.com`;
   }
 }
 
-function setupTabSwitching(){
-  const nav = $("calc-tabs");
-  if(!nav || nav.dataset.switchBound) return;
-  nav.dataset.switchBound = "true";
-
-  nav.addEventListener("click", (e) => {
-    const tab = e.target.closest(".tab");
-    if(!tab || !tab.dataset.id) return;
-    const targetId = tab.dataset.id;
-    if(CALCS[targetId]){
-      e.preventDefault();
-      CURRENT = targetId;
-      renderCalc();
-      nav.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.id === CURRENT));
-      if(window.innerWidth <= 860){
-        document.querySelector(".calc-panel")?.scrollIntoView({ behavior:"smooth", block:"start" });
-      }
-    }
-  });
-}
-
 /* charts (only present on pages that include the tables) */
 function buildCharts(){
   const t1 = document.querySelector("#chart-metric tbody");
@@ -886,7 +865,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   } catch(e){}
 
   buildSidebar();
-  setupTabSwitching();
   if($("calc-title")) renderCalc();
   buildCharts();
   setupChartUnitSwitcher();
