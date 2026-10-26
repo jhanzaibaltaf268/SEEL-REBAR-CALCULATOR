@@ -507,7 +507,17 @@ const HOMEWORD = { en:"Home", es:"Inicio", fr:"Accueil", de:"Startseite", it:"Ho
   hu:"Főoldal", fi:"Etusivu", bg:"Начало", hr:"Početna", sk:"Domov", sl:"Domov",
   et:"Avaleht", lv:"Sākums", lt:"Pradžia" };
 const siloName = (silo, lang) => trG(silo.cat, lang);
-const siloH1   = (silo, lang) => `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
+/* English hub headings name the silo's purpose; other languages keep the generic form */
+const SILO_H1_EN = {
+  Weight:     "Rebar Weight & Takeoff Calculators",
+  Estimating: "Concrete Estimating Calculators",
+  Detailing:  "Rebar Detailing & Lap Calculators",
+  Members:    "Structural Member Rebar Calculators",
+  Commercial: "Rebar Cost & Tonnage Calculators"
+};
+const siloH1   = (silo, lang) => lang === "en"
+  ? SILO_H1_EN[silo.cat]
+  : `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
 
 /* ---------- Transliteration & Multilingual Slug Generation ---------- */
 const SPECIAL_CHARS = {
