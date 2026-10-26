@@ -433,7 +433,7 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
           <li><strong>Tie-Wire Intersections:</strong> <code>20 bars &times; 30 bars = 600 intersection points</code>.</li>
         </ul>
         <div class="example-verified">
-          ✓ Cross-Validated Output: Entering L=6m, W=4m, sp=200mm, cover=50mm, 12mm bar in the Concrete Slab Rebar Calculator matches 20 bars, 30 bars, 235m, 600 ties, and 208.7 kg.
+          ✓ Cross-Validated Output: Entering L=6m, W=4m, sp=200mm, cover=50mm, 12mm bar in the <a href="/concrete-slab-rebar-calculator">Concrete Slab Rebar Calculator</a> matches 20 bars, 30 bars, 235m, 600 ties, and 208.7 kg.
         </div>
       </article>
     </div>
@@ -449,13 +449,13 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
       <article class="mistake-card">
         <h3>1. Drawing Length vs. Cutting Length</h3>
         <p>Architectural and structural drawings depict out-to-out or centreline dimensions. Fabricators who cut bars to raw drawing dimensions without deducting concrete cover (typically 25–50mm) or subtracting bend deductions (1d for 45°, 2d for 90°, 3d for 135° bends) produce bent cages that do not fit inside formwork.</p>
-        <div class="mistake-fix">✓ Prevention: Always deduct edge cover and subtract standard bend elongation using our Hook, Bend &amp; Cutting Length tool.</div>
+        <div class="mistake-fix">✓ Prevention: Always deduct edge cover and subtract standard bend elongation using our <a href="/rebar-hook-bend-cutting-length-calculator">Hook, Bend &amp; Cutting Length tool</a>.</div>
       </article>
 
       <!-- Mistake 2 -->
       <article class="mistake-card">
         <h3>2. Forgetting Lap Splice Lengths</h3>
-        <p>Commercial rebar ships in fixed standard lengths (typically 12m or 40ft). When spanning long slabs, continuous beams, or retaining walls, bars must overlap to transfer tensile forces through concrete bond. Omitting lap splices (which require 40d to 50d, or 500–600mm per splice) leaves projects 8% to 15% short on steel.</p>
+        <p>Commercial rebar ships in fixed standard lengths (typically 12m or 40ft). When spanning long slabs, continuous beams, or retaining walls, bars must overlap to transfer tensile forces through concrete bond. Omitting <a href="/rebar-lap-length-calculator">lap splices</a> (which require 40d to 50d, or 500–600mm per splice) leaves projects 8% to 15% short on steel.</p>
         <div class="mistake-fix">✓ Prevention: Use our Rebar Lap / Splice Length Calculator to compute exact tension and compression overlap lengths.</div>
       </article>
 
@@ -476,7 +476,7 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
       <!-- Mistake 5 -->
       <article class="mistake-card">
         <h3>5. Nominal vs. Delivered Weight Assumptions</h3>
-        <p>Design schedules calculate smooth theoretical cylinder mass. Real deformed rebar includes rolling deformation ribs, mill stamps, and code-permitted rolling weight variations (&plusmn;4% to &plusmn;8% per ASTM A615 / IS 1786). Steel distributors bill against certified weighbridge scale tickets, which frequently differ from design schedule weights.</p>
+        <p>Design schedules calculate smooth theoretical cylinder mass. Real deformed rebar includes rolling deformation ribs, mill stamps, and code-permitted rolling weight variations (&plusmn;4% to &plusmn;8% per ASTM A615 / IS 1786). Steel distributors bill against certified weighbridge scale tickets, which frequently differ from <a href="/rebar-weight-calculator">design schedule weights</a>.</p>
         <div class="mistake-fix">✓ Prevention: Always compare theoretical takeoff weights with certified mill test certificates (MTC) and supplier scale tickets.</div>
       </article>
     </div>
@@ -488,18 +488,6 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
       <h2>What is Rebar and Why is it Essential in Concrete?</h2>
       <p>Reinforcing bar (rebar) is the deformed steel rod embedded in cast-in-place concrete to resist tensile, shear, and bending forces. Plain concrete is an exceptional material in compression, capable of withstanding tremendous crushing weight. However, its tensile capacity is extremely poor — typically only 10% of its compressive strength. Reinforcement bar reverses this structural vulnerability, allowing slabs, columns, beams, and footings to flex safely under dynamic loads without catastrophic brittle cracking.</p>
       <p>The ribs and deformations rolled onto the perimeter of modern high-yield deformed bars (such as Fe 500, Fe 550, or ASTM Grade 60) exist for one critical reason: they establish an unyielding mechanical interlock with the surrounding hardened cement matrix, transferring stresses smoothly between the two materials as a single unified composite structural section.</p>
-    </section>
-
-    <section class="content-block">
-      <h2>Why One Calculator Isn't Enough: The 5 Dedicated Silos</h2>
-      <p>A simple generic calculator that only computes basic slab bar counts leaves critical structural and commercial questions unanswered. This platform structures reinforcement estimation the way a professional structural engineer, takeoff estimator, or detailing specialist actually works across 5 dedicated silos:</p>
-      <ul>
-        <li><strong>Weight &amp; Takeoff</strong> — calculate exact steel mass from diameter and length via the <a href="/rebar-weight-calculator">Rebar Weight Calculator</a> or <a href="/rebar-area-calculator">Rebar Area Calculator (Ast)</a>.</li>
-        <li><strong>Pour Estimating</strong> — estimate exact reinforcement counts for specific pours: <a href="/concrete-slab-rebar-calculator">concrete slabs</a>, <a href="/footing-rebar-calculator">footings</a>, <a href="/driveway-rebar-calculator">driveways</a>, and <a href="/rebar-mat-grid-calculator">mats</a>.</li>
-        <li><strong>Detailing &amp; Splicing</strong> — solve bar spacing, <a href="/rebar-development-length-calculator">development length (Ld)</a>, <a href="/rebar-lap-length-calculator">lap splice lengths</a>, <a href="/rebar-hook-bend-cutting-length-calculator">bend deductions</a>, <a href="/rebar-chair-calculator">bar chairs</a>, and <a href="/rebar-tie-wire-calculator">tie wire</a>.</li>
-        <li><strong>Structural Members</strong> — vertical steel and confinement ties for <a href="/column-rebar-calculator">columns</a>, top/bottom bars and stirrups for <a href="/beam-rebar-calculator">beams</a>, and <a href="/wall-rebar-calculator">walls</a>.</li>
-        <li><strong>Commercial &amp; Procurement</strong> — convert bill of quantities into orderable <a href="/rebar-tonnage-calculator">tonnage</a> and budget <a href="/rebar-cost-calculator">material cost</a>.</li>
-      </ul>
     </section>
 
     <section class="content-block">
@@ -543,7 +531,7 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </span>
       </summary>
-      <p>Calculate the bars needed in each direction using the formula: Number of Bars = floor((Slab Dimension − 2 × Clear Edge Cover) ÷ Bar Spacing) + 1. Calculate this for both the longitudinal and transverse directions, multiply each count by the span length, sum the total linear metres, and multiply by the unit weight of your selected bar size.</p>
+      <p><a href="/concrete-slab-rebar-calculator">Calculate the bars needed in each direction</a> using the formula: Number of Bars = floor((Slab Dimension − 2 × Clear Edge Cover) ÷ Bar Spacing) + 1. Calculate this for both the longitudinal and transverse directions, multiply each count by the span length, sum the total linear metres, and multiply by the unit weight of your selected bar size.</p>
     </details>
 
     <details class="faq-item">
@@ -573,7 +561,7 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </span>
       </summary>
-      <p>Development length (Ld) is the minimum embedment depth a single reinforcing bar must extend into concrete to transfer its full yield strength without pullout. Lap length is the overlap required between two collinear spliced bars so tension or compression stresses transfer safely from one bar to the next through the surrounding concrete. Lap length is typically calculated as a multiple of development length (such as 1.3 × Ld for Class B tension laps).</p>
+      <p><a href="/rebar-development-length-calculator">Development length (Ld)</a> is the minimum embedment depth a single reinforcing bar must extend into concrete to transfer its full yield strength without pullout. <a href="/rebar-lap-length-calculator">Lap length</a> is the overlap required between two collinear spliced bars so tension or compression stresses transfer safely from one bar to the next through the surrounding concrete. Lap length is typically calculated as a multiple of development length (such as 1.3 × Ld for Class B tension laps).</p>
     </details>
 
     <details class="faq-item">
@@ -583,7 +571,7 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </span>
       </summary>
-      <p>Residential ground slabs, driveways, and patios typically specify #3 (10mm) or #4 (12mm) bars spaced at 200mm to 300mm (8\" to 12\") on centre in both directions, elevated on 50mm (2\") rebar chairs to keep the steel in the upper tensile zone.</p>
+      <p>Residential ground slabs, driveways, and patios typically specify #3 (10mm) or #4 (12mm) bars spaced at 200mm to 300mm (8\" to 12\") on centre in both directions, elevated on 50mm (2\") <a href="/rebar-chair-calculator">rebar chairs</a> to keep the steel in the upper tensile zone.</p>
     </details>
 
     <details class="faq-item">
@@ -593,7 +581,7 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </span>
       </summary>
-      <p>Rebar in standard concrete construction should be tied with 16-gauge black annealed tie wire rather than welded. Standard grade reinforcing steel (such as ASTM A615 or IS 1786) has a carbon content that becomes brittle under uncontrolled site welding heat, weakening the joint. Only low-alloy weldable rebar (such as ASTM A706) may be welded under certified welding procedures.</p>
+      <p>Rebar in standard concrete construction should be tied with 16-gauge black annealed <a href="/rebar-tie-wire-calculator">tie wire</a> rather than welded. Standard grade reinforcing steel (such as ASTM A615 or IS 1786) has a carbon content that becomes brittle under uncontrolled site welding heat, weakening the joint. Only low-alloy weldable rebar (such as ASTM A706) may be welded under certified welding procedures.</p>
     </details>
 
     <details class="faq-item">
