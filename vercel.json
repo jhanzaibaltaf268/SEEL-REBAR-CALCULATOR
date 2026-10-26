@@ -30,56 +30,6 @@
   ],
   "redirects": [
     {
-      "source": "/rebar-weight-calculators",
-      "destination": "/rebar-weight-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/rebar-weight-calculators.html",
-      "destination": "/rebar-weight-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/concrete-rebar-estimating-calculators",
-      "destination": "/concrete-slab-rebar-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/concrete-rebar-estimating-calculators.html",
-      "destination": "/concrete-slab-rebar-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/rebar-detailing-calculators",
-      "destination": "/rebar-spacing-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/rebar-detailing-calculators.html",
-      "destination": "/rebar-spacing-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/structural-rebar-calculators",
-      "destination": "/column-rebar-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/structural-rebar-calculators.html",
-      "destination": "/column-rebar-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/rebar-cost-tonnage-calculators",
-      "destination": "/rebar-cost-calculator",
-      "permanent": true
-    },
-    {
-      "source": "/rebar-cost-tonnage-calculators.html",
-      "destination": "/rebar-cost-calculator",
-      "permanent": true
-    },
-    {
       "source": "/es/peso-calculadoras",
       "destination": "/es/calculadora-de-peso-de-varilla",
       "permanent": true

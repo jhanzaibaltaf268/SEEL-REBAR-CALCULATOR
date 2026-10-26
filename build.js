@@ -358,7 +358,7 @@ const WORKFLOW_HEADING = {
 
 const SILO_CONTENT = {
   Weight: {
-    heroSub: "Precision steel rebar weight, tensile cross-sectional area (Ast), and area takeoff density tools based on standard steel density and international building codes.",
+    heroSub: "Rebar weight, steel area (Ast) and quantity calculators based on standard steel density and international building codes.",
     overview: `
       <h2>Engineering Fundamentals: Rebar Weight & Takeoff</h2>
       <p>Reinforcement bar weight calculations form the foundation of structural material takeoffs, freight planning, and steel procurement. Structural carbon steel has a nominal density of 7,850 kg/m³. In metric jurisdictions governed by standards such as IS 456, BS 4449, or Eurocode 2, the unit weight per metre follows the direct mathematical relationship of bar diameter: <code>kg/m = d² ÷ 162.28</code>, where d is the nominal diameter in millimetres.</p>
@@ -586,11 +586,12 @@ function urlFor(lang, slug){
 function switchHref(curLang, targetLang, type, item){
   if (type === 'index') return homeHref(targetLang);
   if (type === 'page') return pageHref(item, targetLang);
-  if (type === 'silo') return siloHref(item, targetLang);
   return homeHref(targetLang);
 }
 function altLinks(type, item){
-  return LANGS.map(l => {
+  // Silo hubs exist in English only, so they carry no localized alternates
+  const list = type === 'silo' ? LANGS.filter(l => l.code === 'en') : LANGS;
+  return list.map(l => {
     let slug;
     if (type === 'index') slug = 'index';
     else if (type === 'page') slug = pageSlug(item, l.code);
@@ -647,7 +648,7 @@ function footer(lang){
     const links = children.map(p => `<li><a href="${pageHref(p, lang)}">${pH1(p, lang)}</a></li>`).join("\n          ");
     return `
       <div class="footer-col">
-        <h4>${siloName(s, lang)} ${CALCSWORD[lang]}</h4>
+        <h4>${lang === "en" ? `<a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a>` : `${siloName(s, lang)} ${CALCSWORD[lang]}`}</h4>
         <ul>
           ${links}
         </ul>
@@ -813,11 +814,12 @@ function renderPage(p, lang){
   const curPageSlug = pageSlug(p, lang);
   const crumbTrail = crumbs(lang, [
     {name:HOMEWORD[lang], href:homeHref(lang)},
-    {name:siloName(silo,lang)},
+    {name:siloName(silo,lang), href: lang === "en" ? siloHref(silo,lang) : undefined},
     {name:cleanH1}
   ]);
   const crumbLd = breadcrumbJsonLd([
     {name:HOMEWORD[lang], url:urlFor(lang,"index")},
+    ...(lang === "en" ? [{name:siloName(silo,lang), url:urlFor(lang,siloSlug(silo,lang))}] : []),
     {name:h1, url:urlFor(lang,curPageSlug)}
   ]);
   return `<!DOCTYPE html>
@@ -1236,20 +1238,7 @@ LANGS.forEach(l => {
     const curSiloSlug = siloSlug(s, lang);
 
     if (lang === "en") {
-      const enFile = path.join(OUT, s.slug + ".html");
-      if (fs.existsSync(enFile)) {
-        fs.unlinkSync(enFile);
-      }
-      redirects.push({
-        source: `/${s.slug}`,
-        destination: `/${primarySlug}`,
-        permanent: true
-      });
-      redirects.push({
-        source: `/${s.slug}.html`,
-        destination: `/${primarySlug}`,
-        permanent: true
-      });
+      fs.writeFileSync(path.join(OUT, s.slug + ".html"), renderSilo(s, lang));
     } else {
       redirects.push({
         source: `/${l.dir}/${curSiloSlug}`,
@@ -1361,7 +1350,9 @@ function renderSitemapUrl(type, item, lang, lastmod, changefreq, priority) {
   lines.push("    <loc>" + loc + "</loc>");
 
   // Alternate links for all 8 languages: en, es, fr, de, it, pt, nl, pl
-  SITEMAP_LANGS.forEach(l => {
+  // Silo hubs exist in English only, so they carry no localized alternates
+  const altLangs = type === "silo" ? SITEMAP_LANGS.filter(l => l === "en") : SITEMAP_LANGS;
+  altLangs.forEach(l => {
     let href;
     if (type === "index") href = urlFor(l, "index");
     else if (type === "silo") href = urlFor(l, siloSlug(item, l));
@@ -1394,6 +1385,7 @@ function buildLanguageSitemapSection(code) {
   // Category Order: Calculators grouped by category
   SILOS.forEach(silo => {
     chunks.push("\n  <!-- Category: " + silo.cat + " Calculators (" + code + ") -->");
+    if (isEn) chunks.push(renderSitemapUrl("silo", silo, code, today, "monthly", "0.8"));
 
     // Calculators belonging to this specific Category
     const childPages = PAGES.filter(p => p.cat === silo.cat);
