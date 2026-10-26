@@ -1022,7 +1022,7 @@ function renderHub(lang){
   const h1 = HUB_H1[lang], title = `${h1} — ${HUB_TAG[lang]}`, desc = u.heroSub;
   const hubH1 = (lang === "en") ? "Steel Rebar Calculator — Weight, Spacing, Cost & Detailing" : h1;
   const hubMetaTitle = (lang === "en") ? "Steel Rebar Calculator — Weight, Cost & Detailing" : title;
-  const hubMetaDesc = (lang === "en") ? "Free rebar calculators covering weight, slab & footing takeoff, spacing, lap & development length, cutting length, column & beam steel, tonnage and cost. IS 456 and ACI, metric and imperial, instant results." : desc;
+  const hubMetaDesc = (lang === "en") ? "Rebar calculators for weight, slab takeoff, spacing, lap length, cutting length, column and beam steel, tonnage and cost. IS 456 and ACI." : desc;
   const heroSub = (lang === "en") ? "Every rebar question a concrete job throws at you — how much steel a slab needs, what a bar schedule weighs, how long a lap splice has to be — solved by purpose-built calculators. Metric and imperial, IS 456 and ACI, instant results with no signup." : u.heroSub;
 
   const cats = {};
