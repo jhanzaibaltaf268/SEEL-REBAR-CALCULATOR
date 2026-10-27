@@ -680,7 +680,7 @@ function footer(lang){
       <div class="footer-quick-links">
         <a href="${homeUrl}">${u.allCalcs}</a>
         <a href="${homeUrl}#charts">${u.weightChart}</a>
-        <a href="${homeUrl}#faq">${u.faq}</a>
+        <a href="${homeUrl}#faq">${u.faq}</a>${lang === "de" ? `<a href="/de/stahlrohr-gewicht-rechner">Stahlrohr Gewicht Rechner</a>` : ""}
       </div>
       <p class="muted">${disclaimer}</p>
     </div>
