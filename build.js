@@ -151,10 +151,109 @@ const PAGES = [
     desc:"Calculate the bottom reinforcement for an isolated or strip footing: bars both ways, total length and weight.",
     kw:"footing rebar calculator, footing reinforcement, isolated footing rebar",
     intro:"Size the bottom mesh of a footing in seconds. Enter the footing plan dimensions, bar spacing and cover to get the number of bars each way and the total steel weight.",
-    howto:["Enter footing length and width.","Set spacing and clear cover.","Choose the bar size for counts and weight."],
+    howto:["Enter footing length and width.","Set the bar spacing (centre-to-centre) and clear cover.","Pick the bar size to get the bar count and total weight.","Read the results: bar count in each direction, total bar length, tie intersections and total weight.","Order extra for laps, dowels and cutting waste — laps and starter bars are not included in this calculator (see the lap length calculator)."],
     formula:"Same grid method as a slab: bars one way = floor((dimension − 2 × cover) ÷ spacing) + 1, both directions, × kg/m.",
-    faqs:[["What size rebar is used in footings?","10–16 mm (#4–#5) bars are typical for residential footings; design governs."],
-          ["How do I calculate footing reinforcement?","Treat the footing as a small slab — bar count each way times bar length times the unit weight."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 1.5 m × 1.5 m footing</a></li>
+      <li><a href="#example-2">Worked example 2: 2.4 m × 1.8 m footing</a></li>
+      <li><a href="#bar-table">Bar weight chart</a></li>
+      <li><a href="#spacing-table">Spacing guide: bars per metre</a></li>
+      <li><a href="#cost">Estimating the cost</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<p><strong>Why minus twice the cover?</strong> The bars stop short of the footing edge on both sides, so the cover is removed from each end before counting. <strong>Why plus one?</strong> The first bar sits at the cover line and then one bar follows every spacing step — so the count is the number of spaces plus one, not just the number of spaces. <strong>Why both directions?</strong> A footing mat runs two ways, and the second direction usually adds about as much steel again.</p>
+    <p>Bar weight per metre comes from the standard formula kg/m = d² ÷ 162.28, where d is the bar diameter in mm. For a 10 mm bar: 10² ÷ 162.28 = 0.616 kg/m — the same value the calculator uses.</p>
+    <svg viewBox="0 0 520 330" role="img" aria-label="Diagram of a footing reinforcement grid showing length, width, bar spacing and clear cover" style="width:100%;max-width:520px;height:auto;display:block;margin:12px 0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+      <rect x="30" y="30" width="460" height="240" fill="none" stroke="#0f172a" stroke-width="2"/>
+      <rect x="58" y="58" width="404" height="184" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <g stroke="#0f172a" stroke-width="1.5">
+        <line x1="98" y1="58" x2="98" y2="242"/><line x1="158" y1="58" x2="158" y2="242"/><line x1="218" y1="58" x2="218" y2="242"/><line x1="278" y1="58" x2="278" y2="242"/><line x1="338" y1="58" x2="338" y2="242"/><line x1="398" y1="58" x2="398" y2="242"/>
+        <line x1="58" y1="98" x2="462" y2="98"/><line x1="58" y1="158" x2="462" y2="158"/><line x1="58" y1="218" x2="462" y2="218"/>
+      </g>
+      <g font-family="sans-serif" font-size="13" fill="#0f172a">
+        <text x="260" y="18" text-anchor="middle">L = footing length</text>
+        <text x="14" y="155" text-anchor="middle" transform="rotate(-90 14 155)">W = footing width</text>
+        <text x="128" y="52" text-anchor="middle" fill="#f97316">spacing</text>
+        <text x="44" y="80" fill="#f97316">cover</text>
+      </g>
+      <g stroke="#f97316" stroke-width="1.5">
+        <line x1="98" y1="44" x2="158" y2="44"/><line x1="98" y1="40" x2="98" y2="48"/><line x1="158" y1="40" x2="158" y2="48"/>
+        <line x1="34" y1="30" x2="58" y2="58"/>
+      </g>
+    </svg>
+    <p>The orange dashed line marks where the bars actually run: inside the cover, on both sides. Bars cross in both directions, and every crossing is one tie intersection.</p>
+    <h3 id="example-1">Worked example 1: 1.5 m × 1.5 m footing</h3>
+    <p>Footing 1.5 m × 1.5 m, 10 mm bars (0.616 kg/m), 150 mm spacing, 50 mm cover. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Bars along one 1.5 m direction: floor((1,500 − 100) ÷ 150) + 1 = 10 bars, each 1.40 m long = 14.00 m.</li><li>Bars along the other 1.5 m direction: the same = 10 bars, each 1.40 m long = 14.00 m.</li><li>Total bar length: 14.00 + 14.00 = 28.00 m.</li><li>Total weight: 28.00 × 0.616 = 17.25 kg.</li><li>Tie intersections: 10 × 10 = 100.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 2.4 m × 1.8 m footing</h3>
+    <p>Footing 2.4 m × 1.8 m, 12 mm bars (0.887 kg/m), 200 mm spacing, 75 mm cover:</p>
+    <ol class="howto"><li>Bars along the 2.4 m direction: floor((1,800 − 150) ÷ 200) + 1 = 9 bars, each 2.25 m long = 20.25 m.</li><li>Bars along the 1.8 m direction: floor((2,400 − 150) ÷ 200) + 1 = 12 bars, each 1.65 m long = 19.80 m.</li><li>Total bar length: 20.25 + 19.80 = 40.05 m.</li><li>Total weight: 40.05 × 0.887 = 35.52 kg.</li><li>Tie intersections: 9 × 12 = 108.</li></ol>
+    <p>Notice the rectangular footing needs different bar counts each way (9 and 12) even though the spacing is the same — and the 75 mm cover is the footing case: concrete cast against earth needs more cover than a slab.</p>
+    <h3 id="bar-table">Bar weight chart (kg/m)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Bar diameter</th><th>kg/m</th><th>Bars per tonne</th></tr>
+      <tr><td>8 mm</td><td>0.394</td><td>2,536</td></tr>
+      <tr><td>10 mm</td><td>0.616</td><td>1,623</td></tr>
+      <tr><td>12 mm</td><td>0.887</td><td>1,127</td></tr>
+      <tr><td>16 mm</td><td>1.578</td><td>634</td></tr>
+      <tr><td>20 mm</td><td>2.465</td><td>406</td></tr>
+    </table></div>
+    <p>Bars per tonne = 1,000 ÷ kg/m. It tells you how many 1-metre bars make a tonne — handy when a supplier quotes per tonne. <a href="/#charts">See the full rebar weight chart (kg/m &amp; lb/ft) →</a></p>
+    <h3 id="spacing-table">Spacing guide: bars per metre of footing width</h3>
+    <div class="formula-table"><table>
+      <tr><th>Spacing (centre-to-centre)</th><th>Bars per metre</th></tr>
+      <tr><td>100 mm</td><td>10.00</td></tr>
+      <tr><td>150 mm</td><td>6.67</td></tr>
+      <tr><td>200 mm</td><td>5.00</td></tr>
+      <tr><td>250 mm</td><td>4.00</td></tr>
+      <tr><td>300 mm</td><td>3.33</td></tr>
+    </table></div>
+    <p>Bars per metre = 1,000 ÷ spacing in mm. Halving the spacing roughly doubles the steel. Footings commonly use 150–200 mm centres — but spacing is a design decision from your structural drawings, never a guess from a table. If your drawing says 200 mm, use 200 mm even if 300 mm would be cheaper.</p>
+    <h3 id="cost">Estimating the cost</h3>
+    <p>Cost = total weight × price per kg (or total tonnes × price per tonne). Using worked example 1: 17.25 kg × €1.20/kg = €20.70 per footing. Ten identical footings: 172.50 kg × €1.20/kg = €207.00. Prices vary by region, supplier and bar size, so get a current quote before budgeting — and remember the order quantity is higher than the neat mat weight once dowels, laps and waste are added. For a full cost breakdown, use the <a href="/rebar-cost-calculator">rebar cost calculator</a>.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator works in metres, millimetres and kilograms. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>150 mm spacing</td><td>6 in</td></tr>
+      <tr><td>200 mm spacing</td><td>8 in</td></tr>
+      <tr><td>50 mm cover</td><td>2 in</td></tr>
+      <tr><td>75 mm cover</td><td>3 in</td></tr>
+      <tr><td>17.25 kg</td><td>38.04 lb (× 2.205)</td></tr>
+      <tr><td>1.5 m × 1.5 m footing</td><td>4.92 ft × 4.92 ft (× 3.281)</td></tr>
+    </table></div>
+    <p>Convert first, then enter metric values into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Dowels / starter bars.</strong> The bars that rise from the footing into the column or wall are designed separately and added on top of the bottom mat.</li>
+      <li><strong>Laps (splices).</strong> If a bar run is longer than the stock bar length, bars must overlap. Find the overlap with the <a href="/rebar-lap-length-calculator">lap length calculator</a> and add it to the length.</li>
+      <li><strong>Top reinforcement.</strong> Some footings need a top mat as well (uplift, eccentric loads). This calculator sizes the bottom mat only.</li>
+      <li><strong>Chairs and spacers.</strong> The bottom mat needs support to stay at the right cover height. Estimate those with the <a href="/rebar-chair-calculator">chair calculator</a>.</li>
+      <li><strong>Cutting waste.</strong> Cutting bars to length always leaves offcuts. Add a waste allowance on top of the neat weight before ordering.</li>
+      <li><strong>Blinding concrete and excavation.</strong> The footing sits on blinding, and the hole has to be dug — neither is steel, and neither is in this result.</li>
+    </ul>
+    <h3 id="mistakes">4 common mistakes</h3>
+    <ol class="howto"><li><strong>Using slab cover for a footing.</strong> Concrete cast directly against earth typically needs 75 mm cover, not 50 mm. The 50 mm default suits footings on blinding concrete or formed sides — check the drawing.</li><li><strong>Counting one direction only.</strong> A footing mat runs both ways. The second direction usually adds about as much steel again.</li><li><strong>Mixing up mm and m.</strong> Spacing and cover are in millimetres, footing size in metres. Entering 150 as metres instead of millimetres breaks the result completely.</li><li><strong>Ordering exactly the calculated weight.</strong> Add dowels, laps and cutting waste on top — the calculator gives the neat bottom-mat weight, not the order quantity.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Bar weights follow the d² ÷ 162.28 formula (ASTM A615 / IS 456 practice). Results are estimates for guidance only — always verify against your structural drawings and design code.</p>`,
+    faqs:[["How much rebar do I need for a footing?","It depends on the footing size, spacing and bar size. As a worked reference, a 1.5 m × 1.5 m footing at 150 mm centres with 10 mm bars needs 20 bars (10 each way), 28.00 m of bar and 17.25 kg of steel — try those numbers in the calculator above. Your structural design governs the final bar size and spacing."],
+          ["What size rebar is used in footings?","10–16 mm (#4–#5) bars are typical for residential footings; heavier footings use 20 mm or more. Bar size comes from the structural design, not from a rule of thumb — this calculator sizes the quantity once the design gives you the bar and spacing."],
+          ["What spacing should footing bars be?","150–200 mm centres are common for residential footings; wider spacing up to 300 mm appears on lightly loaded pads. Closer spacing is used where loads are high or the footing is thin. Use the spacing on your drawings."],
+          ["How much concrete cover do footing bars need?","Typically 75 mm where concrete is cast directly against earth, and 50 mm where the footing sits on blinding concrete or is formed. The calculator's 50 mm default suits the blinding case — change it to 75 mm for footings cast against soil. Cover protects the steel from corrosion, so it is a durability decision, not a rounding choice."],
+          ["How do I calculate footing reinforcement by hand?","Treat the footing as a small two-way grid. Each way: bars = floor((dimension − 2 × cover) ÷ spacing) + 1, and each bar is (dimension − 2 × cover) long. Add both directions for total length, then multiply by kg/m for weight. Worked example 1 above shows every step."],
+          ["Do footings need rebar in both directions?","Almost always, yes — an isolated footing gets a bottom mat in both directions, because soil pressure bends it both ways. A strip footing is different: its main bars run across the strip, with lighter longitudinal bars holding them together. This calculator sizes a two-way grid, so for a strip footing check with your design whether the long direction should be full bars or distribution steel."],
+          ["How much rebar is in a 2 m × 2 m footing?","At 150 mm centres with 12 mm bars and 50 mm cover: 13 bars each way (26 bars), each 1.90 m long, 49.40 m total, 43.82 kg, and 169 tie intersections. Change the spacing or bar size in the calculator to see how fast the weight moves."],
+          ["How much does footing rebar cost?","Multiply the weight by your local price per kg. At €1.20/kg, the 1.5 m × 1.5 m footing in example 1 costs €20.70 in steel, and ten identical footings cost €207.00. That is the neat mat weight only — dowels, laps and waste add to the order."],
+          ["Does the calculator include dowels and laps?","No. Dowels (starter bars from the footing into the column or wall) and lap splices are designed separately and added on top of the bottom-mat weight this calculator gives. Use the lap length calculator for splice lengths."],
+          ["What is the difference between isolated and strip footings?","An isolated footing is a single pad under one column, reinforced with a two-way bottom mat — exactly what this calculator sizes. A strip footing is a continuous run under a wall; its main reinforcement runs across the strip, with longitudinal bars mainly holding the mat together. Enter a strip as a rectangle here, but treat the long-direction result as distribution steel unless your design says otherwise."]] },
 
   { id:"mat", slug:"rebar-mat-grid-calculator", cat:"Estimating",
     metaTitle:"Rebar Mat & Grid Calculator — Mesh Bars & Weight",
@@ -980,7 +1079,7 @@ ${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>`
 </main>
 ${footer(lang)}
 ${scripts(lang, p.id)}
-${lang === "en" && p.id === "slab" ? `<script>(function(){
+${lang === "en" && (p.id === "slab" || p.id === "footing") ? `<script>(function(){
   var head = document.querySelector('.site-header');
   if (head) {
     var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };

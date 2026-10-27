@@ -37,7 +37,7 @@
 
 <section class="block">
   <h2>How to use it</h2>
-  <ol class="steps"><li>Enter footing length and width.</li><li>Set spacing and clear cover.</li><li>Choose the bar size for counts and weight.</li></ol>
+  <ol class="steps"><li>Enter footing length and width.</li><li>Set the bar spacing (centre-to-centre) and clear cover.</li><li>Pick the bar size to get the bar count and total weight.</li><li>Read the results: bar count in each direction, total bar length, tie intersections and total weight.</li><li>Order extra for laps, dowels and cutting waste — laps and starter bars are not included in this calculator (see the lap length calculator).</li></ol>
 </section>
 
 <section class="block">
@@ -47,8 +47,16 @@
 
 <section class="block">
   <h2>Questions</h2>
-  <details><summary>What size rebar is used in footings?</summary><p>10–16 mm (#4–#5) bars are typical for residential footings; design governs.</p></details>
-  <details><summary>How do I calculate footing reinforcement?</summary><p>Treat the footing as a small slab — bar count each way times bar length times the unit weight.</p></details>
+  <details><summary>How much rebar do I need for a footing?</summary><p>It depends on the footing size, spacing and bar size. As a worked reference, a 1.5 m × 1.5 m footing at 150 mm centres with 10 mm bars needs 20 bars (10 each way), 28.00 m of bar and 17.25 kg of steel — try those numbers in the calculator above. Your structural design governs the final bar size and spacing.</p></details>
+  <details><summary>What size rebar is used in footings?</summary><p>10–16 mm (#4–#5) bars are typical for residential footings; heavier footings use 20 mm or more. Bar size comes from the structural design, not from a rule of thumb — this calculator sizes the quantity once the design gives you the bar and spacing.</p></details>
+  <details><summary>What spacing should footing bars be?</summary><p>150–200 mm centres are common for residential footings; wider spacing up to 300 mm appears on lightly loaded pads. Closer spacing is used where loads are high or the footing is thin. Use the spacing on your drawings.</p></details>
+  <details><summary>How much concrete cover do footing bars need?</summary><p>Typically 75 mm where concrete is cast directly against earth, and 50 mm where the footing sits on blinding concrete or is formed. The calculator's 50 mm default suits the blinding case — change it to 75 mm for footings cast against soil. Cover protects the steel from corrosion, so it is a durability decision, not a rounding choice.</p></details>
+  <details><summary>How do I calculate footing reinforcement by hand?</summary><p>Treat the footing as a small two-way grid. Each way: bars = floor((dimension − 2 × cover) ÷ spacing) + 1, and each bar is (dimension − 2 × cover) long. Add both directions for total length, then multiply by kg/m for weight. Worked example 1 above shows every step.</p></details>
+  <details><summary>Do footings need rebar in both directions?</summary><p>Almost always, yes — an isolated footing gets a bottom mat in both directions, because soil pressure bends it both ways. A strip footing is different: its main bars run across the strip, with lighter longitudinal bars holding them together. This calculator sizes a two-way grid, so for a strip footing check with your design whether the long direction should be full bars or distribution steel.</p></details>
+  <details><summary>How much rebar is in a 2 m × 2 m footing?</summary><p>At 150 mm centres with 12 mm bars and 50 mm cover: 13 bars each way (26 bars), each 1.90 m long, 49.40 m total, 43.82 kg, and 169 tie intersections. Change the spacing or bar size in the calculator to see how fast the weight moves.</p></details>
+  <details><summary>How much does footing rebar cost?</summary><p>Multiply the weight by your local price per kg. At €1.20/kg, the 1.5 m × 1.5 m footing in example 1 costs €20.70 in steel, and ten identical footings cost €207.00. That is the neat mat weight only — dowels, laps and waste add to the order.</p></details>
+  <details><summary>Does the calculator include dowels and laps?</summary><p>No. Dowels (starter bars from the footing into the column or wall) and lap splices are designed separately and added on top of the bottom-mat weight this calculator gives. Use the lap length calculator for splice lengths.</p></details>
+  <details><summary>What is the difference between isolated and strip footings?</summary><p>An isolated footing is a single pad under one column, reinforced with a two-way bottom mat — exactly what this calculator sizes. A strip footing is a continuous run under a wall; its main reinforcement runs across the strip, with longitudinal bars mainly holding the mat together. Enter a strip as a rectangle here, but treat the long-direction result as distribution steel unless your design says otherwise.</p></details>
 </section>
 
 <section class="block">
