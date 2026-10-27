@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Rebar Cost Calculator — Estimate Material Price</title>
+<meta name="description" content="Estimate rebar material cost from total weight and unit price, including a wastage allowance." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="cost">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Rebar Cost Calculator</span></nav>
+<section class="hero">
+  <h1>Rebar Cost Calculator</h1>
+  <p>Turn a steel weight into a price. Enter the total weight, your price per kg and a wastage allowance, and the tool returns the estimated cost including waste and the per-ton rate.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Enter the total rebar weight.</li><li>Enter your price per kg.</li><li>Add a wastage percentage to get the cost.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Cost = weight × (1 + wastage%) × price per kg.</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>How much does rebar cost?</summary><p>It varies by market and size; enter your local price per kg for an accurate estimate.</p></details>
+  <details><summary>What wastage should I allow for rebar?</summary><p>Typically 3–5% to cover offcuts and laps.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="rebar tonnage calculator rebar tonnage calculator, rebar ton calculator, rebar weight to tons, steel tonnage"><a href="rebar-tonnage-calculator.html"><b>Rebar Tonnage Calculator</b><span>Convert a bar schedule (size × length × quantity) into total tonnage in metric and US tons.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

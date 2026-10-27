@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Concrete Slab Rebar Calculator — Bars, Length &amp; Weight</title>
+<meta name="description" content="Calculate how much rebar a concrete slab needs: number of bars both directions, total length, tie intersections and total weight." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="slab">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Concrete Slab Rebar Calculator</span></nav>
+<section class="hero">
+  <h1>Concrete Slab Rebar Calculator</h1>
+  <p>Work out exactly how much reinforcement your slab needs. Enter the slab dimensions, bar spacing and edge cover, and the calculator returns the bar count in each direction, total bar length, tie-wire intersections and the total steel weight.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Enter slab length and width.</li><li>Set the bar spacing (centre-to-centre) and edge cover.</li><li>Pick the bar size to get the bar count and total weight.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Bars one way = floor((dimension − 2 × cover) ÷ spacing) + 1, repeated for both directions. Total weight = total bar length × kg/m.</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>How much rebar do I need for a concrete slab?</summary><p>Divide each slab dimension (less cover) by the spacing, add one, and do this both ways. Multiply each row by the bar length and the bar's kg/m.</p></details>
+  <details><summary>What spacing should slab rebar be?</summary><p>Residential slabs commonly use 150–300 mm centres; always follow your structural design.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="footing rebar calculator footing rebar calculator, footing reinforcement, isolated footing rebar"><a href="footing-rebar-calculator.html"><b>Footing Rebar Calculator</b><span>Calculate the bottom reinforcement for an isolated or strip footing: bars both ways, total length and weight.</span></a></li>
+  <li data-search="rebar mat &amp; grid calculator rebar mat calculator, rebar grid calculator, reinforcement mat, mesh rebar calculator"><a href="rebar-mat-grid-calculator.html"><b>Rebar Mat &amp; Grid Calculator</b><span>Calculate a rectangular reinforcement mat: number of bars each way, intersections, total length and weight.</span></a></li>
+  <li data-search="concrete &amp; rebar estimator concrete and rebar calculator, concrete rebar estimator, concrete volume and steel"><a href="concrete-and-rebar-calculator.html"><b>Concrete &amp; Rebar Estimator</b><span>Calculate concrete volume and an estimate of the reinforcement steel using a kg/m³ ratio.</span></a></li>
+  <li data-search="driveway rebar calculator driveway rebar calculator, rebar for driveway, driveway reinforcement, concrete driveway rebar"><a href="driveway-rebar-calculator.html"><b>Driveway Rebar Calculator</b><span>Calculate the rebar for a driveway slab: bar count both ways, length and weight.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

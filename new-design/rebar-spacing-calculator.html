@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Rebar Spacing Calculator — Bar Count &amp; c/c Spacing</title>
+<meta name="description" content="Find the number of bars and the actual centre-to-centre spacing across any width, plus the clear gap between bars." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="spacing">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Rebar Spacing Calculator</span></nav>
+<section class="hero">
+  <h1>Rebar Spacing Calculator</h1>
+  <p>Convert between bar count and spacing across a member. Enter the width, edge cover and your target spacing, and get the exact number of bars, the actual c/c spacing achieved and the clear gap.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Enter the total width and edge cover.</li><li>Enter the desired spacing.</li><li>Read the bar count and actual spacing.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Number of bars = floor((width − 2 × cover) ÷ spacing) + 1. Actual spacing = reinforced width ÷ (bars − 1).</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>How do you calculate rebar spacing?</summary><p>Subtract cover from the width, divide by spacing, add one for the number of bars.</p></details>
+  <details><summary>What is the minimum spacing between rebars?</summary><p>Usually the greater of the bar diameter or aggregate size + 5 mm — check your code.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="rebar development length calculator rebar development length calculator, development length of rebar, anchorage length, ld calculator"><a href="rebar-development-length-calculator.html"><b>Rebar Development Length Calculator</b><span>Calculate the development (anchorage) length Ld for deformed bars using the IS 456 formula, with selectable concrete and steel grade.</span></a></li>
+  <li data-search="rebar lap / splice length calculator rebar lap length calculator, rebar splice length calculator, rebar lapping formula, lap length of rebar"><a href="rebar-lap-length-calculator.html"><b>Rebar Lap / Splice Length Calculator</b><span>Calculate lap (splice) length for reinforcement: tension lap = max(Ld, 30d), compression lap = max(Ld, 24d).</span></a></li>
+  <li data-search="rebar hook, bend &amp; cutting length calculator rebar hook length formula, rebar bend formula, rebar cut length calculation, cutting length of rebar"><a href="rebar-hook-bend-cutting-length-calculator.html"><b>Rebar Hook, Bend &amp; Cutting Length Calculator</b><span>Calculate the cutting length of a bar from its straight length, hooks and bends, with standard 9d hooks and bend deductions.</span></a></li>
+  <li data-search="stirrup &amp; tie cutting length calculator stirrup cutting length, column tie cutting length, rebar stirrup calculator"><a href="stirrup-tie-cutting-length-calculator.html"><b>Stirrup &amp; Tie Cutting Length Calculator</b><span>Calculate the cutting length of a rectangular stirrup or column tie including hooks and bend deductions.</span></a></li>
+  <li data-search="rebar chair / bar support calculator rebar chair calculator, bar support calculator, rebar chairs per square meter, slab bolster count"><a href="rebar-chair-calculator.html"><b>Rebar Chair / Bar Support Calculator</b><span>Calculate how many bar chairs (supports) are needed to hold a top reinforcement mat on a square grid.</span></a></li>
+  <li data-search="rebar tie wire calculator rebar tie wire calculator, binding wire calculator, tie wire for rebar, rebar tying wire quantity"><a href="rebar-tie-wire-calculator.html"><b>Rebar Tie Wire Calculator</b><span>Estimate binding (tie) wire for a reinforcement grid from slab size, spacing and wire used per tie.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

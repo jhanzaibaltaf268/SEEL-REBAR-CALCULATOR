@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Rebar Lap &amp; Splice Length Calculator — Tension &amp; Compression</title>
+<meta name="description" content="Calculate lap (splice) length for reinforcement: tension lap = max(Ld, 30d), compression lap = max(Ld, 24d)." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="lap">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Rebar Lap / Splice Length Calculator</span></nav>
+<section class="hero">
+  <h1>Rebar Lap / Splice Length Calculator</h1>
+  <p>Find the overlap needed to splice two bars. Pick the bar size, steel and concrete grade and the lap type — the tool returns the lap length in mm and as a multiple of diameter.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Select the bar size.</li><li>Choose steel and concrete grade.</li><li>Pick tension or compression lap.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Tension lap = max(Ld, 30d); compression lap = max(Ld, 24d), where Ld is the development length.</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>What is lap length of rebar?</summary><p>The overlap between two spliced bars so the force transfers through the concrete.</p></details>
+  <details><summary>Is lap length 40d or 50d?</summary><p>It depends on grade and concrete — commonly 40–50d. This tool computes it from Ld.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="rebar spacing calculator rebar spacing calculator, rebar spacing formula, bar spacing calculator, reinforcement spacing"><a href="rebar-spacing-calculator.html"><b>Rebar Spacing Calculator</b><span>Find the number of bars and the actual centre-to-centre spacing across any width, plus the clear gap between bars.</span></a></li>
+  <li data-search="rebar development length calculator rebar development length calculator, development length of rebar, anchorage length, ld calculator"><a href="rebar-development-length-calculator.html"><b>Rebar Development Length Calculator</b><span>Calculate the development (anchorage) length Ld for deformed bars using the IS 456 formula, with selectable concrete and steel grade.</span></a></li>
+  <li data-search="rebar hook, bend &amp; cutting length calculator rebar hook length formula, rebar bend formula, rebar cut length calculation, cutting length of rebar"><a href="rebar-hook-bend-cutting-length-calculator.html"><b>Rebar Hook, Bend &amp; Cutting Length Calculator</b><span>Calculate the cutting length of a bar from its straight length, hooks and bends, with standard 9d hooks and bend deductions.</span></a></li>
+  <li data-search="stirrup &amp; tie cutting length calculator stirrup cutting length, column tie cutting length, rebar stirrup calculator"><a href="stirrup-tie-cutting-length-calculator.html"><b>Stirrup &amp; Tie Cutting Length Calculator</b><span>Calculate the cutting length of a rectangular stirrup or column tie including hooks and bend deductions.</span></a></li>
+  <li data-search="rebar chair / bar support calculator rebar chair calculator, bar support calculator, rebar chairs per square meter, slab bolster count"><a href="rebar-chair-calculator.html"><b>Rebar Chair / Bar Support Calculator</b><span>Calculate how many bar chairs (supports) are needed to hold a top reinforcement mat on a square grid.</span></a></li>
+  <li data-search="rebar tie wire calculator rebar tie wire calculator, binding wire calculator, tie wire for rebar, rebar tying wire quantity"><a href="rebar-tie-wire-calculator.html"><b>Rebar Tie Wire Calculator</b><span>Estimate binding (tie) wire for a reinforcement grid from slab size, spacing and wire used per tie.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

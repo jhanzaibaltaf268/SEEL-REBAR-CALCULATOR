@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Wall Rebar Calculator — Vertical + Horizontal Bars</title>
+<meta name="description" content="Calculate reinforcement for a concrete or block wall: vertical and horizontal bars, counts and weight." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="wall">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Wall Rebar Calculator</span></nav>
+<section class="hero">
+  <h1>Wall Rebar Calculator</h1>
+  <p>Estimate the steel in a wall — retaining, basement or block. Enter the wall length and height, the vertical and horizontal spacing and bar sizes, and get the bar counts and total weight.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Enter wall length and height.</li><li>Set vertical and horizontal spacing and cover.</li><li>Pick bar sizes for each direction.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Vertical bars = floor((L − 2cover) ÷ spV) + 1; horizontal bars = floor((H − 2cover) ÷ spH) + 1; sum × kg/m.</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>How do you calculate rebar for a wall?</summary><p>Count vertical and horizontal bars from the spacing, then multiply lengths by unit weight.</p></details>
+  <details><summary>What is rebar spacing in a block wall?</summary><p>Often vertical bars at 400–800 mm and horizontal bars per course or bond beam — design governs.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="column rebar calculator column rebar calculator, rebar calculator for columns, column reinforcement, column steel calculation"><a href="column-rebar-calculator.html"><b>Column Rebar Calculator</b><span>Calculate total rebar for a rectangular column: vertical main bars plus lateral ties, with weights.</span></a></li>
+  <li data-search="beam rebar calculator beam rebar calculator, beam rebar estimate, beam reinforcement calculation, beam steel calculation"><a href="beam-rebar-calculator.html"><b>Beam Rebar Calculator</b><span>Calculate total rebar for a beam: top and bottom main bars plus stirrups, with weights.</span></a></li>
+  <li data-search="swimming pool rebar calculator pool rebar calculator, swimming pool rebar, rebar calculation for swimming pool, pool reinforcement"><a href="pool-rebar-calculator.html"><b>Swimming Pool Rebar Calculator</b><span>Calculate reinforcement for a swimming pool wall panel: vertical and horizontal bars, counts and weight.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

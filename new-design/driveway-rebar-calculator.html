@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Driveway Rebar Calculator — Bar Count &amp; Weight</title>
+<meta name="description" content="Calculate the rebar for a driveway slab: bar count both ways, length and weight." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="driveway">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Driveway Rebar Calculator</span></nav>
+<section class="hero">
+  <h1>Driveway Rebar Calculator</h1>
+  <p>Size the rebar mat for a driveway. Enter the driveway length and width, the bar spacing and cover, and get the bar count both ways plus the total steel weight.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Enter driveway length and width.</li><li>Set the bar spacing and edge cover.</li><li>Pick the bar size for the total.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Bars each way = floor((dimension − 2 × cover) ÷ spacing) + 1, × kg/m for the weight.</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>What size rebar for a driveway?</summary><p>#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways.</p></details>
+  <details><summary>Do driveways need rebar?</summary><p>Reinforcement helps control cracking; thickness and bar size depend on loading.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="concrete slab rebar calculator concrete slab rebar calculator, calculate rebar for slab, rebar needed for concrete slab, slab reinforcement calculation"><a href="concrete-slab-rebar-calculator.html"><b>Concrete Slab Rebar Calculator</b><span>Calculate how much rebar a concrete slab needs: number of bars both directions, total length, tie intersections and total weight.</span></a></li>
+  <li data-search="footing rebar calculator footing rebar calculator, footing reinforcement, isolated footing rebar"><a href="footing-rebar-calculator.html"><b>Footing Rebar Calculator</b><span>Calculate the bottom reinforcement for an isolated or strip footing: bars both ways, total length and weight.</span></a></li>
+  <li data-search="rebar mat &amp; grid calculator rebar mat calculator, rebar grid calculator, reinforcement mat, mesh rebar calculator"><a href="rebar-mat-grid-calculator.html"><b>Rebar Mat &amp; Grid Calculator</b><span>Calculate a rectangular reinforcement mat: number of bars each way, intersections, total length and weight.</span></a></li>
+  <li data-search="concrete &amp; rebar estimator concrete and rebar calculator, concrete rebar estimator, concrete volume and steel"><a href="concrete-and-rebar-calculator.html"><b>Concrete &amp; Rebar Estimator</b><span>Calculate concrete volume and an estimate of the reinforcement steel using a kg/m³ ratio.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Rebar Weight Calculator — kg, lb &amp; Tons by Bar Size</title>
+<meta name="description" content="Calculate steel rebar weight by bar size, length and quantity in kg, lb and tons. Includes metric (mm) and US (#) bars and the d²/162 formula." />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-calc="weight">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html">Rebar<b>Calc</b></a>
+    <a class="top-link" href="index.html#all">All calculators</a>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Rebar Weight Calculator</span></nav>
+<section class="hero">
+  <h1>Rebar Weight Calculator</h1>
+  <p>Find the weight of any reinforcement bar in seconds. Pick the bar size, enter the length and quantity, and get the total in kilograms, pounds and metric tons — using the industry-standard <strong>weight per metre = d² ÷ 162.28</strong> formula.</p>
+</section>
+
+<section class="calc" aria-label="Calculator">
+  <form id="inputs" class="card fields" novalidate></form>
+  <div class="card result" aria-live="polite">
+    <p class="r-label" id="r-label">Result</p>
+    <p class="r-main"><span id="r-total">–</span> <span id="r-unit"></span></p>
+    <dl id="r-grid" class="r-grid"></dl>
+    <p class="r-note" id="r-note"></p>
+    <button type="button" id="reset" class="btn">Reset values</button>
+  </div>
+</section>
+
+<section class="block">
+  <h2>How to use it</h2>
+  <ol class="steps"><li>Choose the bar size (metric mm or US # size).</li><li>Enter the length of one bar and how many pieces.</li><li>Read the total weight in kg, lb and tons.</li></ol>
+</section>
+
+<section class="block">
+  <h2>Formula</h2>
+  <p class="formula">Weight per metre (kg) = d² ÷ 162.28, where d is the bar diameter in mm. Total = weight/m × length × quantity.</p>
+</section>
+
+<section class="block">
+  <h2>Questions</h2>
+  <details><summary>What is the weight of a 12mm rebar?</summary><p>A 12 mm bar weighs 12² ÷ 162.28 ≈ 0.888 kg per metre.</p></details>
+  <details><summary>How do you calculate the weight of steel rebar?</summary><p>Square the diameter in mm, divide by 162.28 to get kg/m, then multiply by length and quantity.</p></details>
+</section>
+
+<section class="block">
+  <h2>Related calculators</h2>
+  <ul class="list">
+  <li data-search="rebar area calculator (ast) rebar area calculator, area of rebar formula, area of steel, ast calculator, steel percentage"><a href="rebar-area-calculator.html"><b>Rebar Area Calculator (Ast)</b><span>Calculate the cross-sectional area of one bar and the total steel area Ast, plus the steel percentage of a section.</span></a></li>
+  <li data-search="rebar quantity &amp; takeoff calculator rebar quantity calculator, rebar per square foot, rebar calculator by square foot, rebar takeoff calculator"><a href="rebar-quantity-calculator.html"><b>Rebar Quantity &amp; Takeoff Calculator</b><span>Estimate rebar weight for a slab or area from spacing alone: get kg/m², kg/ft² and the total weight.</span></a></li>
+</ul>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav class="foot-groups" aria-label="Calculator groups">
+      <a href="rebar-weight-calculators.html">Rebar Weight &amp; Takeoff Calculators</a>
+      <a href="concrete-rebar-estimating-calculators.html">Concrete Estimating Calculators</a>
+      <a href="rebar-detailing-calculators.html">Rebar Detailing &amp; Lap Calculators</a>
+      <a href="structural-rebar-calculators.html">Structural Member Rebar Calculators</a>
+      <a href="rebar-cost-tonnage-calculators.html">Rebar Cost &amp; Tonnage Calculators</a>
+    </nav>
+    <p class="note">Results are estimates for material planning. Check them against your drawings and local building code; structural design needs a qualified engineer.</p>
+  </div>
+</footer>
+<script src="assets/calcs.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
