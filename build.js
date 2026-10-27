@@ -1248,12 +1248,33 @@ ${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>`
 </main>
 ${footer(lang)}
 ${scripts(lang, p.id)}
-${lang === "en" && (p.id === "slab" || p.id === "footing" || p.id === "mat" || p.id === "concrete") ? `<script>(function(){
+${lang === "en" ? `<script>(function(){
   var head = document.querySelector('.site-header');
   if (head) {
     var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
     window.addEventListener('scroll', onScroll, {passive: true}); onScroll();
   }
+  var tabsEl = document.getElementById('calc-tabs');
+  var panelEl = document.querySelector('.calc-panel');
+  var tabsScrolled = false;
+  function syncTabs(){
+    if (!tabsEl || !panelEl) return;
+    if (window.innerWidth > 820) {
+      tabsEl.style.maxHeight = panelEl.offsetHeight + 'px';
+      tabsEl.style.overflowY = 'auto';
+      if (!tabsScrolled) {
+        tabsScrolled = true;
+        var at = tabsEl.querySelector('.tab.active');
+        if (at) at.scrollIntoView({block: 'nearest'});
+      }
+    } else {
+      tabsEl.style.maxHeight = '';
+      tabsEl.style.overflowY = '';
+    }
+  }
+  syncTabs();
+  window.addEventListener('resize', syncTabs);
+  window.addEventListener('load', syncTabs);
   var total = document.getElementById('r-total');
   var main = document.querySelector('.result-main');
   if (total && main && 'MutationObserver' in window) {
@@ -1263,6 +1284,7 @@ ${lang === "en" && (p.id === "slab" || p.id === "footing" || p.id === "mat" || p
       if (v !== last) {
         last = v;
         main.classList.remove('pop'); void main.offsetWidth; main.classList.add('pop');
+        syncTabs();
       }
     }).observe(total, {childList: true, characterData: true, subtree: true});
   }

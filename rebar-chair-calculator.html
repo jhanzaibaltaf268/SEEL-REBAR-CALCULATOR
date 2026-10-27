@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Chair / Bar Support Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate how many bar chairs (supports) are needed to hold a top reinforcement mat on a square grid."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many rebar chairs do I need?","acceptedAnswer":{"@type":"Answer","text":"Roughly one per square metre at 1 m spacing — the tool gives the exact grid count."}},{"@type":"Question","name":"What spacing for bar chairs?","acceptedAnswer":{"@type":"Answer","text":"Commonly 1.0–1.2 m each way for slab top mats."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter slab length and width."},{"@type":"HowToStep","position":2,"text":"Set the chair grid spacing."},{"@type":"HowToStep","position":3,"text":"Read the total chairs required."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Chair / Bar Support Calculator","item":"https://steelrebarcalculator.com/rebar-chair-calculator"}]}</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-page="chair">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/rebar-tonnage-calculator" data-id="tonnage">Rebar Tonnage Calculator</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Rebar Chair / Bar Support Calculator</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -166,6 +167,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>How to use: Rebar Chair / Bar Support Calculator</h2>
     <ol class="howto"><li>Enter slab length and width.</li><li>Set the chair grid spacing.</li><li>Read the total chairs required.</li></ol>
@@ -173,6 +175,7 @@
     <p class="formula-callout">Chairs = (floor(L ÷ spacing) + 1) × (floor(W ÷ spacing) + 1).</p>
     <p><a href="/#charts">See the full rebar weight chart (kg/m & lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Rebar Chair / Bar Support Calculator — FAQ</h2>
@@ -245,7 +248,7 @@
       <div class="footer-quick-links">
         <a href="/">All calculators</a>
         <a href="/#charts">Weight chart</a>
-        <a href="/#faq">FAQ</a>
+        <a href="/#faq">FAQ</a><a href="/privacy">Privacy Policy</a><a href="/about">About</a><a href="/contact">Contact</a>
       </div>
       <p class="muted">Results are estimates for material planning and ordering. Verify against your structural drawings and local building code before construction; safety-critical designs require review by a qualified engineer.</p>
     </div>
@@ -255,5 +258,54 @@
 <script src="i18n.js"></script>
 <script src="slugs.js"></script>
 <script src="script.js"></script>
+<script>(function(){
+  var head = document.querySelector('.site-header');
+  if (head) {
+    var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
+    window.addEventListener('scroll', onScroll, {passive: true}); onScroll();
+  }
+  var tabsEl = document.getElementById('calc-tabs');
+  var panelEl = document.querySelector('.calc-panel');
+  var tabsScrolled = false;
+  function syncTabs(){
+    if (!tabsEl || !panelEl) return;
+    if (window.innerWidth > 820) {
+      tabsEl.style.maxHeight = panelEl.offsetHeight + 'px';
+      tabsEl.style.overflowY = 'auto';
+      if (!tabsScrolled) {
+        tabsScrolled = true;
+        var at = tabsEl.querySelector('.tab.active');
+        if (at) at.scrollIntoView({block: 'nearest'});
+      }
+    } else {
+      tabsEl.style.maxHeight = '';
+      tabsEl.style.overflowY = '';
+    }
+  }
+  syncTabs();
+  window.addEventListener('resize', syncTabs);
+  window.addEventListener('load', syncTabs);
+  var total = document.getElementById('r-total');
+  var main = document.querySelector('.result-main');
+  if (total && main && 'MutationObserver' in window) {
+    var last = '';
+    new MutationObserver(function(){
+      var v = total.textContent;
+      if (v !== last) {
+        last = v;
+        main.classList.remove('pop'); void main.offsetWidth; main.classList.add('pop');
+        syncTabs();
+      }
+    }).observe(total, {childList: true, characterData: true, subtree: true});
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('inview'); io.unobserve(e.target); } });
+    }, {threshold: 0.12, rootMargin: '0px 0px 10% 0px'});
+    document.querySelectorAll('.content-block, .related, .site-footer').forEach(function(el){
+      el.classList.add('reveal'); io.observe(el);
+    });
+  }
+})();</script>
 </body>
 </html>
