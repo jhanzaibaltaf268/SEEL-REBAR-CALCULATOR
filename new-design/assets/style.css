@@ -211,6 +211,22 @@ details p { padding: 0 14px 12px; margin: 0; color: var(--muted); }
 }
 .group.reveal.inview .list li { opacity: 1; transform: none; }
 
+/* ---------- compact calculator on phones ---------- */
+@media (max-width: 719px) {
+  .calc { gap: 10px; margin-block: .75rem 1.25rem; }
+  .card { padding: 12px; }
+  .fields { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .field:has(select) { grid-column: 1 / -1; }
+  .field label { font-size: .9rem; margin-bottom: 4px; }
+  .field input, .field select { min-height: 44px; padding: 0 10px; }
+  .result { padding: 12px; }
+  .r-main { font-size: 1.6rem; margin: 2px 0 8px; }
+  .r-grid { gap: 8px; margin-bottom: 8px; }
+  .r-grid div { padding: 8px 10px; }
+  .r-grid dt { font-size: .8rem; }
+  .btn { min-height: 44px; }
+}
+
 /* wider screens */
 @media (min-width: 720px) {
   h1 { font-size: 2.1rem; }
