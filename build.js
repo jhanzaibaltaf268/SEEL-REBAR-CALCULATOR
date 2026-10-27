@@ -1306,6 +1306,21 @@ LANGS.forEach(l => {
   });
 });
 
+/* Fill the shared header and footer into standalone pages between marker comments */
+STANDALONE_PAGES.forEach(p => {
+  const l = LANGS.find(x => x.code === p.lang);
+  const file = path.join(p.lang === "en" ? OUT : path.join(OUT, l.dir), p.slug + ".html");
+  let html = fs.readFileSync(file, "utf8");
+  const fill = (name, content) => {
+    const re = new RegExp(`<!-- ${name} -->[\\s\\S]*?<!-- /${name} -->`);
+    if (!re.test(html)) throw new Error(`${file}: missing <!-- ${name} --> markers`);
+    html = html.replace(re, () => `<!-- ${name} -->${content}\n<!-- /${name} -->`);
+  };
+  fill("site-header", header(p.lang, "index", null));
+  fill("site-footer", footer(p.lang));
+  fs.writeFileSync(file, html);
+});
+
 /* Write vercel.json with cleanUrls and 301 redirects */
 const vercelConfig = {
   cleanUrls: true,
