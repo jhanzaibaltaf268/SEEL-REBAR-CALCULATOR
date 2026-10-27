@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stahlrohr Gewicht Rechner — kg/m &amp; Gesamtgewicht berechnen</title>
+<meta name="description" content="Stahlrohr Gewicht Rechner: kg/m und Gesamtgewicht aus Außendurchmesser, Wanddicke und Länge berechnen. Mit DIN-Tabelle, Formel und Beispiel.">
+<link rel="canonical" href="https://steelrebarcalculator.com/de/stahlrohr-gewicht-rechner">
+<!-- HINWEIS FÜR ANTIGRAVITY: Beim Lokalisieren den 23-Link-hreflang-Satz aus den übrigen Tool-Seiten übernehmen (22 Sprachen + x-default). Slug ist deutsch, nicht englisch. -->
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.6}
+  header{background:#0f172a;color:#fff;padding:14px 20px}
+  header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem}
+  header a span{color:#f97316}
+  main{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:2rem;line-height:1.2;margin:8px 0 20px}
+  h2{font-size:1.4rem;margin-top:44px;border-bottom:3px solid #f97316;padding-bottom:6px}
+  h3{font-size:1.1rem;margin-top:24px}
+  .card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(15,23,42,.08);padding:22px;margin-bottom:28px}
+  .profiles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .profiles button{border:2px solid #cbd5e1;background:#fff;color:#0f172a;border-radius:999px;padding:8px 16px;font-size:.95rem;cursor:pointer}
+  .profiles button.active{background:#f97316;border-color:#f97316;color:#fff;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  label{display:block;font-weight:600;font-size:.92rem;margin-bottom:4px}
+  input,select{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:1rem}
+  input:focus,select:focus{outline:2px solid #f97316;border-color:#f97316}
+  .hint{font-size:.82rem;color:#64748b;margin-top:2px}
+  .results{background:#0f172a;color:#fff;border-radius:12px;padding:20px;margin-top:18px}
+  .results h3{margin:0 0 12px;color:#fff}
+  .result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+  .result-row:last-child{border-bottom:none}
+  .result-row b{color:#fdba74;font-size:1.1rem}
+  .error{color:#dc2626;font-weight:600;margin-top:12px}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #e2e8f0}
+  th{background:#0f172a;color:#fff}
+  tr:last-child td{border-bottom:none}
+  .formula{background:#fff;border-left:4px solid #f97316;border-radius:8px;padding:16px 20px;font-size:1.05rem;overflow-x:auto}
+  .trust{color:#64748b;font-size:.88rem;margin-top:40px}
+  footer{max-width:860px;margin:0 auto;padding:0 16px 40px;color:#64748b;font-size:.88rem}
+  footer a{color:#f97316}
+</style>
+</head>
+<body>
+<header><a href="/de/">Rebar<span>Calc</span> — Stahlrechner</a></header>
+<main>
+
+<h1>Stahlrohr Gewicht Rechner</h1>
+
+<section class="card" id="rechner">
+  <div class="profiles" role="tablist" aria-label="Profilform">
+    <button type="button" class="active" data-profile="rund">Rundrohr</button>
+    <button type="button" data-profile="quadrat">Quadratrohr</button>
+    <button type="button" data-profile="rechteck">Rechteckrohr</button>
+  </div>
+
+  <div id="dims-rund">
+    <div class="grid">
+      <div>
+        <label for="ad">Außendurchmesser (mm)</label>
+        <input id="ad" type="text" inputmode="decimal" value="114,3" placeholder="z. B. 114,3">
+      </div>
+      <div>
+        <label for="wand">Wanddicke (mm)</label>
+        <input id="wand" type="text" inputmode="decimal" value="5" placeholder="z. B. 5">
+      </div>
+    </div>
+  </div>
+
+  <div id="dims-quadrat" hidden>
+    <div class="grid">
+      <div>
+        <label for="seite">Seitenlänge (mm)</label>
+        <input id="seite" type="text" inputmode="decimal" value="100" placeholder="z. B. 100">
+      </div>
+      <div>
+        <label for="wand-q">Wanddicke (mm)</label>
+        <input id="wand-q" type="text" inputmode="decimal" value="5" placeholder="z. B. 5">
+      </div>
+    </div>
+  </div>
+
+  <div id="dims-rechteck" hidden>
+    <div class="grid">
+      <div>
+        <label for="breite">Breite (mm)</label>
+        <input id="breite" type="text" inputmode="decimal" value="120" placeholder="z. B. 120">
+      </div>
+      <div>
+        <label for="hoehe">Höhe (mm)</label>
+        <input id="hoehe" type="text" inputmode="decimal" value="60" placeholder="z. B. 60">
+      </div>
+      <div>
+        <label for="wand-r">Wanddicke (mm)</label>
+        <input id="wand-r" type="text" inputmode="decimal" value="5" placeholder="z. B. 5">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:14px">
+    <div>
+      <label for="laenge">Länge (m)</label>
+      <input id="laenge" type="text" inputmode="decimal" value="6" placeholder="z. B. 6">
+    </div>
+    <div>
+      <label for="stueck">Stückzahl</label>
+      <input id="stueck" type="text" inputmode="decimal" value="1" placeholder="z. B. 1">
+    </div>
+    <div>
+      <label for="preis">Preis (€/kg, optional)</label>
+      <input id="preis" type="text" inputmode="decimal" placeholder="z. B. 1,20">
+      <p class="hint">Leer lassen, wenn keine Kosten berechnet werden sollen.</p>
+    </div>
+    <div>
+      <label for="material">Material</label>
+      <select id="material">
+        <option value="7850">Baustahl — 7,85 g/cm³</option>
+        <option value="8030">Edelstahl — 8,03 g/cm³</option>
+        <option value="7840">Kohlenstoffstahl — 7,84 g/cm³</option>
+        <option value="custom">Andere Dichte (selbst eingeben)</option>
+      </select>
+    </div>
+    <div id="dichte-box" hidden>
+      <label for="dichte">Dichte (g/cm³)</label>
+      <input id="dichte" type="text" inputmode="decimal" value="7,85" placeholder="z. B. 7,85">
+    </div>
+  </div>
+
+  <div class="results" aria-live="polite">
+    <h3>Ergebnis</h3>
+    <div class="result-row"><span>Gewicht pro Meter</span><b id="res-kgm">–</b></div>
+    <div class="result-row"><span>Gesamtgewicht</span><b id="res-total">–</b></div>
+    <div class="result-row"><span>Querschnittsfläche (Wand)</span><b id="res-area">–</b></div>
+    <div class="result-row" id="row-tonnen" hidden><span>Gesamtgewicht in Tonnen</span><b id="res-tonnen">–</b></div>
+    <div class="result-row" id="row-kosten" hidden><span>Gesamtkosten</span><b id="res-kosten">–</b></div>
+  </div>
+  <p class="error" id="calc-error" hidden></p>
+  <p class="hint">Dezimalkomma oder Dezimalpunkt — beides funktioniert. Die Wanddicke muss kleiner als der halbe Durchmesser bzw. die halbe Seitenlänge sein.</p>
+</section>
+
+<script>
+(function(){
+  var profile = 'rund';
+  function num(id){
+    var v = (document.getElementById(id).value || '').trim().replace(',', '.');
+    var n = parseFloat(v);
+    return isNaN(n) ? NaN : n;
+  }
+  function fmt(n, d){
+    return n.toLocaleString('de-DE', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function setProfile(p){
+    profile = p;
+    document.querySelectorAll('.profiles button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.profile === p);
+    });
+    ['rund','quadrat','rechteck'].forEach(function(k){
+      document.getElementById('dims-' + k).hidden = (k !== p);
+    });
+    calc();
+  }
+  document.querySelectorAll('.profiles button').forEach(function(b){
+    b.addEventListener('click', function(){ setProfile(b.dataset.profile); });
+  });
+  document.getElementById('material').addEventListener('change', function(){
+    document.getElementById('dichte-box').hidden = (this.value !== 'custom');
+    calc();
+  });
+  ['ad','wand','seite','wand-q','breite','hoehe','wand-r','laenge','stueck','preis','dichte'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', calc);
+  });
+
+  function calc(){
+    var err = document.getElementById('calc-error');
+    var L = num('laenge'), qty = num('stueck');
+    var rho = document.getElementById('material').value === 'custom' ? num('dichte') * 1000 : parseFloat(document.getElementById('material').value);
+    var A = NaN, msg = '';
+    if (profile === 'rund'){
+      var AD = num('ad'), t = num('wand');
+      if (isNaN(AD) || isNaN(t) || AD <= 0 || t <= 0) msg = 'Bitte Außendurchmesser und Wanddicke größer als 0 eingeben.';
+      else if (t >= AD / 2) msg = 'Die Wanddicke muss kleiner als der halbe Außendurchmesser sein.';
+      else { var ID = AD - 2 * t; A = Math.PI * (AD * AD - ID * ID) / 4; }
+    } else if (profile === 'quadrat'){
+      var a = num('seite'), t2 = num('wand-q');
+      if (isNaN(a) || isNaN(t2) || a <= 0 || t2 <= 0) msg = 'Bitte Seitenlänge und Wanddicke größer als 0 eingeben.';
+      else if (t2 >= a / 2) msg = 'Die Wanddicke muss kleiner als die halbe Seitenlänge sein.';
+      else A = a * a - (a - 2 * t2) * (a - 2 * t2);
+    } else {
+      var b = num('breite'), h = num('hoehe'), t3 = num('wand-r');
+      if (isNaN(b) || isNaN(h) || isNaN(t3) || b <= 0 || h <= 0 || t3 <= 0) msg = 'Bitte Breite, Höhe und Wanddicke größer als 0 eingeben.';
+      else if (t3 >= Math.min(b, h) / 2) msg = 'Die Wanddicke muss kleiner als die halbe Breite bzw. Höhe sein.';
+      else A = b * h - (b - 2 * t3) * (h - 2 * t3);
+    }
+    if (!msg && (isNaN(L) || L <= 0)) msg = 'Bitte eine Länge größer als 0 eingeben.';
+    if (!msg && (isNaN(qty) || qty < 1)) msg = 'Bitte eine Stückzahl von mindestens 1 eingeben.';
+    if (!msg && isNaN(rho)) msg = 'Bitte eine gültige Dichte eingeben.';
+    if (msg){
+      err.textContent = msg; err.hidden = false;
+      ['res-kgm','res-total','res-area'].forEach(function(id){ document.getElementById(id).textContent = '–'; });
+      document.getElementById('row-tonnen').hidden = true;
+      document.getElementById('row-kosten').hidden = true;
+      return;
+    }
+    err.hidden = true;
+    var kgm = A * rho / 1000000;          // mm² × kg/m³ → kg/m
+    var total = kgm * L * qty;
+    document.getElementById('res-kgm').textContent = fmt(kgm, 2) + ' kg/m';
+    document.getElementById('res-total').textContent = fmt(total, 2) + ' kg';
+    document.getElementById('res-area').textContent = fmt(A, 1) + ' mm²';
+    document.getElementById('row-tonnen').hidden = total < 1000;
+    if (total >= 1000) document.getElementById('res-tonnen').textContent = fmt(total / 1000, 2) + ' t';
+    var preis = num('preis');
+    document.getElementById('row-kosten').hidden = !(preis > 0);
+    if (preis > 0) document.getElementById('res-kosten').textContent = fmt(total * preis, 2) + ' €';
+  }
+  calc();
+})();
+</script>
+
+<section>
+  <h2>Formel: Stahlrohr Gewicht berechnen</h2>
+  <p>Ein Stahlrohr ist ein Hohlzylinder. Sein Gewicht ergibt sich aus dem Wandquerschnitt mal Länge mal Dichte:</p>
+  <div class="formula">
+    Gewicht = π/4 × (AD² − ID²) × Länge × Dichte<br>
+    mit ID = AD − 2 × Wanddicke, Dichte Baustahl = 7.850 kg/m³
+  </div>
+  <p>Als Kurzformel für Rundrohre aus Baustahl (Maße in mm) gilt:</p>
+  <div class="formula">kg/m = (AD − Wanddicke) × Wanddicke × 0,02466</div>
+  <p>Für Quadrat- und Rechteckrohre gilt dasselbe Prinzip: Außenquerschnitt minus Innenquerschnitt, mal Länge, mal Dichte.</p>
+</section>
+
+<section>
+  <h2>Rechenbeispiel: DN100-Rohr, 6&nbsp;m lang</h2>
+  <p>Gegeben: Außendurchmesser 114,3&nbsp;mm, Wanddicke 5&nbsp;mm, Länge 6&nbsp;m, Baustahl.</p>
+  <ol>
+    <li>Innendurchmesser: 114,3 − 2 × 5 = 104,3&nbsp;mm</li>
+    <li>Wandquerschnitt: π/4 × (114,3² − 104,3²) = 1.717&nbsp;mm²</li>
+    <li>Gewicht pro Meter: 1.717 × 7.850 / 1.000.000 = 13,48&nbsp;kg/m</li>
+    <li>Gesamtgewicht: 13,48 × 6 = <strong>80,9&nbsp;kg</strong></li>
+  </ol>
+  <p>Zum Prüfen: Geben Sie die Werte oben in den Rechner ein — das Ergebnis muss 13,48&nbsp;kg/m und 80,9&nbsp;kg lauten.</p>
+</section>
+
+<section>
+  <h2>Stahlrohr Gewicht Tabelle (DIN EN 10220, Baustahl)</h2>
+  <p>Die vollständige Übersicht der gängigen Nenndurchmesser — inklusive Meter pro Tonne, damit Sie Bestellmengen direkt umrechnen können.</p>
+  <table>
+    <tr><th>DN</th><th>AD × Wand (mm)</th><th>kg/m</th><th>Meter pro Tonne</th></tr>
+    <tr><td>DN15</td><td>21,3 × 2,0</td><td>0,95</td><td>1.050,5</td></tr>
+    <tr><td>DN20</td><td>26,9 × 2,3</td><td>1,40</td><td>716,7</td></tr>
+    <tr><td>DN25</td><td>33,7 × 2,6</td><td>1,99</td><td>501,5</td></tr>
+    <tr><td>DN32</td><td>42,4 × 2,6</td><td>2,55</td><td>391,9</td></tr>
+    <tr><td>DN40</td><td>48,3 × 2,9</td><td>3,25</td><td>308,0</td></tr>
+    <tr><td>DN50</td><td>60,3 × 2,9</td><td>4,11</td><td>243,6</td></tr>
+    <tr><td>DN65</td><td>76,1 × 3,2</td><td>5,75</td><td>173,8</td></tr>
+    <tr><td>DN80</td><td>88,9 × 3,2</td><td>6,76</td><td>147,9</td></tr>
+    <tr><td>DN100</td><td>114,3 × 3,6</td><td>9,83</td><td>101,7</td></tr>
+    <tr><td>DN100</td><td>114,3 × 5,0</td><td>13,48</td><td>74,2</td></tr>
+    <tr><td>DN125</td><td>139,7 × 4,0</td><td>13,39</td><td>74,7</td></tr>
+    <tr><td>DN150</td><td>168,3 × 4,5</td><td>18,18</td><td>55,0</td></tr>
+    <tr><td>DN200</td><td>219,1 × 5,9</td><td>31,02</td><td>32,2</td></tr>
+  </table>
+  <p class="hint">Werte für Baustahl (7,85 g/cm³), berechnet mit kg/m = (AD − Wand) × Wand × 0,02466. DN ist der Nenndurchmesser — er entspricht ungefähr dem Innendurchmesser, nicht dem Außendurchmesser. Durch Walztoleranzen kann das tatsächliche Gewicht leicht abweichen.</p>
+</section>
+
+<section>
+  <h2>Quadrat- und Rechteckrohr Gewicht Tabelle (Baustahl)</h2>
+  <table>
+    <tr><th>Quadratrohr (mm)</th><th>kg/m</th><th>Rechteckrohr (mm)</th><th>kg/m</th></tr>
+    <tr><td>40 × 40 × 3</td><td>3,49</td><td>100 × 50 × 3</td><td>6,78</td></tr>
+    <tr><td>50 × 50 × 3</td><td>4,43</td><td>100 × 50 × 4</td><td>8,92</td></tr>
+    <tr><td>60 × 60 × 3</td><td>5,37</td><td>120 × 60 × 4</td><td>10,80</td></tr>
+    <tr><td>80 × 80 × 4</td><td>9,55</td><td>120 × 80 × 4</td><td>12,06</td></tr>
+    <tr><td>100 × 100 × 4</td><td>12,06</td><td>150 × 100 × 5</td><td>18,84</td></tr>
+    <tr><td>100 × 100 × 5</td><td>14,91</td><td>200 × 100 × 5</td><td>22,77</td></tr>
+    <tr><td>120 × 120 × 5</td><td>18,05</td><td></td><td></td></tr>
+    <tr><td>150 × 150 × 6</td><td>27,13</td><td></td><td></td></tr>
+  </table>
+  <p class="hint">Berechnet aus Außenquerschnitt minus Innenquerschnitt, mal Dichte 7,85 g/cm³. Beispiel: Ein 100 × 100 × 5 mm Quadratrohr wiegt 14,91 kg/m — eine 12-m-Stange also 179,0 kg.</p>
+</section>
+
+<section>
+  <h2>Materialdichten für die Gewichtsberechnung</h2>
+  <p>Das Gewicht hängt direkt von der Dichte ab. Der Rechner oben enthält die drei Stahlsorten — für andere Metalle die eigene Dichte eingeben:</p>
+  <table>
+    <tr><th>Material</th><th>Dichte (g/cm³)</th><th>Im Rechner</th></tr>
+    <tr><td>Baustahl</td><td>7,85</td><td>✓ voreingestellt</td></tr>
+    <tr><td>Kohlenstoffstahl</td><td>7,84</td><td>✓ wählbar</td></tr>
+    <tr><td>Edelstahl (1.4301)</td><td>8,03</td><td>✓ wählbar</td></tr>
+    <tr><td>Aluminium</td><td>2,70</td><td>eigene Dichte</td></tr>
+    <tr><td>Messing</td><td>8,50</td><td>eigene Dichte</td></tr>
+    <tr><td>Kupfer</td><td>8,96</td><td>eigene Dichte</td></tr>
+  </table>
+  <p class="hint">Beispiel: Dasselbe 114,3 × 5 mm Rohr wiegt aus Edelstahl 13,79 kg/m statt 13,48 kg/m aus Baustahl — rund 2 % mehr.</p>
+</section>
+
+<section>
+  <h2>So berechnen Sie das Stahlrohr Gewicht in 4 Schritten</h2>
+  <ol>
+    <li><strong>Außen- und Innendurchmesser bestimmen.</strong> Außendurchmesser messen, Wanddicke messen, Innendurchmesser = AD − 2 × Wanddicke.</li>
+    <li><strong>Wandquerschnitt berechnen.</strong> π/4 × (AD² − ID²) — das ist die Stahlfläche im Querschnitt, in mm².</li>
+    <li><strong>Mit Länge und Dichte multiplizieren.</strong> Querschnitt × Länge × 7,85 g/cm³ (Baustahl) ergibt das Gewicht.</li>
+    <li><strong>Auf kg/m und Gesamtgewicht umrechnen.</strong> Gewicht pro Meter für den Vergleich, Gesamtgewicht für die Bestellung — oder oben den Rechner nutzen, der alle Schritte übernimmt.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Rohr oder Vollstab? Der Unterschied ist riesig</h2>
+  <p>Ein massiver Rundstab mit 114,3 mm Durchmesser wiegt <strong>80,55 kg/m</strong>. Dasselbe Maß als Rohr mit 5 mm Wanddicke wiegt nur <strong>13,48 kg/m</strong> — ein Sechstel davon. Genau deshalb ist die Wanddicke die wichtigste Eingabe überhaupt: Wer sie vergisst und mit dem Vollquerschnitt rechnet, überschätzt das Gewicht um das Sechsfache.</p>
+</section>
+
+<section>
+  <h2>Kostenbeispiel: Eine Bestellung komplett durchrechnen</h2>
+  <p>40 Stück DN40-Rohre (48,3 × 3 mm), je 6 m lang, zu 1,20 €/kg:</p>
+  <ol>
+    <li>Gewicht pro Meter: 3,35 kg/m</li>
+    <li>Pro Rohr: 3,35 × 6 = 20,1 kg</li>
+    <li>Gesamt: 20,1 × 40 = 804,4 kg ≈ 0,80 t</li>
+    <li>Kosten: 804,4 × 1,20 € = <strong>965,23 €</strong></li>
+  </ol>
+  <p>Im Rechner oben lässt sich der Preis pro kg direkt eingeben — die Gesamtkosten erscheinen dann automatisch im Ergebnis.</p>
+</section>
+
+<section>
+  <h2>Umrechnung: kg/m ↔ lb/ft</h2>
+  <p>Für US-Angaben: <strong>kg/m × 0,672 = lb/ft</strong> und umgekehrt <strong>lb/ft × 1,488 = kg/m</strong>. Beispiel: 13,48 kg/m entsprechen 9,06 lb/ft.</p>
+</section>
+
+<section>
+  <h2>4 häufige Fehler beim Stahlrohr Gewicht</h2>
+  <ol>
+    <li><strong>Außen- und Innendurchmesser verwechseln.</strong> Die Formel braucht den Außendurchmesser. Wer nur den Innendurchmesser kennt, addiert die doppelte Wanddicke.</li>
+    <li><strong>Wanddicke vergessen.</strong> Wer mit dem Vollquerschnitt rechnet, überschätzt das Gewicht massiv — ein Rohr ist hohl.</li>
+    <li><strong>Einheiten mischen.</strong> Durchmesser und Wanddicke in mm, Länge in m — vor dem Rechnen alles auf eine Einheit bringen.</li>
+    <li><strong>Falsche Dichte.</strong> Edelstahl (8,03 g/cm³) ist schwerer als Baustahl (7,85 g/cm³). Mit der falschen Dichte liegt das Ergebnis um rund 2 % daneben.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Häufige Fragen zum Stahlrohr Gewicht Rechner</h2>
+  <h3>Wie berechnet man das Gewicht eines Stahlrohrs?</h3>
+  <p>Man berechnet den Wandquerschnitt (Außenfläche minus Innenfläche), multipliziert ihn mit der Länge und der Dichte des Stahls. Für Rundrohre aus Baustahl reicht die Kurzformel kg/m = (AD − Wanddicke) × Wanddicke × 0,02466.</p>
+  <h3>Wie schwer ist ein DN100-Stahlrohr (114,3 × 5 mm)?</h3>
+  <p>13,48 kg pro Meter. Ein 6 m langes Rohr wiegt 80,9 kg.</p>
+  <h3>Kann ich auch Quadrat- und Rechteckrohre berechnen?</h3>
+  <p>Ja — oben im Rechner das Profil wechseln. Das Prinzip ist dasselbe: Außenquerschnitt minus Innenquerschnitt, mal Länge, mal Dichte.</p>
+  <h3>Welche Dichte muss ich für Edelstahl nehmen?</h3>
+  <p>8,03 g/cm³. Für Baustahl 7,85 g/cm³, für Kohlenstoffstahl 7,84 g/cm³. Im Rechner ist das Material direkt wählbar.</p>
+  <h3>Warum weicht das tatsächliche Gewicht manchmal ab?</h3>
+  <p>Durch Walztoleranzen bei Durchmesser und Wanddicke sowie durch Beschichtungen. Für kritische Anwendungen das Werkszeugnis des Lieferanten prüfen.</p>
+  <h3>Was bedeutet DN bei Stahlrohren?</h3>
+  <p>DN ist der Nenndurchmesser — er entspricht ungefähr dem Innendurchmesser, nicht dem Außendurchmesser. DN100 bedeutet also ein Rohr mit etwa 114,3 mm Außendurchmesser (je nach Wanddicke).</p>
+  <h3>Wie viele Meter Stahlrohr sind eine Tonne?</h3>
+  <p>1.000 geteilt durch das Gewicht pro Meter. Beim DN100-Rohr (114,3 × 5 mm, 13,48 kg/m) sind das 74,2 Meter pro Tonne. Die Tabelle oben listet Meter pro Tonne für alle gängigen Größen.</p>
+  <h3>Wie rechne ich kg/m in lb/ft um?</h3>
+  <p>kg/m × 0,672 = lb/ft. Umgekehrt: lb/ft × 1,488 = kg/m. Beispiel: 13,48 kg/m entsprechen 9,06 lb/ft.</p>
+  <h3>Was ist der Unterschied zwischen Rohr und Röhre?</h3>
+  <p>Für die Gewichtsberechnung keiner — beides wird nach Außendurchmesser und Wanddicke bemessen, die Formel ist dieselbe. Der Begriff unterscheidet sich je nach Branche und Norm, nicht nach Berechnung.</p>
+  <h3>Welche Standardlängen gibt es bei Stahlrohren?</h3>
+  <p>Handelsüblich sind 6 m, daneben auch 12 m. Der Rechner nimmt jede Länge — bei Bestellungen lohnt sich die Stückzahl-Eingabe, um direkt das Gesamtgewicht der Lieferung zu erhalten.</p>
+</section>
+
+<p class="trust">Geprüft: Oktober 2026 · Berechnungsgrundlage: DIN EN 10220, Dichte Baustahl 7,85 g/cm³. Alle Angaben ohne Gewähr — für tragende Anwendungen Werte mit dem Lieferanten abgleichen.</p>
+
+</main>
+<footer>
+  <p><a href="/de/">Alle Rechner</a> · Stahlrohr Gewicht Rechner — Rund-, Quadrat- und Rechteckrohre aus Stahl.</p>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Wie berechnet man das Gewicht eines Stahlrohrs?", "acceptedAnswer": {"@type": "Answer", "text": "Man berechnet den Wandquerschnitt (Außenfläche minus Innenfläche), multipliziert ihn mit der Länge und der Dichte des Stahls. Für Rundrohre aus Baustahl gilt die Kurzformel kg/m = (AD − Wanddicke) × Wanddicke × 0,02466."}},
+    {"@type": "Question", "name": "Wie schwer ist ein DN100-Stahlrohr (114,3 × 5 mm)?", "acceptedAnswer": {"@type": "Answer", "text": "13,48 kg pro Meter. Ein 6 m langes Rohr wiegt 80,9 kg."}},
+    {"@type": "Question", "name": "Kann ich auch Quadrat- und Rechteckrohre berechnen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Das Prinzip ist dasselbe: Außenquerschnitt minus Innenquerschnitt, mal Länge, mal Dichte."}},
+    {"@type": "Question", "name": "Welche Dichte muss ich für Edelstahl nehmen?", "acceptedAnswer": {"@type": "Answer", "text": "8,03 g/cm³. Für Baustahl 7,85 g/cm³, für Kohlenstoffstahl 7,84 g/cm³."}},
+    {"@type": "Question", "name": "Warum weicht das tatsächliche Gewicht manchmal ab?", "acceptedAnswer": {"@type": "Answer", "text": "Durch Walztoleranzen bei Durchmesser und Wanddicke sowie durch Beschichtungen. Für kritische Anwendungen das Werkszeugnis des Lieferanten prüfen."}},
+    {"@type": "Question", "name": "Was bedeutet DN bei Stahlrohren?", "acceptedAnswer": {"@type": "Answer", "text": "DN ist der Nenndurchmesser — er entspricht ungefähr dem Innendurchmesser, nicht dem Außendurchmesser. DN100 bedeutet also ein Rohr mit etwa 114,3 mm Außendurchmesser."}},
+    {"@type": "Question", "name": "Wie viele Meter Stahlrohr sind eine Tonne?", "acceptedAnswer": {"@type": "Answer", "text": "1.000 geteilt durch das Gewicht pro Meter. Beim DN100-Rohr (114,3 × 5 mm, 13,48 kg/m) sind das 74,2 Meter pro Tonne."}},
+    {"@type": "Question", "name": "Wie rechne ich kg/m in lb/ft um?", "acceptedAnswer": {"@type": "Answer", "text": "kg/m × 0,672 = lb/ft. Umgekehrt: lb/ft × 1,488 = kg/m. Beispiel: 13,48 kg/m entsprechen 9,06 lb/ft."}},
+    {"@type": "Question", "name": "Was ist der Unterschied zwischen Rohr und Röhre?", "acceptedAnswer": {"@type": "Answer", "text": "Für die Gewichtsberechnung keiner — beides wird nach Außendurchmesser und Wanddicke bemessen, die Formel ist dieselbe."}},
+    {"@type": "Question", "name": "Welche Standardlängen gibt es bei Stahlrohren?", "acceptedAnswer": {"@type": "Answer", "text": "Handelsüblich sind 6 m, daneben auch 12 m."}}
+  ]
+}
+</script>
+</body>
+</html>

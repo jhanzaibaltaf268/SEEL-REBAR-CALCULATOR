@@ -1219,6 +1219,11 @@ fs.writeFileSync(path.join(OUT,"slugs.js"),
   "window.REBAR_SLUGS = " + JSON.stringify(slugMapByLang, null, 2) + ";\n");
 
 let pageCount = 0;
+/* Hand-made pages outside PAGES: kept by the language-folder cleanup and listed in that language's sitemap */
+const STANDALONE_PAGES = [
+  { lang: "de", slug: "stahlrohr-gewicht-rechner" }
+];
+
 const redirects = [
   // Removed draft homepages: send their old URLs to the main page
   { source: "/dummy-preview", destination: "/", permanent: true },
@@ -1235,7 +1240,8 @@ LANGS.forEach(l => {
     // Clean up old html files in this language directory
     const existing = fs.readdirSync(outDir);
     existing.forEach(f => {
-      if (f.endsWith(".html") && f !== "index.html") {
+      const standalone = STANDALONE_PAGES.some(p => p.lang === lang && p.slug + ".html" === f);
+      if (f.endsWith(".html") && f !== "index.html" && !standalone) {
         fs.unlinkSync(path.join(outDir, f));
       }
     });
@@ -1408,6 +1414,20 @@ function buildLanguageSitemapSection(code) {
     childPages.forEach(p => {
       chunks.push(renderSitemapUrl("page", p, code, today, "yearly", pagePriority));
     });
+  });
+
+  // Standalone pages exist in one language only, so they carry no alternates
+  const standalone = STANDALONE_PAGES.filter(p => p.lang === code);
+  if (standalone.length) chunks.push("\n  <!-- Standalone pages (" + code + ") -->");
+  standalone.forEach(p => {
+    chunks.push([
+      "  <url>",
+      "    <loc>" + urlFor(code, p.slug) + "</loc>",
+      "    <lastmod>" + today + "</lastmod>",
+      "    <changefreq>yearly</changefreq>",
+      "    <priority>" + pagePriority + "</priority>",
+      "  </url>"
+    ].join("\n"));
   });
 
   return chunks.join("\n");
