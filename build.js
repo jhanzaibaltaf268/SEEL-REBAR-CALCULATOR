@@ -372,6 +372,7 @@ const PAGES = [
     intro:"Estimate both concrete and steel for a pour. Enter the dimensions to get the concrete volume in m³, yd³ and ft³, plus a steel estimate from a reinforcement ratio (kg/m³).",
     howto:["Enter length and width in metres.","Enter thickness in millimetres, not metres.","Set the steel ratio (kg per m³) for the member type.","Read the volume in m³, yd³ and ft³, and the steel in kg and tonnes.","Add a waste allowance before ordering — the calculator gives neat volume, not the order quantity."],
     formula:"Volume = L × W × thickness. Steel = volume × ratio (typically 80–120 kg/m³ for slabs).",
+    hideCards: true,
     toc:`<nav class="content-block" aria-label="On this page">
     <h2>On this page</h2>
     <ul>
@@ -425,7 +426,7 @@ const PAGES = [
     <p>Convert first, then enter metric values into the calculator — do not mix units in one calculation.</p>
     <h3 id="not-included">What the calculator does not include</h3>
     <ul>
-      <li><strong>A bar schedule.</strong> This gives total steel in kg, not bar sizes, counts, laps or spacings. For a bar-by-bar take-off, use the <a href="/concrete-slab-rebar-calculator">slab calculator</a>, <a href="/footing-rebar-calculator">footing calculator</a> or <a href="/rebar-mat-grid-calculator">mat calculator</a>.</li>
+      <li><strong>A bar schedule.</strong> This gives total steel in kg, not bar sizes, counts, laps or spacings. For a bar-by-bar take-off, use the <a href="/concrete-slab-rebar-calculator">slab calculator</a>, <a href="/footing-rebar-calculator">footing calculator</a>, <a href="/rebar-mat-grid-calculator">mat calculator</a> or <a href="/rebar-quantity-calculator">quantity & takeoff calculator</a> for a full count-and-length take-off.</li>
       <li><strong>Waste allowance.</strong> The result is neat volume. Add 5–10% before ordering (see above).</li>
       <li><strong>Formwork, labour and pumping.</strong> Placing costs are separate from material quantities.</li>
       <li><strong>Blinding and sub-base.</strong> The slab sits on blinding and hardcore — neither is in this volume.</li>
@@ -443,7 +444,7 @@ const PAGES = [
           ["How much does the concrete and steel cost?","Multiply each quantity by its local price. With example prices of €120/m³ for concrete and €1.20/kg for steel, the 5 m × 4 m slab costs €360.00 + €288.00 = €648.00 in materials. Get current local quotes before budgeting."],
           ["Does the calculator give me bar sizes and counts?","No — it gives total steel weight only. For bar sizes, counts, spacings and laps, use the slab, footing or mat calculator, which size the actual two-way grid."],
           ["What thickness should a slab be?","Residential ground slabs are commonly 100–150 mm; heavier or commercial slabs go thicker. Thickness drives volume directly — doubling it doubles the concrete — so it must come from the design, not from a guess."],
-          ["Can I use this for footings, beams and columns?","The volume maths works for any rectangular pour, and the ratio table above covers the common member types. But for beams and columns, a bar schedule from the detailing calculators is more precise than a kg/m³ estimate."]] },
+          ["Can I use this for footings, beams and columns?","The volume maths works for any rectangular pour, and the ratio table above covers the common member types. But for beams and columns, a bar schedule from the detailing calculators is more precise than a kg/m³ estimate. A driveway is a slab pour — the <a href=\"/driveway-rebar-calculator\">driveway calculator</a> sizes its bar grid, while this estimator gives you the concrete volume and steel total."]] },
 
   { id:"driveway", slug:"driveway-rebar-calculator", cat:"Estimating",
     metaTitle:"Driveway Rebar Calculator — Bar Count & Weight",
@@ -1227,8 +1228,8 @@ ${crumbTrail}
 
 <main class="wrap" id="calculator">
 ${renderToolShell(lang, p.id)}
-${relatedGrid(p.id, lang)}
-${workflowGrid(p.id, lang)}
+${lang === "en" && p.hideCards ? "" : relatedGrid(p.id, lang)}
+${lang === "en" && p.hideCards ? "" : workflowGrid(p.id, lang)}
 ${lang==="en" && p.toc ? p.toc : ""}
 
   <section class="content-block">
