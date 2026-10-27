@@ -50,6 +50,16 @@
       "permanent": true
     },
     {
+      "source": "/new-design",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/new-design/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/es/peso-calculadoras",
       "destination": "/es/calculadora-de-peso-de-varilla",
       "permanent": true

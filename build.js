@@ -1229,7 +1229,10 @@ const redirects = [
   { source: "/dummy-preview", destination: "/", permanent: true },
   { source: "/dummy-preview.html", destination: "/", permanent: true },
   { source: "/homepage-improved", destination: "/", permanent: true },
-  { source: "/homepage-improved.html", destination: "/", permanent: true }
+  { source: "/homepage-improved.html", destination: "/", permanent: true },
+  // Work-in-progress design is kept in the repo but hidden from the live site
+  { source: "/new-design", destination: "/", permanent: false },
+  { source: "/new-design/:path*", destination: "/", permanent: false }
 ];
 
 LANGS.forEach(l => {
