@@ -370,10 +370,80 @@ const PAGES = [
     desc:"Calculate concrete volume and an estimate of the reinforcement steel using a kg/m³ ratio.",
     kw:"concrete and rebar calculator, concrete rebar estimator, concrete volume and steel",
     intro:"Estimate both concrete and steel for a pour. Enter the dimensions to get the concrete volume in m³, yd³ and ft³, plus a steel estimate from a reinforcement ratio (kg/m³).",
-    howto:["Enter length, width and thickness.","Set the steel ratio (kg per m³ of concrete).","Read the volume and steel estimate."],
+    howto:["Enter length and width in metres.","Enter thickness in millimetres, not metres.","Set the steel ratio (kg per m³) for the member type.","Read the volume in m³, yd³ and ft³, and the steel in kg and tonnes.","Add a waste allowance before ordering — the calculator gives neat volume, not the order quantity."],
     formula:"Volume = L × W × thickness. Steel = volume × ratio (typically 80–120 kg/m³ for slabs).",
-    faqs:[["How much steel per m³ of concrete?","Roughly 80–120 kg/m³ for slabs, more for columns and beams — design governs."],
-          ["How do I calculate concrete volume?","Multiply length × width × thickness in consistent units."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 5 m × 4 m slab</a></li>
+      <li><a href="#example-2">Worked example 2: 6 m × 5 m slab</a></li>
+      <li><a href="#ratio-table">Steel ratio guide (kg/m³)</a></li>
+      <li><a href="#waste">Ordering extra: the waste allowance</a></li>
+      <li><a href="#cost">Estimating the cost</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<p><strong>Why is thickness in millimetres?</strong> Slabs are drawn and specified in mm (100 mm, 150 mm, 200 mm), so the calculator takes thickness in mm and divides by 1,000 to get metres before multiplying. Entering 150 as metres would overstate the volume a thousand times. <strong>What is the steel ratio?</strong> It is the kilograms of reinforcement per cubic metre of concrete — a shortcut that turns a volume into a steel estimate without a full bar schedule. <strong>Why three volume units?</strong> Concrete is ordered in m³ in most of the world, but in yd³ in the US — and ft³ helps when a supplier or drawing works in feet.</p>
+    <p>The conversions are fixed: 1 m³ = 1.30795 yd³ and 1 m³ = 35.3147 ft³. The calculator shows all three, so there is nothing to convert by hand.</p>
+    <h3 id="example-1">Worked example 1: 5 m × 4 m slab</h3>
+    <p>Slab 5 m × 4 m, 150 mm thick, steel ratio 80 kg/m³. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Volume: 5 × 4 × 0.150 = 3.00 m³.</li><li>In cubic yards: 3.00 × 1.30795 = 3.92 yd³.</li><li>In cubic feet: 3.00 × 35.3147 = 105.94 ft³.</li><li>Estimated steel: 3.00 × 80 = 240.00 kg (0.240 tonnes).</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 6 m × 5 m slab</h3>
+    <p>Slab 6 m × 5 m, 200 mm thick, steel ratio 100 kg/m³:</p>
+    <ol class="howto"><li>Volume: 6 × 5 × 0.200 = 6.00 m³.</li><li>In cubic yards: 6.00 × 1.30795 = 7.85 yd³.</li><li>In cubic feet: 6.00 × 35.3147 = 211.89 ft³.</li><li>Estimated steel: 6.00 × 100 = 600.00 kg (0.600 tonnes).</li></ol>
+    <p>Notice how doubling the thickness from 150 mm to 200 mm and raising the ratio from 80 to 100 more than doubles the steel — volume and ratio multiply, so both matter.</p>
+    <h3 id="ratio-table">Steel ratio guide (kg/m³)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Member type</th><th>Typical steel ratio</th></tr>
+      <tr><td>Slabs</td><td>80–120 kg/m³</td></tr>
+      <tr><td>Footings</td><td>70–100 kg/m³</td></tr>
+      <tr><td>Walls</td><td>60–100 kg/m³</td></tr>
+      <tr><td>Beams</td><td>150–200 kg/m³</td></tr>
+      <tr><td>Columns</td><td>200–300 kg/m³</td></tr>
+    </table></div>
+    <p>These are rule-of-thumb ranges for early estimates only. The structural design sets the real ratio — using a slab ratio for a column would underestimate the steel by more than half. The calculator's 80 kg/m³ default is the low end for slabs.</p>
+    <h3 id="waste">Ordering extra: the waste allowance</h3>
+    <p>Never order exactly the neat volume. Spillage, formwork bulging, uneven subgrade and pump priming all eat concrete on site, so a 5–10% allowance is standard. For worked example 1: 3.00 m³ + 10% = 3.30 m³ to order. It is cheaper than a short load and a second delivery — and the same thinking applies to steel, where laps and cutting waste sit on top of the neat estimate.</p>
+    <h3 id="cost">Estimating the cost</h3>
+    <p>Cost = (concrete volume × price per m³) + (steel weight × price per kg). Using worked example 1 with example prices of €120/m³ for concrete and €1.20/kg for steel: concrete 3.00 × €120 = €360.00, steel 240.00 × €1.20 = €288.00, total €648.00. Prices vary by region, supplier and mix, so get current quotes before budgeting. For a steel-only breakdown, use the <a href="/rebar-cost-calculator">rebar cost calculator</a>.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator takes metres and millimetres and reports m³, yd³ and ft³. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>100 mm thick</td><td>4 in</td></tr>
+      <tr><td>150 mm thick</td><td>6 in</td></tr>
+      <tr><td>200 mm thick</td><td>8 in</td></tr>
+      <tr><td>5 m × 4 m slab</td><td>16.40 ft × 13.12 ft (× 3.281)</td></tr>
+      <tr><td>3.00 m³</td><td>3.92 yd³ (× 1.30795) / 105.94 ft³ (× 35.3147)</td></tr>
+    </table></div>
+    <p>Convert first, then enter metric values into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>A bar schedule.</strong> This gives total steel in kg, not bar sizes, counts, laps or spacings. For a bar-by-bar take-off, use the <a href="/concrete-slab-rebar-calculator">slab calculator</a>, <a href="/footing-rebar-calculator">footing calculator</a> or <a href="/rebar-mat-grid-calculator">mat calculator</a>.</li>
+      <li><strong>Waste allowance.</strong> The result is neat volume. Add 5–10% before ordering (see above).</li>
+      <li><strong>Formwork, labour and pumping.</strong> Placing costs are separate from material quantities.</li>
+      <li><strong>Blinding and sub-base.</strong> The slab sits on blinding and hardcore — neither is in this volume.</li>
+      <li><strong>Joints and curing.</strong> Saw cuts, dowels at joints and curing compound are detailing items, not volume items.</li>
+    </ul>
+    <h3 id="mistakes">4 common mistakes</h3>
+    <ol class="howto"><li><strong>Entering thickness in metres.</strong> The thickness field takes millimetres. Typing 0.15 instead of 150 understates the volume a thousand times; typing 150 as metres overstates it the same way.</li><li><strong>Using the wrong ratio for the member.</strong> A slab ratio applied to a column underestimates the steel by more than half. Match the ratio to the member type (see the table above).</li><li><strong>Ordering exactly the neat volume.</strong> Without a 5–10% waste allowance, the last corner of the pour runs short.</li><li><strong>Treating the steel estimate as a bar schedule.</strong> A kg total tells you what to budget, not what to cut and tie. Bar sizes, counts and laps need the detailing calculators.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Volumes use the exact conversions 1 m³ = 1.30795 yd³ and 1 m³ = 35.3147 ft³. Steel ratios are rule-of-thumb ranges for early estimates — always verify against your structural drawings and design code.</p>`,
+    faqs:[["How do I calculate concrete volume?","Multiply length × width × thickness in consistent units. With metres and millimetres: volume (m³) = length (m) × width (m) × thickness (mm) ÷ 1,000. Example: 5 × 4 × 150 mm = 3.00 m³."],
+          ["How much steel per m³ of concrete?","Roughly 80–120 kg/m³ for slabs, 70–100 for footings, 150–200 for beams and 200–300 for columns — design governs. The calculator's 80 kg/m³ default is the low end for slabs."],
+          ["How much concrete do I need for a 5 m × 4 m slab?","At 150 mm thick: 3.00 m³ (3.92 yd³, 105.94 ft³), plus an estimated 240.00 kg of steel at 80 kg/m³. Add 5–10% before ordering — 3.30 m³ at a 10% allowance."],
+          ["What is the steel ratio (kg/m³)?","The kilograms of reinforcement per cubic metre of concrete. It turns a volume into a steel estimate without a full bar schedule: steel (kg) = volume (m³) × ratio. It is an estimating shortcut, not a substitute for design."],
+          ["How much extra concrete should I order?","A 5–10% waste allowance is standard for spillage, formwork bulging and uneven subgrade. For the 5 m × 4 m example: 3.00 m³ neat becomes 3.30 m³ ordered at 10%."],
+          ["How do I convert m³ to yd³ and ft³?","Multiply by 1.30795 for yd³ and by 35.3147 for ft³. So 3.00 m³ = 3.92 yd³ = 105.94 ft³. The calculator shows all three automatically."],
+          ["How much does the concrete and steel cost?","Multiply each quantity by its local price. With example prices of €120/m³ for concrete and €1.20/kg for steel, the 5 m × 4 m slab costs €360.00 + €288.00 = €648.00 in materials. Get current local quotes before budgeting."],
+          ["Does the calculator give me bar sizes and counts?","No — it gives total steel weight only. For bar sizes, counts, spacings and laps, use the slab, footing or mat calculator, which size the actual two-way grid."],
+          ["What thickness should a slab be?","Residential ground slabs are commonly 100–150 mm; heavier or commercial slabs go thicker. Thickness drives volume directly — doubling it doubles the concrete — so it must come from the design, not from a guess."],
+          ["Can I use this for footings, beams and columns?","The volume maths works for any rectangular pour, and the ratio table above covers the common member types. But for beams and columns, a bar schedule from the detailing calculators is more precise than a kg/m³ estimate."]] },
 
   { id:"driveway", slug:"driveway-rebar-calculator", cat:"Estimating",
     metaTitle:"Driveway Rebar Calculator — Bar Count & Weight",
@@ -1177,7 +1247,7 @@ ${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>`
 </main>
 ${footer(lang)}
 ${scripts(lang, p.id)}
-${lang === "en" && (p.id === "slab" || p.id === "footing" || p.id === "mat") ? `<script>(function(){
+${lang === "en" && (p.id === "slab" || p.id === "footing" || p.id === "mat" || p.id === "concrete") ? `<script>(function(){
   var head = document.querySelector('.site-header');
   if (head) {
     var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
