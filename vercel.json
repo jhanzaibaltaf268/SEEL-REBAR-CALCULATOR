@@ -55,6 +55,16 @@
       "permanent": false
     },
     {
+      "source": "/new-design/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/new-design/index.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/new-design/:path*",
       "destination": "/",
       "permanent": false
