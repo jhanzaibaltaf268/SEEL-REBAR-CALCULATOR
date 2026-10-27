@@ -84,6 +84,18 @@
     document.getElementById("r-grid").innerHTML = res.rows.filter(r => r !== main).map(r =>
       `<div><dt>${r.label}</dt><dd>${fmt(r.value)}${r.unit ? ` <small>${r.unit}</small>` : ""}</dd></div>`).join("");
     document.getElementById("r-note").textContent = res.note || "";
+
+    // Animated result: a subtle pop whenever the headline value changes.
+    const mainEl = document.querySelector(".r-main");
+    if (mainEl) {
+      const val = main.label + "|" + main.value + "|" + (main.unit || "");
+      if (val !== mainEl.dataset.last) {
+        mainEl.dataset.last = val;
+        mainEl.classList.remove("pop");
+        void mainEl.offsetWidth; // restart the animation
+        mainEl.classList.add("pop");
+      }
+    }
   }
 
   buildFields();
@@ -91,4 +103,26 @@
   form.addEventListener("submit", e => e.preventDefault());
   document.getElementById("reset").addEventListener("click", () => { buildFields(); update(); });
   update();
+
+  /* ---------- design: header shadow + scroll reveal ---------- */
+  const top = document.querySelector(".top");
+  if (top) {
+    const onScroll = () => top.classList.toggle("scrolled", window.scrollY > 4);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Reveal is added by JS only, so without JS every section stays visible.
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("inview"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px 10% 0px" });
+    document.querySelectorAll(".group, .block, .foot").forEach(el => {
+      el.classList.add("reveal");
+      el.querySelectorAll(".list li").forEach((li, i) => li.style.setProperty("--i", Math.min(i, 8)));
+      io.observe(el);
+    });
+  }
 })();
