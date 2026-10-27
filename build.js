@@ -95,7 +95,7 @@ const PAGES = [
     <p>Slab 6 m × 4 m, 12 mm bars (0.888 kg/m), 200 mm spacing, 40 mm cover:</p>
     <ol class="howto"><li>Bars along the 6 m direction: floor((4,000 − 80) ÷ 200) + 1 = 20 bars, each 5.92 m long = 118.4 m.</li><li>Bars along the 4 m direction: floor((6,000 − 80) ÷ 200) + 1 = 30 bars, each 3.92 m long = 117.6 m.</li><li>Total bar length: 118.4 + 117.6 = 236.0 m.</li><li>Total weight: 236.0 × 0.888 = 209.6 kg (about 210 kg).</li><li>Tie intersections: 20 × 30 = 600.</li></ol>
     <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
-    <h3 id="example-2">Worked example 2: 5 m × 4 m slab (the calculator defaults)</h3>
+    <h3 id="example-2">Worked example 2: 5 m × 4 m slab</h3>
     <p>Slab 5 m × 4 m, 10 mm bars (0.617 kg/m), 150 mm spacing, 50 mm cover:</p>
     <ol class="howto"><li>Bars along the 5 m direction: floor((4,000 − 100) ÷ 150) + 1 = 27 bars, each 4.90 m long = 132.3 m.</li><li>Bars along the 4 m direction: floor((5,000 − 100) ÷ 150) + 1 = 33 bars, each 3.90 m long = 128.7 m.</li><li>Total bar length: 132.3 + 128.7 = 261.0 m.</li><li>Total weight: 261.0 × 0.617 = 161.0 kg.</li><li>Tie intersections: 27 × 33 = 891.</li></ol>
     <p>Notice how the tighter 150 mm spacing and smaller 10 mm bars still give a similar total length, but a lower weight — bar size matters as much as spacing.</p>
@@ -948,7 +948,7 @@ ${altLinks('page', p)}
 <script type="application/ld+json">${crumbLd}</script>
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
-<body>
+<body data-page="${p.id}">
 ${header(lang, 'page', p)}
 ${crumbTrail}
 <section class="hero">
@@ -980,6 +980,33 @@ ${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>`
 </main>
 ${footer(lang)}
 ${scripts(lang, p.id)}
+${lang === "en" && p.id === "slab" ? `<script>(function(){
+  var head = document.querySelector('.site-header');
+  if (head) {
+    var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
+    window.addEventListener('scroll', onScroll, {passive: true}); onScroll();
+  }
+  var total = document.getElementById('r-total');
+  var main = document.querySelector('.result-main');
+  if (total && main && 'MutationObserver' in window) {
+    var last = '';
+    new MutationObserver(function(){
+      var v = total.textContent;
+      if (v !== last) {
+        last = v;
+        main.classList.remove('pop'); void main.offsetWidth; main.classList.add('pop');
+      }
+    }).observe(total, {childList: true, characterData: true, subtree: true});
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('inview'); io.unobserve(e.target); } });
+    }, {threshold: 0.12, rootMargin: '0px 0px 10% 0px'});
+    document.querySelectorAll('.content-block, .related, .site-footer').forEach(function(el){
+      el.classList.add('reveal'); io.observe(el);
+    });
+  }
+})();</script>` : ""}
 </body>
 </html>
 `;

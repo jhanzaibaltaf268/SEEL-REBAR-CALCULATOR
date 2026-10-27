@@ -696,7 +696,10 @@ function renderCalc(){
     wrap.id = `field-wrap-${f.k}`;
     const unit = f.unit ? ` (${f.unit})` : "";
     if(f.type==="select"){
-      const opts = f.options.map(o=>`<option value="${o.v}" ${o.v===f.default?"selected":""}>${tr(o.t)}</option>`).join("");
+      const dia = v => String(v).split("|")[1];
+      const pick = f.options.find(o => o.v === f.default)
+        || f.options.find(o => dia(o.v) !== undefined && dia(o.v) === dia(f.default));
+      const opts = f.options.map(o=>`<option value="${o.v}" ${o === pick ? "selected" : ""}>${tr(o.t)}</option>`).join("");
       wrap.innerHTML = `<label for="f-${f.k}">${tr(f.label)}${unit}</label><select id="f-${f.k}" data-key="${f.k}">${opts}</select>`;
     } else {
       wrap.innerHTML = `<label for="f-${f.k}">${tr(f.label)}${unit}</label>
