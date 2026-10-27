@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metall Gewicht Rechner — Stahl, Alu &amp; Kupfer berechnen</title>
+<meta name="description" content="Metall Gewicht Rechner: Gewicht von Stahl, Aluminium, Kupfer und mehr berechnen — Schritt für Schritt erklärt, mit Dichte-Tabelle und Übungen.">
+<link rel="canonical" href="https://steelrebarcalculator.com/de/metall-gewicht-rechner">
+<!-- HINWEIS FÜR ANTIGRAVITY: Beim Lokalisieren den 23-Link-hreflang-Satz aus den übrigen Tool-Seiten übernehmen (22 Sprachen + x-default). Slug ist deutsch, nicht englisch. -->
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  [hidden]{display:none!important}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.7}
+  main{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:2rem;line-height:1.2;margin:8px 0 20px}
+  h2{font-size:1.4rem;margin-top:44px;border-bottom:3px solid #f97316;padding-bottom:6px}
+  h3{font-size:1.1rem;margin-top:24px}
+  .card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(15,23,42,.08);padding:22px;margin-bottom:28px}
+  .profiles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .profiles button{border:2px solid #cbd5e1;background:#fff;color:#0f172a;border-radius:999px;padding:8px 16px;font-size:.95rem;cursor:pointer}
+  .profiles button.active{background:#f97316;border-color:#f97316;color:#fff;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  label{display:block;font-weight:600;font-size:.92rem;margin-bottom:4px}
+  input,select{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:1rem}
+  input:focus,select:focus{outline:2px solid #f97316;border-color:#f97316}
+  .hint{font-size:.82rem;color:#64748b;margin-top:2px}
+  .results{background:#0f172a;color:#fff;border-radius:12px;padding:20px;margin-top:18px}
+  .results h3{margin:0 0 12px;color:#fff}
+  .result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+  .result-row:last-child{border-bottom:none}
+  .result-row b{color:#fdba74;font-size:1.1rem}
+  .error{color:#dc2626;font-weight:600;margin-top:12px}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #e2e8f0}
+  th{background:#0f172a;color:#fff}
+  tr:last-child td{border-bottom:none}
+  .formula{background:#fff;border-left:4px solid #f97316;border-radius:8px;padding:16px 20px;font-size:1.05rem;overflow-x:auto}
+  .step{background:#fff;border-radius:12px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 10px rgba(15,23,42,.06)}
+  .step b.num{display:inline-block;background:#f97316;color:#fff;border-radius:50%;width:28px;height:28px;line-height:28px;text-align:center;margin-right:8px}
+  .tip{background:#fff7ed;border:1px solid #fdba74;border-radius:12px;padding:16px 20px;margin:20px 0}
+  details{background:#fff;border-radius:12px;padding:14px 18px;margin:12px 0;box-shadow:0 2px 10px rgba(15,23,42,.06)}
+  details summary{cursor:pointer;font-weight:700}
+  .trust{color:#64748b;font-size:.88rem;margin-top:40px}
+</style>
+</head>
+<body>
+<!-- site-header -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/de/"><span class="brand-mark">▦</span>
+      <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+    <nav class="top-nav">
+      <a href="/de/">Rechner</a>
+      <a href="/de/#charts">Gewichtstabelle</a>
+      <a href="/de/#faq">FAQ</a>
+    </nav>
+    <details class="lang-dropdown">
+      <summary>🌐 DE <span class="caret">▾</span></summary>
+      <div class="lang-menu"><a class="lang" hreflang="en" href="/">English</a><a class="lang" hreflang="es" href="/es/">Español</a><a class="lang" hreflang="fr" href="/fr/">Français</a><a class="lang active" hreflang="de" href="/de/">Deutsch</a><a class="lang" hreflang="it" href="/it/">Italiano</a><a class="lang" hreflang="pt" href="/pt/">Português</a><a class="lang" hreflang="nl" href="/nl/">Nederlands</a><a class="lang" hreflang="pl" href="/pl/">Polski</a><a class="lang" hreflang="ro" href="/ro/">Română</a><a class="lang" hreflang="sv" href="/sv/">Svenska</a><a class="lang" hreflang="cs" href="/cs/">Čeština</a><a class="lang" hreflang="da" href="/da/">Dansk</a><a class="lang" hreflang="el" href="/el/">Ελληνικά</a><a class="lang" hreflang="hu" href="/hu/">Magyar</a><a class="lang" hreflang="fi" href="/fi/">Suomi</a><a class="lang" hreflang="bg" href="/bg/">Български</a><a class="lang" hreflang="hr" href="/hr/">Hrvatski</a><a class="lang" hreflang="sk" href="/sk/">Slovenčina</a><a class="lang" hreflang="sl" href="/sl/">Slovenščina</a><a class="lang" hreflang="et" href="/et/">Eesti</a><a class="lang" hreflang="lv" href="/lv/">Latviešu</a><a class="lang" hreflang="lt" href="/lt/">Lietuvių</a></div>
+    </details>
+  </div>
+</header>
+<!-- /site-header -->
+<main>
+
+<h1>Metall Gewicht Rechner</h1>
+
+<section class="card" id="rechner">
+  <div class="profiles" role="tablist" aria-label="Form">
+    <button type="button" class="active" data-shape="platte">Platte / Quader</button>
+    <button type="button" data-shape="rundstab">Rundstab</button>
+    <button type="button" data-shape="vierkant">Vierkantstab</button>
+    <button type="button" data-shape="rohr">Rohr</button>
+    <button type="button" data-shape="kugel">Kugel</button>
+  </div>
+
+  <div id="dims-platte">
+    <div class="grid">
+      <div>
+        <label for="p-laenge">Länge (cm)</label>
+        <input id="p-laenge" type="text" inputmode="decimal" value="20" placeholder="z. B. 20">
+      </div>
+      <div>
+        <label for="p-breite">Breite (cm)</label>
+        <input id="p-breite" type="text" inputmode="decimal" value="10" placeholder="z. B. 10">
+      </div>
+      <div>
+        <label for="p-hoehe">Dicke / Höhe (cm)</label>
+        <input id="p-hoehe" type="text" inputmode="decimal" value="1" placeholder="z. B. 1">
+      </div>
+    </div>
+  </div>
+
+  <div id="dims-rundstab" hidden>
+    <div class="grid">
+      <div>
+        <label for="r-durchmesser">Durchmesser (cm)</label>
+        <input id="r-durchmesser" type="text" inputmode="decimal" value="2" placeholder="z. B. 2">
+      </div>
+      <div>
+        <label for="r-laenge">Länge (cm)</label>
+        <input id="r-laenge" type="text" inputmode="decimal" value="50" placeholder="z. B. 50">
+      </div>
+    </div>
+  </div>
+
+  <div id="dims-vierkant" hidden>
+    <div class="grid">
+      <div>
+        <label for="v-seite">Seitenlänge (cm)</label>
+        <input id="v-seite" type="text" inputmode="decimal" value="5" placeholder="z. B. 5">
+      </div>
+      <div>
+        <label for="v-laenge">Länge (cm)</label>
+        <input id="v-laenge" type="text" inputmode="decimal" value="100" placeholder="z. B. 100">
+      </div>
+    </div>
+  </div>
+
+  <div id="dims-rohr" hidden>
+    <div class="grid">
+      <div>
+        <label for="ro-ad">Außendurchmesser (cm)</label>
+        <input id="ro-ad" type="text" inputmode="decimal" value="11,43" placeholder="z. B. 11,43">
+      </div>
+      <div>
+        <label for="ro-wand">Wanddicke (cm)</label>
+        <input id="ro-wand" type="text" inputmode="decimal" value="0,5" placeholder="z. B. 0,5">
+      </div>
+      <div>
+        <label for="ro-laenge">Länge (cm)</label>
+        <input id="ro-laenge" type="text" inputmode="decimal" value="600" placeholder="z. B. 600">
+      </div>
+    </div>
+  </div>
+
+  <div id="dims-kugel" hidden>
+    <div class="grid">
+      <div>
+        <label for="k-durchmesser">Durchmesser (cm)</label>
+        <input id="k-durchmesser" type="text" inputmode="decimal" value="10" placeholder="z. B. 10">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:14px">
+    <div>
+      <label for="material">Material</label>
+      <select id="material">
+        <option value="7.85">Stahl — 7,85 g/cm³</option>
+        <option value="8.03">Edelstahl — 8,03 g/cm³</option>
+        <option value="2.70">Aluminium — 2,70 g/cm³</option>
+        <option value="8.96">Kupfer — 8,96 g/cm³</option>
+        <option value="8.50">Messing — 8,50 g/cm³</option>
+        <option value="11.34">Blei — 11,34 g/cm³</option>
+        <option value="7.14">Zink — 7,14 g/cm³</option>
+        <option value="4.51">Titan — 4,51 g/cm³</option>
+        <option value="custom">Andere Dichte (selbst eingeben)</option>
+      </select>
+    </div>
+    <div id="dichte-box" hidden>
+      <label for="dichte">Dichte (g/cm³)</label>
+      <input id="dichte" type="text" inputmode="decimal" value="7,85" placeholder="z. B. 7,85">
+    </div>
+    <div>
+      <label for="stueck">Stückzahl</label>
+      <input id="stueck" type="text" inputmode="decimal" value="1" placeholder="z. B. 1">
+    </div>
+  </div>
+
+  <div class="results" aria-live="polite">
+    <h3>Ergebnis</h3>
+    <div class="result-row"><span>Volumen</span><b id="res-vol">–</b></div>
+    <div class="result-row"><span>Gewicht</span><b id="res-gewicht">–</b></div>
+    <div class="result-row" id="row-tonnen" hidden><span>Gewicht in Tonnen</span><b id="res-tonnen">–</b></div>
+  </div>
+  <p class="error" id="calc-error" hidden></p>
+  <p class="hint">Alle Maße in Zentimetern (cm). Dezimalkomma oder Dezimalpunkt — beides funktioniert. Tipp: 10 mm sind 1 cm.</p>
+</section>
+
+<script>
+(function(){
+  var shape = 'platte';
+  function num(id){
+    var v = (document.getElementById(id).value || '').trim().replace(',', '.');
+    var n = parseFloat(v);
+    return isNaN(n) ? NaN : n;
+  }
+  function fmt(n, d){
+    return n.toLocaleString('de-DE', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function setShape(s){
+    shape = s;
+    document.querySelectorAll('.profiles button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.shape === s);
+    });
+    ['platte','rundstab','vierkant','rohr','kugel'].forEach(function(k){
+      document.getElementById('dims-' + k).hidden = (k !== s);
+    });
+    calc();
+  }
+  document.querySelectorAll('.profiles button').forEach(function(b){
+    b.addEventListener('click', function(){ setShape(b.dataset.shape); });
+  });
+  document.getElementById('material').addEventListener('change', function(){
+    document.getElementById('dichte-box').hidden = (this.value !== 'custom');
+    calc();
+  });
+  ['p-laenge','p-breite','p-hoehe','r-durchmesser','r-laenge','v-seite','v-laenge',
+   'ro-ad','ro-wand','ro-laenge','k-durchmesser','dichte','stueck'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', calc);
+  });
+
+  function calc(){
+    var err = document.getElementById('calc-error');
+    var qty = num('stueck');
+    var rho = document.getElementById('material').value === 'custom' ? num('dichte') : parseFloat(document.getElementById('material').value);
+    var V = NaN, msg = '';
+    function pos(x){ return !isNaN(x) && x > 0; }
+    if (shape === 'platte'){
+      var L = num('p-laenge'), B = num('p-breite'), H = num('p-hoehe');
+      if (!pos(L) || !pos(B) || !pos(H)) msg = 'Bitte Länge, Breite und Dicke größer als 0 eingeben.';
+      else V = L * B * H;
+    } else if (shape === 'rundstab'){
+      var d = num('r-durchmesser'), L2 = num('r-laenge');
+      if (!pos(d) || !pos(L2)) msg = 'Bitte Durchmesser und Länge größer als 0 eingeben.';
+      else V = Math.PI * (d / 2) * (d / 2) * L2;
+    } else if (shape === 'vierkant'){
+      var a = num('v-seite'), L3 = num('v-laenge');
+      if (!pos(a) || !pos(L3)) msg = 'Bitte Seitenlänge und Länge größer als 0 eingeben.';
+      else V = a * a * L3;
+    } else if (shape === 'rohr'){
+      var AD = num('ro-ad'), t = num('ro-wand'), L4 = num('ro-laenge');
+      if (!pos(AD) || !pos(t) || !pos(L4)) msg = 'Bitte Außendurchmesser, Wanddicke und Länge größer als 0 eingeben.';
+      else if (t >= AD / 2) msg = 'Die Wanddicke muss kleiner als der halbe Außendurchmesser sein.';
+      else { var ID = AD - 2 * t; V = Math.PI / 4 * (AD * AD - ID * ID) * L4; }
+    } else {
+      var dk = num('k-durchmesser');
+      if (!pos(dk)) msg = 'Bitte einen Durchmesser größer als 0 eingeben.';
+      else { var r = dk / 2; V = 4 / 3 * Math.PI * r * r * r; }
+    }
+    if (!msg && (isNaN(qty) || qty < 1)) msg = 'Bitte eine Stückzahl von mindestens 1 eingeben.';
+    if (!msg && isNaN(rho)) msg = 'Bitte eine gültige Dichte eingeben.';
+    if (msg){
+      err.textContent = msg; err.hidden = false;
+      document.getElementById('res-vol').textContent = '–';
+      document.getElementById('res-gewicht').textContent = '–';
+      document.getElementById('row-tonnen').hidden = true;
+      return;
+    }
+    err.hidden = true;
+    var gramm = V * rho * qty;
+    var kg = gramm / 1000;
+    document.getElementById('res-vol').textContent = fmt(V * qty, 1) + ' cm³';
+    document.getElementById('res-gewicht').textContent = fmt(gramm, 1) + ' g  (= ' + fmt(kg, 2) + ' kg)';
+    document.getElementById('row-tonnen').hidden = kg < 1000;
+    if (kg >= 1000) document.getElementById('res-tonnen').textContent = fmt(kg / 1000, 2) + ' t';
+  }
+  calc();
+})();
+</script>
+
+<section>
+  <h2>Was ist Dichte? Ganz einfach erklärt</h2>
+  <p>Stell dir zwei gleich große Schuhkartons vor. Einer ist voll mit Federn, der andere voll mit Stahlschrauben. Beide Kartons sind gleich groß — aber der mit den Schrauben ist viel schwerer. Warum? Weil Stahl <strong>dichter</strong> ist als Federn.</p>
+  <p>Die Dichte sagt: <strong>Wie viel Masse steckt in einem bestimmten Volumen?</strong> Man misst sie in Gramm pro Kubikzentimeter (g/cm³).</p>
+  <div class="tip">
+    <strong>Merke dir:</strong> Wasser hat die Dichte 1,00 g/cm³. Das heißt: 1 Liter Wasser (1.000 cm³) wiegt genau 1 kg. Ein Stahlwürfel von 10 × 10 × 10 cm hat dasselbe Volumen — aber er wiegt 7,85 kg, weil Stahl fast achtmal so dicht ist wie Wasser.
+  </div>
+</section>
+
+<section>
+  <h2>So rechnest du Schritt für Schritt</h2>
+  <p>Für jedes Metallstück — egal ob Platte, Stab oder Rohr — sind es immer dieselben 5 Schritte:</p>
+  <div class="step"><b class="num">1</b><strong>Form erkennen.</strong> Ist es eine Platte, ein Stab, ein Rohr oder eine Kugel? Jede Form hat ihre eigene Volumen-Formel.</div>
+  <div class="step"><b class="num">2</b><strong>Messen.</strong> Miss alle Längen in Zentimetern (cm). Achtung: 10 mm sind 1 cm!</div>
+  <div class="step"><b class="num">3</b><strong>Volumen berechnen.</strong> Zum Beispiel bei einer Platte: Länge × Breite × Dicke. Das Ergebnis hat die Einheit cm³.</div>
+  <div class="step"><b class="num">4</b><strong>Dichte nachschlagen.</strong> Stahl hat 7,85 g/cm³, Aluminium nur 2,70 g/cm³. Die Tabelle unten hilft dir.</div>
+  <div class="step"><b class="num">5</b><strong>Malnehmen.</strong> Gewicht = Volumen × Dichte. Das Ergebnis kommt in Gramm heraus — durch 1.000 geteilt sind es Kilogramm.</div>
+  <div class="formula">Gewicht (g) = Volumen (cm³) × Dichte (g/cm³)</div>
+</section>
+
+<section>
+  <h2>Rechenbeispiele — langsam vorgerechnet</h2>
+  <h3>Beispiel 1: Eine Stahlplatte</h3>
+  <p>Gegeben: Länge 20 cm, Breite 10 cm, Dicke 1 cm, Stahl (7,85 g/cm³).</p>
+  <ol>
+    <li>Volumen: 20 × 10 × 1 = 200 cm³</li>
+    <li>Gewicht: 200 × 7,85 = 1.570 g</li>
+    <li>Ergebnis: <strong>1,57 kg</strong></li>
+  </ol>
+  <h3>Beispiel 2: Ein Rundstab aus Stahl</h3>
+  <p>Gegeben: Durchmesser 2 cm, Länge 50 cm, Stahl (7,85 g/cm³).</p>
+  <ol>
+    <li>Radius: 2 ÷ 2 = 1 cm (Achtung: In die Formel gehört der Radius, nicht der Durchmesser!)</li>
+    <li>Querschnitt: π × 1² = 3,14 cm²</li>
+    <li>Volumen: 3,14 × 50 = 157 cm³</li>
+    <li>Gewicht: 157 × 7,85 = 1.233 g, also <strong>1,23 kg</strong></li>
+  </ol>
+  <h3>Beispiel 3: Dieselbe Platte — einmal Stahl, einmal Aluminium</h3>
+  <p>Platte 20 × 10 × 1 cm, Volumen 200 cm³. Aus Stahl: 200 × 7,85 = 1.570 g. Aus Aluminium: 200 × 2,70 = nur 540 g. Gleich groß — aber Aluminium ist fast dreimal so leicht. Darum baut man Flugzeuge aus Aluminium und Brücken aus Stahl.</p>
+</section>
+
+<section>
+  <h2>Dichte-Tabelle: Die wichtigsten Metalle</h2>
+  <table>
+    <tr><th>Material</th><th>Dichte (g/cm³)</th><th>Zum Vergleich</th></tr>
+    <tr><td>Wasser (zum Vergleich)</td><td>1,00</td><td>1 Liter = 1 kg</td></tr>
+    <tr><td>Aluminium</td><td>2,70</td><td>sehr leicht — Flugzeuge</td></tr>
+    <tr><td>Titan</td><td>4,51</td><td>leicht und sehr fest</td></tr>
+    <tr><td>Zink</td><td>7,14</td><td>z. B. Dachrinnen</td></tr>
+    <tr><td>Stahl</td><td>7,85</td><td>Brücken, Werkzeuge</td></tr>
+    <tr><td>Edelstahl</td><td>8,03</td><td>rostfrei — Besteck, Spülen</td></tr>
+    <tr><td>Messing</td><td>8,50</td><td>Musikinstrumente, Armaturen</td></tr>
+    <tr><td>Kupfer</td><td>8,96</td><td>Stromkabel, Rohre</td></tr>
+    <tr><td>Blei</td><td>11,34</td><td>sehr schwer — Tauchergewichte</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Übungsaufgaben — erst selbst rechnen, dann Lösung aufklappen</h2>
+  <details>
+    <summary>Aufgabe 1: Kupferplatte</summary>
+    <p>Eine Kupferplatte ist 10 cm lang, 10 cm breit und 0,5 cm dick. Wie schwer ist sie?</p>
+    <p><strong>Lösung:</strong> Volumen = 10 × 10 × 0,5 = 50 cm³. Gewicht = 50 × 8,96 = <strong>448 g</strong>.</p>
+  </details>
+  <details>
+    <summary>Aufgabe 2: Rundstab aus Stahl</summary>
+    <p>Ein Rundstab aus Stahl hat 1 cm Durchmesser und ist 100 cm lang. Wie schwer ist er?</p>
+    <p><strong>Lösung:</strong> Radius = 0,5 cm. Querschnitt = π × 0,5² = 0,785 cm². Volumen = 0,785 × 100 = 78,5 cm³. Gewicht = 78,5 × 7,85 = <strong>617 g</strong>.</p>
+  </details>
+</section>
+
+<section>
+  <h2>4 Fehler, die fast alle am Anfang machen</h2>
+  <ol>
+    <li><strong>Millimeter und Zentimeter mischen.</strong> 10 mm sind 1 cm. Wer mm und cm durcheinanderbringt, liegt um das Zehn- oder Hundertfache daneben.</li>
+    <li><strong>Durchmesser statt Radius nehmen.</strong> In die Kreisformel gehört der Radius (halber Durchmesser). Mit dem Durchmesser rechnest du viermal zu viel aus!</li>
+    <li><strong>Beim Rohr die Wanddicke vergessen.</strong> Ein Rohr ist hohl — rechne immer Außenquerschnitt minus Innenquerschnitt, sonst wiegst du einen Vollstab.</li>
+    <li><strong>Falsche Dichte nehmen.</strong> Stahl (7,85) und Aluminium (2,70) sind nicht austauschbar. Immer erst das Material bestimmen, dann die Dichte aus der Tabelle.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Häufige Fragen — einfach beantwortet</h2>
+  <h3>Was ist Dichte?</h3>
+  <p>Dichte bedeutet: Wie viel Masse steckt in einem Kubikzentimeter eines Materials? Wasser hat 1,00 g/cm³, Stahl 7,85 g/cm³. Je größer die Zahl, desto schwerer ist das Material bei gleicher Größe.</p>
+  <h3>Wie berechne ich das Gewicht eines Metallstücks?</h3>
+  <p>In drei Schritten: Volumen ausrechnen (z. B. Länge × Breite × Dicke), Dichte aus der Tabelle nehmen, beides malnehmen. Ergebnis in Gramm, durch 1.000 geteilt in Kilogramm.</p>
+  <h3>Warum ist Stahl schwerer als Aluminium?</h3>
+  <p>Weil Stahl dichter ist: 7,85 g/cm³ gegen 2,70 g/cm³ bei Aluminium. Bei gleicher Größe ist Stahl also fast dreimal so schwer.</p>
+  <h3>Was ist der Unterschied zwischen Masse und Gewicht?</h3>
+  <p>Im Physikunterricht ist Masse das, was man in Kilogramm misst. Gewicht ist eigentlich eine Kraft. Im Alltag sagen alle „Gewicht" und meinen die Masse in kg — so auch auf dieser Seite.</p>
+  <h3>Muss ich die Dichten auswendig lernen?</h3>
+  <p>Nein. Nimm die Tabelle oben oder den Rechner — er kennt alle Dichten schon. Zwei Werte lohnen sich trotzdem: Wasser 1,00 und Stahl 7,85.</p>
+  <h3>Warum schwimmt Holz, aber Stahl sinkt?</h3>
+  <p>Alles, was dichter ist als Wasser (1,00 g/cm³), sinkt. Holz hat etwa 0,6 g/cm³ und schwimmt. Stahl hat 7,85 g/cm³ und sinkt sofort.</p>
+</section>
+
+<p class="trust">Geprüft: Oktober 2026 · Dichten nach Standardwerten (Stahl 7,85 g/cm³, Aluminium 2,70 g/cm³, Kupfer 8,96 g/cm³). Für technische Anwendungen Werte mit dem Lieferanten abgleichen.</p>
+
+</main>
+<!-- site-footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-silos-grid">
+      
+      <div class="footer-col">
+        <h4>Gewicht Rechner</h4>
+        <ul>
+          <li><a href="/de/bewehrungsgewicht-rechner">Bewehrungsgewicht-Rechner</a></li>
+          <li><a href="/de/stahlflaechen-rechner-ast">Stahlflächen-Rechner (Ast)</a></li>
+          <li><a href="/de/bewehrungsmengen-rechner">Bewehrungsmengen-Rechner</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mengenermittlung Rechner</h4>
+        <ul>
+          <li><a href="/de/bewehrungsrechner-fuer-betonplatten">Bewehrungsrechner für Betonplatten</a></li>
+          <li><a href="/de/bewehrungsrechner-fuer-fundamente">Bewehrungsrechner für Fundamente</a></li>
+          <li><a href="/de/bewehrungsmatten-rechner">Bewehrungsmatten-Rechner</a></li>
+          <li><a href="/de/beton-bewehrungs-schaetzer">Beton- & Bewehrungs-Schätzer</a></li>
+          <li><a href="/de/bewehrungsrechner-fuer-einfahrten">Bewehrungsrechner für Einfahrten</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Bewehrungsführung Rechner</h4>
+        <ul>
+          <li><a href="/de/bewehrungsabstand-rechner">Bewehrungsabstand-Rechner</a></li>
+          <li><a href="/de/verankerungslaengen-rechner">Verankerungslängen-Rechner</a></li>
+          <li><a href="/de/uebergreifungslaengen-rechner">Übergreifungslängen-Rechner</a></li>
+          <li><a href="/de/haken-biege-schnittlaengen-rechner">Haken-, Biege- & Schnittlängen-Rechner</a></li>
+          <li><a href="/de/buegel-schnittlaengen-rechner">Bügel-Schnittlängen-Rechner</a></li>
+          <li><a href="/de/abstandhalter-rechner">Abstandhalter-Rechner</a></li>
+          <li><a href="/de/bindedraht-rechner">Bindedraht-Rechner</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Bauteile Rechner</h4>
+        <ul>
+          <li><a href="/de/stuetzenbewehrungs-rechner">Stützenbewehrungs-Rechner</a></li>
+          <li><a href="/de/balkenbewehrungs-rechner">Balkenbewehrungs-Rechner</a></li>
+          <li><a href="/de/wandbewehrungs-rechner">Wandbewehrungs-Rechner</a></li>
+          <li><a href="/de/bewehrungsrechner-fuer-pools">Bewehrungsrechner für Pools</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kaufmännisch Rechner</h4>
+        <ul>
+          <li><a href="/de/bewehrungskosten-rechner">Bewehrungskosten-Rechner</a></li>
+          <li><a href="/de/bewehrungstonnage-rechner">Bewehrungstonnage-Rechner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <a class="brand" href="/de/"><span class="brand-mark">▦</span>
+          <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+        <p><strong>Rebar Calculator</strong> — kostenlose Tools für Bewehrungsgewicht, Mengen und Verlegung.</p>
+      </div>
+      <div class="footer-quick-links">
+        <a href="/de/">Rechner</a>
+        <a href="/de/#charts">Gewichtstabelle</a>
+        <a href="/de/#faq">FAQ</a><a href="/de/stahlrohr-gewicht-rechner">Stahlrohr Gewicht Rechner</a>
+      </div>
+      <p class="muted">Ergebnisse sind unverbindliche Schätzungen. Mit Ihren Plänen und der Bemessungsnorm prüfen.</p>
+    </div>
+  </div>
+</footer>
+<!-- /site-footer -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Was ist Dichte?", "acceptedAnswer": {"@type": "Answer", "text": "Dichte bedeutet: Wie viel Masse steckt in einem Kubikzentimeter eines Materials? Wasser hat 1,00 g/cm³, Stahl 7,85 g/cm³. Je größer die Zahl, desto schwerer ist das Material bei gleicher Größe."}},
+    {"@type": "Question", "name": "Wie berechne ich das Gewicht eines Metallstücks?", "acceptedAnswer": {"@type": "Answer", "text": "In drei Schritten: Volumen ausrechnen (z. B. Länge × Breite × Dicke), Dichte aus der Tabelle nehmen, beides malnehmen. Ergebnis in Gramm, durch 1.000 geteilt in Kilogramm."}},
+    {"@type": "Question", "name": "Warum ist Stahl schwerer als Aluminium?", "acceptedAnswer": {"@type": "Answer", "text": "Weil Stahl dichter ist: 7,85 g/cm³ gegen 2,70 g/cm³ bei Aluminium. Bei gleicher Größe ist Stahl also fast dreimal so schwer."}},
+    {"@type": "Question", "name": "Was ist der Unterschied zwischen Masse und Gewicht?", "acceptedAnswer": {"@type": "Answer", "text": "Im Physikunterricht ist Masse das, was man in Kilogramm misst. Gewicht ist eigentlich eine Kraft. Im Alltag sagen alle Gewicht und meinen die Masse in kg."}},
+    {"@type": "Question", "name": "Muss ich die Dichten auswendig lernen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Nimm die Tabelle oder den Rechner — er kennt alle Dichten schon. Zwei Werte lohnen sich trotzdem: Wasser 1,00 und Stahl 7,85."}},
+    {"@type": "Question", "name": "Warum schwimmt Holz, aber Stahl sinkt?", "acceptedAnswer": {"@type": "Answer", "text": "Alles, was dichter ist als Wasser (1,00 g/cm³), sinkt. Holz hat etwa 0,6 g/cm³ und schwimmt. Stahl hat 7,85 g/cm³ und sinkt sofort."}}
+  ]
+}
+</script>
+</body>
+</html>

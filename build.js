@@ -1221,7 +1221,8 @@ fs.writeFileSync(path.join(OUT,"slugs.js"),
 let pageCount = 0;
 /* Hand-made pages outside PAGES: kept by the language-folder cleanup and listed in that language's sitemap */
 const STANDALONE_PAGES = [
-  { lang: "de", slug: "stahlrohr-gewicht-rechner" }
+  { lang: "de", slug: "stahlrohr-gewicht-rechner" },
+  { lang: "de", slug: "metall-gewicht-rechner" }
 ];
 
 const redirects = [
