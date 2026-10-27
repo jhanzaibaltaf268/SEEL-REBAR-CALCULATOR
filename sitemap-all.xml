@@ -385,6 +385,26 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Standalone pages (en) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/privacy</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/about</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/contact</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- ============================================================ -->
   <!-- Language: Español (es) -->
   <!-- ============================================================ -->

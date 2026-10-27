@@ -51,10 +51,99 @@ const PAGES = [
     desc:"Calculate how much rebar a concrete slab needs: number of bars both directions, total length, tie intersections and total weight.",
     kw:"concrete slab rebar calculator, calculate rebar for slab, rebar needed for concrete slab, slab reinforcement calculation",
     intro:"Work out exactly how much reinforcement your slab needs. Enter the slab dimensions, bar spacing and edge cover, and the calculator returns the bar count in each direction, total bar length, tie-wire intersections and the total steel weight.",
-    howto:["Enter slab length and width.","Set the bar spacing (centre-to-centre) and edge cover.","Pick the bar size to get the bar count and total weight."],
+    howto:["Enter slab length and width.","Set the bar spacing (centre-to-centre) and edge cover.","Pick the bar size to get the bar count and total weight.","Read the results: bar count in each direction, total bar length, tie intersections and total weight.","Order extra for laps and cutting waste — laps are not included in this calculator (see the <a href=\"/rebar-lap-length-calculator\">lap length calculator</a>)."],
     formula:"Bars one way = floor((dimension − 2 × cover) ÷ spacing) + 1, repeated for both directions. Total weight = total bar length × kg/m.",
-    faqs:[["How much rebar do I need for a concrete slab?","Divide each slab dimension (less cover) by the spacing, add one, and do this both ways. Multiply each row by the bar length and the bar's kg/m."],
-          ["What spacing should slab rebar be?","Residential slabs commonly use 150–300 mm centres; always follow your structural design."]] },
+    faqs:[["How much rebar do I need for a concrete slab?","Divide each slab dimension (less cover) by the spacing, add one, and do this both ways. Multiply each row by the bar length and the bar's kg/m."],["What spacing should slab rebar be?","Residential slabs commonly use 150–300 mm centres; always follow your structural design."],["How do I calculate slab rebar weight by hand?","Count the bars each way with floor((dimension − 2 × cover) ÷ spacing) + 1, multiply each count by its bar length, add both directions, then multiply the total length by the bar's kg/m."],["What bar size is used for a house slab?","10 mm and 12 mm bars are the most common for residential slabs, but the size and spacing must come from your structural design."],["Do I need to add extra for laps and wastage?","Yes. This calculator gives the neat grid weight. Bars longer than the available stock length need laps, and cutting always wastes some steel — add both on top of the calculated weight before ordering."],["Can I use this calculator for a driveway slab?","Yes, the grid maths is the same. For a driveway, the dedicated <a href=\"/driveway-rebar-calculator\">driveway rebar calculator</a> starts from typical driveway sizes."],["How much rebar is in a 10 m × 10 m slab?","At 200 mm spacing, 50 mm cover and 12 mm bars: 50 bars × 9.9 m each way, 990 m total, 879.1 kg, and 2,500 tie intersections."],["How much does the rebar for a slab cost?","Multiply the total weight by your local price per kg. Example: 209.6 kg × €1.20/kg = €251.52. Prices vary by region, supplier and bar size, so get a current quote."],["Does the calculator include laps and hooks?","No. It gives the neat grid weight only. Laps, hooks, bends and cutting waste must be added separately before ordering."],["What is edge cover and why does it matter?","Edge cover is the concrete between the bar ends and the slab edge. It protects the steel from corrosion and fire and holds the bars in position. The calculator subtracts twice the cover from each slab dimension before counting bars."]],
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 6 m × 4 m slab</a></li>
+      <li><a href="#example-2">Worked example 2: 5 m × 4 m slab</a></li>
+      <li><a href="#bar-table">Bar weight chart</a></li>
+      <li><a href="#spacing-table">Spacing guide: bars per metre</a></li>
+      <li><a href="#cost">Estimating the cost</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<p><strong>Why minus twice the cover?</strong> The bars stop short of the slab edge on both sides, so the cover is removed from each end before counting. <strong>Why plus one?</strong> The first bar sits at the cover line and then one bar follows every spacing step — so the count is the number of spaces plus one, not just the number of spaces. <strong>Why both directions?</strong> A slab grid runs two ways, and the second direction usually adds about as much steel again.</p>
+    <p>Bar weight per metre comes from the standard formula kg/m = d² ÷ 162.28, where d is the bar diameter in mm. For a 12 mm bar: 12² ÷ 162.28 = 0.888 kg/m — the same value the calculator uses.</p>
+    <svg viewBox="0 0 520 330" role="img" aria-label="Diagram of a slab reinforcement grid showing length, width, bar spacing and edge cover" style="width:100%;max-width:520px;height:auto;display:block;margin:12px 0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+      <rect x="30" y="30" width="460" height="240" fill="none" stroke="#0f172a" stroke-width="2"/>
+      <rect x="58" y="58" width="404" height="184" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <g stroke="#0f172a" stroke-width="1.5">
+        <line x1="98" y1="58" x2="98" y2="242"/><line x1="158" y1="58" x2="158" y2="242"/><line x1="218" y1="58" x2="218" y2="242"/><line x1="278" y1="58" x2="278" y2="242"/><line x1="338" y1="58" x2="338" y2="242"/><line x1="398" y1="58" x2="398" y2="242"/>
+        <line x1="58" y1="98" x2="462" y2="98"/><line x1="58" y1="158" x2="462" y2="158"/><line x1="58" y1="218" x2="462" y2="218"/>
+      </g>
+      <g font-family="sans-serif" font-size="13" fill="#0f172a">
+        <text x="260" y="18" text-anchor="middle">L = slab length</text>
+        <text x="14" y="155" text-anchor="middle" transform="rotate(-90 14 155)">W = slab width</text>
+        <text x="128" y="52" text-anchor="middle" fill="#f97316">spacing</text>
+        <text x="44" y="80" fill="#f97316">cover</text>
+      </g>
+      <g stroke="#f97316" stroke-width="1.5">
+        <line x1="98" y1="44" x2="158" y2="44"/><line x1="98" y1="40" x2="98" y2="48"/><line x1="158" y1="40" x2="158" y2="48"/>
+        <line x1="34" y1="30" x2="58" y2="58"/>
+      </g>
+    </svg>
+    <p>The orange dashed line marks where the bars actually run: inside the cover, on both sides. Bars cross in both directions, and every crossing is one tie intersection.</p>
+    <h3 id="example-1">Worked example 1: 6 m × 4 m slab</h3>
+    <p>Slab 6 m × 4 m, 12 mm bars (0.888 kg/m), 200 mm spacing, 40 mm cover:</p>
+    <ol class="howto"><li>Bars along the 6 m direction: floor((4,000 − 80) ÷ 200) + 1 = 20 bars, each 5.92 m long = 118.4 m.</li><li>Bars along the 4 m direction: floor((6,000 − 80) ÷ 200) + 1 = 30 bars, each 3.92 m long = 117.6 m.</li><li>Total bar length: 118.4 + 117.6 = 236.0 m.</li><li>Total weight: 236.0 × 0.888 = 209.6 kg (about 210 kg).</li><li>Tie intersections: 20 × 30 = 600.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 5 m × 4 m slab (the calculator defaults)</h3>
+    <p>Slab 5 m × 4 m, 10 mm bars (0.617 kg/m), 150 mm spacing, 50 mm cover:</p>
+    <ol class="howto"><li>Bars along the 5 m direction: floor((4,000 − 100) ÷ 150) + 1 = 27 bars, each 4.90 m long = 132.3 m.</li><li>Bars along the 4 m direction: floor((5,000 − 100) ÷ 150) + 1 = 33 bars, each 3.90 m long = 128.7 m.</li><li>Total bar length: 132.3 + 128.7 = 261.0 m.</li><li>Total weight: 261.0 × 0.617 = 161.0 kg.</li><li>Tie intersections: 27 × 33 = 891.</li></ol>
+    <p>Notice how the tighter 150 mm spacing and smaller 10 mm bars still give a similar total length, but a lower weight — bar size matters as much as spacing.</p>
+    <h3 id="bar-table">Bar weight chart (kg/m)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Bar diameter</th><th>kg/m</th><th>Bars per tonne</th></tr>
+      <tr><td>8 mm</td><td>0.395</td><td>2,532</td></tr>
+      <tr><td>10 mm</td><td>0.617</td><td>1,621</td></tr>
+      <tr><td>12 mm</td><td>0.888</td><td>1,126</td></tr>
+      <tr><td>16 mm</td><td>1.578</td><td>634</td></tr>
+      <tr><td>20 mm</td><td>2.466</td><td>406</td></tr>
+    </table></div>
+    <p>Bars per tonne = 1,000 ÷ kg/m. It tells you how many 1-metre bars make a tonne — handy when a supplier quotes per tonne. <a href="/#charts">See the full rebar weight chart (kg/m &amp; lb/ft) →</a></p>
+    <h3 id="spacing-table">Spacing guide: bars per metre of slab width</h3>
+    <div class="formula-table"><table>
+      <tr><th>Spacing (centre-to-centre)</th><th>Bars per metre</th></tr>
+      <tr><td>100 mm</td><td>10.00</td></tr>
+      <tr><td>150 mm</td><td>6.67</td></tr>
+      <tr><td>200 mm</td><td>5.00</td></tr>
+      <tr><td>250 mm</td><td>4.00</td></tr>
+      <tr><td>300 mm</td><td>3.33</td></tr>
+    </table></div>
+    <p>Bars per metre = 1,000 ÷ spacing in mm. Halving the spacing roughly doubles the steel. Residential slabs commonly use 150–300 mm centres — but spacing is a design decision from your structural drawings, never a guess from a table. If your drawing says 200 mm, use 200 mm even if 300 mm would be cheaper.</p>
+    <h3 id="cost">Estimating the cost</h3>
+    <p>Cost = total weight × price per kg (or total tonnes × price per tonne). Using worked example 1: 209.6 kg × €1.20/kg = €251.52. The same result per tonne: 0.2096 t × €1,200/t = €251.52. Prices vary by region, supplier and bar size, so get a current quote before budgeting — and remember the order quantity is higher than the neat grid weight once laps and waste are added. For a full cost breakdown, use the <a href="/rebar-cost-calculator">rebar cost calculator</a>.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator works in metres, millimetres and kilograms. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>150 mm spacing</td><td>6 in</td></tr>
+      <tr><td>200 mm spacing</td><td>8 in</td></tr>
+      <tr><td>250 mm spacing</td><td>10 in</td></tr>
+      <tr><td>300 mm spacing</td><td>12 in</td></tr>
+      <tr><td>209.6 kg</td><td>462 lb (× 2.205)</td></tr>
+      <tr><td>6 m × 4 m slab</td><td>19.7 ft × 13.1 ft (× 3.281)</td></tr>
+    </table></div>
+    <p>Convert first, then enter metric values into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Laps (splices).</strong> If a bar run is longer than the stock bar length, bars must overlap. Find the overlap with the <a href="/rebar-lap-length-calculator">lap length calculator</a> and add it to the length.</li>
+      <li><strong>Hooks and bends.</strong> Edge hooks and bent-up bars add length. Use the <a href="/rebar-hook-bend-cutting-length-calculator">hook and cutting length calculator</a> for those.</li>
+      <li><strong>Cutting waste.</strong> Cutting bars to length always leaves offcuts. Add a waste allowance on top of the neat weight before ordering.</li>
+      <li><strong>Welded mesh sheets.</strong> If you buy mesh instead of loose bars, the sheet layout is different — this calculator covers loose-bar grids.</li>
+      <li><strong>Chairs and spacers.</strong> The bars need support to stay at the right height in the slab. Estimate those with the <a href="/rebar-chair-calculator">chair calculator</a>.</li>
+    </ul>
+    <h3 id="mistakes">4 common mistakes</h3>
+    <ol class="howto"><li><strong>Forgetting the edge cover.</strong> The bars stop short of the slab edge by the cover amount — that changes both the count and the bar length.</li><li><strong>Mixing up mm and m.</strong> Spacing and cover are in millimetres, slab size in metres. Entering 200 as metres instead of millimetres breaks the result completely.</li><li><strong>Counting one direction only.</strong> A slab grid runs both ways. The second direction usually adds about as much steel again.</li><li><strong>Ordering exactly the calculated weight.</strong> Add laps, hooks and cutting waste on top — the calculator gives the neat grid weight, not the order quantity.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Bar weights follow the d² ÷ 162.28 formula (ASTM A615 / IS 456 practice). Results are estimates for guidance only — always verify against your structural drawings and design code.</p>` },
 
   { id:"footing", slug:"footing-rebar-calculator", cat:"Estimating",
     metaTitle:"Footing Rebar Calculator — Reinforcement for Footings",
@@ -680,7 +769,7 @@ function footer(lang){
       <div class="footer-quick-links">
         <a href="${homeUrl}">${u.allCalcs}</a>
         <a href="${homeUrl}#charts">${u.weightChart}</a>
-        <a href="${homeUrl}#faq">${u.faq}</a>${lang === "de" ? `<a href="/de/stahlrohr-gewicht-rechner">Stahlrohr Gewicht Rechner</a>` : ""}
+        <a href="${homeUrl}#faq">${u.faq}</a>${lang === "de" ? `<a href="/de/stahlrohr-gewicht-rechner">Stahlrohr Gewicht Rechner</a>` : ""}${lang === "en" ? `<a href="/privacy">Privacy Policy</a><a href="/about">About</a><a href="/contact">Contact</a>` : ""}
       </div>
       <p class="muted">${disclaimer}</p>
     </div>
@@ -689,6 +778,7 @@ function footer(lang){
 }
 
 function renderToolShell(lang, activeCalcId){
+  const activePage = PAGES.find(p => p.id === activeCalcId);
   const cats = {};
   PAGES.forEach(p => (cats[p.cat] ||= []).push(p));
   const tabsHtml = Object.entries(cats).map(([cat, items]) => {
@@ -707,7 +797,7 @@ function renderToolShell(lang, activeCalcId){
       ${tabsHtml}
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">${activePage ? pH1(activePage, lang) : ""}</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -812,6 +902,10 @@ const TRACKING_HEAD = `<!-- Google tag (gtag.js) -->
 </script>`;
 
 /* ---------- calculator page ---------- */
+function howToJsonLd(steps){
+  return JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":steps.map((t,i)=>({"@type":"HowToStep","position":i+1,"text":t.replace(/<[^>]*>/g,"")}))});
+}
+
 function renderPage(p, lang){
   const base = lang==="en" ? "" : "../";
   const u = UI[lang];
@@ -850,6 +944,7 @@ ${altLinks('page', p)}
 <meta property="og:type" content="website" />
 <script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"WebApplication",name:h1,applicationCategory:"BusinessApplication",operatingSystem:"All",inLanguage:lang,offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},description:desc})}</script>
 <script type="application/ld+json">${faqJsonLd(faqs)}</script>
+<script type="application/ld+json">${howToJsonLd(pHowto(p,lang))}</script>
 <script type="application/ld+json">${crumbLd}</script>
 <link rel="stylesheet" href="${base}styles.css" />
 </head>
@@ -867,6 +962,7 @@ ${crumbTrail}
 ${renderToolShell(lang, p.id)}
 ${relatedGrid(p.id, lang)}
 ${workflowGrid(p.id, lang)}
+${lang==="en" && p.toc ? p.toc : ""}
 
   <section class="content-block">
     <h2>${u.howtoH}: ${cleanH1}</h2>
@@ -875,6 +971,7 @@ ${workflowGrid(p.id, lang)}
     <p class="formula-callout">${p.formula}</p>
     <p><a href="${homeHref(lang)}#charts">${u.seeChart}</a></p>
   </section>
+${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>` : ""}
 
   <section id="faq" class="content-block">
     <h2>${cleanH1} — ${u.faq}</h2>
@@ -1222,7 +1319,10 @@ let pageCount = 0;
 /* Hand-made pages outside PAGES: kept by the language-folder cleanup and listed in that language's sitemap */
 const STANDALONE_PAGES = [
   { lang: "de", slug: "stahlrohr-gewicht-rechner" },
-  { lang: "de", slug: "metall-gewicht-rechner" }
+  { lang: "de", slug: "metall-gewicht-rechner" },
+  { lang: "en", slug: "privacy" },
+  { lang: "en", slug: "about" },
+  { lang: "en", slug: "contact" }
 ];
 
 const redirects = [
