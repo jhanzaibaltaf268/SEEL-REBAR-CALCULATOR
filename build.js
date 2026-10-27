@@ -49,7 +49,7 @@ const PAGES = [
     metaTitle:"Concrete Slab Rebar Calculator — Bars, Length & Weight",
     h1:"Concrete Slab Rebar Calculator",
     desc:"Calculate how much rebar a concrete slab needs: number of bars both directions, total length, tie intersections and total weight.",
-    kw:"concrete slab rebar calculator, calculate rebar for slab, rebar needed for concrete slab, slab reinforcement calculation, rebar grid calculator",
+    kw:"concrete slab rebar calculator, calculate rebar for slab, rebar needed for concrete slab, slab reinforcement calculation",
     intro:"Work out exactly how much reinforcement your slab needs. Enter the slab dimensions, bar spacing and edge cover, and the calculator returns the bar count in each direction, total bar length, tie-wire intersections and the total steel weight.",
     howto:["Enter slab length and width.","Set the bar spacing (centre-to-centre) and edge cover.","Pick the bar size to get the bar count and total weight."],
     formula:"Bars one way = floor((dimension − 2 × cover) ÷ spacing) + 1, repeated for both directions. Total weight = total bar length × kg/m.",
@@ -59,8 +59,8 @@ const PAGES = [
   { id:"footing", slug:"footing-rebar-calculator", cat:"Estimating",
     metaTitle:"Footing Rebar Calculator — Reinforcement for Footings",
     h1:"Footing Rebar Calculator",
-    desc:"Calculate the reinforcement mesh for an isolated or strip footing: bars both ways, total length and weight.",
-    kw:"footing rebar calculator, rebar footing calculator, footing reinforcement, isolated footing rebar",
+    desc:"Calculate the bottom reinforcement for an isolated or strip footing: bars both ways, total length and weight.",
+    kw:"footing rebar calculator, footing reinforcement, isolated footing rebar",
     intro:"Size the bottom mesh of a footing in seconds. Enter the footing plan dimensions, bar spacing and cover to get the number of bars each way and the total steel weight.",
     howto:["Enter footing length and width.","Set spacing and clear cover.","Choose the bar size for counts and weight."],
     formula:"Same grid method as a slab: bars one way = floor((dimension − 2 × cover) ÷ spacing) + 1, both directions, × kg/m.",
@@ -82,7 +82,7 @@ const PAGES = [
     metaTitle:"Concrete & Rebar Calculator — Volume + Steel Estimate",
     h1:"Concrete & Rebar Estimator",
     desc:"Calculate concrete volume and an estimate of the reinforcement steel using a kg/m³ ratio.",
-    kw:"concrete and rebar calculator, concrete rebar estimator, concrete rebar calculator, concrete volume and steel",
+    kw:"concrete and rebar calculator, concrete rebar estimator, concrete volume and steel",
     intro:"Estimate both concrete and steel for a pour. Enter the dimensions to get the concrete volume in m³, yd³ and ft³, plus a steel estimate from a reinforcement ratio (kg/m³).",
     howto:["Enter length, width and thickness.","Set the steel ratio (kg per m³ of concrete).","Read the volume and steel estimate."],
     formula:"Volume = L × W × thickness. Steel = volume × ratio (typically 80–120 kg/m³ for slabs).",
@@ -90,9 +90,9 @@ const PAGES = [
           ["How do I calculate concrete volume?","Multiply length × width × thickness in consistent units."]] },
 
   { id:"driveway", slug:"driveway-rebar-calculator", cat:"Estimating",
-    metaTitle:"Driveway Rebar Calculator — Reinforcement Mat & Weight",
+    metaTitle:"Driveway Rebar Calculator — Bar Count & Weight",
     h1:"Driveway Rebar Calculator",
-    desc:"Calculate the single reinforcement mat for a driveway slab: bar count both ways, length and weight.",
+    desc:"Calculate the rebar for a driveway slab: bar count both ways, length and weight.",
     kw:"driveway rebar calculator, rebar for driveway, driveway reinforcement, concrete driveway rebar",
     intro:"Size the rebar mat for a driveway. Enter the driveway length and width, the bar spacing and cover, and get the bar count both ways plus the total steel weight.",
     howto:["Enter driveway length and width.","Set the bar spacing and edge cover.","Pick the bar size for the total."],
@@ -148,7 +148,7 @@ const PAGES = [
     metaTitle:"Stirrup & Column Tie Cutting Length Calculator",
     h1:"Stirrup & Tie Cutting Length Calculator",
     desc:"Calculate the cutting length of a rectangular stirrup or column tie including hooks and bend deductions.",
-    kw:"stirrup cutting length, column tie cutting length, rebar stirrup calculator, cutting length of stirrup",
+    kw:"stirrup cutting length, column tie cutting length, rebar stirrup calculator",
     intro:"Compute the cutting length of a rectangular stirrup or tie from the member size and cover. Includes two 135° hooks (10d each) and the standard bend deductions.",
     howto:["Enter member width and depth.","Set the clear cover.","Pick the stirrup bar size."],
     formula:"Cutting length = 2(a + b) + 2 × 10d − 3 × 2d − 2 × 3d, where a and b are the inner dimensions.",
@@ -1219,7 +1219,13 @@ fs.writeFileSync(path.join(OUT,"slugs.js"),
   "window.REBAR_SLUGS = " + JSON.stringify(slugMapByLang, null, 2) + ";\n");
 
 let pageCount = 0;
-const redirects = [];
+const redirects = [
+  // Removed draft homepages: send their old URLs to the main page
+  { source: "/dummy-preview", destination: "/", permanent: true },
+  { source: "/dummy-preview.html", destination: "/", permanent: true },
+  { source: "/homepage-improved", destination: "/", permanent: true },
+  { source: "/homepage-improved.html", destination: "/", permanent: true }
+];
 
 LANGS.forEach(l => {
   const lang = l.code;

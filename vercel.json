@@ -30,6 +30,26 @@
   ],
   "redirects": [
     {
+      "source": "/dummy-preview",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dummy-preview.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/homepage-improved",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/homepage-improved.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/es/peso-calculadoras",
       "destination": "/es/calculadora-de-peso-de-varilla",
       "permanent": true
