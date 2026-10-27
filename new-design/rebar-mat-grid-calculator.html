@@ -37,7 +37,7 @@
 
 <section class="block">
   <h2>How to use it</h2>
-  <ol class="steps"><li>Enter mat length and width.</li><li>Set the grid spacing and edge offset.</li><li>Pick a bar size for the totals.</li></ol>
+  <ol class="steps"><li>Enter mat length and width.</li><li>Set the grid spacing and edge offset.</li><li>Pick a bar size for the totals.</li><li>Read the results: bar count in each direction, tie intersections, total bar length and weight.</li><li>Order extra for laps between mats, tie wire and cutting waste — the calculator gives the neat mat weight only (see the tie wire calculator).</li></ol>
 </section>
 
 <section class="block">
@@ -47,8 +47,16 @@
 
 <section class="block">
   <h2>Questions</h2>
-  <details><summary>What is a rebar mat?</summary><p>A grid of bars tied together in two directions, used in slabs, rafts and footings.</p></details>
-  <details><summary>How many tie points are in a mat?</summary><p>One at each bar intersection — the calculator reports this as the intersection count.</p></details>
+  <details><summary>What is a rebar mat?</summary><p>A grid of bars tied together in two directions, used in slabs, rafts and footings. Mats can be tied on site or delivered prefabricated; either way, the bar count, length and weight come from the same two-way grid maths.</p></details>
+  <details><summary>How many tie points are in a mat?</summary><p>One at each bar intersection — the calculator reports this as the intersection count. The 6 m × 3 m mat in example 1 has 15 × 30 = 450 intersections, so 450 ties if every crossing is tied.</p></details>
+  <details><summary>How do I calculate a rebar mat by hand?</summary><p>Each way: bars = floor((dimension − 2 × offset) ÷ spacing) + 1, and each bar is (dimension − 2 × offset) long. Add both directions for total length, then multiply by kg/m for weight. Worked example 1 above shows every step.</p></details>
+  <details><summary>What is the edge offset?</summary><p>The distance from the edge of the mat to the first bar — 25 mm by default here. It is not the concrete cover: cover is the concrete over the finished mat, set by the design and the chairs or spacers that hold the mat up.</p></details>
+  <details><summary>What bar size and spacing are used for mats?</summary><p>10–12 mm bars at 150–200 mm centres are typical for slab and raft mats; heavier mats use 16 mm or more. Size and spacing come from the structural design — this calculator sizes the quantity once you have them.</p></details>
+  <details><summary>How much does a 6 m × 3 m mat weigh?</summary><p>At 200 mm centres with 10 mm bars and a 25 mm offset: 15 bars one way and 30 the other (45 bars), 177.75 m of bar, 109.49 kg, and 450 tie intersections. Change the spacing or bar size in the calculator to see how fast the weight moves.</p></details>
+  <details><summary>How much tie wire do I need for a mat?</summary><p>It depends on the intersection count and the wire used per tie. Take the intersection count from this calculator — 450 for the 6 m × 3 m mat — and enter it in the tie wire calculator for the wire length and weight.</p></details>
+  <details><summary>How much does a rebar mat cost?</summary><p>Multiply the weight by your local price per kg. At €1.20/kg, the 6 m × 3 m mat in example 1 costs €131.39 in steel, and five identical mats cost €656.96. That is the neat mat weight only — laps, tie wire and waste add to the order.</p></details>
+  <details><summary>Can I use this calculator for welded mesh sheets?</summary><p>For estimating, yes — the grid maths is the same. But mesh sheets come in fixed sizes with fixed wire diameters, so the exact sheet count and weight come from the manufacturer's sheet table, not from loose-bar lengths.</p></details>
+  <details><summary>What is the difference between a mat and a slab grid?</summary><p>There is no maths difference — a mat is the reinforcement itself, while a slab grid is the same two-way layout described as part of a slab. The calculator works for both; what changes is only what you call it and how it is placed.</p></details>
 </section>
 
 <section class="block">

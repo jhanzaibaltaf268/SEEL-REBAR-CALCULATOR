@@ -432,75 +432,75 @@ details p{margin:1rem 0 0;color:var(--ink-soft);line-height:1.7}
    Warm off-white palette, burnt-orange accent, soft shadows,
    compact mobile calculator. Other pages are untouched.
    ============================================================ */
-body:is([data-page="slab"], [data-page="footing"]) {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) {
   background: #f7f7f5;
   color: #1c1c1a;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-body:is([data-page="slab"], [data-page="footing"]) a { color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) a { color: #c2410c; }
 
 /* header: light surface, no more dark navy */
-body:is([data-page="slab"], [data-page="footing"]) .site-header {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .site-header {
   background: #ffffff;
   border-bottom: 1px solid #e3e2dd;
   backdrop-filter: none;
   transition: box-shadow .3s ease;
 }
-body:is([data-page="slab"], [data-page="footing"]) .site-header.scrolled { box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08); }
-body:is([data-page="slab"], [data-page="footing"]) .brand { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .brand-mark { background: #fff1e8; color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .brand-text strong { color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .top-nav a { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .top-nav a:hover { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .lang-dropdown summary { color: #5f5f5a; border-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .lang-dropdown summary:hover { color: #1c1c1a; border-color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .lang-menu { box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08); }
-body:is([data-page="slab"], [data-page="footing"]) .lang-menu .lang { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .lang-menu .lang:hover { background: #f7f7f5; color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .lang-menu .lang.active { background: #c2410c; color: #fff; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .site-header.scrolled { box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08); }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .brand { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .brand-mark { background: #fff1e8; color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .brand-text strong { color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .top-nav a { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .top-nav a:hover { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .lang-dropdown summary { color: #5f5f5a; border-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .lang-dropdown summary:hover { color: #1c1c1a; border-color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .lang-menu { box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08); }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .lang-menu .lang { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .lang-menu .lang:hover { background: #f7f7f5; color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .lang-menu .lang.active { background: #c2410c; color: #fff; }
 
 /* hero: light, left-aligned, no overlap trick */
-body:is([data-page="slab"], [data-page="footing"]) .hero {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero {
   background: none;
   color: #1c1c1a;
   padding: 1.25rem 0 .5rem;
   text-align: left;
 }
-body:is([data-page="slab"], [data-page="footing"]) .hero h1 { font-size: 1.75rem; color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .hero-sub { color: #5f5f5a; max-width: 62ch; margin: 0; font-size: 1rem; text-align: left; }
-body:is([data-page="slab"], [data-page="footing"]) .hero-sub strong { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) main.wrap { margin-top: 0; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero h1 { font-size: 1.75rem; color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero-sub { color: #5f5f5a; max-width: 62ch; margin: 0; font-size: 1rem; text-align: left; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero-sub strong { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) main.wrap { margin-top: 0; }
 
 /* crumbs */
-body:is([data-page="slab"], [data-page="footing"]) .crumbs { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .crumbs a { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .crumbs span { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .crumbs { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .crumbs a { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .crumbs span { color: #1c1c1a; }
 
 /* calculator shell: cards, soft shadows */
-body:is([data-page="slab"], [data-page="footing"]) .calc-tabs {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-tabs {
   background: #ffffff;
   border: 1px solid #e3e2dd;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(28,28,26,.06), 0 4px 12px rgba(28,28,26,.04);
 }
-body:is([data-page="slab"], [data-page="footing"]) .tab-group { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .tab-group.active-group { color: #c2410c; border-left-color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .tab { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .tab:hover { background: #f7f7f5; color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .tab.active { background: #fff1e8; color: #c2410c; box-shadow: none; }
-body:is([data-page="slab"], [data-page="footing"]) .calc-panel {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab-group { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab-group.active-group { color: #c2410c; border-left-color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab:hover { background: #f7f7f5; color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab.active { background: #fff1e8; color: #c2410c; box-shadow: none; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel {
   background: #ffffff;
   border: 1px solid #e3e2dd;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(28,28,26,.06), 0 4px 12px rgba(28,28,26,.04);
 }
-body:is([data-page="slab"], [data-page="footing"]) .calc-panel h2 { font-size: 1.25rem; color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .calc-desc { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel h2 { font-size: 1.25rem; color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-desc { color: #5f5f5a; }
 
 /* fields */
-body:is([data-page="slab"], [data-page="footing"]) .field label { font-size: .95rem; color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .field input,
-body:is([data-page="slab"], [data-page="footing"]) .field select {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field label { font-size: .95rem; color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field input,
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field select {
   background: #f7f7f5;
   border: 1px solid #e3e2dd;
   border-radius: 10px;
@@ -508,98 +508,98 @@ body:is([data-page="slab"], [data-page="footing"]) .field select {
   padding: 0 12px;
   color: #1c1c1a;
 }
-body:is([data-page="slab"], [data-page="footing"]) .field input:focus,
-body:is([data-page="slab"], [data-page="footing"]) .field select:focus {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field input:focus,
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field select:focus {
   border-color: #c2410c;
   box-shadow: 0 0 0 3px rgba(194,65,12,.15);
 }
 
 /* result card */
-body:is([data-page="slab"], [data-page="footing"]) .result {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result {
   background: #fff1e8;
   border: 1px solid transparent;
   border-left: none;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08);
 }
-body:is([data-page="slab"], [data-page="footing"]) .result-val { font-size: 2rem; color: #1c1c1a; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
-body:is([data-page="slab"], [data-page="footing"]) .result-main.pop { animation: nd-pop .3s ease; }
-body:is([data-page="slab"], [data-page="footing"]) .result-unit { color: #5f5f5a; font-size: 1.1rem; font-weight: 600; }
-body:is([data-page="slab"], [data-page="footing"]) .result-label { color: #5f5f5a; font-size: .9rem; text-transform: none; letter-spacing: normal; font-weight: 600; }
-body:is([data-page="slab"], [data-page="footing"]) .result-grid { border-top-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .result-grid > div { background: #ffffff; border-radius: 10px; padding: 10px 12px; }
-body:is([data-page="slab"], [data-page="footing"]) .result-grid span { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .result-grid small { color: #5f5f5a; text-transform: none; letter-spacing: normal; font-size: .85rem; }
-body:is([data-page="slab"], [data-page="footing"]) .result-formula { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-val { font-size: 2rem; color: #1c1c1a; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-main.pop { animation: nd-pop .3s ease; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-unit { color: #5f5f5a; font-size: 1.1rem; font-weight: 600; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-label { color: #5f5f5a; font-size: .9rem; text-transform: none; letter-spacing: normal; font-weight: 600; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-grid { border-top-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-grid > div { background: #ffffff; border-radius: 10px; padding: 10px 12px; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-grid span { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-grid small { color: #5f5f5a; text-transform: none; letter-spacing: normal; font-size: .85rem; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-formula { color: #5f5f5a; }
 
 /* related + workflow cards */
-body:is([data-page="slab"], [data-page="footing"]) .related h2 { font-size: 1.2rem; color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .rel-card {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .related h2 { font-size: 1.2rem; color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .rel-card {
   background: #ffffff;
   border: 1px solid #e3e2dd;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(28,28,26,.06), 0 4px 12px rgba(28,28,26,.04);
 }
-body:is([data-page="slab"], [data-page="footing"]) .rel-card b { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .rel-card span { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .rel-card:hover { border-color: #c2410c; transform: translateY(-2px); box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08); }
-body:is([data-page="slab"], [data-page="footing"]) .workflow-section { background: #ffffff; border: 1px solid #e3e2dd; border-radius: 12px; }
-body:is([data-page="slab"], [data-page="footing"]) .workflow-section h2 { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .workflow-sub { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .workflow-badge { background: rgba(194,65,12,.12); color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .workflow-card { background: #ffffff; border-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .workflow-card:hover { border-color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .rel-card b { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .rel-card span { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .rel-card:hover { border-color: #c2410c; transform: translateY(-2px); box-shadow: 0 2px 6px rgba(28,28,26,.08), 0 12px 28px rgba(28,28,26,.08); }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .workflow-section { background: #ffffff; border: 1px solid #e3e2dd; border-radius: 12px; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .workflow-section h2 { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .workflow-sub { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .workflow-badge { background: rgba(194,65,12,.12); color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .workflow-card { background: #ffffff; border-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .workflow-card:hover { border-color: #c2410c; }
 
 /* content blocks, examples, tables */
-body:is([data-page="slab"], [data-page="footing"]) .content-block {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .content-block {
   background: #ffffff;
   border: 1px solid #e3e2dd;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(28,28,26,.06), 0 4px 12px rgba(28,28,26,.04);
 }
-body:is([data-page="slab"], [data-page="footing"]) .content-block h2,
-body:is([data-page="slab"], [data-page="footing"]) .content-block h3 { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .howto li { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .formula-callout { background: #f7f7f5; color: #1c1c1a; border: 1px solid #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .formula-table th { background: #f7f7f5; color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .formula-table th,
-body:is([data-page="slab"], [data-page="footing"]) .formula-table td { border-bottom-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .formula-table tbody tr:nth-child(odd) { background: #ffffff; }
-body:is([data-page="slab"], [data-page="footing"]) .formula-table tbody tr:hover { background: #fff1e8; }
-body:is([data-page="slab"], [data-page="footing"]) .example-card { background: #ffffff; border-color: #e3e2dd; border-radius: 12px; }
-body:is([data-page="slab"], [data-page="footing"]) .example-badge { background: #fff1e8; color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .example-verified { background: #f7f7f5; }
-body:is([data-page="slab"], [data-page="footing"]) .example-header { border-bottom-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .example-steps li::before { color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .mistake-card { border-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .mistake-card p { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .derivation-box { background: #ffffff; border-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .derivation-step { background: #f7f7f5; border-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .accuracy-callout { background: #fff1e8; border-left-color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .content-block h2,
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .content-block h3 { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .howto li { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .formula-callout { background: #f7f7f5; color: #1c1c1a; border: 1px solid #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .formula-table th { background: #f7f7f5; color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .formula-table th,
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .formula-table td { border-bottom-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .formula-table tbody tr:nth-child(odd) { background: #ffffff; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .formula-table tbody tr:hover { background: #fff1e8; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .example-card { background: #ffffff; border-color: #e3e2dd; border-radius: 12px; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .example-badge { background: #fff1e8; color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .example-verified { background: #f7f7f5; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .example-header { border-bottom-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .example-steps li::before { color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .mistake-card { border-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .mistake-card p { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .derivation-box { background: #ffffff; border-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .derivation-step { background: #f7f7f5; border-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .accuracy-callout { background: #fff1e8; border-left-color: #c2410c; }
 
 /* FAQ: orange chevron, no blue tint when open */
-body:is([data-page="slab"], [data-page="footing"]) details {
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) details {
   background: #ffffff;
   border: 1px solid #e3e2dd;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(28,28,26,.06), 0 4px 12px rgba(28,28,26,.04);
 }
-body:is([data-page="slab"], [data-page="footing"]) details:hover { border-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) details[open] { border-color: #c2410c; background: #ffffff; }
-body:is([data-page="slab"], [data-page="footing"]) summary::after { color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) details p { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) details:hover { border-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) details[open] { border-color: #c2410c; background: #ffffff; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) summary::after { color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) details p { color: #5f5f5a; }
 
 /* footer: light */
-body:is([data-page="slab"], [data-page="footing"]) .site-footer { background: #ffffff; color: #5f5f5a; border-top: 1px solid #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-col h4 { border-bottom-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-col h4 a { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-col h4 a:hover { color: #c2410c; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-col li a { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-col li a:hover { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-bottom { border-top-color: #e3e2dd; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-quick-links a { color: #5f5f5a; }
-body:is([data-page="slab"], [data-page="footing"]) .footer-quick-links a:hover { color: #1c1c1a; }
-body:is([data-page="slab"], [data-page="footing"]) .muted { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .site-footer { background: #ffffff; color: #5f5f5a; border-top: 1px solid #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-col h4 { border-bottom-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-col h4 a { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-col h4 a:hover { color: #c2410c; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-col li a { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-col li a:hover { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-bottom { border-top-color: #e3e2dd; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-quick-links a { color: #5f5f5a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .footer-quick-links a:hover { color: #1c1c1a; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .muted { color: #5f5f5a; }
 
 /* animations: load rise, scroll reveal (JS adds the classes), result pop */
 @keyframes nd-rise {
@@ -611,45 +611,45 @@ body:is([data-page="slab"], [data-page="footing"]) .muted { color: #5f5f5a; }
   35% { transform: scale(1.025); color: #c2410c; }
   100% { transform: scale(1); }
 }
-body:is([data-page="slab"], [data-page="footing"]) .hero h1,
-body:is([data-page="slab"], [data-page="footing"]) .hero-sub { animation: nd-rise .55s cubic-bezier(.22,.61,.36,1) both; }
-body:is([data-page="slab"], [data-page="footing"]) .hero-sub { animation-delay: .07s; }
-body:is([data-page="slab"], [data-page="footing"]) .calc-shell { animation: nd-rise .55s cubic-bezier(.22,.61,.36,1) both; animation-delay: .1s; }
-body:is([data-page="slab"], [data-page="footing"]) .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
-body:is([data-page="slab"], [data-page="footing"]) .reveal.inview { opacity: 1; transform: none; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero h1,
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero-sub { animation: nd-rise .55s cubic-bezier(.22,.61,.36,1) both; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero-sub { animation-delay: .07s; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-shell { animation: nd-rise .55s cubic-bezier(.22,.61,.36,1) both; animation-delay: .1s; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .reveal.inview { opacity: 1; transform: none; }
 
 /* desktop: fields | result side by side, result sticks while scrolling */
 @media (min-width: 900px) {
-  body:is([data-page="slab"], [data-page="footing"]) .hero h1 { font-size: 2.1rem; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-panel h2,
-  body:is([data-page="slab"], [data-page="footing"]) .calc-panel .calc-desc { grid-column: 1 / -1; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-panel .result { position: sticky; top: 76px; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-panel .inputs .field:has(select) { grid-column: 1 / -1; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero h1 { font-size: 2.1rem; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel h2,
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel .calc-desc { grid-column: 1 / -1; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel .result { position: sticky; top: 76px; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel .inputs .field:has(select) { grid-column: 1 / -1; }
 }
 
 /* mobile: horizontal-scroll tabs, paired fields, compact result */
 @media (max-width: 820px) {
-  body:is([data-page="slab"], [data-page="footing"]) .calc-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-tabs { min-width: 0; }
-  body:is([data-page="slab"], [data-page="footing"]) .tab { width: auto; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-tabs::-webkit-scrollbar { display: none; }
-  body:is([data-page="slab"], [data-page="footing"]) .tab { flex: 0 0 auto; }
-  body:is([data-page="slab"], [data-page="footing"]) .calc-panel { padding: 1.2rem; }
-  body:is([data-page="slab"], [data-page="footing"]) .inputs { grid-template-columns: 1fr 1fr; gap: .75rem; }
-  body:is([data-page="slab"], [data-page="footing"]) .field:has(select) { grid-column: 1 / -1; }
-  body:is([data-page="slab"], [data-page="footing"]) .field label { font-size: .9rem; }
-  body:is([data-page="slab"], [data-page="footing"]) .field input,
-  body:is([data-page="slab"], [data-page="footing"]) .field select { min-height: 44px; }
-  body:is([data-page="slab"], [data-page="footing"]) .field input,
-  body:is([data-page="slab"], [data-page="footing"]) .field select { min-width: 0; width: 100%; }
-  body:is([data-page="slab"], [data-page="footing"]) .result-val { font-size: 1.7rem; }
-  body:is([data-page="slab"], [data-page="footing"]) .result { padding: 1.2rem; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-tabs { min-width: 0; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab { width: auto; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-tabs::-webkit-scrollbar { display: none; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .tab { flex: 0 0 auto; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-panel { padding: 1.2rem; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .inputs { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field:has(select) { grid-column: 1 / -1; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field label { font-size: .9rem; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field input,
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field select { min-height: 44px; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field input,
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .field select { min-width: 0; width: 100%; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-val { font-size: 1.7rem; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result { padding: 1.2rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  body:is([data-page="slab"], [data-page="footing"]) .hero h1,
-  body:is([data-page="slab"], [data-page="footing"]) .hero-sub,
-  body:is([data-page="slab"], [data-page="footing"]) .calc-shell,
-  body:is([data-page="slab"], [data-page="footing"]) .result-main.pop { animation: none !important; }
-  body:is([data-page="slab"], [data-page="footing"]) .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero h1,
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .hero-sub,
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .calc-shell,
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .result-main.pop { animation: none !important; }
+  body:is([data-page="slab"], [data-page="footing"], [data-page="mat"]) .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
