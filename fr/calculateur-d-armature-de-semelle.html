@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur d'Armature de Semelle","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculez le treillis d'une semelle — barres dans les deux sens, longueur et poids."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment fonctionne le Calculateur d'Armature de Semelle ?","acceptedAnswer":{"@type":"Answer","text":"Calculez le treillis d'une semelle — barres dans les deux sens, longueur et poids. Le calcul se met à jour automatiquement."}},{"@type":"Question","name":"Est-il gratuit et précis ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Il utilise des formules standard du secteur et est entièrement gratuit, sans inscription."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Choisissez le diamètre de barre et les unités."},{"@type":"HowToStep","position":2,"text":"Saisissez les dimensions et la quantité."},{"@type":"HowToStep","position":3,"text":"Lisez le résultat instantanément."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://steelrebarcalculator.com/fr/"},{"@type":"ListItem","position":2,"name":"Calculateur d'Armature de Semelle","item":"https://steelrebarcalculator.com/fr/calculateur-d-armature-de-semelle"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="footing">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/fr/calculateur-de-tonnage-d-armature" data-id="tonnage">Calculateur de Tonnage d'Armature</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Calculateur d'Armature de Semelle</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -164,6 +165,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Comment utiliser: Calculateur d'Armature de Semelle</h2>
     <ol class="howto"><li>Choisissez le diamètre de barre et les unités.</li><li>Saisissez les dimensions et la quantité.</li><li>Lisez le résultat instantanément.</li></ol>
@@ -171,6 +173,7 @@
     <p class="formula-callout">Same grid method as a slab: bars one way = floor((dimension − 2 × cover) ÷ spacing) + 1, both directions, × kg/m.</p>
     <p><a href="/fr/#charts">Voir la table complète des poids (kg/m et lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Calculateur d'Armature de Semelle — FAQ</h2>
@@ -253,5 +256,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

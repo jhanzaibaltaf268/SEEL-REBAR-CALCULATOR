@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Raudoitusverkon Laskuri","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"fi","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Laske suorakaiteen verkko: tangot per suunta, risteykset ja paino."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Miten Raudoitusverkon Laskuri toimii?","acceptedAnswer":{"@type":"Answer","text":"Laske suorakaiteen verkko: tangot per suunta, risteykset ja paino. Laskenta päivittyy automaattisesti."}},{"@type":"Question","name":"Onko se ilmainen ja tarkka?","acceptedAnswer":{"@type":"Answer","text":"Kyllä. Se käyttää alan vakiokaavoja ja on täysin ilmainen, ilman rekisteröitymistä."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Valitse tangon halkaisija ja yksiköt."},{"@type":"HowToStep","position":2,"text":"Syötä mitat ja määrä."},{"@type":"HowToStep","position":3,"text":"Lue tulos heti."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Etusivu","item":"https://steelrebarcalculator.com/fi/"},{"@type":"ListItem","position":2,"name":"Raudoitusverkon Laskuri","item":"https://steelrebarcalculator.com/fi/raudoitusverkon-laskuri"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="mat">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/fi/raudoituksen-tonnilaskuri" data-id="tonnage">Raudoituksen Tonnilaskuri</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Raudoitusverkon Laskuri</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -164,6 +165,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Käyttöohje: Raudoitusverkon Laskuri</h2>
     <ol class="howto"><li>Valitse tangon halkaisija ja yksiköt.</li><li>Syötä mitat ja määrä.</li><li>Lue tulos heti.</li></ol>
@@ -171,6 +173,7 @@
     <p class="formula-callout">Bars each way = floor((dimension − 2 × offset) ÷ spacing) + 1. Intersections = nx × ny.</p>
     <p><a href="/fi/#charts">Katso koko painotaulukko (kg/m ja lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Raudoitusverkon Laskuri — UKK</h2>
@@ -253,5 +256,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

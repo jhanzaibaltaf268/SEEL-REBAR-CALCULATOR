@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculateur d'Aire d'Acier (Ast)","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"fr","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Aire d'une barre et aire totale d'acier Ast, et le pourcentage d'acier."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment fonctionne le Calculateur d'Aire d'Acier (Ast) ?","acceptedAnswer":{"@type":"Answer","text":"Aire d'une barre et aire totale d'acier Ast, et le pourcentage d'acier. Le calcul se met à jour automatiquement."}},{"@type":"Question","name":"Est-il gratuit et précis ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Il utilise des formules standard du secteur et est entièrement gratuit, sans inscription."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Choisissez le diamètre de barre et les unités."},{"@type":"HowToStep","position":2,"text":"Saisissez les dimensions et la quantité."},{"@type":"HowToStep","position":3,"text":"Lisez le résultat instantanément."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://steelrebarcalculator.com/fr/"},{"@type":"ListItem","position":2,"name":"Calculateur d'Aire d'Acier (Ast)","item":"https://steelrebarcalculator.com/fr/calculateur-d-aire-d-acier-ast"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="area">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/fr/calculateur-de-tonnage-d-armature" data-id="tonnage">Calculateur de Tonnage d'Armature</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Calculateur d'Aire d'Acier (Ast)</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -162,6 +163,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Comment utiliser: Calculateur d'Aire d'Acier</h2>
     <ol class="howto"><li>Choisissez le diamètre de barre et les unités.</li><li>Saisissez les dimensions et la quantité.</li><li>Lisez le résultat instantanément.</li></ol>
@@ -169,6 +171,7 @@
     <p class="formula-callout">Area of one bar = π/4 × d². Ast = number of bars × area. Steel % = Ast ÷ (b × D) × 100.</p>
     <p><a href="/fr/#charts">Voir la table complète des poids (kg/m et lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Calculateur d'Aire d'Acier — FAQ</h2>
@@ -251,5 +254,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

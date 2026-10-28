@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulator Troška Armature","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"hr","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Procijenite trošak materijala iz ukupne težine i jedinične cijene."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kako radi Kalkulator Troška Armature?","acceptedAnswer":{"@type":"Answer","text":"Procijenite trošak materijala iz ukupne težine i jedinične cijene. Izračun se automatski ažurira."}},{"@type":"Question","name":"Je li besplatan i točan?","acceptedAnswer":{"@type":"Answer","text":"Da. Koristi standardne formule struke i potpuno je besplatan, bez registracije."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Odaberite promjer šipke i jedinice."},{"@type":"HowToStep","position":2,"text":"Unesite dimenzije i količinu."},{"@type":"HowToStep","position":3,"text":"Odmah očitajte rezultat."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Početna","item":"https://steelrebarcalculator.com/hr/"},{"@type":"ListItem","position":2,"name":"Kalkulator Troška Armature","item":"https://steelrebarcalculator.com/hr/kalkulator-troska-armature"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="cost">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/hr/kalkulator-tonaze-armature" data-id="tonnage">Kalkulator Tonaže Armature</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Kalkulator Troška Armature</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -161,6 +162,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Kako koristiti: Kalkulator Troška Armature</h2>
     <ol class="howto"><li>Odaberite promjer šipke i jedinice.</li><li>Unesite dimenzije i količinu.</li><li>Odmah očitajte rezultat.</li></ol>
@@ -168,6 +170,7 @@
     <p class="formula-callout">Cost = weight × (1 + wastage%) × price per kg.</p>
     <p><a href="/hr/#charts">Pogledajte cijelu tablicu težina (kg/m i lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Kalkulator Troška Armature — Česta pitanja</h2>
@@ -250,5 +253,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>
