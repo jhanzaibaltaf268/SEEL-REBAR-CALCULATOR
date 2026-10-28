@@ -1735,9 +1735,253 @@ const PAGES = [
           ["Can bars larger than 32 mm be lap spliced?","No. IS 456:2000 as amended in 2007 does not permit lap splices for bars larger than 32 mm — use welding or mechanical couplers instead. Older references cite 36 mm; that was the pre-amendment limit. A 32 mm lap would already be over a metre of doubled steel, which is why the code draws the line there."],
           ["How many laps do I need, and how much extra steel?","Divide the run by the 12 m stock length and round up: pieces = ceil(run ÷ 12), laps per line = pieces − 1. A 25 m run needs 3 pieces, so 2 laps per line — at the calculator defaults that adds 2 × 582.59 = 1165.18 mm per line, or 11.65 m over 10 lines. Put laps in the cutting lengths, or the site runs short."],
           ["What if the two spliced bars have different diameters?","Calculate on the smaller diameter. The bond transfer is limited by the smaller bar, so using the larger diameter would overstate the lap. The same applies when a bar laps onto a starter dowel of a different size."],
-          ["Does the calculator include hooks, welds or couplers?","No — it gives straight lap lengths only. A hook anchors a bar end; it does not replace a lap, and a lapped bar still needs its lap even if it is hooked. For hook and bend allowances use the <a href=\"/rebar-hook-bend-cutting-length-calculator\">hook & bend calculator</a>; for bars over 32 mm, or where congestion rules laps out, price mechanical couplers against the lapped steel they replace."]], },
-
-  { id:"hook", slug:"rebar-hook-bend-cutting-length-calculator", cat:"Detailing",
+          ["Does the calculator include hooks, welds or couplers?","No — it gives straight lap lengths only. A hook anchors a bar end; it does not replace a lap, and a lapped bar still needs its lap even if it is hooked. For hook and bend allowances use the <a href=\"/rebar-hook-bend-cutting-length-calculator\">hook & bend calculator</a>; for bars over 32 mm, or where congestion rules laps out, price mechanical couplers against the lapped steel they replace."]],
+    de: {
+  metaTitle: "Übergreifungslängen-Rechner — Zug- & Druckstoß gratis",
+  desc: "Übergreifungslängen-Rechner: Zugstoß = max(Ld, 30d), Druckstoß = max(Ld, 24d) nach IS 456 berechnen. Beispiel: 12 mm, Fe500, M25 = 582,59 mm. Kostenlos.",
+  formula: "Zugstoß = max(Ld; 30d); Druckstoß = max(Ld; 24d), wobei Ld die Verankerungslänge ist.",
+  kw: "übergreifungslängen-rechner, bewehrungsstoß rechner, übergreifungslänge formel, übergreifungslänge bewehrung",
+  howto: ["Stabdurchmesser wählen.", "Stahlgüte (Fe250–Fe550) und Betongüte (M20–M40) wählen.", "Zug- oder Druckstoß wählen.", "Übergreifungslänge in mm, als Vielfaches des Durchmessers, dazu Verankerungslänge und Mindestwert ablesen — der Hinweis unter dem Ergebnis zeigt, welcher Wert maßgebend war.", "Vor der Detailplanung die Staffelungs- und Verlegeregeln unten beachten — der Rechner liefert die Länge, nicht die Lage."],
+  faqs: [["Was ist die Übergreifungslänge bei Bewehrung?", "Die Überlappung zweier gestoßener Stäbe, damit die Kraft über den Betonverbund vom einen Stab auf den anderen übergeht. Stäbe werden in Standardlängen geliefert (meist 12 m), sodass jede längere Lauflänge durch Überlappen des nächsten Stabs über die Stoßlänge fortgesetzt werden muss."],
+          ["Beträgt die Übergreifungslänge 40d oder 50d?", "Das hängt von Güte und Beton ab — üblich sind 40–50d, aber das ist eine Faustregel, kein Normwert. Dieses Tool berechnet ihn aus Ld: Für 12-mm-Stäbe Fe500 in M25-Beton beträgt der Zugstoß 48,55 × d (582,59 mm), für Fe415 in M20 dagegen 47,01 × d. Immer für die tatsächlich vorhandenen Güten rechnen — siehe Tabellen unten."],
+          ["Warum ist der Druckstoß kürzer als der Zugstoß?", "Zwei Gründe. Erstens ist die Bemessungsverbundspannung bei Druck um 25 % höher als bei Zug (IS 456, Abs. 26.2.1.1), sodass die Druck-Verankerungslänge 0,8 × dem Zugwert entspricht — 466,07 mm gegenüber 582,59 mm bei 12 mm Fe500/M25. Zweitens ist der Norm-Mindestwert niedriger: 24d bei Druck gegenüber 30d bei Zug."],
+          ["Was ist der Unterschied zwischen Verankerungslänge und Übergreifungslänge?", "Verankerungslänge (Ld) verankert einen Stab im Beton, damit er seine volle Tragfähigkeit entwickelt; Übergreifungslänge überlappt zwei Stäbe, damit die Kraft vom einen auf den anderen übergeht. Ein Stoß baut auf Ld auf — Zugstoß = max(Ld; 30d), Druckstoß = max(Ld; 24d) — aber die Stoßregeln fügen eigene Mindestwerte und Staffelanforderungen hinzu. Für Ld allein den <a href=\"/de/verankerungslaengen-rechner\">Verankerungslängen-Rechner</a> verwenden."],
+          ["Wo sollen Stöße angeordnet werden?", "Fern von Bereichen größter Momente und versetzt, niemals alle an einem Querschnitt. Stützenstöße gehören ins mittlere Drittel der Höhe, fern von Balken-Stützen-Knoten; untere Balkenstäbe stoßen im Auflagerbereich, obere in Feldmitte; höchstens die Hälfte der Stäbe darf an einem Querschnitt gestoßen sein. Aufeinanderfolgende Stöße gelten nur dann als versetzt, wenn sie mindestens 1,3 × die Stoßlänge auseinanderliegen."],
+          ["Was gilt bei reiner Zugbeanspruchung — Bügel und Aufhängebewehrung?", "Reine Zugbeanspruchung ist strenger: IS 456, Abs. 26.2.5.1 verlangt max(2Ld; 30d). Bei den Standardeinstellungen (12 mm, Fe500, M25) sind das 1165,18 mm — das Doppelte des Biegezugstoßes von 582,59 mm. Dieser Rechner deckt nur Biegezug und Druck ab; für Bauteile unter reiner Zugbeanspruchung Ld selbst verdoppeln."],
+          ["Können Stäbe über 32 mm gestoßen werden?", "Nein. IS 456:2000 in der Fassung von 2007 lässt keine Stoßverbindungen für Stäbe über 32 mm zu — stattdessen Schweißen oder mechanische Muffen verwenden. Ältere Quellen nennen 36 mm; das war der Grenzwert vor der Änderung. Ein 32-mm-Stoß wäre bereits über einen Meter doppelter Stahl, weshalb die Norm dort die Grenze zieht."],
+          ["Wie viele Stöße brauche ich, und wie viel Mehrstahl?", "Die Lauflänge durch die 12-m-Stangenlänge teilen und aufrunden: Stücke = aufrunden(Lauflänge ÷ 12), Stöße je Strang = Stücke − 1. Eine 25-m-Lauflänge braucht 3 Stücke, also 2 Stöße je Strang — bei den Standardeinstellungen sind das 2 × 582,59 = 1165,18 mm je Strang bzw. 11,65 m bei 10 Strängen. Stöße in die Schnittlängen aufnehmen, sonst fehlt auf der Baustelle Material."],
+          ["Was, wenn die beiden gestoßenen Stäbe unterschiedliche Durchmesser haben?", "Mit dem kleineren Durchmesser rechnen. Die Verbundübertragung wird durch den kleineren Stab begrenzt, sodass Rechnen mit dem größeren Durchmesser den Stoß überschätzen würde. Gleiches gilt, wenn ein Stab auf einen Anschlussstab anderer Größe stößt."],
+          ["Berücksichtigt der Rechner Haken, Schweißungen oder Muffen?", "Nein — er liefert nur gerade Stoßlängen. Ein Haken verankert ein Stabende; er ersetzt keinen Stoß, und ein gestoßener Stab braucht seinen Stoß auch dann, wenn er gehakt ist. Für Haken- und Biegezumaße den <a href=\"/de/haken-biege-schnittlaengen-rechner\">Haken- & Biege-Rechner</a> verwenden; für Stäbe über 32 mm oder wo Bewehrungsdichte Stöße ausschließt, mechanische Muffen gegen den gestoßenen Stahl abwägen, den sie ersetzen."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So benutzen Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: 12 mm, Fe500, M25, Zug (Standardeinstellungen)</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: gleiche Stäbe bei Druck</a></li>
+      <li><a href="#example-3">Rechenbeispiel 3: wenn der Mindestwert greift</a></li>
+      <li><a href="#tension-vs-compression">Zug- vs. Druckstoß-Tabelle</a></li>
+      <li><a href="#lap-by-size">Übergreifungslänge nach Stabdurchmesser</a></li>
+      <li><a href="#stagger-rules">Staffelungs- und Verlegeregeln</a></li>
+      <li><a href="#lap-vs-dev">Übergreifungslänge vs. Verankerungslänge</a></li>
+      <li><a href="#bar-schedule">Übergreifungen in der Stahlliste: Anzahl, Gewicht und Kosten</a></li>
+      <li><a href="#not-included">Was der Rechner nicht berücksichtigt</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<h3>Die Formel, erklärt</h3>
+    <p>Jede Stoßlänge geht von der Verankerungslänge Ld aus — der Einbindelänge, die ein
+    Stab braucht, um seine volle Bemessungsspannung im Beton zu entwickeln (IS 456:2000,
+    Abs. 26.2.1):</p>
+    <p><strong>Ld = (d × 0,87 × fy) ÷ (4 × τbd)</strong></p>
+    <ul>
+      <li><strong>d</strong> ist der Stabdurchmesser in mm.</li>
+      <li><strong>0,87 × fy</strong> ist die Bemessungsspannung im Stahl. Die 0,87 ist 1 ÷ 1,15, der
+      Teilsicherheitsbeiwert für Stahl — mit fy selbst würde Ld um 15 % überschätzt.</li>
+      <li><strong>τbd</strong> ist die Bemessungsverbundspannung. Die Tabelle unten gibt Werte für
+      Glattstäbe an; Rippenstäbe (der übliche Baustellenstab) erhöhen sie um 60 %, und
+      Druck erhöht sie um weitere 25 % — deshalb beträgt Ld bei Druck 0,8 × Ld bei Zug.</li>
+    </ul>
+    <p>Dann nimmt die Stoßregel (IS 456, Abs. 26.2.5.1) den größeren Wert aus Ld und einem
+    Norm-Mindestwert:</p>
+    <ul>
+      <li><strong>Zugstoß = max(Ld; 30d)</strong> — Biegezug, Balken und Platten.</li>
+      <li><strong>Druckstoß = max(Ld; 24d)</strong> — Stützen und andere Druckglieder.</li>
+    </ul>
+    <p>Der Hinweis im Panel zeigt, welcher Wert maßgebend war, z. B. „Stoß = max(Ld 583;
+    30d 360) mm“ bei den Standardeinstellungen — Ld im Hinweis auf eine ganze Zahl
+    gerundet, exakte Werte in den Ergebnisfeldern.</p>
+    <h3>Bemessungsverbundspannung τbd (IS 456, Abs. 26.2.1.1)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Betongüte</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Glattstäbe</td><td>1,20</td><td>1,40</td><td>1,50</td><td>1,70</td><td>1,90</td></tr>
+      <tr><td>Rippenstäbe (× 1,6)</td><td>1,92</td><td>2,24</td><td>2,40</td><td>2,72</td><td>3,04</td></tr>
+      <tr><td>Rippenstäbe, Druck (× 1,25 mehr)</td><td>2,40</td><td>2,80</td><td>3,00</td><td>3,40</td><td>3,80</td></tr>
+    </table></div>
+    <p>Werte in N/mm². Dieser Rechner setzt durchgehend Rippenstäbe voraus — für
+    Glattstäbe die Rippenstab-τbd durch 1,6 teilen und Ld von Hand neu berechnen.</p>
+    <h3 id="example-1">Rechenbeispiel 1: 12 mm, Fe500, M25, Zug (Standardeinstellungen)</h3>
+    <p>Den Rechner öffnen — dieser Fall ist bereits voreingestellt: 12-mm-Stab, Fe500-Stahl,
+    M25-Beton, Zugstoß.</p>
+    <ul>
+      <li>τbd = 1,40 × 1,6 = 2,24 N/mm² (Rippenstäbe).</li>
+      <li>Ld = (12 × 0,87 × 500) ÷ (4 × 2,24) = 5220 ÷ 8,96 = <strong>582,59 mm</strong>.</li>
+      <li>Mindestwert = 30 × 12 = <strong>360,00 mm</strong>.</li>
+      <li>Stoß = max(582,59; 360,00) = <strong>582,59 mm = 48,55 × d</strong>.</li>
+    </ul>
+    <p>Selbst ausprobieren: Das Panel öffnet mit 582,59 mm, 48,55 × d, Ld 582,59 mm,
+    Mindestwert 360,00 mm.</p>
+    <h3 id="example-2">Rechenbeispiel 2: gleiche Stäbe bei Druck</h3>
+    <p>Stoßart auf Druck umstellen und 12 mm, Fe500, M25 beibehalten:</p>
+    <ul>
+      <li>τbd = 2,24 × 1,25 = 2,80 N/mm² (Druck-Verbundspannung).</li>
+      <li>Ld = 5220 ÷ (4 × 2,80) = 5220 ÷ 11,20 = <strong>466,07 mm</strong>.</li>
+      <li>Mindestwert = 24 × 12 = <strong>288,00 mm</strong>.</li>
+      <li>Stoß = max(466,07; 288,00) = <strong>466,07 mm = 38,84 × d</strong>.</li>
+    </ul>
+    <p>Das ist genau 0,8 × der Zugstoß (0,8 × 582,59 = 466,07) — die Druckersparnis kommt
+    aus der höheren Verbundspannung, nicht aus einer kürzeren Regel. Stützenstäbe, die
+    auch Biegung tragen, können unter Querlasten in Zug geraten; viele Planer legen
+    Stützenstöße daher sicherheitshalber als Zugstöße aus. Immer die statischen Pläne
+    beachten.</p>
+    <h3 id="example-3">Rechenbeispiel 3: wenn der Mindestwert greift</h3>
+    <p>Ein Weichstahlstab in festem Beton: 12 mm, Fe250, M40, Zug.</p>
+    <ul>
+      <li>τbd = 3,04 N/mm²; Ld = (12 × 0,87 × 250) ÷ (4 × 3,04) = 2610 ÷ 12,16 = <strong>214,64 mm</strong>.</li>
+      <li>Mindestwert = 30 × 12 = <strong>360,00 mm</strong>.</li>
+      <li>Stoß = max(214,64; 360,00) = <strong>360,00 mm = 30,00 × d</strong>.</li>
+    </ul>
+    <p>Der Mindestwert sorgt dafür, dass auch ein kurzes Ld eine praktikable Überlappung
+    erhält. Dasselbe gilt bei Fe415/M40: Ld bei Zug beträgt 356,30 mm, der Stoß aber
+    360,00 mm, und Ld bei Druck beträgt 285,04 mm, der Stoß aber 288,00 mm. Wer je einen
+    Stoß unter 30d bei Zug oder 24d bei Druck angegeben sieht, liegt falsch — es sei
+    denn, eine bestimmte Normklausel sagt etwas anderes.</p>
+    <h3 id="tension-vs-compression">Zug- vs. Druckstoß-Tabelle</h3>
+    <p>Stoßlänge als Vielfaches des Stabdurchmessers (Ld ÷ d), nach der IS-456-Formel
+    berechnet. Wo das Vielfache unter den Norm-Mindestwert fällt, ist der Mindestwert
+    angegeben — das ist der Stoß, den der Rechner ausgibt.</p>
+    <div class="formula-table"><table>
+      <tr><th>Stahl</th><th>Modus</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Fe415</td><td>Zug</td><td>47,01</td><td>40,30</td><td>37,61</td><td>33,18</td><td>30,00 (Mindestwert)</td></tr>
+      <tr><td>Fe415</td><td>Druck</td><td>37,61</td><td>32,24</td><td>30,09</td><td>26,55</td><td>24,00 (Mindestwert)</td></tr>
+      <tr><td>Fe500</td><td>Zug</td><td>56,64</td><td>48,55</td><td>45,31</td><td>39,98</td><td>35,77</td></tr>
+      <tr><td>Fe500</td><td>Druck</td><td>45,31</td><td>38,84</td><td>36,25</td><td>31,99</td><td>28,62</td></tr>
+    </table></div>
+    <p>Zwei Muster zum Merken: Höhere Stahlgüten brauchen längere Stöße (Fe500 braucht
+    etwa 20 % mehr als Fe415 bei gleicher Betongüte), und höhere Betongüten brauchen
+    kürzere Stöße (M40 braucht etwa 37 % weniger als M20 bei Fe500-Zug). Deshalb ist eine
+    einzelne 50d-Regel bei starkem Beton verschwenderisch und bei schwachem Beton unsicher.</p>
+    <h3>12-mm-Übergreifungslängen in mm (Fe500)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Modus</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Zug</td><td>679,69</td><td>582,59</td><td>543,75</td><td>479,78</td><td>429,28</td></tr>
+      <tr><td>Druck</td><td>543,75</td><td>466,07</td><td>435,00</td><td>383,82</td><td>343,42</td></tr>
+    </table></div>
+    <p>Imperial-Entsprechungen: Beispiel 1 (582,59 mm) = 22,94 in = 1,91 ft; Beispiel 2
+    (466,07 mm) = 18,35 in = 1,53 ft; Beispiel 3 (360,00 mm) = 14,17 in = 1,18 ft.</p>
+    <h3 id="lap-by-size">Übergreifungslänge nach Stabdurchmesser</h3>
+    <p>Fe500-Stahl, M25-Beton, Biegezug. Das ×-d-Vielfache ist für jede Größe gleich
+    (48,55) — nur die Millimeter skalieren mit dem Durchmesser.</p>
+    <div class="formula-table"><table>
+      <tr><th>Stab</th><th>8 mm</th><th>10 mm</th><th>12 mm</th><th>16 mm</th><th>20 mm</th><th>25 mm</th></tr>
+      <tr><td>Zugstoß (mm)</td><td>388,39</td><td>485,49</td><td>582,59</td><td>776,79</td><td>970,98</td><td>1213,73</td></tr>
+      <tr><td>Druckstoß (mm)</td><td>310,71</td><td>388,39</td><td>466,07</td><td>621,43</td><td>776,79</td><td>970,98</td></tr>
+    </table></div>
+    <p>Jeder Druckwert ist genau 0,8 × der Zugwert derselben Größe — weshalb ein
+    10-mm-Druckstoß (388,39 mm) zufällig einem 8-mm-Zugstoß entspricht. Diese
+    Zufälligkeit nicht als Abkürzung nutzen; mit den tatsächlich vorhandenen Güten rechnen.</p>
+    <h3 id="stagger-rules">Staffelungs- und Verlegeregeln</h3>
+    <p>Der Rechner liefert die Länge. Diese Regeln bestimmen, wohin Stöße gehören
+    (IS 456, Abs. 26.2.5, IS 13920 für Erdbebendetails):</p>
+    <ul>
+      <li><strong>Staffelung:</strong> Stöße gelten nur dann als versetzt, wenn
+      aufeinanderfolgende Stöße mindestens <strong>1,3 × die Stoßlänge</strong> auseinanderliegen,
+      Mitte zu Mitte — 757,37 mm für Beispiel 1, 605,89 mm für Beispiel 2. Niemals alle
+      Stäbe an einem Querschnitt stoßen; höchstens die Hälfte der Stäbe darf an einem
+      Querschnitt gestoßen sein.</li>
+      <li><strong>Gerader Anteil:</strong> Die gerade Länge eines Stoßes muss mindestens
+      <strong>max(15d; 200 mm)</strong> betragen — 200 mm bei einem 12-mm-Stab, 240 mm bei
+      einem 16-mm-Stab.</li>
+      <li><strong>Stützen:</strong> Stöße im mittleren Drittel der Stützenhöhe, fern von
+      Balken-Stützen-Knoten und vom Fundamentanschluss.</li>
+      <li><strong>Balken:</strong> Untere Stäbe im Auflagerbereich stoßen, obere Stäbe in
+      Feldmitte — niemals im Bereich des größten Moments.</li>
+      <li><strong>Platten und Fundamente:</strong> Stöße von den Bereichen größter Momente
+      fernhalten (Feldmitte für die untere Bewehrung, Stützenkante für Fundamentmatten)
+      und über die Matte versetzen.</li>
+      <li><strong>Unterschiedliche Durchmesser:</strong> Mit dem kleineren Durchmesser rechnen.</li>
+      <li><strong>Große Stäbe:</strong> Keine Stoßverbindungen über 32 mm — Schweißen oder
+      mechanische Muffen verwenden (ältere Quellen nennen 36 mm; das war der Grenzwert
+      vor 2007).</li>
+      <li><strong>Obere Stäbe und Ecken:</strong> Ein Zugstoß oben im Querschnitt bei einer
+      Betondeckung unter 2d oder an einer Ecke mit engem Abstand braucht den Faktor 1,4 —
+      etwa 816 mm für Beispiel 1. Treffen beide Bedingungen zu, gilt der Faktor 2,0. Der
+      Rechner wendet diese Faktoren nicht an; sein Ergebnis selbst multiplizieren.</li>
+      <li><strong>Verdrahtung:</strong> Jeden Stoß an beiden Enden verdrahten, damit die Stäbe
+      beim Betonieren in Kontakt bleiben — ein loser Stoß ist ein versagter Stoß.</li>
+    </ul>
+    <h3 id="lap-vs-dev">Übergreifungslänge vs. Verankerungslänge</h3>
+    <div class="formula-table"><table>
+      <tr><th></th><th>Verankerungslänge (Ld)</th><th>Übergreifungslänge</th></tr>
+      <tr><td>Zweck</td><td>Einen Stab im Beton verankern, damit er seine volle Tragfähigkeit entwickelt</td><td>Zwei Stäbe überlappen, damit die Kraft vom einen auf den anderen übergeht</td></tr>
+      <tr><td>Formel</td><td>Ld = (d × 0,87 × fy) ÷ (4 × τbd)</td><td>Zug max(Ld; 30d); Druck max(Ld; 24d)</td></tr>
+      <tr><td>Mindestwert</td><td>Keiner über die Formel hinaus</td><td>30d Zug, 24d Druck</td></tr>
+      <tr><td>Zusätzliche Regeln</td><td>Haken- und Biege-Verankerungswerte</td><td>Staffelung (1,3 × Stoß), gerader Anteil, ≤ 50 % an einem Querschnitt</td></tr>
+      <tr><td>Beispiel (12 mm, Fe500, M25)</td><td>582,59 mm</td><td>582,59 mm Zug, 466,07 mm Druck</td></tr>
+    </table></div>
+    <p>Beide hängen zusammen, sind aber nicht austauschbar: Ein Stoß muss mindestens der
+    Verankerungslänge entsprechen, aber die Stoßregeln fügen eigene Bedingungen hinzu.
+    Für Ld allein den <a href="/de/verankerungslaengen-rechner">Verankerungslängen-Rechner</a>
+    verwenden.</p>
+    <h3 id="bar-schedule">Übergreifungen in der Stahlliste: Anzahl, Gewicht und Kosten</h3>
+    <p>Stöße sind kein Gratis-Stahl — sie müssen in den Schnittlängen stehen, sonst fehlt
+    auf der Baustelle Material.</p>
+    <ul>
+      <li><strong>Stöße zählen:</strong> Stücke = aufrunden(Lauflänge ÷ 12 m Stangenlänge),
+      Stöße je Stabstrang = Stücke − 1. Eine 25-m-Lauflänge braucht 3 Stücke, also
+      2 Stöße je Strang.</li>
+      <li><strong>Mehrlänge:</strong> Stöße je Strang × Stoßlänge. Bei den
+      Standardeinstellungen: 2 × 582,59 = 1165,18 mm je Strang; bei 10 Strängen sind das
+      11,65 m Mehrstahl.</li>
+      <li><strong>Mehrgewicht:</strong> Ein 12-mm-Stab wiegt 0,887 kg/m, also wiegt ein
+      Standardstoß 0,52 kg und 100 Stöße wiegen 51,68 kg.</li>
+      <li><strong>Mehrkosten:</strong> Bei 1,20 €/kg (Beispielpreis — aktuellen Preis
+      einholen) kosten 100 Standardstöße 62,01 € nur an Stahl, vor Schnittverschnitt.
+      Einen Verschnittzuschlag von 2–5 % auf die gestoßene Tonnage aufschlagen, nicht
+      stattdessen.</li>
+    </ul>
+    <p>Für eine vollständige Mengen- und Längenermittlung den
+    <a href="/de/bewehrungsmengen-rechner">Mengen- und Abnahmerechner</a> verwenden; für
+    die Kostenaufschlüsselung den <a href="/de/bewehrungskosten-rechner">Bewehrungskosten-Rechner</a>.</p>
+    <h3 id="not-included">Was der Rechner nicht berücksichtigt</h3>
+    <ul>
+      <li><strong>Stöße bei reiner Zugbeanspruchung.</strong> Bügel und Aufhängebewehrung
+      brauchen max(2Ld; 30d) — 1165,18 mm bei den Standardeinstellungen. Ld selbst
+      verdoppeln.</li>
+      <li><strong>Faktoren für obere Stäbe und Ecken.</strong> × 1,4 bei Deckung unter 2d
+      oder engen Ecken, × 2,0 wenn beides zutrifft.</li>
+      <li><strong>Staffelung und Lage.</strong> Die Staffelregel 1,3 × Stoßlänge und die
+      Verlegeregeln für Bauteile oben sind Detailentscheidungen, keine Rechenergebnisse.</li>
+      <li><strong>Glattstäbe.</strong> Der Rechner setzt Rippenstäbe voraus. Für Glattstäbe
+      τbd durch 1,6 teilen und Ld von Hand neu berechnen.</li>
+      <li><strong>Haken, Schweißungen und Muffen.</strong> Haken verankern Stabenden (siehe
+      den <a href="/de/haken-biege-schnittlaengen-rechner">Haken- & Biege-Rechner</a>);
+      geschweißte und mechanische Stöße folgen eigenen Regeln und sind über 32 mm die
+      einzige Option.</li>
+      <li><strong>ACI-318-Stöße.</strong> Stöße der Klasse A (1,0 × Ld) bzw. Klasse B
+      (1,3 × Ld) bei Zug und die ACI-Druckstoßformeln gehören zu einem anderen
+      Normensystem — dieser Rechner rechnet nach IS 456.</li>
+      <li><strong>Erdbebendetailplanung.</strong> IS 13920 ergänzt Umschnürungs- und
+      Lageregeln für Erdbebengebiete; die Projektpläne beachten.</li>
+      <li><strong>Stoßanzahl und -gewichte.</strong> Der Rechner liefert eine Stoßlänge,
+      nicht die Gesamtzahl, das Gewicht oder die Kosten für ein Bauteil — siehe Abschnitt
+      Stahlliste oben.</li>
+    </ul>
+    <h3 id="mistakes">Häufige Fehler</h3>
+    <ol class="howto">
+      <li><strong>Eine feste 50d-Regel für alles verwenden.</strong> 50d nähert nur Fe415/M20
+      bei Zug an (47,01d) und sonst nichts. Bei M40 verschwendet sie Stahl; bei schwachem
+      Beton mit Fe500 unterlappt sie um bis zu 12 % (56,64d bei M20 nötig). Je Güte rechnen.</li>
+      <li><strong>Den Zugstoß bei Druck verwenden oder umgekehrt.</strong> Druckstöße sind
+      0,8 × die Zugstöße bei gleichen Güten. Wer den Druckwert in einer Zugzone verwendet,
+      unterlappt den Stoß um 20 %.</li>
+      <li><strong>Die Verbundspannung für Glattstäbe bei Rippenstäben verwenden.</strong> Das
+      unterschätzt τbd um 60 % und überschätzt den Stoß um 60 % — oder, andersherum
+      übernommen, unterschätzt den tatsächlichen Bedarf. Dieser Rechner wendet die
+      60-%-Erhöhung bereits an.</li>
+      <li><strong>Den Mindestwert 30d/24d vergessen.</strong> Der Stoß ist max(Ld;
+      Mindestwert), nicht Ld allein. Bei Fe250/M40 beträgt Ld nur 214,64 mm, der Stoß aber
+      trotzdem 360,00 mm.</li>
+      <li><strong>Alle Stäbe am selben Querschnitt oder im größten Moment stoßen.</strong>
+      Gebündelte Stöße erzeugen eine Schwächeebene und so eng liegenden Stahl, dass der
+      Beton nicht herumfließen kann. Mindestens 1,3 × die Stoßlänge versetzen und Stöße
+      aus den Bereichen größter Momente heraushalten.</li>
+    </ol>
+    <p>Zuletzt geprüft: Oktober 2026.</p>`
+}
+},
+    { id:"hook", slug:"rebar-hook-bend-cutting-length-calculator", cat:"Detailing",
     metaTitle:"Hook & Bend Cutting Length Calculator — 9d Hooks",
     h1:"Rebar Hook, Bend & Cutting Length Calculator",
     desc:"Cutting length from straight length, standard 9d hooks and bend deductions. Get the exact length to cut in seconds, free, with worked examples.",
