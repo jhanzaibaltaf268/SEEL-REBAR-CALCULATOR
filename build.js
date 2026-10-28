@@ -1220,9 +1220,109 @@ const PAGES = [
           ["Can I use this calculator for beams, columns and walls?","Yes — any single width works: enter the member width, cover and target spacing. For a two-way slab mat, use the slab calculator, which counts both directions."],
           ["What if my spacing is too tight?","If the clear gap falls below the minimum, switch to smaller bars (more bars, smaller diameter, larger gaps) or widen the member. Do not just delete bars — that changes the steel area the design relies on."],
           ["Does spacing affect the amount of steel?","Yes, directly. Tighter spacing means more bars across the same width, and the total length and weight grow with the count. Compare the desired-spacing table above: 100 mm needs 30 bars where 300 mm needs 10 on the same width."],
-          ["Can I use imperial units?","The calculator takes millimetres, but the conversions are direct: 12 mm is a #4 bar, 150 mm is about 6 in, 50 mm is 2 in, and 3,000 mm is 9.84 ft. Convert first, then enter millimetres."]] },
-
-  { id:"develop", slug:"rebar-development-length-calculator", cat:"Detailing",
+          ["Can I use imperial units?","The calculator takes millimetres, but the conversions are direct: 12 mm is a #4 bar, 150 mm is about 6 in, 50 mm is 2 in, and 3,000 mm is 9.84 ft. Convert first, then enter millimetres."]] ,
+    de: {
+  metaTitle: "Bewehrungsabstand-Rechner — Stabanzahl & Achsabstand gratis",
+  desc: "Bewehrungsabstand-Rechner: Stabanzahl, tatsächlichen Abstand und lichten Abstand über jede Breite. Beispiel: 3.000 mm = 20 Stäbe, 152,63 mm. Kostenlos.",
+  formula: "Stabanzahl = floor((Breite − 2 × Betondeckung) ÷ Abstand) + 1. Tatsächlicher Abstand = bewehrte Breite ÷ (Stabanzahl − 1).",
+  kw: "bewehrungsabstand rechner, bewehrungsabstand berechnen, stababstand rechner, bewehrung abstand formel",
+  howto: ["Gesamtbreite und Betondeckung auf jeder Seite eingeben.", "Gewünschten Abstand eingeben (Achsabstand).", "Stabgröße wählen — sie bestimmt den lichten Abstand.", "Stabanzahl, erreichten tatsächlichen Abstand und lichten Abstand ablesen.", "Tatsächlichen Abstand vor dem Festlegen der Verlegung mit den Normwerten unten vergleichen."],
+  faqs: [["Wie berechnet man den Bewehrungsabstand?", "Betondeckung auf beiden Seiten der Breite abziehen, durch den gewünschten Abstand teilen und eins für die Stabanzahl addieren: Stäbe = floor((Breite − 2 × Betondeckung) ÷ Abstand) + 1. Dann gleichmäßig neu verteilen: tatsächlicher Abstand = bewehrte Breite ÷ (Stäbe − 1)."],
+          ["Wie groß ist der Mindestabstand zwischen Bewehrungsstäben?", "Der lichte Abstand muss mindestens dem größten der folgenden Werte entsprechen: 25 mm (1 in), ein Stabdurchmesser oder 1,33 × größte Korngröße (ACI 318). Bei 12-mm-Stäben mit üblicher Gesteinskörnung sind meist 25 mm maßgebend — prüfen Sie Ihre Norm und Ihre Korngröße."],
+          ["Warum unterscheidet sich der tatsächliche Abstand vom eingegebenen Abstand?", "Weil Stäbe nur als ganze Zahlen gleichmäßig verteilt werden können. Der Rechner rundet die Anzahl auf und teilt die bewehrte Breite neu auf, sodass der tatsächliche Abstand meist etwas größer ist als gewünscht — aus 150 mm gewünscht werden 152,63 mm bei der Standardbreite von 3.000 mm."],
+          ["Was ist der Unterschied zwischen Achsabstand und lichtem Abstand?", "Der Achsabstand (Achs-zu-Achs-Abstand) misst von Stabmitte zu Stabmitte; der lichte Abstand ist der freie Raum zwischen den Stabflächen, also der Achsabstand minus ein Stabdurchmesser. Normen begrenzen den lichten Abstand am unteren Ende und den Achsabstand am oberen Ende."],
+          ["Wie groß sollte die Betondeckung sein?", "Platten auf dem Erdreich typisch 40–50 mm, gegen Erdreich betoniert 75 mm, geschalte Balken und Stützen 40 mm oder wie gezeichnet. Verwenden Sie immer den Wert aus der Zeichnung, wenn einer angegeben ist — die Betondeckung schützt den Stahl vor Korrosion und Brand."],
+          ["Welcher Höchstabstand ist zulässig?", "Für Platten und Balken begrenzt ACI 318 den Abstand der Hauptbewehrung auf den kleineren Wert aus 3 × Plattendicke oder 450 mm (18 in). Bei einer 150-mm-Platte liegt diese Grenze bei 450 mm, bei einer 100-mm-Platte bei 300 mm."],
+          ["Kann ich diesen Rechner für Balken, Stützen und Wände verwenden?", "Ja — jede einzelne Breite funktioniert: Geben Sie Bauteilbreite, Betondeckung und Zielabstand ein. Für eine zweilagige Plattenmatte verwenden Sie den Plattenrechner, der beide Richtungen zählt."],
+          ["Was tun, wenn mein Abstand zu eng ist?", "Fällt der lichte Abstand unter das Minimum, wechseln Sie zu kleineren Stäben (mehr Stäbe, kleinerer Durchmesser, größere Lücken) oder verbreitern Sie das Bauteil. Streichen Sie nicht einfach Stäbe — das verändert die Stahlfläche, auf die die Bemessung angewiesen ist."],
+          ["Beeinflusst der Abstand die Stahlmenge?", "Ja, direkt. Engerer Abstand bedeutet mehr Stäbe über dieselbe Breite, und Gesamtlänge und Gewicht wachsen mit der Anzahl. Vergleichen Sie die Tabelle zum gewünschten Abstand oben: 100 mm erfordern 30 Stäbe, wo 300 mm nur 10 auf derselben Breite benötigen."],
+          ["Kann ich imperiale Einheiten verwenden?", "Der Rechner rechnet in Millimetern, aber die Umrechnungen sind direkt: 12 mm entsprechen einem #4-Stab, 150 mm etwa 6 in, 50 mm 2 in und 3.000 mm 9,84 ft. Rechnen Sie zuerst um und geben Sie dann Millimeter ein."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So verwenden Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: 3.000 mm Breite (Standardwerte)</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: 4.000 mm Breite</a></li>
+      <li><a href="#desired-table">Gewünschter Abstand vs. tatsächlicher Abstand</a></li>
+      <li><a href="#cover-table">Leitfaden zur Betondeckung</a></li>
+      <li><a href="#code-table">Abstandsprüfungen nach Norm (ACI 318)</a></li>
+      <li><a href="#member-table">Typische Abstände je Bauteil</a></li>
+      <li><a href="#imperial">Metrische und imperiale Einheiten</a></li>
+      <li><a href="#not-included">Was der Rechner nicht enthält</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<p><strong>Warum zweimal Betondeckung abziehen?</strong> Die Stäbe enden eine Betondeckung vor jeder Kante, sodass die Breite, die sie tatsächlich überspannen, die Gesamtbreite minus zwei Betondeckungen ist — das ist die bewehrte Breite. <strong>Warum +1?</strong> Stäbe sitzen an beiden Enden der bewehrten Breite plus einer je Abstandsintervall — ohne das +1 würde ein Stab fehlen. <strong>Warum ist der tatsächliche Abstand nicht der Abstand, den Sie eingegeben haben?</strong> Stäbe müssen ganze Zahlen sein und gleichmäßig verteilt werden. Der Rechner rundet die Anzahl auf den nächsten ganzen Stab auf und verteilt sie neu, sodass der tatsächliche Abstand meist etwas größer ist als der gewünschte Abstand (siehe Tabelle unten).</p>
+    <h3 id="example-1">Rechenbeispiel 1: 3.000 mm Breite (Standardwerte)</h3>
+    <p>Breite 3.000 mm, Betondeckung 50 mm je Seite, gewünschter Abstand 150 mm, 12-mm-Stäbe. Dies sind die Werte, mit denen der Rechner startet, sodass Sie das Ergebnis sofort prüfen können:</p>
+    <ol class="howto"><li>Bewehrte Breite: 3.000 − 2 × 50 = 2.900 mm.</li><li>Stabanzahl: floor(2.900 ÷ 150) + 1 = 19 + 1 = 20 Stäbe.</li><li>Tatsächlicher Achsabstand: 2.900 ÷ (20 − 1) = 152,63 mm — etwas mehr als die gewünschten 150 mm, weil 19 Zwischenräume 2.900 mm abdecken müssen.</li><li>Lichter Abstand zwischen den Stäben: 152,63 − 12 = 140,63 mm.</li></ol>
+    <p>Probieren Sie es selbst: Geben Sie dieselben Zahlen oben in den Rechner ein, und Sie erhalten dasselbe Ergebnis.</p>
+    <h3 id="example-2">Rechenbeispiel 2: 4.000 mm Breite</h3>
+    <p>Breite 4.000 mm, Betondeckung 50 mm, gewünschter Abstand 200 mm, 16-mm-Stäbe:</p>
+    <ol class="howto"><li>Bewehrte Breite: 4.000 − 2 × 50 = 3.900 mm.</li><li>Stabanzahl: floor(3.900 ÷ 200) + 1 = 19 + 1 = 20 Stäbe.</li><li>Tatsächlicher Achsabstand: 3.900 ÷ 19 = 205,26 mm.</li><li>Lichter Abstand: 205,26 − 16 = 189,26 mm.</li></ol>
+    <p>Gleiche Stabanzahl wie in Beispiel 1, anderer Abstand — die Anzahl folgt aus Breite und Zielabstand zusammen, niemals aus einem allein.</p>
+    <h3 id="desired-table">Gewünschter Abstand vs. tatsächlicher Abstand</h3>
+    <p>Jedes Mal dasselbe Bauteil (3.000 mm Breite, 50 mm Betondeckung, 12-mm-Stäbe) — nur der gewünschte Abstand ändert sich:</p>
+    <div class="formula-table"><table>
+      <tr><th>Gewünschter Abstand</th><th>Stäbe</th><th>Tatsächlicher Achsabstand</th><th>Lichter Abstand</th></tr>
+      <tr><td>100 mm</td><td>30</td><td>100,00 mm</td><td>88,00 mm</td></tr>
+      <tr><td>150 mm</td><td>20</td><td>152,63 mm</td><td>140,63 mm</td></tr>
+      <tr><td>175 mm</td><td>17</td><td>181,25 mm</td><td>169,25 mm</td></tr>
+      <tr><td>200 mm</td><td>15</td><td>207,14 mm</td><td>195,14 mm</td></tr>
+      <tr><td>300 mm</td><td>10</td><td>322,22 mm</td><td>310,22 mm</td></tr>
+    </table></div>
+    <p>Das Muster: Der tatsächliche Abstand ist immer gleich groß oder größer als der gewünschte (er stimmt nur exakt überein, wenn sich die Breite glatt teilen lässt, wie hier bei 100 mm). Überschreitet der tatsächliche Abstand einen Normhöchstwert, engen Sie den gewünschten Abstand ein und prüfen Sie erneut — akzeptieren Sie niemals einfach das erste Ergebnis.</p>
+    <h3 id="cover-table">Leitfaden zur Betondeckung</h3>
+    <div class="formula-table"><table>
+      <tr><th>Situation</th><th>Typische Betondeckung je Seite</th></tr>
+      <tr><td>Platte auf dem Erdreich</td><td>40–50 mm (etwa 1,5–2 in)</td></tr>
+      <tr><td>Gegen Erdreich betoniert (Fundamente)</td><td>75 mm (3 in)</td></tr>
+      <tr><td>Balken, Stützen, Wände (geschalt)</td><td>40 mm oder wie gezeichnet</td></tr>
+    </table></div>
+    <p>Die Betondeckung ist der Abstand von der Betonoberfläche zum Stab — sie schützt den Stahl vor Korrosion und Brand. Verwenden Sie immer den Wert aus Ihrer Zeichnung, wenn einer angegeben ist; diese Tabelle dient nur für frühe Schätzungen.</p>
+    <h3 id="code-table">Abstandsprüfungen nach Norm (ACI 318)</h3>
+    <p>Zwei Prüfungen entscheiden, ob ein Abstand zulässig ist. Es sind Normgrenzen, keine Rechnereingaben — wenden Sie sie auf die Ergebnisse des Rechners an:</p>
+    <div class="formula-table"><table>
+      <tr><th>Prüfung</th><th>Regel</th><th>Ergebnis Beispiel 1</th></tr>
+      <tr><td>Mindestlicher Abstand</td><td>Der größere Wert aus 25 mm (1 in), einem Stabdurchmesser oder 1,33 × Korngröße</td><td>Lichter Abstand 140,63 mm ≥ max(25, 12) — erfüllt</td></tr>
+      <tr><td>Höchstachsabstand (Platten, Balken)</td><td>Der kleinere Wert aus 3 × Plattendicke oder 450 mm (18 in)</td><td>Tatsächlich 152,63 mm ≤ 450 mm bei einer 150-mm-Platte — erfüllt</td></tr>
+    </table></div>
+    <p>Das Minimum existiert, damit Beton um die Stäbe fließen und sich mit ihnen verbinden kann; das Maximum existiert, um Rissbildung zu begrenzen und den Stahl zu verteilen. Schlägt eine der Prüfungen fehl, ändern Sie Stabgröße, Abstand oder Bauteilbreite — der Rechner allein setzt sie nicht durch.</p>
+    <h3 id="member-table">Typische Abstände je Bauteil</h3>
+    <div class="formula-table"><table>
+      <tr><th>Bauteil</th><th>Typischer Abstand</th></tr>
+      <tr><td>Wohnungsbauplatten</td><td>300–450 mm (12–18 in) Achsabstand</td></tr>
+      <tr><td>Einfahrten, schwere Lasten</td><td>300 mm (12 in) Achsabstand</td></tr>
+      <tr><td>Fundamente</td><td>150–300 mm (6–12 in) Achsabstand</td></tr>
+      <tr><td>Wände</td><td>300 mm (12 in) vertikal und horizontal</td></tr>
+    </table></div>
+    <p>Dies sind Ausgangsbereiche für Schätzungen. Die Bemessung — Lasten, Dicke, Stabgröße — legt den echten Abstand fest, und die Normprüfungen oben gelten weiterhin.</p>
+    <h3 id="imperial">Metrische und imperiale Einheiten</h3>
+    <p>Dieser Rechner rechnet in Millimetern. Wenn Ihre Zeichnungen Fuß und Zoll verwenden:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Imperial (ca.)</th></tr>
+      <tr><td>3.000 mm Breite</td><td>9,84 ft (118,11 in)</td></tr>
+      <tr><td>150 mm Abstand</td><td>etwa 6 in</td></tr>
+      <tr><td>50 mm Betondeckung</td><td>2 in</td></tr>
+      <tr><td>12-mm-Stab</td><td>#4-Stab (1/2 in)</td></tr>
+    </table></div>
+    <p>Rechnen Sie zuerst um und geben Sie dann Millimeter in den Rechner ein — mischen Sie keine Einheiten in einer Berechnung.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Stablänge und Gewicht.</strong> Dieses Tool legt eine Breite aus. Für Längen und Gewichte verwenden Sie den <a href="/de/bewehrungsrechner-fuer-betonplatten">Plattenrechner</a> oder den <a href="/de/bewehrungsgewicht-rechner">Gewichtsrechner</a>.</li>
+      <li><strong>Zweilagige Netze.</strong> Eine Plattenmatte verläuft in beide Richtungen — dieses Tool legt jeweils eine Richtung aus. Der <a href="/de/bewehrungsrechner-fuer-betonplatten">Plattenrechner</a> zählt beide.</li>
+      <li><strong>Erforderliche Stahlfläche.</strong> Dieses Tool bemisst keine Bewehrung aus Lasten. Wenn Ihre Bemessung eine erforderliche Stahlfläche vorgibt, ist das eine andere Berechnung als diese Abstandsverlegung.</li>
+      <li><strong>Übergreifungs-, Haken- und Biegelängen.</strong> Stoß- und Verankerungsdetails kommen aus dem <a href="/de/uebergreifungslaengen-rechner">Übergreifungsrechner</a> und dem <a href="/de/haken-biege-schnittlaengen-rechner">Hakenrechner</a>.</li>
+      <li><strong>Korngröße.</strong> Die Mindestabstandsprüfung benötigt die größte Korngröße; dieses Tool fragt sie nicht ab, führen Sie diese Prüfung also von Hand durch.</li>
+    </ul>
+    <h3 id="mistakes">5 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Lichten Abstand statt Achsabstand messen.</strong> Der Abstand ist der Achsabstand. Wer Fläche zu Fläche misst, zählt zu wenige Stäbe.</li><li><strong>Betondeckung auf der zweiten Seite vergessen.</strong> Die bewehrte Breite verliert an beiden Kanten Betondeckung, nicht nur an einer. Ein einmaliges Abziehen übertreibt Breite und Stabanzahl.</li><li><strong>Stabanzahl abrunden.</strong> Die Anzahl wird immer aufgerundet (floor + 1). Abrunden lässt die letzte Lücke breiter als bemessen.</li><li><strong>Meter statt Millimeter eingeben.</strong> Breite, Betondeckung und Abstand sind hier alle in Millimetern. Die Eingabe von 3 statt 3.000 macht das Ergebnis vollständig unbrauchbar.</li><li><strong>Höchstabstand ignorieren.</strong> Eine Verlegung kann die Anzahl erfüllen und trotzdem den Höchstwert von 3 × Dicke / 450 mm bei dünnen Platten verletzen — führen Sie immer die Normprüfungen durch.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Die Normprüfungen fassen die ACI-318-Abstandsregeln nur zur Orientierung zusammen — prüfen Sie immer anhand Ihrer statischen Pläne und der geltenden Norm.</p>`
+}
+},
+    { id:"develop", slug:"rebar-development-length-calculator", cat:"Detailing",
     metaTitle:"Development Length Calculator (Ld) — IS 456, Free",
     h1:"Rebar Development Length Calculator",
     desc:"Anchorage length Ld for deformed bars by the IS 456 formula, with concrete and steel grade options and bar-size tables. Free, with worked examples.",
