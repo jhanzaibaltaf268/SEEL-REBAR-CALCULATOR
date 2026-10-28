@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Balkarmeringskalkylator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"sv","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Över- och understänger samt byglar för en balk. Ger totalvikten."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hur fungerar Balkarmeringskalkylator?","acceptedAnswer":{"@type":"Answer","text":"Över- och understänger samt byglar för en balk. Ger totalvikten. Beräkningen uppdateras automatiskt."}},{"@type":"Question","name":"Är den gratis och korrekt?","acceptedAnswer":{"@type":"Answer","text":"Ja. Den använder branschstandardformler och är helt gratis, utan registrering."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Välj stångdiameter och enheter."},{"@type":"HowToStep","position":2,"text":"Ange mått och antal."},{"@type":"HowToStep","position":3,"text":"Läs av resultatet direkt."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hem","item":"https://steelrebarcalculator.com/sv/"},{"@type":"ListItem","position":2,"name":"Balkarmeringskalkylator","item":"https://steelrebarcalculator.com/sv/balkarmeringskalkylator"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="beam">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/sv/armeringstonnagekalkylator" data-id="tonnage">Armeringstonnagekalkylator</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Balkarmeringskalkylator</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -163,6 +164,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Så använder du: Balkarmeringskalkylator</h2>
     <ol class="howto"><li>Välj stångdiameter och enheter.</li><li>Ange mått och antal.</li><li>Läs av resultatet direkt.</li></ol>
@@ -170,6 +172,7 @@
     <p class="formula-callout">Main steel = (top + bottom bars) × length × kg/m. Stirrups = floor(length ÷ spacing) + 1 at the stirrup cutting length.</p>
     <p><a href="/sv/#charts">Se hela vikttabellen (kg/m och lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Balkarmeringskalkylator — FAQ</h2>
@@ -252,5 +255,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>
