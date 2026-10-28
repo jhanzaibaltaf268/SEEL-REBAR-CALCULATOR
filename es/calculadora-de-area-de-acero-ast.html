@@ -51,8 +51,8 @@
 <meta property="og:description" content="Área de una barra y área total de acero Ast, y el porcentaje de acero." />
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Área de Acero (Ast)","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"es","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Área de una barra y área total de acero Ast, y el porcentaje de acero."}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cómo funciona la Calculadora de Área de Acero (Ast)?","acceptedAnswer":{"@type":"Answer","text":"Área de una barra y área total de acero Ast, y el porcentaje de acero. El cálculo se actualiza automáticamente al cambiar los datos."}},{"@type":"Question","name":"¿Es gratuita y precisa?","acceptedAnswer":{"@type":"Answer","text":"Sí. Usa fórmulas estándar del sector y es totalmente gratuita, sin registro."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Elija el diámetro de la barra y las unidades."},{"@type":"HowToStep","position":2,"text":"Introduzca las dimensiones y la cantidad."},{"@type":"HowToStep","position":3,"text":"Lea el resultado al instante."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es el área de acero Ast?","acceptedAnswer":{"@type":"Answer","text":"Es la suma de las áreas de sección de todas las barras de una sección de hormigón."}},{"@type":"Question","name":"¿Para qué sirve el porcentaje de acero?","acceptedAnswer":{"@type":"Answer","text":"Compara el área de acero con el área de la sección de hormigón. Las normas fijan límites mínimos y máximos. Verifíquelos en su proyecto."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Seleccione el diámetro de la barra."},{"@type":"HowToStep","position":2,"text":"Introduzca el número de barras y, si lo necesita, el ancho y el peralte de la sección."},{"@type":"HowToStep","position":3,"text":"Lea el área de una barra, el área total Ast y el porcentaje de acero."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://steelrebarcalculator.com/es/"},{"@type":"ListItem","position":2,"name":"Calculadora de Área de Acero (Ast)","item":"https://steelrebarcalculator.com/es/calculadora-de-area-de-acero-ast"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -165,9 +165,9 @@
 
 
   <section class="content-block">
-    <h2>Cómo usar: Calculadora de Área de Acero</h2>
-    <ol class="howto"><li>Elija el diámetro de la barra y las unidades.</li><li>Introduzca las dimensiones y la cantidad.</li><li>Lea el resultado al instante.</li></ol>
-    <h3>Fórmula</h3>
+    <h2 id="how-to">Cómo usar: Calculadora de Área de Acero</h2>
+    <ol class="howto"><li>Seleccione el diámetro de la barra.</li><li>Introduzca el número de barras y, si lo necesita, el ancho y el peralte de la sección.</li><li>Lea el área de una barra, el área total Ast y el porcentaje de acero.</li></ol>
+    <h3 id="formula">Fórmula</h3>
     <p class="formula-callout">Area of one bar = π/4 × d². Ast = number of bars × area. Steel % = Ast ÷ (b × D) × 100.</p>
     <p><a href="/es/#charts">Ver la tabla completa de pesos (kg/m y lb/ft) →</a></p>
   </section>
@@ -175,8 +175,8 @@
 
   <section id="faq" class="content-block">
     <h2>Calculadora de Área de Acero — Preguntas</h2>
-    <details open><summary>¿Cómo funciona la Calculadora de Área de Acero (Ast)?</summary><p>Área de una barra y área total de acero Ast, y el porcentaje de acero. El cálculo se actualiza automáticamente al cambiar los datos.</p></details>
-    <details><summary>¿Es gratuita y precisa?</summary><p>Sí. Usa fórmulas estándar del sector y es totalmente gratuita, sin registro.</p></details>
+    <details open><summary>¿Qué es el área de acero Ast?</summary><p>Es la suma de las áreas de sección de todas las barras de una sección de hormigón.</p></details>
+    <details><summary>¿Para qué sirve el porcentaje de acero?</summary><p>Compara el área de acero con el área de la sección de hormigón. Las normas fijan límites mínimos y máximos. Verifíquelos en su proyecto.</p></details>
   </section>
 </main>
 
@@ -254,6 +254,54 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
-
+<script>(function(){
+  var head = document.querySelector('.site-header');
+  if (head) {
+    var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
+    window.addEventListener('scroll', onScroll, {passive: true}); onScroll();
+  }
+  var tabsEl = document.getElementById('calc-tabs');
+  var panelEl = document.querySelector('.calc-panel');
+  var tabsScrolled = false;
+  function syncTabs(){
+    if (!tabsEl || !panelEl) return;
+    if (window.innerWidth > 820) {
+      tabsEl.style.maxHeight = panelEl.offsetHeight + 'px';
+      tabsEl.style.overflowY = 'auto';
+      if (!tabsScrolled) {
+        tabsScrolled = true;
+        var at = tabsEl.querySelector('.tab.active');
+        if (at) at.scrollIntoView({block: 'nearest'});
+      }
+    } else {
+      tabsEl.style.maxHeight = '';
+      tabsEl.style.overflowY = '';
+    }
+  }
+  syncTabs();
+  window.addEventListener('resize', syncTabs);
+  window.addEventListener('load', syncTabs);
+  var total = document.getElementById('r-total');
+  var main = document.querySelector('.result-main');
+  if (total && main && 'MutationObserver' in window) {
+    var last = '';
+    new MutationObserver(function(){
+      var v = total.textContent;
+      if (v !== last) {
+        last = v;
+        main.classList.remove('pop'); void main.offsetWidth; main.classList.add('pop');
+        syncTabs();
+      }
+    }).observe(total, {childList: true, characterData: true, subtree: true});
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('inview'); io.unobserve(e.target); } });
+    }, {threshold: 0.12, rootMargin: '0px 0px 10% 0px'});
+    document.querySelectorAll('.content-block, .related, .site-footer').forEach(function(el){
+      el.classList.add('reveal'); io.observe(el);
+    });
+  }
+})();</script>
 </body>
 </html>
