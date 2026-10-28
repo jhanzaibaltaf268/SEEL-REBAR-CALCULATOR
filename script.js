@@ -627,6 +627,36 @@ const hrefFor = id => {
 /* ---- i18n: translate display strings (fallback to English) ---- */
 const LANG = (typeof window!=="undefined" && window.PAGE_LANG) || "en";
 const I18N = (typeof window!=="undefined" && window.REBAR_I18N) || null;
+
+/* ---- browser-language redirect: German browsers landing on English pages ----
+   First visit only: once a visitor has chosen English (flag set, or arriving
+   from a /de/ page via the language switcher), never redirect them again. */
+function langRedirectTarget(){
+  if (typeof window === "undefined") return null;
+  if (LANG !== "en") return null;
+  var nav = (typeof navigator !== "undefined" && (navigator.language || (navigator.languages && navigator.languages[0]))) || "";
+  if (!/^de(-|$)/i.test(nav)) return null;
+  var path = window.location.pathname || "/";
+  var isHome = path === "/" || path === "/index" || path === "/index.html";
+  var calcId = (typeof window !== "undefined" && window.PAGE_CALC) || null;
+  var target = null;
+  if (calcId && SLUGS.de && SLUGS.de[calcId]) target = "/de/" + SLUGS.de[calcId];
+  else if (isHome) target = "/de/";
+  else return null;
+  var fromGerman = false;
+  try { fromGerman = (document.referrer || "").indexOf(window.location.origin + "/de/") === 0; } catch (e) {}
+  var done = false;
+  try { done = window.localStorage.getItem("rebar-lang-redirect") === "done"; } catch (e) {}
+  if (fromGerman && !done) { try { window.localStorage.setItem("rebar-lang-redirect", "done"); } catch (e) {} }
+  if (done || fromGerman) return null;
+  try { window.localStorage.setItem("rebar-lang-redirect", "done"); } catch (e) {}
+  return target;
+}
+(function(){
+  if (typeof window === "undefined") return;
+  var t = langRedirectTarget();
+  if (t) window.location.replace(t);
+})();
 function tr(s){                                    // glossary lookup for short UI
   if(LANG==="en" || !I18N) return s;
   const g = I18N.G[s];
