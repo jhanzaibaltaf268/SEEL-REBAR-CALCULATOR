@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Medence Vasalás Kalkulátor","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"hu","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Medencefal panel vasalása (oldalanként); a feneket adja hozzá a lemez eszközzel."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hogyan működik a Medence Vasalás Kalkulátor?","acceptedAnswer":{"@type":"Answer","text":"Medencefal panel vasalása (oldalanként); a feneket adja hozzá a lemez eszközzel. A számítás automatikusan frissül."}},{"@type":"Question","name":"Ingyenes és pontos?","acceptedAnswer":{"@type":"Answer","text":"Igen. Szabványos szakmai képleteket használ és teljesen ingyenes, regisztráció nélkül."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Válassza ki a vas átmérőjét és a mértékegységeket."},{"@type":"HowToStep","position":2,"text":"Adja meg a méreteket és a mennyiséget."},{"@type":"HowToStep","position":3,"text":"Olvassa le azonnal az eredményt."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Főoldal","item":"https://steelrebarcalculator.com/hu/"},{"@type":"ListItem","position":2,"name":"Medence Vasalás Kalkulátor","item":"https://steelrebarcalculator.com/hu/medence-vasalas-kalkulator"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="pool">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/hu/vasalas-tonna-kalkulator" data-id="tonnage">Vasalás Tonna Kalkulátor</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Medence Vasalás Kalkulátor</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -163,6 +164,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Használat: Medence Vasalás Kalkulátor</h2>
     <ol class="howto"><li>Válassza ki a vas átmérőjét és a mértékegységeket.</li><li>Adja meg a méreteket és a mennyiséget.</li><li>Olvassa le azonnal az eredményt.</li></ol>
@@ -170,6 +172,7 @@
     <p class="formula-callout">Same grid method as a wall: bars each way from spacing, summed × kg/m. Repeat per wall and add the floor.</p>
     <p><a href="/hu/#charts">Teljes tömegtáblázat megtekintése (kg/m és lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Medence Vasalás Kalkulátor — GYIK</h2>
@@ -252,5 +255,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

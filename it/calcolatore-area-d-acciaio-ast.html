@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calcolatore Area d'Acciaio (Ast)","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"it","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Area di una barra e area totale d'acciaio Ast, più la percentuale d'acciaio."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Come funziona il Calcolatore Area d'Acciaio (Ast)?","acceptedAnswer":{"@type":"Answer","text":"Area di una barra e area totale d'acciaio Ast, più la percentuale d'acciaio. Il calcolo si aggiorna automaticamente."}},{"@type":"Question","name":"È gratuito e preciso?","acceptedAnswer":{"@type":"Answer","text":"Sì. Usa formule standard del settore ed è totalmente gratuito, senza registrazione."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Scegli il diametro della barra e le unità."},{"@type":"HowToStep","position":2,"text":"Inserisci dimensioni e quantità."},{"@type":"HowToStep","position":3,"text":"Leggi subito il risultato."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/it/"},{"@type":"ListItem","position":2,"name":"Calcolatore Area d'Acciaio (Ast)","item":"https://steelrebarcalculator.com/it/calcolatore-area-d-acciaio-ast"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="area">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/it/calcolatore-tonnellaggio-acciaio" data-id="tonnage">Calcolatore Tonnellaggio Acciaio</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Calcolatore Area d'Acciaio (Ast)</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -162,6 +163,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Come usare: Calcolatore Area d'Acciaio</h2>
     <ol class="howto"><li>Scegli il diametro della barra e le unità.</li><li>Inserisci dimensioni e quantità.</li><li>Leggi subito il risultato.</li></ol>
@@ -169,6 +171,7 @@
     <p class="formula-callout">Area of one bar = π/4 × d². Ast = number of bars × area. Steel % = Ast ÷ (b × D) × 100.</p>
     <p><a href="/it/#charts">Vedi la tabella pesi completa (kg/m e lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Calcolatore Area d'Acciaio — FAQ</h2>
@@ -251,5 +254,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>
