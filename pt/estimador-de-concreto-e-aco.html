@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Estimador de Concreto e Aço","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"pt","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Volume de concreto mais uma estimativa do aço usando uma taxa em kg/m³."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona a Estimador de Concreto e Aço?","acceptedAnswer":{"@type":"Answer","text":"Volume de concreto mais uma estimativa do aço usando uma taxa em kg/m³. O cálculo é atualizado automaticamente."}},{"@type":"Question","name":"É gratuita e precisa?","acceptedAnswer":{"@type":"Answer","text":"Sim. Usa fórmulas padrão do setor e é totalmente gratuita, sem cadastro."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Escolha a bitola da barra e as unidades."},{"@type":"HowToStep","position":2,"text":"Insira as dimensões e a quantidade."},{"@type":"HowToStep","position":3,"text":"Veja o resultado na hora."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://steelrebarcalculator.com/pt/"},{"@type":"ListItem","position":2,"name":"Estimador de Concreto e Aço","item":"https://steelrebarcalculator.com/pt/estimador-de-concreto-e-aco"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="concrete">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/pt/calculadora-de-tonelagem-de-aco" data-id="tonnage">Calculadora de Tonelagem de Aço</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Estimador de Concreto e Aço</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -164,6 +165,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Como usar: Estimador de Concreto e Aço</h2>
     <ol class="howto"><li>Escolha a bitola da barra e as unidades.</li><li>Insira as dimensões e a quantidade.</li><li>Veja o resultado na hora.</li></ol>
@@ -171,6 +173,7 @@
     <p class="formula-callout">Volume = L × W × thickness. Steel = volume × ratio (typically 80–120 kg/m³ for slabs).</p>
     <p><a href="/pt/#charts">Ver a tabela completa de pesos (kg/m e lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Estimador de Concreto e Aço — FAQ</h2>
@@ -253,5 +256,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

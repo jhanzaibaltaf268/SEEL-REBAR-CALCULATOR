@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulator Armaturne Mreže","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"sl","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Izračunajte pravokotno mrežo: palice po smeri, križišča in težo."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kako deluje Kalkulator Armaturne Mreže?","acceptedAnswer":{"@type":"Answer","text":"Izračunajte pravokotno mrežo: palice po smeri, križišča in težo. Izračun se samodejno posodablja."}},{"@type":"Question","name":"Je brezplačen in natančen?","acceptedAnswer":{"@type":"Answer","text":"Da. Uporablja standardne formule stroke in je popolnoma brezplačen, brez registracije."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Izberite premer palice in enote."},{"@type":"HowToStep","position":2,"text":"Vnesite dimenzije in količino."},{"@type":"HowToStep","position":3,"text":"Takoj odčitajte rezultat."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://steelrebarcalculator.com/sl/"},{"@type":"ListItem","position":2,"name":"Kalkulator Armaturne Mreže","item":"https://steelrebarcalculator.com/sl/kalkulator-armaturne-mreze"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="mat">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/sl/kalkulator-tonaze-armature" data-id="tonnage">Kalkulator Tonaže Armature</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Kalkulator Armaturne Mreže</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -164,6 +165,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Kako uporabljati: Kalkulator Armaturne Mreže</h2>
     <ol class="howto"><li>Izberite premer palice in enote.</li><li>Vnesite dimenzije in količino.</li><li>Takoj odčitajte rezultat.</li></ol>
@@ -171,6 +173,7 @@
     <p class="formula-callout">Bars each way = floor((dimension − 2 × offset) ÷ spacing) + 1. Intersections = nx × ny.</p>
     <p><a href="/sl/#charts">Oglejte si celotno tabelo tež (kg/m in lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Kalkulator Armaturne Mreže — Pogosta vprašanja</h2>
@@ -253,5 +256,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

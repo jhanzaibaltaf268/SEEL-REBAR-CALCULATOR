@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulator Rozstawu Prętów","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"pl","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Wyznacz liczbę prętów i rzeczywisty rozstaw (o/o) na danej szerokości."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Jak działa Kalkulator Rozstawu Prętów?","acceptedAnswer":{"@type":"Answer","text":"Wyznacz liczbę prętów i rzeczywisty rozstaw (o/o) na danej szerokości. Obliczenia aktualizują się automatycznie."}},{"@type":"Question","name":"Czy jest darmowy i dokładny?","acceptedAnswer":{"@type":"Answer","text":"Tak. Korzysta ze standardowych wzorów branżowych i jest całkowicie darmowy, bez rejestracji."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Wybierz średnicę pręta i jednostki."},{"@type":"HowToStep","position":2,"text":"Wprowadź wymiary i ilość."},{"@type":"HowToStep","position":3,"text":"Odczytaj wynik natychmiast."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://steelrebarcalculator.com/pl/"},{"@type":"ListItem","position":2,"name":"Kalkulator Rozstawu Prętów","item":"https://steelrebarcalculator.com/pl/kalkulator-rozstawu-pretow"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="spacing">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/pl/kalkulator-tonazu-zbrojenia" data-id="tonnage">Kalkulator Tonażu Zbrojenia</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Kalkulator Rozstawu Prętów</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -166,6 +167,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Jak używać: Kalkulator Rozstawu Prętów</h2>
     <ol class="howto"><li>Wybierz średnicę pręta i jednostki.</li><li>Wprowadź wymiary i ilość.</li><li>Odczytaj wynik natychmiast.</li></ol>
@@ -173,6 +175,7 @@
     <p class="formula-callout">Number of bars = floor((width − 2 × cover) ÷ spacing) + 1. Actual spacing = reinforced width ÷ (bars − 1).</p>
     <p><a href="/pl/#charts">Zobacz pełną tabelę mas (kg/m i lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Kalkulator Rozstawu Prętów — FAQ</h2>
@@ -255,5 +258,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

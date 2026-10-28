@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Quantidade de Aço","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"pt","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estime o peso de aço por área a partir do espaçamento — kg/m², kg/ft² e total."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como funciona a Calculadora de Quantidade de Aço?","acceptedAnswer":{"@type":"Answer","text":"Estime o peso de aço por área a partir do espaçamento — kg/m², kg/ft² e total. O cálculo é atualizado automaticamente."}},{"@type":"Question","name":"É gratuita e precisa?","acceptedAnswer":{"@type":"Answer","text":"Sim. Usa fórmulas padrão do setor e é totalmente gratuita, sem cadastro."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Escolha a bitola da barra e as unidades."},{"@type":"HowToStep","position":2,"text":"Insira as dimensões e a quantidade."},{"@type":"HowToStep","position":3,"text":"Veja o resultado na hora."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://steelrebarcalculator.com/pt/"},{"@type":"ListItem","position":2,"name":"Calculadora de Quantidade de Aço","item":"https://steelrebarcalculator.com/pt/calculadora-de-quantidade-de-aco"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="quantity">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/pt/calculadora-de-tonelagem-de-aco" data-id="tonnage">Calculadora de Tonelagem de Aço</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Calculadora de Quantidade de Aço</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -162,6 +163,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Como usar: Calculadora de Quantidade de Aço</h2>
     <ol class="howto"><li>Escolha a bitola da barra e as unidades.</li><li>Insira as dimensões e a quantidade.</li><li>Veja o resultado na hora.</li></ol>
@@ -169,6 +171,7 @@
     <p class="formula-callout">Bar length per m² = 2 ÷ spacing(m). Weight/m² = that × kg/m. Total = weight/m² × area.</p>
     <p><a href="/pt/#charts">Ver a tabela completa de pesos (kg/m e lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Calculadora de Quantidade de Aço — FAQ</h2>
@@ -251,5 +254,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>
