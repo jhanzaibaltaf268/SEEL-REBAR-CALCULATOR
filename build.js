@@ -781,9 +781,88 @@ const PAGES = [
           ["How much does the concrete and steel cost?","Multiply each quantity by its local price. With example prices of €120/m³ for concrete and €1.20/kg for steel, the 5 m × 4 m slab costs €360.00 + €288.00 = €648.00 in materials. Get current local quotes before budgeting."],
           ["Does the calculator give me bar sizes and counts?","No — it gives total steel weight only. For bar sizes, counts, spacings and laps, use the slab, footing or mat calculator, which size the actual two-way grid."],
           ["What thickness should a slab be?","Residential ground slabs are commonly 100–150 mm; heavier or commercial slabs go thicker. Thickness drives volume directly — doubling it doubles the concrete — so it must come from the design, not from a guess."],
-          ["Can I use this for footings, beams and columns?","The volume maths works for any rectangular pour, and the ratio table above covers the common member types. But for beams and columns, a bar schedule from the detailing calculators is more precise than a kg/m³ estimate. A driveway is a slab pour — the <a href=\"/driveway-rebar-calculator\">driveway calculator</a> sizes its bar grid, while this estimator gives you the concrete volume and steel total."]] },
-
-  { id:"driveway", slug:"driveway-rebar-calculator", cat:"Estimating",
+          ["Can I use this for footings, beams and columns?","The volume maths works for any rectangular pour, and the ratio table above covers the common member types. But for beams and columns, a bar schedule from the detailing calculators is more precise than a kg/m³ estimate. A driveway is a slab pour — the <a href=\"/driveway-rebar-calculator\">driveway calculator</a> sizes its bar grid, while this estimator gives you the concrete volume and steel total."]] ,
+    de: {
+  metaTitle: "Beton- & Bewehrungs-Schätzer — Volumen & kg gratis",
+  desc: "Beton- & Bewehrungs-Schätzer: Betonvolumen in m³, yd³ und ft³ und Stahl nach kg/m³ berechnen. Beispiel: 5 m × 4 m Platte = 3,00 m³ und 240 kg. Kostenlos.",
+  formula: "Volumen = L × B × Dicke. Stahl = Volumen × Stahlgehalt (typisch 80–120 kg/m³ für Platten).",
+  kw: "beton- und bewehrungsrechner, beton bewehrung schätzer, betonvolumen und stahl berechnen",
+  howto: ["Länge und Breite in Metern eingeben.", "Dicke in Millimetern eingeben, nicht in Metern.", "Stahlgehalt (kg pro m³) für den Bauteiltyp festlegen.", "Volumen in m³, yd³ und ft³ sowie Stahl in kg und Tonnen ablesen.", "Vor der Bestellung einen Verschnitt-Zuschlag addieren — der Rechner gibt das reine Volumen an, nicht die Bestellmenge."],
+  faqs: [["Wie berechne ich das Betonvolumen?", "Länge × Breite × Dicke in einheitlichen Einheiten multiplizieren. Mit Metern und Millimetern: Volumen (m³) = Länge (m) × Breite (m) × Dicke (mm) ÷ 1.000. Beispiel: 5 × 4 × 150 mm = 3,00 m³."],
+          ["Wie viel Stahl pro m³ Beton?", "Rund 80–120 kg/m³ für Platten, 70–100 für Fundamente, 150–200 für Balken und 200–300 für Stützen — die Bemessung ist maßgebend. Der Standardwert des Rechners von 80 kg/m³ ist das untere Ende für Platten."],
+          ["Wie viel Beton brauche ich für eine 5 m × 4 m Platte?", "Bei 150 mm Dicke: 3,00 m³ (3,92 yd³, 105,94 ft³), plus geschätzt 240,00 kg Stahl bei 80 kg/m³. Vor der Bestellung 5–10 % addieren — 3,30 m³ bei einem Zuschlag von 10 %."],
+          ["Was ist der Stahlgehalt (kg/m³)?", "Die Kilogramm Bewehrung pro Kubikmeter Beton. Er macht aus einem Volumen eine Stahlschätzung ohne vollständige Bewehrungsliste: Stahl (kg) = Volumen (m³) × Stahlgehalt. Er ist eine Schätz-Abkürzung, kein Ersatz für die Bemessung."],
+          ["Wie viel Beton sollte ich zusätzlich bestellen?", "Ein Verschnitt-Zuschlag von 5–10 % ist üblich für Verschütten, ausbeulende Schalung und unebenen Untergrund. Für das Beispiel 5 m × 4 m: 3,00 m³ netto werden bei 10 % zu 3,30 m³ Bestellmenge."],
+          ["Wie rechne ich m³ in yd³ und ft³ um?", "Mit 1,30795 multiplizieren für yd³ und mit 35,3147 für ft³. Also 3,00 m³ = 3,92 yd³ = 105,94 ft³. Der Rechner zeigt alle drei automatisch an."],
+          ["Was kosten Beton und Stahl?", "Jede Menge mit ihrem örtlichen Preis multiplizieren. Mit Beispielpreisen von 120 €/m³ für Beton und 1,20 €/kg für Stahl kostet die 5 m × 4 m Platte 360,00 € + 288,00 € = 648,00 € an Material. Vor der Budgetierung aktuelle örtliche Angebote einholen."],
+          ["Gibt der Rechner Stabdurchmesser und Stückzahlen an?", "Nein — er gibt nur das Gesamtgewicht des Stahls an. Für Stabdurchmesser, Stückzahlen, Abstände und Übergreifungen den Platten-, Fundament- oder Matten-Rechner benutzen, die das tatsächliche zweilagige Netz bemessen."],
+          ["Wie dick sollte eine Platte sein?", "Wohnungs-Bodenplatten sind üblich 100–150 mm dick; schwerere oder gewerbliche Platten werden dicker. Die Dicke treibt das Volumen direkt — eine Verdopplung verdoppelt den Beton — also muss sie aus der Bemessung kommen, nicht aus einer Schätzung."],
+          ["Kann ich den Rechner für Fundamente, Balken und Stützen benutzen?", "Die Volumenrechnung funktioniert für jede rechteckige Schüttung, und die Tabelle oben deckt die üblichen Bauteiltypen ab. Für Balken und Stützen ist eine Bewehrungsliste aus den Detaillierungs-Rechnern aber genauer als eine kg/m³-Schätzung. Eine Einfahrt ist eine Platten-Schüttung — der <a href=\"/de/bewehrungsrechner-fuer-einfahrten\">Bewehrungsrechner für Einfahrten</a> bemisst deren Stabnetz, während dieser Schätzer das Betonvolumen und die Stahlgesamtmenge angibt."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So funktioniert der Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: 5 m × 4 m Platte</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: 6 m × 5 m Platte</a></li>
+      <li><a href="#ratio-table">Stahlgehalt-Tabelle (kg/m³)</a></li>
+      <li><a href="#waste">Mehr bestellen: der Verschnitt-Zuschlag</a></li>
+      <li><a href="#cost">Kosten schätzen</a></li>
+      <li><a href="#imperial">Metrische und imperiale Einheiten</a></li>
+      <li><a href="#not-included">Was der Rechner nicht enthält</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<p><strong>Warum ist die Dicke in Millimetern?</strong> Platten werden in mm gezeichnet und ausgeschrieben (100 mm, 150 mm, 200 mm), deshalb nimmt der Rechner die Dicke in mm und teilt durch 1.000, um Meter zu erhalten, bevor er multipliziert. Wer 150 als Meter eingibt, überschätzt das Volumen um das Tausendfache. <strong>Was ist der Stahlgehalt?</strong> Er ist die Kilogramm Bewehrung pro Kubikmeter Beton — eine Abkürzung, die aus einem Volumen eine Stahlschätzung macht, ohne vollständige Bewehrungsliste. <strong>Warum drei Volumeneinheiten?</strong> Beton wird in den meisten Ländern in m³ bestellt, in den USA aber in yd³ — und ft³ hilft, wenn ein Lieferant oder eine Zeichnung in Fuß arbeitet.</p>
+    <p>Die Umrechnungen sind fest: 1 m³ = 1,30795 yd³ und 1 m³ = 35,3147 ft³. Der Rechner zeigt alle drei an, also muss nichts von Hand umgerechnet werden.</p>
+    <h3 id="example-1">Rechenbeispiel 1: 5 m × 4 m Platte</h3>
+    <p>Platte 5 m × 4 m, 150 mm dick, Stahlgehalt 80 kg/m³. Das sind die Werte, mit denen sich der Rechner öffnet, sodass das Ergebnis sofort geprüft werden kann:</p>
+    <ol class="howto"><li>Volumen: 5 × 4 × 0,150 = 3,00 m³.</li><li>In Kubikyard: 3,00 × 1,30795 = 3,92 yd³.</li><li>In Kubikfuß: 3,00 × 35,3147 = 105,94 ft³.</li><li>Geschätzter Stahl: 3,00 × 80 = 240,00 kg (0,240 Tonnen).</li></ol>
+    <p>Selbst ausprobieren: Die gleichen Zahlen oben in den Rechner eingeben, und das gleiche Ergebnis erscheint.</p>
+    <h3 id="example-2">Rechenbeispiel 2: 6 m × 5 m Platte</h3>
+    <p>Platte 6 m × 5 m, 200 mm dick, Stahlgehalt 100 kg/m³:</p>
+    <ol class="howto"><li>Volumen: 6 × 5 × 0,200 = 6,00 m³.</li><li>In Kubikyard: 6,00 × 1,30795 = 7,85 yd³.</li><li>In Kubikfuß: 6,00 × 35,3147 = 211,89 ft³.</li><li>Geschätzter Stahl: 6,00 × 100 = 600,00 kg (0,600 Tonnen).</li></ol>
+    <p>Man sieht: Die Dicke von 150 mm auf 200 mm zu erhöhen und den Stahlgehalt von 80 auf 100 anzuheben, lässt den Stahl auf mehr als das Doppelte steigen — Volumen und Stahlgehalt multiplizieren sich, beides zählt also.</p>
+    <h3 id="ratio-table">Stahlgehalt-Tabelle (kg/m³)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Bauteiltyp</th><th>Typischer Stahlgehalt</th></tr>
+      <tr><td>Platten</td><td>80–120 kg/m³</td></tr>
+      <tr><td>Fundamente</td><td>70–100 kg/m³</td></tr>
+      <tr><td>Wände</td><td>60–100 kg/m³</td></tr>
+      <tr><td>Balken</td><td>150–200 kg/m³</td></tr>
+      <tr><td>Stützen</td><td>200–300 kg/m³</td></tr>
+    </table></div>
+    <p>Das sind Faustwerte nur für erste Schätzungen. Die statische Bemessung legt den echten Stahlgehalt fest — wer einen Plattenwert für eine Stütze nimmt, unterschätzt den Stahl um mehr als die Hälfte. Der Standardwert des Rechners von 80 kg/m³ ist das untere Ende für Platten.</p>
+    <h3 id="waste">Mehr bestellen: der Verschnitt-Zuschlag</h3>
+    <p>Nie genau das reine Volumen bestellen. Verschütten, ausbeulende Schalung, unebener Untergrund und das Anpumpen der Pumpe zehren auf der Baustelle am Beton, deshalb ist ein Zuschlag von 5–10 % üblich. Für Rechenbeispiel 1: 3,00 m³ + 10 % = 3,30 m³ Bestellmenge. Das ist günstiger als eine zu kleine Ladung und eine zweite Lieferung — und das gleiche Denken gilt für Stahl, wo Übergreifungen und Schnittverschnitt auf die reine Schätzung aufschlagen.</p>
+    <h3 id="cost">Kosten schätzen</h3>
+    <p>Kosten = (Betonvolumen × Preis pro m³) + (Stahlgewicht × Preis pro kg). Mit Rechenbeispiel 1 und Beispielpreisen von 120 €/m³ für Beton und 1,20 €/kg für Stahl: Beton 3,00 × 120 = 360,00 €, Stahl 240,00 × 1,20 = 288,00 €, gesamt 648,00 €. Die Preise variieren je nach Region, Lieferant und Mischung, deshalb vor der Budgetierung aktuelle Angebote einholen. Für eine reine Stahl-Aufschlüsselung den <a href="/de/bewehrungskosten-rechner">Bewehrungskosten-Rechner</a> benutzen.</p>
+    <h3 id="imperial">Metrische und imperiale Einheiten</h3>
+    <p>Dieser Rechner nimmt Meter und Millimeter und gibt m³, yd³ und ft³ aus. Falls die Zeichnungen in Fuß und Zoll arbeiten:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Imperial (ca.)</th></tr>
+      <tr><td>100 mm dick</td><td>4 in</td></tr>
+      <tr><td>150 mm dick</td><td>6 in</td></tr>
+      <tr><td>200 mm dick</td><td>8 in</td></tr>
+      <tr><td>5 m × 4 m Platte</td><td>16,40 ft × 13,12 ft (× 3,281)</td></tr>
+      <tr><td>3,00 m³</td><td>3,92 yd³ (× 1,30795) / 105,94 ft³ (× 35,3147)</td></tr>
+    </table></div>
+    <p>Zuerst umrechnen, dann metrische Werte in den Rechner eingeben — keine Einheiten in einer Berechnung mischen.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Eine Bewehrungsliste.</strong> Das ergibt Gesamtstahl in kg, keine Stabdurchmesser, Stückzahlen, Übergreifungen oder Abstände. Für eine stabgenaue Abnahme den <a href="/de/bewehrungsrechner-fuer-betonplatten">Bewehrungsrechner für Betonplatten</a>, <a href="/de/bewehrungsrechner-fuer-fundamente">Bewehrungsrechner für Fundamente</a>, <a href="/de/bewehrungsmatten-rechner">Bewehrungsmatten-Rechner</a> oder <a href="/de/bewehrungsmengen-rechner">Bewehrungsmengen-Rechner</a> für eine vollständige Stück- und Längenabnahme benutzen.</li>
+      <li><strong>Verschnitt-Zuschlag.</strong> Das Ergebnis ist reines Volumen. Vor der Bestellung 5–10 % addieren (siehe oben).</li>
+      <li><strong>Schalung, Arbeitslohn und Pumpen.</strong> Die Einbaukosten sind von den Materialmengen getrennt.</li>
+      <li><strong>Sauberkeitsschicht und Unterbau.</strong> Die Platte liegt auf Sauberkeitsschicht und Schotter — beides ist nicht in diesem Volumen enthalten.</li>
+      <li><strong>Fugen und Nachbehandlung.</strong> Sägeschnitte, Dübel an Fugen und Nachbehandlungsmittel sind Detaillierungs-Posten, keine Volumen-Posten.</li>
+    </ul>
+    <h3 id="mistakes">4 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Dicke in Metern eingeben.</strong> Das Dickenfeld nimmt Millimeter. Wer 0,15 statt 150 tippt, unterschätzt das Volumen um das Tausendfache; wer 150 als Meter eingibt, überschätzt es genauso.</li><li><strong>Falschen Stahlgehalt für den Bauteiltyp nehmen.</strong> Ein Plattenwert, auf eine Stütze angewendet, unterschätzt den Stahl um mehr als die Hälfte. Den Stahlgehalt an den Bauteiltyp anpassen (siehe Tabelle oben).</li><li><strong>Genau das reine Volumen bestellen.</strong> Ohne einen Verschnitt-Zuschlag von 5–10 % wird die letzte Ecke der Schüttung knapp.</li><li><strong>Die Stahlschätzung für eine Bewehrungsliste halten.</strong> Eine kg-Gesamtmenge sagt, was zu budgetieren ist, nicht was zu schneiden und zu binden ist. Stabdurchmesser, Stückzahlen und Übergreifungen brauchen die Detaillierungs-Rechner.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Die Volumen nutzen die exakten Umrechnungen 1 m³ = 1,30795 yd³ und 1 m³ = 35,3147 ft³. Die Stahlgehalte sind Faustwerte für erste Schätzungen — immer mit den statischen Plänen und der Bemessungsnorm abgleichen.</p>`
+}
+},
+    { id:"driveway", slug:"driveway-rebar-calculator", cat:"Estimating",
     metaTitle:"Driveway Rebar Calculator — Bars, Length & kg, Free",
     h1:"Driveway Rebar Calculator",
     desc:"Rebar for your driveway slab in seconds: bar counts both ways, total length, weight and ties. Sized for car slabs and heavy-vehicle driveways alike.",
