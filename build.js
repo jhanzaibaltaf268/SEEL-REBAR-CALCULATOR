@@ -4427,6 +4427,7 @@ let pageCount = 0;
 const STANDALONE_PAGES = [
   { lang: "de", slug: "stahlrohr-gewicht-rechner" },
   { lang: "de", slug: "metall-gewicht-rechner" },
+  { lang: "es", slug: "calculadora-de-varilla" },
   { lang: "en", slug: "privacy" },
   { lang: "en", slug: "about" },
   { lang: "en", slug: "contact" }
