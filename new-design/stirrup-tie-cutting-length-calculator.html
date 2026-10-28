@@ -37,7 +37,7 @@
 
 <section class="block">
   <h2>How to use it</h2>
-  <ol class="steps"><li>Enter member width and depth.</li><li>Set the clear cover.</li><li>Pick the stirrup bar size.</li></ol>
+  <ol class="steps"><li>Enter the member width and depth in mm.</li><li>Set the clear cover — 25 mm is typical for beams, 40 mm for columns.</li><li>Pick the stirrup bar size. 8 mm is the usual tie bar.</li><li>Read the cutting length in mm and m, plus the inner dimensions and the weight per stirrup.</li><li>Multiply one tie by the tie count for the member, then add waste — the calculator gives one tie, not the order quantity.</li></ol>
 </section>
 
 <section class="block">
@@ -47,8 +47,16 @@
 
 <section class="block">
   <h2>Questions</h2>
-  <details><summary>How do you calculate stirrup cutting length?</summary><p>Add the inner perimeter to the hook allowance and subtract the bend deductions.</p></details>
-  <details><summary>What is the hook length in a stirrup?</summary><p>Each 135° hook is taken as 10 × bar diameter.</p></details>
+  <details><summary>How do you calculate stirrup cutting length?</summary><p>Add the inner perimeter to the hook allowance and subtract the bend deductions: cutting length = 2(a + b) + 2 × 10d − 3 × 2d − 2 × 3d, where a and b are the member dimensions less twice the cover. For the calculator defaults (300 × 450 mm, 25 mm cover, 8 mm bar) that is 2 × (250 + 400) + 160 − 96 = 1364 mm.</p></details>
+  <details><summary>What is the hook length in a stirrup?</summary><p>Each 135° seismic hook is taken as 10 × bar diameter — 80 mm on an 8 mm bar, 100 mm on a 10 mm bar — two hooks per tie. That is the stirrup hook, not the 9d standard hook used for bar ends; see the <a href="/rebar-hook-bend-cutting-length-calculator">hook & bend calculator</a> for the difference.</p></details>
+  <details><summary>Why 135° hooks and not 90° hooks on stirrups?</summary><p>A 90° hook opens up when the concrete cover spalls in an earthquake, and the tie stops confining the core. A 135° hook stays closed, so seismic codes (IS 13920) require 135° hooks on stirrups and column ties in earthquake zones. Outside seismic zones a 90° hook is sometimes detailed, but 135° is the safe default.</p></details>
+  <details><summary>Why does the formula subtract 6d and 6d?</summary><p>A closed tie has five bends: three 90° corners and two 135° closing hooks. A 90° bend shortens the bar by 2d and a 135° bend by 3d, so the deductions are 3 × 2d = 6d for the corners and 2 × 3d = 6d for the hooks — 12d in total. If you counted five 90° bends instead, you would deduct only 10d instead of 12d, cutting the tie 16 mm too long on an 8 mm bar.</p></details>
+  <details><summary>What cover should I use — beam or column?</summary><p>Beams usually take 25 mm clear cover and columns 40 mm, but follow the drawing — cover is a durability decision, not a calculator default. The difference matters: the same 300 × 450 mm section gives a 1364 mm tie at 25 mm cover and a 1244 mm tie at 40 mm cover, a 120 mm difference on every tie.</p></details>
+  <details><summary>How many stirrups do I need for a beam?</summary><p>Count = floor(length ÷ spacing) + 1. A 6 m beam at 150 mm spacing needs 6000 ÷ 150 + 1 = 41 ties. Remember the support zones: spacing is usually tighter near the supports, where shear is highest, so the count from one spacing figure is a planning estimate, not the drawing.</p></details>
+  <details><summary>What spacing do stirrups need?</summary><p>Beam vertical stirrups: maximum spacing = the smaller of 0.75 × effective depth and 300 mm (with d = 320 mm, that is 240 mm). Column lateral ties: maximum spacing = the smallest of the least lateral dimension, 16 × the smallest longitudinal bar diameter, and 300 mm (a 300 mm column with 16 mm mains gives 256 mm, typically detailed at 250 mm). Keep at least about 100 mm between ties so concrete can flow and be compacted.</p></details>
+  <details><summary>What size should tie bars be?</summary><p>At least the larger of 6 mm and one quarter of the largest longitudinal bar diameter. With 20 mm main bars that is 6 mm; with 25 mm main bars it is 6.25 mm, so 8 mm is used in practice. 8 mm is the usual tie bar for ordinary beams and columns.</p></details>
+  <details><summary>Can I use this calculator for multi-legged or circular ties?</summary><p>For the outer tie of a multi-legged set, yes — it is just a rectangular tie. Inner ties need the leg-spacing method worked in the multi-leg section below, because their width is set by the main-bar spacing, not by the member size. Circular and spiral ties are not computed here: start from π × (diameter − 2 × cover) and apply the same 10d hooks, but take the bend deductions from the drawing.</p></details>
+  <details><summary>Does the calculator include waste, laps or cost?</summary><p>No — it gives the neat cutting length of one tie only. Add 2.5–4% waste for cutting and off-cuts (2.0–2.5% with optimised cutting), take longitudinal laps from the <a href="/rebar-lap-length-calculator">lap length calculator</a>, and price the order as total weight × your bar price per kg — the beam example below works out at €26.44 before waste at an example €1.20/kg.</p></details>
 </section>
 
 <section class="block">

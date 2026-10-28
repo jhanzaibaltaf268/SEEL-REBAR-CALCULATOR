@@ -51,8 +51,8 @@
 <meta property="og:description" content="Estimate binding (tie) wire for a reinforcement grid from slab size, spacing and wire used per tie." />
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Tie Wire Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate binding (tie) wire for a reinforcement grid from slab size, spacing and wire used per tie."}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tie wire do I need for rebar?","acceptedAnswer":{"@type":"Answer","text":"Allow roughly 250–350 mm of wire per tie; the tool totals it from your grid."}},{"@type":"Question","name":"Do you tie every rebar intersection?","acceptedAnswer":{"@type":"Answer","text":"Often every intersection on edges and ~50% in the field — set the percentage to match."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter slab length and width and the bar spacing."},{"@type":"HowToStep","position":2,"text":"Set the wire used per tie and the % of intersections tied."},{"@type":"HowToStep","position":3,"text":"Read the total wire length and weight."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tie wire do I need for rebar?","acceptedAnswer":{"@type":"Answer","text":"Allow roughly 250–350 mm of wire per tie, and let the calculator total it from your grid. On the defaults (5 × 4 m slab, 150 mm spacing, 300 mm per tie, 100% tied) that is 918 ties × 300 mm = 275.40 m of wire, weighing 4.34 kg at the calculator's 1.6 mm wire weight. Change any input and the total follows the same chain: grid → ties → length → weight."}},{"@type":"Question","name":"Do you tie every rebar intersection?","acceptedAnswer":{"@type":"Answer","text":"Often every intersection on the edges and about 50% in the field — set the percentage to match the drawing. On the defaults, 100% tying gives 918 ties, 275.40 m and 4.34 kg, while 50% gives 459 ties, 137.70 m and 2.17 kg: half the intersections, half the wire. The original FAQ answer said the same in one line; the numbers are what make it usable."}},{"@type":"Question","name":"How much wire does one tie use?","acceptedAnswer":{"@type":"Answer","text":"It depends on the bar size: bigger bars need longer wraps. One published wrap formula (four wraps plus a 16 cm twisting allowance) gives 261 mm on an 8 mm bar, 286 mm on 10 mm, 311 mm on 12 mm, 361 mm on 16 mm and 411 mm on 20 mm. The calculator's 300 mm default sits between the 10 mm and 12 mm values, so it is a sensible middle default — but on 20 mm bars it undercounts by 111 mm per tie, which is 101.90 m over 918 ties."}},{"@type":"Question","name":"Why does the calculator assume 1.6 mm wire?","acceptedAnswer":{"@type":"Answer","text":"Because 1.6 mm annealed wire is the common site choice, and its weight follows the same d²/162.28 rule as rebar: 1.6² ÷ 162.28 = 0.0157752 kg/m, or 63.39 metres per kilogram. Thinner wire gives more metres per kilogram (1.2 mm → 112.69 m/kg) and thicker wire fewer (2.0 mm → 40.57 m/kg) — the full table is below. Coating (annealed vs galvanised) does not change the weight at the same diameter; it changes corrosion resistance, not the estimate."}},{"@type":"Question","name":"How does this compare with the 9–13 kg of wire per tonne of steel rule?","acceptedAnswer":{"@type":"Answer","text":"The rule is a thumb rule, not a code clause — one of its own sources admits IS code does not specify a quantity. On the defaults slab (232.57 kg of steel from the slab calculator) the wire is 4.34 kg at 100% tying, which is 18.7 kg per tonne — above the rule — but 2.17 kg at 50% tying, which is 9.3 kg per tonne, inside it. The rule assumes partial tying and mixed members; a dense slab grid tied at 100% genuinely uses more. Use the rule as a sanity check on a whole project, and the grid count for the actual order."}},{"@type":"Question","name":"How many rolls or coils do I need?","acceptedAnswer":{"@type":"Answer","text":"Divide the length by the coil's metres per kilogram. At the calculator's 1.6 mm wire (63.39 m/kg), a 5 kg coil holds 316.95 m — enough for the defaults' 275.40 m with room to spare — and a 25 kg coil holds 1584.77 m. The large-slab example below needs 2693.40 m, or 42.49 kg, so two 25 kg rolls cover it. Always check the coil label: metres per kilogram is a property of the wire diameter, not of the brand."}},{"@type":"Question","name":"How much waste should I add?","acceptedAnswer":{"@type":"Answer","text":"One published calculator recommends a 5–15% reserve for cutting, over-twisting, re-tying and handling losses. On the defaults that turns 4.34 kg into 4.56 kg at +5%, 4.78 kg at +10% and 5.00 kg at +15%. The calculator gives the neat grid total with no reserve, so add it before ordering — a coil short on the day of the pour costs more than the 5% ever will."}},{"@type":"Question","name":"What about double ties, or ties per crossing?","acceptedAnswer":{"@type":"Answer","text":"The calculator counts one tie per tied intersection. A double tie (two wraps at one crossing) doubles the length for that crossing by hand: the defaults' 275.40 m becomes 550.80 m if every crossing is double-tied. One published calculator suggests planning about 1.5 ties per crossing to cover re-ties after bars shift during the pour — treat that as a planning allowance on top of the count, not as a second tie the calculator should have counted."}},{"@type":"Question","name":"Does tie wire carry any structural load?","acceptedAnswer":{"@type":"Answer","text":"No — it only holds the bars in position while concrete is placed and cured. The concrete and the rebar carry the load; the wire stops the cage shifting, sagging or spreading during the pour and vibration. That is also why it ties chairs, spacer bars and laps, not just crossings: anything that must stay put until the concrete sets gets wired."}},{"@type":"Question","name":"Does the calculator include laps, chairs or cost?","acceptedAnswer":{"@type":"Answer","text":"No — it gives the neat grid wire total only. Laps come from the <a href=\"/rebar-lap-length-calculator\">lap length calculator</a> (lapped bars need extra ties at the overlap), chairs from the <a href=\"/rebar-chair-calculator\">chair calculator</a>, the full takeoff from the <a href=\"/rebar-quantity-calculator\">quantity & takeoff calculator</a>, and pricing from the <a href=\"/rebar-cost-calculator\">cost calculator</a>. The steel tonnage for the per-tonne check comes from the <a href=\"/rebar-tonnage-calculator\">tonnage calculator</a>."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the slab length and width in metres."},{"@type":"HowToStep","position":2,"text":"Set the bar spacing in mm — 150 mm is the calculator default."},{"@type":"HowToStep","position":3,"text":"Set the wire used per tie in mm — 300 mm is the default, and 250–350 mm covers most hand ties."},{"@type":"HowToStep","position":4,"text":"Set the percentage of intersections tied — 100% ties everything; the drawing often calls for every edge intersection and about 50% in the field."},{"@type":"HowToStep","position":5,"text":"Read the total wire length and weight, plus the intersection and tie counts — then add waste, since the calculator gives the neat grid total, not the order quantity."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Tie Wire Calculator","item":"https://steelrebarcalculator.com/rebar-tie-wire-calculator"}]}</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -166,21 +166,147 @@
       </a>
     </div>
   </section>
-
+<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula</a></li>
+      <li><a href="#example-1">Worked example 1: defaults (5 × 4 m)</a></li>
+      <li><a href="#example-2">Worked example 2: 10 × 8 m slab</a></li>
+      <li><a href="#example-3">Worked example 3: half the intersections tied</a></li>
+      <li><a href="#spacing-table">Wire by bar spacing</a></li>
+      <li><a href="#per-tie-table">Wire per tie, by bar size</a></li>
+      <li><a href="#ratio-table">Wire by tying percentage</a></li>
+      <li><a href="#per-tonne">The 9–13 kg per tonne rule, reconciled</a></li>
+      <li><a href="#gauge-table">Metres per kilogram, by wire diameter</a></li>
+      <li><a href="#order">From neat total to order</a></li>
+      <li><a href="#imperial">Imperial conversions</a></li>
+      <li><a href="#not-included">What this calculator does not cover</a></li>
+      <li><a href="#mistakes">5 common mistakes</a></li>
+      <li><a href="#faq">FAQs</a></li>
+    </ul>
+  </nav>
 
   <section class="content-block">
     <h2 id="how-to">How to use: Rebar Tie Wire Calculator</h2>
-    <ol class="howto"><li>Enter slab length and width and the bar spacing.</li><li>Set the wire used per tie and the % of intersections tied.</li><li>Read the total wire length and weight.</li></ol>
+    <ol class="howto"><li>Enter the slab length and width in metres.</li><li>Set the bar spacing in mm — 150 mm is the calculator default.</li><li>Set the wire used per tie in mm — 300 mm is the default, and 250–350 mm covers most hand ties.</li><li>Set the percentage of intersections tied — 100% ties everything; the drawing often calls for every edge intersection and about 50% in the field.</li><li>Read the total wire length and weight, plus the intersection and tie counts — then add waste, since the calculator gives the neat grid total, not the order quantity.</li></ol>
     <h3 id="formula">Formula</h3>
     <p class="formula-callout">Intersections = nx × ny. Ties = intersections × ratio. Wire length = ties × wire-per-tie; weight uses ~1.6 mm wire.</p>
     <p><a href="/#charts">See the full rebar weight chart (kg/m & lb/ft) →</a></p>
   </section>
-
+<section class="content-block"><h3>The formula, explained</h3>
+<p>The formula is a chain of four steps, and every step is a real thing you can count on site:</p>
+<p><strong>Intersections = nx × ny; Ties = intersections × ratio; Length = ties × wire-per-tie; Weight = length × 0.0157752 kg/m</strong></p>
+<p>First, nx = floor(L ÷ spacing) + 1 and ny = floor(W ÷ spacing) + 1. The +1 in each direction is the fence-post rule: bars sit at both edges plus every interval between, so there is always one more bar line than there are gaps. Multiply the two line counts and you have every crossing in the grid. Second, the tying ratio turns crossings into ties: 100% ties all of them, 50% ties half. Third, each tie consumes the wire-per-tie length you set. Fourth, the weight uses 1.6 mm wire: 1.6² ÷ 162.28 = 0.0157752 kg/m, the same d²/162.28 rule as rebar weight.</p>
+<p>Two honest caveats. The grid is counted edge to edge — the calculator does not subtract cover, so on the defaults it counts 918 crossings where the cover-adjusted slab calculator counts 891. The difference is small (27 crossings) and it errs on the side of ordering slightly more, but know it is there. And the tie count is not rounded: at 75% the panel shows 688.50 ties, so round up to 689 yourself before ordering.</p>
+<h3 id="example-1">Worked example 1: 5 × 4 m slab (calculator defaults)</h3>
+<p>Open the calculator and leave the defaults: length 5 m, width 4 m, spacing 150 mm, wire per tie 300 mm, intersections tied 100%.</p>
+<p>Along the length: floor(5 ÷ 0.15) + 1 = 34 lines. Along the width: floor(4 ÷ 0.15) + 1 = 27 lines.</p>
+<p><strong>Intersections = 34 × 27 = 918; ties = 918; length = 918 × 0.3 = 275.40 m; weight = 275.40 × 0.0157752 = 4.34 kg.</strong> The panel shows 275.40 m, 918.00 intersections, 918.00 ties and 4.34 kg.</p>
+<p>The weight is the number most people get wrong by guessing: 275 metres of wire sounds like a lot, but at 63.39 metres per kilogram it is only 4.34 kg — one 5 kg coil covers it, as the order section shows.</p>
+<h3 id="example-2">Worked example 2: 10 × 8 m slab</h3>
+<p>Set length 10 m, width 8 m, spacing 200 mm, wire per tie 300 mm, intersections tied 100%.</p>
+<p>Along the length: floor(10 ÷ 0.2) + 1 = 51 lines. Along the width: floor(8 ÷ 0.2) + 1 = 41 lines.</p>
+<p><strong>Intersections = 51 × 41 = 2091; length = 2091 × 0.3 = 627.30 m; weight = 9.90 kg.</strong> Note the coincidence worth remembering: the same 627.30 m appears for a 5 × 4 m slab at 100 mm spacing, because both grids have 2091 intersections. Wire follows the intersection count, not the slab area — a small dense grid can need more wire than a big sparse one.</p>
+<h3 id="example-3">Worked example 3: half the intersections tied</h3>
+<p>Set length 6 m, width 5 m, spacing 150 mm, wire per tie 300 mm, intersections tied 50%.</p>
+<p>Along the length: floor(6 ÷ 0.15) + 1 = 41 lines. Along the width: floor(5 ÷ 0.15) + 1 = 34 lines. Intersections = 41 × 34 = 1394.</p>
+<p><strong>Ties = 1394 × 50% = 697; length = 697 × 0.3 = 209.10 m; weight = 3.30 kg.</strong> This is the realistic site case the original FAQ hints at — every edge intersection tied, about half the field — and it is the case that lands inside the per-tonne rule, as the reconciliation section shows.</p>
+<h3 id="spacing-table">Wire by bar spacing</h3>
+<p>Same slab (5 × 4 m), same 300 mm per tie, same 100% tying, five spacings. Spacing acts in both directions, so wire scales roughly as 1 ÷ spacing²: halving the spacing from 200 mm to 100 mm nearly quadruples the wire.</p>
+<div class="formula-table"><table>
+<tr><th>Bar spacing</th><th>Grid</th><th>Intersections</th><th>Wire length</th><th>Wire weight</th></tr>
+<tr><td>100 mm</td><td>51 × 41</td><td>2091</td><td>627.30 m</td><td>9.90 kg</td></tr>
+<tr><td>125 mm</td><td>41 × 33</td><td>1353</td><td>405.90 m</td><td>6.40 kg</td></tr>
+<tr><td>150 mm</td><td>34 × 27</td><td>918</td><td>275.40 m</td><td>4.34 kg</td></tr>
+<tr><td>175 mm</td><td>29 × 23</td><td>667</td><td>200.10 m</td><td>3.16 kg</td></tr>
+<tr><td>200 mm</td><td>26 × 21</td><td>546</td><td>163.80 m</td><td>2.58 kg</td></tr>
+</table></div>
+<p>The practical consequence: spacing is the biggest lever on wire quantity you control. Moving a 5 × 4 m slab from 150 mm to 200 mm spacing cuts the wire from 4.34 kg to 2.58 kg — a 41% saving — but the spacing comes from the drawing, not from the wire budget, so treat this table as estimating knowledge, not a reason to widen a grid.</p>
+<h3 id="per-tie-table">Wire per tie, by bar size</h3>
+<p>The calculator's 300 mm default is one number for every bar, but a tie around a 20 mm bar genuinely takes more wire than a tie around an 8 mm bar. One published wrap formula — four wraps around the bar plus a 16 cm twisting allowance — gives this table, with the full-grid weight at the defaults' 918 ties for scale. Each row is reproducible from the calculator: enter the shown wire-per-tie value and the length and weight follow.</p>
+<div class="formula-table"><table>
+<tr><th>Bar size</th><th>Wire per tie</th><th>Length at 918 ties</th><th>Weight at 918 ties</th></tr>
+<tr><td>8 mm</td><td>261 mm</td><td>239.60 m</td><td>3.78 kg</td></tr>
+<tr><td>10 mm</td><td>286 mm</td><td>262.55 m</td><td>4.14 kg</td></tr>
+<tr><td>12 mm</td><td>311 mm</td><td>285.50 m</td><td>4.50 kg</td></tr>
+<tr><td>16 mm</td><td>361 mm</td><td>331.40 m</td><td>5.23 kg</td></tr>
+<tr><td>20 mm</td><td>411 mm</td><td>377.30 m</td><td>5.95 kg</td></tr>
+</table></div>
+<p>Two things to take from this. First, the 300 mm default is a good middle value — between the 10 mm and 12 mm rows — so most slab work estimated at the default is close. Second, the error grows with bar size: on 20 mm bars the default undercounts by 111 mm per tie, which is 101.90 m over 918 ties. If the bars are 16 mm or bigger, set the per-tie field from this table instead of leaving the default.</p>
+<h3 id="ratio-table">Wire by tying percentage</h3>
+<p>Same defaults slab (5 × 4 m, 150 mm, 300 mm per tie), four tying ratios. The ratio is the second-biggest lever after spacing, and it is the one the drawing actually controls.</p>
+<div class="formula-table"><table>
+<tr><th>Intersections tied</th><th>Ties</th><th>Wire length</th><th>Wire weight</th></tr>
+<tr><td>100%</td><td>918</td><td>275.40 m</td><td>4.34 kg</td></tr>
+<tr><td>75%</td><td>688.50 → 689</td><td>206.70 m</td><td>3.26 kg</td></tr>
+<tr><td>50%</td><td>459</td><td>137.70 m</td><td>2.17 kg</td></tr>
+<tr><td>25%</td><td>229.50 → 230</td><td>69.00 m</td><td>1.09 kg</td></tr>
+</table></div>
+<p>The fractional rows are the point: the panel shows 688.50 and 229.50 ties because it does not round, so round up before ordering — 689 and 230 ties, as shown. Rounding down would leave crossings untied, which defeats the purpose of the wire.</p>
+<h3 id="per-tonne">The 9–13 kg per tonne rule, reconciled</h3>
+<p>Every guide quotes it: 9–13 kg of binding wire per tonne of steel, with smaller bars at the top of the range (8 mm → 12 kg/t) and bigger bars at the bottom (28–32 mm → 7 kg/t). And one of the sources itself admits IS code does not actually specify a quantity — it is a thumb rule from experience. So what do you do when your grid count disagrees with it?</p>
+<p>Work it on the defaults slab. The slab calculator gives 232.57 kg of steel for the same 5 × 4 m slab at 150 mm spacing with 12 mm bars and 40 mm cover. Against that steel:</p>
+<div class="formula-table"><table>
+<tr><th>Tying ratio</th><th>Wire weight</th><th>Kg per tonne of steel</th><th>Against the 9–13 rule</th></tr>
+<tr><td>100%</td><td>4.34 kg</td><td>18.7 kg/t</td><td>Above the rule</td></tr>
+<tr><td>75%</td><td>3.26 kg</td><td>14.0 kg/t</td><td>Just above the rule</td></tr>
+<tr><td>50%</td><td>2.17 kg</td><td>9.3 kg/t</td><td>Inside the rule</td></tr>
+</table></div>
+<p>The reconciliation is simple: the rule assumes you do not tie everything. It averages over beams, columns, footings and slabs, over big and small bars, and over the common site pattern of every edge intersection plus about half the field. A dense slab grid tied at 100% genuinely uses more wire per tonne than that average — 18.7 kg/t is not an error, it is what 100% tying costs. So use the rule as a sanity check on a whole project (if your total wire is wildly outside 9–13 kg/t, check your inputs), and use the grid count for the actual order. One precision note: the steel figure comes from the cover-adjusted slab grid (891 crossings) while the wire figure comes from the edge-to-edge grid (918), so the kg/t values are approximate to within that 3% gap — close enough for a sanity check, not for a claim of exactness.</p>
+<h3 id="gauge-table">Metres per kilogram, by wire diameter</h3>
+<p>Wire is sold by weight but consumed by length, so the conversion is the whole purchase. All rows are computed from the same d²/162.28 rule the calculator uses, so they tie to its 1.6 mm assumption exactly:</p>
+<div class="formula-table"><table>
+<tr><th>Wire diameter</th><th>Weight per metre</th><th>Metres per kilogram</th></tr>
+<tr><td>1.0 mm</td><td>0.006162 kg/m</td><td>162.28 m/kg</td></tr>
+<tr><td>1.2 mm</td><td>0.008874 kg/m</td><td>112.69 m/kg</td></tr>
+<tr><td>1.22 mm (18 SWG)</td><td>0.009172 kg/m</td><td>109.03 m/kg</td></tr>
+<tr><td>1.6 mm (calculator's wire)</td><td>0.015775 kg/m</td><td>63.39 m/kg</td></tr>
+<tr><td>1.63 mm (16 SWG)</td><td>0.016372 kg/m</td><td>61.08 m/kg</td></tr>
+<tr><td>1.8 mm</td><td>0.019965 kg/m</td><td>50.09 m/kg</td></tr>
+<tr><td>2.0 mm</td><td>0.024649 kg/m</td><td>40.57 m/kg</td></tr>
+</table></div>
+<p>Two uses. First, if your coil is not 1.6 mm, convert before comparing: a 5 kg coil of 1.2 mm wire holds 563.45 m, not 316.95 m. Second, gauge numbers are a trap: SWG and AWG number the same diameter differently, and one guide's "typical 0.6–1.2 mm" contradicts another's "8–10 gauge heavy" — so check the coil label for the millimetre diameter and use this table, not the gauge number, for the conversion. As a cross-check, one guide's example of "1 kg = 50 m" implies 1.80 mm wire on this table, which is a sensible heavy site wire.</p>
+<h3 id="order">From neat total to order</h3>
+<p>The calculator gives the neat grid total. The order is that total, plus waste, in coils, priced.</p>
+<p>Example: the defaults give 4.34 kg. Add a 5–15% reserve for cutting, over-twisting, re-tying and handling: +5% → 4.56 kg, +10% → 4.78 kg, +15% → 5.00 kg. At the calculator's 1.6 mm wire a 5 kg coil holds 316.95 m, so one 5 kg coil covers the defaults' 275.40 m with room for the reserve. At an example price of €3.00/kg the defaults cost €13.03 neat, €13.69 at +5%.</p>
+<p>Example: the large slab (20 × 10 m at 150 mm) gives 2693.40 m, 42.49 kg. At +5% that is 44.61 kg, so order two 25 kg rolls (50 kg) rather than hunting for an exact 44.61 kg — coils come in set sizes, and the spare coil is next slab's wire. At the same example price that is €127.47 neat, €133.84 at +5%. For the full takeoff across members, use the <a href="/rebar-quantity-calculator">quantity & takeoff calculator</a>, and price it with the <a href="/rebar-cost-calculator">cost calculator</a>.</p>
+<h3 id="imperial">Imperial conversions</h3>
+<p>The calculator takes metres and millimetres, so convert first: 1 m = 3.28 ft, 1 kg = 2.20 lb, 1 in = 25.4 mm.</p>
+<p>Worked example: a 20 × 16 ft slab is 6.096 × 4.8768 m. At a 6 in grid (152.4 mm), 300 mm per tie, 100% tied: floor(6.096 ÷ 0.1524) + 1 = 41 lines, floor(4.8768 ÷ 0.1524) + 1 = 33 lines — <strong>41 × 33 = 1353 intersections, 405.90 m, 6.40 kg</strong>.</p>
+<p>Per-tie lengths in inches: 250 mm = 9.84 in, 300 mm = 11.81 in, 350 mm = 13.78 in. Lengths in feet: 275.40 m = 903.54 ft, 627.30 m = 2058.07 ft. Weights in pounds: 4.34 kg = 9.58 lb, 9.90 kg = 21.82 lb. The formula is unit-free — the same (floor + 1) × (floor + 1) × per-tie works in feet and inches if every input is in the same units — but the calculator takes metric, so convert before entering.</p>
+<h3 id="not-included">What this calculator does not cover</h3>
+<ul>
+<li>Bar count and steel weight — the grid it counts is a wire grid, not a bar schedule; the mat itself comes from the <a href="/concrete-slab-rebar-calculator">slab calculator</a>.</li>
+<li>Laps and lap ties — lapped bars need extra ties at the overlap; lap lengths come from the <a href="/rebar-lap-length-calculator">lap length calculator</a>, and the extra ties are on top of this grid count.</li>
+<li>Chairs and supports — chairs are tied to bars too, but their count comes from the <a href="/rebar-chair-calculator">chair calculator</a>.</li>
+<li>Stirrups, columns, beams and walls — this calculator counts one flat grid; cages and vertical members have their own tying patterns, and the <a href="/stirrup-tie-cutting-length-calculator">stirrup calculator</a> covers tie cutting lengths.</li>
+<li>Corner, joint and hook ties beyond the grid — one guide suggests adding 10–20% extra ties for beam–slab edges, column–beam joints, laps and hooks; treat that as part of the waste reserve, not as grid intersections.</li>
+<li>Wire gauge selection and tying method — the calculator assumes 1.6 mm wire and one tie per tied intersection; gauge choice and single vs double vs machine tying come from the drawing and site practice.</li>
+<li>Cost — the order section shows the hand arithmetic; the <a href="/rebar-cost-calculator">cost calculator</a> prices a full takeoff, and steel tonnage comes from the <a href="/rebar-tonnage-calculator">tonnage calculator</a>.</li>
+</ul>
+<h3 id="mistakes">5 common mistakes</h3>
+<ol>
+<li><strong>Forgetting the +1 in each direction.</strong> Counting floor(L ÷ spacing) × floor(W ÷ spacing) instead of (floor + 1) × (floor + 1) gives 33 × 26 = 858 crossings on the defaults instead of 918 — 60 ties, 18.0 m and 0.28 kg short before waste. The edge lines are real ties.</li>
+<li><strong>Tying 100% when the drawing says 50% in the field.</strong> On the defaults that doubles the wire from 2.17 kg to 4.34 kg. Set the percentage from the drawing, not from the default — the default is 100% because it is the safe upper bound, not because it is the usual pattern.</li>
+<li><strong>One per-tie length for every bar size.</strong> Leaving 300 mm on 12 mm bars undercounts by 11 mm per tie (311 mm from the wrap table), which is 10.10 m and 0.16 kg short over 918 ties — and on 20 mm bars the gap is 111 mm per tie. Set the per-tie field from the bar-size table for bars 16 mm and up.</li>
+<li><strong>Ordering the neat total with no reserve.</strong> Cutting, over-twisting, re-tying and handling losses are real; one published calculator recommends 5–15%. On the defaults, skipping the reserve saves at most €0.66 at an example €3.00/kg and risks a stalled pour.</li>
+<li><strong>Ordering fractional ties, or comparing against the per-tonne rule without adjusting for ratio.</strong> The panel shows 688.50 ties at 75% — order 689, not 688.50, and not 688. And a 100%-tied dense grid at 18.7 kg/t is not proof the count is wrong: the 9–13 kg/t rule assumes partial tying, so reconcile the ratio before doubting the grid.</li>
+</ol>
+<p>Last reviewed: October 2026.</p></section>
 
   <section id="faq" class="content-block">
     <h2>Rebar Tie Wire Calculator — FAQ</h2>
-    <details open><summary>How much tie wire do I need for rebar?</summary><p>Allow roughly 250–350 mm of wire per tie; the tool totals it from your grid.</p></details>
-    <details><summary>Do you tie every rebar intersection?</summary><p>Often every intersection on edges and ~50% in the field — set the percentage to match.</p></details>
+    <details open><summary>How much tie wire do I need for rebar?</summary><p>Allow roughly 250–350 mm of wire per tie, and let the calculator total it from your grid. On the defaults (5 × 4 m slab, 150 mm spacing, 300 mm per tie, 100% tied) that is 918 ties × 300 mm = 275.40 m of wire, weighing 4.34 kg at the calculator's 1.6 mm wire weight. Change any input and the total follows the same chain: grid → ties → length → weight.</p></details>
+    <details><summary>Do you tie every rebar intersection?</summary><p>Often every intersection on the edges and about 50% in the field — set the percentage to match the drawing. On the defaults, 100% tying gives 918 ties, 275.40 m and 4.34 kg, while 50% gives 459 ties, 137.70 m and 2.17 kg: half the intersections, half the wire. The original FAQ answer said the same in one line; the numbers are what make it usable.</p></details>
+    <details><summary>How much wire does one tie use?</summary><p>It depends on the bar size: bigger bars need longer wraps. One published wrap formula (four wraps plus a 16 cm twisting allowance) gives 261 mm on an 8 mm bar, 286 mm on 10 mm, 311 mm on 12 mm, 361 mm on 16 mm and 411 mm on 20 mm. The calculator's 300 mm default sits between the 10 mm and 12 mm values, so it is a sensible middle default — but on 20 mm bars it undercounts by 111 mm per tie, which is 101.90 m over 918 ties.</p></details>
+    <details><summary>Why does the calculator assume 1.6 mm wire?</summary><p>Because 1.6 mm annealed wire is the common site choice, and its weight follows the same d²/162.28 rule as rebar: 1.6² ÷ 162.28 = 0.0157752 kg/m, or 63.39 metres per kilogram. Thinner wire gives more metres per kilogram (1.2 mm → 112.69 m/kg) and thicker wire fewer (2.0 mm → 40.57 m/kg) — the full table is below. Coating (annealed vs galvanised) does not change the weight at the same diameter; it changes corrosion resistance, not the estimate.</p></details>
+    <details><summary>How does this compare with the 9–13 kg of wire per tonne of steel rule?</summary><p>The rule is a thumb rule, not a code clause — one of its own sources admits IS code does not specify a quantity. On the defaults slab (232.57 kg of steel from the slab calculator) the wire is 4.34 kg at 100% tying, which is 18.7 kg per tonne — above the rule — but 2.17 kg at 50% tying, which is 9.3 kg per tonne, inside it. The rule assumes partial tying and mixed members; a dense slab grid tied at 100% genuinely uses more. Use the rule as a sanity check on a whole project, and the grid count for the actual order.</p></details>
+    <details><summary>How many rolls or coils do I need?</summary><p>Divide the length by the coil's metres per kilogram. At the calculator's 1.6 mm wire (63.39 m/kg), a 5 kg coil holds 316.95 m — enough for the defaults' 275.40 m with room to spare — and a 25 kg coil holds 1584.77 m. The large-slab example below needs 2693.40 m, or 42.49 kg, so two 25 kg rolls cover it. Always check the coil label: metres per kilogram is a property of the wire diameter, not of the brand.</p></details>
+    <details><summary>How much waste should I add?</summary><p>One published calculator recommends a 5–15% reserve for cutting, over-twisting, re-tying and handling losses. On the defaults that turns 4.34 kg into 4.56 kg at +5%, 4.78 kg at +10% and 5.00 kg at +15%. The calculator gives the neat grid total with no reserve, so add it before ordering — a coil short on the day of the pour costs more than the 5% ever will.</p></details>
+    <details><summary>What about double ties, or ties per crossing?</summary><p>The calculator counts one tie per tied intersection. A double tie (two wraps at one crossing) doubles the length for that crossing by hand: the defaults' 275.40 m becomes 550.80 m if every crossing is double-tied. One published calculator suggests planning about 1.5 ties per crossing to cover re-ties after bars shift during the pour — treat that as a planning allowance on top of the count, not as a second tie the calculator should have counted.</p></details>
+    <details><summary>Does tie wire carry any structural load?</summary><p>No — it only holds the bars in position while concrete is placed and cured. The concrete and the rebar carry the load; the wire stops the cage shifting, sagging or spreading during the pour and vibration. That is also why it ties chairs, spacer bars and laps, not just crossings: anything that must stay put until the concrete sets gets wired.</p></details>
+    <details><summary>Does the calculator include laps, chairs or cost?</summary><p>No — it gives the neat grid wire total only. Laps come from the <a href="/rebar-lap-length-calculator">lap length calculator</a> (lapped bars need extra ties at the overlap), chairs from the <a href="/rebar-chair-calculator">chair calculator</a>, the full takeoff from the <a href="/rebar-quantity-calculator">quantity & takeoff calculator</a>, and pricing from the <a href="/rebar-cost-calculator">cost calculator</a>. The steel tonnage for the per-tonne check comes from the <a href="/rebar-tonnage-calculator">tonnage calculator</a>.</p></details>
   </section>
 </main>
 
