@@ -3955,6 +3955,7 @@ const PAGES = [
 /* Spanish steps and FAQs for each calculator (content-es.js). Attached as
    p.es, which pHowto and pFaqs read the same way as the German overrides. */
 const CONTENT_ES = require("./content-es.js");
+const CONTENT_LINKS_ES = require("./content-links-es.js");
 PAGES.forEach(p => { if (CONTENT_ES[p.id]) p.es = CONTENT_ES[p.id].es; });
 
 /* ---------- i18n ---------- */
@@ -4228,9 +4229,49 @@ const SILO_H1_EN = {
   Members:    "Structural Member Rebar Calculators",
   Commercial: "Rebar Cost & Tonnage Calculators"
 };
+/* Spanish hub headings, intros and questions (silo structure for /es/) */
+const SILO_H1_ES = {
+  Weight:     "Calculadoras de peso de varilla",
+  Estimating: "Calculadoras de mediciones de acero",
+  Detailing:  "Calculadoras de detallado y traslapes",
+  Members:    "Calculadoras de acero para elementos",
+  Commercial: "Calculadoras de costo y tonelaje de acero"
+};
+const SILO_ES = {
+  Weight: {
+    heroSub: "Calcule el peso de la varilla por diámetro, longitud y cantidad, y convierta un pedido en toneladas y barras comerciales. Tablas de kg/m en milímetros y en pulgadas.",
+    faqs: [["¿Qué calculadora uso para el peso de la varilla?", "Empiece por la calculadora de varilla: calcula el peso por metro, el peso total y las barras de una losa. Si solo necesita el peso de un pedido, use la calculadora de peso de varilla."],
+           ["¿Cómo paso un pedido en toneladas a barras?", "Divida la tonelada entre el peso de una barra completa. Por ejemplo, con varillas de 12 mm y barras de 12 m, una tonelada son unas 94 barras."],
+           ["¿Qué diferencia hay entre el área de acero y el peso?", "El área (Ast) mide la sección de acero; el peso mide cuántos kilos pesa esa sección por metro. Use el área para diseñar y el peso para comprar."]]
+  },
+  Estimating: {
+    heroSub: "Cantidades de acero para losas, zapatas, entradas y mallas, a partir de las dimensiones, la separación y el recubrimiento.",
+    faqs: [["¿Cómo mido la cantidad de acero de una losa?", "Cuente las barras en cada dirección con la distancia útil y la separación, y multiplique por la longitud de cada barra. La calculadora de acero para losa hace ese cálculo."],
+           ["¿Qué es una parrilla de acero?", "Es la malla de barras en dos direcciones. La calculadora de parrilla cuenta las barras y los cruces, y da el peso de la malla."],
+           ["¿Para qué sirve el estimador de hormigón y acero?", "Calcula el volumen de concreto y estima el acero con una cuantía en kg/m³. Sirve para presupuestos, no para diseño."]]
+  },
+  Detailing: {
+    heroSub: "Separación, anclaje, traslape, ganchos, estribos, soportes y alambre de amarre: los detalles que cambian la longitud de cada barra.",
+    faqs: [["¿Por qué el detallado cambia la longitud de la barra?", "Los ganchos, dobleces, anclajes y traslapes añaden o restan longitud. Esa longitud cambia el peso y el número de piezas que se compran."],
+           ["¿Qué es la longitud de anclaje?", "Es la longitud que la barra debe quedar embebida en el concreto para transmitir su fuerza. Use la calculadora de longitud de anclaje."],
+           ["¿Cuál es la diferencia entre anclaje y traslape?", "El anclaje es la longitud dentro del concreto; el traslape es el solape entre dos barras. Cada uno tiene su calculadora."]]
+  },
+  Members: {
+    heroSub: "Acero para columnas, vigas, muros y piscinas: barras verticales, horizontales y estribos, calculados por separado.",
+    faqs: [["¿Qué acero lleva una columna?", "Barras verticales y estribos. La calculadora de columnas suma ambos y da el peso total."],
+           ["¿Por qué el estribo se calcula aparte?", "Porque su longitud depende de las dimensiones de la sección y de los dobleces. Use la calculadora de corte de estribos."],
+           ["¿Un muro de bloque se arma igual que uno de concreto?", "No necesariamente. Consulte la norma aplicable y el plano del muro."]]
+  },
+  Commercial: {
+    heroSub: "Cuánto cuesta el acero y cuántas toneladas pide una obra, con desperdicio y precio por kilo.",
+    faqs: [["¿Cómo calculo el costo del acero?", "Costo = kg con desperdicio × precio por kg. Use la calculadora de costo de acero."],
+           ["¿Qué es un despiece?", "Es la lista de barras con diámetro, longitud y cantidad. La calculadora de tonelaje la convierte en toneladas."],
+           ["¿Qué diferencia hay entre tonelada métrica y tonelada corta?", "La métrica son 1.000 kg; la corta de EE. UU. son 907,185 kg."]]
+  }
+};
 const siloH1   = (silo, lang) => lang === "en"
   ? SILO_H1_EN[silo.cat]
-  : `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
+  : lang === "es" ? SILO_H1_ES[silo.cat] : `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
 
 /* ---------- Transliteration & Multilingual Slug Generation ---------- */
 const SPECIAL_CHARS = {
@@ -4329,7 +4370,13 @@ const pDesc = (p,lang) => lang==="en" ? p.desc : (p[lang] && p[lang].desc) ? p[l
 const pTitle= (p,lang) => lang==="en" ? p.metaTitle : (p[lang] && p[lang].metaTitle) ? p[lang].metaTitle : `${CALC[p.id].title[lang]} — ${TPL[lang].metaSuffix}`;
 const pIntro= (p,lang) => lang==="en" ? p.intro : (p[lang] && p[lang].desc) ? p[lang].desc : CALC[p.id].desc[lang];
 const pHowto= (p,lang) => lang==="en" ? p.howto : (p[lang] && p[lang].howto) ? p[lang].howto : TPL[lang].howto;
-const pFaqs = (p,lang) => lang==="en" ? p.faqs : (p[lang] && p[lang].faqs) ? p[lang].faqs : TPL[lang].faq(CALC[p.id].title[lang], CALC[p.id].desc[lang]);
+const pFaqs = (p,lang) => {
+  if (lang === "en") return p.faqs;
+  const base = (p[lang] && p[lang].faqs) ? p[lang].faqs : TPL[lang].faq(CALC[p.id].title[lang], CALC[p.id].desc[lang]);
+  // Spanish: one contextual link is added to the last answer (content-links-es.js)
+  if (lang !== "es" || !CONTENT_LINKS_ES[p.id]) return base;
+  return base.map((qa, i) => i === base.length - 1 ? [qa[0], qa[1] + " " + CONTENT_LINKS_ES[p.id]] : qa);
+};
 const pFormula = (p,lang) => lang==="en" ? p.formula : (p[lang] && p[lang].formula) ? p[lang].formula : p.formula;
 const pKw = (p,lang) => lang==="en" ? p.kw : (p[lang] && p[lang].kw) ? p[lang].kw : p.kw;
 
@@ -4373,7 +4420,7 @@ function footer(lang){
     const links = children.map(p => `<li><a href="${pageHref(p, lang)}">${pH1(p, lang)}</a></li>`).join("\n          ");
     return `
       <div class="footer-col">
-        <h4>${lang === "en" ? `<a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a>` : `${siloName(s, lang)} ${CALCSWORD[lang]}`}</h4>
+        <h4>${(lang === "en" || lang === "es") ? `<a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a>` : `${siloName(s, lang)} ${CALCSWORD[lang]}`}</h4>
         <ul>
           ${links}
         </ul>
@@ -4497,7 +4544,7 @@ function workflowGrid(currentId, lang){
 
 function faqJsonLd(faqs){
   return JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",
-    mainEntity: faqs.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))});
+    mainEntity: faqs.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a.replace(/<[^>]+>/g,"")}}))});
 }
 /* visible breadcrumb trail */
 function crumbs(lang, trail){
@@ -4545,12 +4592,12 @@ function renderPage(p, lang){
   const curPageSlug = pageSlug(p, lang);
   const crumbTrail = crumbs(lang, [
     {name:HOMEWORD[lang], href:homeHref(lang)},
-    {name:siloName(silo,lang), href: lang === "en" ? siloHref(silo,lang) : undefined},
+    {name:siloName(silo,lang), href: (lang === "en" || lang === "es") ? siloHref(silo,lang) : undefined},
     {name:cleanH1}
   ]);
   const crumbLd = breadcrumbJsonLd([
     {name:HOMEWORD[lang], url:urlFor(lang,"index")},
-    ...(lang === "en" ? [{name:siloName(silo,lang), url:urlFor(lang,siloSlug(silo,lang))}] : []),
+    ...((lang === "en" || lang === "es") ? [{name:siloName(silo,lang), url:urlFor(lang,siloSlug(silo,lang))}] : []),
     {name:h1, url:urlFor(lang,curPageSlug)}
   ]);
   return `<!DOCTYPE html>
@@ -4670,13 +4717,16 @@ function renderSilo(silo, lang){
   const pages = siloPages(silo);
   const title = `${h1} | ${HUB_H1[lang]}`;
   const sc = SILO_CONTENT[silo.cat] || {};
-  const desc = (lang === "en" && sc.heroSub)
+  const sces = (lang === "es" && SILO_ES[silo.cat]) || null;
+  const desc = sces ? sces.heroSub : (lang === "en" && sc.heroSub)
     ? sc.heroSub
     : `${CALCSWORD[lang]}: ${pages.map(p=>pH1(p,lang)).join(", ")}`.slice(0,158);
 
   const curSiloSlug = siloSlug(silo, lang);
 
-  const cards = pages.map(p =>
+  const pillar = (lang === "es" && silo.cat === "Weight")
+    ? `<a class="rel-card" href="/es/calculadora-de-varilla"><b>Calculadora de varilla</b><span>Peso, barras de una losa y costo, con tablas de kg/m.</span></a>` : "";
+  const cards = pillar + pages.map(p =>
     `<a class="rel-card" href="${pageHref(p, lang)}"><b>${pH1(p,lang)}</b><span>${pDesc(p,lang).slice(0,70)}…</span></a>`
   ).join("\n      ");
 
@@ -4691,7 +4741,7 @@ function renderSilo(silo, lang){
   const itemList = JSON.stringify({"@context":"https://schema.org","@type":"ItemList",
     itemListElement: pages.map((p,i)=>({"@type":"ListItem",position:i+1,name:pH1(p,lang),url:urlFor(lang,pageSlug(p, lang))}))});
 
-  const faqs = (lang === "en" && sc.faqs)
+  const faqs = sces ? sces.faqs : (lang === "en" && sc.faqs)
     ? sc.faqs
     : TPL[lang].faq(h1, desc);
   const faqHtml = faqs.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><p>${a}</p></details>`).join("\n    ");
@@ -5045,6 +5095,8 @@ LANGS.forEach(l => {
 
     if (lang === "en") {
       fs.writeFileSync(path.join(OUT, s.slug + ".html"), renderSilo(s, lang));
+    } else if (lang === "es") {
+      fs.writeFileSync(path.join(OUT, l.dir, curSiloSlug + ".html"), renderSilo(s, lang));
     } else {
       redirects.push({
         source: `/${l.dir}/${curSiloSlug}`,
@@ -5172,7 +5224,7 @@ function renderSitemapUrl(type, item, lang, lastmod, changefreq, priority) {
 
   // Alternate links for all 8 languages: en, es, fr, de, it, pt, nl, pl
   // Silo hubs exist in English only, so they carry no localized alternates
-  const altLangs = type === "silo" ? SITEMAP_LANGS.filter(l => l === "en") : SITEMAP_LANGS;
+  const altLangs = type === "silo" ? SITEMAP_LANGS.filter(l => l === lang) : SITEMAP_LANGS;
   altLangs.forEach(l => {
     let href;
     if (type === "index") href = urlFor(l, "index");
@@ -5206,7 +5258,7 @@ function buildLanguageSitemapSection(code) {
   // Category Order: Calculators grouped by category
   SILOS.forEach(silo => {
     chunks.push("\n  <!-- Category: " + silo.cat + " Calculators (" + code + ") -->");
-    if (isEn) chunks.push(renderSitemapUrl("silo", silo, code, today, "monthly", "0.8"));
+    if (isEn || code === "es") chunks.push(renderSitemapUrl("silo", silo, code, today, "monthly", "0.8"));
 
     // Calculators belonging to this specific Category
     const childPages = PAGES.filter(p => p.cat === silo.cat);

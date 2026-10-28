@@ -23,6 +23,14 @@
 
   <!-- Category: Weight Calculators (es) -->
   <url>
+    <loc>https://steelrebarcalculator.com/es/peso-calculadoras</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/peso-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-weight-calculators"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://steelrebarcalculator.com/es/calculadora-de-peso-de-varilla</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-weight-calculator"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-peso-de-varilla"/>
@@ -69,6 +77,14 @@
   </url>
 
   <!-- Category: Estimating Calculators (es) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/es/mediciones-calculadoras</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/mediciones-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/concrete-rebar-estimating-calculators"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://steelrebarcalculator.com/es/calculadora-de-acero-para-losa</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-slab-rebar-calculator"/>
@@ -146,6 +162,14 @@
   </url>
 
   <!-- Category: Detailing Calculators (es) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/es/detallado-calculadoras</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/detallado-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-detailing-calculators"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://steelrebarcalculator.com/es/calculadora-de-separacion-de-barras</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-spacing-calculator"/>
@@ -254,6 +278,14 @@
 
   <!-- Category: Members Calculators (es) -->
   <url>
+    <loc>https://steelrebarcalculator.com/es/elementos-calculadoras</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/elementos-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/structural-rebar-calculators"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://steelrebarcalculator.com/es/calculadora-de-acero-para-columnas</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/column-rebar-calculator"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-columnas"/>
@@ -315,6 +347,14 @@
   </url>
 
   <!-- Category: Commercial Calculators (es) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/es/comercial-calculadoras</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/comercial-calculadoras"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-cost-tonnage-calculators"/>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://steelrebarcalculator.com/es/calculadora-de-coste-de-acero</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
