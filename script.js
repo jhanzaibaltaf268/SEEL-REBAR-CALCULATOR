@@ -631,8 +631,8 @@ function tr(s){                                    // glossary lookup for short 
   if(LANG==="en" || !I18N) return s;
   const g = I18N.G[s];
   if(g && g[LANG]) return g[LANG];
-  // Spanish uses a decimal comma: "0.222 kg/m" -> "0,222 kg/m"
-  if(LANG==="es" && /kg\/m/.test(s)) return s.replace(/(\d)\.(\d)/g, "$1,$2");
+  // Spanish and German use a decimal comma: "0.222 kg/m" -> "0,222 kg/m"
+  if((LANG==="es"||LANG==="de") && /kg\/m/.test(s)) return s.replace(/(\d)\.(\d)/g, "$1,$2");
   return s;
 }
 // Spanish wording for the formula notes; numbers and formulas stay as they are
@@ -645,9 +645,40 @@ const NOTE_ES = [
   [/incl\. 3% waste/g, "incl. 3 % de desperdicio"], [/steel @/g, "acero @"], [/\bpcs\b/g, "pzas"],
   [/ of /g, " de "], [/wire/g, "alambre"]
 ];
+// German wording for the formula notes; numbers and formulas stay as they are
+const NOTE_DE = [
+  [/Standard derivation:/g, "Standard-Herleitung:"],
+  [/Reverse derivation:/g, "Umgekehrte Herleitung:"],
+  [/grid both ways @/g, "Raster beidseitig @"],
+  [/main bars/g, "Hauptstäbe"],
+  [/verticals/g, "Längsstäbe"],
+  [/stirrups/g, "Bügel"],
+  [/ ties × /g, " Bindungen × "],
+  [/ of 1\.6mm wire/g, "-Draht (1,6 mm)"],
+  [/ ties\b/g, " Bindungen"],
+  [/wire/g, "Draht"],
+  [/lap = max/g, "Übergreifung = max"],
+  [/bars = floor/g, "Stäbe = floor"],
+  [/standard (\d+)m bars/g, "Standard-$1-m-Stäbe"],
+  [/\bbars\b/g, "Stäbe"],
+  [/bends/g, "Biegungen"],
+  [/chairs @/g, "Abstandhalter @"],
+  [/ grid/g, " Raster"],
+  [/steel @/g, "Stahl @"],
+  [/\bvert @/g, "vertikal @"],
+  [/\bhoriz @/g, "horizontal @"],
+  [/\bcover\b/g, "Deckung"],
+  [/c\/c/g, "M/M"],
+  [/\bincl\./g, "inkl."],
+  [/\bwaste\b/g, "Verschnitt"],
+  [/\bpcs\b/g, "Stk."],
+  [/total length/g, "Gesamtlänge"],
+];
 function trNote(s){
-  if(LANG!=="es" || !s) return s;
-  return NOTE_ES.reduce((t,[re,to]) => t.replace(re,to), s);
+  if(!s) return s;
+  if(LANG==="es") return NOTE_ES.reduce((t,[re,to]) => t.replace(re,to), s);
+  if(LANG==="de") return NOTE_DE.reduce((t,[re,to]) => t.replace(re,to), s);
+  return s;
 }
 function calcTitle(id){                             // localized calculator title
   const t = I18N && I18N.CALC[id] && I18N.CALC[id].title;
@@ -661,6 +692,7 @@ function calcDesc(id){
 function buildSidebar(){
   const nav = $("calc-tabs");
   if(!nav) return;
+  nav.setAttribute("aria-label", tr("Choose a calculator"));
   if(nav.children && nav.children.length > 0){
     nav.querySelectorAll(".tab").forEach(t => {
       t.classList.toggle("active", t.dataset.id === CURRENT);
