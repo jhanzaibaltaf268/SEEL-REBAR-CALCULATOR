@@ -4435,6 +4435,7 @@ ${renderToolShell(lang, null)}
 ${enEducationSections}
   <section class="related">
     <h2>${u.all}</h2>
+    ${lang === "es" ? `<p><a href="/es/calculadora-de-varilla"><strong>Calculadora de varilla</strong></a> — peso por metro de cada diámetro (métrico y #3 a #11), número de barras de una losa y costo.</p>` : ""}
     ${directory}
   </section>
 
