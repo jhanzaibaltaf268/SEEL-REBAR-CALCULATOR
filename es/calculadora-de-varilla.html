@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Varilla — Peso, Barras y Costo (kg/m)</title>
+<meta name="description" content="Calculadora de varilla: peso en kg, toneladas y costo, y número de barras para una losa. Tabla de kg/m de 6 a 40 mm y de #3 a #11, con ejemplos resueltos paso a paso.">
+<link rel="canonical" href="https://steelrebarcalculator.com/es/calculadora-de-varilla">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.7}
+  [hidden]{display:none!important}
+  main{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:2rem;line-height:1.2;margin:8px 0 12px}
+  h2{font-size:1.4rem;margin-top:44px;border-bottom:3px solid #f97316;padding-bottom:6px}
+  h3{font-size:1.1rem;margin-top:24px}
+  p,li{max-width:70ch}
+  .lead{font-size:1.1rem;color:#334155}
+  .card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(15,23,42,.08);padding:22px;margin:20px 0}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .tabs button{border:2px solid #cbd5e1;background:#fff;color:#0f172a;border-radius:999px;padding:8px 16px;font-size:.95rem;cursor:pointer}
+  .tabs button.active{background:#f97316;border-color:#f97316;color:#fff;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  label{display:block;font-weight:600;font-size:.92rem;margin-bottom:4px}
+  input,select{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:1rem;background:#fff}
+  input:focus,select:focus{outline:2px solid #f97316;border-color:#f97316}
+  .hint{font-size:.85rem;color:#64748b;margin:6px 0 0}
+  .results{background:#0f172a;color:#fff;border-radius:12px;padding:20px;margin-top:18px}
+  .results h3{margin:0 0 12px;color:#fff}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+  .row:last-child{border-bottom:none}
+  .row b{color:#fdba74;font-size:1.1rem;text-align:right}
+  .error{color:#dc2626;font-weight:600;margin-top:12px}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin:12px 0;font-size:.95rem}
+  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid #e2e8f0}
+  th{background:#0f172a;color:#fff}
+  tr:last-child td{border-bottom:none}
+  .formula{background:#fff;border-left:4px solid #f97316;border-radius:8px;padding:14px 18px;margin:14px 0;font-size:1.02rem;overflow-x:auto}
+  .example{background:#fff7ed;border:1px solid #fdba74;border-radius:12px;padding:16px 20px;margin:16px 0}
+  .example ol{margin:8px 0 0;padding-left:20px}
+  details{background:#fff;border-radius:12px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(15,23,42,.06)}
+  details summary{cursor:pointer;font-weight:700}
+  .links a{display:inline-block;margin:4px 10px 4px 0}
+  .trust{color:#64748b;font-size:.88rem;margin-top:40px}
+  a{color:#c2410c}
+</style>
+</head>
+<body>
+<!-- site-header -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/es/"><span class="brand-mark">▦</span>
+      <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+    <nav class="top-nav">
+      <a href="/es/">Calculadoras</a>
+      <a href="/es/#charts">Tabla de pesos</a>
+      <a href="/es/#faq">Preguntas</a>
+    </nav>
+    <details class="lang-dropdown">
+      <summary>🌐 ES <span class="caret">▾</span></summary>
+      <div class="lang-menu"><a class="lang" hreflang="en" href="/">English</a><a class="lang active" hreflang="es" href="/es/">Español</a><a class="lang" hreflang="fr" href="/fr/">Français</a><a class="lang" hreflang="de" href="/de/">Deutsch</a><a class="lang" hreflang="it" href="/it/">Italiano</a><a class="lang" hreflang="pt" href="/pt/">Português</a><a class="lang" hreflang="nl" href="/nl/">Nederlands</a><a class="lang" hreflang="pl" href="/pl/">Polski</a><a class="lang" hreflang="ro" href="/ro/">Română</a><a class="lang" hreflang="sv" href="/sv/">Svenska</a><a class="lang" hreflang="cs" href="/cs/">Čeština</a><a class="lang" hreflang="da" href="/da/">Dansk</a><a class="lang" hreflang="el" href="/el/">Ελληνικά</a><a class="lang" hreflang="hu" href="/hu/">Magyar</a><a class="lang" hreflang="fi" href="/fi/">Suomi</a><a class="lang" hreflang="bg" href="/bg/">Български</a><a class="lang" hreflang="hr" href="/hr/">Hrvatski</a><a class="lang" hreflang="sk" href="/sk/">Slovenčina</a><a class="lang" hreflang="sl" href="/sl/">Slovenščina</a><a class="lang" hreflang="et" href="/et/">Eesti</a><a class="lang" hreflang="lv" href="/lv/">Latviešu</a><a class="lang" hreflang="lt" href="/lt/">Lietuvių</a></div>
+    </details>
+  </div>
+</header>
+<!-- /site-header -->
+<main>
+
+<h1>Calculadora de varilla</h1>
+<p class="lead">Calcula el peso en kilos y toneladas, el número de barras de una losa y el costo de la varilla corrugada. Usa el peso por metro (kg/m) de cada diámetro, en milímetros y en pulgadas (#3 a #11).</p>
+
+<section class="card" id="calc" aria-label="Calculadora de varilla">
+  <div class="tabs" role="tablist">
+    <button type="button" class="active" data-mode="barras">Peso de barras</button>
+    <button type="button" data-mode="losa">Barras en una losa</button>
+  </div>
+
+  <div class="grid">
+    <div>
+      <label for="diametro">Varilla</label>
+      <select id="diametro">
+        <optgroup label="Métrica (mm)">
+          <option value="0.222">6 mm — 0,222 kg/m</option>
+          <option value="0.394">8 mm — 0,394 kg/m</option>
+          <option value="0.616">10 mm — 0,616 kg/m</option>
+          <option value="0.887" selected>12 mm — 0,887 kg/m</option>
+          <option value="1.578">16 mm — 1,578 kg/m</option>
+          <option value="2.465">20 mm — 2,465 kg/m</option>
+          <option value="3.851">25 mm — 3,851 kg/m</option>
+          <option value="6.310">32 mm — 6,310 kg/m</option>
+          <option value="9.864">40 mm — 9,864 kg/m</option>
+        </optgroup>
+        <optgroup label="Pulgadas (US)">
+          <option value="0.560">#3 — 0,560 kg/m</option>
+          <option value="0.994">#4 — 0,994 kg/m</option>
+          <option value="1.552">#5 — 1,552 kg/m</option>
+          <option value="2.235">#6 — 2,235 kg/m</option>
+          <option value="3.042">#7 — 3,042 kg/m</option>
+          <option value="3.973">#8 — 3,973 kg/m</option>
+          <option value="5.060">#9 — 5,060 kg/m</option>
+          <option value="6.404">#10 — 6,404 kg/m</option>
+          <option value="7.907">#11 — 7,907 kg/m</option>
+        </optgroup>
+      </select>
+    </div>
+    <div>
+      <label for="precio">Precio por kg (opcional)</label>
+      <input id="precio" type="text" inputmode="decimal" placeholder="Ej. 1,50" value="">
+    </div>
+  </div>
+
+  <div id="modo-barras">
+    <div class="grid" style="margin-top:14px">
+      <div>
+        <label for="longitud">Longitud de cada barra (m)</label>
+        <input id="longitud" type="text" inputmode="decimal" value="12">
+      </div>
+      <div>
+        <label for="cantidad">Cantidad de barras</label>
+        <input id="cantidad" type="text" inputmode="decimal" value="500">
+      </div>
+    </div>
+  </div>
+
+  <div id="modo-losa" hidden>
+    <div class="grid" style="margin-top:14px">
+      <div>
+        <label for="largo">Largo de la losa (m)</label>
+        <input id="largo" type="text" inputmode="decimal" value="6">
+      </div>
+      <div>
+        <label for="ancho">Ancho de la losa (m)</label>
+        <input id="ancho" type="text" inputmode="decimal" value="4">
+      </div>
+      <div>
+        <label for="separacion">Separación entre barras (mm)</label>
+        <input id="separacion" type="text" inputmode="decimal" value="200">
+      </div>
+      <div>
+        <label for="recubrimiento">Recubrimiento (mm)</label>
+        <input id="recubrimiento" type="text" inputmode="decimal" value="25">
+      </div>
+    </div>
+  </div>
+
+  <div class="results" aria-live="polite">
+    <h3>Resultado</h3>
+    <div id="res-filas"></div>
+  </div>
+  <p class="error" id="error" hidden></p>
+  <p class="hint">Cálculo de la malla y del peso de las barras. No incluye traslapes, ganchos ni desperdicio: súmelos por separado.</p>
+</section>
+
+<h2>Tabla de varillas: peso por metro</h2>
+<p>El peso de una varilla por metro sale de su diámetro: kg/m = d² ÷ 162,28, con d en milímetros. Es la misma fórmula que usa la calculadora.</p>
+
+<h3>Varillas métricas</h3>
+<table>
+  <tr><th>Varilla</th><th>Diámetro (mm)</th><th>Área (mm²)</th><th>Peso (kg/m)</th><th>Pulgadas más cercana</th></tr>
+  <tr><td>6 mm</td><td>6</td><td>28,3</td><td>0,222</td><td>—</td></tr>
+  <tr><td>8 mm</td><td>8</td><td>50,3</td><td>0,394</td><td>—</td></tr>
+  <tr><td>10 mm</td><td>10</td><td>78,5</td><td>0,616</td><td>#3 (9,5 mm)</td></tr>
+  <tr><td>12 mm</td><td>12</td><td>113,1</td><td>0,887</td><td>#4 (12,7 mm)</td></tr>
+  <tr><td>16 mm</td><td>16</td><td>201,1</td><td>1,578</td><td>#5 (15,9 mm)</td></tr>
+  <tr><td>20 mm</td><td>20</td><td>314,2</td><td>2,465</td><td>#6 (19,1 mm)</td></tr>
+  <tr><td>25 mm</td><td>25</td><td>490,9</td><td>3,851</td><td>#8 (25,4 mm)</td></tr>
+  <tr><td>32 mm</td><td>32</td><td>804,2</td><td>6,310</td><td>#10 (32,3 mm)</td></tr>
+  <tr><td>40 mm</td><td>40</td><td>1.256,6</td><td>9,864</td><td>—</td></tr>
+</table>
+
+<h3>Varillas en pulgadas (US, #3 a #11)</h3>
+<table>
+  <tr><th>Varilla</th><th>Diámetro (mm)</th><th>Peso (lb/ft)</th><th>Peso (kg/m)</th></tr>
+  <tr><td>#3</td><td>9,5</td><td>0,376</td><td>0,560</td></tr>
+  <tr><td>#4</td><td>12,7</td><td>0,668</td><td>0,994</td></tr>
+  <tr><td>#5</td><td>15,9</td><td>1,043</td><td>1,552</td></tr>
+  <tr><td>#6</td><td>19,1</td><td>1,502</td><td>2,235</td></tr>
+  <tr><td>#7</td><td>22,2</td><td>2,044</td><td>3,042</td></tr>
+  <tr><td>#8</td><td>25,4</td><td>2,670</td><td>3,973</td></tr>
+  <tr><td>#9</td><td>28,7</td><td>3,400</td><td>5,060</td></tr>
+  <tr><td>#10</td><td>32,3</td><td>4,303</td><td>6,404</td></tr>
+  <tr><td>#11</td><td>35,8</td><td>5,313</td><td>7,907</td></tr>
+</table>
+<p class="hint">Las varillas de pulgadas se venden en libras por pie. Para pasarlas a kg/m se multiplican por 1,488.</p>
+
+<h2>Cómo calcular el peso de la varilla</h2>
+<div class="formula">Peso (kg) = kg/m × longitud de cada barra (m) × cantidad de barras</div>
+
+<div class="example">
+  <strong>Ejemplo: 500 barras de 16 mm de 12 m</strong>
+  <ol>
+    <li>Peso de una barra: 1,578 kg/m × 12 m = 18,94 kg.</li>
+    <li>Peso de las 500 barras: 18,94 kg × 500 = 9.468 kg.</li>
+    <li>En toneladas: 9.468 kg ÷ 1.000 = <strong>9,468 t</strong>.</li>
+  </ol>
+</div>
+
+<h2>Cómo calcular cuántas barras lleva una losa</h2>
+<p>Una losa se arma con dos capas de barras que se cruzan. Cada capa tiene dos partes que calcular: cuántas barras entran y cuánto mide cada una.</p>
+<ol>
+  <li><strong>Distancia útil:</strong> a cada dimensión le restas dos veces el recubrimiento (uno por cada borde).</li>
+  <li><strong>Número de barras:</strong> divide la distancia útil entre la separación, quítale los decimales y suma 1.</li>
+  <li><strong>Longitud de cada barra:</strong> la distancia útil en la dirección de la barra.</li>
+</ol>
+<div class="formula">Nº de barras = parte entera de (distancia útil ÷ separación) + 1</div>
+
+<div class="example">
+  <strong>Ejemplo: losa de 6 m × 4 m, varilla de 12 mm, separación de 200 mm, recubrimiento de 25 mm</strong>
+  <ol>
+    <li><strong>Barras paralelas al lado de 6 m</strong> (se reparten a lo ancho de 4 m): distancia útil 4.000 − 50 = 3.950 mm; 3.950 ÷ 200 = 19,75, parte entera 19, más 1 = <strong>20 barras</strong>. Cada una mide 6.000 − 50 = 5.950 mm, es decir, 5,95 m. Total: 20 × 5,95 = 119,00 m.</li>
+    <li><strong>Barras paralelas al lado de 4 m</strong> (se reparten a lo largo de 6 m): distancia útil 6.000 − 50 = 5.950 mm; 5.950 ÷ 200 = 29,75, parte entera 29, más 1 = <strong>30 barras</strong>. Cada una mide 4.000 − 50 = 3.950 mm, es decir, 3,95 m. Total: 30 × 3,95 = 118,50 m.</li>
+    <li><strong>Total de la losa:</strong> 119,00 + 118,50 = 237,50 m de varilla. Peso: 237,50 m × 0,887 kg/m = <strong>210,7 kg</strong> (0,211 t).</li>
+  </ol>
+</div>
+<p>Este cálculo cuenta solo la malla. En obra hay que añadir los traslapes entre barras, los ganchos en los bordes y el desperdicio de los cortes. Para los traslapes use la <a href="/es/calculadora-de-longitud-de-empalme">calculadora de longitud de empalme</a>.</p>
+
+<h2>Costo y desperdicio</h2>
+<div class="formula">Costo = peso total (kg) × precio por kg</div>
+<p>Con el ejemplo anterior y un precio de $1,50 por kilo, la malla cuesta 210,7 kg × $1,50 = <strong>$316</strong>. Como en obra siempre se pierde material en cortes y traslapes, muchos presupuestos suman entre 5 % y 10 % más. Con un 5 %, la misma losa queda en 221,2 kg, es decir, $332.</p>
+
+<h2>Cómo se llama la varilla en cada país</h2>
+<p>En español la misma barra tiene varios nombres. Estos son los más usados, aunque cambian según la región:</p>
+<table>
+  <tr><th>Término</th><th>Dónde se usa más</th></tr>
+  <tr><td>Varilla</td><td>México, Centroamérica, Colombia, Venezuela</td></tr>
+  <tr><td>Fierro</td><td>Perú, Chile, Bolivia</td></tr>
+  <tr><td>Hierro (de construcción)</td><td>Argentina, Uruguay, Paraguay</td></tr>
+  <tr><td>Barra corrugada, acero corrugado, armadura</td><td>España, y en planos y normas técnicas</td></tr>
+</table>
+<p>Todos se refieren a la misma barra con resaltes que se usa para reforzar el concreto. Lo que cambia es la norma y la nomenclatura del país, así que confirme el diámetro y el grado de acero en sus planos.</p>
+
+<h2>Errores comunes</h2>
+<ul>
+  <li><strong>Confundir 12 mm con #4.</strong> La #4 mide 12,7 mm y pesa 0,994 kg/m. La de 12 mm pesa 0,887 kg/m, unos 11 % menos. Si cambia una por otra, el total de la losa cambia en esa proporción.</li>
+  <li><strong>Mezclar milímetros y metros.</strong> La separación y el recubrimiento van en milímetros; las dimensiones de la losa y la longitud de las barras van en metros.</li>
+  <li><strong>Olvidar el recubrimiento.</strong> Sin restarlo en ambos bordes, sale una barra más en cada dirección y el peso se exagera.</li>
+  <li><strong>Usar el peso de otra norma.</strong> La tabla de pesos por pie (lb/ft) no se puede usar directamente con kilos; primero hay que convertirla.</li>
+</ul>
+
+<h2>Recubrimiento mínimo según ACI 318</h2>
+<p>Estos valores son de la norma ACI 318. Confirme la edición vigente y los requisitos de su proyecto con el ingeniero responsable.</p>
+<table>
+  <tr><th>Condición</th><th>Recubrimiento mínimo</th></tr>
+  <tr><td>Concreto colado contra la tierra</td><td>75 mm (3 in)</td></tr>
+  <tr><td>Expuesto a la intemperie o en contacto con el suelo, varillas #6 o mayores</td><td>50 mm (2 in)</td></tr>
+  <tr><td>Expuesto a la intemperie, varillas #5 o menores</td><td>40 mm (1,5 in)</td></tr>
+  <tr><td>Vigas y columnas interiores</td><td>40 mm (1,5 in)</td></tr>
+  <tr><td>Losas y muros interiores, varillas #11 o menores</td><td>20 mm (3/4 in)</td></tr>
+</table>
+
+<h2>Preguntas frecuentes</h2>
+<details open>
+  <summary>¿Cuánto pesa una varilla de 12 mm por metro?</summary>
+  <p>Pesa 0,887 kg por metro. Una barra de 12 m pesa 10,64 kg.</p>
+</details>
+<details>
+  <summary>¿Cuál es la diferencia entre la varilla de 12 mm y la #4?</summary>
+  <p>La #4 tiene 12,7 mm de diámetro y pesa 0,994 kg/m. La de 12 mm pesa unos 11 % menos. No son intercambiables si el plano indica una de las dos.</p>
+</details>
+<details>
+  <summary>¿Cómo paso de kilos a toneladas?</summary>
+  <p>Divida entre 1.000. Así, 9.468 kg son 9,468 toneladas métricas.</p>
+</details>
+<details>
+  <summary>¿Por qué el proveedor me da más barras que la calculadora?</summary>
+  <p>La calculadora cuenta la malla, sin traslapes, ganchos ni desperdicio. Esas partes suelen sumar entre 5 % y 10 % más. Súmelas antes de pedir el material.</p>
+</details>
+<details>
+  <summary>¿Qué separación debo usar en una losa?</summary>
+  <p>Depende del diseño. La separación sale de los planos estructurales. La calculadora acepta cualquier valor, así que puede probar varias separaciones y comparar el peso.</p>
+</details>
+<details>
+  <summary>¿Cuánto desperdicio debo agregar?</summary>
+  <p>Como guía, entre 5 % y 10 % para una losa sencilla. Use un porcentaje mayor si la losa tiene formas irregulares, muchos cortes o varias alturas.</p>
+</details>
+<details>
+  <summary>¿Esta calculadora sirve para el diseño estructural?</summary>
+  <p>No. Sirve para estimar cantidades y costos. El diámetro, la separación y el recubrimiento los define un ingeniero en el diseño.</p>
+</details>
+<details>
+  <summary>¿Puedo usar kg/m de la tabla de pulgadas con varillas métricas?</summary>
+  <p>No. Cada sistema tiene sus diámetros. Use la tabla métrica para varillas en milímetros y la de pulgadas solo para varillas #3 a #11.</p>
+</details>
+
+<h2>Calculadoras relacionadas</h2>
+<p class="links">
+  <a href="/es/calculadora-de-peso-de-varilla">Peso de varilla</a>
+  <a href="/es/calculadora-de-acero-para-losa">Acero para losa</a>
+  <a href="/es/calculadora-de-longitud-de-empalme">Longitud de empalme</a>
+  <a href="/es/calculadora-de-longitud-de-anclaje">Longitud de anclaje</a>
+  <a href="/es/calculadora-de-separacion-de-barras">Separación de barras</a>
+  <a href="/es/calculadora-de-alambre-de-atar">Alambre de atar</a>
+  <a href="/es/calculadora-de-coste-de-acero">Costo del acero</a>
+  <a href="/es/calculadora-de-tonelaje-de-acero">Tonelaje de acero</a>
+</p>
+
+<p class="trust">Revisado: octubre de 2026. Pesos calculados con d² ÷ 162,28 para varillas métricas y los pesos de la tabla ASTM A615 para las pulgadas. Los resultados son estimaciones para planear compras. Verifique siempre con sus planos y con el código de construcción de su país.</p>
+
+</main>
+<!-- site-footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-silos-grid">
+      
+      <div class="footer-col">
+        <h4>Peso Calculadoras</h4>
+        <ul>
+          <li><a href="/es/calculadora-de-peso-de-varilla">Calculadora de Peso de Varilla</a></li>
+          <li><a href="/es/calculadora-de-area-de-acero-ast">Calculadora de Área de Acero (Ast)</a></li>
+          <li><a href="/es/calculadora-de-cantidad-de-acero">Calculadora de Cantidad de Acero</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Mediciones Calculadoras</h4>
+        <ul>
+          <li><a href="/es/calculadora-de-acero-para-losa">Calculadora de Acero para Losa</a></li>
+          <li><a href="/es/calculadora-de-acero-para-zapatas">Calculadora de Acero para Zapatas</a></li>
+          <li><a href="/es/calculadora-de-parrilla-de-acero">Calculadora de Parrilla de Acero</a></li>
+          <li><a href="/es/estimador-de-hormigon-y-acero">Estimador de Hormigón y Acero</a></li>
+          <li><a href="/es/calculadora-de-acero-para-entradas">Calculadora de Acero para Entradas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Detallado Calculadoras</h4>
+        <ul>
+          <li><a href="/es/calculadora-de-separacion-de-barras">Calculadora de Separación de Barras</a></li>
+          <li><a href="/es/calculadora-de-longitud-de-anclaje">Calculadora de Longitud de Anclaje</a></li>
+          <li><a href="/es/calculadora-de-longitud-de-empalme">Calculadora de Longitud de Empalme</a></li>
+          <li><a href="/es/calculadora-de-ganchos-dobleces-y-corte">Calculadora de Ganchos, Dobleces y Corte</a></li>
+          <li><a href="/es/calculadora-de-corte-de-estribos">Calculadora de Corte de Estribos</a></li>
+          <li><a href="/es/calculadora-de-soportes-separadores">Calculadora de Soportes (Separadores)</a></li>
+          <li><a href="/es/calculadora-de-alambre-de-atar">Calculadora de Alambre de Atar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Elementos Calculadoras</h4>
+        <ul>
+          <li><a href="/es/calculadora-de-acero-para-columnas">Calculadora de Acero para Columnas</a></li>
+          <li><a href="/es/calculadora-de-acero-para-vigas">Calculadora de Acero para Vigas</a></li>
+          <li><a href="/es/calculadora-de-acero-para-muros">Calculadora de Acero para Muros</a></li>
+          <li><a href="/es/calculadora-de-acero-para-piscinas">Calculadora de Acero para Piscinas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Comercial Calculadoras</h4>
+        <ul>
+          <li><a href="/es/calculadora-de-coste-de-acero">Calculadora de Coste de Acero</a></li>
+          <li><a href="/es/calculadora-de-tonelaje-de-acero">Calculadora de Tonelaje de Acero</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <a class="brand" href="/es/"><span class="brand-mark">▦</span>
+          <span class="brand-text">Rebar<strong>Calc</strong></span></a>
+        <p><strong>Rebar Calculator</strong> — herramientas gratuitas de peso, medición y detallado de acero.</p>
+      </div>
+      <div class="footer-quick-links">
+        <a href="/es/">Calculadoras</a>
+        <a href="/es/#charts">Tabla de pesos</a>
+        <a href="/es/#faq">Preguntas</a>
+      </div>
+      <p class="muted">Los resultados son estimaciones orientativas. Verifíquelos con sus planos estructurales y la normativa de diseño.</p>
+    </div>
+  </div>
+</footer>
+<!-- /site-footer -->
+
+<script>
+(function(){
+  var modo = 'barras';
+  function num(id){
+    var v = (document.getElementById(id).value || '').trim().replace(',', '.');
+    var n = parseFloat(v);
+    return isNaN(n) ? NaN : n;
+  }
+  function fmt(n, d){
+    return n.toLocaleString('es-ES', {minimumFractionDigits: d, maximumFractionDigits: d});
+  }
+  function fila(label, valor){
+    return '<div class="row"><span>' + label + '</span><b>' + valor + '</b></div>';
+  }
+  function setModo(m){
+    modo = m;
+    document.querySelectorAll('.tabs button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.mode === m);
+    });
+    document.getElementById('modo-barras').hidden = (m !== 'barras');
+    document.getElementById('modo-losa').hidden = (m !== 'losa');
+    calc();
+  }
+  document.querySelectorAll('.tabs button').forEach(function(b){
+    b.addEventListener('click', function(){ setModo(b.dataset.mode); });
+  });
+  ['diametro','precio','longitud','cantidad','largo','ancho','separacion','recubrimiento'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', calc);
+  });
+
+  function calc(){
+    var err = document.getElementById('error');
+    var res = document.getElementById('res-filas');
+    var kgm = parseFloat(document.getElementById('diametro').value);
+    var precio = num('precio');
+    var msg = '', kg = NaN, filas = '';
+
+    if (modo === 'barras'){
+      var L = num('longitud'), q = num('cantidad');
+      if (!(L > 0) || !(q > 0)) msg = 'Introduzca una longitud y una cantidad mayores que cero.';
+      else {
+        kg = kgm * L * q;
+        filas += fila('Peso por barra', fmt(kgm * L, 2) + ' kg');
+        filas += fila('Peso total', fmt(kg, 1) + ' kg');
+      }
+    } else {
+      var Lx = num('largo'), Wy = num('ancho'), s = num('separacion'), c = num('recubrimiento');
+      if (!(Lx > 0) || !(Wy > 0) || !(s > 0) || !(c >= 0)) msg = 'Revise las dimensiones: el largo, el ancho y la separación deben ser mayores que cero.';
+      else if (2 * c >= Lx * 1000 || 2 * c >= Wy * 1000) msg = 'El recubrimiento es demasiado grande para la losa.';
+      else {
+        var sm = s / 1000, cm = c / 1000;
+        var nL = Math.floor((Wy - 2 * cm) / sm) + 1, lenL = Lx - 2 * cm;
+        var nW = Math.floor((Lx - 2 * cm) / sm) + 1, lenW = Wy - 2 * cm;
+        var metros = nL * lenL + nW * lenW;
+        kg = metros * kgm;
+        filas += fila('Barras paralelas al largo', fmt(nL, 0) + ' barras de ' + fmt(lenL, 2) + ' m');
+        filas += fila('Barras paralelas al ancho', fmt(nW, 0) + ' barras de ' + fmt(lenW, 2) + ' m');
+        filas += fila('Longitud total', fmt(metros, 2) + ' m');
+        filas += fila('Peso total', fmt(kg, 1) + ' kg');
+      }
+    }
+
+    if (!msg && !isNaN(kg)){
+      filas += fila('Toneladas', fmt(kg / 1000, 3) + ' t');
+      if (precio > 0) filas += fila('Costo del material', '$' + fmt(kg * precio, 2));
+      res.innerHTML = filas;
+      err.hidden = true;
+    } else {
+      res.innerHTML = '';
+      err.textContent = msg;
+      err.hidden = false;
+    }
+  }
+  calc();
+})();
+</script>
+</body>
+</html>
