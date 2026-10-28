@@ -2210,9 +2210,236 @@ const PAGES = [
     </ol>
     <p>Last reviewed: October 2026.</p>
 `,
-    faqs:[["What is the hook length of rebar?","A standard 180° hook adds 9 × bar diameter to the cutting length: 72 mm for 8 mm, 90 mm for 10 mm, 108 mm for 12 mm, 144 mm for 16 mm, 180 mm for 20 mm. Two hooks (one each end) double it. Note this is the cutting addition — the anchorage value a hook supplies toward development length is a different figure (8d for a 90° hook)."],["Why do we deduct for bends?","Bending stretches the outside of the bar and compresses the inside, so a bar measured along its outside faces looks longer than the steel actually is. The deduction takes that stretch back: 1d per 45° bend, 2d per 90° bend, 3d per 135° bend. Skip it and every bent bar comes out too long."],["What is the cutting length formula?","Cutting length = straight length + (hooks × 9d) − (45°×1d + 90°×2d + 135°×3d). The calculator defaults (3000 mm, 12 mm, 2 hooks, no bends) give 3000 + 216 − 0 = 3216 mm."],["What is the difference between a hook and a bend?","A hook is an end anchorage: a 180° turn at the bar end that adds 9d to the cut. A bend is a direction change along the bar that only takes a deduction (1d–3d by angle) and adds nothing. A 180° end counts as a hook — never add the 9d and also deduct for it."],["How much is a 135° stirrup hook?","10 × bar diameter per hook, under seismic detailing practice (IS 13920) — not the 9d of this calculator. Closed ties need 135° hooks so they stay shut when concrete spalls. Use the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a> for closed ties; this page's 9d is for standard end hooks."],["Does a hook count toward development length?","Yes, through its anchorage value — not through the 9d cutting addition. IS 456 gives 4d for 45°, 8d for 90°, 12d for 135° and 16d for a U-bend. Example: a 12 mm Fe500 bar in M25 concrete needs Ld = 582.59 mm, and a 90° hook supplies 96 mm of it, leaving 486.59 mm straight. Get Ld from the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."],["How do you calculate an L-bar cutting length?","Add the two legs and deduct one 90° bend: A + B − 2d. For A 500 mm, B 800 mm, 12 mm bar: 500 + 800 − 24 = 1276 mm (1.276 m), weighing 1.13 kg at 0.887 kg/m."],["How do you calculate a cranked (bent-up) bar?","Add 0.42 × h per 45° crank, where h = slab depth − top cover − bottom cover − bar diameter, then deduct the four 45° bends (4d). Example: 150 mm slab, 25 mm covers, 12 mm bar → h = 88 mm, two cranks add 73.92 mm, less 48 mm deductions = 25.92 mm net over the straight length. This calculator has no crank input — add it by hand and do not also enter the crank bends."],["How many cut bars come from one 12 m stock length?","Divide 12000 mm by the cutting length and round down. The 3216 mm default bar gives 3 per stick (2352 mm offcut); the 4724 mm example gives 2 per stick (2552 mm offcut). Keep offcuts for chairs, spacers and dowels, and add 2.5–4% waste on top of the neat total."],["What does this calculator not do?","It does not subtract concrete cover (enter the length after cover), does not add laps (use the <a href=\"/rebar-lap-length-calculator\">lap calculator</a>), does not model cranks or ACI hook geometry, and does not use the 10d seismic hook — closed ties belong in the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a>."]] },
-
-  { id:"stirrup", slug:"stirrup-tie-cutting-length-calculator", cat:"Detailing",
+    faqs:[["What is the hook length of rebar?","A standard 180° hook adds 9 × bar diameter to the cutting length: 72 mm for 8 mm, 90 mm for 10 mm, 108 mm for 12 mm, 144 mm for 16 mm, 180 mm for 20 mm. Two hooks (one each end) double it. Note this is the cutting addition — the anchorage value a hook supplies toward development length is a different figure (8d for a 90° hook)."],["Why do we deduct for bends?","Bending stretches the outside of the bar and compresses the inside, so a bar measured along its outside faces looks longer than the steel actually is. The deduction takes that stretch back: 1d per 45° bend, 2d per 90° bend, 3d per 135° bend. Skip it and every bent bar comes out too long."],["What is the cutting length formula?","Cutting length = straight length + (hooks × 9d) − (45°×1d + 90°×2d + 135°×3d). The calculator defaults (3000 mm, 12 mm, 2 hooks, no bends) give 3000 + 216 − 0 = 3216 mm."],["What is the difference between a hook and a bend?","A hook is an end anchorage: a 180° turn at the bar end that adds 9d to the cut. A bend is a direction change along the bar that only takes a deduction (1d–3d by angle) and adds nothing. A 180° end counts as a hook — never add the 9d and also deduct for it."],["How much is a 135° stirrup hook?","10 × bar diameter per hook, under seismic detailing practice (IS 13920) — not the 9d of this calculator. Closed ties need 135° hooks so they stay shut when concrete spalls. Use the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a> for closed ties; this page's 9d is for standard end hooks."],["Does a hook count toward development length?","Yes, through its anchorage value — not through the 9d cutting addition. IS 456 gives 4d for 45°, 8d for 90°, 12d for 135° and 16d for a U-bend. Example: a 12 mm Fe500 bar in M25 concrete needs Ld = 582.59 mm, and a 90° hook supplies 96 mm of it, leaving 486.59 mm straight. Get Ld from the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."],["How do you calculate an L-bar cutting length?","Add the two legs and deduct one 90° bend: A + B − 2d. For A 500 mm, B 800 mm, 12 mm bar: 500 + 800 − 24 = 1276 mm (1.276 m), weighing 1.13 kg at 0.887 kg/m."],["How do you calculate a cranked (bent-up) bar?","Add 0.42 × h per 45° crank, where h = slab depth − top cover − bottom cover − bar diameter, then deduct the four 45° bends (4d). Example: 150 mm slab, 25 mm covers, 12 mm bar → h = 88 mm, two cranks add 73.92 mm, less 48 mm deductions = 25.92 mm net over the straight length. This calculator has no crank input — add it by hand and do not also enter the crank bends."],["How many cut bars come from one 12 m stock length?","Divide 12000 mm by the cutting length and round down. The 3216 mm default bar gives 3 per stick (2352 mm offcut); the 4724 mm example gives 2 per stick (2552 mm offcut). Keep offcuts for chairs, spacers and dowels, and add 2.5–4% waste on top of the neat total."],["What does this calculator not do?","It does not subtract concrete cover (enter the length after cover), does not add laps (use the <a href=\"/rebar-lap-length-calculator\">lap calculator</a>), does not model cranks or ACI hook geometry, and does not use the 10d seismic hook — closed ties belong in the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a>."]],
+    de: {
+  metaTitle: "Haken- & Biege-Schnittlängen-Rechner — 9d-Haken gratis",
+  desc: "Haken- & Biege-Schnittlängen-Rechner: Schnittlänge aus gerader Länge, 9d-Haken und Biegeabzug berechnen. Beispiel: 3.000 mm, 12 mm, 2 Haken = 3.216 mm. Gratis.",
+  formula: "Schnittlänge = gerade Länge + (Haken × 9d) − (45°×1d + 90°×2d + 135°×3d).",
+  kw: "hakenlänge bewehrung formel, biegeabzug bewehrung, schnittlänge bewehrung berechnen, schnittlänge von bewehrungsstäben",
+  howto: ["Geben Sie die gerade Länge (Außenmaß) in mm ein — die Länge nach Abzug der Betondeckung von der Spannweite, nicht die volle Spannweite selbst.", "Wählen Sie die Stabgröße.", "Geben Sie die Anzahl der Haken (je 9d) und die Anzahl jeder Biegungsart ein — 45°, 90°, 135°.", "Lesen Sie die Schnittlänge in mm und m ab, dazu die Hakenlänge und den Biegeabzug separat ausgewiesen.", "Übertragen Sie das Ergebnis in die Stahlliste: Teilen Sie die 12-m-Handelslänge durch die Schnittlänge für die Stäbe je Stab, und addieren Sie Übergreifungen und Verschnitt vor der Bestellung."],
+  faqs: [["Wie lang ist ein Haken bei Bewehrung?", "Ein Standardhaken von 180° verlängert die Schnittlänge um das 9-Fache des Stabdurchmessers: 72 mm bei 8 mm, 90 mm bei 10 mm, 108 mm bei 12 mm, 144 mm bei 16 mm, 180 mm bei 20 mm. Zwei Haken (je einer pro Ende) verdoppeln den Wert. Beachten Sie: Das ist die Zugabe beim Schneiden — der Anrechnungswert, den ein Haken auf die Verankerungslänge anrechnet, ist ein anderer Wert (8d bei einem 90°-Haken)."], ["Warum ziehen wir für Biegungen etwas ab?", "Beim Biegen wird die Außenseite des Stabes gedehnt und die Innenseite gestaucht, sodass ein Stab, gemessen entlang seiner Außenflächen, länger wirkt, als der Stahl tatsächlich ist. Der Abzug nimmt diese Dehnung zurück: 1d je 45°-Biegung, 2d je 90°-Biegung, 3d je 135°-Biegung. Lässt man ihn weg, kommt jeder gebogene Stab zu lang heraus."], ["Wie lautet die Formel für die Schnittlänge?", "Schnittlänge = gerade Länge + (Haken × 9d) − (45°×1d + 90°×2d + 135°×3d). Die Rechner-Standards (3.000 mm, 12 mm, 2 Haken, keine Biegungen) ergeben 3.000 + 216 − 0 = 3.216 mm."], ["Was ist der Unterschied zwischen einem Haken und einer Biegung?", "Ein Haken ist eine Endverankerung: eine 180°-Umdrehung am Stabende, die den Schnitt um 9d verlängert. Eine Biegung ist eine Richtungsänderung entlang des Stabes, die nur einen Abzug bringt (1d–3d je nach Winkel) und nichts hinzufügt. Ein 180°-Ende zählt als Haken — addieren Sie niemals die 9d und ziehen Sie zusätzlich dafür ab."], ["Wie viel beträgt ein 135°-Bügelhaken?", "Das 10-Fache des Stabdurchmessers je Haken, nach erdbebengerechter Bewehrungspraxis (IS 13920) — nicht die 9d dieses Rechners. Geschlossene Bügel brauchen 135°-Haken, damit sie geschlossen bleiben, wenn Beton abplatzt. Verwenden Sie für geschlossene Bügel den <a href=\"/de/buegel-schnittlaengen-rechner\">Bügel-Rechner</a>; die 9d hier gelten für Standard-Endhaken."], ["Zählt ein Haken auf die Verankerungslänge an?", "Ja, über seinen Anrechnungswert — nicht über die 9d-Schnittzugabe. IS 456 gibt 4d für 45°, 8d für 90°, 12d für 135° und 16d für eine U-Biegung an. Beispiel: Ein 12-mm-Stab Fe500 in Beton M25 braucht Ld = 582,59 mm, und ein 90°-Haken liefert 96 mm davon, sodass noch 486,59 mm gerade Länge bleiben. Ld selbst erhalten Sie aus dem <a href=\"/de/verankerungslaengen-rechner\">Verankerungslängen-Rechner</a>."], ["Wie berechnet man die Schnittlänge eines L-Stabes?", "Addieren Sie die beiden Schenkel und ziehen Sie eine 90°-Biegung ab: A + B − 2d. Für A 500 mm, B 800 mm, Stab 12 mm: 500 + 800 − 24 = 1.276 mm (1,276 m), Gewicht 1,13 kg bei 0,887 kg/m."], ["Wie berechnet man ein abgebogenes Eisen?", "Addieren Sie 0,42 × h je 45°-Abbiegung, wobei h = Plattendicke − obere Betondeckung − untere Betondeckung − Stabdurchmesser ist, und ziehen Sie dann die vier 45°-Biegungen ab (4d). Beispiel: 150 mm Platte, 25 mm Deckungen, 12 mm Stab → h = 88 mm, zwei Abbiegungen addieren 73,92 mm, abzüglich 48 mm Abzüge = 25,92 mm netto über der geraden Länge. Dieser Rechner hat keine Abbiegungs-Eingabe — addieren Sie den Wert von Hand und geben Sie die Abbiegungs-Biegungen nicht zusätzlich ein."], ["Wie viele geschnittene Stäbe kommen aus einer 12-m-Handelslänge?", "Teilen Sie 12.000 mm durch die Schnittlänge und runden Sie ab. Der 3.216-mm-Standardstab ergibt 3 je Stab (2.352 mm Reststück); das 4.724-mm-Beispiel ergibt 2 je Stab (2.552 mm Reststück). Bewahren Sie Reststücke für Abstandhalter, Distanzstücke und Dübel auf, und schlagen Sie 2,5–4 % Verschnitt auf die Nettosumme auf."], ["Was kann dieser Rechner nicht?", "Er zieht keine Betondeckung ab (geben Sie die Länge nach Abzug der Deckung ein), addiert keine Übergreifungen (verwenden Sie den <a href=\"/de/uebergreifungslaengen-rechner\">Übergreifungslängen-Rechner</a>), bildet keine abgebogenen Eisen und keine ACI-Hakengeometrie ab und verwendet nicht den 10d-Erdbebenhaken — geschlossene Bügel gehören in den <a href=\"/de/buegel-schnittlaengen-rechner\">Bügel-Rechner</a>."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So benutzen Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: Rechner-Standards (12 mm, 2 Haken)</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: 16-mm-Stab mit zwei 90°-Biegungen</a></li>
+      <li><a href="#example-3">Rechenbeispiel 3: gemischte Biegungen, ein Haken</a></li>
+      <li><a href="#hook-table">Hakenlänge (9d) nach Stabgröße</a></li>
+      <li><a href="#deduction-table">Biegeabzug nach Winkel</a></li>
+      <li><a href="#hook-vs-anchorage">Hakenlänge vs. Anrechnungswert</a></li>
+      <li><a href="#stirrup-hooks">Bügelhaken: warum 10d, nicht 9d</a></li>
+      <li><a href="#crank-bar">Abgebogene Eisen: die 0,42h-Regel</a></li>
+      <li><a href="#shapes">L-Stäbe, U-Stäbe und die Stahlliste</a></li>
+      <li><a href="#stock-length">Von der Schnittlänge zur Bestellung: Handelslängen und Verschnitt</a></li>
+      <li><a href="#imperial">Metrische und Zoll-Maße</a></li>
+      <li><a href="#not-included">Was der Rechner nicht enthält</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<h3>Die Formel, erklärt</h3>
+    <p>Die Schnittlänge ist die Länge des geraden Stabes, die Sie <em>vor</em> dem Biegen schneiden — nicht
+    die Länge, die auf der Zeichnung steht. Die Zeichnung gibt Außenmaße an, die
+    entlang der Außenflächen des gebogenen Stabes gemessen werden. Beim Biegen wird die Außenseite
+    gedehnt und die Innenseite gestaucht, sodass das Außenmaß den Stab immer zu lang
+    ausweist. Die Formel korrigiert beide Enden des Problems:</p>
+    <p><strong>Schnittlänge = gerade Länge + (Haken × 9d) − (45°×1d + 90°×2d + 135°×3d)</strong></p>
+    <ul>
+      <li><strong>Gerade Länge</strong> ist das Außenmaß, das Sie eingeben — nach Abzug der Betondeckung
+      von der Spannweite. Der Rechner zieht die Betondeckung nicht für Sie ab.</li>
+      <li><strong>Haken × 9d</strong> ist der zusätzliche Stahl an den Stabenden. Ein Standardhaken von 180°
+      addiert das 9-Fache des Stabdurchmessers je Haken — das gebogene Ende plus seinen geraden Schwanz.</li>
+      <li><strong>Biegeabzüge</strong> nehmen die Dehnung an jeder Richtungsänderung zurück:
+      1d für 45°, 2d für 90°, 3d für 135°. Ohne sie kommt jeder gebogene Stab
+      zu lang heraus.</li>
+    </ul>
+    <p>Eine Falle, die Sie vor den Beispielen vermeiden sollten: Ein 180°-Ende ist in diesem
+    Rechner ein <em>Haken</em>, sodass es die 9d-Zugabe erhält. Manche Stahllisten führen stattdessen einen Abzug von 4d
+    für eine 180°-Biegung — das ist dasselbe Ende, andersherum gemessen. Wenden Sie niemals
+    sowohl die 9d-Zugabe als auch einen 180°-Abzug auf ein Ende an.</p>
+    <h3 id="example-1">Rechenbeispiel 1: Rechner-Standards (12 mm, 2 Haken)</h3>
+    <p>Öffnen Sie den Rechner, und er zeigt bereits diesen Fall: 3.000 mm gerade Länge,
+    12-mm-Stab, 2 Haken (je einer pro Ende), keine Biegungen.</p>
+    <ul>
+      <li>Hakenlänge = 2 × 9 × 12 = <strong>216 mm</strong>.</li>
+      <li>Biegeabzug = <strong>0 mm</strong>.</li>
+      <li>Schnittlänge = 3.000 + 216 − 0 = <strong>3.216 mm</strong>.</li>
+      <li>Gewicht je Stab = 3,216 × 0,887 = <strong>2,85 kg</strong>.</li>
+    </ul>
+    <p>Probieren Sie es selbst: Das Panel öffnet auf 3.216 mm, Hakenlänge 216,00 mm,
+    Abzug 0,000 mm — und 3,22 m, weil das Panel Meter auf 2 Dezimalstellen rundet
+    (der genaue Wert ist 3,216 m).</p>
+    <h3 id="example-2">Rechenbeispiel 2: 16-mm-Stab mit zwei 90°-Biegungen</h3>
+    <p>Gerade Länge 4.500 mm, 16-mm-Stab, 2 Haken, zwei 90°-Biegungen:</p>
+    <ul>
+      <li>Hakenlänge = 2 × 9 × 16 = <strong>288 mm</strong>.</li>
+      <li>Biegeabzug = 2 × 2 × 16 = <strong>64 mm</strong>.</li>
+      <li>Schnittlänge = 4.500 + 288 − 64 = <strong>4.724 mm</strong>.</li>
+      <li>Gewicht je Stab = 4,724 × 1,578 = <strong>7,45 kg</strong>.</li>
+    </ul>
+    <p>Probieren Sie es selbst: Geben Sie 4.500, 16 mm, 2 Haken, zwei 90°-Biegungen ein, und das Panel zeigt
+    4.724 mm (4,72 m gerundet). Beachten Sie, wie die Biegungen das Ergebnis zurückziehen: Ohne
+    sie würde derselbe Stab auf 4.788 mm geschnitten.</p>
+    <h3 id="example-3">Rechenbeispiel 3: gemischte Biegungen, ein Haken</h3>
+    <p>Gerade Länge 2.500 mm, 10-mm-Stab, 1 Haken, eine 135°-Biegung und eine 45°-Biegung:</p>
+    <ul>
+      <li>Hakenlänge = 1 × 9 × 10 = <strong>90 mm</strong>.</li>
+      <li>Biegeabzug = 1 × 3 × 10 + 1 × 1 × 10 = <strong>40 mm</strong>.</li>
+      <li>Schnittlänge = 2.500 + 90 − 40 = <strong>2.550 mm</strong>.</li>
+      <li>Gewicht je Stab = 2,55 × 0,616 = <strong>1,57 kg</strong>.</li>
+    </ul>
+    <p>Probieren Sie es selbst: Das Panel zeigt 2.550 mm (2,55 m). Und eine reine Abzugsprüfung
+    für einen Stab mit Biegungen, aber ohne Haken: 3.000 mm, 12 mm, zwei 90°-Biegungen ergeben
+    3.000 − 48 = <strong>2.952 mm</strong> — Biegungen allein verkürzen den Schnitt immer.</p>
+    <h3 id="hook-table">Hakenlänge (9d) nach Stabgröße</h3>
+    <div class="formula-table"><table>
+      <tr><th>Stabdurchmesser</th><th>9d-Hakenlänge</th></tr>
+      <tr><td>8 mm</td><td>72 mm</td></tr>
+      <tr><td>10 mm</td><td>90 mm</td></tr>
+      <tr><td>12 mm</td><td>108 mm</td></tr>
+      <tr><td>16 mm</td><td>144 mm</td></tr>
+      <tr><td>20 mm</td><td>180 mm</td></tr>
+      <tr><td>25 mm</td><td>225 mm</td></tr>
+      <tr><td>32 mm</td><td>288 mm</td></tr>
+    </table></div>
+    <p>Zwei Haken — der übliche Fall, je einer pro Ende — verdoppeln diese Werte: Ein 12-mm-Stab
+    mit zwei Haken gewinnt 216 mm, ein 16-mm-Stab gewinnt 288 mm. Der Rechner multipliziert
+    die Hakenanzahl, die Sie eingeben, sodass ein Stab mit nur einem Haken (zum Beispiel ein L-Stab in ein Auflager)
+    nur eine Zugabe erhält.</p>
+    <h3 id="deduction-table">Biegeabzug nach Winkel</h3>
+    <div class="formula-table"><table>
+      <tr><th>Biegewinkel</th><th>Abzug je Biegung</th><th>12-mm-Stab</th><th>16-mm-Stab</th></tr>
+      <tr><td>45°</td><td>1d</td><td>12 mm</td><td>16 mm</td></tr>
+      <tr><td>90°</td><td>2d</td><td>24 mm</td><td>32 mm</td></tr>
+      <tr><td>135°</td><td>3d</td><td>36 mm</td><td>48 mm</td></tr>
+    </table></div>
+    <p>Das sind die praktischen Baustellenwerte, die in den meisten Stahllisten verwendet werden (Praxis nach IS 2502).
+    Der Abzug wächst mit dem Winkel, weil eine schärfere Biegung mehr Stahl um die Außenseite dehnt.
+    Zählen Sie jede Biegung im Stab — ein U-Stab hat zwei 90°-Biegungen (insgesamt 4d), ein abgebogenes Eisen hat vier 45°-Biegungen (insgesamt 4d, siehe unten).</p>
+    <h3 id="hook-vs-anchorage">Hakenlänge vs. Anrechnungswert</h3>
+    <p>Die 9d-Zahl oben ist eine <em>Schnittlängen</em>-Zugabe. Sie ist nicht dasselbe wie der
+    <em>Anrechnungswert</em> eines Hakens — wie viel von der Verankerungslänge Ld eine Biegung
+    liefert. IS 456 Abs. 26.2.2.1 gibt Anrechnungswerte von 4d für eine 45°-Biegung, 8d für
+    90°, 12d für 135° und 16d für eine U-Biegung an. Die beiden zu verwechseln ist ein echter Baustellenfehler:
+    Ein 90°-Haken „bringt Ihnen nicht 9d Verankerung“, sondern 8d.</p>
+    <p>Die Brücke zwischen beiden, mit den Zahlen der Verankerungslängen-Seite selbst:
+    Ein 12-mm-Stab Fe500 in Beton M25 braucht Ld = 582,59 mm im Zug. Ein 90°-Haken
+    liefert 8 × 12 = 96 mm Verankerung, sodass die noch benötigte gerade Länge
+    582,59 − 96 = <strong>486,59 mm</strong> beträgt. Verwenden Sie den <a href="/de/verankerungslaengen-rechner">Verankerungslängen-Rechner</a> für Ld selbst — diese Seite
+    bemisst nur den Schnitt, nicht die Einbettung.</p>
+    <h3 id="stirrup-hooks">Bügelhaken: warum 10d, nicht 9d</h3>
+    <p>Geschlossene Bügel und Stützenbügel verwenden nicht den 9d-Haken. Ihre 135°-Erdbebenhaken
+    nehmen <strong>je 10d</strong> (Praxis nach IS 13920: Der Haken muss geschlossen bleiben,
+    wenn Beton bei einem Erdbeben abplatzt, sodass der Schwanz länger ist und die Biegung
+    135° beträgt, niemals 90°). Darum gibt es einen eigenen
+    <a href="/de/buegel-schnittlaengen-rechner">Bügel-Rechner</a> — seine Formel lautet 2(a + b) + 2 × 10d − 3 × 2d − 2 × 3d,
+    mit drei 90°-Biegungen und zwei 135°-Biegungen.</p>
+    <p>Mit der Bügelformel durchgerechnet, unabhängig von den Rechner-Standards:
+    Innenmaße 200 × 400 mm, 8-mm-Stab. Umfang = 2 × (200 + 400) = 1.200 mm.
+    Haken = 2 × 10 × 8 = 160 mm. Abzüge = 3 × 2 × 8 + 2 × 3 × 8 = 96 mm.
+    Schnittlänge = 1.200 + 160 − 96 = <strong>1.264 mm</strong>. Würden Sie denselben
+    Bügel mit den 9d-Haken dieser Seite durchrechnen, würden Sie ihn um 16 mm zu kurz schneiden — wenig je
+    Bügel, aber systematisch über eine ganze Stütze.</p>
+    <h3 id="crank-bar">Abgebogene Eisen: die 0,42h-Regel</h3>
+    <p>Ein abgebogenes Eisen steigt auf einer 45°-Schräge durch die Platte, und die Schräge ist
+    länger als der gerade Lauf, den sie ersetzt. Die übliche Baustellen-Zugabe beträgt
+    <strong>0,42 × h je Abbiegung</strong>, wobei h die lichte Abbiegungshöhe ist: Plattendicke
+    − obere Betondeckung − untere Betondeckung − Stabdurchmesser. Bei zwei Abbiegungen je Stab addieren Sie
+    2 × 0,42h — und ziehen dann die vier 45°-Biegungen ab (4 × 1d).</p>
+    <p>Durchgerechnet: 150 mm Platte, 25 mm Deckungen, 12-mm-Stab. h = 150 − 25 − 25 − 12 =
+    88 mm. Zusatz je Abbiegung = 0,42 × 88 = 36,96 mm; zwei Abbiegungen = 73,92 mm. Abzüglich vier
+    45°-Abzüge (48 mm) beträgt die Nettozugabe über der geraden Länge
+    <strong>25,92 mm</strong>. Dieser Rechner hat keine Abbiegungs-Eingabe — addieren Sie den Nettowert
+    selbst zu seinem Ergebnis hinzu, und zählen Sie die Abbiegungs-Biegungen nicht zusätzlich in den
+    Biegungs-Eingaben, sonst werden die Abzüge doppelt genommen.</p>
+    <h3 id="shapes">L-Stäbe, U-Stäbe und die Stahlliste</h3>
+    <p>Die meisten gelisteten Stäbe haben eine von drei Formen, und jede ist nur dieselbe
+    Formel mit gezählten Biegungen:</p>
+    <div class="formula-table"><table>
+      <tr><th>Form (BS 8666)</th><th>Schnittlängen-Rezept</th><th>Beispiel</th></tr>
+      <tr><td>00 — gerader Stab</td><td>Gerade + Haken × 9d</td><td>Bsp. 1: 3.000 + 216 = 3.216 mm</td></tr>
+      <tr><td>21 — L-Stab</td><td>A + B − 2d (eine 90°-Biegung)</td><td>500 + 800 − 24 = 1.276 mm (12 mm); 1,13 kg</td></tr>
+      <tr><td>11 — U-Stab</td><td>A + 2B − 4d (zwei 90°-Biegungen)</td><td>400 + 2 × 600 − 48 = 1.552 mm (12 mm)</td></tr>
+    </table></div>
+    <p>Das L-Stab-Beispiel ist der Standard-Lehrbuchfall: A 500 mm, B 800 mm, 12-mm-Stab,
+    eine 90°-Biegung → 1.300 − 24 = 1.276 mm = 1,276 m, und bei 0,887 kg/m sind das
+    1,13 kg je Stab (20 Stäbe = 25,52 m). Eine Stahlliste fasst nach Durchmesser zusammen,
+    weil Stahl nach Gewicht je Durchmesser gekauft und bezahlt wird — tragen Sie also die
+    Schnittlänge, die Anzahl und die Gesamtlänge je Durchmesser in die Liste ein,
+    nicht nur die Länge.</p>
+    <h3 id="stock-length">Von der Schnittlänge zur Bestellung: Handelslängen und Verschnitt</h3>
+    <p>Stäbe kommen in 12-m-Handelslängen, sodass die Schnittlänge entscheidet, wie viele
+    Stäbe jeder Stab ergibt — und wie viel Reststück Sie behalten:</p>
+    <div class="formula-table"><table>
+      <tr><th>Schnittlänge</th><th>Stäbe je 12-m-Stab</th><th>Reststück je Stab</th></tr>
+      <tr><td>3.216 mm (Bsp. 1)</td><td>3</td><td>12.000 − 3 × 3.216 = 2.352 mm</td></tr>
+      <tr><td>4.724 mm (Bsp. 2)</td><td>2</td><td>12.000 − 2 × 4.724 = 2.552 mm</td></tr>
+    </table></div>
+    <p>Planen Sie die Reststücke: Kurze Längen werden zu Abstandhaltern, Distanzstücken und Dübeln statt zu
+    Schrott. Als Baustellennorm läuft optimiertes Schneiden mit Reststück-Wiederverwendung bei 2,0–2,5 %
+    Verschnitt, eine normale Baustelle mit guter Stahlliste bei 2,5–4,0 %, und Schneiden direkt nach
+    Zeichnungen ohne Stahlliste bei 5–8 % oder mehr. Bestellen Sie die Nettosumme plus den Verschnittzuschlag —
+    der Rechner gibt nur die nette Schnittlänge an.</p>
+    <h3 id="imperial">Metrische und Zoll-Maße</h3>
+    <p>Dieser Rechner nimmt Millimeter. Wenn Ihre Zeichnungen Zoll verwenden:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Zoll (ca.)</th></tr>
+      <tr><td>12-mm-Stab (#4)</td><td>0,50 in Durchmesser</td></tr>
+      <tr><td>9d-Haken, 12,7-mm-Stab</td><td>114,3 mm = 4,50 in</td></tr>
+      <tr><td>90°-Abzug, 12,7-mm-Stab</td><td>25,4 mm = 1,00 in</td></tr>
+      <tr><td>3.216 mm Schnittlänge</td><td>10,55 ft (÷ 304,8)</td></tr>
+    </table></div>
+    <p>Eine codeübergreifende Warnung: Die ACI-Bewehrungsführung gibt für ein 90°-Ende eine Verlängerung von 12d
+    an (152,4 mm = 6,00 in bei einem 12,7-mm-Stab), nicht den 9d-Standardhaken, der hier verwendet wird.
+    Die 9d-Regel ist die IS-/Baustellenkonvention, der dieser Rechner folgt — mischen Sie die beiden nicht
+    auf einer Stahlliste. Rechnen Sie zuerst um und geben Sie dann metrische Werte ein.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Abzug der Betondeckung.</strong> Geben Sie das Außenmaß nach Abzug der Betondeckung
+      von der Spannweite ein. Eine volle Spannweite, roh eingegeben, übertreibt jeden Stab.</li>
+      <li><strong>Abbiegungs-Zugabe.</strong> Die 0,42h-Regel oben ist eine Handzugabe —
+      es gibt keine Abbiegungs-Eingabe, und Abbiegungs-Biegungen dürfen nicht zusätzlich als Biegungs-Eingaben
+      eingegeben werden.</li>
+      <li><strong>Übergreifungen.</strong> Stoßlängen kommen zu den Schnittlängen hinzu. Bemessen
+      Sie sie mit dem <a href="/de/uebergreifungslaengen-rechner">Übergreifungslängen-Rechner</a>.</li>
+      <li><strong>Verankerungslänge.</strong> Haken liefern Anrechnungswerte, aber Ld selbst
+      kommt aus dem <a href="/de/verankerungslaengen-rechner">Verankerungslängen-Rechner</a>.</li>
+      <li><strong>Geschlossene Bügel und Bänder.</strong> Diese verwenden 10d-Erdbebenhaken, nicht
+      9d — verwenden Sie den <a href="/de/buegel-schnittlaengen-rechner">Bügel-Rechner</a>.</li>
+      <li><strong>Verschnitt und Reststücke.</strong> Das Ergebnis ist die nette Schnittlänge.
+      Addieren Sie den Verschnittzuschlag (2,5–4 % bei guter Stahlliste) vor der Bestellung.</li>
+      <li><strong>ACI-Hakengeometrie.</strong> ACI-Standardhaken verwenden eine Biegung plus eine
+      12d-Verlängerung, eine andere Form als der hier modellierte 9d-Haken.</li>
+      <li><strong>Biegeradius / Geometrie des gebogenen Teils.</strong> Dieser Rechner verwendet
+      die 9d/1d/2d/3d-Baustellenregeln, keine radiusbasierte Bogenberechnung — ein
+      radiusbasiertes Hakenverlängerungs-Tool kann für denselben Haken einen anderen Wert liefern.</li>
+    </ul>
+    <h3 id="mistakes">Häufige Fehler</h3>
+    <ol class="howto">
+      <li><strong>Einen 9d-Haken und einen 180°-Abzug an dasselbe Ende anzusetzen.</strong> Ein
+      180°-Ende ist eine Sache, auf zwei Arten gemessen. Wählen Sie den Haken (9d addiert) und
+      ziehen Sie niemals zusätzlich 4d dafür ab.</li>
+      <li><strong>Biegeabzüge zu vergessen.</strong> Ein Stab, der auf Außenmaße ohne Abzüge
+      geschnitten wird, kommt an jeder Biegung zu lang heraus — er passt nicht in den
+      Korb, und Nachschneiden auf der Baustelle vergeudet den Stab.</li>
+      <li><strong>9d-Haken bei Bügeln zu verwenden.</strong> Geschlossene Bügel brauchen 135°-Erdbebenhaken
+      mit 10d. Die 9d-Regel schneidet jeden Bügel um 2d zu kurz, und schlimmer noch: Ein 90°-Bügelhaken
+      kann sich öffnen, wenn Beton abplatzt.</li>
+      <li><strong>Die volle Spannweite statt der Länge nach Abzug der Betondeckung einzugeben.</strong>
+      Der Rechner nimmt die gerade Länge wie eingegeben. Die Betondeckung kommt vor dem
+      Tippen ab, an beiden Enden.</li>
+      <li><strong>Die Hakenlänge als Verankerung zu behandeln.</strong> 9d ist das, was Sie beim
+      Schneiden addieren; 8d ist das, was ein 90°-Haken auf Ld anrechnet. 9d so zu verwenden, als
+      erfülle es die Verankerungslänge, übertreibt die Verankerung um 1d je Haken —
+      und verfehlt den Punkt, dass Ld separat geprüft wird.</li>
+    </ol>
+    <p>Zuletzt geprüft: Oktober 2026.</p>
+`,
+}
+},
+    { id:"stirrup", slug:"stirrup-tie-cutting-length-calculator", cat:"Detailing",
     metaTitle:"Stirrup Cutting Length Calculator — Ties in Seconds",
     h1:"Stirrup & Tie Cutting Length Calculator",
     desc:"Cutting length for rectangular stirrups and column ties, hooks and bend deductions included. Defaults: a 300 × 450 mm tie = 1,364 mm. Free, no signup.",
