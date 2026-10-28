@@ -43,6 +43,9 @@ h1,h2{line-height:1.2}
 .lang-dropdown summary:hover{color:#fff;border-color:rgba(255,255,255,.45)}
 .lang-dropdown .caret{transition:transform .2s;font-size:.7rem}
 .lang-dropdown[open] .caret{transform:rotate(180deg)}
+/* The shared details style is for FAQ blocks; reset it for the language switcher and keep its menu hidden until opened */
+details.lang-dropdown,details.lang-dropdown[open]{border:0;padding:0;margin:0;background:none;box-shadow:none}
+details.lang-dropdown:not([open]) .lang-menu{display:none}
 .lang-menu{position:absolute;right:0;top:calc(100% + .45rem);background:#fff;border-radius:10px;
   box-shadow:0 14px 34px rgba(2,6,23,.28);padding:.4rem;display:grid;
   grid-template-columns:1fr 1fr;gap:.1rem;min-width:300px;max-height:70vh;overflow:auto;z-index:60}
