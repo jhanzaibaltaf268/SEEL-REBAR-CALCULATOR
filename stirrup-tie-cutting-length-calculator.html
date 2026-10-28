@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stirrup & Column Tie Cutting Length Calculator</title>
-<meta name="description" content="Calculate the cutting length of a rectangular stirrup or column tie including hooks and bend deductions." />
+<title>Stirrup Cutting Length Calculator — Ties in Seconds</title>
+<meta name="description" content="Cutting length for rectangular stirrups and column ties, hooks and bend deductions included. Defaults: a 300 × 450 mm tie = 1,364 mm. Free, no signup." />
 <meta name="keywords" content="stirrup cutting length, column tie cutting length, rebar stirrup calculator" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/stirrup-tie-cutting-length-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/apskavu-griesanas-kalkulators" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/apkabu-kirpimo-skaiciuotuvas" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/stirrup-tie-cutting-length-calculator" />
-<meta property="og:title" content="Stirrup & Column Tie Cutting Length Calculator" />
-<meta property="og:description" content="Calculate the cutting length of a rectangular stirrup or column tie including hooks and bend deductions." />
+<meta property="og:title" content="Stirrup Cutting Length Calculator — Ties in Seconds" />
+<meta property="og:description" content="Cutting length for rectangular stirrups and column ties, hooks and bend deductions included. Defaults: a 300 × 450 mm tie = 1,364 mm. Free, no signup." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Stirrup & Tie Cutting Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the cutting length of a rectangular stirrup or column tie including hooks and bend deductions."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Stirrup & Tie Cutting Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Cutting length for rectangular stirrups and column ties, hooks and bend deductions included. Defaults: a 300 × 450 mm tie = 1,364 mm. Free, no signup."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate stirrup cutting length?","acceptedAnswer":{"@type":"Answer","text":"Add the inner perimeter to the hook allowance and subtract the bend deductions: cutting length = 2(a + b) + 2 × 10d − 3 × 2d − 2 × 3d, where a and b are the member dimensions less twice the cover. For the calculator defaults (300 × 450 mm, 25 mm cover, 8 mm bar) that is 2 × (250 + 400) + 160 − 96 = 1364 mm."}},{"@type":"Question","name":"What is the hook length in a stirrup?","acceptedAnswer":{"@type":"Answer","text":"Each 135° seismic hook is taken as 10 × bar diameter — 80 mm on an 8 mm bar, 100 mm on a 10 mm bar — two hooks per tie. That is the stirrup hook, not the 9d standard hook used for bar ends; see the <a href=\"/rebar-hook-bend-cutting-length-calculator\">hook & bend calculator</a> for the difference."}},{"@type":"Question","name":"Why 135° hooks and not 90° hooks on stirrups?","acceptedAnswer":{"@type":"Answer","text":"A 90° hook opens up when the concrete cover spalls in an earthquake, and the tie stops confining the core. A 135° hook stays closed, so seismic codes (IS 13920) require 135° hooks on stirrups and column ties in earthquake zones. Outside seismic zones a 90° hook is sometimes detailed, but 135° is the safe default."}},{"@type":"Question","name":"Why does the formula subtract 6d and 6d?","acceptedAnswer":{"@type":"Answer","text":"A closed tie has five bends: three 90° corners and two 135° closing hooks. A 90° bend shortens the bar by 2d and a 135° bend by 3d, so the deductions are 3 × 2d = 6d for the corners and 2 × 3d = 6d for the hooks — 12d in total. If you counted five 90° bends instead, you would deduct only 10d instead of 12d, cutting the tie 16 mm too long on an 8 mm bar."}},{"@type":"Question","name":"What cover should I use — beam or column?","acceptedAnswer":{"@type":"Answer","text":"Beams usually take 25 mm clear cover and columns 40 mm, but follow the drawing — cover is a durability decision, not a calculator default. The difference matters: the same 300 × 450 mm section gives a 1364 mm tie at 25 mm cover and a 1244 mm tie at 40 mm cover, a 120 mm difference on every tie."}},{"@type":"Question","name":"How many stirrups do I need for a beam?","acceptedAnswer":{"@type":"Answer","text":"Count = floor(length ÷ spacing) + 1. A 6 m beam at 150 mm spacing needs 6000 ÷ 150 + 1 = 41 ties. Remember the support zones: spacing is usually tighter near the supports, where shear is highest, so the count from one spacing figure is a planning estimate, not the drawing."}},{"@type":"Question","name":"What spacing do stirrups need?","acceptedAnswer":{"@type":"Answer","text":"Beam vertical stirrups: maximum spacing = the smaller of 0.75 × effective depth and 300 mm (with d = 320 mm, that is 240 mm). Column lateral ties: maximum spacing = the smallest of the least lateral dimension, 16 × the smallest longitudinal bar diameter, and 300 mm (a 300 mm column with 16 mm mains gives 256 mm, typically detailed at 250 mm). Keep at least about 100 mm between ties so concrete can flow and be compacted."}},{"@type":"Question","name":"What size should tie bars be?","acceptedAnswer":{"@type":"Answer","text":"At least the larger of 6 mm and one quarter of the largest longitudinal bar diameter. With 20 mm main bars that is 6 mm; with 25 mm main bars it is 6.25 mm, so 8 mm is used in practice. 8 mm is the usual tie bar for ordinary beams and columns."}},{"@type":"Question","name":"Can I use this calculator for multi-legged or circular ties?","acceptedAnswer":{"@type":"Answer","text":"For the outer tie of a multi-legged set, yes — it is just a rectangular tie. Inner ties need the leg-spacing method worked in the multi-leg section below, because their width is set by the main-bar spacing, not by the member size. Circular and spiral ties are not computed here: start from π × (diameter − 2 × cover) and apply the same 10d hooks, but take the bend deductions from the drawing."}},{"@type":"Question","name":"Does the calculator include waste, laps or cost?","acceptedAnswer":{"@type":"Answer","text":"No — it gives the neat cutting length of one tie only. Add 2.5–4% waste for cutting and off-cuts (2.0–2.5% with optimised cutting), take longitudinal laps from the <a href=\"/rebar-lap-length-calculator\">lap length calculator</a>, and price the order as total weight × your bar price per kg — the beam example below works out at €26.44 before waste at an example €1.20/kg."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the member width and depth in mm."},{"@type":"HowToStep","position":2,"text":"Set the clear cover — 25 mm is typical for beams, 40 mm for columns."},{"@type":"HowToStep","position":3,"text":"Pick the stirrup bar size. 8 mm is the usual tie bar."},{"@type":"HowToStep","position":4,"text":"Read the cutting length in mm and m, plus the inner dimensions and the weight per stirrup."},{"@type":"HowToStep","position":5,"text":"Multiply one tie by the tie count for the member, then add waste — the calculator gives one tie, not the order quantity."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Stirrup & Tie Cutting Length Calculator","item":"https://steelrebarcalculator.com/stirrup-tie-cutting-length-calculator"}]}</script>
@@ -131,12 +131,12 @@
   <section class="related">
     <h2>More Rebar Calculators — Detailing</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Find the number of bars and the actual centre-to…</span></a>
-      <a class="rel-card" href="/rebar-development-length-calculator"><b>Rebar Development Length Calculator</b><span>Calculate the development (anchorage) length Ld …</span></a>
-      <a class="rel-card" href="/rebar-lap-length-calculator"><b>Rebar Lap / Splice Length Calculator</b><span>Calculate lap (splice) length for reinforcement:…</span></a>
-      <a class="rel-card" href="/rebar-hook-bend-cutting-length-calculator"><b>Rebar Hook, Bend & Cutting Length Calculator</b><span>Calculate the cutting length of a bar from its s…</span></a>
-      <a class="rel-card" href="/rebar-chair-calculator"><b>Rebar Chair / Bar Support Calculator</b><span>Calculate how many bar chairs (supports) are nee…</span></a>
-      <a class="rel-card" href="/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Estimate binding (tie) wire for a reinforcement …</span></a>
+      <a class="rel-card" href="/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Bars across any width with the true centre-to-ce…</span></a>
+      <a class="rel-card" href="/rebar-development-length-calculator"><b>Rebar Development Length Calculator</b><span>Anchorage length Ld for deformed bars by the IS …</span></a>
+      <a class="rel-card" href="/rebar-lap-length-calculator"><b>Rebar Lap / Splice Length Calculator</b><span>Correct lap (splice) length every time: tension …</span></a>
+      <a class="rel-card" href="/rebar-hook-bend-cutting-length-calculator"><b>Rebar Hook, Bend & Cutting Length Calculator</b><span>Cutting length from straight length, standard 9d…</span></a>
+      <a class="rel-card" href="/rebar-chair-calculator"><b>Rebar Chair / Bar Support Calculator</b><span>How many bar chairs hold your top mat? Count and…</span></a>
+      <a class="rel-card" href="/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Binding wire for any grid: tie count, total metr…</span></a>
     </div>
   </section>
 
@@ -147,22 +147,22 @@
       <a class="rel-card workflow-card" href="/column-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Column Rebar Calculator</b>
-        <span>Calculate total rebar for a rectangular column: vert…</span>
+        <span>Total rebar for a rectangular column: vertical main …</span>
       </a>
       <a class="rel-card workflow-card" href="/beam-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Beam Rebar Calculator</b>
-        <span>Calculate total rebar for a beam: top and bottom mai…</span>
+        <span>Total rebar for a beam in seconds: top and bottom ma…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-hook-bend-cutting-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Hook, Bend & Cutting Length Calculator</b>
-        <span>Calculate the cutting length of a bar from its strai…</span>
+        <span>Cutting length from straight length, standard 9d hoo…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-weight-calculator">
         <span class="workflow-badge">Weight</span>
         <b>Rebar Weight Calculator</b>
-        <span>Calculate steel rebar weight by bar size, length and…</span>
+        <span>Free rebar weight calculator: bar size, length and q…</span>
       </a>
     </div>
   </section>

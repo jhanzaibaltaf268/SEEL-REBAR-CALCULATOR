@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Column Rebar Calculator — Vertical Steel + Ties</title>
-<meta name="description" content="Calculate total rebar for a rectangular column: vertical main bars plus lateral ties, with weights." />
+<title>Column Rebar Calculator — Main Bars, Ties & kg, Free</title>
+<meta name="description" content="Total rebar for a rectangular column: vertical main bars plus lateral ties, with weights. Defaults = 44.38 kg. Free, with code-minimum checks." />
 <meta name="keywords" content="column rebar calculator, rebar calculator for columns, column reinforcement, column steel calculation" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/column-rebar-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/kolonnas-stiegrojuma-kalkulators" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/kolonos-armaturos-skaiciuotuvas" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/column-rebar-calculator" />
-<meta property="og:title" content="Column Rebar Calculator — Vertical Steel + Ties" />
-<meta property="og:description" content="Calculate total rebar for a rectangular column: vertical main bars plus lateral ties, with weights." />
+<meta property="og:title" content="Column Rebar Calculator — Main Bars, Ties & kg, Free" />
+<meta property="og:description" content="Total rebar for a rectangular column: vertical main bars plus lateral ties, with weights. Defaults = 44.38 kg. Free, with code-minimum checks." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Column Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total rebar for a rectangular column: vertical main bars plus lateral ties, with weights."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Column Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Total rebar for a rectangular column: vertical main bars plus lateral ties, with weights. Defaults = 44.38 kg. Free, with code-minimum checks."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is column rebar calculated?","acceptedAnswer":{"@type":"Answer","text":"Add the vertical steel to the tie steel. Vertical steel = number of bars × (height + lap) × kg/m; ties = floor(height ÷ spacing) + 1, each cut to the stirrup cutting length. On the calculator defaults (3 m, 300 × 450 mm, 6 × 16 mm bars, 0.6 m lap, 150 mm ties, 8 mm tie bars) that is 34.08 kg of vertical steel plus 10.29 kg of tie steel = 44.38 kg for one column."}},{"@type":"Question","name":"How many vertical bars in a column?","acceptedAnswer":{"@type":"Answer","text":"At least 4 for a rectangular column and 6 for a circular column, subject to design — but the count alone is not the check. The steel area must also clear the 0.8% minimum of the gross section: the defaults (6 × 16 mm in 300 × 450 mm) give 0.89% and pass, while 4 × 12 mm in 300 × 300 mm gives only 0.50% and fails — that section needs 4 × 16 mm (0.89%) instead."}},{"@type":"Question","name":"What is the minimum and maximum steel percentage in a column?","acceptedAnswer":{"@type":"Answer","text":"IS 456 sets longitudinal steel between 0.8% and 6% of the gross cross-sectional area. In practice 4% is often used as the working limit where bars lap, because lapped bars double up and the section congests. The percentage table below works the minimum for common sections; the maximum is rarely the binding constraint on ordinary columns."}},{"@type":"Question","name":"What spacing do column ties need?","acceptedAnswer":{"@type":"Answer","text":"Maximum spacing = the smallest of the least lateral dimension, 16 × the smallest longitudinal bar diameter, and 300 mm. On the defaults (300 mm side, 16 mm bars) that is min(300, 256, 300) = 256 mm, so the calculator's 150 mm default is comfortably inside. Note the calculator uses one spacing for the full height, while drawings zone the ties separately at joints, laps and the middle — the drawing's zone spacings govern where they are tighter."}},{"@type":"Question","name":"What size should column ties be?","acceptedAnswer":{"@type":"Answer","text":"At least the larger of 6 mm and one quarter of the largest longitudinal bar diameter. On the defaults (16 mm bars) that is 6 mm, so the 8 mm tie bars are fine; on 25 mm bars it is 6.25 mm, so 8 mm is the practical minimum. One published guide states 8 mm flat — the code floor is 6 mm, and 8 mm is the safer common choice."}},{"@type":"Question","name":"What does the lap/extra field mean?","acceptedAnswer":{"@type":"Answer","text":"It is ONE extra length per vertical bar, in metres, that you set yourself — the calculator does not compute a code lap. The default 0.6 m is an allowance, not a code value: the code tension lap for a 16 mm Fe500 bar in M25 concrete is 776.79 mm, so setting 0.777 m instead of 0.6 m on the defaults raises the vertical steel from 34.08 kg to 35.76 kg (+1.68 kg). Use the <a href=\"/rebar-lap-length-calculator\">lap length calculator</a> for the code lap, and if the column is lapped top and bottom, set the field to the sum of both laps."}},{"@type":"Question","name":"Does the calculator design the column?","acceptedAnswer":{"@type":"Answer","text":"No — it totals the steel for a cage you describe; it does not check whether the cage is adequate. Axial and moment capacity, slenderness and buckling, seismic confinement lengths and joint detailing all come from the structural design and the drawing. A total that looks reasonable is not proof the section works, and a section that passes the 0.8% minimum is not proof it carries the load."}},{"@type":"Question","name":"How many ties does a column need?","acceptedAnswer":{"@type":"Answer","text":"Ties = floor(height ÷ spacing) + 1 — the +1 is the tie at the far end, and forgetting it is the classic off-by-one: on the defaults it gives 20 ties instead of 21, short by one 1244 mm tie (0.49 kg). The calculator counts 21 at 150 mm spacing on a 3 m column; at 100 mm it counts 31, and at 300 mm only 11 — but 300 mm exceeds the 256 mm code maximum for this section, so it is not a legitimate saving."}},{"@type":"Question","name":"Can I use this calculator for circular or spiral columns?","acceptedAnswer":{"@type":"Answer","text":"No — it is rectangular tied columns only. Circular columns need at least 6 longitudinal bars and a different bar layout, and spiral columns use a continuous helix with its own pitch and detailing rules instead of individual closed ties. Take both from the drawing; the tie-cutting method on the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a> still gives the closed-tie length, but the count and layout are not this calculator's."}},{"@type":"Question","name":"Does the calculator include waste, starter bars or cost?","acceptedAnswer":{"@type":"Answer","text":"No — it gives the neat one-column total only. Add 3–5% waste for cutting and laps (a published range), take footing starter bars and dowels from the <a href=\"/footing-rebar-calculator\">footing calculator</a>, price the order with the <a href=\"/rebar-cost-calculator\">cost calculator</a>, and check the steel tonnage with the <a href=\"/rebar-tonnage-calculator\">tonnage calculator</a>. For a full takeoff across members use the <a href=\"/rebar-quantity-calculator\">quantity & takeoff calculator</a>."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the column height in metres and the cross-section in mm."},{"@type":"HowToStep","position":2,"text":"Set the number and size of vertical bars, plus the lap/extra length per bar in metres."},{"@type":"HowToStep","position":3,"text":"Set the tie spacing in mm and the tie bar size."},{"@type":"HowToStep","position":4,"text":"Read the total weight, split into vertical steel and tie steel, plus the tie count and cut length."},{"@type":"HowToStep","position":5,"text":"Multiply by the number of identical columns for the floor total, then add waste — the calculator gives one column, not the order quantity."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Members","item":"https://steelrebarcalculator.com/structural-rebar-calculators"},{"@type":"ListItem","position":3,"name":"Column Rebar Calculator","item":"https://steelrebarcalculator.com/column-rebar-calculator"}]}</script>
@@ -131,9 +131,9 @@
   <section class="related">
     <h2>More Rebar Calculators — Members</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/beam-rebar-calculator"><b>Beam Rebar Calculator</b><span>Calculate total rebar for a beam: top and bottom…</span></a>
-      <a class="rel-card" href="/wall-rebar-calculator"><b>Wall Rebar Calculator</b><span>Calculate reinforcement for a concrete or block …</span></a>
-      <a class="rel-card" href="/pool-rebar-calculator"><b>Swimming Pool Rebar Calculator</b><span>Calculate reinforcement for a swimming pool wall…</span></a>
+      <a class="rel-card" href="/beam-rebar-calculator"><b>Beam Rebar Calculator</b><span>Total rebar for a beam in seconds: top and botto…</span></a>
+      <a class="rel-card" href="/wall-rebar-calculator"><b>Wall Rebar Calculator</b><span>Reinforcement for concrete or block walls: verti…</span></a>
+      <a class="rel-card" href="/pool-rebar-calculator"><b>Swimming Pool Rebar Calculator</b><span>Reinforcement for a swimming pool wall panel: ve…</span></a>
     </div>
   </section>
 
@@ -144,22 +144,22 @@
       <a class="rel-card workflow-card" href="/stirrup-tie-cutting-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Stirrup & Tie Cutting Length Calculator</b>
-        <span>Calculate the cutting length of a rectangular stirru…</span>
+        <span>Cutting length for rectangular stirrups and column t…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-lap-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Lap / Splice Length Calculator</b>
-        <span>Calculate lap (splice) length for reinforcement: ten…</span>
+        <span>Correct lap (splice) length every time: tension lap …</span>
       </a>
       <a class="rel-card workflow-card" href="/footing-rebar-calculator">
         <span class="workflow-badge">Estimating</span>
         <b>Footing Rebar Calculator</b>
-        <span>Calculate the bottom reinforcement for an isolated o…</span>
+        <span>Size the bottom reinforcement for any isolated or st…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-cost-calculator">
         <span class="workflow-badge">Commercial</span>
         <b>Rebar Cost Calculator</b>
-        <span>Estimate rebar material cost from total weight and u…</span>
+        <span>Rebar cost in seconds: weight × price per kg with a …</span>
       </a>
     </div>
   </section>

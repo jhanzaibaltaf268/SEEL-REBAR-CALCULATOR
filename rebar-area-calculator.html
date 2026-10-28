@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rebar Area Calculator (Ast) — Area of Steel</title>
-<meta name="description" content="Calculate the cross-sectional area of one bar and the total steel area Ast, plus the steel percentage of a section." />
+<title>Rebar Area Calculator (Ast) — Steel Area in Seconds</title>
+<meta name="description" content="Calculate Ast fast: area of one bar, total steel area and steel percentage for any section. 4 × 12 mm bars = 452.39 mm². Free, no signup needed." />
 <meta name="keywords" content="rebar area calculator, area of rebar formula, area of steel, ast calculator, steel percentage" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/rebar-area-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/terauda-laukuma-kalkulators-ast" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/plieno-ploto-skaiciuotuvas-ast" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-area-calculator" />
-<meta property="og:title" content="Rebar Area Calculator (Ast) — Area of Steel" />
-<meta property="og:description" content="Calculate the cross-sectional area of one bar and the total steel area Ast, plus the steel percentage of a section." />
+<meta property="og:title" content="Rebar Area Calculator (Ast) — Steel Area in Seconds" />
+<meta property="og:description" content="Calculate Ast fast: area of one bar, total steel area and steel percentage for any section. 4 × 12 mm bars = 452.39 mm². Free, no signup needed." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Area Calculator (Ast)","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the cross-sectional area of one bar and the total steel area Ast, plus the steel percentage of a section."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Area Calculator (Ast)","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate Ast fast: area of one bar, total steel area and steel percentage for any section. 4 × 12 mm bars = 452.39 mm². Free, no signup needed."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the area of a 12mm rebar?","acceptedAnswer":{"@type":"Answer","text":"π/4 × 12² = 113.10 mm² per bar (113.1 mm² rounded). Four 12 mm bars give 452.39 mm² — try it on the calculator defaults."}},{"@type":"Question","name":"What is Ast in reinforcement?","acceptedAnswer":{"@type":"Answer","text":"Ast is the total cross-sectional area of steel in a section: the area of one bar multiplied by the number of bars. On the calculator defaults (4 × 12 mm) Ast is 452.39 mm², or 4.52 cm². It is the area the structural design provides, and it is what minimum-steel checks compare against the concrete section."}},{"@type":"Question","name":"How do you calculate the area of steel?","acceptedAnswer":{"@type":"Answer","text":"Work out one bar first: area = π/4 × diameter². A 16 mm bar is π/4 × 16² = 201.06 mm². Then multiply by the number of bars: 5 × 16 mm gives 1,005.3 mm². The calculator does both steps and, if you enter the section size, divides by the gross section to give the steel percentage."}},{"@type":"Question","name":"What is the steel percentage, and is it against the gross or the effective depth?","acceptedAnswer":{"@type":"Answer","text":"This calculator divides Ast by the gross section (width × overall depth). On the defaults that is 452.39 ÷ (300 × 450) × 100 = 0.335%. Beam minimum-steel rules, by contrast, are written against b × d (width × effective depth), so the same cage shows a higher percentage there — 5 × 16 mm in a 230 × 450 mm beam is 0.971% of gross but 1.07% of b × d (230 × 409). Always check which area a code clause divides by before comparing percentages."}},{"@type":"Question","name":"How many bars do I need for a required steel area?","acceptedAnswer":{"@type":"Answer","text":"Divide the required area by the area of one bar and round UP — you cannot provide part of a bar, and rounding down leaves the section short. For a required 804.25 mm², 4 × 16 mm gives exactly 804.25 mm², while 7 × 12 mm gives only 791.68 mm² (short) and 8 × 12 mm gives 904.78 mm² (the next size up that passes). The equivalents table below works this out for the common targets."}},{"@type":"Question","name":"Can I replace one bar size with another?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the total area stays equal or greater — and if spacing, cover and development length still work. The area rule is what matters, not the count: 10 mm bars at 100 mm spacing give 785.40 mm² per metre, and 12 mm bars need 144.00 mm spacing for the same area per metre (113.10 ÷ 785.40 × 1000). Never swap sizes on count alone — 5 × 12 mm (565.49 mm²) is not a substitute for 5 × 16 mm (1,005.3 mm²). If the new bars need longer laps or development, check the <a href=\"/rebar-lap-length-calculator\">lap calculator</a> and the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."}},{"@type":"Question","name":"How do I work out steel area per metre from a spacing?","acceptedAnswer":{"@type":"Answer","text":"Divide the area of one bar by the spacing in metres: Ast per metre = (π/4 × d²) ÷ spacing (m). So 12 mm bars at 200 mm give 113.10 ÷ 0.2 = 565.49 mm²/m, and 16 mm bars at 150 mm give 201.06 ÷ 0.15 = 1,340.4 mm²/m. The per-metre table below covers 8–16 mm at 150–300 mm. To go the other way — spacing from a required area per metre — use spacing = one-bar area × 1000 ÷ required Ast per metre."}},{"@type":"Question","name":"What if my section has two different bar sizes?","acceptedAnswer":{"@type":"Answer","text":"This calculator takes one bar size per run, so run it once for each size and add the two Ast figures. A beam with 2 × 20 mm top bars and 3 × 16 mm bottom bars is 628.32 + 603.19 = 1,231.5 mm². The stirrup steel is separate — it is not part of Ast — so do not add it here; use the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a> for ties."}},{"@type":"Question","name":"What is the minimum steel area?","acceptedAnswer":{"@type":"Answer","text":"It depends on the member, and the percentages divide by different areas — see the minimum-steel section below for the full table. In short: beams need at least 0.85/fy of b × d (192.67 mm² for a 230 × 409 mm section in Fe415); columns need 0.8–6% of gross area; walls need 0.12% vertical and 0.20% horizontal of gross area per metre; slabs need 0.12% of gross area for HYSD bars (120 mm²/m on a 100 mm slab). Passing the minimum is not a design — it only catches gross errors."}},{"@type":"Question","name":"Does this calculator give the weight of the steel?","acceptedAnswer":{"@type":"Answer","text":"No — it gives area only, not weight, length, cost or tonnage. To turn an area into an order, take the bar count and length to the <a href=\"/rebar-weight-calculator\">weight calculator</a> (4 × 12 mm bars weigh 4 × 0.887 = 3.55 kg per metre of member length), then to the <a href=\"/rebar-cost-calculator\">cost calculator</a> and the <a href=\"/rebar-tonnage-calculator\">tonnage calculator</a>. For a full count-and-length take-off from a slab or grid, use the <a href=\"/rebar-quantity-calculator\">quantity calculator</a>."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Pick the bar size — metric (mm) or US (# size) — from the dropdown."},{"@type":"HowToStep","position":2,"text":"Enter the number of bars in the section."},{"@type":"HowToStep","position":3,"text":"Optionally enter the section width and depth in mm to get the steel percentage. Leave them at the defaults (300 × 450 mm) for a quick check, or set either to 0 if you only want the area — the percentage then reads 0.000%."},{"@type":"HowToStep","position":4,"text":"Read the total steel area Ast in mm² and cm², the area of one bar, and the steel percentage."},{"@type":"HowToStep","position":5,"text":"If the section mixes two bar sizes, run the calculator once per size and add the two Ast figures — see the two-size section below. If you need area per metre from a spacing, use the per-metre table below."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Weight","item":"https://steelrebarcalculator.com/rebar-weight-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Area Calculator (Ast)","item":"https://steelrebarcalculator.com/rebar-area-calculator"}]}</script>
@@ -131,8 +131,8 @@
   <section class="related">
     <h2>More Rebar Calculators — Weight</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/rebar-weight-calculator"><b>Rebar Weight Calculator</b><span>Calculate steel rebar weight by bar size, length…</span></a>
-      <a class="rel-card" href="/rebar-quantity-calculator"><b>Rebar Quantity & Takeoff Calculator</b><span>Estimate rebar weight for a slab or area from sp…</span></a>
+      <a class="rel-card" href="/rebar-weight-calculator"><b>Rebar Weight Calculator</b><span>Free rebar weight calculator: bar size, length a…</span></a>
+      <a class="rel-card" href="/rebar-quantity-calculator"><b>Rebar Quantity & Takeoff Calculator</b><span>Estimate rebar from spacing alone: kg/m², kg/ft²…</span></a>
     </div>
   </section>
 
@@ -143,22 +143,22 @@
       <a class="rel-card workflow-card" href="/rebar-spacing-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Spacing Calculator</b>
-        <span>Find the number of bars and the actual centre-to-cen…</span>
+        <span>Bars across any width with the true centre-to-centre…</span>
       </a>
       <a class="rel-card workflow-card" href="/beam-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Beam Rebar Calculator</b>
-        <span>Calculate total rebar for a beam: top and bottom mai…</span>
+        <span>Total rebar for a beam in seconds: top and bottom ma…</span>
       </a>
       <a class="rel-card workflow-card" href="/column-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Column Rebar Calculator</b>
-        <span>Calculate total rebar for a rectangular column: vert…</span>
+        <span>Total rebar for a rectangular column: vertical main …</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-weight-calculator">
         <span class="workflow-badge">Weight</span>
         <b>Rebar Weight Calculator</b>
-        <span>Calculate steel rebar weight by bar size, length and…</span>
+        <span>Free rebar weight calculator: bar size, length and q…</span>
       </a>
     </div>
   </section>

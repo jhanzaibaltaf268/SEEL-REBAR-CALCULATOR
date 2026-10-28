@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rebar Hook, Bend & Cutting Length Calculator</title>
-<meta name="description" content="Calculate the cutting length of a bar from its straight length, hooks and bends, with standard 9d hooks and bend deductions." />
+<title>Hook & Bend Cutting Length Calculator — 9d Hooks</title>
+<meta name="description" content="Cutting length from straight length, standard 9d hooks and bend deductions. Get the exact length to cut in seconds, free, with worked examples." />
 <meta name="keywords" content="rebar hook length formula, rebar bend formula, rebar cut length calculation, cutting length of rebar" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/rebar-hook-bend-cutting-length-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/aku-liekumu-un-griesanas-kalkulators" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/kabliuku-lenkimu-ir-kirpimo-skaiciuotuvas" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-hook-bend-cutting-length-calculator" />
-<meta property="og:title" content="Rebar Hook, Bend & Cutting Length Calculator" />
-<meta property="og:description" content="Calculate the cutting length of a bar from its straight length, hooks and bends, with standard 9d hooks and bend deductions." />
+<meta property="og:title" content="Hook & Bend Cutting Length Calculator — 9d Hooks" />
+<meta property="og:description" content="Cutting length from straight length, standard 9d hooks and bend deductions. Get the exact length to cut in seconds, free, with worked examples." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Hook, Bend & Cutting Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the cutting length of a bar from its straight length, hooks and bends, with standard 9d hooks and bend deductions."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Hook, Bend & Cutting Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Cutting length from straight length, standard 9d hooks and bend deductions. Get the exact length to cut in seconds, free, with worked examples."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the hook length of rebar?","acceptedAnswer":{"@type":"Answer","text":"A standard 180° hook adds 9 × bar diameter to the cutting length: 72 mm for 8 mm, 90 mm for 10 mm, 108 mm for 12 mm, 144 mm for 16 mm, 180 mm for 20 mm. Two hooks (one each end) double it. Note this is the cutting addition — the anchorage value a hook supplies toward development length is a different figure (8d for a 90° hook)."}},{"@type":"Question","name":"Why do we deduct for bends?","acceptedAnswer":{"@type":"Answer","text":"Bending stretches the outside of the bar and compresses the inside, so a bar measured along its outside faces looks longer than the steel actually is. The deduction takes that stretch back: 1d per 45° bend, 2d per 90° bend, 3d per 135° bend. Skip it and every bent bar comes out too long."}},{"@type":"Question","name":"What is the cutting length formula?","acceptedAnswer":{"@type":"Answer","text":"Cutting length = straight length + (hooks × 9d) − (45°×1d + 90°×2d + 135°×3d). The calculator defaults (3000 mm, 12 mm, 2 hooks, no bends) give 3000 + 216 − 0 = 3216 mm."}},{"@type":"Question","name":"What is the difference between a hook and a bend?","acceptedAnswer":{"@type":"Answer","text":"A hook is an end anchorage: a 180° turn at the bar end that adds 9d to the cut. A bend is a direction change along the bar that only takes a deduction (1d–3d by angle) and adds nothing. A 180° end counts as a hook — never add the 9d and also deduct for it."}},{"@type":"Question","name":"How much is a 135° stirrup hook?","acceptedAnswer":{"@type":"Answer","text":"10 × bar diameter per hook, under seismic detailing practice (IS 13920) — not the 9d of this calculator. Closed ties need 135° hooks so they stay shut when concrete spalls. Use the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a> for closed ties; this page's 9d is for standard end hooks."}},{"@type":"Question","name":"Does a hook count toward development length?","acceptedAnswer":{"@type":"Answer","text":"Yes, through its anchorage value — not through the 9d cutting addition. IS 456 gives 4d for 45°, 8d for 90°, 12d for 135° and 16d for a U-bend. Example: a 12 mm Fe500 bar in M25 concrete needs Ld = 582.59 mm, and a 90° hook supplies 96 mm of it, leaving 486.59 mm straight. Get Ld from the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."}},{"@type":"Question","name":"How do you calculate an L-bar cutting length?","acceptedAnswer":{"@type":"Answer","text":"Add the two legs and deduct one 90° bend: A + B − 2d. For A 500 mm, B 800 mm, 12 mm bar: 500 + 800 − 24 = 1276 mm (1.276 m), weighing 1.13 kg at 0.887 kg/m."}},{"@type":"Question","name":"How do you calculate a cranked (bent-up) bar?","acceptedAnswer":{"@type":"Answer","text":"Add 0.42 × h per 45° crank, where h = slab depth − top cover − bottom cover − bar diameter, then deduct the four 45° bends (4d). Example: 150 mm slab, 25 mm covers, 12 mm bar → h = 88 mm, two cranks add 73.92 mm, less 48 mm deductions = 25.92 mm net over the straight length. This calculator has no crank input — add it by hand and do not also enter the crank bends."}},{"@type":"Question","name":"How many cut bars come from one 12 m stock length?","acceptedAnswer":{"@type":"Answer","text":"Divide 12000 mm by the cutting length and round down. The 3216 mm default bar gives 3 per stick (2352 mm offcut); the 4724 mm example gives 2 per stick (2552 mm offcut). Keep offcuts for chairs, spacers and dowels, and add 2.5–4% waste on top of the neat total."}},{"@type":"Question","name":"What does this calculator not do?","acceptedAnswer":{"@type":"Answer","text":"It does not subtract concrete cover (enter the length after cover), does not add laps (use the <a href=\"/rebar-lap-length-calculator\">lap calculator</a>), does not model cranks or ACI hook geometry, and does not use the 10d seismic hook — closed ties belong in the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a>."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the straight (out-to-out) length in mm — the length after cover is taken off the span, not the full span itself."},{"@type":"HowToStep","position":2,"text":"Pick the bar size."},{"@type":"HowToStep","position":3,"text":"Enter the number of hooks (9d each) and the count of each bend type — 45°, 90°, 135°."},{"@type":"HowToStep","position":4,"text":"Read the cutting length in mm and m, plus the hook addition and bend deduction shown separately."},{"@type":"HowToStep","position":5,"text":"Apply the result to the bar schedule: divide the 12 m stock length by the cutting length for bars per stick, and add laps and waste before ordering."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Hook, Bend & Cutting Length Calculator","item":"https://steelrebarcalculator.com/rebar-hook-bend-cutting-length-calculator"}]}</script>
@@ -131,12 +131,12 @@
   <section class="related">
     <h2>More Rebar Calculators — Detailing</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Find the number of bars and the actual centre-to…</span></a>
-      <a class="rel-card" href="/rebar-development-length-calculator"><b>Rebar Development Length Calculator</b><span>Calculate the development (anchorage) length Ld …</span></a>
-      <a class="rel-card" href="/rebar-lap-length-calculator"><b>Rebar Lap / Splice Length Calculator</b><span>Calculate lap (splice) length for reinforcement:…</span></a>
-      <a class="rel-card" href="/stirrup-tie-cutting-length-calculator"><b>Stirrup & Tie Cutting Length Calculator</b><span>Calculate the cutting length of a rectangular st…</span></a>
-      <a class="rel-card" href="/rebar-chair-calculator"><b>Rebar Chair / Bar Support Calculator</b><span>Calculate how many bar chairs (supports) are nee…</span></a>
-      <a class="rel-card" href="/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Estimate binding (tie) wire for a reinforcement …</span></a>
+      <a class="rel-card" href="/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Bars across any width with the true centre-to-ce…</span></a>
+      <a class="rel-card" href="/rebar-development-length-calculator"><b>Rebar Development Length Calculator</b><span>Anchorage length Ld for deformed bars by the IS …</span></a>
+      <a class="rel-card" href="/rebar-lap-length-calculator"><b>Rebar Lap / Splice Length Calculator</b><span>Correct lap (splice) length every time: tension …</span></a>
+      <a class="rel-card" href="/stirrup-tie-cutting-length-calculator"><b>Stirrup & Tie Cutting Length Calculator</b><span>Cutting length for rectangular stirrups and colu…</span></a>
+      <a class="rel-card" href="/rebar-chair-calculator"><b>Rebar Chair / Bar Support Calculator</b><span>How many bar chairs hold your top mat? Count and…</span></a>
+      <a class="rel-card" href="/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Binding wire for any grid: tie count, total metr…</span></a>
     </div>
   </section>
 
@@ -147,22 +147,22 @@
       <a class="rel-card workflow-card" href="/stirrup-tie-cutting-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Stirrup & Tie Cutting Length Calculator</b>
-        <span>Calculate the cutting length of a rectangular stirru…</span>
+        <span>Cutting length for rectangular stirrups and column t…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-weight-calculator">
         <span class="workflow-badge">Weight</span>
         <b>Rebar Weight Calculator</b>
-        <span>Calculate steel rebar weight by bar size, length and…</span>
+        <span>Free rebar weight calculator: bar size, length and q…</span>
       </a>
       <a class="rel-card workflow-card" href="/beam-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Beam Rebar Calculator</b>
-        <span>Calculate total rebar for a beam: top and bottom mai…</span>
+        <span>Total rebar for a beam in seconds: top and bottom ma…</span>
       </a>
       <a class="rel-card workflow-card" href="/column-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Column Rebar Calculator</b>
-        <span>Calculate total rebar for a rectangular column: vert…</span>
+        <span>Total rebar for a rectangular column: vertical main …</span>
       </a>
     </div>
   </section>

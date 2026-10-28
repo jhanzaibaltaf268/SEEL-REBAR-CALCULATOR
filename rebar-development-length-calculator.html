@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rebar Development Length Calculator (Ld) — IS 456</title>
-<meta name="description" content="Calculate the development (anchorage) length Ld for deformed bars using the IS 456 formula, with selectable concrete and steel grade." />
+<title>Development Length Calculator (Ld) — IS 456, Free</title>
+<meta name="description" content="Anchorage length Ld for deformed bars by the IS 456 formula, with concrete and steel grade options and bar-size tables. Free, with worked examples." />
 <meta name="keywords" content="rebar development length calculator, development length of rebar, anchorage length, Ld calculator" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/rebar-development-length-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/enkurojuma-garuma-kalkulators" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/inkaravimo-ilgio-skaiciuotuvas" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-development-length-calculator" />
-<meta property="og:title" content="Rebar Development Length Calculator (Ld) — IS 456" />
-<meta property="og:description" content="Calculate the development (anchorage) length Ld for deformed bars using the IS 456 formula, with selectable concrete and steel grade." />
+<meta property="og:title" content="Development Length Calculator (Ld) — IS 456, Free" />
+<meta property="og:description" content="Anchorage length Ld for deformed bars by the IS 456 formula, with concrete and steel grade options and bar-size tables. Free, with worked examples." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Development Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the development (anchorage) length Ld for deformed bars using the IS 456 formula, with selectable concrete and steel grade."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Development Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Anchorage length Ld for deformed bars by the IS 456 formula, with concrete and steel grade options and bar-size tables. Free, with worked examples."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is development length of rebar?","acceptedAnswer":{"@type":"Answer","text":"The length of bar that must be embedded in concrete to transfer its design force safely. Without enough embedment, the bar slips or pulls out before reaching its design stress."}},{"@type":"Question","name":"What is the development length for Fe500 in M25?","acceptedAnswer":{"@type":"Answer","text":"About 47–49 times the bar diameter in tension for deformed bars — exactly 48.55 × d with this calculator: 582.59 mm for a 12 mm bar, 776.79 mm for a 16 mm bar, both in M25 tension."}},{"@type":"Question","name":"Is development length different in tension and compression?","acceptedAnswer":{"@type":"Answer","text":"Yes. Compression raises the bond stress by 25%, so Ld is 80% of the tension value: a 12 mm Fe500 bar in M25 needs 582.59 mm in tension but 466.07 mm in compression."}},{"@type":"Question","name":"Why is the stress 0.87 × fy and not fy?","acceptedAnswer":{"@type":"Answer","text":"0.87 is 1 ÷ 1.15, the partial safety factor for steel in IS 456. The design stress is the yield strength reduced by that factor — using full fy would overstate Ld by 15%."}},{"@type":"Question","name":"Do deformed bars need shorter development length than plain bars?","acceptedAnswer":{"@type":"Answer","text":"Yes — deformed bars get a 60% higher bond stress (for example M25: 2.24 instead of 1.4 N/mm²), so their Ld is proportionally shorter. This calculator already uses deformed values."}},{"@type":"Question","name":"Can a bend or hook replace straight development length?","acceptedAnswer":{"@type":"Answer","text":"Partly. A 90° bend counts as 8 × d and a U-hook as 16 × d toward Ld, with the rest made up in straight length. For cutting lengths, use the hook calculator."}},{"@type":"Question","name":"What is the difference between development length and lap length?","acceptedAnswer":{"@type":"Answer","text":"Development length anchors one bar into concrete; lap length overlaps two bars to transfer force between them. A lap must be at least the development length, but lap rules add their own conditions — see the lap calculator."}},{"@type":"Question","name":"Does stronger concrete reduce development length?","acceptedAnswer":{"@type":"Answer","text":"Yes. Higher grades raise the bond stress, so Ld falls: Fe500 in tension needs 56.64 × d in M20 but only 35.77 × d in M40."}},{"@type":"Question","name":"Does the ×d multiple change with bar size?","acceptedAnswer":{"@type":"Answer","text":"No. For fixed steel and concrete grades the multiple is constant — only the length in mm grows with diameter. Fe500 in M25 is 48.55 × d whether the bar is 12 mm or 20 mm."}},{"@type":"Question","name":"Does this calculator follow ACI or IS 456?","acceptedAnswer":{"@type":"Answer","text":"IS 456. The ACI method uses different factors (casting position, epoxy coating, bar size, concrete strength) and gives different lengths — do not mix the two methods on one detail."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Pick the bar size."},{"@type":"HowToStep","position":2,"text":"Select the steel grade (Fe250–Fe550) and concrete grade (M20–M40)."},{"@type":"HowToStep","position":3,"text":"Choose tension or compression."},{"@type":"HowToStep","position":4,"text":"Read Ld in mm, as a multiple of diameter, and in metres — plus the τbd used."},{"@type":"HowToStep","position":5,"text":"Compare with the tables below before detailing the anchorage."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Development Length Calculator","item":"https://steelrebarcalculator.com/rebar-development-length-calculator"}]}</script>
@@ -131,12 +131,12 @@
   <section class="related">
     <h2>More Rebar Calculators — Detailing</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Find the number of bars and the actual centre-to…</span></a>
-      <a class="rel-card" href="/rebar-lap-length-calculator"><b>Rebar Lap / Splice Length Calculator</b><span>Calculate lap (splice) length for reinforcement:…</span></a>
-      <a class="rel-card" href="/rebar-hook-bend-cutting-length-calculator"><b>Rebar Hook, Bend & Cutting Length Calculator</b><span>Calculate the cutting length of a bar from its s…</span></a>
-      <a class="rel-card" href="/stirrup-tie-cutting-length-calculator"><b>Stirrup & Tie Cutting Length Calculator</b><span>Calculate the cutting length of a rectangular st…</span></a>
-      <a class="rel-card" href="/rebar-chair-calculator"><b>Rebar Chair / Bar Support Calculator</b><span>Calculate how many bar chairs (supports) are nee…</span></a>
-      <a class="rel-card" href="/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Estimate binding (tie) wire for a reinforcement …</span></a>
+      <a class="rel-card" href="/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Bars across any width with the true centre-to-ce…</span></a>
+      <a class="rel-card" href="/rebar-lap-length-calculator"><b>Rebar Lap / Splice Length Calculator</b><span>Correct lap (splice) length every time: tension …</span></a>
+      <a class="rel-card" href="/rebar-hook-bend-cutting-length-calculator"><b>Rebar Hook, Bend & Cutting Length Calculator</b><span>Cutting length from straight length, standard 9d…</span></a>
+      <a class="rel-card" href="/stirrup-tie-cutting-length-calculator"><b>Stirrup & Tie Cutting Length Calculator</b><span>Cutting length for rectangular stirrups and colu…</span></a>
+      <a class="rel-card" href="/rebar-chair-calculator"><b>Rebar Chair / Bar Support Calculator</b><span>How many bar chairs hold your top mat? Count and…</span></a>
+      <a class="rel-card" href="/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Binding wire for any grid: tie count, total metr…</span></a>
     </div>
   </section>
 
@@ -147,22 +147,22 @@
       <a class="rel-card workflow-card" href="/rebar-lap-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Lap / Splice Length Calculator</b>
-        <span>Calculate lap (splice) length for reinforcement: ten…</span>
+        <span>Correct lap (splice) length every time: tension lap …</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-hook-bend-cutting-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Hook, Bend & Cutting Length Calculator</b>
-        <span>Calculate the cutting length of a bar from its strai…</span>
+        <span>Cutting length from straight length, standard 9d hoo…</span>
       </a>
       <a class="rel-card workflow-card" href="/column-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Column Rebar Calculator</b>
-        <span>Calculate total rebar for a rectangular column: vert…</span>
+        <span>Total rebar for a rectangular column: vertical main …</span>
       </a>
       <a class="rel-card workflow-card" href="/beam-rebar-calculator">
         <span class="workflow-badge">Members</span>
         <b>Beam Rebar Calculator</b>
-        <span>Calculate total rebar for a beam: top and bottom mai…</span>
+        <span>Total rebar for a beam in seconds: top and bottom ma…</span>
       </a>
     </div>
   </section>

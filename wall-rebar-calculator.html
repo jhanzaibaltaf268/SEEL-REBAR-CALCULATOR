@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wall Rebar Calculator — Vertical + Horizontal Bars</title>
-<meta name="description" content="Calculate reinforcement for a concrete or block wall: vertical and horizontal bars, counts and weight." />
+<title>Wall Rebar Calculator — Vertical + Horizontal Bars, kg</title>
+<meta name="description" content="Reinforcement for concrete or block walls: vertical and horizontal bars, counts and weight. Defaults = 132.40 kg. Free, with code checks. Try it free." />
 <meta name="keywords" content="rebar calculator for wall, block wall rebar calculator, wall reinforcement, retaining wall rebar" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/wall-rebar-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/sienas-stiegrojuma-kalkulators" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/sienos-armaturos-skaiciuotuvas" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/wall-rebar-calculator" />
-<meta property="og:title" content="Wall Rebar Calculator — Vertical + Horizontal Bars" />
-<meta property="og:description" content="Calculate reinforcement for a concrete or block wall: vertical and horizontal bars, counts and weight." />
+<meta property="og:title" content="Wall Rebar Calculator — Vertical + Horizontal Bars, kg" />
+<meta property="og:description" content="Reinforcement for concrete or block walls: vertical and horizontal bars, counts and weight. Defaults = 132.40 kg. Free, with code checks. Try it free." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Wall Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate reinforcement for a concrete or block wall: vertical and horizontal bars, counts and weight."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Wall Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Reinforcement for concrete or block walls: vertical and horizontal bars, counts and weight. Defaults = 132.40 kg. Free, with code checks. Try it free."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate rebar for a wall?","acceptedAnswer":{"@type":"Answer","text":"Count vertical and horizontal bars from the spacing, then multiply lengths by unit weight. Vertical bars = floor((length − 2 × cover) ÷ vertical spacing) + 1, each (height − 2 × cover) long; horizontal bars = floor((height − 2 × cover) ÷ horizontal spacing) + 1, each (length − 2 × cover) long. On the calculator defaults (6 × 3 m wall, 12 mm verticals @ 200 mm, 10 mm horizontals @ 200 mm, 40 mm cover) that is 30 verticals at 2.92 m = 77.70 kg plus 15 horizontals at 5.92 m = 54.70 kg, total 132.40 kg."}},{"@type":"Question","name":"What is rebar spacing in a block wall?","acceptedAnswer":{"@type":"Answer","text":"Often vertical bars at 400–800 mm and horizontal bars per course or bond beam — design governs. For a concrete wall the usual residential grid is much tighter: 200 mm each way on the calculator defaults, and published guides quote 12 in (about 300 mm) vertical and horizontal as a common grid, or 36 in vertical / 24 in horizontal for lightly loaded walls. The spacing on your drawing always wins over any of these rules of thumb."}},{"@type":"Question","name":"How many vertical bars does a wall need?","acceptedAnswer":{"@type":"Answer","text":"One more than the number of spacings that fit: floor((length − 2 × cover) ÷ spacing) + 1. The +1 is the bar at the far edge, and forgetting it is the classic off-by-one — on the defaults it drops the verticals from 30 to 29 and understates the wall by 2.59 kg, and the horizontals from 15 to 14 for another 3.65 kg, 6.24 kg short in total. The calculator counts both end bars."}},{"@type":"Question","name":"What is the minimum reinforcement in a wall?","acceptedAnswer":{"@type":"Answer","text":"IS 456:2000 cl. 32.5 sets vertical steel at ≥ 0.12% and horizontal steel at ≥ 0.20% of the gross concrete area (for deformed bars ≤ 16 mm, Fe415 or better), with both spacings ≤ the smaller of 3 × wall thickness and 450 mm. On a 200 mm wall that cap is 450 mm. The defaults pass on the vertical side (12 mm @ 200 mm = 0.283%) but the horizontals (10 mm @ 200 mm = 0.196%) sit just below the 0.20% minimum — tighten them to 190 mm (0.207%) or step up to 12 mm. This calculator does not check any of this; work the percentages by hand for your wall thickness."}},{"@type":"Question","name":"Do I need two layers of steel in a wall?","acceptedAnswer":{"@type":"Answer","text":"For walls thicker than 200 mm, yes — IS 456 requires the vertical and horizontal reinforcement in two grids, one near each face. This calculator counts ONE grid, so a 250 mm wall at the defaults grid needs 2 × 132.40 = 264.80 kg, not 132.40 kg. For walls 200 mm or thinner a single central grid is the usual arrangement, but the drawing governs."}},{"@type":"Question","name":"Do I need to add lap length to a wall?","acceptedAnswer":{"@type":"Answer","text":"Yes, whenever a bar run exceeds the stock length (usually 12 m). The calculator counts every bar at its cover-reduced length with no splice added. On a 20 m wall the horizontal bars run 19.92 m, so each needs one splice: at roughly 0.486 m for a 10 mm Fe500 M25 tension lap, that adds 15 × 0.486 × 0.616 = 4.49 kg. Get the exact lap from the <a href=\"/rebar-lap-length-calculator\">lap length calculator</a> — it depends on bar size, grade, concrete and tension vs compression, never on a memorised multiple."}},{"@type":"Question","name":"Does the calculator design the wall?","acceptedAnswer":{"@type":"Answer","text":"No — it weighs a grid you describe; it does not check whether the grid is adequate. Earth pressure, sliding and overturning stability, shear, bending and the required steel area all come from the structural design and the drawing. A total that looks reasonable is not proof the wall stands up, and passing the minimum-steel percentages is not proof it carries the soil behind it."}},{"@type":"Question","name":"What about doors, windows and other openings?","acceptedAnswer":{"@type":"Answer","text":"The calculator counts the full rectangle — it does not deduct openings. For each opening, work out the bars that would have crossed it and subtract them, then add the trimming bars the drawing calls for around the opening. One published wall tool deducts openings from volume automatically; here you do the deduction by hand before ordering."}},{"@type":"Question","name":"Can I use this calculator for a block wall?","acceptedAnswer":{"@type":"Answer","text":"As an estimate, yes, with one translation: in a block wall the verticals sit in grouted cores (typically at 400–800 mm centres, matching the block module) and the horizontals sit in bond-beam courses, not at arbitrary spacings. Enter the core spacing as the vertical spacing and the bond-beam spacing as the horizontal spacing, and read the result as the bar schedule for the grouted cores and bond beams — then check it against the block manufacturer's coursing, since a 200 mm spacing that suits a concrete wall rarely matches a 400 mm block module."}},{"@type":"Question","name":"Does the calculator include waste, dowels, tie wire or cost?","acceptedAnswer":{"@type":"Answer","text":"No — it gives the neat one-grid, one-wall total only. Add 5–10% waste for cutting and laps (one published grid guide recommends 10% for overlaps, cutoffs and waste), take footing dowels and starter bars from the <a href=\"/footing-rebar-calculator\">footing calculator</a>, estimate the fixing wire on the <a href=\"/rebar-tie-wire-calculator\">tie wire calculator</a>, price the order with the <a href=\"/rebar-cost-calculator\">cost calculator</a>, and check the steel tonnage with the <a href=\"/rebar-tonnage-calculator\">tonnage calculator</a>. For a full takeoff across members use the <a href=\"/rebar-quantity-calculator\">quantity & takeoff calculator</a>."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the wall length and height in metres, and the edge cover in mm."},{"@type":"HowToStep","position":2,"text":"Set the vertical spacing and bar size, and the horizontal spacing and bar size."},{"@type":"HowToStep","position":3,"text":"Read the vertical and horizontal bar counts and weights, plus the total."},{"@type":"HowToStep","position":4,"text":"Double the total for walls thicker than 200 mm, which need two grids — the calculator counts one."},{"@type":"HowToStep","position":5,"text":"Add laps, dowels and waste before ordering — the calculator counts straight, cover-reduced bars only."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Members","item":"https://steelrebarcalculator.com/structural-rebar-calculators"},{"@type":"ListItem","position":3,"name":"Wall Rebar Calculator","item":"https://steelrebarcalculator.com/wall-rebar-calculator"}]}</script>
@@ -131,9 +131,9 @@
   <section class="related">
     <h2>More Rebar Calculators — Members</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/column-rebar-calculator"><b>Column Rebar Calculator</b><span>Calculate total rebar for a rectangular column: …</span></a>
-      <a class="rel-card" href="/beam-rebar-calculator"><b>Beam Rebar Calculator</b><span>Calculate total rebar for a beam: top and bottom…</span></a>
-      <a class="rel-card" href="/pool-rebar-calculator"><b>Swimming Pool Rebar Calculator</b><span>Calculate reinforcement for a swimming pool wall…</span></a>
+      <a class="rel-card" href="/column-rebar-calculator"><b>Column Rebar Calculator</b><span>Total rebar for a rectangular column: vertical m…</span></a>
+      <a class="rel-card" href="/beam-rebar-calculator"><b>Beam Rebar Calculator</b><span>Total rebar for a beam in seconds: top and botto…</span></a>
+      <a class="rel-card" href="/pool-rebar-calculator"><b>Swimming Pool Rebar Calculator</b><span>Reinforcement for a swimming pool wall panel: ve…</span></a>
     </div>
   </section>
 
@@ -144,22 +144,22 @@
       <a class="rel-card workflow-card" href="/footing-rebar-calculator">
         <span class="workflow-badge">Estimating</span>
         <b>Footing Rebar Calculator</b>
-        <span>Calculate the bottom reinforcement for an isolated o…</span>
+        <span>Size the bottom reinforcement for any isolated or st…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-development-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Development Length Calculator</b>
-        <span>Calculate the development (anchorage) length Ld for …</span>
+        <span>Anchorage length Ld for deformed bars by the IS 456 …</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-spacing-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Spacing Calculator</b>
-        <span>Find the number of bars and the actual centre-to-cen…</span>
+        <span>Bars across any width with the true centre-to-centre…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-cost-calculator">
         <span class="workflow-badge">Commercial</span>
         <b>Rebar Cost Calculator</b>
-        <span>Estimate rebar material cost from total weight and u…</span>
+        <span>Rebar cost in seconds: weight × price per kg with a …</span>
       </a>
     </div>
   </section>

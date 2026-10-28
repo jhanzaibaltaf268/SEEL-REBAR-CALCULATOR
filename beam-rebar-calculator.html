@@ -19,8 +19,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beam Rebar Calculator — Main Bars + Stirrups</title>
-<meta name="description" content="Calculate total rebar for a beam: top and bottom main bars plus stirrups, with weights." />
+<title>Beam Rebar Calculator — Main Bars, Stirrups & kg</title>
+<meta name="description" content="Total rebar for a beam in seconds: top and bottom main bars plus stirrups, with weights. Defaults = 55.85 kg. Free calculator with worked examples." />
 <meta name="keywords" content="beam rebar calculator, beam rebar estimate, beam reinforcement calculation, beam steel calculation" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://steelrebarcalculator.com/beam-rebar-calculator" />
@@ -47,10 +47,10 @@
 <link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/sijas-stiegrojuma-kalkulators" />
 <link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/sijos-armaturos-skaiciuotuvas" />
 <link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/beam-rebar-calculator" />
-<meta property="og:title" content="Beam Rebar Calculator — Main Bars + Stirrups" />
-<meta property="og:description" content="Calculate total rebar for a beam: top and bottom main bars plus stirrups, with weights." />
+<meta property="og:title" content="Beam Rebar Calculator — Main Bars, Stirrups & kg" />
+<meta property="og:description" content="Total rebar for a beam in seconds: top and bottom main bars plus stirrups, with weights. Defaults = 55.85 kg. Free calculator with worked examples." />
 <meta property="og:type" content="website" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Beam Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate total rebar for a beam: top and bottom main bars plus stirrups, with weights."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Beam Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Total rebar for a beam in seconds: top and bottom main bars plus stirrups, with weights. Defaults = 55.85 kg. Free calculator with worked examples."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate beam reinforcement?","acceptedAnswer":{"@type":"Answer","text":"Add the main bar weight to the stirrup weight along the beam length. Main steel = (top bars + bottom bars) × beam length × kg/m. Stirrup steel = number of stirrups × stirrup cutting length × kg/m. On the calculator defaults (5 m beam, 2 top + 3 bottom bars of 16 mm, 8 mm stirrups at 150 mm), that is 39.45 kg of main steel + 16.40 kg of stirrup steel = 55.85 kg."}},{"@type":"Question","name":"What is the spacing of stirrups in a beam?","acceptedAnswer":{"@type":"Answer","text":"Often closer near supports and wider at midspan; commonly 100–200 mm — design governs. As a code ceiling, IS 456:2000 limits shear-stirrup spacing to the lesser of 0.75d or 300 mm, where d is the effective depth. On the calculator defaults (d ≈ 409 mm), 0.75d = 306.75 mm, so 300 mm governs — the 300 mm row in the spacing table below sits exactly at that limit. Never pick a spacing above the maximum on your drawing."}},{"@type":"Question","name":"Why does a beam need both top and bottom bars?","acceptedAnswer":{"@type":"Answer","text":"Because bending puts one face in tension and the other in compression, and the tension side flips along the beam. At midspan of a simply supported beam the bottom is in tension, so the bottom bars do the main work (23.67 kg of the defaults' 39.45 kg main steel). Over a support in a continuous beam the top is in tension, so top bars carry that hogging moment. In a simply supported beam the 2 top bars are often just hanger bars that hold the stirrups in place — but they are still counted, still weighed, and still ordered."}},{"@type":"Question","name":"How do you calculate the stirrup cutting length?","acceptedAnswer":{"@type":"Answer","text":"From the inside of the stirrup, not the outside of the beam: a = width − 2 × cover, b = depth − 2 × cover, then cut = 2(a + b) + 20d − 6d − 6d (two 10d hooks, minus three 2d 90° bends and two 3d 135° bends). On the defaults (230 × 450 mm, 25 mm cover, 8 mm stirrups): a = 180 mm, b = 400 mm, cut = 2(180 + 400) + 160 − 48 − 48 = 1224 mm. The same formula drives the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup cutting length calculator</a>."}},{"@type":"Question","name":"What is the minimum reinforcement for a beam?","acceptedAnswer":{"@type":"Answer","text":"IS 456:2000 requires tension steel of at least 0.85/fy of b×d — for Fe415 that is 0.205% of b×d — and caps total steel at 4% of the gross section. On the defaults (b×d = 230 × 409 = 94070 mm²), the minimum is 192.67 mm² and the maximum is 4140.00 mm²; the defaults' 1005.31 mm² (0.97% of gross) sits between them. This calculator does not check any of this — check your steel area on the <a href=\"/rebar-area-calculator\">area calculator</a> and take bar counts from the structural drawing, never from this tool alone."}},{"@type":"Question","name":"Do I need to add lap length to a beam?","acceptedAnswer":{"@type":"Answer","text":"Yes, whenever a bar run is longer than the stock length (usually 12 m) or a bar is spliced. This calculator counts every main bar at the entered beam length with no lap added. A 13 m beam on the defaults otherwise gives 102.57 kg of main steel; one 16 mm Fe500 M25 tension lap of 0.777 m per bar adds 5 × 0.777 × 1.578 = 6.13 kg, taking main steel to 108.70 kg. Get the lap from the <a href=\"/rebar-lap-length-calculator\">lap length calculator</a> and add it before ordering."}},{"@type":"Question","name":"Does the calculator include hooks and development length?","acceptedAnswer":{"@type":"Answer","text":"No. Main bars are counted straight at full beam length — no end hooks, no anchorage into the support, no cranked (bent-up) bars. For scale, the development length of a 16 mm Fe500 bar in M25 concrete is 582.59 mm (see the <a href=\"/rebar-development-length-calculator\">development length calculator</a>), and a standard 90° hook adds 9d (see the <a href=\"/rebar-hook-bend-cutting-length-calculator\">hook cutting length calculator</a>). If your bars are hooked or cranked, work out those lengths there and add the weight."}},{"@type":"Question","name":"How do I handle different stirrup spacing near supports?","acceptedAnswer":{"@type":"Answer","text":"The calculator takes one spacing for the whole beam, so run it once per zone and add the stirrup weights. Example on the defaults section: 1 m at each end at 100 mm gives 11 stirrups per end, and the middle 3 m at 200 mm gives 16 — 38 counts, minus the 2 stirrups shared at the zone boundaries, is 36 stirrups and 17.36 kg of stirrup steel, against 16.40 kg for a uniform 150 mm spacing. The boundary correction matters: counting all 38 would overstate stirrup steel by 0.96 kg."}},{"@type":"Question","name":"What is a doubly reinforced beam, and does this calculator cover it?","acceptedAnswer":{"@type":"Answer","text":"A doubly reinforced beam has compression steel at the top in addition to tension steel at the bottom, used when the section is too shallow for singly reinforced design. For weighing purposes this calculator covers it fine — top and bottom bars are counted together — but it does not design anything: it cannot tell you whether compression steel is needed, what a T-beam flange contributes, or what side-face bars a deep beam (over 750 mm per IS 456) needs. Those come from the structural design."}},{"@type":"Question","name":"How much steel should I actually order for a beam?","acceptedAnswer":{"@type":"Answer","text":"Take the panel total, add laps, hooks and any extra support bars, then add a waste allowance (3–5% covers offcuts on straight work; use the higher end when laps and hooks are involved) and round up to stock lengths. Ten beams at the defaults total 558.47 kg; with 5% waste that is 586.39 kg, which is €703.67 at an example €1.20/kg. Price it on the <a href=\"/rebar-cost-calculator\">cost calculator</a> and convert it on the <a href=\"/rebar-tonnage-calculator\">tonnage calculator</a> (the defaults beam is 0.056 ton, so 17.91 beams make a tonne)."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter beam length, width, depth and clear cover."},{"@type":"HowToStep","position":2,"text":"Set the number of top bars and bottom bars, and pick the main bar size."},{"@type":"HowToStep","position":3,"text":"Set stirrup spacing and stirrup bar size."},{"@type":"HowToStep","position":4,"text":"Read main steel, stirrup steel, the stirrup count and the total weight."},{"@type":"HowToStep","position":5,"text":"Add laps, hooks and anchorage separately — the calculator counts straight bars at full beam length only, then allow waste before ordering."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Members","item":"https://steelrebarcalculator.com/structural-rebar-calculators"},{"@type":"ListItem","position":3,"name":"Beam Rebar Calculator","item":"https://steelrebarcalculator.com/beam-rebar-calculator"}]}</script>
@@ -131,9 +131,9 @@
   <section class="related">
     <h2>More Rebar Calculators — Members</h2>
     <div class="related-grid">
-      <a class="rel-card" href="/column-rebar-calculator"><b>Column Rebar Calculator</b><span>Calculate total rebar for a rectangular column: …</span></a>
-      <a class="rel-card" href="/wall-rebar-calculator"><b>Wall Rebar Calculator</b><span>Calculate reinforcement for a concrete or block …</span></a>
-      <a class="rel-card" href="/pool-rebar-calculator"><b>Swimming Pool Rebar Calculator</b><span>Calculate reinforcement for a swimming pool wall…</span></a>
+      <a class="rel-card" href="/column-rebar-calculator"><b>Column Rebar Calculator</b><span>Total rebar for a rectangular column: vertical m…</span></a>
+      <a class="rel-card" href="/wall-rebar-calculator"><b>Wall Rebar Calculator</b><span>Reinforcement for concrete or block walls: verti…</span></a>
+      <a class="rel-card" href="/pool-rebar-calculator"><b>Swimming Pool Rebar Calculator</b><span>Reinforcement for a swimming pool wall panel: ve…</span></a>
     </div>
   </section>
 
@@ -144,22 +144,22 @@
       <a class="rel-card workflow-card" href="/stirrup-tie-cutting-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Stirrup & Tie Cutting Length Calculator</b>
-        <span>Calculate the cutting length of a rectangular stirru…</span>
+        <span>Cutting length for rectangular stirrups and column t…</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-development-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Development Length Calculator</b>
-        <span>Calculate the development (anchorage) length Ld for …</span>
+        <span>Anchorage length Ld for deformed bars by the IS 456 …</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-lap-length-calculator">
         <span class="workflow-badge">Detailing</span>
         <b>Rebar Lap / Splice Length Calculator</b>
-        <span>Calculate lap (splice) length for reinforcement: ten…</span>
+        <span>Correct lap (splice) length every time: tension lap …</span>
       </a>
       <a class="rel-card workflow-card" href="/rebar-tonnage-calculator">
         <span class="workflow-badge">Commercial</span>
         <b>Rebar Tonnage Calculator</b>
-        <span>Convert a bar schedule (size × length × quantity) in…</span>
+        <span>Convert any bar schedule to tonnage: metric tonnes a…</span>
       </a>
     </div>
   </section>
