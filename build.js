@@ -592,9 +592,116 @@ const PAGES = [
           ["How much tie wire do I need for a mat?","It depends on the intersection count and the wire used per tie. Take the intersection count from this calculator — 450 for the 6 m × 3 m mat — and enter it in the tie wire calculator for the wire length and weight."],
           ["How much does a rebar mat cost?","Multiply the weight by your local price per kg. At €1.20/kg, the 6 m × 3 m mat in example 1 costs €131.39 in steel, and five identical mats cost €656.96. That is the neat mat weight only — laps, tie wire and waste add to the order."],
           ["Can I use this calculator for welded mesh sheets?","For estimating, yes — the grid maths is the same. But mesh sheets come in fixed sizes with fixed wire diameters, so the exact sheet count and weight come from the manufacturer's sheet table, not from loose-bar lengths."],
-          ["What is the difference between a mat and a slab grid?","There is no maths difference — a mat is the reinforcement itself, while a slab grid is the same two-way layout described as part of a slab. The calculator works for both; what changes is only what you call it and how it is placed."]] },
-
-  { id:"concrete", slug:"concrete-and-rebar-calculator", cat:"Estimating",
+          ["What is the difference between a mat and a slab grid?","There is no maths difference — a mat is the reinforcement itself, while a slab grid is the same two-way layout described as part of a slab. The calculator works for both; what changes is only what you call it and how it is placed."]] ,
+    de: {
+  metaTitle: "Bewehrungsmatten-Rechner — Stäbe, Bindungen & kg gratis",
+  desc: "Bewehrungsmatten-Rechner: Stäbe in beiden Richtungen, Kreuzungspunkte, Gesamtlänge und Gewicht für jede Matte. Beispiel: 6 m × 3 m Matte = 109,49 kg. Kostenlos.",
+  formula: "Stäbe je Richtung = floor((Maß − 2 × Randabstand) ÷ Abstand) + 1. Kreuzungspunkte = nx × ny.",
+  kw: "bewehrungsmatten rechner, bewehrungsmatte berechnen, bewehrungsnetz rechner, betonstahlmatte rechner",
+  howto: ["Mattenlänge und -breite eingeben.", "Netzabstand und Randabstand festlegen.", "Stabgröße für die Summen wählen.", "Ergebnisse ablesen: Stabanzahl je Richtung, Kreuzungspunkte, Gesamtstablänge und Gewicht.", "Zusätzlich bestellen für Übergreifungen zwischen Matten, Bindedraht und Verschnitt — der Rechner gibt nur das reine Mattengewicht an (siehe Bindedraht-Rechner)."],
+  faqs: [["Was ist eine Bewehrungsmatte?", "Ein Netz aus Stäben, die in zwei Richtungen miteinander verbunden werden, verwendet in Platten, Bodenplatten und Fundamenten. Matten können vor Ort gebunden oder vorgefertigt geliefert werden; in jedem Fall ergeben sich Stabanzahl, Länge und Gewicht aus derselben zweiachsigen Netzrechnung."],
+          ["Wie viele Bindungspunkte hat eine Matte?", "Einen an jeder Stabkreuzung — der Rechner gibt dies als Kreuzungszahl an. Die Matte 6 m × 3 m aus Beispiel 1 hat 15 × 30 = 450 Kreuzungen, also 450 Bindungen, wenn jede Kreuzung gebunden wird."],
+          ["Wie berechne ich eine Bewehrungsmatte von Hand?", "Je Richtung: Stäbe = floor((Maß − 2 × Randabstand) ÷ Abstand) + 1, und jeder Stab ist (Maß − 2 × Randabstand) lang. Beide Richtungen addieren ergibt die Gesamtlänge, dann mit kg/m multiplizieren für das Gewicht. Rechenbeispiel 1 oben zeigt jeden Schritt."],
+          ["Was ist der Randabstand?", "Der Abstand vom Mattenrand bis zum ersten Stab — hier standardmäßig 25 mm. Er ist nicht die Betondeckung: Die Deckung ist der Beton über der fertigen Matte, festgelegt durch die Bemessung und die Abstandhalter, die die Matte hochhalten."],
+          ["Welche Stabgrößen und Abstände werden für Matten verwendet?", "Stäbe 10–12 mm mit 150–200 mm Achsabstand sind typisch für Platten- und Bodenplattenmatten; schwerere Matten verwenden 16 mm oder mehr. Größe und Abstand kommen aus der statischen Bemessung — dieser Rechner ermittelt die Menge, sobald Sie sie haben."],
+          ["Wie viel wiegt eine Matte 6 m × 3 m?", "Bei 200 mm Achsabstand mit Stäben 10 mm und 25 mm Randabstand: 15 Stäbe in einer Richtung und 30 in der anderen (45 Stäbe), 177,75 m Stabstahl, 109,49 kg und 450 Kreuzungspunkte. Ändern Sie Abstand oder Stabgröße im Rechner, um zu sehen, wie schnell sich das Gewicht verändert."],
+          ["Wie viel Bindedraht brauche ich für eine Matte?", "Das hängt von der Kreuzungszahl und dem Draht je Bindung ab. Nehmen Sie die Kreuzungszahl aus diesem Rechner — 450 für die Matte 6 m × 3 m — und geben Sie sie in den Bindedraht-Rechner ein, um Drahtlänge und Gewicht zu erhalten."],
+          ["Was kostet eine Bewehrungsmatte?", "Multiplizieren Sie das Gewicht mit Ihrem örtlichen Preis je kg. Bei 1,20 €/kg kostet die Matte 6 m × 3 m aus Beispiel 1 genau 131,39 € an Stahl, und fünf identische Matten kosten 656,96 €. Das ist nur das reine Mattengewicht — Übergreifungen, Bindedraht und Verschnitt kommen zur Bestellmenge hinzu."],
+          ["Kann ich diesen Rechner für geschweißte Matten verwenden?", "Zum Abschätzen ja — die Netzrechnung ist dieselbe. Aber Matten werden in festen Formaten mit festen Drahtdurchmessern geliefert, sodass die genaue Blattzahl und das Gewicht aus der Blatttabelle des Herstellers kommen, nicht aus Längen loser Stäbe."],
+          ["Was ist der Unterschied zwischen einer Matte und einem Plattennetz?", "Es gibt keinen rechnerischen Unterschied — eine Matte ist die Bewehrung selbst, während ein Plattennetz dieselbe zweiachsige Anordnung als Teil einer Platte beschreibt. Der Rechner funktioniert für beides; was sich ändert, ist nur, wie man es nennt und wie es verlegt wird."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So benutzen Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: Matte 6 m × 3 m</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: Matte 4 m × 4 m</a></li>
+      <li><a href="#bar-table">Stabgewichtstabelle</a></li>
+      <li><a href="#spacing-table">Abstandsleitfaden: Stäbe je Meter</a></li>
+      <li><a href="#cost">Kosten schätzen</a></li>
+      <li><a href="#imperial">Metrische und imperiale Einheiten</a></li>
+      <li><a href="#not-included">Was der Rechner nicht enthält</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<p><strong>Warum minus zweimal der Randabstand?</strong> Die äußeren Stäbe liegen innen am Mattenrand, auf beiden Seiten um den Randabstand versetzt, sodass der Randabstand an jedem Ende abgezogen wird, bevor gezählt wird. <strong>Warum plus eins?</strong> Der erste Stab liegt auf der Randabstandslinie, und dann folgt nach jedem Abstandsschritt ein weiterer Stab — die Anzahl ist also die Zahl der Abstände plus eins, nicht nur die Zahl der Abstände. <strong>Warum beide Richtungen?</strong> Eine Matte ist ein zweiachsiges Netz, und die zweite Richtung fügt meist etwa noch einmal so viel Stahl hinzu.</p>
+    <p>Das Stabgewicht je Meter kommt aus der Standardformel kg/m = d² ÷ 162,28, wobei d der Stabdurchmesser in mm ist. Für einen Stab 10 mm: 10² ÷ 162,28 = 0,616 kg/m — derselbe Wert, den der Rechner verwendet.</p>
+    <svg viewBox="0 0 520 330" role="img" aria-label="Diagramm einer Bewehrungsmatte mit Länge, Breite, Bewehrungsabstand und Randabstand" style="width:100%;max-width:520px;height:auto;display:block;margin:12px 0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+      <rect x="30" y="30" width="460" height="240" fill="none" stroke="#0f172a" stroke-width="2"/>
+      <rect x="58" y="58" width="404" height="184" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <g stroke="#0f172a" stroke-width="1.5">
+        <line x1="98" y1="58" x2="98" y2="242"/><line x1="158" y1="58" x2="158" y2="242"/><line x1="218" y1="58" x2="218" y2="242"/><line x1="278" y1="58" x2="278" y2="242"/><line x1="338" y1="58" x2="338" y2="242"/><line x1="398" y1="58" x2="398" y2="242"/>
+        <line x1="58" y1="98" x2="462" y2="98"/><line x1="58" y1="158" x2="462" y2="158"/><line x1="58" y1="218" x2="462" y2="218"/>
+      </g>
+      <g font-family="sans-serif" font-size="13" fill="#0f172a">
+        <text x="260" y="18" text-anchor="middle">L = Mattenlänge</text>
+        <text x="14" y="155" text-anchor="middle" transform="rotate(-90 14 155)">W = Mattenbreite</text>
+        <text x="128" y="52" text-anchor="middle" fill="#f97316">Abstand</text>
+        <text x="44" y="80" fill="#f97316">Randabstand</text>
+      </g>
+      <g stroke="#f97316" stroke-width="1.5">
+        <line x1="98" y1="44" x2="158" y2="44"/><line x1="98" y1="40" x2="98" y2="48"/><line x1="158" y1="40" x2="158" y2="48"/>
+        <line x1="34" y1="30" x2="58" y2="58"/>
+      </g>
+    </svg>
+    <p>Die orange gestrichelte Linie markiert, wo die Stäbe tatsächlich verlaufen: innerhalb des Randabstands, auf beiden Seiten. Die Stäbe kreuzen sich in beiden Richtungen, und jede Kreuzung ist ein Kreuzungspunkt.</p>
+    <h3 id="example-1">Rechenbeispiel 1: Matte 6 m × 3 m</h3>
+    <p>Matte 6 m × 3 m, Stäbe 10 mm (0,616 kg/m), Abstand 200 mm, Randabstand 25 mm. Dies sind die Werte, mit denen der Rechner startet, sodass Sie das Ergebnis sofort prüfen können:</p>
+    <ol class="howto"><li>Stäbe entlang der 6-m-Richtung: floor((3.000 − 50) ÷ 200) + 1 = 15 Stäbe, je 5,95 m lang = 89,25 m.</li><li>Stäbe entlang der 3-m-Richtung: floor((6.000 − 50) ÷ 200) + 1 = 30 Stäbe, je 2,95 m lang = 88,50 m.</li><li>Gesamtstablänge: 89,25 + 88,50 = 177,75 m.</li><li>Gesamtgewicht: 177,75 × 0,616 = 109,49 kg.</li><li>Kreuzungspunkte: 15 × 30 = 450.</li></ol>
+    <p>Probieren Sie es selbst: Geben Sie dieselben Zahlen oben in den Rechner ein, und Sie erhalten dasselbe Ergebnis.</p>
+    <h3 id="example-2">Rechenbeispiel 2: Matte 4 m × 4 m</h3>
+    <p>Matte 4 m × 4 m, Stäbe 12 mm (0,887 kg/m), Abstand 150 mm, Randabstand 25 mm:</p>
+    <ol class="howto"><li>Stäbe entlang einer 4-m-Richtung: floor((4.000 − 50) ÷ 150) + 1 = 27 Stäbe, je 3,95 m lang = 106,65 m.</li><li>Stäbe entlang der anderen 4-m-Richtung: dasselbe = 27 Stäbe, je 3,95 m lang = 106,65 m.</li><li>Gesamtstablänge: 106,65 + 106,65 = 213,30 m.</li><li>Gesamtgewicht: 213,30 × 0,887 = 189,20 kg.</li><li>Kreuzungspunkte: 27 × 27 = 729.</li></ol>
+    <p>Beachten Sie, wie die quadratische Matte in beiden Richtungen dieselbe Anzahl braucht, aber der engere Abstand von 150 mm die Bindungszahl auf 729 treibt — jeder zusätzliche Stab fügt eine ganze Reihe von Bindungen hinzu.</p>
+    <h3 id="bar-table">Stabgewichtstabelle (kg/m)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Stabdurchmesser</th><th>kg/m</th><th>Stäbe je Tonne</th></tr>
+      <tr><td>8 mm</td><td>0,394</td><td>2.536</td></tr>
+      <tr><td>10 mm</td><td>0,616</td><td>1.623</td></tr>
+      <tr><td>12 mm</td><td>0,887</td><td>1.127</td></tr>
+      <tr><td>16 mm</td><td>1,578</td><td>634</td></tr>
+      <tr><td>20 mm</td><td>2,465</td><td>406</td></tr>
+    </table></div>
+    <p>Stäbe je Tonne = 1.000 ÷ kg/m. Sie gibt an, wie viele 1-Meter-Stäbe eine Tonne ergeben — praktisch, wenn ein Lieferant pro Tonne anbietet. <a href="/de/#charts">Die vollständige Bewehrungsgewichtstabelle ansehen (kg/m &amp; lb/ft) →</a></p>
+    <h3 id="spacing-table">Abstandsleitfaden: Stäbe je Meter Mattenbreite</h3>
+    <div class="formula-table"><table>
+      <tr><th>Abstand (Achsabstand)</th><th>Stäbe je Meter</th></tr>
+      <tr><td>100 mm</td><td>10,00</td></tr>
+      <tr><td>150 mm</td><td>6,67</td></tr>
+      <tr><td>200 mm</td><td>5,00</td></tr>
+      <tr><td>250 mm</td><td>4,00</td></tr>
+      <tr><td>300 mm</td><td>3,33</td></tr>
+    </table></div>
+    <p>Stäbe je Meter = 1.000 ÷ Abstand in mm. Halbiert man den Abstand, verdoppelt sich der Stahl etwa. Matten verwenden üblicherweise 150–200 mm Achsabstand — aber der Abstand ist eine Bemessungsentscheidung aus Ihren statischen Plänen, nie eine Schätzung aus einer Tabelle. Wenn Ihr Plan 200 mm vorschreibt, verwenden Sie 200 mm, auch wenn 300 mm günstiger wäre.</p>
+    <h3 id="cost">Kosten schätzen</h3>
+    <p>Kosten = Gesamtgewicht × Preis je kg (oder Gesamttonnen × Preis je Tonne). Mit Rechenbeispiel 1: 109,49 kg × 1,20 €/kg = 131,39 € je Matte. Fünf identische Matten: 547,47 kg × 1,20 €/kg = 656,96 €. Die Preise variieren je nach Region, Lieferant und Stabgröße — holen Sie also vor der Budgetierung ein aktuelles Angebot ein, und denken Sie daran, dass die Bestellmenge höher ist als das reine Mattengewicht, sobald Übergreifungen zwischen Matten, Bindedraht und Verschnitt hinzukommen. Für eine vollständige Kostenaufstellung verwenden Sie den <a href="/de/bewehrungskosten-rechner">Bewehrungskosten-Rechner</a>.</p>
+    <h3 id="imperial">Metrische und imperiale Einheiten</h3>
+    <p>Dieser Rechner arbeitet in Metern, Millimetern und Kilogramm. Wenn Ihre Pläne Fuß und Zoll verwenden:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Imperial (ca.)</th></tr>
+      <tr><td>Abstand 150 mm</td><td>6 in</td></tr>
+      <tr><td>Abstand 200 mm</td><td>8 in</td></tr>
+      <tr><td>Randabstand 25 mm</td><td>1 in</td></tr>
+      <tr><td>109,49 kg</td><td>241,43 lb (× 2,205)</td></tr>
+      <tr><td>Matte 6 m × 3 m</td><td>19,69 ft × 9,84 ft (× 3,281)</td></tr>
+    </table></div>
+    <p>Rechnen Sie zuerst um und geben Sie dann metrische Werte in den Rechner ein — mischen Sie keine Einheiten in einer Berechnung.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Bindedraht.</strong> Der Rechner zählt Kreuzungen (450 in Beispiel 1), aber nicht den Draht selbst. Schätzen Sie den Draht anhand der Kreuzungen mit dem <a href="/de/bindedraht-rechner">Bindedraht-Rechner</a>.</li>
+      <li><strong>Übergreifungen zwischen Matten.</strong> Wo eine Matte an die nächste stößt, müssen sich die Stäbe überlappen. Ermitteln Sie die Überlappung mit dem <a href="/de/uebergreifungslaengen-rechner">Übergreifungslängen-Rechner</a> und addieren Sie sie zur Länge.</li>
+      <li><strong>Abstandhalter.</strong> Die Matte braucht Unterstützung, um auf der richtigen Höhe und Deckung zu bleiben. Schätzen Sie diese mit dem <a href="/de/abstandhalter-rechner">Abstandhalter-Rechner</a>.</li>
+      <li><strong>Verschnitt.</strong> Das Zuschneiden der Stäbe auf Länge hinterlässt immer Abschnitte. Addieren Sie vor der Bestellung einen Verschnittzuschlag auf das reine Gewicht.</li>
+      <li><strong>Haken und Biegungen.</strong> Randhaken und aufgebogene Stäbe fügen Länge hinzu. Verwenden Sie dafür den <a href="/de/haken-biege-schnittlaengen-rechner">Haken- und Schnittlängen-Rechner</a>.</li>
+      <li><strong>Geschweißte Matten.</strong> Wenn Sie vorgefertigte Matten statt loser Stäbe kaufen, sind die Formate und Gewichte festgelegt — dieser Rechner gilt für Matten aus losen Stäben.</li>
+    </ul>
+    <h3 id="mistakes">4 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Randabstand mit Deckung verwechseln.</strong> Der Randabstand ist der Abstand vom Mattenrand bis zum ersten Stab. Die Betondeckung — der Beton über der Matte — ist ein separater Wert, der durch die Bemessung und die Unterstützung festgelegt wird, nicht durch diesen Rechner.</li><li><strong>Nur eine Richtung zählen.</strong> Eine Matte verläuft in beide Richtungen. Die zweite Richtung fügt meist etwa noch einmal so viel Stahl hinzu.</li><li><strong>mm und m verwechseln.</strong> Abstand und Randabstand sind in Millimetern, Mattengröße in Metern. 200 als Meter statt als Millimeter einzugeben, zerstört das Ergebnis vollständig.</li><li><strong>Genau das berechnete Gewicht bestellen.</strong> Addieren Sie Übergreifungen zwischen Matten, Bindedraht und Verschnitt obendrauf — der Rechner gibt das reine Mattengewicht an, nicht die Bestellmenge.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Die Stabgewichte folgen der Formel d² ÷ 162,28 (Praxis nach ASTM A615 / IS 456). Die Ergebnisse sind Schätzungen zur Orientierung — prüfen Sie sie immer anhand Ihrer statischen Pläne und der Bemessungsnorm.</p>`
+}
+},
+    { id:"concrete", slug:"concrete-and-rebar-calculator", cat:"Estimating",
     metaTitle:"Concrete & Rebar Calculator — Volume + Steel (kg/m³)",
     h1:"Concrete & Rebar Estimator",
     desc:"One calculator for concrete volume in m³, yd³ and ft³ plus a steel estimate by kg/m³ ratio. A 5 × 4 m slab at 150 mm = 3.00 m³ and 240 kg steel.",
