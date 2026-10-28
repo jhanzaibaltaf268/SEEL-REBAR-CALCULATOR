@@ -51,8 +51,8 @@
 <meta property="og:description" content="Find the number of bars and the actual centre-to-centre spacing across any width, plus the clear gap between bars." />
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Spacing Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Find the number of bars and the actual centre-to-centre spacing across any width, plus the clear gap between bars."}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate rebar spacing?","acceptedAnswer":{"@type":"Answer","text":"Subtract cover from the width, divide by spacing, add one for the number of bars."}},{"@type":"Question","name":"What is the minimum spacing between rebars?","acceptedAnswer":{"@type":"Answer","text":"Usually the greater of the bar diameter or aggregate size + 5 mm — check your code."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the total width and edge cover."},{"@type":"HowToStep","position":2,"text":"Enter the desired spacing."},{"@type":"HowToStep","position":3,"text":"Read the bar count and actual spacing."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate rebar spacing?","acceptedAnswer":{"@type":"Answer","text":"Subtract cover from both sides of the width, divide by the desired spacing, and add one for the number of bars: bars = floor((width − 2 × cover) ÷ spacing) + 1. Then re-spread evenly: actual spacing = reinforced width ÷ (bars − 1)."}},{"@type":"Question","name":"What is the minimum spacing between rebars?","acceptedAnswer":{"@type":"Answer","text":"The clear gap must be at least the largest of 25 mm (1 in), one bar diameter, or 1.33 × the largest aggregate size (ACI 318). For 12 mm bars with ordinary aggregate, 25 mm usually governs — check your code and your aggregate size."}},{"@type":"Question","name":"Why is the actual spacing different from the spacing I entered?","acceptedAnswer":{"@type":"Answer","text":"Because bars must be whole numbers, evenly spread. The calculator rounds the count up and re-divides the reinforced width, so the actual spacing is usually slightly larger than desired — 150 mm asked gives 152.63 mm on the 3,000 mm default width."}},{"@type":"Question","name":"What is the difference between c/c spacing and clear gap?","acceptedAnswer":{"@type":"Answer","text":"Centre-to-centre (c/c) spacing is centre of one bar to centre of the next; the clear gap is the open space between bar faces, which is the c/c spacing minus one bar diameter. Codes limit the clear gap at the minimum end and the c/c spacing at the maximum end."}},{"@type":"Question","name":"How much cover should I use?","acceptedAnswer":{"@type":"Answer","text":"Slabs on grade typically 40–50 mm, concrete cast against earth 75 mm, formed beams and columns 40 mm or as drawn. Always use the drawing's value when one is given — cover protects the steel from corrosion and fire."}},{"@type":"Question","name":"What is the maximum spacing allowed?","acceptedAnswer":{"@type":"Answer","text":"For slabs and beams, ACI 318 caps main reinforcement spacing at the smaller of 3 × slab thickness or 450 mm (18 in). On a 150 mm slab that cap is 450 mm; on a 100 mm slab it is 300 mm."}},{"@type":"Question","name":"Can I use this calculator for beams, columns and walls?","acceptedAnswer":{"@type":"Answer","text":"Yes — any single width works: enter the member width, cover and target spacing. For a two-way slab mat, use the slab calculator, which counts both directions."}},{"@type":"Question","name":"What if my spacing is too tight?","acceptedAnswer":{"@type":"Answer","text":"If the clear gap falls below the minimum, switch to smaller bars (more bars, smaller diameter, larger gaps) or widen the member. Do not just delete bars — that changes the steel area the design relies on."}},{"@type":"Question","name":"Does spacing affect the amount of steel?","acceptedAnswer":{"@type":"Answer","text":"Yes, directly. Tighter spacing means more bars across the same width, and the total length and weight grow with the count. Compare the desired-spacing table above: 100 mm needs 30 bars where 300 mm needs 10 on the same width."}},{"@type":"Question","name":"Can I use imperial units?","acceptedAnswer":{"@type":"Answer","text":"The calculator takes millimetres, but the conversions are direct: 12 mm is a #4 bar, 150 mm is about 6 in, 50 mm is 2 in, and 3,000 mm is 9.84 ft. Convert first, then enter millimetres."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter the total width and the edge cover on each side."},{"@type":"HowToStep","position":2,"text":"Enter the desired spacing (centre-to-centre)."},{"@type":"HowToStep","position":3,"text":"Pick the bar size — it sets the clear gap."},{"@type":"HowToStep","position":4,"text":"Read the bar count, the actual spacing achieved and the clear gap."},{"@type":"HowToStep","position":5,"text":"Check the actual spacing against the code limits below before fixing the layout."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Spacing Calculator","item":"https://steelrebarcalculator.com/rebar-spacing-calculator"}]}</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -166,21 +166,110 @@
       </a>
     </div>
   </section>
-
+<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 3,000 mm width (defaults)</a></li>
+      <li><a href="#example-2">Worked example 2: 4,000 mm width</a></li>
+      <li><a href="#desired-table">Desired spacing vs actual spacing</a></li>
+      <li><a href="#cover-table">Edge cover guide</a></li>
+      <li><a href="#code-table">Code spacing checks (ACI 318)</a></li>
+      <li><a href="#member-table">Typical spacing by member</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
 
   <section class="content-block">
-    <h2>How to use: Rebar Spacing Calculator</h2>
-    <ol class="howto"><li>Enter the total width and edge cover.</li><li>Enter the desired spacing.</li><li>Read the bar count and actual spacing.</li></ol>
-    <h3>Formula</h3>
+    <h2 id="how-to">How to use: Rebar Spacing Calculator</h2>
+    <ol class="howto"><li>Enter the total width and the edge cover on each side.</li><li>Enter the desired spacing (centre-to-centre).</li><li>Pick the bar size — it sets the clear gap.</li><li>Read the bar count, the actual spacing achieved and the clear gap.</li><li>Check the actual spacing against the code limits below before fixing the layout.</li></ol>
+    <h3 id="formula">Formula</h3>
     <p class="formula-callout">Number of bars = floor((width − 2 × cover) ÷ spacing) + 1. Actual spacing = reinforced width ÷ (bars − 1).</p>
     <p><a href="/#charts">See the full rebar weight chart (kg/m & lb/ft) →</a></p>
   </section>
-
+<section class="content-block"><p><strong>Why subtract cover twice?</strong> The bars stop one cover short of each edge, so the width they actually span is the total width minus two covers — that is the reinforced width. <strong>Why +1?</strong> Bars sit at both ends of the reinforced width plus one per spacing interval — without the +1 you would be one bar short. <strong>Why is the actual spacing not the spacing you asked for?</strong> Bars must be whole numbers, evenly spread. The calculator rounds the count up to the next whole bar and re-spreads them, so the actual spacing is usually slightly larger than the desired spacing (see the table below).</p>
+    <h3 id="example-1">Worked example 1: 3,000 mm width (defaults)</h3>
+    <p>Width 3,000 mm, 50 mm cover each side, desired spacing 150 mm, 12 mm bars. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Reinforced width: 3,000 − 2 × 50 = 2,900 mm.</li><li>Number of bars: floor(2,900 ÷ 150) + 1 = 19 + 1 = 20 bars.</li><li>Actual c/c spacing: 2,900 ÷ (20 − 1) = 152.63 mm — slightly more than the 150 mm asked for, because 19 gaps must cover 2,900 mm.</li><li>Clear gap between bars: 152.63 − 12 = 140.63 mm.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 4,000 mm width</h3>
+    <p>Width 4,000 mm, 50 mm cover, desired spacing 200 mm, 16 mm bars:</p>
+    <ol class="howto"><li>Reinforced width: 4,000 − 2 × 50 = 3,900 mm.</li><li>Number of bars: floor(3,900 ÷ 200) + 1 = 19 + 1 = 20 bars.</li><li>Actual c/c spacing: 3,900 ÷ 19 = 205.26 mm.</li><li>Clear gap: 205.26 − 16 = 189.26 mm.</li></ol>
+    <p>Same bar count as example 1, different spacing — the count follows the width and the target spacing together, never one alone.</p>
+    <h3 id="desired-table">Desired spacing vs actual spacing</h3>
+    <p>Same member every time (3,000 mm width, 50 mm cover, 12 mm bars) — only the desired spacing changes:</p>
+    <div class="formula-table"><table>
+      <tr><th>Desired spacing</th><th>Bars</th><th>Actual c/c spacing</th><th>Clear gap</th></tr>
+      <tr><td>100 mm</td><td>30</td><td>100.00 mm</td><td>88.00 mm</td></tr>
+      <tr><td>150 mm</td><td>20</td><td>152.63 mm</td><td>140.63 mm</td></tr>
+      <tr><td>175 mm</td><td>17</td><td>181.25 mm</td><td>169.25 mm</td></tr>
+      <tr><td>200 mm</td><td>15</td><td>207.14 mm</td><td>195.14 mm</td></tr>
+      <tr><td>300 mm</td><td>10</td><td>322.22 mm</td><td>310.22 mm</td></tr>
+    </table></div>
+    <p>The pattern: actual spacing is always equal to or larger than desired (it only matches exactly when the width divides evenly, as at 100 mm here). If the actual spacing exceeds a code maximum, tighten the desired spacing and re-check — never just accept the first result.</p>
+    <h3 id="cover-table">Edge cover guide</h3>
+    <div class="formula-table"><table>
+      <tr><th>Situation</th><th>Typical cover each side</th></tr>
+      <tr><td>Slab on grade</td><td>40–50 mm (about 1.5–2 in)</td></tr>
+      <tr><td>Concrete cast against earth (footings)</td><td>75 mm (3 in)</td></tr>
+      <tr><td>Beams, columns, walls (formed)</td><td>40 mm, or as drawn</td></tr>
+    </table></div>
+    <p>Cover is the distance from the concrete face to the bar — it protects the steel from corrosion and fire. Always use the value on your drawing when one is given; this table is for early estimates only.</p>
+    <h3 id="code-table">Code spacing checks (ACI 318)</h3>
+    <p>Two checks govern whether a spacing is acceptable. They are code limits, not calculator inputs — run them on the calculator's outputs:</p>
+    <div class="formula-table"><table>
+      <tr><th>Check</th><th>Rule</th><th>Example 1 result</th></tr>
+      <tr><td>Minimum clear spacing</td><td>The larger of 25 mm (1 in), one bar diameter, or 1.33 × aggregate size</td><td>Clear gap 140.63 mm ≥ max(25, 12) — passes</td></tr>
+      <tr><td>Maximum c/c spacing (slabs, beams)</td><td>The smaller of 3 × slab thickness or 450 mm (18 in)</td><td>Actual 152.63 mm ≤ 450 mm for a 150 mm slab — passes</td></tr>
+    </table></div>
+    <p>The minimum exists so concrete can flow around the bars and bond to them; the maximum exists to control cracking and spread the steel. If either check fails, change the bar size, the spacing, or the member width — the calculator alone does not enforce them.</p>
+    <h3 id="member-table">Typical spacing by member</h3>
+    <div class="formula-table"><table>
+      <tr><th>Member</th><th>Typical spacing</th></tr>
+      <tr><td>Residential slabs</td><td>300–450 mm (12–18 in) centres</td></tr>
+      <tr><td>Driveways, heavy loads</td><td>300 mm (12 in) centres</td></tr>
+      <tr><td>Footings</td><td>150–300 mm (6–12 in) centres</td></tr>
+      <tr><td>Walls</td><td>300 mm (12 in) vertical and horizontal</td></tr>
+    </table></div>
+    <p>These are starting ranges for estimates. The design — loads, thickness, bar size — sets the real spacing, and the code checks above still apply.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator takes millimetres. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>3,000 mm width</td><td>9.84 ft (118.11 in)</td></tr>
+      <tr><td>150 mm spacing</td><td>about 6 in</td></tr>
+      <tr><td>50 mm cover</td><td>2 in</td></tr>
+      <tr><td>12 mm bar</td><td>#4 bar (1/2 in)</td></tr>
+    </table></div>
+    <p>Convert first, then enter millimetres into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Bar length and weight.</strong> This tool lays out one width. For lengths and weights use the <a href="/concrete-slab-rebar-calculator">slab calculator</a> or the <a href="/rebar-weight-calculator">weight calculator</a>.</li>
+      <li><strong>Two-way grids.</strong> A slab mat runs both directions — this tool spaces one direction at a time. The <a href="/concrete-slab-rebar-calculator">slab calculator</a> counts both.</li>
+      <li><strong>Required steel area.</strong> This tool does not size reinforcement from loads. If your design gives a required steel area, that is a different calculation from this spacing layout.</li>
+      <li><strong>Lap, hook and bend lengths.</strong> Splice and anchorage detailing come from the <a href="/rebar-lap-length-calculator">lap calculator</a> and the <a href="/rebar-hook-bend-cutting-length-calculator">hook calculator</a>.</li>
+      <li><strong>Aggregate size.</strong> The minimum-clear check needs the largest aggregate size; this tool does not ask for it, so run that check by hand.</li>
+    </ul>
+    <h3 id="mistakes">5 common mistakes</h3>
+    <ol class="howto"><li><strong>Measuring the clear gap instead of centre-to-centre.</strong> Spacing is centre-to-centre. Measuring face-to-face under-counts the bars.</li><li><strong>Forgetting cover on the second side.</strong> The reinforced width loses cover at both edges, not one. Subtracting it once overstates the width and the bar count.</li><li><strong>Rounding the bar count down.</strong> The count always rounds up (floor + 1). Rounding down leaves the last gap wider than designed.</li><li><strong>Entering metres instead of millimetres.</strong> Width, cover and spacing are all in millimetres here. Entering 3 instead of 3,000 breaks the result completely.</li><li><strong>Ignoring the maximum spacing.</strong> A layout can satisfy the count and still violate the 3 × thickness / 450 mm maximum on thin slabs — always run the code checks.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Code checks summarise ACI 318 spacing rules for guidance only — always verify against your structural drawings and governing code.</p></section>
 
   <section id="faq" class="content-block">
     <h2>Rebar Spacing Calculator — FAQ</h2>
-    <details open><summary>How do you calculate rebar spacing?</summary><p>Subtract cover from the width, divide by spacing, add one for the number of bars.</p></details>
-    <details><summary>What is the minimum spacing between rebars?</summary><p>Usually the greater of the bar diameter or aggregate size + 5 mm — check your code.</p></details>
+    <details open><summary>How do you calculate rebar spacing?</summary><p>Subtract cover from both sides of the width, divide by the desired spacing, and add one for the number of bars: bars = floor((width − 2 × cover) ÷ spacing) + 1. Then re-spread evenly: actual spacing = reinforced width ÷ (bars − 1).</p></details>
+    <details><summary>What is the minimum spacing between rebars?</summary><p>The clear gap must be at least the largest of 25 mm (1 in), one bar diameter, or 1.33 × the largest aggregate size (ACI 318). For 12 mm bars with ordinary aggregate, 25 mm usually governs — check your code and your aggregate size.</p></details>
+    <details><summary>Why is the actual spacing different from the spacing I entered?</summary><p>Because bars must be whole numbers, evenly spread. The calculator rounds the count up and re-divides the reinforced width, so the actual spacing is usually slightly larger than desired — 150 mm asked gives 152.63 mm on the 3,000 mm default width.</p></details>
+    <details><summary>What is the difference between c/c spacing and clear gap?</summary><p>Centre-to-centre (c/c) spacing is centre of one bar to centre of the next; the clear gap is the open space between bar faces, which is the c/c spacing minus one bar diameter. Codes limit the clear gap at the minimum end and the c/c spacing at the maximum end.</p></details>
+    <details><summary>How much cover should I use?</summary><p>Slabs on grade typically 40–50 mm, concrete cast against earth 75 mm, formed beams and columns 40 mm or as drawn. Always use the drawing's value when one is given — cover protects the steel from corrosion and fire.</p></details>
+    <details><summary>What is the maximum spacing allowed?</summary><p>For slabs and beams, ACI 318 caps main reinforcement spacing at the smaller of 3 × slab thickness or 450 mm (18 in). On a 150 mm slab that cap is 450 mm; on a 100 mm slab it is 300 mm.</p></details>
+    <details><summary>Can I use this calculator for beams, columns and walls?</summary><p>Yes — any single width works: enter the member width, cover and target spacing. For a two-way slab mat, use the slab calculator, which counts both directions.</p></details>
+    <details><summary>What if my spacing is too tight?</summary><p>If the clear gap falls below the minimum, switch to smaller bars (more bars, smaller diameter, larger gaps) or widen the member. Do not just delete bars — that changes the steel area the design relies on.</p></details>
+    <details><summary>Does spacing affect the amount of steel?</summary><p>Yes, directly. Tighter spacing means more bars across the same width, and the total length and weight grow with the count. Compare the desired-spacing table above: 100 mm needs 30 bars where 300 mm needs 10 on the same width.</p></details>
+    <details><summary>Can I use imperial units?</summary><p>The calculator takes millimetres, but the conversions are direct: 12 mm is a #4 bar, 150 mm is about 6 in, 50 mm is 2 in, and 3,000 mm is 9.84 ft. Convert first, then enter millimetres.</p></details>
   </section>
 </main>
 

@@ -37,7 +37,7 @@
 
 <section class="block">
   <h2>How to use it</h2>
-  <ol class="steps"><li>Enter the total width and edge cover.</li><li>Enter the desired spacing.</li><li>Read the bar count and actual spacing.</li></ol>
+  <ol class="steps"><li>Enter the total width and the edge cover on each side.</li><li>Enter the desired spacing (centre-to-centre).</li><li>Pick the bar size — it sets the clear gap.</li><li>Read the bar count, the actual spacing achieved and the clear gap.</li><li>Check the actual spacing against the code limits below before fixing the layout.</li></ol>
 </section>
 
 <section class="block">
@@ -47,8 +47,16 @@
 
 <section class="block">
   <h2>Questions</h2>
-  <details><summary>How do you calculate rebar spacing?</summary><p>Subtract cover from the width, divide by spacing, add one for the number of bars.</p></details>
-  <details><summary>What is the minimum spacing between rebars?</summary><p>Usually the greater of the bar diameter or aggregate size + 5 mm — check your code.</p></details>
+  <details><summary>How do you calculate rebar spacing?</summary><p>Subtract cover from both sides of the width, divide by the desired spacing, and add one for the number of bars: bars = floor((width − 2 × cover) ÷ spacing) + 1. Then re-spread evenly: actual spacing = reinforced width ÷ (bars − 1).</p></details>
+  <details><summary>What is the minimum spacing between rebars?</summary><p>The clear gap must be at least the largest of 25 mm (1 in), one bar diameter, or 1.33 × the largest aggregate size (ACI 318). For 12 mm bars with ordinary aggregate, 25 mm usually governs — check your code and your aggregate size.</p></details>
+  <details><summary>Why is the actual spacing different from the spacing I entered?</summary><p>Because bars must be whole numbers, evenly spread. The calculator rounds the count up and re-divides the reinforced width, so the actual spacing is usually slightly larger than desired — 150 mm asked gives 152.63 mm on the 3,000 mm default width.</p></details>
+  <details><summary>What is the difference between c/c spacing and clear gap?</summary><p>Centre-to-centre (c/c) spacing is centre of one bar to centre of the next; the clear gap is the open space between bar faces, which is the c/c spacing minus one bar diameter. Codes limit the clear gap at the minimum end and the c/c spacing at the maximum end.</p></details>
+  <details><summary>How much cover should I use?</summary><p>Slabs on grade typically 40–50 mm, concrete cast against earth 75 mm, formed beams and columns 40 mm or as drawn. Always use the drawing's value when one is given — cover protects the steel from corrosion and fire.</p></details>
+  <details><summary>What is the maximum spacing allowed?</summary><p>For slabs and beams, ACI 318 caps main reinforcement spacing at the smaller of 3 × slab thickness or 450 mm (18 in). On a 150 mm slab that cap is 450 mm; on a 100 mm slab it is 300 mm.</p></details>
+  <details><summary>Can I use this calculator for beams, columns and walls?</summary><p>Yes — any single width works: enter the member width, cover and target spacing. For a two-way slab mat, use the slab calculator, which counts both directions.</p></details>
+  <details><summary>What if my spacing is too tight?</summary><p>If the clear gap falls below the minimum, switch to smaller bars (more bars, smaller diameter, larger gaps) or widen the member. Do not just delete bars — that changes the steel area the design relies on.</p></details>
+  <details><summary>Does spacing affect the amount of steel?</summary><p>Yes, directly. Tighter spacing means more bars across the same width, and the total length and weight grow with the count. Compare the desired-spacing table above: 100 mm needs 30 bars where 300 mm needs 10 on the same width.</p></details>
+  <details><summary>Can I use imperial units?</summary><p>The calculator takes millimetres, but the conversions are direct: 12 mm is a #4 bar, 150 mm is about 6 in, 50 mm is 2 in, and 3,000 mm is 9.84 ft. Convert first, then enter millimetres.</p></details>
 </section>
 
 <section class="block">

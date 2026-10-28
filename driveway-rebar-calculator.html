@@ -51,8 +51,8 @@
 <meta property="og:description" content="Calculate the rebar for a driveway slab: bar count both ways, length and weight." />
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Driveway Rebar Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the rebar for a driveway slab: bar count both ways, length and weight."}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size rebar for a driveway?","acceptedAnswer":{"@type":"Answer","text":"#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways."}},{"@type":"Question","name":"Do driveways need rebar?","acceptedAnswer":{"@type":"Answer","text":"Reinforcement helps control cracking; thickness and bar size depend on loading."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter driveway length and width."},{"@type":"HowToStep","position":2,"text":"Set the bar spacing and edge cover."},{"@type":"HowToStep","position":3,"text":"Pick the bar size for the total."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size rebar for a driveway?","acceptedAnswer":{"@type":"Answer","text":"#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways. The calculator opens on 12.7 mm (#4) at 400 mm centres — a solid standard driveway choice; go larger or closer-spaced for heavier vehicles."}},{"@type":"Question","name":"Do driveways need rebar?","acceptedAnswer":{"@type":"Answer","text":"Reinforcement helps control cracking; thickness and bar size depend on loading. An unreinforced driveway slab cracks more freely as it shrinks and as loads cross it — steel does not prevent every crack, but it holds the slab together and spreads loads."}},{"@type":"Question","name":"How much rebar for a 10 m × 3 m driveway?","acceptedAnswer":{"@type":"Answer","text":"At 400 mm spacing, 75 mm cover and 12.7 mm bars: 8 + 25 bars, 150.05 m of bar, 149.15 kg (328.82 lb), 200 ties. Add laps and waste before ordering."}},{"@type":"Question","name":"How thick should a driveway be?","acceptedAnswer":{"@type":"Answer","text":"Typically 100 mm (4 in) for cars, 125 mm (5 in) for SUVs and light trucks, and 150 mm (6 in) or more for heavy vehicles and RVs. Thickness is a design decision — confirm it against your drawings, since it drives both concrete volume and steel."}},{"@type":"Question","name":"What spacing should driveway rebar be?","acceptedAnswer":{"@type":"Answer","text":"300–450 mm centres covers most residential driveways; 400 mm is the calculator default. Lighter loads can go to 450 mm, heavier loads should close up to 300 mm."}},{"@type":"Question","name":"Rebar or mesh for a driveway?","acceptedAnswer":{"@type":"Answer","text":"A tied rebar mat (what this calculator sizes) gives you known bar sizes and spacings. Welded mesh is an alternative, but it must be chaired up to mid-slab — mesh left on the ground ends up at the bottom of the pour, where it does almost no good."}},{"@type":"Question","name":"How many bars do I need to order?","acceptedAnswer":{"@type":"Answer","text":"Order the calculator's bar count plus laps and waste. For the 10 m × 3 m example that is 33 bars (8 + 25) cut from stock — or about 13 sticks of 12 m bar before waste (150.05 ÷ 12 = 12.5)."}},{"@type":"Question","name":"Does the calculator include the apron?","acceptedAnswer":{"@type":"Answer","text":"No — it sizes the main rectangular slab only. The flared apron at the street is extra steel, and its shape (two triangles) needs its own allowance."}},{"@type":"Question","name":"How much does driveway rebar cost?","acceptedAnswer":{"@type":"Answer","text":"Multiply the steel weight by your local price per kg. At an example €1.20/kg, the 10 m × 3 m driveway's bars cost €178.98; tie wire and chairs are extra. Get current supplier quotes before budgeting."}},{"@type":"Question","name":"Can I use imperial units?","acceptedAnswer":{"@type":"Answer","text":"The calculator takes metres and millimetres, but the equivalents are direct: 12.7 mm is a #4 bar, 400 mm is about 16 in, 75 mm is 3 in, and kilograms convert at × 2.20462 to pounds. Convert first, then enter metric values."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Enter driveway length and width in metres."},{"@type":"HowToStep","position":2,"text":"Set the bar spacing and edge cover."},{"@type":"HowToStep","position":3,"text":"Pick the bar size for the total."},{"@type":"HowToStep","position":4,"text":"Read the bar count both ways, total length, weight and tie count."},{"@type":"HowToStep","position":5,"text":"Add laps and waste before ordering — the calculator gives the neat mat, not the order quantity."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Estimating","item":"https://steelrebarcalculator.com/concrete-rebar-estimating-calculators"},{"@type":"ListItem","position":3,"name":"Driveway Rebar Calculator","item":"https://steelrebarcalculator.com/driveway-rebar-calculator"}]}</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -164,21 +164,113 @@
       </a>
     </div>
   </section>
-
+<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 10 m × 3 m driveway</a></li>
+      <li><a href="#example-2">Worked example 2: 10 m × 6 m two-car driveway</a></li>
+      <li><a href="#sizes-table">Typical driveway sizes</a></li>
+      <li><a href="#thickness-table">Slab thickness by vehicle</a></li>
+      <li><a href="#bar-table">Bar size table</a></li>
+      <li><a href="#spacing-table">Spacing guide</a></li>
+      <li><a href="#cost">Estimating the cost</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
 
   <section class="content-block">
-    <h2>How to use: Driveway Rebar Calculator</h2>
-    <ol class="howto"><li>Enter driveway length and width.</li><li>Set the bar spacing and edge cover.</li><li>Pick the bar size for the total.</li></ol>
-    <h3>Formula</h3>
+    <h2 id="how-to">How to use: Driveway Rebar Calculator</h2>
+    <ol class="howto"><li>Enter driveway length and width in metres.</li><li>Set the bar spacing and edge cover.</li><li>Pick the bar size for the total.</li><li>Read the bar count both ways, total length, weight and tie count.</li><li>Add laps and waste before ordering — the calculator gives the neat mat, not the order quantity.</li></ol>
+    <h3 id="formula">Formula</h3>
     <p class="formula-callout">Bars each way = floor((dimension − 2 × cover) ÷ spacing) + 1, × kg/m for the weight.</p>
     <p><a href="/#charts">See the full rebar weight chart (kg/m & lb/ft) →</a></p>
   </section>
-
+<section class="content-block"><p><strong>Why subtract cover twice?</strong> The bars stop one cover short of each edge, so the span they cover is the dimension minus two covers. <strong>Why +1?</strong> A row of bars at both ends plus one per spacing interval — without the +1 you would be one bar short in each direction. <strong>What is a tie?</strong> Each crossing of a lengthwise and a crosswise bar is one tie-wire intersection; the calculator counts them so you can size tie wire with the <a href="/rebar-tie-wire-calculator">tie-wire calculator</a>.</p>
+    <h3 id="example-1">Worked example 1: 10 m × 3 m driveway</h3>
+    <p>Driveway 10 m × 3 m, 400 mm spacing, 75 mm edge cover, 12.7 mm (#4) bars. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Bars along the length: floor((3.00 − 0.15) ÷ 0.40) + 1 = 8 bars, each 9.85 m long.</li><li>Bars across the width: floor((10.00 − 0.15) ÷ 0.40) + 1 = 25 bars, each 2.85 m long.</li><li>Total length: 8 × 9.85 + 25 × 2.85 = 150.05 m.</li><li>Weight: 150.05 × 0.994 = 149.15 kg (328.82 lb), with 8 × 25 = 200 ties.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 10 m × 6 m two-car driveway</h3>
+    <p>Driveway 10 m × 6 m, same 400 mm spacing, 75 mm cover, 12.7 mm bars:</p>
+    <ol class="howto"><li>Bars along the length: floor((6.00 − 0.15) ÷ 0.40) + 1 = 15 bars, each 9.85 m long.</li><li>Bars across the width: 25 bars, each 5.85 m long.</li><li>Total length: 15 × 9.85 + 25 × 5.85 = 294.00 m.</li><li>Weight: 294.00 × 0.994 = 292.24 kg (644.28 lb), with 15 × 25 = 375 ties.</li></ol>
+    <p>Doubling the width roughly doubles the steel — the mat grows in both directions, so area, not just length, drives the total.</p>
+    <h3 id="sizes-table">Typical driveway sizes</h3>
+    <div class="formula-table"><table>
+      <tr><th>Driveway</th><th>Size</th><th>Steel (12.7 mm, 400 mm, 75 mm)</th></tr>
+      <tr><td>Single-car</td><td>10 × 3 m</td><td>150.05 m, 149.15 kg, 200 ties</td></tr>
+      <tr><td>Two-car</td><td>10 × 6 m</td><td>294.00 m, 292.24 kg, 375 ties</td></tr>
+      <tr><td>RV / heavy</td><td>12 × 4 m</td><td>234.00 m, 232.60 kg, 300 ties</td></tr>
+    </table></div>
+    <p>These are typical sizes to start from — the calculator takes any length and width, so enter your real dimensions for the real answer.</p>
+    <h3 id="thickness-table">Slab thickness by vehicle</h3>
+    <div class="formula-table"><table>
+      <tr><th>Traffic</th><th>Typical thickness</th></tr>
+      <tr><td>Cars only</td><td>100 mm (4 in)</td></tr>
+      <tr><td>SUVs / light trucks</td><td>125 mm (5 in)</td></tr>
+      <tr><td>Heavy vehicles / RVs</td><td>150 mm or more (6 in+)</td></tr>
+    </table></div>
+    <p>Thickness is a design decision, not a calculator input — this table is a rule of thumb for early estimates only. A thicker slab carries heavier loads and needs the steel to match, so confirm both against your design.</p>
+    <h3 id="bar-table">Bar size table</h3>
+    <div class="formula-table"><table>
+      <tr><th>Metric bar</th><th>Weight</th><th>Imperial bar</th><th>Weight</th></tr>
+      <tr><td>8 mm</td><td>0.394 kg/m</td><td>#3 (9.5 mm)</td><td>0.376 lb/ft</td></tr>
+      <tr><td>10 mm</td><td>0.616 kg/m</td><td>#4 (12.7 mm)</td><td>0.668 lb/ft</td></tr>
+      <tr><td>12 mm</td><td>0.887 kg/m</td><td>#5 (15.9 mm)</td><td>1.043 lb/ft</td></tr>
+      <tr><td>16 mm</td><td>1.578 kg/m</td><td>—</td><td>—</td></tr>
+      <tr><td>20 mm</td><td>2.465 kg/m</td><td>—</td><td>—</td></tr>
+    </table></div>
+    <p>The calculator opens on 12.7 mm (#4) at 0.994 kg/m — the common residential driveway bar. Larger bars suit heavier loads but cost more per metre; spacing, not just size, sets the total.</p>
+    <h3 id="spacing-table">Spacing guide</h3>
+    <div class="formula-table"><table>
+      <tr><th>Loading</th><th>Typical spacing</th></tr>
+      <tr><td>Light (cars)</td><td>450 mm centres</td></tr>
+      <tr><td>Standard driveway</td><td>400 mm centres (calculator default)</td></tr>
+      <tr><td>Heavy (trucks, RVs)</td><td>300 mm centres</td></tr>
+    </table></div>
+    <p>Closer spacing adds bars in both directions, so the total grows fast — dropping from 400 mm to 300 mm adds roughly a third more steel. Match spacing to the load, not to habit.</p>
+    <h3 id="cost">Estimating the cost</h3>
+    <p>Cost = steel weight × price per kg, plus tie wire and chairs. Using worked example 1 with an example price of €1.20/kg for steel: 149.15 × €1.20 = €178.98 for the bars. Tie wire and <a href="/rebar-chair-calculator">chairs</a> sit on top — the calculator gives you the 200-tie count to size the wire with the <a href="/rebar-tie-wire-calculator">tie-wire calculator</a>. Prices vary by region and supplier, so get current quotes before budgeting. For a full materials picture, add the concrete volume from the <a href="/concrete-and-rebar-calculator">concrete estimator</a>.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator takes metres and millimetres. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>10 m × 3 m driveway</td><td>32.81 ft × 9.84 ft (× 3.281)</td></tr>
+      <tr><td>400 mm spacing</td><td>about 16 in</td></tr>
+      <tr><td>75 mm cover</td><td>3 in</td></tr>
+      <tr><td>12.7 mm bar</td><td>#4 bar (1/2 in)</td></tr>
+      <tr><td>149.15 kg</td><td>328.82 lb (× 2.20462)</td></tr>
+    </table></div>
+    <p>Convert first, then enter metric values into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Apron flare steel.</strong> The flared apron where the driveway meets the street is extra steel — this sizes the main rectangular slab only.</li>
+      <li><strong>Gravel base.</strong> The sub-base depth and volume are separate from the steel mat.</li>
+      <li><strong>Control joints.</strong> Saw-cut joint spacing and dowels at joints are detailing items, not mat items.</li>
+      <li><strong>Laps and waste.</strong> The result is the neat mat. Add lap lengths and a cutting-waste allowance before ordering.</li>
+      <li><strong>Tie wire and chairs.</strong> The calculator counts the ties (200 in example 1) — size the wire with the <a href="/rebar-tie-wire-calculator">tie-wire calculator</a> and the supports with the <a href="/rebar-chair-calculator">chair calculator</a>.</li>
+      <li><strong>Concrete volume and placing costs.</strong> Volume comes from the <a href="/concrete-and-rebar-calculator">concrete estimator</a>; formwork and labour are separate.</li>
+    </ul>
+    <h3 id="mistakes">4 common mistakes</h3>
+    <ol class="howto"><li><strong>Leaving steel on the ground.</strong> Bars and mesh sitting on the sub-base end up with no cover and no bond at the bottom of the slab. Chair the mat up to the designed cover before the pour.</li><li><strong>Confusing cover with spacing.</strong> Cover is the edge distance (75 mm here); spacing is the bar-to-bar distance (400 mm). Swapping them changes both the bar count and the durability.</li><li><strong>Ordering the neat quantity.</strong> Laps between bars and cutting waste sit on top of the neat mat — order extra or the last strip runs short.</li><li><strong>Wrong thickness for the load.</strong> A 100 mm car slab under an RV cracks. Match thickness — and steel — to the heaviest vehicle that will use the driveway.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Bar weights use d² ÷ 162.28 (metric) and ASTM A615 sizes (imperial). Thickness and spacing ranges are rule-of-thumb guidance for early estimates — always verify against your structural drawings and design code.</p></section>
 
   <section id="faq" class="content-block">
     <h2>Driveway Rebar Calculator — FAQ</h2>
-    <details open><summary>What size rebar for a driveway?</summary><p>#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways.</p></details>
-    <details><summary>Do driveways need rebar?</summary><p>Reinforcement helps control cracking; thickness and bar size depend on loading.</p></details>
+    <details open><summary>What size rebar for a driveway?</summary><p>#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways. The calculator opens on 12.7 mm (#4) at 400 mm centres — a solid standard driveway choice; go larger or closer-spaced for heavier vehicles.</p></details>
+    <details><summary>Do driveways need rebar?</summary><p>Reinforcement helps control cracking; thickness and bar size depend on loading. An unreinforced driveway slab cracks more freely as it shrinks and as loads cross it — steel does not prevent every crack, but it holds the slab together and spreads loads.</p></details>
+    <details><summary>How much rebar for a 10 m × 3 m driveway?</summary><p>At 400 mm spacing, 75 mm cover and 12.7 mm bars: 8 + 25 bars, 150.05 m of bar, 149.15 kg (328.82 lb), 200 ties. Add laps and waste before ordering.</p></details>
+    <details><summary>How thick should a driveway be?</summary><p>Typically 100 mm (4 in) for cars, 125 mm (5 in) for SUVs and light trucks, and 150 mm (6 in) or more for heavy vehicles and RVs. Thickness is a design decision — confirm it against your drawings, since it drives both concrete volume and steel.</p></details>
+    <details><summary>What spacing should driveway rebar be?</summary><p>300–450 mm centres covers most residential driveways; 400 mm is the calculator default. Lighter loads can go to 450 mm, heavier loads should close up to 300 mm.</p></details>
+    <details><summary>Rebar or mesh for a driveway?</summary><p>A tied rebar mat (what this calculator sizes) gives you known bar sizes and spacings. Welded mesh is an alternative, but it must be chaired up to mid-slab — mesh left on the ground ends up at the bottom of the pour, where it does almost no good.</p></details>
+    <details><summary>How many bars do I need to order?</summary><p>Order the calculator's bar count plus laps and waste. For the 10 m × 3 m example that is 33 bars (8 + 25) cut from stock — or about 13 sticks of 12 m bar before waste (150.05 ÷ 12 = 12.5).</p></details>
+    <details><summary>Does the calculator include the apron?</summary><p>No — it sizes the main rectangular slab only. The flared apron at the street is extra steel, and its shape (two triangles) needs its own allowance.</p></details>
+    <details><summary>How much does driveway rebar cost?</summary><p>Multiply the steel weight by your local price per kg. At an example €1.20/kg, the 10 m × 3 m driveway's bars cost €178.98; tie wire and chairs are extra. Get current supplier quotes before budgeting.</p></details>
+    <details><summary>Can I use imperial units?</summary><p>The calculator takes metres and millimetres, but the equivalents are direct: 12.7 mm is a #4 bar, 400 mm is about 16 in, 75 mm is 3 in, and kilograms convert at × 2.20462 to pounds. Convert first, then enter metric values.</p></details>
   </section>
 </main>
 

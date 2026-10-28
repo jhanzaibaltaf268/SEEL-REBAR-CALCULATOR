@@ -63,7 +63,7 @@
 <link rel="stylesheet" href="styles.css" />
 <noscript><style>.reveal-on-scroll{opacity:1!important;transform:none!important;visibility:visible!important}</style></noscript>
 </head>
-<body>
+<body class="nd-home">
 
 <!-- Sticky Header -->
 <header class="site-header">
@@ -762,5 +762,29 @@ Mass (kg/m) = [24,661.502 / 4,000,000] &times; D&sup2; = 0.006165375 &times; D&s
   })();
 </script>
 
+<script>(function(){
+  var head = document.querySelector('.site-header');
+  if (head) {
+    var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
+    window.addEventListener('scroll', onScroll, {passive: true}); onScroll();
+  }
+  var tabsEl = document.getElementById('calc-tabs');
+  var panelEl = document.querySelector('.calc-panel');
+  function syncTabs(){
+    if (!tabsEl || !panelEl) return;
+    if (window.innerWidth > 820) {
+      tabsEl.style.maxHeight = panelEl.offsetHeight + 'px';
+      tabsEl.style.overflowY = 'auto';
+    } else {
+      tabsEl.style.maxHeight = '';
+      tabsEl.style.overflowY = '';
+    }
+  }
+  syncTabs();
+  window.addEventListener('resize', syncTabs);
+  window.addEventListener('load', syncTabs);
+  var inputsBox = document.getElementById('inputs');
+  if (inputsBox) inputsBox.addEventListener('input', syncTabs);
+})();</script>
 </body>
 </html>

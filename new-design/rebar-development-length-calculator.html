@@ -37,7 +37,7 @@
 
 <section class="block">
   <h2>How to use it</h2>
-  <ol class="steps"><li>Pick the bar size.</li><li>Select steel grade (Fe250–Fe550) and concrete grade (M20–M40).</li><li>Choose tension or compression to read Ld.</li></ol>
+  <ol class="steps"><li>Pick the bar size.</li><li>Select the steel grade (Fe250–Fe550) and concrete grade (M20–M40).</li><li>Choose tension or compression.</li><li>Read Ld in mm, as a multiple of diameter, and in metres — plus the τbd used.</li><li>Compare with the tables below before detailing the anchorage.</li></ol>
 </section>
 
 <section class="block">
@@ -47,8 +47,16 @@
 
 <section class="block">
   <h2>Questions</h2>
-  <details><summary>What is development length of rebar?</summary><p>The length of bar that must be embedded in concrete to transfer its design force safely.</p></details>
-  <details><summary>What is the development length for Fe500 in M25?</summary><p>About 47–49 times the bar diameter in tension for deformed bars.</p></details>
+  <details><summary>What is development length of rebar?</summary><p>The length of bar that must be embedded in concrete to transfer its design force safely. Without enough embedment, the bar slips or pulls out before reaching its design stress.</p></details>
+  <details><summary>What is the development length for Fe500 in M25?</summary><p>About 47–49 times the bar diameter in tension for deformed bars — exactly 48.55 × d with this calculator: 582.59 mm for a 12 mm bar, 776.79 mm for a 16 mm bar, both in M25 tension.</p></details>
+  <details><summary>Is development length different in tension and compression?</summary><p>Yes. Compression raises the bond stress by 25%, so Ld is 80% of the tension value: a 12 mm Fe500 bar in M25 needs 582.59 mm in tension but 466.07 mm in compression.</p></details>
+  <details><summary>Why is the stress 0.87 × fy and not fy?</summary><p>0.87 is 1 ÷ 1.15, the partial safety factor for steel in IS 456. The design stress is the yield strength reduced by that factor — using full fy would overstate Ld by 15%.</p></details>
+  <details><summary>Do deformed bars need shorter development length than plain bars?</summary><p>Yes — deformed bars get a 60% higher bond stress (for example M25: 2.24 instead of 1.4 N/mm²), so their Ld is proportionally shorter. This calculator already uses deformed values.</p></details>
+  <details><summary>Can a bend or hook replace straight development length?</summary><p>Partly. A 90° bend counts as 8 × d and a U-hook as 16 × d toward Ld, with the rest made up in straight length. For cutting lengths, use the hook calculator.</p></details>
+  <details><summary>What is the difference between development length and lap length?</summary><p>Development length anchors one bar into concrete; lap length overlaps two bars to transfer force between them. A lap must be at least the development length, but lap rules add their own conditions — see the lap calculator.</p></details>
+  <details><summary>Does stronger concrete reduce development length?</summary><p>Yes. Higher grades raise the bond stress, so Ld falls: Fe500 in tension needs 56.64 × d in M20 but only 35.77 × d in M40.</p></details>
+  <details><summary>Does the ×d multiple change with bar size?</summary><p>No. For fixed steel and concrete grades the multiple is constant — only the length in mm grows with diameter. Fe500 in M25 is 48.55 × d whether the bar is 12 mm or 20 mm.</p></details>
+  <details><summary>Does this calculator follow ACI or IS 456?</summary><p>IS 456. The ACI method uses different factors (casting position, epoxy coating, bar size, concrete strength) and gives different lengths — do not mix the two methods on one detail.</p></details>
 </section>
 
 <section class="block">

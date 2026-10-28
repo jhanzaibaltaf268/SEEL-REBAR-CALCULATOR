@@ -452,10 +452,104 @@ const PAGES = [
     desc:"Calculate the rebar for a driveway slab: bar count both ways, length and weight.",
     kw:"driveway rebar calculator, rebar for driveway, driveway reinforcement, concrete driveway rebar",
     intro:"Size the rebar mat for a driveway. Enter the driveway length and width, the bar spacing and cover, and get the bar count both ways plus the total steel weight.",
-    howto:["Enter driveway length and width.","Set the bar spacing and edge cover.","Pick the bar size for the total."],
+    howto:["Enter driveway length and width in metres.","Set the bar spacing and edge cover.","Pick the bar size for the total.","Read the bar count both ways, total length, weight and tie count.","Add laps and waste before ordering — the calculator gives the neat mat, not the order quantity."],
     formula:"Bars each way = floor((dimension − 2 × cover) ÷ spacing) + 1, × kg/m for the weight.",
-    faqs:[["What size rebar for a driveway?","#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways."],
-          ["Do driveways need rebar?","Reinforcement helps control cracking; thickness and bar size depend on loading."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 10 m × 3 m driveway</a></li>
+      <li><a href="#example-2">Worked example 2: 10 m × 6 m two-car driveway</a></li>
+      <li><a href="#sizes-table">Typical driveway sizes</a></li>
+      <li><a href="#thickness-table">Slab thickness by vehicle</a></li>
+      <li><a href="#bar-table">Bar size table</a></li>
+      <li><a href="#spacing-table">Spacing guide</a></li>
+      <li><a href="#cost">Estimating the cost</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<p><strong>Why subtract cover twice?</strong> The bars stop one cover short of each edge, so the span they cover is the dimension minus two covers. <strong>Why +1?</strong> A row of bars at both ends plus one per spacing interval — without the +1 you would be one bar short in each direction. <strong>What is a tie?</strong> Each crossing of a lengthwise and a crosswise bar is one tie-wire intersection; the calculator counts them so you can size tie wire with the <a href="/rebar-tie-wire-calculator">tie-wire calculator</a>.</p>
+    <h3 id="example-1">Worked example 1: 10 m × 3 m driveway</h3>
+    <p>Driveway 10 m × 3 m, 400 mm spacing, 75 mm edge cover, 12.7 mm (#4) bars. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Bars along the length: floor((3.00 − 0.15) ÷ 0.40) + 1 = 8 bars, each 9.85 m long.</li><li>Bars across the width: floor((10.00 − 0.15) ÷ 0.40) + 1 = 25 bars, each 2.85 m long.</li><li>Total length: 8 × 9.85 + 25 × 2.85 = 150.05 m.</li><li>Weight: 150.05 × 0.994 = 149.15 kg (328.82 lb), with 8 × 25 = 200 ties.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 10 m × 6 m two-car driveway</h3>
+    <p>Driveway 10 m × 6 m, same 400 mm spacing, 75 mm cover, 12.7 mm bars:</p>
+    <ol class="howto"><li>Bars along the length: floor((6.00 − 0.15) ÷ 0.40) + 1 = 15 bars, each 9.85 m long.</li><li>Bars across the width: 25 bars, each 5.85 m long.</li><li>Total length: 15 × 9.85 + 25 × 5.85 = 294.00 m.</li><li>Weight: 294.00 × 0.994 = 292.24 kg (644.28 lb), with 15 × 25 = 375 ties.</li></ol>
+    <p>Doubling the width roughly doubles the steel — the mat grows in both directions, so area, not just length, drives the total.</p>
+    <h3 id="sizes-table">Typical driveway sizes</h3>
+    <div class="formula-table"><table>
+      <tr><th>Driveway</th><th>Size</th><th>Steel (12.7 mm, 400 mm, 75 mm)</th></tr>
+      <tr><td>Single-car</td><td>10 × 3 m</td><td>150.05 m, 149.15 kg, 200 ties</td></tr>
+      <tr><td>Two-car</td><td>10 × 6 m</td><td>294.00 m, 292.24 kg, 375 ties</td></tr>
+      <tr><td>RV / heavy</td><td>12 × 4 m</td><td>234.00 m, 232.60 kg, 300 ties</td></tr>
+    </table></div>
+    <p>These are typical sizes to start from — the calculator takes any length and width, so enter your real dimensions for the real answer.</p>
+    <h3 id="thickness-table">Slab thickness by vehicle</h3>
+    <div class="formula-table"><table>
+      <tr><th>Traffic</th><th>Typical thickness</th></tr>
+      <tr><td>Cars only</td><td>100 mm (4 in)</td></tr>
+      <tr><td>SUVs / light trucks</td><td>125 mm (5 in)</td></tr>
+      <tr><td>Heavy vehicles / RVs</td><td>150 mm or more (6 in+)</td></tr>
+    </table></div>
+    <p>Thickness is a design decision, not a calculator input — this table is a rule of thumb for early estimates only. A thicker slab carries heavier loads and needs the steel to match, so confirm both against your design.</p>
+    <h3 id="bar-table">Bar size table</h3>
+    <div class="formula-table"><table>
+      <tr><th>Metric bar</th><th>Weight</th><th>Imperial bar</th><th>Weight</th></tr>
+      <tr><td>8 mm</td><td>0.394 kg/m</td><td>#3 (9.5 mm)</td><td>0.376 lb/ft</td></tr>
+      <tr><td>10 mm</td><td>0.616 kg/m</td><td>#4 (12.7 mm)</td><td>0.668 lb/ft</td></tr>
+      <tr><td>12 mm</td><td>0.887 kg/m</td><td>#5 (15.9 mm)</td><td>1.043 lb/ft</td></tr>
+      <tr><td>16 mm</td><td>1.578 kg/m</td><td>—</td><td>—</td></tr>
+      <tr><td>20 mm</td><td>2.465 kg/m</td><td>—</td><td>—</td></tr>
+    </table></div>
+    <p>The calculator opens on 12.7 mm (#4) at 0.994 kg/m — the common residential driveway bar. Larger bars suit heavier loads but cost more per metre; spacing, not just size, sets the total.</p>
+    <h3 id="spacing-table">Spacing guide</h3>
+    <div class="formula-table"><table>
+      <tr><th>Loading</th><th>Typical spacing</th></tr>
+      <tr><td>Light (cars)</td><td>450 mm centres</td></tr>
+      <tr><td>Standard driveway</td><td>400 mm centres (calculator default)</td></tr>
+      <tr><td>Heavy (trucks, RVs)</td><td>300 mm centres</td></tr>
+    </table></div>
+    <p>Closer spacing adds bars in both directions, so the total grows fast — dropping from 400 mm to 300 mm adds roughly a third more steel. Match spacing to the load, not to habit.</p>
+    <h3 id="cost">Estimating the cost</h3>
+    <p>Cost = steel weight × price per kg, plus tie wire and chairs. Using worked example 1 with an example price of €1.20/kg for steel: 149.15 × €1.20 = €178.98 for the bars. Tie wire and <a href="/rebar-chair-calculator">chairs</a> sit on top — the calculator gives you the 200-tie count to size the wire with the <a href="/rebar-tie-wire-calculator">tie-wire calculator</a>. Prices vary by region and supplier, so get current quotes before budgeting. For a full materials picture, add the concrete volume from the <a href="/concrete-and-rebar-calculator">concrete estimator</a>.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator takes metres and millimetres. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>10 m × 3 m driveway</td><td>32.81 ft × 9.84 ft (× 3.281)</td></tr>
+      <tr><td>400 mm spacing</td><td>about 16 in</td></tr>
+      <tr><td>75 mm cover</td><td>3 in</td></tr>
+      <tr><td>12.7 mm bar</td><td>#4 bar (1/2 in)</td></tr>
+      <tr><td>149.15 kg</td><td>328.82 lb (× 2.20462)</td></tr>
+    </table></div>
+    <p>Convert first, then enter metric values into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Apron flare steel.</strong> The flared apron where the driveway meets the street is extra steel — this sizes the main rectangular slab only.</li>
+      <li><strong>Gravel base.</strong> The sub-base depth and volume are separate from the steel mat.</li>
+      <li><strong>Control joints.</strong> Saw-cut joint spacing and dowels at joints are detailing items, not mat items.</li>
+      <li><strong>Laps and waste.</strong> The result is the neat mat. Add lap lengths and a cutting-waste allowance before ordering.</li>
+      <li><strong>Tie wire and chairs.</strong> The calculator counts the ties (200 in example 1) — size the wire with the <a href="/rebar-tie-wire-calculator">tie-wire calculator</a> and the supports with the <a href="/rebar-chair-calculator">chair calculator</a>.</li>
+      <li><strong>Concrete volume and placing costs.</strong> Volume comes from the <a href="/concrete-and-rebar-calculator">concrete estimator</a>; formwork and labour are separate.</li>
+    </ul>
+    <h3 id="mistakes">4 common mistakes</h3>
+    <ol class="howto"><li><strong>Leaving steel on the ground.</strong> Bars and mesh sitting on the sub-base end up with no cover and no bond at the bottom of the slab. Chair the mat up to the designed cover before the pour.</li><li><strong>Confusing cover with spacing.</strong> Cover is the edge distance (75 mm here); spacing is the bar-to-bar distance (400 mm). Swapping them changes both the bar count and the durability.</li><li><strong>Ordering the neat quantity.</strong> Laps between bars and cutting waste sit on top of the neat mat — order extra or the last strip runs short.</li><li><strong>Wrong thickness for the load.</strong> A 100 mm car slab under an RV cracks. Match thickness — and steel — to the heaviest vehicle that will use the driveway.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Bar weights use d² ÷ 162.28 (metric) and ASTM A615 sizes (imperial). Thickness and spacing ranges are rule-of-thumb guidance for early estimates — always verify against your structural drawings and design code.</p>`,
+    faqs:[["What size rebar for a driveway?","#3–#4 (10–13 mm) at 300–450 mm centres is common for residential driveways. The calculator opens on 12.7 mm (#4) at 400 mm centres — a solid standard driveway choice; go larger or closer-spaced for heavier vehicles."],
+          ["Do driveways need rebar?","Reinforcement helps control cracking; thickness and bar size depend on loading. An unreinforced driveway slab cracks more freely as it shrinks and as loads cross it — steel does not prevent every crack, but it holds the slab together and spreads loads."],
+          ["How much rebar for a 10 m × 3 m driveway?","At 400 mm spacing, 75 mm cover and 12.7 mm bars: 8 + 25 bars, 150.05 m of bar, 149.15 kg (328.82 lb), 200 ties. Add laps and waste before ordering."],
+          ["How thick should a driveway be?","Typically 100 mm (4 in) for cars, 125 mm (5 in) for SUVs and light trucks, and 150 mm (6 in) or more for heavy vehicles and RVs. Thickness is a design decision — confirm it against your drawings, since it drives both concrete volume and steel."],
+          ["What spacing should driveway rebar be?","300–450 mm centres covers most residential driveways; 400 mm is the calculator default. Lighter loads can go to 450 mm, heavier loads should close up to 300 mm."],
+          ["Rebar or mesh for a driveway?","A tied rebar mat (what this calculator sizes) gives you known bar sizes and spacings. Welded mesh is an alternative, but it must be chaired up to mid-slab — mesh left on the ground ends up at the bottom of the pour, where it does almost no good."],
+          ["How many bars do I need to order?","Order the calculator's bar count plus laps and waste. For the 10 m × 3 m example that is 33 bars (8 + 25) cut from stock — or about 13 sticks of 12 m bar before waste (150.05 ÷ 12 = 12.5)."],
+          ["Does the calculator include the apron?","No — it sizes the main rectangular slab only. The flared apron at the street is extra steel, and its shape (two triangles) needs its own allowance."],
+          ["How much does driveway rebar cost?","Multiply the steel weight by your local price per kg. At an example €1.20/kg, the 10 m × 3 m driveway's bars cost €178.98; tie wire and chairs are extra. Get current supplier quotes before budgeting."],
+          ["Can I use imperial units?","The calculator takes metres and millimetres, but the equivalents are direct: 12.7 mm is a #4 bar, 400 mm is about 16 in, 75 mm is 3 in, and kilograms convert at × 2.20462 to pounds. Convert first, then enter metric values."]] },
 
   { id:"spacing", slug:"rebar-spacing-calculator", cat:"Detailing",
     metaTitle:"Rebar Spacing Calculator — Bar Count & c/c Spacing",
@@ -463,10 +557,101 @@ const PAGES = [
     desc:"Find the number of bars and the actual centre-to-centre spacing across any width, plus the clear gap between bars.",
     kw:"rebar spacing calculator, rebar spacing formula, bar spacing calculator, reinforcement spacing",
     intro:"Convert between bar count and spacing across a member. Enter the width, edge cover and your target spacing, and get the exact number of bars, the actual c/c spacing achieved and the clear gap.",
-    howto:["Enter the total width and edge cover.","Enter the desired spacing.","Read the bar count and actual spacing."],
+    howto:["Enter the total width and the edge cover on each side.","Enter the desired spacing (centre-to-centre).","Pick the bar size — it sets the clear gap.","Read the bar count, the actual spacing achieved and the clear gap.","Check the actual spacing against the code limits below before fixing the layout."],
     formula:"Number of bars = floor((width − 2 × cover) ÷ spacing) + 1. Actual spacing = reinforced width ÷ (bars − 1).",
-    faqs:[["How do you calculate rebar spacing?","Subtract cover from the width, divide by spacing, add one for the number of bars."],
-          ["What is the minimum spacing between rebars?","Usually the greater of the bar diameter or aggregate size + 5 mm — check your code."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 3,000 mm width (defaults)</a></li>
+      <li><a href="#example-2">Worked example 2: 4,000 mm width</a></li>
+      <li><a href="#desired-table">Desired spacing vs actual spacing</a></li>
+      <li><a href="#cover-table">Edge cover guide</a></li>
+      <li><a href="#code-table">Code spacing checks (ACI 318)</a></li>
+      <li><a href="#member-table">Typical spacing by member</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<p><strong>Why subtract cover twice?</strong> The bars stop one cover short of each edge, so the width they actually span is the total width minus two covers — that is the reinforced width. <strong>Why +1?</strong> Bars sit at both ends of the reinforced width plus one per spacing interval — without the +1 you would be one bar short. <strong>Why is the actual spacing not the spacing you asked for?</strong> Bars must be whole numbers, evenly spread. The calculator rounds the count up to the next whole bar and re-spreads them, so the actual spacing is usually slightly larger than the desired spacing (see the table below).</p>
+    <h3 id="example-1">Worked example 1: 3,000 mm width (defaults)</h3>
+    <p>Width 3,000 mm, 50 mm cover each side, desired spacing 150 mm, 12 mm bars. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Reinforced width: 3,000 − 2 × 50 = 2,900 mm.</li><li>Number of bars: floor(2,900 ÷ 150) + 1 = 19 + 1 = 20 bars.</li><li>Actual c/c spacing: 2,900 ÷ (20 − 1) = 152.63 mm — slightly more than the 150 mm asked for, because 19 gaps must cover 2,900 mm.</li><li>Clear gap between bars: 152.63 − 12 = 140.63 mm.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 4,000 mm width</h3>
+    <p>Width 4,000 mm, 50 mm cover, desired spacing 200 mm, 16 mm bars:</p>
+    <ol class="howto"><li>Reinforced width: 4,000 − 2 × 50 = 3,900 mm.</li><li>Number of bars: floor(3,900 ÷ 200) + 1 = 19 + 1 = 20 bars.</li><li>Actual c/c spacing: 3,900 ÷ 19 = 205.26 mm.</li><li>Clear gap: 205.26 − 16 = 189.26 mm.</li></ol>
+    <p>Same bar count as example 1, different spacing — the count follows the width and the target spacing together, never one alone.</p>
+    <h3 id="desired-table">Desired spacing vs actual spacing</h3>
+    <p>Same member every time (3,000 mm width, 50 mm cover, 12 mm bars) — only the desired spacing changes:</p>
+    <div class="formula-table"><table>
+      <tr><th>Desired spacing</th><th>Bars</th><th>Actual c/c spacing</th><th>Clear gap</th></tr>
+      <tr><td>100 mm</td><td>30</td><td>100.00 mm</td><td>88.00 mm</td></tr>
+      <tr><td>150 mm</td><td>20</td><td>152.63 mm</td><td>140.63 mm</td></tr>
+      <tr><td>175 mm</td><td>17</td><td>181.25 mm</td><td>169.25 mm</td></tr>
+      <tr><td>200 mm</td><td>15</td><td>207.14 mm</td><td>195.14 mm</td></tr>
+      <tr><td>300 mm</td><td>10</td><td>322.22 mm</td><td>310.22 mm</td></tr>
+    </table></div>
+    <p>The pattern: actual spacing is always equal to or larger than desired (it only matches exactly when the width divides evenly, as at 100 mm here). If the actual spacing exceeds a code maximum, tighten the desired spacing and re-check — never just accept the first result.</p>
+    <h3 id="cover-table">Edge cover guide</h3>
+    <div class="formula-table"><table>
+      <tr><th>Situation</th><th>Typical cover each side</th></tr>
+      <tr><td>Slab on grade</td><td>40–50 mm (about 1.5–2 in)</td></tr>
+      <tr><td>Concrete cast against earth (footings)</td><td>75 mm (3 in)</td></tr>
+      <tr><td>Beams, columns, walls (formed)</td><td>40 mm, or as drawn</td></tr>
+    </table></div>
+    <p>Cover is the distance from the concrete face to the bar — it protects the steel from corrosion and fire. Always use the value on your drawing when one is given; this table is for early estimates only.</p>
+    <h3 id="code-table">Code spacing checks (ACI 318)</h3>
+    <p>Two checks govern whether a spacing is acceptable. They are code limits, not calculator inputs — run them on the calculator's outputs:</p>
+    <div class="formula-table"><table>
+      <tr><th>Check</th><th>Rule</th><th>Example 1 result</th></tr>
+      <tr><td>Minimum clear spacing</td><td>The larger of 25 mm (1 in), one bar diameter, or 1.33 × aggregate size</td><td>Clear gap 140.63 mm ≥ max(25, 12) — passes</td></tr>
+      <tr><td>Maximum c/c spacing (slabs, beams)</td><td>The smaller of 3 × slab thickness or 450 mm (18 in)</td><td>Actual 152.63 mm ≤ 450 mm for a 150 mm slab — passes</td></tr>
+    </table></div>
+    <p>The minimum exists so concrete can flow around the bars and bond to them; the maximum exists to control cracking and spread the steel. If either check fails, change the bar size, the spacing, or the member width — the calculator alone does not enforce them.</p>
+    <h3 id="member-table">Typical spacing by member</h3>
+    <div class="formula-table"><table>
+      <tr><th>Member</th><th>Typical spacing</th></tr>
+      <tr><td>Residential slabs</td><td>300–450 mm (12–18 in) centres</td></tr>
+      <tr><td>Driveways, heavy loads</td><td>300 mm (12 in) centres</td></tr>
+      <tr><td>Footings</td><td>150–300 mm (6–12 in) centres</td></tr>
+      <tr><td>Walls</td><td>300 mm (12 in) vertical and horizontal</td></tr>
+    </table></div>
+    <p>These are starting ranges for estimates. The design — loads, thickness, bar size — sets the real spacing, and the code checks above still apply.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator takes millimetres. If your drawings use feet and inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>3,000 mm width</td><td>9.84 ft (118.11 in)</td></tr>
+      <tr><td>150 mm spacing</td><td>about 6 in</td></tr>
+      <tr><td>50 mm cover</td><td>2 in</td></tr>
+      <tr><td>12 mm bar</td><td>#4 bar (1/2 in)</td></tr>
+    </table></div>
+    <p>Convert first, then enter millimetres into the calculator — do not mix units in one calculation.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Bar length and weight.</strong> This tool lays out one width. For lengths and weights use the <a href="/concrete-slab-rebar-calculator">slab calculator</a> or the <a href="/rebar-weight-calculator">weight calculator</a>.</li>
+      <li><strong>Two-way grids.</strong> A slab mat runs both directions — this tool spaces one direction at a time. The <a href="/concrete-slab-rebar-calculator">slab calculator</a> counts both.</li>
+      <li><strong>Required steel area.</strong> This tool does not size reinforcement from loads. If your design gives a required steel area, that is a different calculation from this spacing layout.</li>
+      <li><strong>Lap, hook and bend lengths.</strong> Splice and anchorage detailing come from the <a href="/rebar-lap-length-calculator">lap calculator</a> and the <a href="/rebar-hook-bend-cutting-length-calculator">hook calculator</a>.</li>
+      <li><strong>Aggregate size.</strong> The minimum-clear check needs the largest aggregate size; this tool does not ask for it, so run that check by hand.</li>
+    </ul>
+    <h3 id="mistakes">5 common mistakes</h3>
+    <ol class="howto"><li><strong>Measuring the clear gap instead of centre-to-centre.</strong> Spacing is centre-to-centre. Measuring face-to-face under-counts the bars.</li><li><strong>Forgetting cover on the second side.</strong> The reinforced width loses cover at both edges, not one. Subtracting it once overstates the width and the bar count.</li><li><strong>Rounding the bar count down.</strong> The count always rounds up (floor + 1). Rounding down leaves the last gap wider than designed.</li><li><strong>Entering metres instead of millimetres.</strong> Width, cover and spacing are all in millimetres here. Entering 3 instead of 3,000 breaks the result completely.</li><li><strong>Ignoring the maximum spacing.</strong> A layout can satisfy the count and still violate the 3 × thickness / 450 mm maximum on thin slabs — always run the code checks.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Code checks summarise ACI 318 spacing rules for guidance only — always verify against your structural drawings and governing code.</p>`,
+    faqs:[["How do you calculate rebar spacing?","Subtract cover from both sides of the width, divide by the desired spacing, and add one for the number of bars: bars = floor((width − 2 × cover) ÷ spacing) + 1. Then re-spread evenly: actual spacing = reinforced width ÷ (bars − 1)."],
+          ["What is the minimum spacing between rebars?","The clear gap must be at least the largest of 25 mm (1 in), one bar diameter, or 1.33 × the largest aggregate size (ACI 318). For 12 mm bars with ordinary aggregate, 25 mm usually governs — check your code and your aggregate size."],
+          ["Why is the actual spacing different from the spacing I entered?","Because bars must be whole numbers, evenly spread. The calculator rounds the count up and re-divides the reinforced width, so the actual spacing is usually slightly larger than desired — 150 mm asked gives 152.63 mm on the 3,000 mm default width."],
+          ["What is the difference between c/c spacing and clear gap?","Centre-to-centre (c/c) spacing is centre of one bar to centre of the next; the clear gap is the open space between bar faces, which is the c/c spacing minus one bar diameter. Codes limit the clear gap at the minimum end and the c/c spacing at the maximum end."],
+          ["How much cover should I use?","Slabs on grade typically 40–50 mm, concrete cast against earth 75 mm, formed beams and columns 40 mm or as drawn. Always use the drawing's value when one is given — cover protects the steel from corrosion and fire."],
+          ["What is the maximum spacing allowed?","For slabs and beams, ACI 318 caps main reinforcement spacing at the smaller of 3 × slab thickness or 450 mm (18 in). On a 150 mm slab that cap is 450 mm; on a 100 mm slab it is 300 mm."],
+          ["Can I use this calculator for beams, columns and walls?","Yes — any single width works: enter the member width, cover and target spacing. For a two-way slab mat, use the slab calculator, which counts both directions."],
+          ["What if my spacing is too tight?","If the clear gap falls below the minimum, switch to smaller bars (more bars, smaller diameter, larger gaps) or widen the member. Do not just delete bars — that changes the steel area the design relies on."],
+          ["Does spacing affect the amount of steel?","Yes, directly. Tighter spacing means more bars across the same width, and the total length and weight grow with the count. Compare the desired-spacing table above: 100 mm needs 30 bars where 300 mm needs 10 on the same width."],
+          ["Can I use imperial units?","The calculator takes millimetres, but the conversions are direct: 12 mm is a #4 bar, 150 mm is about 6 in, 50 mm is 2 in, and 3,000 mm is 9.84 ft. Convert first, then enter millimetres."]] },
 
   { id:"develop", slug:"rebar-development-length-calculator", cat:"Detailing",
     metaTitle:"Rebar Development Length Calculator (Ld) — IS 456",
@@ -474,10 +659,95 @@ const PAGES = [
     desc:"Calculate the development (anchorage) length Ld for deformed bars using the IS 456 formula, with selectable concrete and steel grade.",
     kw:"rebar development length calculator, development length of rebar, anchorage length, Ld calculator",
     intro:"Compute the embedment a bar needs to develop its full strength. Select the bar size, steel grade and concrete grade, and the tool returns Ld in mm and as a multiple of bar diameter, for tension or compression.",
-    howto:["Pick the bar size.","Select steel grade (Fe250–Fe550) and concrete grade (M20–M40).","Choose tension or compression to read Ld."],
+    howto:["Pick the bar size.","Select the steel grade (Fe250–Fe550) and concrete grade (M20–M40).","Choose tension or compression.","Read Ld in mm, as a multiple of diameter, and in metres — plus the τbd used.","Compare with the tables below before detailing the anchorage."],
     formula:"Ld = (φ × 0.87 × fy) ÷ (4 × τbd). τbd is the design bond stress (increased 60% for deformed bars, +25% for compression).",
-    faqs:[["What is development length of rebar?","The length of bar that must be embedded in concrete to transfer its design force safely."],
-          ["What is the development length for Fe500 in M25?","About 47–49 times the bar diameter in tension for deformed bars."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 12 mm, Fe500, M25 (defaults)</a></li>
+      <li><a href="#example-2">Worked example 2: 16 mm, Fe500, M25</a></li>
+      <li><a href="#example-3">Worked example 3: compression</a></li>
+      <li><a href="#tbd-table">Design bond stress table (IS 456)</a></li>
+      <li><a href="#multiples-table">Ld as a multiple of diameter</a></li>
+      <li><a href="#hooks-table">Anchorage value of bends and hooks</a></li>
+      <li><a href="#dev-vs-lap">Development length vs lap length</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<p><strong>Why 0.87 × fy?</strong> The design stress in the bar is the yield strength divided by the partial safety factor for steel (1.15), and 1 ÷ 1.15 = 0.87. <strong>Why 4 × τbd?</strong> Bond acts around the bar's perimeter (π × φ) over the length Ld, while the bar force acts on its area (π × φ² ÷ 4) — equating the two gives Ld = φ × σs ÷ (4 × τbd). <strong>Why does Ld grow with diameter?</strong> A thicker bar carries force proportional to φ² but bonds only proportional to φ, so the length must grow with φ to develop the same stress.</p>
+    <h3 id="example-1">Worked example 1: 12 mm, Fe500, M25 (defaults)</h3>
+    <p>Bar 12 mm, Fe500 (fy = 500 N/mm²), M25 concrete, tension. These are the values the calculator opens with, so you can check the result immediately:</p>
+    <ol class="howto"><li>Design stress: 0.87 × 500 = 435 N/mm².</li><li>Bond stress for M25 deformed bars: 1.4 × 1.6 = 2.24 N/mm² (see the table below).</li><li>Ld = (12 × 435) ÷ (4 × 2.24) = 5,220 ÷ 8.96 = 582.59 mm — that is 48.55 × the bar diameter, or 0.583 m.</li></ol>
+    <p>Try it yourself: enter the same numbers in the calculator above and you will get the same result.</p>
+    <h3 id="example-2">Worked example 2: 16 mm, Fe500, M25</h3>
+    <p>Same grades, larger bar:</p>
+    <ol class="howto"><li>Ld = (16 × 435) ÷ (4 × 2.24) = 6,960 ÷ 8.96 = 776.79 mm.</li><li>As a multiple: 776.79 ÷ 16 = 48.55 × d — the same multiple as example 1, because the multiple does not depend on bar size (see below).</li></ol>
+    <p>The length grows with the bar, but the ×d multiple stays fixed for a given steel and concrete grade. That is why engineers often quote Ld as "about 49 diameters" for Fe500 in M25.</p>
+    <h3 id="example-3">Worked example 3: compression</h3>
+    <p>Same bar and grades as example 1, but in compression:</p>
+    <ol class="howto"><li>Bond stress rises 25%: 2.24 × 1.25 = 2.80 N/mm².</li><li>Ld = (12 × 435) ÷ (4 × 2.80) = 5,220 ÷ 11.20 = 466.07 mm — that is 38.84 × d.</li></ol>
+    <p>Compression needs only 80% of the tension length (1 ÷ 1.25), because bond is better when the bar is pushed rather than pulled. The calculator applies this automatically when you switch the stress type.</p>
+    <h3 id="tbd-table">Design bond stress table (IS 456)</h3>
+    <p>IS 456 gives bond stress for plain bars; deformed bars (the usual case) get a 60% increase. This calculator uses the exact deformed values:</p>
+    <div class="formula-table"><table>
+      <tr><th>Concrete grade</th><th>τbd, plain bars (N/mm²)</th><th>τbd, deformed bars (N/mm²) — calculator</th></tr>
+      <tr><td>M20</td><td>1.2</td><td>1.92</td></tr>
+      <tr><td>M25</td><td>1.4</td><td>2.24</td></tr>
+      <tr><td>M30</td><td>1.5</td><td>2.40</td></tr>
+      <tr><td>M35</td><td>1.7</td><td>2.72</td></tr>
+      <tr><td>M40</td><td>1.9</td><td>3.04</td></tr>
+    </table></div>
+    <p>Some guides round the deformed values (1.6, 1.9, 2.0, 2.2, 2.4) or work with plain-bar values — that is why their answers differ slightly from this calculator's. The calculator uses the unrounded products, so its results check exactly against the formula.</p>
+    <h3 id="multiples-table">Ld as a multiple of diameter (tension, deformed bars)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Steel \ Concrete</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Fe415</td><td>47.01 × d</td><td>40.30 × d</td><td>37.61 × d</td><td>33.18 × d</td><td>29.69 × d</td></tr>
+      <tr><td>Fe500</td><td>56.64 × d</td><td>48.55 × d</td><td>45.31 × d</td><td>39.98 × d</td><td>35.77 × d</td></tr>
+    </table></div>
+    <p>Two patterns to remember: stronger steel needs longer development (Fe500 > Fe415 at every grade), and stronger concrete needs shorter development (every row falls left to right). Compression multiples are 80% of these values.</p>
+    <h3 id="hooks-table">Anchorage value of bends and hooks</h3>
+    <p>When straight embedment will not fit, a bend or hook counts toward Ld (IS 456, clause 26.2.2.1):</p>
+    <div class="formula-table"><table>
+      <tr><th>Bend / hook</th><th>Anchorage value</th></tr>
+      <tr><td>45° bend</td><td>4 × d</td></tr>
+      <tr><td>90° bend</td><td>8 × d</td></tr>
+      <tr><td>135° bend</td><td>12 × d</td></tr>
+      <tr><td>U-hook (180°)</td><td>16 × d</td></tr>
+    </table></div>
+    <p>Example: a 12 mm bar needing 582.59 mm in tension can use a 90° bend worth 8 × 12 = 96 mm plus 486.59 mm of straight length. For bend and hook cutting lengths, use the <a href="/rebar-hook-bend-cutting-length-calculator">hook calculator</a>.</p>
+    <h3 id="dev-vs-lap">Development length vs lap length</h3>
+    <div class="formula-table"><table>
+      <tr><th></th><th>Development length (Ld)</th><th>Lap length</th></tr>
+      <tr><td>Purpose</td><td>Anchor a bar into concrete so it develops its full strength</td><td>Overlap two bars so force transfers from one to the other</td></tr>
+      <tr><td>Used at</td><td>Beam ends, slab ends, column bases, supports</td><td>Where bars continue (splices)</td></tr>
+      <tr><td>Depends on</td><td>Bar diameter, steel grade, concrete grade, tension/compression</td><td>Bar diameter and concrete conditions</td></tr>
+    </table></div>
+    <p>The two are related but not interchangeable: a lap must be at least the development length, but lap rules add their own conditions. For splice lengths, use the <a href="/rebar-lap-length-calculator">lap calculator</a>.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Lap splices.</strong> Ld anchors one bar; joining two bars is a lap — see the <a href="/rebar-lap-length-calculator">lap calculator</a>.</li>
+      <li><strong>Bend and hook cutting lengths.</strong> The anchorage values above are allowances, not cutting lengths — see the <a href="/rebar-hook-bend-cutting-length-calculator">hook calculator</a>.</li>
+      <li><strong>Seismic and ductile detailing.</strong> Special confinement, hooks and anchorage rules for earthquake zones are beyond this tool.</li>
+      <li><strong>ACI development length.</strong> This tool follows IS 456. The ACI method uses different factors (casting position, coating, bar size, concrete strength) and gives different lengths.</li>
+      <li><strong>Reduced stress.</strong> Ld here assumes the bar develops its full design stress (0.87 × fy). A bar stressed below that needs proportionally less — the tool does not take a reduced stress input.</li>
+    </ul>
+    <h3 id="mistakes">5 common mistakes</h3>
+    <ol class="howto"><li><strong>Using plain-bar bond stress for deformed bars.</strong> That understates τbd and overstates Ld by 60% — or, if you copy a plain-bar example, understates the real requirement. This calculator already applies the 60% increase.</li><li><strong>Forgetting the compression factor — or applying it backwards.</strong> Compression raises τbd by 25%, so Ld gets shorter (× 0.8), not longer.</li><li><strong>Using fy instead of 0.87 × fy.</strong> The design stress is 0.87 × fy, not fy. Using fy overstates Ld by 15%.</li><li><strong>Confusing Ld with lap length.</strong> Ld anchors a bar into concrete; a lap joins two bars. Same order of size, different detail — do not substitute one for the other.</li><li><strong>Assuming the ×d multiple changes with bar size.</strong> It does not: for fixed grades, Ld ÷ d is constant. A 20 mm bar needs 48.55 × 20 = 971 mm in Fe500/M25 tension, not a different multiple.</li></ol>
+    <p class="muted">Last reviewed: October 2026. Formula and bond stresses per IS 456:2000 for deformed bars; anchorage values per clause 26.2.2.1. Always verify against your structural drawings and governing code.</p>`,
+    faqs:[["What is development length of rebar?","The length of bar that must be embedded in concrete to transfer its design force safely. Without enough embedment, the bar slips or pulls out before reaching its design stress."],
+          ["What is the development length for Fe500 in M25?","About 47–49 times the bar diameter in tension for deformed bars — exactly 48.55 × d with this calculator: 582.59 mm for a 12 mm bar, 776.79 mm for a 16 mm bar, both in M25 tension."],
+          ["Is development length different in tension and compression?","Yes. Compression raises the bond stress by 25%, so Ld is 80% of the tension value: a 12 mm Fe500 bar in M25 needs 582.59 mm in tension but 466.07 mm in compression."],
+          ["Why is the stress 0.87 × fy and not fy?","0.87 is 1 ÷ 1.15, the partial safety factor for steel in IS 456. The design stress is the yield strength reduced by that factor — using full fy would overstate Ld by 15%."],
+          ["Do deformed bars need shorter development length than plain bars?","Yes — deformed bars get a 60% higher bond stress (for example M25: 2.24 instead of 1.4 N/mm²), so their Ld is proportionally shorter. This calculator already uses deformed values."],
+          ["Can a bend or hook replace straight development length?","Partly. A 90° bend counts as 8 × d and a U-hook as 16 × d toward Ld, with the rest made up in straight length. For cutting lengths, use the hook calculator."],
+          ["What is the difference between development length and lap length?","Development length anchors one bar into concrete; lap length overlaps two bars to transfer force between them. A lap must be at least the development length, but lap rules add their own conditions — see the lap calculator."],
+          ["Does stronger concrete reduce development length?","Yes. Higher grades raise the bond stress, so Ld falls: Fe500 in tension needs 56.64 × d in M20 but only 35.77 × d in M40."],
+          ["Does the ×d multiple change with bar size?","No. For fixed steel and concrete grades the multiple is constant — only the length in mm grows with diameter. Fe500 in M25 is 48.55 × d whether the bar is 12 mm or 20 mm."],
+          ["Does this calculator follow ACI or IS 456?","IS 456. The ACI method uses different factors (casting position, epoxy coating, bar size, concrete strength) and gives different lengths — do not mix the two methods on one detail."]] },
 
   { id:"lap", slug:"rebar-lap-length-calculator", cat:"Detailing",
     metaTitle:"Rebar Lap & Splice Length Calculator — Tension & Compression",
@@ -1233,9 +1503,9 @@ ${lang === "en" && p.hideCards ? "" : workflowGrid(p.id, lang)}
 ${lang==="en" && p.toc ? p.toc : ""}
 
   <section class="content-block">
-    <h2>${u.howtoH}: ${cleanH1}</h2>
+    <h2${lang === "en" ? ' id="how-to"' : ""}>${u.howtoH}: ${cleanH1}</h2>
     <ol class="howto">${howHtml}</ol>
-    <h3>${u.formulaH}</h3>
+    <h3${lang === "en" ? ' id="formula"' : ""}>${u.formulaH}</h3>
     <p class="formula-callout">${p.formula}</p>
     <p><a href="${homeHref(lang)}#charts">${u.seeChart}</a></p>
   </section>
