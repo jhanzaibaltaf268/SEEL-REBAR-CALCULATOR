@@ -375,9 +375,117 @@ const PAGES = [
           ["How much rebar is in a 2 m × 2 m footing?","At 150 mm centres with 12 mm bars and 50 mm cover: 13 bars each way (26 bars), each 1.90 m long, 49.40 m total, 43.82 kg, and 169 tie intersections. Change the spacing or bar size in the calculator to see how fast the weight moves."],
           ["How much does footing rebar cost?","Multiply the weight by your local price per kg. At €1.20/kg, the 1.5 m × 1.5 m footing in example 1 costs €20.70 in steel, and ten identical footings cost €207.00. That is the neat mat weight only — dowels, laps and waste add to the order."],
           ["Does the calculator include dowels and laps?","No. Dowels (starter bars from the footing into the column or wall) and lap splices are designed separately and added on top of the bottom-mat weight this calculator gives. Use the lap length calculator for splice lengths."],
-          ["What is the difference between isolated and strip footings?","An isolated footing is a single pad under one column, reinforced with a two-way bottom mat — exactly what this calculator sizes. A strip footing is a continuous run under a wall; its main reinforcement runs across the strip, with longitudinal bars mainly holding the mat together. Enter a strip as a rectangle here, but treat the long-direction result as distribution steel unless your design says otherwise."]] },
-
-  { id:"mat", slug:"rebar-mat-grid-calculator", cat:"Estimating",
+          ["What is the difference between isolated and strip footings?","An isolated footing is a single pad under one column, reinforced with a two-way bottom mat — exactly what this calculator sizes. A strip footing is a continuous run under a wall; its main reinforcement runs across the strip, with longitudinal bars mainly holding the mat together. Enter a strip as a rectangle here, but treat the long-direction result as distribution steel unless your design says otherwise."]] ,
+    de: {
+  metaTitle: "Bewehrungsrechner für Fundamente — Stäbe & kg gratis",
+  desc: "Bewehrungsrechner für Fundamente: Stäbe in beiden Richtungen, Gesamtlänge, Kreuzungspunkte und Gewicht in Sekunden. Beispiel: 1,5 × 1,5 m = 17,25 kg. Gratis.",
+  formula: "Gleiche Netz-Methode wie bei einer Platte: Stäbe in einer Richtung = floor((Maß − 2 × Deckung) ÷ Abstand) + 1, in beiden Richtungen, × kg/m.",
+  kw: "fundament bewehrungsrechner, fundamentbewehrung, einzelfundament bewehrung",
+  howto: ["Fundamentlänge und -breite eingeben.", "Bewehrungsabstand (Achsabstand) und Betondeckung festlegen.", "Stabdurchmesser wählen, um Stabanzahl und Gesamtgewicht zu erhalten.", "Ergebnisse ablesen: Stabanzahl in jeder Richtung, Gesamtstablänge, Kreuzungspunkte und Gesamtgewicht.", "Zusätzlich für Übergreifungen, Dübel und Verschnitt bestellen — Übergreifungen und Anschlussbewehrung sind in diesem Rechner nicht enthalten (siehe Übergreifungslängen-Rechner)."],
+  faqs: [["Wie viel Bewehrung brauche ich für ein Fundament?","Das hängt von Fundamentgröße, Abstand und Stabdurchmesser ab. Als Rechenbeispiel: Ein Fundament 1,5 m × 1,5 m mit 150 mm Achsabstand und 10-mm-Stäben braucht 20 Stäbe (je Richtung 10), 28,00 m Stabstahl und 17,25 kg Stahl — probieren Sie diese Zahlen oben im Rechner aus. Ihre Tragwerksplanung bestimmt den endgültigen Stabdurchmesser und Abstand."],
+          ["Welche Stabdurchmesser werden in Fundamenten verwendet?","10–16 mm (#4–#5) sind typisch für Wohnbau-Fundamente; schwerere Fundamente verwenden 20 mm oder mehr. Der Durchmesser kommt aus der Tragwerksplanung, nicht aus einer Faustregel — dieser Rechner ermittelt die Menge, sobald die Planung Stab und Abstand vorgibt."],
+          ["Welchen Abstand sollten Fundamentstäbe haben?","150–200 mm Achsabstand sind für Wohnbau-Fundamente üblich; bei leicht belasteten Platten kommen auch bis zu 300 mm vor. Engere Abstände werden verwendet, wenn die Lasten hoch oder das Fundament dünn ist. Verwenden Sie den Abstand aus Ihren Plänen."],
+          ["Wie viel Betondeckung brauchen Fundamentstäbe?","Typischerweise 75 mm, wenn der Beton direkt gegen Erdreich betoniert wird, und 50 mm, wenn das Fundament auf einer Sauberkeitsschicht sitzt oder geschalt wird. Der Standardwert 50 mm des Rechners passt für den Sauberkeitsschicht-Fall — ändern Sie ihn auf 75 mm für Fundamente, die gegen Erdreich betoniert werden. Die Deckung schützt den Stahl vor Korrosion, sie ist also eine Entscheidung zur Dauerhaftigkeit, keine Rundungsfrage."],
+          ["Wie berechne ich Fundamentbewehrung von Hand?","Behandeln Sie das Fundament als kleines Zwei-Wege-Netz. Je Richtung: Stäbe = floor((Maß − 2 × Deckung) ÷ Abstand) + 1, und jeder Stab ist (Maß − 2 × Deckung) lang. Addieren Sie beide Richtungen für die Gesamtlänge und multiplizieren Sie dann mit kg/m für das Gewicht. Rechenbeispiel 1 oben zeigt jeden Schritt."],
+          ["Brauchen Fundamente Bewehrung in beiden Richtungen?","Fast immer ja — ein Einzelfundament erhält eine untere Matte in beiden Richtungen, weil der Bodendruck es in beiden Richtungen biegt. Ein Streifenfundament ist anders: Seine Hauptstäbe verlaufen quer zum Streifen, leichtere Längsstäbe halten sie zusammen. Dieser Rechner bemisst ein Zwei-Wege-Netz — prüfen Sie daher bei einem Streifenfundament anhand Ihrer Planung, ob die Längsrichtung volle Stäbe oder Verteilungsbewehrung sein sollte."],
+          ["Wie viel Bewehrung steckt in einem Fundament 2 m × 2 m?","Bei 150 mm Achsabstand, 12-mm-Stäben und 50 mm Deckung: je Richtung 13 Stäbe (26 Stäbe), jeder 1,90 m lang, insgesamt 49,40 m, 43,82 kg und 169 Kreuzungspunkte. Ändern Sie Abstand oder Durchmesser im Rechner, um zu sehen, wie schnell sich das Gewicht bewegt."],
+          ["Was kostet Fundamentbewehrung?","Multiplizieren Sie das Gewicht mit Ihrem örtlichen Preis pro kg. Bei 1,20 €/kg kostet das Fundament 1,5 m × 1,5 m aus Beispiel 1 genau 20,70 € an Stahl, und zehn identische Fundamente kosten 207,00 €. Das ist nur das reine Netzgewicht — Dübel, Übergreifungen und Verschnitt kommen zur Bestellung hinzu."],
+          ["Enthält der Rechner Dübel und Übergreifungen?","Nein. Dübel (Anschlussbewehrung vom Fundament in die Stütze oder Wand) und Übergreifungsstöße werden separat bemessen und zum Gewicht der unteren Matte addiert, das dieser Rechner liefert. Nutzen Sie den Übergreifungslängen-Rechner für Stoßlängen."],
+          ["Was ist der Unterschied zwischen Einzel- und Streifenfundamenten?","Ein Einzelfundament ist eine einzelne Platte unter einer Stütze, bewehrt mit einer unteren Matte in beiden Richtungen — genau das, was dieser Rechner bemisst. Ein Streifenfundament ist ein durchlaufender Streifen unter einer Wand; seine Hauptbewehrung verläuft quer zum Streifen, Längsstäbe halten die Matte hauptsächlich zusammen. Geben Sie einen Streifen hier als Rechteck ein, behandeln Sie das Ergebnis in Längsrichtung aber als Verteilungsbewehrung, sofern Ihre Bemessung nichts anderes vorgibt."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So benutzen Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: Fundament 1,5 m × 1,5 m</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: Fundament 2,4 m × 1,8 m</a></li>
+      <li><a href="#bar-table">Stabgewichtstabelle</a></li>
+      <li><a href="#spacing-table">Abstandsleitfaden: Stäbe pro Meter</a></li>
+      <li><a href="#cost">Kosten schätzen</a></li>
+      <li><a href="#imperial">Metrische und imperiale Einheiten</a></li>
+      <li><a href="#not-included">Was der Rechner nicht enthält</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<p><strong>Warum minus zweimal die Deckung?</strong> Die Stäbe enden auf beiden Seiten vor der Fundamentkante, deshalb wird die Deckung an jedem Ende abgezogen, bevor gezählt wird. <strong>Warum plus eins?</strong> Der erste Stab sitzt an der Deckungslinie, danach folgt bei jedem Abstandsschritt ein weiterer Stab — die Anzahl ist also die Zahl der Abstände plus eins, nicht nur die Zahl der Abstände. <strong>Warum in beiden Richtungen?</strong> Eine Fundamentmatte verläuft in zwei Richtungen, und die zweite Richtung fügt meist etwa noch einmal so viel Stahl hinzu.</p>
+    <p>Das Stabgewicht pro Meter folgt der Standardformel kg/m = d² ÷ 162,28, wobei d der Stabdurchmesser in mm ist. Für einen 10-mm-Stab: 10² ÷ 162,28 = 0,616 kg/m — derselbe Wert, den der Rechner verwendet.</p>
+    <svg viewBox="0 0 520 330" role="img" aria-label="Diagramm eines Fundamentbewehrungsnetzes mit Länge, Breite, Bewehrungsabstand und Betondeckung" style="width:100%;max-width:520px;height:auto;display:block;margin:12px 0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+      <rect x="30" y="30" width="460" height="240" fill="none" stroke="#0f172a" stroke-width="2"/>
+      <rect x="58" y="58" width="404" height="184" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <g stroke="#0f172a" stroke-width="1.5">
+        <line x1="98" y1="58" x2="98" y2="242"/><line x1="158" y1="58" x2="158" y2="242"/><line x1="218" y1="58" x2="218" y2="242"/><line x1="278" y1="58" x2="278" y2="242"/><line x1="338" y1="58" x2="338" y2="242"/><line x1="398" y1="58" x2="398" y2="242"/>
+        <line x1="58" y1="98" x2="462" y2="98"/><line x1="58" y1="158" x2="462" y2="158"/><line x1="58" y1="218" x2="462" y2="218"/>
+      </g>
+      <g font-family="sans-serif" font-size="13" fill="#0f172a">
+        <text x="260" y="18" text-anchor="middle">L = Fundamentlänge</text>
+        <text x="14" y="155" text-anchor="middle" transform="rotate(-90 14 155)">B = Fundamentbreite</text>
+        <text x="128" y="52" text-anchor="middle" fill="#f97316">Abstand</text>
+        <text x="44" y="80" fill="#f97316">Deckung</text>
+      </g>
+      <g stroke="#f97316" stroke-width="1.5">
+        <line x1="98" y1="44" x2="158" y2="44"/><line x1="98" y1="40" x2="98" y2="48"/><line x1="158" y1="40" x2="158" y2="48"/>
+        <line x1="34" y1="30" x2="58" y2="58"/>
+      </g>
+    </svg>
+    <p>Die orange gestrichelte Linie markiert, wo die Stäbe tatsächlich verlaufen: innerhalb der Deckung, auf beiden Seiten. Die Stäbe kreuzen sich in beiden Richtungen, und jede Kreuzung ist ein Kreuzungspunkt.</p>
+    <h3 id="example-1">Rechenbeispiel 1: Fundament 1,5 m × 1,5 m</h3>
+    <p>Fundament 1,5 m × 1,5 m, Stäbe 10 mm (0,616 kg/m), Abstand 150 mm, Deckung 50 mm. Dies sind die Werte, mit denen der Rechner startet, sodass Sie das Ergebnis sofort prüfen können:</p>
+    <ol class="howto"><li>Stäbe entlang einer 1,5-m-Richtung: floor((1.500 − 100) ÷ 150) + 1 = 10 Stäbe, jeder 1,40 m lang = 14,00 m.</li><li>Stäbe entlang der anderen 1,5-m-Richtung: dasselbe = 10 Stäbe, jeder 1,40 m lang = 14,00 m.</li><li>Gesamtstablänge: 14,00 + 14,00 = 28,00 m.</li><li>Gesamtgewicht: 28,00 × 0,616 = 17,25 kg.</li><li>Kreuzungspunkte: 10 × 10 = 100.</li></ol>
+    <p>Probieren Sie es selbst: Geben Sie dieselben Zahlen oben in den Rechner ein, und Sie erhalten dasselbe Ergebnis.</p>
+    <h3 id="example-2">Rechenbeispiel 2: Fundament 2,4 m × 1,8 m</h3>
+    <p>Fundament 2,4 m × 1,8 m, Stäbe 12 mm (0,887 kg/m), Abstand 200 mm, Deckung 75 mm:</p>
+    <ol class="howto"><li>Stäbe entlang der 2,4-m-Richtung: floor((1.800 − 150) ÷ 200) + 1 = 9 Stäbe, jeder 2,25 m lang = 20,25 m.</li><li>Stäbe entlang der 1,8-m-Richtung: floor((2.400 − 150) ÷ 200) + 1 = 12 Stäbe, jeder 1,65 m lang = 19,80 m.</li><li>Gesamtstablänge: 20,25 + 19,80 = 40,05 m.</li><li>Gesamtgewicht: 40,05 × 0,887 = 35,52 kg.</li><li>Kreuzungspunkte: 9 × 12 = 108.</li></ol>
+    <p>Beachten Sie: Das rechteckige Fundament braucht trotz gleichem Abstand in jeder Richtung eine andere Stabanzahl (9 und 12) — und die 75 mm Deckung sind der Fundamentfall: Beton, der direkt gegen Erdreich betoniert wird, braucht mehr Deckung als eine Platte.</p>
+    <h3 id="bar-table">Stabgewichtstabelle (kg/m)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Stabdurchmesser</th><th>kg/m</th><th>Stäbe pro Tonne</th></tr>
+      <tr><td>8 mm</td><td>0,394</td><td>2.536</td></tr>
+      <tr><td>10 mm</td><td>0,616</td><td>1.623</td></tr>
+      <tr><td>12 mm</td><td>0,887</td><td>1.127</td></tr>
+      <tr><td>16 mm</td><td>1,578</td><td>634</td></tr>
+      <tr><td>20 mm</td><td>2,465</td><td>406</td></tr>
+    </table></div>
+    <p>Stäbe pro Tonne = 1.000 ÷ kg/m. Sie gibt an, wie viele 1-Meter-Stäbe eine Tonne ergeben — praktisch, wenn ein Lieferant pro Tonne anbietet. <a href="/de/#charts">Vollständige Bewehrungsgewichtstabelle ansehen (kg/m &amp; lb/ft) →</a></p>
+    <h3 id="spacing-table">Abstandsleitfaden: Stäbe pro Meter Fundamentbreite</h3>
+    <div class="formula-table"><table>
+      <tr><th>Abstand (Achsabstand)</th><th>Stäbe pro Meter</th></tr>
+      <tr><td>100 mm</td><td>10,00</td></tr>
+      <tr><td>150 mm</td><td>6,67</td></tr>
+      <tr><td>200 mm</td><td>5,00</td></tr>
+      <tr><td>250 mm</td><td>4,00</td></tr>
+      <tr><td>300 mm</td><td>3,33</td></tr>
+    </table></div>
+    <p>Stäbe pro Meter = 1.000 ÷ Abstand in mm. Eine Halbierung des Abstands verdoppelt den Stahl ungefähr. Fundamente verwenden häufig 150–200 mm Achsabstand — aber der Abstand ist eine Bemessungsentscheidung aus Ihren Tragwerksplänen, nie eine Schätzung aus einer Tabelle. Wenn Ihr Plan 200 mm vorgibt, verwenden Sie 200 mm, auch wenn 300 mm günstiger wäre.</p>
+    <h3 id="cost">Kosten schätzen</h3>
+    <p>Kosten = Gesamtgewicht × Preis pro kg (oder Gesamttonnen × Preis pro Tonne). Mit Rechenbeispiel 1: 17,25 kg × 1,20 €/kg = 20,70 € pro Fundament. Zehn identische Fundamente: 172,50 kg × 1,20 €/kg = 207,00 €. Die Preise variieren je nach Region, Lieferant und Stabdurchmesser — holen Sie vor der Budgetierung ein aktuelles Angebot ein. Und denken Sie daran: Die Bestellmenge liegt über dem reinen Netzgewicht, sobald Dübel, Übergreifungen und Verschnitt hinzukommen. Für eine vollständige Kostenaufstellung nutzen Sie den <a href="/de/bewehrungskosten-rechner">Bewehrungskosten-Rechner</a>.</p>
+    <h3 id="imperial">Metrische und imperiale Einheiten</h3>
+    <p>Dieser Rechner arbeitet mit Metern, Millimetern und Kilogramm. Wenn Ihre Pläne Fuß und Zoll verwenden:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Imperial (ca.)</th></tr>
+      <tr><td>Abstand 150 mm</td><td>6 in</td></tr>
+      <tr><td>Abstand 200 mm</td><td>8 in</td></tr>
+      <tr><td>Deckung 50 mm</td><td>2 in</td></tr>
+      <tr><td>Deckung 75 mm</td><td>3 in</td></tr>
+      <tr><td>17,25 kg</td><td>38,04 lb (× 2,205)</td></tr>
+      <tr><td>Fundament 1,5 m × 1,5 m</td><td>4,92 ft × 4,92 ft (× 3,281)</td></tr>
+    </table></div>
+    <p>Rechnen Sie zuerst um und geben Sie dann metrische Werte in den Rechner ein — mischen Sie keine Einheiten in einer Berechnung.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Dübel / Anschlussbewehrung.</strong> Die Stäbe, die vom Fundament in die Stütze oder Wand aufsteigen, werden separat bemessen und zur unteren Matte addiert.</li>
+      <li><strong>Übergreifungen (Stöße).</strong> Wenn ein Stabstrang länger ist als die Lieferlänge, müssen sich Stäbe überlappen. Die Überlappung finden Sie mit dem <a href="/de/uebergreifungslaengen-rechner">Übergreifungslängen-Rechner</a> und addieren sie zur Länge.</li>
+      <li><strong>Obere Bewehrung.</strong> Manche Fundamente brauchen zusätzlich eine obere Matte (abhebende Kräfte, exzentrische Lasten). Dieser Rechner bemisst nur die untere Matte.</li>
+      <li><strong>Abstandhalter.</strong> Die untere Matte braucht Unterstützung, um auf der richtigen Deckungshöhe zu bleiben. Schätzen Sie diese mit dem <a href="/de/abstandhalter-rechner">Abstandhalter-Rechner</a>.</li>
+      <li><strong>Verschnitt.</strong> Das Zuschneiden der Stäbe auf Länge hinterlässt immer Abschnitte. Addieren Sie vor der Bestellung einen Verschnittzuschlag zum reinen Gewicht.</li>
+      <li><strong>Sauberkeitsschicht und Aushub.</strong> Das Fundament sitzt auf einer Sauberkeitsschicht, und die Grube muss ausgehoben werden — beides ist kein Stahl und beides steckt nicht in diesem Ergebnis.</li>
+    </ul>
+    <h3 id="mistakes">4 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Deckung einer Platte für ein Fundament verwenden.</strong> Beton, der direkt gegen Erdreich betoniert wird, braucht typischerweise 75 mm Deckung, nicht 50 mm. Der Standardwert 50 mm passt für Fundamente auf einer Sauberkeitsschicht oder mit geschalten Seiten — prüfen Sie den Plan.</li><li><strong>Nur in einer Richtung zählen.</strong> Eine Fundamentmatte verläuft in beiden Richtungen. Die zweite Richtung fügt meist etwa noch einmal so viel Stahl hinzu.</li><li><strong>mm und m verwechseln.</strong> Abstand und Deckung sind in Millimetern angegeben, die Fundamentgröße in Metern. Wer 150 als Meter statt als Millimeter eingibt, sprengt das Ergebnis vollständig.</li><li><strong>Genau das berechnete Gewicht bestellen.</strong> Addieren Sie Dübel, Übergreifungen und Verschnitt hinzu — der Rechner liefert das reine Gewicht der unteren Matte, nicht die Bestellmenge.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Die Stabgewichte folgen der Formel d² ÷ 162,28 (ASTM A615 / IS 456 Praxis). Die Ergebnisse sind Schätzungen zur Orientierung — prüfen Sie sie immer anhand Ihrer Tragwerkspläne und der Bemessungsnorm.</p>`
+}
+},
+    { id:"mat", slug:"rebar-mat-grid-calculator", cat:"Estimating",
     metaTitle:"Rebar Mat Calculator — Grid Bars, Ties & Weight, Free",
     h1:"Rebar Mat & Grid Calculator",
     desc:"Lay out any rectangular reinforcement mat in seconds: bars each way, tie intersections, total length and weight. Free calculator with worked examples.",
@@ -2615,7 +2723,7 @@ function footer(lang){
       <div class="footer-quick-links">
         <a href="${homeUrl}">${u.allCalcs}</a>
         <a href="${homeUrl}#charts">${u.weightChart}</a>
-        <a href="${homeUrl}#faq">${u.faq}</a>${lang === "de" ? `<a href="/de/stahlrohr-gewicht-rechner">Stahlrohr Gewicht Rechner</a>` : ""}${lang === "en" ? `<a href="/privacy">Privacy Policy</a><a href="/about">About</a><a href="/contact">Contact</a>` : ""}
+        <a href="${homeUrl}#faq">${u.faq}</a>${lang === "de" ? `<a href="/de/stahlrohr-gewicht-rechner">Stahlrohr Gewicht Rechner</a><a href="/de/metall-gewicht-rechner">Metall Gewicht Rechner</a>` : ""}${lang === "en" ? `<a href="/privacy">Privacy Policy</a><a href="/about">About</a><a href="/contact">Contact</a>` : ""}
       </div>
       <p class="muted">${disclaimer}</p>
     </div>
