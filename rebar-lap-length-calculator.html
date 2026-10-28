@@ -51,8 +51,8 @@
 <meta property="og:description" content="Calculate lap (splice) length for reinforcement: tension lap = max(Ld, 30d), compression lap = max(Ld, 24d)." />
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rebar Lap / Splice Length Calculator","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate lap (splice) length for reinforcement: tension lap = max(Ld, 30d), compression lap = max(Ld, 24d)."}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is lap length of rebar?","acceptedAnswer":{"@type":"Answer","text":"The overlap between two spliced bars so the force transfers through the concrete."}},{"@type":"Question","name":"Is lap length 40d or 50d?","acceptedAnswer":{"@type":"Answer","text":"It depends on grade and concrete — commonly 40–50d. This tool computes it from Ld."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Select the bar size."},{"@type":"HowToStep","position":2,"text":"Choose steel and concrete grade."},{"@type":"HowToStep","position":3,"text":"Pick tension or compression lap."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is lap length of rebar?","acceptedAnswer":{"@type":"Answer","text":"The overlap between two spliced bars so force transfers from one bar to the other through the concrete bond. Bars come in standard lengths (usually 12 m), so any longer run must be continued by lapping the next bar over the lap length."}},{"@type":"Question","name":"Is lap length 40d or 50d?","acceptedAnswer":{"@type":"Answer","text":"It depends on grade and concrete — commonly 40–50d, but that is a rule of thumb, not a code value. This tool computes it from Ld: for 12 mm Fe500 bars in M25 concrete the tension lap is 48.55 × d (582.59 mm), while for Fe415 in M20 it is 47.01 × d. Always calculate for your actual grades — see the tables below."}},{"@type":"Question","name":"Why is the compression lap shorter than the tension lap?","acceptedAnswer":{"@type":"Answer","text":"Two reasons. First, the design bond stress in compression is 25% higher than in tension (IS 456 Cl 26.2.1.1), so the compression development length is 0.8 × the tension value — 466.07 mm vs 582.59 mm for 12 mm Fe500/M25. Second, the code floor is lower: 24d in compression vs 30d in tension."}},{"@type":"Question","name":"What is the difference between development length and lap length?","acceptedAnswer":{"@type":"Answer","text":"Development length (Ld) anchors one bar into concrete so it develops its full strength; lap length overlaps two bars so force transfers from one to the other. A lap is built on Ld — tension lap = max(Ld, 30d), compression lap = max(Ld, 24d) — but lap rules add their own minimums and staggering requirements. For Ld alone, use the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."}},{"@type":"Question","name":"Where should laps be placed?","acceptedAnswer":{"@type":"Answer","text":"Away from maximum-moment zones and staggered, never all at one section. Column laps belong in the middle third of the height, away from beam–column joints; beam bottom bars lap near the supports and top bars near mid-span; no more than half the bars should be spliced at any one section. Successive splices count as staggered only when they are at least 1.3 × the lap length apart."}},{"@type":"Question","name":"What about direct tension — ties and hangers?","acceptedAnswer":{"@type":"Answer","text":"Direct tension is stricter: IS 456 Cl 26.2.5.1 requires max(2Ld, 30d). For the calculator defaults (12 mm, Fe500, M25) that is 1165.18 mm — double the 582.59 mm flexural-tension lap. This calculator covers flexural tension and compression only, so double the Ld yourself for direct-tension members."}},{"@type":"Question","name":"Can bars larger than 32 mm be lap spliced?","acceptedAnswer":{"@type":"Answer","text":"No. IS 456:2000 as amended in 2007 does not permit lap splices for bars larger than 32 mm — use welding or mechanical couplers instead. Older references cite 36 mm; that was the pre-amendment limit. A 32 mm lap would already be over a metre of doubled steel, which is why the code draws the line there."}},{"@type":"Question","name":"How many laps do I need, and how much extra steel?","acceptedAnswer":{"@type":"Answer","text":"Divide the run by the 12 m stock length and round up: pieces = ceil(run ÷ 12), laps per line = pieces − 1. A 25 m run needs 3 pieces, so 2 laps per line — at the calculator defaults that adds 2 × 582.59 = 1165.18 mm per line, or 11.65 m over 10 lines. Put laps in the cutting lengths, or the site runs short."}},{"@type":"Question","name":"What if the two spliced bars have different diameters?","acceptedAnswer":{"@type":"Answer","text":"Calculate on the smaller diameter. The bond transfer is limited by the smaller bar, so using the larger diameter would overstate the lap. The same applies when a bar laps onto a starter dowel of a different size."}},{"@type":"Question","name":"Does the calculator include hooks, welds or couplers?","acceptedAnswer":{"@type":"Answer","text":"No — it gives straight lap lengths only. A hook anchors a bar end; it does not replace a lap, and a lapped bar still needs its lap even if it is hooked. For hook and bend allowances use the <a href=\"/rebar-hook-bend-cutting-length-calculator\">hook & bend calculator</a>; for bars over 32 mm, or where congestion rules laps out, price mechanical couplers against the lapped steel they replace."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Pick the bar size."},{"@type":"HowToStep","position":2,"text":"Select the steel grade (Fe250–Fe550) and concrete grade (M20–M40)."},{"@type":"HowToStep","position":3,"text":"Choose tension or compression lap."},{"@type":"HowToStep","position":4,"text":"Read the lap length in mm, as a multiple of diameter, plus the development length and the code minimum — the note under the result shows which value governed."},{"@type":"HowToStep","position":5,"text":"Apply the staggering and placement rules below before detailing — the calculator gives the length, not the location."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://steelrebarcalculator.com/"},{"@type":"ListItem","position":2,"name":"Detailing","item":"https://steelrebarcalculator.com/rebar-detailing-calculators"},{"@type":"ListItem","position":3,"name":"Rebar Lap / Splice Length Calculator","item":"https://steelrebarcalculator.com/rebar-lap-length-calculator"}]}</script>
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -166,21 +166,233 @@
       </a>
     </div>
   </section>
-
+<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 12 mm, Fe500, M25, tension (defaults)</a></li>
+      <li><a href="#example-2">Worked example 2: same bars in compression</a></li>
+      <li><a href="#example-3">Worked example 3: when the code minimum governs</a></li>
+      <li><a href="#tension-vs-compression">Tension vs compression lap table</a></li>
+      <li><a href="#lap-by-size">Lap length by bar size</a></li>
+      <li><a href="#stagger-rules">Staggering and placement rules</a></li>
+      <li><a href="#lap-vs-dev">Lap length vs development length</a></li>
+      <li><a href="#bar-schedule">Laps in the bar schedule: count, weight and cost</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
 
   <section class="content-block">
     <h2 id="how-to">How to use: Rebar Lap / Splice Length Calculator</h2>
-    <ol class="howto"><li>Select the bar size.</li><li>Choose steel and concrete grade.</li><li>Pick tension or compression lap.</li></ol>
+    <ol class="howto"><li>Pick the bar size.</li><li>Select the steel grade (Fe250–Fe550) and concrete grade (M20–M40).</li><li>Choose tension or compression lap.</li><li>Read the lap length in mm, as a multiple of diameter, plus the development length and the code minimum — the note under the result shows which value governed.</li><li>Apply the staggering and placement rules below before detailing — the calculator gives the length, not the location.</li></ol>
     <h3 id="formula">Formula</h3>
     <p class="formula-callout">Tension lap = max(Ld, 30d); compression lap = max(Ld, 24d), where Ld is the development length.</p>
     <p><a href="/#charts">See the full rebar weight chart (kg/m & lb/ft) →</a></p>
   </section>
-
+<section class="content-block"><h3>The formula, explained</h3>
+    <p>Every lap length starts from the development length Ld — the embedment a bar needs to
+    develop its full design stress in concrete (IS 456:2000 Cl 26.2.1):</p>
+    <p><strong>Ld = (d × 0.87 × fy) ÷ (4 × τbd)</strong></p>
+    <ul>
+      <li><strong>d</strong> is the bar diameter in mm.</li>
+      <li><strong>0.87 × fy</strong> is the design stress in the steel. The 0.87 is 1 ÷ 1.15, the
+      partial safety factor for steel — using fy itself overstates Ld by 15%.</li>
+      <li><strong>τbd</strong> is the design bond stress. The table below gives plain-bar values;
+      deformed bars (the usual site bar) raise them by 60%, and compression raises them a
+      further 25% — which is why a compression Ld is 0.8 × the tension Ld.</li>
+    </ul>
+    <p>Then the lap rule (IS 456 Cl 26.2.5.1) takes the greater of Ld and a code floor:</p>
+    <ul>
+      <li><strong>Tension lap = max(Ld, 30d)</strong> — flexural tension, beams and slabs.</li>
+      <li><strong>Compression lap = max(Ld, 24d)</strong> — columns and other compression members.</li>
+    </ul>
+    <p>The panel note shows which value governed, e.g. "lap = max(Ld 583, 30d 360) mm" for
+    the defaults — Ld rounded to a whole number in the note, exact values in the result tiles.</p>
+    <h3>Design bond stress τbd (IS 456 Cl 26.2.1.1)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Concrete grade</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Plain bars</td><td>1.20</td><td>1.40</td><td>1.50</td><td>1.70</td><td>1.90</td></tr>
+      <tr><td>Deformed bars (× 1.6)</td><td>1.92</td><td>2.24</td><td>2.40</td><td>2.72</td><td>3.04</td></tr>
+      <tr><td>Deformed, compression (× 1.25 more)</td><td>2.40</td><td>2.80</td><td>3.00</td><td>3.40</td><td>3.80</td></tr>
+    </table></div>
+    <p>Values in N/mm². This calculator assumes deformed bars throughout — for plain bars,
+    divide the deformed τbd by 1.6 and recompute Ld by hand.</p>
+    <h3 id="example-1">Worked example 1: 12 mm, Fe500, M25, tension (calculator defaults)</h3>
+    <p>Open the calculator and it already shows this case: 12 mm bar, Fe500 steel, M25
+    concrete, tension lap.</p>
+    <ul>
+      <li>τbd = 1.40 × 1.6 = 2.24 N/mm² (deformed bars).</li>
+      <li>Ld = (12 × 0.87 × 500) ÷ (4 × 2.24) = 5220 ÷ 8.96 = <strong>582.59 mm</strong>.</li>
+      <li>Code minimum = 30 × 12 = <strong>360.00 mm</strong>.</li>
+      <li>Lap = max(582.59, 360.00) = <strong>582.59 mm = 48.55 × d</strong>.</li>
+    </ul>
+    <p>Try it yourself: the panel opens on 582.59 mm, 48.55 × d, Ld 582.59 mm, minimum 360.00 mm.</p>
+    <h3 id="example-2">Worked example 2: the same bars in compression</h3>
+    <p>Switch the lap type to Compression and keep 12 mm, Fe500, M25:</p>
+    <ul>
+      <li>τbd = 2.24 × 1.25 = 2.80 N/mm² (compression bond stress).</li>
+      <li>Ld = 5220 ÷ (4 × 2.80) = 5220 ÷ 11.20 = <strong>466.07 mm</strong>.</li>
+      <li>Code minimum = 24 × 12 = <strong>288.00 mm</strong>.</li>
+      <li>Lap = max(466.07, 288.00) = <strong>466.07 mm = 38.84 × d</strong>.</li>
+    </ul>
+    <p>That is exactly 0.8 × the tension lap (0.8 × 582.59 = 466.07) — the compression saving
+    comes from the higher bond stress, not from a shorter rule. Column bars that also carry
+    bending can go into tension under lateral loads, so many designers detail column laps as
+    tension laps to be safe; always follow the structural drawings.</p>
+    <h3 id="example-3">Worked example 3: when the code minimum governs</h3>
+    <p>Take a mild-steel bar in strong concrete: 12 mm, Fe250, M40, tension.</p>
+    <ul>
+      <li>τbd = 3.04 N/mm²; Ld = (12 × 0.87 × 250) ÷ (4 × 3.04) = 2610 ÷ 12.16 = <strong>214.64 mm</strong>.</li>
+      <li>Code minimum = 30 × 12 = <strong>360.00 mm</strong>.</li>
+      <li>Lap = max(214.64, 360.00) = <strong>360.00 mm = 30.00 × d</strong>.</li>
+    </ul>
+    <p>The floor exists so that even a short Ld still gets a workable overlap. The same thing
+    happens at Fe415/M40: tension Ld is 356.30 mm but the lap is 360.00 mm, and compression
+    Ld is 285.04 mm but the lap is 288.00 mm. If you ever see a lap quoted below 30d in
+    tension or 24d in compression, it is wrong unless a specific code clause says otherwise.</p>
+    <h3 id="tension-vs-compression">Tension vs compression lap table</h3>
+    <p>Lap length as a multiple of bar diameter (Ld ÷ d), computed from the IS 456 formula.
+    Where the multiple falls below the code floor, the floor value is shown — that is the lap
+    the calculator returns.</p>
+    <div class="formula-table"><table>
+      <tr><th>Steel</th><th>Mode</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Fe415</td><td>Tension</td><td>47.01</td><td>40.30</td><td>37.61</td><td>33.18</td><td>30.00 (floor)</td></tr>
+      <tr><td>Fe415</td><td>Compression</td><td>37.61</td><td>32.24</td><td>30.09</td><td>26.55</td><td>24.00 (floor)</td></tr>
+      <tr><td>Fe500</td><td>Tension</td><td>56.64</td><td>48.55</td><td>45.31</td><td>39.98</td><td>35.77</td></tr>
+      <tr><td>Fe500</td><td>Compression</td><td>45.31</td><td>38.84</td><td>36.25</td><td>31.99</td><td>28.62</td></tr>
+    </table></div>
+    <p>Two patterns to remember: higher steel grades need longer laps (Fe500 needs about 20%
+    more than Fe415 at the same concrete grade), and higher concrete grades need shorter laps
+    (M40 needs about 37% less than M20 at Fe500 tension). That is why a single 50d rule is
+    both wasteful on strong concrete and unsafe on weak concrete.</p>
+    <h3>12 mm lap lengths in mm (Fe500)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Mode</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Tension</td><td>679.69</td><td>582.59</td><td>543.75</td><td>479.78</td><td>429.28</td></tr>
+      <tr><td>Compression</td><td>543.75</td><td>466.07</td><td>435.00</td><td>383.82</td><td>343.42</td></tr>
+    </table></div>
+    <p>Imperial equivalents: example 1 (582.59 mm) = 22.94 in = 1.91 ft; example 2 (466.07 mm)
+    = 18.35 in = 1.53 ft; example 3 (360.00 mm) = 14.17 in = 1.18 ft.</p>
+    <h3 id="lap-by-size">Lap length by bar size</h3>
+    <p>Fe500 steel, M25 concrete, flexural tension. The × d multiple is the same for every
+    size (48.55) — only the millimetres scale with diameter.</p>
+    <div class="formula-table"><table>
+      <tr><th>Bar</th><th>8 mm</th><th>10 mm</th><th>12 mm</th><th>16 mm</th><th>20 mm</th><th>25 mm</th></tr>
+      <tr><td>Tension lap (mm)</td><td>388.39</td><td>485.49</td><td>582.59</td><td>776.79</td><td>970.98</td><td>1213.73</td></tr>
+      <tr><td>Compression lap (mm)</td><td>310.71</td><td>388.39</td><td>466.07</td><td>621.43</td><td>776.79</td><td>970.98</td></tr>
+    </table></div>
+    <p>Each compression value is exactly 0.8 × the tension value for the same size — which is
+    also why a 10 mm compression lap (388.39 mm) happens to equal an 8 mm tension lap. Do not
+    use that coincidence as a shortcut; run the grades you actually have.</p>
+    <h3 id="stagger-rules">Staggering and placement rules</h3>
+    <p>The calculator gives the length. These rules govern where laps go (IS 456 Cl 26.2.5,
+    IS 13920 for seismic detailing):</p>
+    <ul>
+      <li><strong>Stagger:</strong> splices count as staggered only when successive splices are at
+      least <strong>1.3 × the lap length</strong> apart, centre to centre — 757.37 mm for example 1,
+      605.89 mm for example 2. Never lap all bars at one section; not more than half the
+      bars should be spliced at any one section.</li>
+      <li><strong>Straight portion:</strong> the straight length of a lap must be at least
+      <strong>max(15d, 200 mm)</strong> — 200 mm for a 12 mm bar, 240 mm for a 16 mm bar.</li>
+      <li><strong>Columns:</strong> laps in the middle third of the column height, away from
+      beam–column joints and the foundation interface.</li>
+      <li><strong>Beams:</strong> bottom bars lap near the supports, top bars near mid-span —
+      never in the zone of maximum moment.</li>
+      <li><strong>Slabs and footings:</strong> keep laps away from the highest-moment regions
+      (mid-span for bottom steel, column face for footing mats) and stagger them across the mat.</li>
+      <li><strong>Different diameters:</strong> calculate on the smaller diameter.</li>
+      <li><strong>Large bars:</strong> no lap splices above 32 mm — use welding or mechanical
+      couplers (older references say 36 mm; that was the pre-2007 limit).</li>
+      <li><strong>Top bars and corners:</strong> a tension lap at the top of a section with cover
+      below 2d, or at a corner with tight spacing, needs a 1.4 factor — about 816 mm for
+      example 1. If both conditions apply, the factor is 2.0. The calculator does not apply
+      these factors; multiply its result yourself.</li>
+      <li><strong>Binding:</strong> wire every lap at both ends so the bars stay in contact during
+      concreting — a loose lap is a failed lap.</li>
+    </ul>
+    <h3 id="lap-vs-dev">Lap length vs development length</h3>
+    <div class="formula-table"><table>
+      <tr><th></th><th>Development length (Ld)</th><th>Lap length</th></tr>
+      <tr><td>Purpose</td><td>Anchor a bar into concrete so it develops its full strength</td><td>Overlap two bars so force transfers from one to the other</td></tr>
+      <tr><td>Formula</td><td>Ld = (d × 0.87 × fy) ÷ (4 × τbd)</td><td>Tension max(Ld, 30d); compression max(Ld, 24d)</td></tr>
+      <tr><td>Minimum</td><td>None beyond the formula</td><td>30d tension, 24d compression</td></tr>
+      <tr><td>Extra rules</td><td>Hook and bend anchorage values</td><td>Staggering (1.3 × lap), straight portion, ≤50% at one section</td></tr>
+      <tr><td>Example (12 mm, Fe500, M25)</td><td>582.59 mm</td><td>582.59 mm tension, 466.07 mm compression</td></tr>
+    </table></div>
+    <p>The two are related but not interchangeable: a lap must be at least the development
+    length, but lap rules add their own conditions. For Ld alone, use the
+    <a href="/rebar-development-length-calculator">development length calculator</a>.</p>
+    <h3 id="bar-schedule">Laps in the bar schedule: count, weight and cost</h3>
+    <p>Laps are not free steel — they must be in the cutting lengths, or the site runs short.</p>
+    <ul>
+      <li><strong>Count the laps:</strong> pieces = ceil(run ÷ 12 m stock), laps per line =
+      pieces − 1. A 25 m run needs 3 pieces, so 2 laps per line.</li>
+      <li><strong>Extra length:</strong> laps per line × lap length. At the calculator defaults,
+      2 × 582.59 = 1165.18 mm per line; over 10 lines that is 11.65 m of extra bar.</li>
+      <li><strong>Extra weight:</strong> 12 mm bar is 0.887 kg/m, so one default splice weighs
+      0.52 kg and 100 splices weigh 51.68 kg.</li>
+      <li><strong>Extra cost:</strong> at €1.20/kg (example price — get a current quote), 100
+      default splices cost €62.01 in steel alone, before cutting waste. Add a 2–5% waste
+      allowance on top of the lapped tonnage, not instead of it.</li>
+    </ul>
+    <p>For a full count-and-length take-off, use the
+    <a href="/rebar-quantity-calculator">quantity &amp; takeoff calculator</a>; for the cost
+    breakdown, the <a href="/rebar-cost-calculator">rebar cost calculator</a>.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Direct tension laps.</strong> Ties and hangers need max(2Ld, 30d) — 1165.18 mm
+      for the defaults. Double the Ld yourself.</li>
+      <li><strong>Top-bar and corner factors.</strong> ×1.4 for cover below 2d or tight corners,
+      ×2.0 if both apply.</li>
+      <li><strong>Staggering and placement.</strong> The 1.3 × lap stagger rule and the
+      member placement rules above are detailing decisions, not outputs.</li>
+      <li><strong>Plain bars.</strong> The calculator assumes deformed bars. For plain bars,
+      divide τbd by 1.6 and recompute Ld by hand.</li>
+      <li><strong>Hooks, welds and couplers.</strong> Hooks anchor bar ends (see the
+      <a href="/rebar-hook-bend-cutting-length-calculator">hook &amp; bend calculator</a>);
+      welded and mechanical splices follow their own rules and are the only option above 32 mm.</li>
+      <li><strong>ACI 318 splices.</strong> Class A (1.0 × Ld) vs Class B (1.3 × Ld) tension
+      splices, and the ACI compression splice formulas, are a different code system — this
+      calculator is IS 456.</li>
+      <li><strong>Seismic detailing.</strong> IS 13920 adds confinement and location rules for
+      seismic zones; follow the project drawings.</li>
+      <li><strong>Lap counts and weights.</strong> The calculator gives one splice length, not
+      the total laps, weight or cost for a member — see the bar-schedule section above.</li>
+    </ul>
+    <h3 id="mistakes">Common mistakes</h3>
+    <ol class="howto">
+      <li><strong>Using a fixed 50d for everything.</strong> 50d approximates Fe415/M20 tension
+      (47.01d) and nothing else. On M40 it wastes steel; on weak concrete with Fe500 it
+      under-laps by up to 12% (56.64d needed at M20). Calculate per grade.</li>
+      <li><strong>Using the tension lap in compression, or vice versa.</strong> Compression laps
+      are 0.8 × tension laps at the same grades. Using the compression value in a tension zone
+      under-laps the splice by 20%.</li>
+      <li><strong>Using plain-bar bond stress for deformed bars.</strong> That understates τbd
+      by 60% and overstates the lap by 60% — or, copied the other way, understates the real
+      requirement. This calculator already applies the 60% increase.</li>
+      <li><strong>Forgetting the 30d/24d floor.</strong> Lap is max(Ld, floor), not Ld alone. At
+      Fe250/M40 the Ld is only 214.64 mm but the lap is still 360.00 mm.</li>
+      <li><strong>Lapping every bar at the same section, or at peak moment.</strong> Bunched
+      laps create a weak plane and congested steel that concrete cannot flow around. Stagger
+      at least 1.3 × the lap apart and keep laps out of maximum-moment zones.</li>
+    </ol>
+    <p>Last reviewed: October 2026.</p></section>
 
   <section id="faq" class="content-block">
     <h2>Rebar Lap / Splice Length Calculator — FAQ</h2>
-    <details open><summary>What is lap length of rebar?</summary><p>The overlap between two spliced bars so the force transfers through the concrete.</p></details>
-    <details><summary>Is lap length 40d or 50d?</summary><p>It depends on grade and concrete — commonly 40–50d. This tool computes it from Ld.</p></details>
+    <details open><summary>What is lap length of rebar?</summary><p>The overlap between two spliced bars so force transfers from one bar to the other through the concrete bond. Bars come in standard lengths (usually 12 m), so any longer run must be continued by lapping the next bar over the lap length.</p></details>
+    <details><summary>Is lap length 40d or 50d?</summary><p>It depends on grade and concrete — commonly 40–50d, but that is a rule of thumb, not a code value. This tool computes it from Ld: for 12 mm Fe500 bars in M25 concrete the tension lap is 48.55 × d (582.59 mm), while for Fe415 in M20 it is 47.01 × d. Always calculate for your actual grades — see the tables below.</p></details>
+    <details><summary>Why is the compression lap shorter than the tension lap?</summary><p>Two reasons. First, the design bond stress in compression is 25% higher than in tension (IS 456 Cl 26.2.1.1), so the compression development length is 0.8 × the tension value — 466.07 mm vs 582.59 mm for 12 mm Fe500/M25. Second, the code floor is lower: 24d in compression vs 30d in tension.</p></details>
+    <details><summary>What is the difference between development length and lap length?</summary><p>Development length (Ld) anchors one bar into concrete so it develops its full strength; lap length overlaps two bars so force transfers from one to the other. A lap is built on Ld — tension lap = max(Ld, 30d), compression lap = max(Ld, 24d) — but lap rules add their own minimums and staggering requirements. For Ld alone, use the <a href="/rebar-development-length-calculator">development length calculator</a>.</p></details>
+    <details><summary>Where should laps be placed?</summary><p>Away from maximum-moment zones and staggered, never all at one section. Column laps belong in the middle third of the height, away from beam–column joints; beam bottom bars lap near the supports and top bars near mid-span; no more than half the bars should be spliced at any one section. Successive splices count as staggered only when they are at least 1.3 × the lap length apart.</p></details>
+    <details><summary>What about direct tension — ties and hangers?</summary><p>Direct tension is stricter: IS 456 Cl 26.2.5.1 requires max(2Ld, 30d). For the calculator defaults (12 mm, Fe500, M25) that is 1165.18 mm — double the 582.59 mm flexural-tension lap. This calculator covers flexural tension and compression only, so double the Ld yourself for direct-tension members.</p></details>
+    <details><summary>Can bars larger than 32 mm be lap spliced?</summary><p>No. IS 456:2000 as amended in 2007 does not permit lap splices for bars larger than 32 mm — use welding or mechanical couplers instead. Older references cite 36 mm; that was the pre-amendment limit. A 32 mm lap would already be over a metre of doubled steel, which is why the code draws the line there.</p></details>
+    <details><summary>How many laps do I need, and how much extra steel?</summary><p>Divide the run by the 12 m stock length and round up: pieces = ceil(run ÷ 12), laps per line = pieces − 1. A 25 m run needs 3 pieces, so 2 laps per line — at the calculator defaults that adds 2 × 582.59 = 1165.18 mm per line, or 11.65 m over 10 lines. Put laps in the cutting lengths, or the site runs short.</p></details>
+    <details><summary>What if the two spliced bars have different diameters?</summary><p>Calculate on the smaller diameter. The bond transfer is limited by the smaller bar, so using the larger diameter would overstate the lap. The same applies when a bar laps onto a starter dowel of a different size.</p></details>
+    <details><summary>Does the calculator include hooks, welds or couplers?</summary><p>No — it gives straight lap lengths only. A hook anchors a bar end; it does not replace a lap, and a lapped bar still needs its lap even if it is hooked. For hook and bend allowances use the <a href="/rebar-hook-bend-cutting-length-calculator">hook & bend calculator</a>; for bars over 32 mm, or where congestion rules laps out, price mechanical couplers against the lapped steel they replace.</p></details>
   </section>
 </main>
 

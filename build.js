@@ -780,10 +780,224 @@ const PAGES = [
     desc:"Calculate lap (splice) length for reinforcement: tension lap = max(Ld, 30d), compression lap = max(Ld, 24d).",
     kw:"rebar lap length calculator, rebar splice length calculator, rebar lapping formula, lap length of rebar",
     intro:"Find the overlap needed to splice two bars. Pick the bar size, steel and concrete grade and the lap type — the tool returns the lap length in mm and as a multiple of diameter.",
-    howto:["Select the bar size.","Choose steel and concrete grade.","Pick tension or compression lap."],
+    howto:["Pick the bar size.","Select the steel grade (Fe250–Fe550) and concrete grade (M20–M40).","Choose tension or compression lap.","Read the lap length in mm, as a multiple of diameter, plus the development length and the code minimum — the note under the result shows which value governed.","Apply the staggering and placement rules below before detailing — the calculator gives the length, not the location."],
     formula:"Tension lap = max(Ld, 30d); compression lap = max(Ld, 24d), where Ld is the development length.",
-    faqs:[["What is lap length of rebar?","The overlap between two spliced bars so the force transfers through the concrete."],
-          ["Is lap length 40d or 50d?","It depends on grade and concrete — commonly 40–50d. This tool computes it from Ld."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: 12 mm, Fe500, M25, tension (defaults)</a></li>
+      <li><a href="#example-2">Worked example 2: same bars in compression</a></li>
+      <li><a href="#example-3">Worked example 3: when the code minimum governs</a></li>
+      <li><a href="#tension-vs-compression">Tension vs compression lap table</a></li>
+      <li><a href="#lap-by-size">Lap length by bar size</a></li>
+      <li><a href="#stagger-rules">Staggering and placement rules</a></li>
+      <li><a href="#lap-vs-dev">Lap length vs development length</a></li>
+      <li><a href="#bar-schedule">Laps in the bar schedule: count, weight and cost</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<h3>The formula, explained</h3>
+    <p>Every lap length starts from the development length Ld — the embedment a bar needs to
+    develop its full design stress in concrete (IS 456:2000 Cl 26.2.1):</p>
+    <p><strong>Ld = (d × 0.87 × fy) ÷ (4 × τbd)</strong></p>
+    <ul>
+      <li><strong>d</strong> is the bar diameter in mm.</li>
+      <li><strong>0.87 × fy</strong> is the design stress in the steel. The 0.87 is 1 ÷ 1.15, the
+      partial safety factor for steel — using fy itself overstates Ld by 15%.</li>
+      <li><strong>τbd</strong> is the design bond stress. The table below gives plain-bar values;
+      deformed bars (the usual site bar) raise them by 60%, and compression raises them a
+      further 25% — which is why a compression Ld is 0.8 × the tension Ld.</li>
+    </ul>
+    <p>Then the lap rule (IS 456 Cl 26.2.5.1) takes the greater of Ld and a code floor:</p>
+    <ul>
+      <li><strong>Tension lap = max(Ld, 30d)</strong> — flexural tension, beams and slabs.</li>
+      <li><strong>Compression lap = max(Ld, 24d)</strong> — columns and other compression members.</li>
+    </ul>
+    <p>The panel note shows which value governed, e.g. "lap = max(Ld 583, 30d 360) mm" for
+    the defaults — Ld rounded to a whole number in the note, exact values in the result tiles.</p>
+    <h3>Design bond stress τbd (IS 456 Cl 26.2.1.1)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Concrete grade</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Plain bars</td><td>1.20</td><td>1.40</td><td>1.50</td><td>1.70</td><td>1.90</td></tr>
+      <tr><td>Deformed bars (× 1.6)</td><td>1.92</td><td>2.24</td><td>2.40</td><td>2.72</td><td>3.04</td></tr>
+      <tr><td>Deformed, compression (× 1.25 more)</td><td>2.40</td><td>2.80</td><td>3.00</td><td>3.40</td><td>3.80</td></tr>
+    </table></div>
+    <p>Values in N/mm². This calculator assumes deformed bars throughout — for plain bars,
+    divide the deformed τbd by 1.6 and recompute Ld by hand.</p>
+    <h3 id="example-1">Worked example 1: 12 mm, Fe500, M25, tension (calculator defaults)</h3>
+    <p>Open the calculator and it already shows this case: 12 mm bar, Fe500 steel, M25
+    concrete, tension lap.</p>
+    <ul>
+      <li>τbd = 1.40 × 1.6 = 2.24 N/mm² (deformed bars).</li>
+      <li>Ld = (12 × 0.87 × 500) ÷ (4 × 2.24) = 5220 ÷ 8.96 = <strong>582.59 mm</strong>.</li>
+      <li>Code minimum = 30 × 12 = <strong>360.00 mm</strong>.</li>
+      <li>Lap = max(582.59, 360.00) = <strong>582.59 mm = 48.55 × d</strong>.</li>
+    </ul>
+    <p>Try it yourself: the panel opens on 582.59 mm, 48.55 × d, Ld 582.59 mm, minimum 360.00 mm.</p>
+    <h3 id="example-2">Worked example 2: the same bars in compression</h3>
+    <p>Switch the lap type to Compression and keep 12 mm, Fe500, M25:</p>
+    <ul>
+      <li>τbd = 2.24 × 1.25 = 2.80 N/mm² (compression bond stress).</li>
+      <li>Ld = 5220 ÷ (4 × 2.80) = 5220 ÷ 11.20 = <strong>466.07 mm</strong>.</li>
+      <li>Code minimum = 24 × 12 = <strong>288.00 mm</strong>.</li>
+      <li>Lap = max(466.07, 288.00) = <strong>466.07 mm = 38.84 × d</strong>.</li>
+    </ul>
+    <p>That is exactly 0.8 × the tension lap (0.8 × 582.59 = 466.07) — the compression saving
+    comes from the higher bond stress, not from a shorter rule. Column bars that also carry
+    bending can go into tension under lateral loads, so many designers detail column laps as
+    tension laps to be safe; always follow the structural drawings.</p>
+    <h3 id="example-3">Worked example 3: when the code minimum governs</h3>
+    <p>Take a mild-steel bar in strong concrete: 12 mm, Fe250, M40, tension.</p>
+    <ul>
+      <li>τbd = 3.04 N/mm²; Ld = (12 × 0.87 × 250) ÷ (4 × 3.04) = 2610 ÷ 12.16 = <strong>214.64 mm</strong>.</li>
+      <li>Code minimum = 30 × 12 = <strong>360.00 mm</strong>.</li>
+      <li>Lap = max(214.64, 360.00) = <strong>360.00 mm = 30.00 × d</strong>.</li>
+    </ul>
+    <p>The floor exists so that even a short Ld still gets a workable overlap. The same thing
+    happens at Fe415/M40: tension Ld is 356.30 mm but the lap is 360.00 mm, and compression
+    Ld is 285.04 mm but the lap is 288.00 mm. If you ever see a lap quoted below 30d in
+    tension or 24d in compression, it is wrong unless a specific code clause says otherwise.</p>
+    <h3 id="tension-vs-compression">Tension vs compression lap table</h3>
+    <p>Lap length as a multiple of bar diameter (Ld ÷ d), computed from the IS 456 formula.
+    Where the multiple falls below the code floor, the floor value is shown — that is the lap
+    the calculator returns.</p>
+    <div class="formula-table"><table>
+      <tr><th>Steel</th><th>Mode</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Fe415</td><td>Tension</td><td>47.01</td><td>40.30</td><td>37.61</td><td>33.18</td><td>30.00 (floor)</td></tr>
+      <tr><td>Fe415</td><td>Compression</td><td>37.61</td><td>32.24</td><td>30.09</td><td>26.55</td><td>24.00 (floor)</td></tr>
+      <tr><td>Fe500</td><td>Tension</td><td>56.64</td><td>48.55</td><td>45.31</td><td>39.98</td><td>35.77</td></tr>
+      <tr><td>Fe500</td><td>Compression</td><td>45.31</td><td>38.84</td><td>36.25</td><td>31.99</td><td>28.62</td></tr>
+    </table></div>
+    <p>Two patterns to remember: higher steel grades need longer laps (Fe500 needs about 20%
+    more than Fe415 at the same concrete grade), and higher concrete grades need shorter laps
+    (M40 needs about 37% less than M20 at Fe500 tension). That is why a single 50d rule is
+    both wasteful on strong concrete and unsafe on weak concrete.</p>
+    <h3>12 mm lap lengths in mm (Fe500)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Mode</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Tension</td><td>679.69</td><td>582.59</td><td>543.75</td><td>479.78</td><td>429.28</td></tr>
+      <tr><td>Compression</td><td>543.75</td><td>466.07</td><td>435.00</td><td>383.82</td><td>343.42</td></tr>
+    </table></div>
+    <p>Imperial equivalents: example 1 (582.59 mm) = 22.94 in = 1.91 ft; example 2 (466.07 mm)
+    = 18.35 in = 1.53 ft; example 3 (360.00 mm) = 14.17 in = 1.18 ft.</p>
+    <h3 id="lap-by-size">Lap length by bar size</h3>
+    <p>Fe500 steel, M25 concrete, flexural tension. The × d multiple is the same for every
+    size (48.55) — only the millimetres scale with diameter.</p>
+    <div class="formula-table"><table>
+      <tr><th>Bar</th><th>8 mm</th><th>10 mm</th><th>12 mm</th><th>16 mm</th><th>20 mm</th><th>25 mm</th></tr>
+      <tr><td>Tension lap (mm)</td><td>388.39</td><td>485.49</td><td>582.59</td><td>776.79</td><td>970.98</td><td>1213.73</td></tr>
+      <tr><td>Compression lap (mm)</td><td>310.71</td><td>388.39</td><td>466.07</td><td>621.43</td><td>776.79</td><td>970.98</td></tr>
+    </table></div>
+    <p>Each compression value is exactly 0.8 × the tension value for the same size — which is
+    also why a 10 mm compression lap (388.39 mm) happens to equal an 8 mm tension lap. Do not
+    use that coincidence as a shortcut; run the grades you actually have.</p>
+    <h3 id="stagger-rules">Staggering and placement rules</h3>
+    <p>The calculator gives the length. These rules govern where laps go (IS 456 Cl 26.2.5,
+    IS 13920 for seismic detailing):</p>
+    <ul>
+      <li><strong>Stagger:</strong> splices count as staggered only when successive splices are at
+      least <strong>1.3 × the lap length</strong> apart, centre to centre — 757.37 mm for example 1,
+      605.89 mm for example 2. Never lap all bars at one section; not more than half the
+      bars should be spliced at any one section.</li>
+      <li><strong>Straight portion:</strong> the straight length of a lap must be at least
+      <strong>max(15d, 200 mm)</strong> — 200 mm for a 12 mm bar, 240 mm for a 16 mm bar.</li>
+      <li><strong>Columns:</strong> laps in the middle third of the column height, away from
+      beam–column joints and the foundation interface.</li>
+      <li><strong>Beams:</strong> bottom bars lap near the supports, top bars near mid-span —
+      never in the zone of maximum moment.</li>
+      <li><strong>Slabs and footings:</strong> keep laps away from the highest-moment regions
+      (mid-span for bottom steel, column face for footing mats) and stagger them across the mat.</li>
+      <li><strong>Different diameters:</strong> calculate on the smaller diameter.</li>
+      <li><strong>Large bars:</strong> no lap splices above 32 mm — use welding or mechanical
+      couplers (older references say 36 mm; that was the pre-2007 limit).</li>
+      <li><strong>Top bars and corners:</strong> a tension lap at the top of a section with cover
+      below 2d, or at a corner with tight spacing, needs a 1.4 factor — about 816 mm for
+      example 1. If both conditions apply, the factor is 2.0. The calculator does not apply
+      these factors; multiply its result yourself.</li>
+      <li><strong>Binding:</strong> wire every lap at both ends so the bars stay in contact during
+      concreting — a loose lap is a failed lap.</li>
+    </ul>
+    <h3 id="lap-vs-dev">Lap length vs development length</h3>
+    <div class="formula-table"><table>
+      <tr><th></th><th>Development length (Ld)</th><th>Lap length</th></tr>
+      <tr><td>Purpose</td><td>Anchor a bar into concrete so it develops its full strength</td><td>Overlap two bars so force transfers from one to the other</td></tr>
+      <tr><td>Formula</td><td>Ld = (d × 0.87 × fy) ÷ (4 × τbd)</td><td>Tension max(Ld, 30d); compression max(Ld, 24d)</td></tr>
+      <tr><td>Minimum</td><td>None beyond the formula</td><td>30d tension, 24d compression</td></tr>
+      <tr><td>Extra rules</td><td>Hook and bend anchorage values</td><td>Staggering (1.3 × lap), straight portion, ≤50% at one section</td></tr>
+      <tr><td>Example (12 mm, Fe500, M25)</td><td>582.59 mm</td><td>582.59 mm tension, 466.07 mm compression</td></tr>
+    </table></div>
+    <p>The two are related but not interchangeable: a lap must be at least the development
+    length, but lap rules add their own conditions. For Ld alone, use the
+    <a href="/rebar-development-length-calculator">development length calculator</a>.</p>
+    <h3 id="bar-schedule">Laps in the bar schedule: count, weight and cost</h3>
+    <p>Laps are not free steel — they must be in the cutting lengths, or the site runs short.</p>
+    <ul>
+      <li><strong>Count the laps:</strong> pieces = ceil(run ÷ 12 m stock), laps per line =
+      pieces − 1. A 25 m run needs 3 pieces, so 2 laps per line.</li>
+      <li><strong>Extra length:</strong> laps per line × lap length. At the calculator defaults,
+      2 × 582.59 = 1165.18 mm per line; over 10 lines that is 11.65 m of extra bar.</li>
+      <li><strong>Extra weight:</strong> 12 mm bar is 0.887 kg/m, so one default splice weighs
+      0.52 kg and 100 splices weigh 51.68 kg.</li>
+      <li><strong>Extra cost:</strong> at €1.20/kg (example price — get a current quote), 100
+      default splices cost €62.01 in steel alone, before cutting waste. Add a 2–5% waste
+      allowance on top of the lapped tonnage, not instead of it.</li>
+    </ul>
+    <p>For a full count-and-length take-off, use the
+    <a href="/rebar-quantity-calculator">quantity &amp; takeoff calculator</a>; for the cost
+    breakdown, the <a href="/rebar-cost-calculator">rebar cost calculator</a>.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Direct tension laps.</strong> Ties and hangers need max(2Ld, 30d) — 1165.18 mm
+      for the defaults. Double the Ld yourself.</li>
+      <li><strong>Top-bar and corner factors.</strong> ×1.4 for cover below 2d or tight corners,
+      ×2.0 if both apply.</li>
+      <li><strong>Staggering and placement.</strong> The 1.3 × lap stagger rule and the
+      member placement rules above are detailing decisions, not outputs.</li>
+      <li><strong>Plain bars.</strong> The calculator assumes deformed bars. For plain bars,
+      divide τbd by 1.6 and recompute Ld by hand.</li>
+      <li><strong>Hooks, welds and couplers.</strong> Hooks anchor bar ends (see the
+      <a href="/rebar-hook-bend-cutting-length-calculator">hook &amp; bend calculator</a>);
+      welded and mechanical splices follow their own rules and are the only option above 32 mm.</li>
+      <li><strong>ACI 318 splices.</strong> Class A (1.0 × Ld) vs Class B (1.3 × Ld) tension
+      splices, and the ACI compression splice formulas, are a different code system — this
+      calculator is IS 456.</li>
+      <li><strong>Seismic detailing.</strong> IS 13920 adds confinement and location rules for
+      seismic zones; follow the project drawings.</li>
+      <li><strong>Lap counts and weights.</strong> The calculator gives one splice length, not
+      the total laps, weight or cost for a member — see the bar-schedule section above.</li>
+    </ul>
+    <h3 id="mistakes">Common mistakes</h3>
+    <ol class="howto">
+      <li><strong>Using a fixed 50d for everything.</strong> 50d approximates Fe415/M20 tension
+      (47.01d) and nothing else. On M40 it wastes steel; on weak concrete with Fe500 it
+      under-laps by up to 12% (56.64d needed at M20). Calculate per grade.</li>
+      <li><strong>Using the tension lap in compression, or vice versa.</strong> Compression laps
+      are 0.8 × tension laps at the same grades. Using the compression value in a tension zone
+      under-laps the splice by 20%.</li>
+      <li><strong>Using plain-bar bond stress for deformed bars.</strong> That understates τbd
+      by 60% and overstates the lap by 60% — or, copied the other way, understates the real
+      requirement. This calculator already applies the 60% increase.</li>
+      <li><strong>Forgetting the 30d/24d floor.</strong> Lap is max(Ld, floor), not Ld alone. At
+      Fe250/M40 the Ld is only 214.64 mm but the lap is still 360.00 mm.</li>
+      <li><strong>Lapping every bar at the same section, or at peak moment.</strong> Bunched
+      laps create a weak plane and congested steel that concrete cannot flow around. Stagger
+      at least 1.3 × the lap apart and keep laps out of maximum-moment zones.</li>
+    </ol>
+    <p>Last reviewed: October 2026.</p>`,
+    faqs:[["What is lap length of rebar?","The overlap between two spliced bars so force transfers from one bar to the other through the concrete bond. Bars come in standard lengths (usually 12 m), so any longer run must be continued by lapping the next bar over the lap length."],
+          ["Is lap length 40d or 50d?","It depends on grade and concrete — commonly 40–50d, but that is a rule of thumb, not a code value. This tool computes it from Ld: for 12 mm Fe500 bars in M25 concrete the tension lap is 48.55 × d (582.59 mm), while for Fe415 in M20 it is 47.01 × d. Always calculate for your actual grades — see the tables below."],
+          ["Why is the compression lap shorter than the tension lap?","Two reasons. First, the design bond stress in compression is 25% higher than in tension (IS 456 Cl 26.2.1.1), so the compression development length is 0.8 × the tension value — 466.07 mm vs 582.59 mm for 12 mm Fe500/M25. Second, the code floor is lower: 24d in compression vs 30d in tension."],
+          ["What is the difference between development length and lap length?","Development length (Ld) anchors one bar into concrete so it develops its full strength; lap length overlaps two bars so force transfers from one to the other. A lap is built on Ld — tension lap = max(Ld, 30d), compression lap = max(Ld, 24d) — but lap rules add their own minimums and staggering requirements. For Ld alone, use the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."],
+          ["Where should laps be placed?","Away from maximum-moment zones and staggered, never all at one section. Column laps belong in the middle third of the height, away from beam–column joints; beam bottom bars lap near the supports and top bars near mid-span; no more than half the bars should be spliced at any one section. Successive splices count as staggered only when they are at least 1.3 × the lap length apart."],
+          ["What about direct tension — ties and hangers?","Direct tension is stricter: IS 456 Cl 26.2.5.1 requires max(2Ld, 30d). For the calculator defaults (12 mm, Fe500, M25) that is 1165.18 mm — double the 582.59 mm flexural-tension lap. This calculator covers flexural tension and compression only, so double the Ld yourself for direct-tension members."],
+          ["Can bars larger than 32 mm be lap spliced?","No. IS 456:2000 as amended in 2007 does not permit lap splices for bars larger than 32 mm — use welding or mechanical couplers instead. Older references cite 36 mm; that was the pre-amendment limit. A 32 mm lap would already be over a metre of doubled steel, which is why the code draws the line there."],
+          ["How many laps do I need, and how much extra steel?","Divide the run by the 12 m stock length and round up: pieces = ceil(run ÷ 12), laps per line = pieces − 1. A 25 m run needs 3 pieces, so 2 laps per line — at the calculator defaults that adds 2 × 582.59 = 1165.18 mm per line, or 11.65 m over 10 lines. Put laps in the cutting lengths, or the site runs short."],
+          ["What if the two spliced bars have different diameters?","Calculate on the smaller diameter. The bond transfer is limited by the smaller bar, so using the larger diameter would overstate the lap. The same applies when a bar laps onto a starter dowel of a different size."],
+          ["Does the calculator include hooks, welds or couplers?","No — it gives straight lap lengths only. A hook anchors a bar end; it does not replace a lap, and a lapped bar still needs its lap even if it is hooked. For hook and bend allowances use the <a href=\"/rebar-hook-bend-cutting-length-calculator\">hook & bend calculator</a>; for bars over 32 mm, or where congestion rules laps out, price mechanical couplers against the lapped steel they replace."]], },
 
   { id:"hook", slug:"rebar-hook-bend-cutting-length-calculator", cat:"Detailing",
     metaTitle:"Rebar Hook, Bend & Cutting Length Calculator",
@@ -791,10 +1005,230 @@ const PAGES = [
     desc:"Calculate the cutting length of a bar from its straight length, hooks and bends, with standard 9d hooks and bend deductions.",
     kw:"rebar hook length formula, rebar bend formula, rebar cut length calculation, cutting length of rebar",
     intro:"Get the exact cutting length to order or cut a bar. Enter the straight length, number of hooks and bends — the tool adds 9d per hook and deducts 1d/2d/3d for 45°/90°/135° bends.",
-    howto:["Enter the straight (out-to-out) length.","Enter the number of hooks and each type of bend.","Read the cutting length in mm and m."],
+    howto:["Enter the straight (out-to-out) length in mm — the length after cover is taken off the span, not the full span itself.","Pick the bar size.","Enter the number of hooks (9d each) and the count of each bend type — 45°, 90°, 135°.","Read the cutting length in mm and m, plus the hook addition and bend deduction shown separately.","Apply the result to the bar schedule: divide the 12 m stock length by the cutting length for bars per stick, and add laps and waste before ordering."],
     formula:"Cutting length = straight length + (hooks × 9d) − (45°×1d + 90°×2d + 135°×3d).",
-    faqs:[["What is the hook length of rebar?","A standard 180° hook adds about 9 × bar diameter to the cutting length."],
-          ["Why do we deduct for bends?","Bending a bar shortens its outside length, so a deduction (1d–3d) is applied per bend."]] },
+    toc:`<nav class="content-block" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#how-to">How to use the calculator</a></li>
+      <li><a href="#formula">The formula, explained</a></li>
+      <li><a href="#example-1">Worked example 1: calculator defaults (12 mm, 2 hooks)</a></li>
+      <li><a href="#example-2">Worked example 2: 16 mm bar with two 90° bends</a></li>
+      <li><a href="#example-3">Worked example 3: mixed bends, one hook</a></li>
+      <li><a href="#hook-table">Hook allowance (9d) by bar size</a></li>
+      <li><a href="#deduction-table">Bend deduction by angle</a></li>
+      <li><a href="#hook-vs-anchorage">Hook allowance vs anchorage value</a></li>
+      <li><a href="#stirrup-hooks">Stirrup hooks: why 10d, not 9d</a></li>
+      <li><a href="#crank-bar">Cranked (bent-up) bars: the 0.42h rule</a></li>
+      <li><a href="#shapes">L-bars, U-bars and the bar schedule</a></li>
+      <li><a href="#stock-length">From cutting length to order: stock lengths and waste</a></li>
+      <li><a href="#imperial">Metric and imperial units</a></li>
+      <li><a href="#not-included">What the calculator does not include</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+    extra:`<h3>The formula, explained</h3>
+    <p>Cutting length is the length of straight bar you cut <em>before</em> bending — not
+    the length shown on the drawing. The drawing gives out-to-out dimensions, which
+    measure along the outside faces of the bent bar. Bending stretches the outside and
+    compresses the inside, so the outside measurement always overstates the bar. The
+    formula corrects both ends of the problem:</p>
+    <p><strong>Cutting length = straight length + (hooks × 9d) − (45°×1d + 90°×2d + 135°×3d)</strong></p>
+    <ul>
+      <li><strong>Straight length</strong> is the out-to-out length you enter — after cover
+      is taken off the span. The calculator does not subtract cover for you.</li>
+      <li><strong>Hooks × 9d</strong> is the extra steel at the bar ends. A standard 180°
+      hook adds 9 × bar diameter per hook — the bent end plus its straight tail.</li>
+      <li><strong>Bend deductions</strong> take back the stretch at each change of
+      direction: 1d for 45°, 2d for 90°, 3d for 135°. Without them every bent bar
+      comes out too long.</li>
+    </ul>
+    <p>One trap to avoid before the examples: a 180° end is a <em>hook</em> in this
+    calculator, so it takes the 9d addition. Some schedules list a 4d deduction for a
+    180° bend instead — that is the same end measured the other way. Never apply
+    both the 9d addition and a 180° deduction to one end.</p>
+    <h3 id="example-1">Worked example 1: calculator defaults (12 mm, 2 hooks)</h3>
+    <p>Open the calculator and it already shows this case: 3000 mm straight length,
+    12 mm bar, 2 hooks (one each end), no bends.</p>
+    <ul>
+      <li>Hook addition = 2 × 9 × 12 = <strong>216 mm</strong>.</li>
+      <li>Bend deduction = <strong>0 mm</strong>.</li>
+      <li>Cutting length = 3000 + 216 − 0 = <strong>3216 mm</strong>.</li>
+      <li>Weight per bar = 3.216 × 0.887 = <strong>2.85 kg</strong>.</li>
+    </ul>
+    <p>Try it yourself: the panel opens on 3,216 mm, hook addition 216.00 mm,
+    deduction 0.000 mm — and 3.22 m, because the panel rounds metres to 2 decimals
+    (the exact value is 3.216 m).</p>
+    <h3 id="example-2">Worked example 2: 16 mm bar with two 90° bends</h3>
+    <p>Straight length 4500 mm, 16 mm bar, 2 hooks, two 90° bends:</p>
+    <ul>
+      <li>Hook addition = 2 × 9 × 16 = <strong>288 mm</strong>.</li>
+      <li>Bend deduction = 2 × 2 × 16 = <strong>64 mm</strong>.</li>
+      <li>Cutting length = 4500 + 288 − 64 = <strong>4724 mm</strong>.</li>
+      <li>Weight per bar = 4.724 × 1.578 = <strong>7.45 kg</strong>.</li>
+    </ul>
+    <p>Try it yourself: enter 4500, 16 mm, 2 hooks, two 90° bends and the panel shows
+    4,724 mm (4.72 m rounded). Note how the bends pull the result back: without
+    them the same bar would cut at 4788 mm.</p>
+    <h3 id="example-3">Worked example 3: mixed bends, one hook</h3>
+    <p>Straight length 2500 mm, 10 mm bar, 1 hook, one 135° bend and one 45° bend:</p>
+    <ul>
+      <li>Hook addition = 1 × 9 × 10 = <strong>90 mm</strong>.</li>
+      <li>Bend deduction = 1 × 3 × 10 + 1 × 1 × 10 = <strong>40 mm</strong>.</li>
+      <li>Cutting length = 2500 + 90 − 40 = <strong>2550 mm</strong>.</li>
+      <li>Weight per bar = 2.55 × 0.616 = <strong>1.57 kg</strong>.</li>
+    </ul>
+    <p>Try it yourself: the panel shows 2,550 mm (2.55 m). And a deduction-only
+    check, for a bar with bends but no hooks: 3000 mm, 12 mm, two 90° bends gives
+    3000 − 48 = <strong>2952 mm</strong> — bends alone always shorten the cut.</p>
+    <h3 id="hook-table">Hook allowance (9d) by bar size</h3>
+    <div class="formula-table"><table>
+      <tr><th>Bar diameter</th><th>9d hook allowance</th></tr>
+      <tr><td>8 mm</td><td>72 mm</td></tr>
+      <tr><td>10 mm</td><td>90 mm</td></tr>
+      <tr><td>12 mm</td><td>108 mm</td></tr>
+      <tr><td>16 mm</td><td>144 mm</td></tr>
+      <tr><td>20 mm</td><td>180 mm</td></tr>
+      <tr><td>25 mm</td><td>225 mm</td></tr>
+      <tr><td>32 mm</td><td>288 mm</td></tr>
+    </table></div>
+    <p>Two hooks — the usual case, one each end — double these figures: a 12 mm bar
+    with two hooks gains 216 mm, a 16 mm bar gains 288 mm. The calculator multiplies
+    the hook count you enter, so a single-hook bar (an L-bar into a support, for
+    example) takes just one allowance.</p>
+    <h3 id="deduction-table">Bend deduction by angle</h3>
+    <div class="formula-table"><table>
+      <tr><th>Bend angle</th><th>Deduction per bend</th><th>12 mm bar</th><th>16 mm bar</th></tr>
+      <tr><td>45°</td><td>1d</td><td>12 mm</td><td>16 mm</td></tr>
+      <tr><td>90°</td><td>2d</td><td>24 mm</td><td>32 mm</td></tr>
+      <tr><td>135°</td><td>3d</td><td>36 mm</td><td>48 mm</td></tr>
+    </table></div>
+    <p>These are the practical site values used in most bar schedules (IS 2502
+    practice). The deduction grows with angle because a sharper bend stretches more
+    steel around the outside. Count every bend in the bar — a U-bar has two 90°
+    bends (4d total), a cranked bar has four 45° bends (4d total, see below).</p>
+    <h3 id="hook-vs-anchorage">Hook allowance vs anchorage value</h3>
+    <p>The 9d figure above is a <em>cutting-length</em> addition. It is not the same as
+    a hook's <em>anchorage value</em> — how much of the development length Ld a bend
+    supplies. IS 456 Cl 26.2.2.1 gives anchorage values of 4d for a 45° bend, 8d for
+    90°, 12d for 135°, and 16d for a U-bend. Confusing the two is a real site error:
+    a 90° hook does not "give you 9d of anchorage", it gives 8d.</p>
+    <p>The bridge between the two, using the development-length page's own figures:
+    a 12 mm Fe500 bar in M25 concrete needs Ld = 582.59 mm in tension. A 90° hook
+    supplies 8 × 12 = 96 mm of anchorage, so the straight length still needed is
+    582.59 − 96 = <strong>486.59 mm</strong>. Use the <a href="/rebar-development-length-calculator">development length calculator</a> for Ld itself — this page only
+    sizes the cut, not the embedment.</p>
+    <h3 id="stirrup-hooks">Stirrup hooks: why 10d, not 9d</h3>
+    <p>Closed stirrups and column ties do not use the 9d hook. Their 135° seismic
+    hooks take <strong>10d each</strong> (IS 13920 practice: the hook must stay closed
+    when concrete spalls in an earthquake, so the tail is longer and the bend is
+    135°, never 90°). That is why the site has a separate
+    <a href="/stirrup-tie-cutting-length-calculator">stirrup calculator</a> — its
+    formula is 2(a + b) + 2 × 10d − 3 × 2d − 2 × 3d, with three 90° bends and two
+    135° bends.</p>
+    <p>Worked with the stirrup formula, independent of the calculator defaults:
+    inner dimensions 200 × 400 mm, 8 mm bar. Perimeter = 2 × (200 + 400) = 1200 mm.
+    Hooks = 2 × 10 × 8 = 160 mm. Deductions = 3 × 2 × 8 + 2 × 3 × 8 = 96 mm.
+    Cutting length = 1200 + 160 − 96 = <strong>1264 mm</strong>. If you ran the same
+    tie through this page's 9d hooks you would undercut it by 16 mm — small per
+    tie, systematic across a column.</p>
+    <h3 id="crank-bar">Cranked (bent-up) bars: the 0.42h rule</h3>
+    <p>A bent-up bar rises through the slab on a 45° incline, and the incline is
+    longer than the straight run it replaces. The standard site allowance is
+    <strong>0.42 × h per crank</strong>, where h is the clear crank height: slab
+    depth − top cover − bottom cover − bar diameter. With two cranks per bar, add
+    2 × 0.42h — then deduct the four 45° bends (4 × 1d).</p>
+    <p>Worked: 150 mm slab, 25 mm covers, 12 mm bar. h = 150 − 25 − 25 − 12 =
+    88 mm. Extra per crank = 0.42 × 88 = 36.96 mm; two cranks = 73.92 mm. Less four
+    45° deductions (48 mm), the net addition over the straight length is
+    <strong>25.92 mm</strong>. This calculator has no crank input — add the net
+    figure to its result yourself, and do not also count the crank bends in the
+    bend inputs, or the deductions will be taken twice.</p>
+    <h3 id="shapes">L-bars, U-bars and the bar schedule</h3>
+    <p>Most scheduled bars are one of three shapes, and each is just the same
+    formula with the bends counted:</p>
+    <div class="formula-table"><table>
+      <tr><th>Shape (BS 8666)</th><th>Cutting-length recipe</th><th>Example</th></tr>
+      <tr><td>00 — straight bar</td><td>Straight + hooks × 9d</td><td>Ex1: 3000 + 216 = 3216 mm</td></tr>
+      <tr><td>21 — L-bar</td><td>A + B − 2d (one 90° bend)</td><td>500 + 800 − 24 = 1276 mm (12 mm); 1.13 kg</td></tr>
+      <tr><td>11 — U-bar</td><td>A + 2B − 4d (two 90° bends)</td><td>400 + 2 × 600 − 48 = 1552 mm (12 mm)</td></tr>
+    </table></div>
+    <p>The L-bar example is the standard textbook case: A 500 mm, B 800 mm, 12 mm
+    bar, one 90° bend → 1300 − 24 = 1276 mm = 1.276 m, and at 0.887 kg/m that is
+    1.13 kg per bar (20 bars = 25.52 m). A bar schedule summarises by diameter,
+    because steel is bought and paid by weight per diameter — so carry the
+    cutting length, the count, and the total length per diameter into the
+    schedule, not just the length.</p>
+    <h3 id="stock-length">From cutting length to order: stock lengths and waste</h3>
+    <p>Bars arrive in 12 m stock lengths, so the cutting length decides how many
+    bars each stick yields — and how much offcut you keep:</p>
+    <div class="formula-table"><table>
+      <tr><th>Cutting length</th><th>Bars per 12 m stick</th><th>Offcut per stick</th></tr>
+      <tr><td>3216 mm (Ex1)</td><td>3</td><td>12000 − 3 × 3216 = 2352 mm</td></tr>
+      <tr><td>4724 mm (Ex2)</td><td>2</td><td>12000 − 2 × 4724 = 2552 mm</td></tr>
+    </table></div>
+    <p>Plan the offcuts: short lengths become chairs, spacers and dowels instead of
+    scrap. As a site norm, optimised cutting with off-cut reuse runs 2.0–2.5%
+    waste, a normal site with a good schedule 2.5–4.0%, and cutting straight from
+    drawings with no schedule 5–8% or more. Order the neat total plus the waste
+    allowance — the calculator gives the neat cutting length only.</p>
+    <h3 id="imperial">Metric and imperial units</h3>
+    <p>This calculator takes millimetres. If your drawings use inches:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metric</th><th>Imperial (approx.)</th></tr>
+      <tr><td>12 mm bar (#4)</td><td>0.50 in diameter</td></tr>
+      <tr><td>9d hook, 12.7 mm bar</td><td>114.3 mm = 4.50 in</td></tr>
+      <tr><td>90° deduction, 12.7 mm bar</td><td>25.4 mm = 1.00 in</td></tr>
+      <tr><td>3216 mm cutting length</td><td>10.55 ft (÷ 304.8)</td></tr>
+    </table></div>
+    <p>One cross-code warning: ACI detailing gives a 90° end extension of 12d
+    (152.4 mm = 6.00 in on a 12.7 mm bar), not the 9d standard hook used here.
+    The 9d rule is the IS/site convention this calculator follows — do not mix
+    the two on one schedule. Convert first, then enter metric values.</p>
+    <h3 id="not-included">What the calculator does not include</h3>
+    <ul>
+      <li><strong>Cover subtraction.</strong> Enter the out-to-out length after cover
+      is taken off the span. A full span entered raw overstates every bar.</li>
+      <li><strong>Crank allowance.</strong> The 0.42h rule above is a hand addition —
+      there is no crank input, and crank bends must not also be entered as bend
+      inputs.</li>
+      <li><strong>Laps.</strong> Splice lengths sit on top of cutting lengths. Size
+      them with the <a href="/rebar-lap-length-calculator">lap length calculator</a>.</li>
+      <li><strong>Development length.</strong> Hooks supply anchorage value, but Ld
+      itself comes from the <a href="/rebar-development-length-calculator">development length calculator</a>.</li>
+      <li><strong>Closed stirrups and ties.</strong> These use 10d seismic hooks, not
+      9d — use the <a href="/stirrup-tie-cutting-length-calculator">stirrup calculator</a>.</li>
+      <li><strong>Waste and offcuts.</strong> The result is the neat cutting length.
+      Add the waste allowance (2.5–4% with a good schedule) before ordering.</li>
+      <li><strong>ACI hook geometry.</strong> ACI standard hooks use a bend plus a
+      12d extension, a different shape from the 9d hook modelled here.</li>
+      <li><strong>Bend radius / curved-portion geometry.</strong> This calculator uses
+      the 9d/1d/2d/3d site rules, not a radius-based arc calculation — a
+      radius-based hook-extension tool may give a different figure for the same hook.</li>
+    </ul>
+    <h3 id="mistakes">Common mistakes</h3>
+    <ol class="howto">
+      <li><strong>Adding a 9d hook and a 180° deduction to the same end.</strong> A
+      180° end is one thing measured two ways. Pick the hook (9d added) and never
+      also deduct 4d for it.</li>
+      <li><strong>Forgetting bend deductions.</strong> A bar cut to outside dimensions
+      with no deductions comes out long at every bend — it will not fit the
+      cage, and site trimming wastes the bar.</li>
+      <li><strong>Using 9d hooks on stirrups.</strong> Closed ties need 135° seismic
+      hooks at 10d. The 9d rule undercuts every tie by 2d and, worse, a 90° tie
+      hook can open when concrete spalls.</li>
+      <li><strong>Entering the full span instead of the length after cover.</strong>
+      The calculator takes the straight length as given. Cover comes off before
+      you type, on both ends.</li>
+      <li><strong>Treating the hook allowance as anchorage.</strong> 9d is what you
+      add when cutting; 8d is what a 90° hook supplies toward Ld. Using 9d as if
+      it satisfied development length overstates the anchorage by 1d per hook —
+      and misses the point that Ld is checked separately.</li>
+    </ol>
+    <p>Last reviewed: October 2026.</p>
+`,
+    faqs:[["What is the hook length of rebar?","A standard 180° hook adds 9 × bar diameter to the cutting length: 72 mm for 8 mm, 90 mm for 10 mm, 108 mm for 12 mm, 144 mm for 16 mm, 180 mm for 20 mm. Two hooks (one each end) double it. Note this is the cutting addition — the anchorage value a hook supplies toward development length is a different figure (8d for a 90° hook)."],["Why do we deduct for bends?","Bending stretches the outside of the bar and compresses the inside, so a bar measured along its outside faces looks longer than the steel actually is. The deduction takes that stretch back: 1d per 45° bend, 2d per 90° bend, 3d per 135° bend. Skip it and every bent bar comes out too long."],["What is the cutting length formula?","Cutting length = straight length + (hooks × 9d) − (45°×1d + 90°×2d + 135°×3d). The calculator defaults (3000 mm, 12 mm, 2 hooks, no bends) give 3000 + 216 − 0 = 3216 mm."],["What is the difference between a hook and a bend?","A hook is an end anchorage: a 180° turn at the bar end that adds 9d to the cut. A bend is a direction change along the bar that only takes a deduction (1d–3d by angle) and adds nothing. A 180° end counts as a hook — never add the 9d and also deduct for it."],["How much is a 135° stirrup hook?","10 × bar diameter per hook, under seismic detailing practice (IS 13920) — not the 9d of this calculator. Closed ties need 135° hooks so they stay shut when concrete spalls. Use the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a> for closed ties; this page's 9d is for standard end hooks."],["Does a hook count toward development length?","Yes, through its anchorage value — not through the 9d cutting addition. IS 456 gives 4d for 45°, 8d for 90°, 12d for 135° and 16d for a U-bend. Example: a 12 mm Fe500 bar in M25 concrete needs Ld = 582.59 mm, and a 90° hook supplies 96 mm of it, leaving 486.59 mm straight. Get Ld from the <a href=\"/rebar-development-length-calculator\">development length calculator</a>."],["How do you calculate an L-bar cutting length?","Add the two legs and deduct one 90° bend: A + B − 2d. For A 500 mm, B 800 mm, 12 mm bar: 500 + 800 − 24 = 1276 mm (1.276 m), weighing 1.13 kg at 0.887 kg/m."],["How do you calculate a cranked (bent-up) bar?","Add 0.42 × h per 45° crank, where h = slab depth − top cover − bottom cover − bar diameter, then deduct the four 45° bends (4d). Example: 150 mm slab, 25 mm covers, 12 mm bar → h = 88 mm, two cranks add 73.92 mm, less 48 mm deductions = 25.92 mm net over the straight length. This calculator has no crank input — add it by hand and do not also enter the crank bends."],["How many cut bars come from one 12 m stock length?","Divide 12000 mm by the cutting length and round down. The 3216 mm default bar gives 3 per stick (2352 mm offcut); the 4724 mm example gives 2 per stick (2552 mm offcut). Keep offcuts for chairs, spacers and dowels, and add 2.5–4% waste on top of the neat total."],["What does this calculator not do?","It does not subtract concrete cover (enter the length after cover), does not add laps (use the <a href=\"/rebar-lap-length-calculator\">lap calculator</a>), does not model cranks or ACI hook geometry, and does not use the 10d seismic hook — closed ties belong in the <a href=\"/stirrup-tie-cutting-length-calculator\">stirrup calculator</a>."]] },
 
   { id:"stirrup", slug:"stirrup-tie-cutting-length-calculator", cat:"Detailing",
     metaTitle:"Stirrup & Column Tie Cutting Length Calculator",
