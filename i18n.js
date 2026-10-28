@@ -197,6 +197,28 @@
     // select option words
     "Tension":{es:"Tracción",fr:"Traction",de:"Zug",it:"Trazione",pt:"Tração"},
     "Compression":{es:"Compresión",fr:"Compression",de:"Druck",it:"Compressione",pt:"Compressão"},
+    // calculator labels, modes and results (Spanish)
+    "Calculation Mode":{es:"Modo de cálculo"},
+    "Standard: Calculate Weight from Length & Qty":{es:"Estándar: peso a partir de longitud y cantidad"},
+    "Reverse: Calculate Length & Bars from Weight":{es:"Inverso: longitud y barras a partir del peso"},
+    "Total steel weight":{es:"Peso total de acero"},
+    "Standard stock bar length":{es:"Longitud comercial de la barra"},
+    "Quantity":{es:"Cantidad"},
+    "Bar spacing (both ways)":{es:"Separación de barras (ambos sentidos)"},
+    "Total weight (imperial)":{es:"Peso total (imperial)"},
+    "Weight per piece":{es:"Peso por pieza"},
+    "Unit weight":{es:"Peso unitario"},
+    "Metric tonnage":{es:"Tonelaje métrico"},
+    "US short tons":{es:"Toneladas cortas (US)"},
+    "Number of bars":{es:"Número de barras"},
+    "In tons":{es:"En toneladas"},
+    "Ast":{es:"Ast"},
+    "Steel":{es:"Acero"},
+    "metric ton":{es:"tonelada métrica"},
+    "US ton":{es:"tonelada US"},
+    "US short ton":{es:"tonelada corta US"},
+    "pcs":{es:"pzas"},
+    "nos":{es:"uds"},
   };
 
   /* ---- Calculator titles + descriptions per language (drives the live tool

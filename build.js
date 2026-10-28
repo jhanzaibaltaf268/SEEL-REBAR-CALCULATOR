@@ -4480,6 +4480,7 @@ ${footer(lang)}
 
 /* ---------- hub (index) per language ---------- */
 function renderHub(lang){
+  const cx = (en, es) => lang === "es" ? es : en;
   const base = lang==="en" ? "" : "../";
   const u = UI[lang];
   const h1 = HUB_H1[lang], title = `${h1} — ${HUB_TAG[lang]}`, desc = u.heroSub;
@@ -4596,23 +4597,23 @@ ${enEducationSections}
 
   <section id="charts" class="content-block charts-section">
     <div class="charts-header">
-      <span class="charts-badge">Standards</span>
+      <span class="charts-badge">${cx("Standards","Normas")}</span>
       <h2>${u.chartTitle}</h2>
     </div>
     <div class="chart-unit-switcher" role="tablist" aria-label="Units">
       <button type="button" class="unit-tab-btn active" data-unit="metric" role="tab" aria-selected="true">
         <span class="tab-flag">🌐</span>
-        <span class="tab-label">Metric</span>
+        <span class="tab-label">${cx("Metric","Métrica")}</span>
         <span class="tab-sublabel">mm</span>
       </button>
       <button type="button" class="unit-tab-btn" data-unit="imperial" role="tab" aria-selected="false">
         <span class="tab-flag">🇺🇸</span>
-        <span class="tab-label">Imperial</span>
+        <span class="tab-label">${cx("Imperial","Imperial")}</span>
         <span class="tab-sublabel">US #</span>
       </button>
       <button type="button" class="unit-tab-btn" data-unit="both" role="tab" aria-selected="false">
         <span class="tab-flag">⊞</span>
-        <span class="tab-label">Compare Both</span>
+        <span class="tab-label">${cx("Compare Both","Comparar ambas")}</span>
       </button>
     </div>
     <div class="chart-container" data-active-tab="metric">
@@ -4620,12 +4621,12 @@ ${enEducationSections}
         <div class="chart-table-header">
           <div class="chart-title-group">
             <span class="chart-col-tag metric">ISO / BS / IS</span>
-            <h3>Metric</h3>
+            <h3>${cx("Metric","Métrica")}</h3>
           </div>
-          <div class="table-scroll-hint" aria-hidden="true"><span class="swipe-icon">↔</span><span>Scroll</span></div>
+          <div class="table-scroll-hint" aria-hidden="true"><span class="swipe-icon">↔</span><span>${cx("Scroll","Desliza")}</span></div>
         </div>
         <div class="table-scroll-wrap"><table class="ref-table" id="chart-metric">
-          <thead><tr><th class="sticky-col">Ø</th><th class="num">kg/m</th><th class="num">kg/ft</th><th class="num">12 m</th><th class="num">Bars/t</th></tr></thead><tbody></tbody>
+          <thead><tr><th class="sticky-col">Ø</th><th class="num">kg/m</th><th class="num">kg/ft</th><th class="num">12 m</th><th class="num">${cx("Bars/t","Barras/t")}</th></tr></thead><tbody></tbody>
         </table></div>
       </div>
       <div class="chart-col chart-col-imperial">
@@ -4634,7 +4635,7 @@ ${enEducationSections}
             <span class="chart-col-tag imperial">ASTM</span>
             <h3>Imperial (US #)</h3>
           </div>
-          <div class="table-scroll-hint" aria-hidden="true"><span class="swipe-icon">↔</span><span>Scroll</span></div>
+          <div class="table-scroll-hint" aria-hidden="true"><span class="swipe-icon">↔</span><span>${cx("Scroll","Desliza")}</span></div>
         </div>
         <div class="table-scroll-wrap"><table class="ref-table" id="chart-imperial">
           <thead><tr><th class="sticky-col">#</th><th>Ø</th><th class="num">lb/ft</th><th class="num">kg/m</th></tr></thead><tbody></tbody>

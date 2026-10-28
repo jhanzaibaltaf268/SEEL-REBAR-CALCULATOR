@@ -630,7 +630,24 @@ const I18N = (typeof window!=="undefined" && window.REBAR_I18N) || null;
 function tr(s){                                    // glossary lookup for short UI
   if(LANG==="en" || !I18N) return s;
   const g = I18N.G[s];
-  return (g && g[LANG]) ? g[LANG] : s;
+  if(g && g[LANG]) return g[LANG];
+  // Spanish uses a decimal comma: "0.222 kg/m" -> "0,222 kg/m"
+  if(LANG==="es" && /kg\/m/.test(s)) return s.replace(/(\d)\.(\d)/g, "$1,$2");
+  return s;
+}
+// Spanish wording for the formula notes; numbers and formulas stay as they are
+const NOTE_ES = [
+  [/Standard derivation:/g, "Cálculo estándar:"], [/grid both ways @/g, "malla en ambos sentidos @"],
+  [/ 1m grid/g, " malla de 1 m"], [/\bgrid\b/g, "malla"], [/, cover /g, ", recubrimiento "], [/bars = floor/g, "barras = parte entera"],
+  [/lap = max/g, "traslape = máx"], [/verticals/g, "verticales"], [/main bars/g, "barras principales"],
+  [/stirrups/g, "estribos"], [/ ties × /g, " amarres × "], [/ ties\b/g, " estribos"], [/chairs/g, "soportes"],
+  [/\bvert @/g, "verticales @"], [/\bhoriz @/g, "horizontales @"], [/bends/g, "dobleces"],
+  [/incl\. 3% waste/g, "incl. 3 % de desperdicio"], [/steel @/g, "acero @"], [/\bpcs\b/g, "pzas"],
+  [/ of /g, " de "], [/wire/g, "alambre"]
+];
+function trNote(s){
+  if(LANG!=="es" || !s) return s;
+  return NOTE_ES.reduce((t,[re,to]) => t.replace(re,to), s);
 }
 function calcTitle(id){                             // localized calculator title
   const t = I18N && I18N.CALC[id] && I18N.CALC[id].title;
@@ -694,7 +711,7 @@ function renderCalc(){
   c.fields.forEach(f=>{
     const wrap = document.createElement("div"); wrap.className="field";
     wrap.id = `field-wrap-${f.k}`;
-    const unit = f.unit ? ` (${f.unit})` : "";
+    const unit = f.unit ? ` (${tr(f.unit)})` : "";
     if(f.type==="select"){
       const dia = v => String(v).split("|")[1];
       const pick = f.options.find(o => o.v === f.default)
@@ -734,16 +751,16 @@ function compute(){
   const rest = rows.filter(r=>r!==main);
 
   $("r-total").textContent = fmt(main.value);
-  $("r-total-unit").textContent = main.unit;
+  $("r-total-unit").textContent = tr(main.unit);
   $("r-label").textContent = tr(main.label);
 
   const grid = $("result-grid"); grid.innerHTML = "";
   rest.forEach(r=>{
     const d = document.createElement("div");
-    d.innerHTML = `<span>${fmt(r.value)}</span><small>${tr(r.label)} ${r.unit?`(${r.unit})`:""}</small>`;
+    d.innerHTML = `<span>${fmt(r.value)}</span><small>${tr(r.label)} ${r.unit?`(${tr(r.unit)})`:""}</small>`;
     grid.appendChild(d);
   });
-  $("r-formula").textContent = res.note || "";
+  $("r-formula").textContent = trNote(res.note || "");
 }
 
 function showToast(msg){
