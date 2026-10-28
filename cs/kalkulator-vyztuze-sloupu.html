@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulátor Výztuže Sloupu","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"cs","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Svislá hlavní ocel + třmínky obdélníkového sloupu. Vrací celkovou hmotnost."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Jak funguje Kalkulátor Výztuže Sloupu?","acceptedAnswer":{"@type":"Answer","text":"Svislá hlavní ocel + třmínky obdélníkového sloupu. Vrací celkovou hmotnost. Výpočet se aktualizuje automaticky."}},{"@type":"Question","name":"Je zdarma a přesný?","acceptedAnswer":{"@type":"Answer","text":"Ano. Používá standardní oborové vzorce a je zcela zdarma, bez registrace."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Zvolte průměr prutu a jednotky."},{"@type":"HowToStep","position":2,"text":"Zadejte rozměry a množství."},{"@type":"HowToStep","position":3,"text":"Okamžitě odečtěte výsledek."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://steelrebarcalculator.com/cs/"},{"@type":"ListItem","position":2,"name":"Kalkulátor Výztuže Sloupu","item":"https://steelrebarcalculator.com/cs/kalkulator-vyztuze-sloupu"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="column">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/cs/kalkulator-tonaze-vyztuze" data-id="tonnage">Kalkulátor Tonáže Výztuže</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Kalkulátor Výztuže Sloupu</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -163,6 +164,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Jak používat: Kalkulátor Výztuže Sloupu</h2>
     <ol class="howto"><li>Zvolte průměr prutu a jednotky.</li><li>Zadejte rozměry a množství.</li><li>Okamžitě odečtěte výsledek.</li></ol>
@@ -170,6 +172,7 @@
     <p class="formula-callout">Vertical steel = bars × (height + lap) × kg/m. Ties = floor(height ÷ spacing) + 1, each at the stirrup cutting length.</p>
     <p><a href="/cs/#charts">Zobrazit úplnou tabulku hmotností (kg/m a lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Kalkulátor Výztuže Sloupu — FAQ</h2>
@@ -252,5 +255,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>

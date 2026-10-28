@@ -52,10 +52,11 @@
 <meta property="og:type" content="website" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Kalkulátor Betonu a Výztuže","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"cs","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Objem betonu plus odhad oceli podle poměru kg/m³."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Jak funguje Kalkulátor Betonu a Výztuže?","acceptedAnswer":{"@type":"Answer","text":"Objem betonu plus odhad oceli podle poměru kg/m³. Výpočet se aktualizuje automaticky."}},{"@type":"Question","name":"Je zdarma a přesný?","acceptedAnswer":{"@type":"Answer","text":"Ano. Používá standardní oborové vzorce a je zcela zdarma, bez registrace."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to use","step":[{"@type":"HowToStep","position":1,"text":"Zvolte průměr prutu a jednotky."},{"@type":"HowToStep","position":2,"text":"Zadejte rozměry a množství."},{"@type":"HowToStep","position":3,"text":"Okamžitě odečtěte výsledek."}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://steelrebarcalculator.com/cs/"},{"@type":"ListItem","position":2,"name":"Kalkulátor Betonu a Výztuže","item":"https://steelrebarcalculator.com/cs/kalkulator-betonu-a-vyztuze"}]}</script>
 <link rel="stylesheet" href="../styles.css" />
 </head>
-<body>
+<body data-page="concrete">
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -112,7 +113,7 @@
       <a class="tab" href="/cs/kalkulator-tonaze-vyztuze" data-id="tonnage">Kalkulátor Tonáže Výztuže</a>
     </aside>
     <div class="calc-panel">
-      <h2 id="calc-title"></h2>
+      <h2 id="calc-title">Kalkulátor Betonu a Výztuže</h2>
       <p id="calc-desc" class="calc-desc"></p>
       <div id="inputs" class="inputs"></div>
       <div class="result" aria-live="polite">
@@ -164,6 +165,7 @@
     </div>
   </section>
 
+
   <section class="content-block">
     <h2>Jak používat: Kalkulátor Betonu a Výztuže</h2>
     <ol class="howto"><li>Zvolte průměr prutu a jednotky.</li><li>Zadejte rozměry a množství.</li><li>Okamžitě odečtěte výsledek.</li></ol>
@@ -171,6 +173,7 @@
     <p class="formula-callout">Volume = L × W × thickness. Steel = volume × ratio (typically 80–120 kg/m³ for slabs).</p>
     <p><a href="/cs/#charts">Zobrazit úplnou tabulku hmotností (kg/m a lb/ft) →</a></p>
   </section>
+
 
   <section id="faq" class="content-block">
     <h2>Kalkulátor Betonu a Výztuže — FAQ</h2>
@@ -253,5 +256,6 @@
 <script src="../i18n.js"></script>
 <script src="../slugs.js"></script>
 <script src="../script.js"></script>
+
 </body>
 </html>
