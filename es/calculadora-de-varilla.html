@@ -47,6 +47,127 @@
   .trust{color:#64748b;font-size:.88rem;margin-top:40px}
   a{color:#c2410c}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Cuánto pesa una varilla de 12 mm por metro?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pesa 0,887 kg por metro. Una barra de 12 m pesa 10,64 kg."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuál es la diferencia entre la varilla de 12 mm y la #4?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La #4 tiene 12,7 mm de diámetro y pesa 0,994 kg/m. La de 12 mm pesa unos 11 % menos. Si el plano indica una de las dos, use esa."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cómo paso de kilos a toneladas?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Divida entre 1.000 para toneladas métricas. Así, 9.468 kg son 9,468 t. Para toneladas cortas de EE. UU., divida entre 907,185."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Por qué el proveedor me da más barras que la calculadora?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La calculadora cuenta la malla, sin traslapes, ganchos ni desperdicio. Además, las barras comerciales se compran en piezas completas. Sume esas partes antes de pedir el material."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué separación debo usar en una losa?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depende del diseño. La separación sale de los planos estructurales. La calculadora acepta cualquier valor, así que puede probar varias separaciones y comparar el peso y el número de barras."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cuánto desperdicio debo agregar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Como guía, entre 5 % y 10 % para una losa sencilla. Use un porcentaje mayor si la losa tiene formas irregulares, muchos cortes o longitudes que no caben en la barra comercial."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cómo calculo el costo de la varilla?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Si compra por kilo, costo = kg × precio por kg. Si compra por pieza, costo = piezas comerciales × precio de cada pieza. La segunda opción suele ser más alta, porque incluye el sobrante."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Esta calculadora sirve para el diseño estructural?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Sirve para estimar cantidades y costos. El diámetro, la separación y el recubrimiento los define un ingeniero en el diseño."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Puedo usar kg/m de la tabla de pulgadas con varillas métricas?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Cada sistema tiene sus diámetros. Use la tabla métrica para varillas en milímetros y la de pulgadas solo para las varillas #3 a #11."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué recubrimiento usa la calculadora?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La calculadora usa el valor que usted introduce. Los valores de ACI 318 de la tabla de esta página son referencias; el recubrimiento de su proyecto lo fija el plano."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Se puede soldar la varilla para unir las barras?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Por lo general no. Use traslape y alambre de amarre, salvo que el ingeniero indique un procedimiento de soldadura con acero soldable."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "HowTo",
+   "name": "Cómo calcular las barras de una losa",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "name": "Distancia útil",
+     "text": "Reste dos veces el recubrimiento a cada dimensión de la losa."
+    },
+    {
+     "@type": "HowToStep",
+     "name": "Número de barras",
+     "text": "Divida la distancia útil entre la separación, quite los decimales y sume 1."
+    },
+    {
+     "@type": "HowToStep",
+     "name": "Longitud y peso",
+     "text": "Multiplique la longitud de cada barra por el número de barras, sume ambas direcciones y multiplique por kg/m."
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <!-- site-header -->
@@ -67,9 +188,17 @@
 </header>
 <!-- /site-header -->
 <main>
-
 <h1>Calculadora de varilla</h1>
-<p class="lead">Calcula el peso en kilos y toneladas, el número de barras de una losa y el costo de la varilla corrugada. Usa el peso por metro (kg/m) de cada diámetro, en milímetros y en pulgadas (#3 a #11).</p>
+<p class="lead">Calcule el peso en kilos y toneladas de la varilla corrugada, el número de barras que lleva una losa y el costo del material. Los pesos por metro están en kg/m para cada diámetro, en milímetros y en pulgadas (#3 a #11).</p>
+
+<section class="answer" aria-labelledby="respuesta">
+  <h2 id="respuesta">Respuesta rápida</h2>
+  <ul>
+    <li><strong>Peso de barras:</strong> kg = kg/m × longitud de cada barra (m) × cantidad de barras.</li>
+    <li><strong>Barras en una losa:</strong> en cada dirección, nº de barras = parte entera((dimensión − 2 × recubrimiento) ÷ separación) + 1.</li>
+    <li><strong>Costo:</strong> costo = kg × precio por kg. Si compra barras comerciales, cuente piezas completas, no metros.</li>
+  </ul>
+</section>
 
 <section class="card" id="calc" aria-label="Calculadora de varilla">
   <div class="tabs" role="tablist">
@@ -153,12 +282,17 @@
   <p class="hint">Cálculo de la malla y del peso de las barras. No incluye traslapes, ganchos ni desperdicio: súmelos por separado.</p>
 </section>
 
+<h2>Qué es la varilla corrugada</h2>
+<p>La varilla corrugada es una barra de acero con resaltes (las corrugaciones) que mejoran la adherencia con el concreto. El concreto resiste bien la compresión, pero casi no resiste la tracción; la varilla absorbe esos esfuerzos de tracción y limita la fisuración. Por eso aparece en losas, zapatas, muros, columnas y vigas.</p>
+<p>En el mismo elemento se usan dos tipos de datos que conviene separar: el <strong>diámetro</strong>, que define el peso y el área de acero, y el <strong>grado</strong> del acero (por ejemplo, Grado 60 o Fe420), que define su resistencia y que no cambia el peso que calcula esta herramienta.</p>
+
 <h2>Tabla de varillas: peso por metro</h2>
-<p>El peso de una varilla por metro sale de su diámetro: kg/m = d² ÷ 162,28, con d en milímetros. Es la misma fórmula que usa la calculadora.</p>
+<p>El peso por metro de una varilla sale de su diámetro con la fórmula kg/m = d² ÷ 162,28, con d en milímetros. Es el mismo valor que usa la calculadora. Para una varilla de 12 mm, 12² ÷ 162,28 = 0,887 kg/m.</p>
 
 <h3>Varillas métricas</h3>
 <table>
-  <tr><th>Varilla</th><th>Diámetro (mm)</th><th>Área (mm²)</th><th>Peso (kg/m)</th><th>Pulgadas más cercana</th></tr>
+  <caption>Varillas métricas: diámetro, área y peso por metro</caption>
+  <tr><th scope="col">Varilla</th><th scope="col">Diámetro (mm)</th><th scope="col">Área (mm²)</th><th scope="col">Peso (kg/m)</th><th scope="col">Pulgadas más cercana</th></tr>
   <tr><td>6 mm</td><td>6</td><td>28,3</td><td>0,222</td><td>—</td></tr>
   <tr><td>8 mm</td><td>8</td><td>50,3</td><td>0,394</td><td>—</td></tr>
   <tr><td>10 mm</td><td>10</td><td>78,5</td><td>0,616</td><td>#3 (9,5 mm)</td></tr>
@@ -172,7 +306,8 @@
 
 <h3>Varillas en pulgadas (US, #3 a #11)</h3>
 <table>
-  <tr><th>Varilla</th><th>Diámetro (mm)</th><th>Peso (lb/ft)</th><th>Peso (kg/m)</th></tr>
+  <caption>Varillas en pulgadas: diámetro, peso en lb/ft y kg/m</caption>
+  <tr><th scope="col">Varilla</th><th scope="col">Diámetro (mm)</th><th scope="col">Peso (lb/ft)</th><th scope="col">Peso (kg/m)</th></tr>
   <tr><td>#3</td><td>9,5</td><td>0,376</td><td>0,560</td></tr>
   <tr><td>#4</td><td>12,7</td><td>0,668</td><td>0,994</td></tr>
   <tr><td>#5</td><td>15,9</td><td>1,043</td><td>1,552</td></tr>
@@ -183,72 +318,104 @@
   <tr><td>#10</td><td>32,3</td><td>4,303</td><td>6,404</td></tr>
   <tr><td>#11</td><td>35,8</td><td>5,313</td><td>7,907</td></tr>
 </table>
-<p class="hint">Las varillas de pulgadas se venden en libras por pie. Para pasarlas a kg/m se multiplican por 1,488.</p>
+<p class="hint">La designación #n indica el diámetro en octavos de pulgada: #4 = 4/8 in = 12,7 mm. Para pasar lb/ft a kg/m, multiplique por 1,488.</p>
 
 <h2>Cómo calcular el peso de la varilla</h2>
 <div class="formula">Peso (kg) = kg/m × longitud de cada barra (m) × cantidad de barras</div>
-
 <div class="example">
   <strong>Ejemplo: 500 barras de 16 mm de 12 m</strong>
   <ol>
     <li>Peso de una barra: 1,578 kg/m × 12 m = 18,94 kg.</li>
     <li>Peso de las 500 barras: 18,94 kg × 500 = 9.468 kg.</li>
-    <li>En toneladas: 9.468 kg ÷ 1.000 = <strong>9,468 t</strong>.</li>
+    <li>En toneladas métricas: 9.468 kg ÷ 1.000 = <strong>9,468 t</strong>.</li>
   </ol>
 </div>
 
-<h2>Cómo calcular cuántas barras lleva una losa</h2>
-<p>Una losa se arma con dos capas de barras que se cruzan. Cada capa tiene dos partes que calcular: cuántas barras entran y cuánto mide cada una.</p>
+<h2>Cuántas barras lleva una losa</h2>
+<p>Una losa se arma con dos capas de barras que se cruzan. Cada capa se calcula en tres pasos:</p>
 <ol>
-  <li><strong>Distancia útil:</strong> a cada dimensión le restas dos veces el recubrimiento (uno por cada borde).</li>
-  <li><strong>Número de barras:</strong> divide la distancia útil entre la separación, quítale los decimales y suma 1.</li>
-  <li><strong>Longitud de cada barra:</strong> la distancia útil en la dirección de la barra.</li>
+  <li><strong>Distancia útil.</strong> A cada dimensión le resta dos veces el recubrimiento, uno por cada borde.</li>
+  <li><strong>Número de barras.</strong> Divida la distancia útil entre la separación, quite los decimales y sume 1. La suma de 1 cuenta la primera barra en el borde.</li>
+  <li><strong>Longitud de cada barra.</strong> Es la distancia útil en la dirección de la barra.</li>
 </ol>
-<div class="formula">Nº de barras = parte entera de (distancia útil ÷ separación) + 1</div>
+<div class="formula">Nº de barras = parte entera((dimensión − 2 × recubrimiento) ÷ separación) + 1</div>
 
-<div class="example">
-  <strong>Ejemplo: losa de 6 m × 4 m, varilla de 12 mm, separación de 200 mm, recubrimiento de 25 mm</strong>
-  <ol>
-    <li><strong>Barras paralelas al lado de 6 m</strong> (se reparten a lo ancho de 4 m): distancia útil 4.000 − 50 = 3.950 mm; 3.950 ÷ 200 = 19,75, parte entera 19, más 1 = <strong>20 barras</strong>. Cada una mide 6.000 − 50 = 5.950 mm, es decir, 5,95 m. Total: 20 × 5,95 = 119,00 m.</li>
-    <li><strong>Barras paralelas al lado de 4 m</strong> (se reparten a lo largo de 6 m): distancia útil 6.000 − 50 = 5.950 mm; 5.950 ÷ 200 = 29,75, parte entera 29, más 1 = <strong>30 barras</strong>. Cada una mide 4.000 − 50 = 3.950 mm, es decir, 3,95 m. Total: 30 × 3,95 = 118,50 m.</li>
-    <li><strong>Total de la losa:</strong> 119,00 + 118,50 = 237,50 m de varilla. Peso: 237,50 m × 0,887 kg/m = <strong>210,7 kg</strong> (0,211 t).</li>
-  </ol>
-</div>
-<p>Este cálculo cuenta solo la malla. En obra hay que añadir los traslapes entre barras, los ganchos en los bordes y el desperdicio de los cortes. Para los traslapes use la <a href="/es/calculadora-de-longitud-de-empalme">calculadora de longitud de empalme</a>.</p>
+<h3>Ejemplo 1: losa de 6 m × 4 m, varilla de 12 mm, separación 200 mm, recubrimiento 25 mm</h3>
+<ol>
+  <li>Barras paralelas al lado de 6 m, repartidas a lo ancho de 4 m: distancia útil 4.000 − 50 = 3.950 mm. 3.950 ÷ 200 = 19,75; parte entera 19, más 1 = <strong>20 barras</strong>. Cada una mide 6.000 − 50 = 5.950 mm (5,95 m). Total: 20 × 5,95 = 119,00 m.</li>
+  <li>Barras paralelas al lado de 4 m, repartidas a lo largo de 6 m: distancia útil 6.000 − 50 = 5.950 mm. 5.950 ÷ 200 = 29,75; parte entera 29, más 1 = <strong>30 barras</strong>. Cada una mide 3,95 m. Total: 30 × 3,95 = 118,50 m.</li>
+  <li>Total de la losa: 237,50 m. Peso: 237,50 × 0,887 = <strong>210,7 kg</strong> (0,211 t).</li>
+</ol>
 
-<h2>Costo y desperdicio</h2>
-<div class="formula">Costo = peso total (kg) × precio por kg</div>
-<p>Con el ejemplo anterior y un precio de $1,50 por kilo, la malla cuesta 210,7 kg × $1,50 = <strong>$316</strong>. Como en obra siempre se pierde material en cortes y traslapes, muchos presupuestos suman entre 5 % y 10 % más. Con un 5 %, la misma losa queda en 221,2 kg, es decir, $332.</p>
+<h3>Ejemplo 2: la misma losa con separación de 40 cm y borde de 8 cm</h3>
+<p>Este ejemplo es útil porque separa el peso de la malla del costo real de comprar barras comerciales. Dimensiones 6 m × 4 m, separación 400 mm, recubrimiento 80 mm, varilla de 12 mm.</p>
+<ol>
+  <li>Barras paralelas al lado de 6 m: distancia útil 4.000 − 160 = 3.840 mm. 3.840 ÷ 400 = 9,6; parte entera 9, más 1 = <strong>10 barras</strong> de 5,84 m, es decir 58,40 m.</li>
+  <li>Barras paralelas al lado de 4 m: distancia útil 6.000 − 160 = 5.840 mm. 5.840 ÷ 400 = 14,6; parte entera 14, más 1 = <strong>15 barras</strong> de 3,84 m, es decir 57,60 m.</li>
+  <li>Longitud total de la malla: 58,40 + 57,60 = <strong>116,00 m</strong>. Peso: 116,00 × 0,887 = <strong>102,9 kg</strong>.</li>
+</ol>
+<p>Esta es la cantidad de acero que la malla necesita. La cantidad que se compra es otra cosa, como se explica en la sección de costos.</p>
 
-<h2>Cómo se llama la varilla en cada país</h2>
-<p>En español la misma barra tiene varios nombres. Estos son los más usados, aunque cambian según la región:</p>
-<table>
-  <tr><th>Término</th><th>Dónde se usa más</th></tr>
-  <tr><td>Varilla</td><td>México, Centroamérica, Colombia, Venezuela</td></tr>
-  <tr><td>Fierro</td><td>Perú, Chile, Bolivia</td></tr>
-  <tr><td>Hierro (de construcción)</td><td>Argentina, Uruguay, Paraguay</td></tr>
-  <tr><td>Barra corrugada, acero corrugado, armadura</td><td>España, y en planos y normas técnicas</td></tr>
-</table>
-<p>Todos se refieren a la misma barra con resaltes que se usa para reforzar el concreto. Lo que cambia es la norma y la nomenclatura del país, así que confirme el diámetro y el grado de acero en sus planos.</p>
-
-<h2>Errores comunes</h2>
+<h2>Costo: de kilos a barras comerciales</h2>
+<div class="formula">Costo del material = kg de malla × precio por kg</div>
+<p>El costo calculado por kilo supone que puede comprar cualquier longitud. En la práctica, las varillas se venden en longitudes comerciales (normalmente 6 m, 9 m o 12 m) y se cobran por pieza completa. Esa diferencia cambia el costo.</p>
+<p>Con el ejemplo 2 (barras de 5,84 m y de 3,84 m) y barras comerciales de 6 m:</p>
 <ul>
-  <li><strong>Confundir 12 mm con #4.</strong> La #4 mide 12,7 mm y pesa 0,994 kg/m. La de 12 mm pesa 0,887 kg/m, unos 11 % menos. Si cambia una por otra, el total de la losa cambia en esa proporción.</li>
-  <li><strong>Mezclar milímetros y metros.</strong> La separación y el recubrimiento van en milímetros; las dimensiones de la losa y la longitud de las barras van en metros.</li>
-  <li><strong>Olvidar el recubrimiento.</strong> Sin restarlo en ambos bordes, sale una barra más en cada dirección y el peso se exagera.</li>
-  <li><strong>Usar el peso de otra norma.</strong> La tabla de pesos por pie (lb/ft) no se puede usar directamente con kilos; primero hay que convertirla.</li>
+  <li>Las 10 barras de 5,84 m necesitan 10 piezas de 6 m; cada una deja 0,16 m de sobrante, que no sirve para otra barra.</li>
+  <li>Las 15 barras de 3,84 m necesitan 15 piezas de 6 m, porque dos barras de 3,84 m no caben en 6 m. Cada pieza deja 2,16 m de sobrante.</li>
+  <li>Total: <strong>25 piezas de 6 m = 150 m comprados</strong>, frente a 116 m necesarios. El desperdicio es de 34 m, un 22,7 % del material comprado.</li>
 </ul>
+<p>Con un precio de $2 por metro, la malla cuesta 116 m × $2 = $232 si se paga por metro exacto, pero $300 si se compran 25 piezas de 6 m. Este cálculo no incluye traslapes; si los traslapes se hacen con barras cortas, el número de piezas cambia.</p>
+<p>Como guía de presupuesto, muchas obras suman entre 5 % y 10 % por cortes y traslapes. Si la malla tiene muchos cortes o longitudes que no caben en la barra comercial, use un porcentaje mayor y confirme la cantidad con el proveedor.</p>
 
-<h2>Recubrimiento mínimo según ACI 318</h2>
-<p>Estos valores son de la norma ACI 318. Confirme la edición vigente y los requisitos de su proyecto con el ingeniero responsable.</p>
+<h2>Recubrimiento y norma ACI 318</h2>
+<p>El recubrimiento es la distancia mínima entre la cara del concreto y la barra. Protege el acero de la corrosión y del fuego, y fija la distancia útil que usa el cálculo. Los valores siguientes son de la norma ACI 318; confirme la edición vigente y los requisitos de su proyecto con el ingeniero responsable.</p>
 <table>
-  <tr><th>Condición</th><th>Recubrimiento mínimo</th></tr>
+  <caption>Recubrimiento mínimo según ACI 318</caption>
+  <tr><th scope="col">Condición</th><th scope="col">Recubrimiento mínimo</th></tr>
   <tr><td>Concreto colado contra la tierra</td><td>75 mm (3 in)</td></tr>
   <tr><td>Expuesto a la intemperie o en contacto con el suelo, varillas #6 o mayores</td><td>50 mm (2 in)</td></tr>
   <tr><td>Expuesto a la intemperie, varillas #5 o menores</td><td>40 mm (1,5 in)</td></tr>
   <tr><td>Vigas y columnas interiores</td><td>40 mm (1,5 in)</td></tr>
   <tr><td>Losas y muros interiores, varillas #11 o menores</td><td>20 mm (3/4 in)</td></tr>
 </table>
+<p>Un recubrimiento mayor reduce el espacio útil dentro de la pieza y cambia el número de barras. Por eso el valor debe venir del plano y no de una cifra típica.</p>
+
+<h2>Traslapes, anclajes y alambre de amarre</h2>
+<p>Esta calculadora cuenta la malla, sin traslapes ni ganchos. En obra, dos barras se unen por traslape (empalme) y los extremos se doblan en ganchos; ambos suman longitud y peso.</p>
+<ul>
+  <li><strong>Longitud de desarrollo (Ld):</strong> cuánto debe embeberse una barra en el concreto para transmitir su fuerza. Use la <a href="/es/calculadora-de-longitud-de-anclaje">calculadora de longitud de anclaje</a>.</li>
+  <li><strong>Traslape:</strong> longitud de solape entre dos barras. Use la <a href="/es/calculadora-de-longitud-de-empalme">calculadora de longitud de empalme</a>.</li>
+  <li><strong>Alambre de amarre:</strong> alambre fino (aprox. 1,6 mm o calibre 16) que une las barras en cada cruce. Use la <a href="/es/calculadora-de-alambre-de-atar">calculadora de alambre de atar</a>.</li>
+  <li><strong>Soportes (separadores):</strong> piezas que mantienen la malla a la altura del recubrimiento durante el colado. Use la <a href="/es/calculadora-de-soportes-separadores">calculadora de soportes</a>.</li>
+</ul>
+
+<h2>Cómo se llama la varilla en cada país</h2>
+<p>Se usan varios nombres para la misma barra. Estos son los más comunes, aunque cambian dentro de cada región:</p>
+<table>
+  <caption>Nombres de la varilla corrugada por país</caption>
+  <tr><th scope="col">Término</th><th scope="col">Dónde se usa más</th></tr>
+  <tr><td>Varilla</td><td>México, Centroamérica, Colombia, Venezuela</td></tr>
+  <tr><td>Fierro</td><td>Perú, Chile, Bolivia</td></tr>
+  <tr><td>Hierro (de construcción)</td><td>Argentina, Uruguay, Paraguay</td></tr>
+  <tr><td>Barra corrugada, acero corrugado, armadura</td><td>España, y en planos y normas técnicas</td></tr>
+</table>
+<p>Lo que cambia es el nombre. El diámetro y el peso por metro son los mismos. Confirme el diámetro en el plano, porque una barra de 12 mm no es intercambiable con una #4 (12,7 mm).</p>
+
+<h2>Errores comunes</h2>
+<ul>
+  <li><strong>Confundir 12 mm con #4.</strong> La #4 mide 12,7 mm y pesa 0,994 kg/m. La de 12 mm pesa 0,887 kg/m, unos 11 % menos. Un cambio de una por la otra cambia el total de la malla en esa proporción.</li>
+  <li><strong>Olvidar el recubrimiento.</strong> Sin restarlo en ambos bordes, sale una barra de más en cada dirección y el peso se exagera.</li>
+  <li><strong>Pagar por metro cuando se compra por pieza.</strong> Como en el ejemplo 2, el desperdicio por longitudes comerciales puede ser de más de un 20 %.</li>
+  <li><strong>Mezclar milímetros y metros.</strong> La separación y el recubrimiento van en milímetros; las dimensiones de la losa en metros.</li>
+  <li><strong>Usar la tabla de pulgadas con kilos sin convertir.</strong> La tabla en lb/ft se convierte a kg/m multiplicando por 1,488.</li>
+</ul>
+
+<h2>¿Se puede soldar la varilla?</h2>
+<p>En general, no. La varilla común (ASTM A615) tiene un contenido de carbono que la vuelve frágil con el calor de la soldadura, y una unión soldada puede fallar con menos carga que la propia barra. Solo se suelda con un procedimiento aprobado por el ingeniero, usando acero soldable (ASTM A706) y la norma AWS D1.4. Para unir barras en obra se usa traslape y alambre de amarre.</p>
+
+<h2>¿Hace falta varilla en un patio o una acera?</h2>
+<p>Depende de la carga. Un patio peatonal sin carga de vehículos puede llevar malla ligera o nada, y en algunos casos solo refuerzo en las juntas. Una entrada para vehículos, una losa de garaje o una zona con ciclos de hielo y deshielo necesitan refuerzo calculado. En todos los casos, consulte con un profesional antes de decidir.</p>
 
 <h2>Preguntas frecuentes</h2>
 <details open>
@@ -257,23 +424,27 @@
 </details>
 <details>
   <summary>¿Cuál es la diferencia entre la varilla de 12 mm y la #4?</summary>
-  <p>La #4 tiene 12,7 mm de diámetro y pesa 0,994 kg/m. La de 12 mm pesa unos 11 % menos. No son intercambiables si el plano indica una de las dos.</p>
+  <p>La #4 tiene 12,7 mm de diámetro y pesa 0,994 kg/m. La de 12 mm pesa unos 11 % menos. Si el plano indica una de las dos, use esa.</p>
 </details>
 <details>
   <summary>¿Cómo paso de kilos a toneladas?</summary>
-  <p>Divida entre 1.000. Así, 9.468 kg son 9,468 toneladas métricas.</p>
+  <p>Divida entre 1.000 para toneladas métricas. Así, 9.468 kg son 9,468 t. Para toneladas cortas de EE. UU., divida entre 907,185.</p>
 </details>
 <details>
   <summary>¿Por qué el proveedor me da más barras que la calculadora?</summary>
-  <p>La calculadora cuenta la malla, sin traslapes, ganchos ni desperdicio. Esas partes suelen sumar entre 5 % y 10 % más. Súmelas antes de pedir el material.</p>
+  <p>La calculadora cuenta la malla, sin traslapes, ganchos ni desperdicio. Además, las barras comerciales se compran en piezas completas. Sume esas partes antes de pedir el material.</p>
 </details>
 <details>
   <summary>¿Qué separación debo usar en una losa?</summary>
-  <p>Depende del diseño. La separación sale de los planos estructurales. La calculadora acepta cualquier valor, así que puede probar varias separaciones y comparar el peso.</p>
+  <p>Depende del diseño. La separación sale de los planos estructurales. La calculadora acepta cualquier valor, así que puede probar varias separaciones y comparar el peso y el número de barras.</p>
 </details>
 <details>
   <summary>¿Cuánto desperdicio debo agregar?</summary>
-  <p>Como guía, entre 5 % y 10 % para una losa sencilla. Use un porcentaje mayor si la losa tiene formas irregulares, muchos cortes o varias alturas.</p>
+  <p>Como guía, entre 5 % y 10 % para una losa sencilla. Use un porcentaje mayor si la losa tiene formas irregulares, muchos cortes o longitudes que no caben en la barra comercial.</p>
+</details>
+<details>
+  <summary>¿Cómo calculo el costo de la varilla?</summary>
+  <p>Si compra por kilo, costo = kg × precio por kg. Si compra por pieza, costo = piezas comerciales × precio de cada pieza. La segunda opción suele ser más alta, porque incluye el sobrante.</p>
 </details>
 <details>
   <summary>¿Esta calculadora sirve para el diseño estructural?</summary>
@@ -281,7 +452,15 @@
 </details>
 <details>
   <summary>¿Puedo usar kg/m de la tabla de pulgadas con varillas métricas?</summary>
-  <p>No. Cada sistema tiene sus diámetros. Use la tabla métrica para varillas en milímetros y la de pulgadas solo para varillas #3 a #11.</p>
+  <p>No. Cada sistema tiene sus diámetros. Use la tabla métrica para varillas en milímetros y la de pulgadas solo para las varillas #3 a #11.</p>
+</details>
+<details>
+  <summary>¿Qué recubrimiento usa la calculadora?</summary>
+  <p>La calculadora usa el valor que usted introduce. Los valores de ACI 318 de la tabla de esta página son referencias; el recubrimiento de su proyecto lo fija el plano.</p>
+</details>
+<details>
+  <summary>¿Se puede soldar la varilla para unir las barras?</summary>
+  <p>Por lo general no. Use traslape y alambre de amarre, salvo que el ingeniero indique un procedimiento de soldadura con acero soldable.</p>
 </details>
 
 <h2>Calculadoras relacionadas</h2>
@@ -296,7 +475,7 @@
   <a href="/es/calculadora-de-tonelaje-de-acero">Tonelaje de acero</a>
 </p>
 
-<p class="trust">Revisado: octubre de 2026. Pesos calculados con d² ÷ 162,28 para varillas métricas y los pesos de la tabla ASTM A615 para las pulgadas. Los resultados son estimaciones para planear compras. Verifique siempre con sus planos y con el código de construcción de su país.</p>
+<p class="trust">Revisado: octubre de 2026. Pesos calculados con d² ÷ 162,28 para varillas métricas y con los pesos por pie de la norma ASTM A615 para las varillas en pulgadas. Los resultados son estimaciones para planear compras. Verifique siempre con sus planos y con el código de construcción de su país.</p>
 
 </main>
 <!-- site-footer -->
