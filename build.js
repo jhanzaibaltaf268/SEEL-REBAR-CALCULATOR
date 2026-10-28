@@ -990,9 +990,137 @@ const PAGES = [
           ["How many bars do I need to order?","Order the calculator's bar count plus laps and waste. For the 10 m × 3 m example that is 33 bars (8 + 25) cut from stock — or about 13 sticks of 12 m bar before waste (150.05 ÷ 12 = 12.5)."],
           ["Does the calculator include the apron?","No — it sizes the main rectangular slab only. The flared apron at the street is extra steel, and its shape (two triangles) needs its own allowance."],
           ["How much does driveway rebar cost?","Multiply the steel weight by your local price per kg. At an example €1.20/kg, the 10 m × 3 m driveway's bars cost €178.98; tie wire and chairs are extra. Thickened edges add concrete, not steel — about 0.59 m³ extra on the same 10 m × 3 m drive. Get current supplier quotes before budgeting."],
-          ["Can I use imperial units?","The calculator takes metres and millimetres, but the equivalents are direct: 12.7 mm is a #4 bar, 400 mm is about 16 in, 75 mm is 3 in, and kilograms convert at × 2.20462 to pounds. Convert first, then enter metric values."]] },
-
-  { id:"spacing", slug:"rebar-spacing-calculator", cat:"Detailing",
+          ["Can I use imperial units?","The calculator takes metres and millimetres, but the equivalents are direct: 12.7 mm is a #4 bar, 400 mm is about 16 in, 75 mm is 3 in, and kilograms convert at × 2.20462 to pounds. Convert first, then enter metric values."]] ,
+    de: {
+  metaTitle: "Bewehrungsrechner für Einfahrten — Stäbe & kg, kostenlos",
+  desc: "Bewehrungsrechner für Einfahrten: Stäbe in beiden Richtungen, Gesamtlänge, Bindungen und Gewicht. Beispiel: 10 m × 3 m Einfahrt = 149,15 kg. Kostenlos.",
+  formula: "Stäbe je Richtung = floor((Maß − 2 × Deckung) ÷ Abstand) + 1, × kg/m für das Gewicht.",
+  kw: "bewehrungsrechner für einfahrten, bewehrung für einfahrt, einfahrtbewehrung, bewehrung betoneinfahrt",
+  howto: ["Einfahrtslänge und -breite in Metern eingeben.", "Bewehrungsabstand und Betondeckung festlegen.", "Die Stabgröße für die Gesamtmenge wählen.", "Stabzahl in beiden Richtungen, Gesamtlänge, Gewicht und Kreuzungspunkte ablesen.", "Vor der Bestellung Übergreifungen und Verschnitt addieren — der Rechner gibt die reine Matte an, nicht die Bestellmenge."],
+  faqs: [["Welche Bewehrung für eine Einfahrt?", "#3–#4 (10–13 mm) im Abstand von 300–450 mm ist bei Wohneinfahrten üblich. Der Rechner startet mit 12,7 mm (#4) bei 400 mm Abstand — eine solide Standardwahl für Einfahrten; für schwerere Fahrzeuge größer oder enger wählen."],
+          ["Brauchen Einfahrten Bewehrung?", "Bewehrung hilft, Risse zu kontrollieren; Dicke und Stabgröße hängen von der Belastung ab. Eine unbewehrte Einfahrtsplatte reißt freier, wenn sie schwindet und wenn Lasten darüberfahren — Stahl verhindert nicht jeden Riss, aber er hält die Platte zusammen und verteilt Lasten."],
+          ["Wie viel Bewehrung für eine 10 m × 3 m Einfahrt?", "Bei 400 mm Abstand, 75 mm Deckung und 12,7-mm-Stäben: 8 + 25 Stäbe, 150,05 m Stabstahl, 149,15 kg (328,82 lb), 200 Kreuzungspunkte. Vor der Bestellung Übergreifungen und Verschnitt addieren."],
+          ["Wie dick sollte eine Einfahrt sein?", "Typisch 100 mm (4 in) für Autos, 125 mm (5 in) für SUVs und leichte Lkw und 150 mm (6 in) oder mehr für schwere Fahrzeuge und Wohnmobile. Die Dicke ist eine Bemessungsentscheidung — anhand Ihrer Pläne prüfen, da sie sowohl Betonvolumen als auch Stahlmenge bestimmt."],
+          ["Welcher Abstand für Einfahrtsbewehrung?", "300–450 mm Achsabstand deckt die meisten Wohneinfahrten ab; 400 mm ist die Rechner-Voreinstellung. Leichtere Lasten vertragen 450 mm, schwerere Lasten sollten auf 300 mm enger werden. Auf langen Einfahrten, wo die Räder immer einer Spur folgen, nur unter den Fahrspuren auf 300 mm enger werden (siehe Abschnitt Fahrspur-Abstände oben)."],
+          ["Bewehrungsstäbe oder Matte für eine Einfahrt?", "Eine gebundene Stabmatte (was dieser Rechner bemisst) gibt Ihnen bekannte Stabgrößen und Abstände. Geschweißte Matten sind eine Alternative, müssen aber bis zur Plattenmitte hochgelegt werden — Matten, die auf dem Boden liegen, landen am Boden der Schüttung, wo sie fast nichts nützen."],
+          ["Wie viele Stäbe muss ich bestellen?", "Bestellen Sie die Stabzahl des Rechners plus Übergreifungen und Verschnitt. Für das Beispiel 10 m × 3 m sind das 33 Stäbe (8 + 25), geschnitten aus Stangenware — oder etwa 13 Stangen à 12 m vor Verschnitt (150,05 ÷ 12 = 12,5)."],
+          ["Enthält der Rechner den Vorplatz?", "Nein — er bemisst nur die rechteckige Hauptplatte. Der aufgeweitete Vorplatz an der Straße ist zusätzlicher Stahl, und seine Form (zwei Dreiecke) braucht einen eigenen Zuschlag."],
+          ["Was kostet Einfahrtsbewehrung?", "Multiplizieren Sie das Stahlgewicht mit Ihrem örtlichen Preis pro kg. Bei einem Beispielpreis von 1,20 €/kg kosten die Stäbe der 10 m × 3 m Einfahrt 178,98 €; Bindedraht und Abstandhalter kommen hinzu. Verdickte Ränder kosten Beton, keinen Stahl — etwa 0,59 m³ extra auf derselben 10 m × 3 m Einfahrt. Vor der Budgetierung aktuelle Lieferantenangebote einholen."],
+          ["Kann ich imperiale Einheiten benutzen?", "Der Rechner nimmt Meter und Millimeter, aber die Entsprechungen sind direkt: 12,7 mm ist ein #4-Stab, 400 mm sind etwa 16 in, 75 mm sind 3 in, und Kilogramm werden mit × 2,20462 in Pfund umgerechnet. Zuerst umrechnen, dann metrische Werte eingeben."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So benutzen Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: 10 m × 3 m Einfahrt</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: 10 m × 6 m Einfahrt für zwei Autos</a></li>
+      <li><a href="#sizes-table">Typische Einfahrtgrößen</a></li>
+      <li><a href="#thickness-table">Plattendicke nach Fahrzeug</a></li>
+      <li><a href="#bar-table">Stabdicken-Tabelle</a></li>
+      <li><a href="#spacing-table">Abstands-Leitfaden</a></li>
+      <li><a href="#wheel-track">Fahrspur-Abstände</a></li>
+      <li><a href="#joints">Fugen und Dübel</a></li>
+      <li><a href="#thickened-edges">Verdickte Ränder</a></li>
+      <li><a href="#frost">Frosthebung und Tragschicht</a></li>
+      <li><a href="#cost">Kosten schätzen</a></li>
+      <li><a href="#imperial">Metrische und imperiale Einheiten</a></li>
+      <li><a href="#not-included">Was der Rechner nicht enthält</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<p><strong>Warum zweimal die Deckung abziehen?</strong> Die Stäbe enden an jeder Kante eine Deckung vor dem Rand, also ist die überspannte Länge das Maß minus zwei Deckungen. <strong>Warum +1?</strong> Eine Stabreihe an beiden Enden plus eine je Abstandsintervall — ohne das +1 fehlte in jeder Richtung ein Stab. <strong>Was zählt als Bindung?</strong> Jede Kreuzung eines Längs- und eines Querstabs ist ein Bindedraht-Kreuzungspunkt; der Rechner zählt sie, damit Sie den Bindedraht mit dem <a href="/de/bindedraht-rechner">Bindedraht-Rechner</a> bemessen können.</p>
+    <h3 id="example-1">Rechenbeispiel 1: 10 m × 3 m Einfahrt</h3>
+    <p>Einfahrt 10 m × 3 m, 400 mm Abstand, 75 mm Betondeckung, 12,7-mm-Stäbe (#4). Dies sind die Werte, mit denen der Rechner startet, sodass Sie das Ergebnis sofort prüfen können:</p>
+    <ol class="howto"><li>Stäbe entlang der Länge: floor((3,00 − 0,15) ÷ 0,40) + 1 = 8 Stäbe, je 9,85 m lang.</li><li>Stäbe über die Breite: floor((10,00 − 0,15) ÷ 0,40) + 1 = 25 Stäbe, je 2,85 m lang.</li><li>Gesamtlänge: 8 × 9,85 + 25 × 2,85 = 150,05 m.</li><li>Gewicht: 150,05 × 0,994 = 149,15 kg (328,82 lb), bei 8 × 25 = 200 Kreuzungspunkten.</li></ol>
+    <p>Probieren Sie es selbst: Geben Sie dieselben Zahlen oben in den Rechner ein, und Sie erhalten dasselbe Ergebnis.</p>
+    <h3 id="example-2">Rechenbeispiel 2: 10 m × 6 m Einfahrt für zwei Autos</h3>
+    <p>Einfahrt 10 m × 6 m, derselbe 400-mm-Abstand, 75 mm Deckung, 12,7-mm-Stäbe:</p>
+    <ol class="howto"><li>Stäbe entlang der Länge: floor((6,00 − 0,15) ÷ 0,40) + 1 = 15 Stäbe, je 9,85 m lang.</li><li>Stäbe über die Breite: 25 Stäbe, je 5,85 m lang.</li><li>Gesamtlänge: 15 × 9,85 + 25 × 5,85 = 294,00 m.</li><li>Gewicht: 294,00 × 0,994 = 292,24 kg (644,28 lb), bei 15 × 25 = 375 Kreuzungspunkten.</li></ol>
+    <p>Eine Verdopplung der Breite verdoppelt etwa den Stahl — die Matte wächst in beiden Richtungen, also bestimmt die Fläche, nicht nur die Länge, die Gesamtmenge.</p>
+    <h3 id="sizes-table">Typische Einfahrtgrößen</h3>
+    <div class="formula-table"><table>
+      <tr><th>Einfahrt</th><th>Größe</th><th>Stahl (12,7 mm, 400 mm, 75 mm)</th></tr>
+      <tr><td>Einfahrt für ein Auto</td><td>10 × 3 m</td><td>150,05 m, 149,15 kg, 200 Kreuzungspunkte</td></tr>
+      <tr><td>Einfahrt für zwei Autos</td><td>10 × 6 m</td><td>294,00 m, 292,24 kg, 375 Kreuzungspunkte</td></tr>
+      <tr><td>Wohnmobil / schwer</td><td>12 × 4 m</td><td>234,00 m, 232,60 kg, 300 Kreuzungspunkte</td></tr>
+    </table></div>
+    <p>Dies sind typische Größen als Ausgangspunkt — der Rechner nimmt jede Länge und Breite, geben Sie also Ihre echten Maße für die echte Antwort ein.</p>
+    <h3 id="thickness-table">Plattendicke nach Fahrzeug</h3>
+    <div class="formula-table"><table>
+      <tr><th>Verkehr</th><th>Typische Dicke</th></tr>
+      <tr><td>Nur Autos</td><td>100 mm (4 in)</td></tr>
+      <tr><td>SUVs / leichte Lkw</td><td>125 mm (5 in)</td></tr>
+      <tr><td>Schwere Fahrzeuge / Wohnmobile</td><td>150 mm oder mehr (6 in+)</td></tr>
+    </table></div>
+    <p>Die Dicke ist eine Bemessungsentscheidung, keine Rechner-Eingabe — diese Tabelle ist eine Faustregel nur für erste Schätzungen. Eine dickere Platte trägt schwerere Lasten und braucht passenden Stahl, bestätigen Sie also beides anhand Ihrer Bemessung.</p>
+    <h3 id="bar-table">Stabdicken-Tabelle</h3>
+    <div class="formula-table"><table>
+      <tr><th>Metrischer Stab</th><th>Gewicht</th><th>Imperialer Stab</th><th>Gewicht</th></tr>
+      <tr><td>8 mm</td><td>0,394 kg/m</td><td>#3 (9,5 mm)</td><td>0,376 lb/ft</td></tr>
+      <tr><td>10 mm</td><td>0,616 kg/m</td><td>#4 (12,7 mm)</td><td>0,668 lb/ft</td></tr>
+      <tr><td>12 mm</td><td>0,887 kg/m</td><td>#5 (15,9 mm)</td><td>1,043 lb/ft</td></tr>
+      <tr><td>16 mm</td><td>1,578 kg/m</td><td>—</td><td>—</td></tr>
+      <tr><td>20 mm</td><td>2,465 kg/m</td><td>—</td><td>—</td></tr>
+    </table></div>
+    <p>Der Rechner startet mit 12,7 mm (#4) bei 0,994 kg/m — dem üblichen Stab für Wohneinfahrten. Größere Stäbe passen zu schwereren Lasten, kosten aber mehr pro Meter; der Abstand, nicht nur die Größe, bestimmt die Gesamtmenge.</p>
+    <h3 id="spacing-table">Abstands-Leitfaden</h3>
+    <div class="formula-table"><table>
+      <tr><th>Belastung</th><th>Typischer Abstand</th></tr>
+      <tr><td>Leicht (Autos)</td><td>450 mm Achsabstand</td></tr>
+      <tr><td>Standard-Einfahrt</td><td>400 mm Achsabstand (Rechner-Voreinstellung)</td></tr>
+      <tr><td>Schwer (Lkw, Wohnmobile)</td><td>300 mm Achsabstand</td></tr>
+    </table></div>
+    <p>Engere Abstände fügen Stäbe in beiden Richtungen hinzu, sodass die Gesamtmenge schnell wächst — von 400 mm auf 300 mm zu gehen, fügt etwa ein Drittel mehr Stahl hinzu. Passen Sie den Abstand an die Last an, nicht an die Gewohnheit.</p>
+    <h3 id="wheel-track">Fahrspur-Abstände: nur dort enger, wo die Räder laufen</h3>
+    <p>Räder belasten eine Einfahrt nicht gleichmäßig — sie folgen zwei schmalen Spuren, und ein Reifen nahe der freien Kante biegt die Platte etwa doppelt so stark wie dasselbe Rad in Plattenmitte. Deshalb kann das Standardraster bei 400 mm bleiben, während die Radlinien enger werden.</p>
+    <p>Auf langen Einfahrten, wo jedes Fahrzeug demselben Weg zur Garage folgt (ab etwa 18 m, oder bei einer Werkstatt oder einem Wohnmobil-Stellplatz), den Abstand nur unter den Fahrspuren enger machen — zum Beispiel von 400 mm auf 300 mm innerhalb zweier Streifen von etwa 900 mm Breite, mittig auf jeder Radspur. Das ist ein Drittel mehr Stahl innerhalb der Streifen, aber auf einer 6 m breiten Einfahrt für zwei Autos decken die Streifen nur etwa 30 % der Fläche ab, sodass die Zunahme für die ganze Einfahrt rund 10 % beträgt.</p>
+    <p>Auf einer schmalen Einfahrt für ein Auto decken die Streifen den größten Teil der Breite ab, also einfach den engeren Abstand durchgehend verwenden, statt Streifen zu schneiden. Und niemals das ganze Raster enger machen, um Rädern auf einer kurzen Einfahrt hinterherzujagen, auf der Autos über die volle Breite wandern — Sie würden dafür bezahlen, Platten zu verdichten, auf denen niemand fährt.</p>
+    <h3 id="joints">Fugen und Dübel: wo der Beton reißen darf</h3>
+    <p>Beton reißt, wo er darf; die Fugenanordnung entscheidet, wo. Drei Fugentypen, drei verschiedene Stahlregeln.</p>
+    <div class="formula-table"><table>
+      <tr><th>Fugentyp</th><th>Abstand</th><th>Stahl darüber</th></tr>
+      <tr><td>Scheinfuge (Schwindfuge)</td><td>2–3× Plattendicke: 100 mm → 2,4–3,7 m; 125 mm → 3,0–4,6 m; 150 mm → 3,7–5,5 m; ¼ tief eingeschnitten innerhalb von 24 h</td><td>Keiner — das Raster etwa 50 mm vor jeder Seite enden lassen, damit die Fuge sich öffnen kann</td></tr>
+      <tr><td>Dehnungsfuge (Bewegungsfuge)</td><td>Wo die Einfahrt auf die Garagenplatte, das Hausfundament oder den Straßenbordstein trifft</td><td>Glatte Dübel (siehe unten)</td></tr>
+      <tr><td>Längsfuge</td><td>Eine Mittellinie auf jeder Einfahrt breiter als 3,7 m</td><td>Im Erdreich nicht nötig — Nut, oder die Matte durchbinden</td></tr>
+    </table></div>
+    <p>Der Abstand von Scheinfugen folgt der 2–3×-Regel: Plattendicke in Zoll, gelesen in Fuß. Eine 125-mm-Platte (5 in) erhält Fugen alle 3,0–4,6 m; breiter als 3,7 m (12 ft), und die Platte braucht zusätzlich eine Längsfuge in der Mitte.</p>
+    <p>Über Dehnungsfugen — und nur dort — glatte Dübelstäbe: 16 mm (#5) glatter Stahl im Abstand von 300 mm, 450 mm lang (225 mm Einbindung je Seite), auf einer Hälfte gefettet, damit die Platten weiterhin unabhängig gleiten können. Glatt, nicht gerippt: gerippter Bewehrungsstahl verriegelt die Platten miteinander und zieht die Garagenplatte dorthin, wo die Einfahrt sich setzt. Eine 6 m breite Einfahrt braucht an einer Dehnungsfuge 6,00 ÷ 0,30 + 1 = 21 Dübel — 21 × 0,45 = 9,45 m Stabstahl 16 mm, oder 9,45 × 1,578 = 14,91 kg.</p>
+    <p>Zwei Verbote: niemals gerippten Bewehrungsstahl durch eine Scheinfuge legen (die Fuge kann sich nicht öffnen, also wandern Risse in die Plattenmitten), und niemals Dübel über gewöhnliche Scheinfugen legen — diese müssen frei bleiben, um sich zu öffnen.</p>
+    <h3 id="thickened-edges">Verdickte Ränder: die günstige Verbesserung gegen Randrisse</h3>
+    <p>Der billigste Rissverhinderer auf einer Einfahrt ist nicht mehr Stahl — es ist mehr Beton am Rand. Über die äußeren 300 mm die Platte auf das 1,5–2× ihrer Dicke vertiefen (eine 125-mm-Platte läuft am Rand etwa 190–250 mm stark), zum Erdreich hin auslaufend, mit den Rasterstäben durchgehend durch den verdickten Abschnitt und einem Stab, der in die vertiefte Zehe hinabgebogen ist.</p>
+    <p>Der Preis ist nur Beton: Eine 10 m × 3 m Einfahrt hat 2 × (10 + 3) = 26 m Umfang, und eine Vertiefung um 75 mm über eine 300-mm-Breite fügt 26 × 0,30 × 0,075 = 0,585 m³ hinzu — etwa 0,59 m³ zusätzlichen Beton — gezielt auf die höchstbeanspruchte Zone der Platte. Nur dort weglassen, wo der Rand nicht frei ist: Eine Seite, die vollständig von einem bestehenden Garagenvorplatz, Bordstein oder Gehweg eingefasst ist, ist bereits gestützt.</p>
+    <h3 id="frost">Frosthebung und die Tragschicht-Frage</h3>
+    <p>In Klimazonen mit starkem Frost ist die Tragschicht eine tragende Schicht, kein Füllmaterial: 150–300 mm verdichtetes körniges Material (Schotter oder sauberer Kies) unter der ganzen Einfahrt, ein Gefälle von 1–2 % an der Oberfläche, damit Schmelzwasser abläuft, statt die Frostgrenze zu speisen, und eine Geotextil-Trennlage zwischen Stein und schwerem Ton, damit die Tragschicht nicht in den Boden eindringen kann. Nahe einer beheizten Garage stoppt ein 25–50-mm-Streifen starrer Dämmung unter den ersten 600–1.200 mm das Abknicken zwischen gefrorenem und ungefrorenem Bereich, wo Autos darüberfahren.</p>
+    <p>Stoppt Bewehrung Frosthebung? Nein — Hebungskräfte heben ganze Platten an, und kein Raster verankert eine Platte dagegen. Die Verteidigung gegen Bewegung sind Tragschicht, Entwässerung und Fugen, die die Bewegung aufnehmen; die Aufgabe des Stahls in der Frostzeit ist mittelbar: gerissene Platten bündig zu halten, damit die Oberfläche weiter entwässert, statt Wasser im Riss zu stauen, das die Hebung des nächsten Winters speist. Nichts davon ändert die Stahlmenge, die der Rechner ausgibt — es entscheidet, ob dieser Stahl den Winter unversehrt übersteht.</p>
+    <h3 id="cost">Kosten schätzen</h3>
+    <p>Kosten = Stahlgewicht × Preis pro kg, plus Bindedraht und Abstandhalter. Mit Rechenbeispiel 1 und einem Beispielpreis von 1,20 €/kg für Stahl: 149,15 × 1,20 € = 178,98 € für die Stäbe. Bindedraht und <a href="/de/abstandhalter-rechner">Abstandhalter</a> kommen hinzu — der Rechner gibt Ihnen die Zahl von 200 Kreuzungspunkten, um den Draht mit dem <a href="/de/bindedraht-rechner">Bindedraht-Rechner</a> zu bemessen. Preise variieren nach Region und Lieferant, holen Sie also vor der Budgetierung aktuelle Angebote ein. Für ein vollständiges Materialbild addieren Sie das Betonvolumen aus dem <a href="/de/beton-bewehrungs-schaetzer">Beton-Bewehrungs-Schätzer</a>.</p>
+    <h3 id="imperial">Metrische und imperiale Einheiten</h3>
+    <p>Dieser Rechner nimmt Meter und Millimeter. Wenn Ihre Zeichnungen Fuß und Zoll verwenden:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Imperial (ca.)</th></tr>
+      <tr><td>10 m × 3 m Einfahrt</td><td>32,81 ft × 9,84 ft (× 3,281)</td></tr>
+      <tr><td>400 mm Abstand</td><td>etwa 16 in</td></tr>
+      <tr><td>75 mm Deckung</td><td>3 in</td></tr>
+      <tr><td>12,7-mm-Stab</td><td>#4-Stab (1/2 in)</td></tr>
+      <tr><td>149,15 kg</td><td>328,82 lb (× 2,20462)</td></tr>
+    </table></div>
+    <p>Zuerst umrechnen, dann metrische Werte in den Rechner eingeben — Einheiten in einer Berechnung nicht mischen.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Vorplatz-Stahl.</strong> Der aufgeweitete Vorplatz, wo die Einfahrt auf die Straße trifft, ist zusätzlicher Stahl — dies bemisst nur die rechteckige Hauptplatte.</li>
+      <li><strong>Tragschicht-Volumen.</strong> Der Frost-Abschnitt oben gibt typische Tragschicht-Tiefen an, aber das Volumen selbst ist von der Stahlmatte getrennt.</li>
+      <li><strong>Fugenschnitt und Dübel-Arbeit.</strong> Der Fugen-Abschnitt oben gibt Abstände und die Dübel-Spezifikation an; das Schneiden der Fugen und das Setzen der Dübel sind Baustellenarbeit, keine Mengen, die der Rechner ausgibt.</li>
+      <li><strong>Übergreifungen und Verschnitt.</strong> Das Ergebnis ist die reine Matte. Vor der Bestellung Übergreifungslängen und einen Verschnitt-Zuschlag addieren.</li>
+      <li><strong>Bindedraht und Abstandhalter.</strong> Der Rechner zählt die Kreuzungspunkte (200 in Beispiel 1) — den Draht mit dem <a href="/de/bindedraht-rechner">Bindedraht-Rechner</a> und die Stützen mit dem <a href="/de/abstandhalter-rechner">Abstandhalter-Rechner</a> bemessen.</li>
+      <li><strong>Betonvolumen und Einbaukosten.</strong> Das Volumen kommt aus dem <a href="/de/beton-bewehrungs-schaetzer">Beton-Bewehrungs-Schätzer</a>; Schalung und Arbeitslohn sind getrennt.</li>
+    </ul>
+    <h3 id="mistakes">5 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Stahl auf dem Boden liegen lassen.</strong> Stäbe und Matten, die auf der Tragschicht liegen, enden ohne Deckung und ohne Verbund am Boden der Platte. Die Matte vor dem Gießen auf Abstandhalter bis zur geplanten Deckung hochlegen.</li><li><strong>Deckung mit Abstand verwechseln.</strong> Deckung ist der Randabstand (75 mm hier); Abstand ist der Stab-zu-Stab-Abstand (400 mm). Ein Vertauschen ändert sowohl die Stabzahl als auch die Dauerhaftigkeit.</li><li><strong>Die reine Menge bestellen.</strong> Übergreifungen zwischen Stäben und Verschnitt kommen auf die reine Matte obendrauf — extra bestellen, sonst wird der letzte Streifen zu kurz.</li><li><strong>Falsche Dicke für die Last.</strong> Eine 100-mm-Autoplatte unter einem Wohnmobil reißt. Dicke — und Stahl — an das schwerste Fahrzeug anpassen, das die Einfahrt nutzen wird.</li><li><strong>Stahl durch Scheinfugen führen.</strong> Gerippte Stäbe über einer Scheinfuge verriegeln die Platten miteinander, sodass die Fuge sich nicht öffnen kann und Risse in die Plattenmitten wandern. Das Raster vor Scheinfugen enden lassen und Dübel nur für Dehnungsfugen aufsparen.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Stabgewichte nach d² ÷ 162,28 (metrisch) und ASTM-A615-Größen (imperial). Dicken- und Abstandsbereiche sind Faustregeln für erste Schätzungen — immer anhand Ihrer statischen Pläne und der Bemessungsnorm prüfen.</p>`
+}
+},
+    { id:"spacing", slug:"rebar-spacing-calculator", cat:"Detailing",
     metaTitle:"Rebar Spacing Calculator — Exact Bar Count & c/c Gap",
     h1:"Rebar Spacing Calculator",
     desc:"Bars across any width with the true centre-to-centre spacing and the clear gap between bars. No rounding surprises — see the exact bar count.",
