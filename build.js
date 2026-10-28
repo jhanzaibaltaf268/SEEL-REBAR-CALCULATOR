@@ -3018,9 +3018,146 @@ const PAGES = [
 <li><strong>Ordering the neat total with no reserve.</strong> Cutting, over-twisting, re-tying and handling losses are real; one published calculator recommends 5–15%. On the defaults, skipping the reserve saves at most €0.66 at an example €3.00/kg and risks a stalled pour.</li>
 <li><strong>Ordering fractional ties, or comparing against the per-tonne rule without adjusting for ratio.</strong> The panel shows 688.50 ties at 75% — order 689, not 688.50, and not 688. And a 100%-tied dense grid at 18.7 kg/t is not proof the count is wrong: the 9–13 kg/t rule assumes partial tying, so reconcile the ratio before doubting the grid.</li>
 </ol>
-<p>Last reviewed: October 2026.</p>` },
-
-  { id:"column", slug:"column-rebar-calculator", cat:"Members",
+<p>Last reviewed: October 2026.</p>`,
+    de: {
+  metaTitle: "Bindedraht-Rechner — Bindungen, Meter & kg gratis",
+  desc: "Bindedraht-Rechner: Bindungen, Drahtlänge und Gewicht je Netz aus Größe und Abstand berechnen. Beispiel: 5 × 4 m = 918 Bindungen, 275,40 m, 4,34 kg. Gratis.",
+  formula: "Kreuzungspunkte = nx × ny. Bindungen = Kreuzungspunkte × Anteil. Drahtlänge = Bindungen × Draht je Bindung; Gewicht bei ~1,6 mm Draht.",
+  kw: "bindedraht-rechner, bindedraht für bewehrung, bindedraht menge berechnen, bewehrung binden drahtmenge",
+  howto: ["Geben Sie die Plattenlänge und Plattenbreite in Metern ein.", "Stellen Sie den Stababstand in mm ein — 150 mm ist der Standardwert des Rechners.", "Stellen Sie den Draht je Bindung in mm ein — 300 mm ist der Standardwert, und 250–350 mm decken die meisten Handbindungen ab.", "Stellen Sie den Anteil der gebundenen Kreuzungspunkte ein — 100 % bindet alles; die Zeichnung verlangt oft jeden Randkreuzungspunkt und etwa 50 % im Feld.", "Lesen Sie die gesamte Drahtlänge und das Gewicht sowie die Kreuzungspunkt- und Bindungszahlen ab — und rechnen Sie dann Verschnitt hinzu, denn der Rechner gibt das Nettoergebnis des Netzes an, nicht die Bestellmenge."],
+  faqs: [["Wie viel Bindedraht brauche ich für Bewehrung?", "Rechnen Sie grob mit 250–350 mm Draht je Bindung und lassen Sie den Rechner aus Ihrem Netz aufsummieren. Bei den Standardwerten (Platte 5 × 4 m, Abstand 150 mm, 300 mm je Bindung, 100 % gebunden) sind das 918 Bindungen × 300 mm = 275,40 m Draht mit einem Gewicht von 4,34 kg beim 1,6-mm-Drahtgewicht des Rechners. Ändern Sie eine Eingabe, folgt das Ergebnis derselben Kette: Netz → Bindungen → Länge → Gewicht."],
+          ["Bindet man jeden Bewehrungskreuzungspunkt?", "Oft jeden Kreuzungspunkt an den Rändern und etwa 50 % im Feld — stellen Sie den Anteil passend zur Zeichnung ein. Bei den Standardwerten ergeben 100 % Bindung 918 Bindungen, 275,40 m und 4,34 kg, während 50 % 459 Bindungen, 137,70 m und 2,17 kg ergeben: halbe Kreuzungspunkte, halber Draht. Die ursprüngliche FAQ-Antwort sagte dasselbe in einer Zeile; erst die Zahlen machen sie brauchbar."],
+          ["Wie viel Draht verbraucht eine Bindung?", "Das hängt von der Stabgröße ab: Größere Stäbe brauchen längere Umwicklungen. Eine veröffentlichte Umwicklungsformel (vier Umwicklungen plus 16 cm Verdrehzugabe) ergibt 261 mm bei einem 8-mm-Stab, 286 mm bei 10 mm, 311 mm bei 12 mm, 361 mm bei 16 mm und 411 mm bei 20 mm. Der Standardwert des Rechners von 300 mm liegt zwischen den Werten für 10 mm und 12 mm, ist also ein sinnvoller mittlerer Standardwert — bei 20-mm-Stäben zählt er jedoch je Bindung 111 mm zu wenig, das sind 101,90 m über 918 Bindungen."],
+          ["Warum geht der Rechner von 1,6-mm-Draht aus?", "Weil 1,6-mm-geglühter Draht die übliche Wahl auf der Baustelle ist und sein Gewicht derselben d²/162,28-Regel folgt wie das Bewehrungsgewicht: 1,6² ÷ 162,28 = 0,0157752 kg/m, also 63,39 Meter je Kilogramm. Dünnerer Draht ergibt mehr Meter je Kilogramm (1,2 mm → 112,69 m/kg) und dickerer Draht weniger (2,0 mm → 40,57 m/kg) — die vollständige Tabelle steht unten. Die Beschichtung (geglüht oder verzinkt) ändert das Gewicht bei gleichem Durchmesser nicht; sie ändert die Korrosionsbeständigkeit, nicht die Schätzung."],
+          ["Wie passt das zur Regel von 9–13 kg Draht je Tonne Stahl?", "Die Regel ist eine Faustregel, keine Normklausel — eine ihrer eigenen Quellen räumt ein, dass die IS-Norm keine Menge vorschreibt. Bei der Standardplatte (232,57 kg Stahl aus dem Plattenrechner) beträgt der Draht bei 100 % Bindung 4,34 kg, also 18,7 kg je Tonne — über der Regel — aber bei 50 % Bindung 2,17 kg, also 9,3 kg je Tonne, innerhalb der Regel. Die Regel setzt Teilbindung und gemischte Bauteile voraus; ein dichtes Plattennetz bei 100 % Bindung braucht ehrlich mehr. Nutzen Sie die Regel als Plausibilitätsprüfung für ein ganzes Projekt und die Netzzählung für die tatsächliche Bestellung."],
+          ["Wie viele Rollen oder Bunde brauche ich?", "Teilen Sie die Länge durch die Meter je Kilogramm der Rolle. Beim 1,6-mm-Draht des Rechners (63,39 m/kg) fasst eine 5-kg-Rolle 316,95 m — genug für die 275,40 m der Standardwerte mit Reserve — und eine 25-kg-Rolle fasst 1.584,77 m. Das große Plattenbeispiel unten braucht 2.693,40 m, also 42,49 kg, sodass zwei 25-kg-Rollen reichen. Prüfen Sie immer das Rollenetikett: Meter je Kilogramm ist eine Eigenschaft des Drahtdurchmessers, nicht der Marke."],
+          ["Wie viel Verschnitt sollte ich hinzurechnen?", "Ein veröffentlichter Rechner empfiehlt 5–15 % Reserve für Schnitt-, Überdreh-, Nachbinde- und Handhabungsverluste. Bei den Standardwerten werden aus 4,34 kg dadurch 4,56 kg bei +5 %, 4,78 kg bei +10 % und 5,00 kg bei +15 %. Der Rechner gibt das Nettoergebnis des Netzes ohne Reserve an, rechnen Sie sie also vor der Bestellung hinzu — eine fehlende Rolle am Tag der Betonage kostet mehr, als die 5 % je kosten."],
+          ["Was ist mit Doppelbindungen oder Bindungen je Kreuzung?", "Der Rechner zählt eine Bindung je gebundenem Kreuzungspunkt. Eine Doppelbindung (zwei Umwicklungen an einer Kreuzung) verdoppelt die Länge für diese Kreuzung von Hand: Aus den 275,40 m der Standardwerte werden 550,80 m, wenn jede Kreuzung doppelt gebunden wird. Ein veröffentlichter Rechner schlägt vor, etwa 1,5 Bindungen je Kreuzung einzuplanen, um Nachbindungen nach dem Verschieben der Stäbe während der Betonage abzudecken — behandeln Sie das als Planungszuschlag auf die Zählung, nicht als zweite Bindung, die der Rechner hätte zählen müssen."],
+          ["Trägt Bindedraht eine statische Last?", "Nein — er hält die Stäbe nur in Position, während der Beton eingebracht wird und aushärtet. Beton und Bewehrung tragen die Last; der Draht verhindert, dass sich der Korb während der Betonage und Verdichtung verschiebt, durchhängt oder spreizt. Darum bindet er auch Abstandhalter, Auflagerstäbe und Übergreifungen, nicht nur Kreuzungen: Alles, was bis zum Erhärten des Betons an Ort und Stelle bleiben muss, wird verdrahtet."],
+          ["Deckt der Rechner Übergreifungen, Abstandhalter oder Kosten ab?", "Nein — er gibt nur das Nettodraht-Ergebnis des Netzes an. Übergreifungen kommen aus dem <a href=\"/de/uebergreifungslaengen-rechner\">Übergreifungslängen-Rechner</a> (übergreifende Stäbe brauchen zusätzliche Bindungen an der Überlappung), Abstandhalter aus dem <a href=\"/de/abstandhalter-rechner\">Abstandhalter-Rechner</a>, die vollständige Mengenermittlung aus dem <a href=\"/de/bewehrungsmengen-rechner\">Mengen- & Abrechnungsrechner</a> und Preise aus dem <a href=\"/de/bewehrungskosten-rechner\">Kostenrechner</a>. Die Stahltonnage für die Pro-Tonne-Prüfung kommt aus dem <a href=\"/de/bewehrungstonnage-rechner\">Tonnage-Rechner</a>."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">So benutzen Sie den Rechner</a></li>
+      <li><a href="#formula">Die Formel</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: Standardwerte (5 × 4 m)</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: Platte 10 × 8 m</a></li>
+      <li><a href="#example-3">Rechenbeispiel 3: Hälfte der Kreuzungspunkte gebunden</a></li>
+      <li><a href="#spacing-table">Draht nach Stababstand</a></li>
+      <li><a href="#per-tie-table">Draht je Bindung, nach Stabgröße</a></li>
+      <li><a href="#ratio-table">Draht nach Bindeanteil</a></li>
+      <li><a href="#per-tonne">Die 9–13-kg-pro-Tonne-Regel, eingeordnet</a></li>
+      <li><a href="#gauge-table">Meter je Kilogramm, nach Drahtstärke</a></li>
+      <li><a href="#order">Vom Nettoergebnis zur Bestellung</a></li>
+      <li><a href="#imperial">Zoll-Umrechnungen</a></li>
+      <li><a href="#not-included">Was dieser Rechner nicht abdeckt</a></li>
+      <li><a href="#mistakes">5 häufige Fehler</a></li>
+      <li><a href="#faq">FAQs</a></li>
+    </ul>
+  </nav>`,
+  extra: `<h3>Die Formel, erklärt</h3>
+<p>Die Formel ist eine Kette aus vier Schritten, und jeder Schritt ist etwas Reales, das man auf der Baustelle zählen kann:</p>
+<p><strong>Kreuzungspunkte = nx × ny; Bindungen = Kreuzungspunkte × Anteil; Länge = Bindungen × Draht je Bindung; Gewicht = Länge × 0,0157752 kg/m</strong></p>
+<p>Zuerst: nx = floor(L ÷ Abstand) + 1 und ny = floor(W ÷ Abstand) + 1. Das +1 in jeder Richtung ist die Zaunpfahlregel: Stäbe sitzen an beiden Rändern plus in jedem Zwischenabstand, sodass es immer eine Stabreihe mehr gibt als Zwischenräume. Multipliziert man die beiden Reihenzahlen, erhält man jede Kreuzung im Netz. Zweitens macht der Bindeanteil aus Kreuzungen Bindungen: 100 % bindet alle, 50 % bindet die Hälfte. Drittens verbraucht jede Bindung die eingestellte Drahtlänge je Bindung. Viertens nutzt das Gewicht 1,6-mm-Draht: 1,6² ÷ 162,28 = 0,0157752 kg/m, dieselbe d²/162,28-Regel wie beim Bewehrungsgewicht.</p>
+<p>Zwei ehrliche Einschränkungen. Das Netz wird von Rand zu Rand gezählt — der Rechner zieht die Betondeckung nicht ab, sodass er bei den Standardwerten 918 Kreuzungen zählt, wo der betondeckungsbereinigte Plattenrechner 891 zählt. Der Unterschied ist klein (27 Kreuzungen) und geht zugunsten einer etwas größeren Bestellung, aber man sollte ihn kennen. Und die Bindungszahl wird nicht gerundet: Bei 75 % zeigt der Rechner 688,50 Bindungen an, runden Sie also selbst auf 689 auf, bevor Sie bestellen.</p>
+<h3 id="example-1">Rechenbeispiel 1: Platte 5 × 4 m (Standardwerte des Rechners)</h3>
+<p>Öffnen Sie den Rechner und lassen Sie die Standardwerte: Länge 5 m, Breite 4 m, Abstand 150 mm, Draht je Bindung 300 mm, gebundene Kreuzungspunkte 100 %.</p>
+<p>Entlang der Länge: floor(5 ÷ 0,15) + 1 = 34 Reihen. Entlang der Breite: floor(4 ÷ 0,15) + 1 = 27 Reihen.</p>
+<p><strong>Kreuzungspunkte = 34 × 27 = 918; Bindungen = 918; Länge = 918 × 0,3 = 275,40 m; Gewicht = 275,40 × 0,0157752 = 4,34 kg.</strong> Der Rechner zeigt 275,40 m, 918,00 Kreuzungspunkte, 918,00 Bindungen und 4,34 kg an.</p>
+<p>Das Gewicht ist die Zahl, die die meisten durch Schätzen falsch ermitteln: 275 Meter Draht klingen nach viel, aber bei 63,39 Metern je Kilogramm sind es nur 4,34 kg — eine 5-kg-Rolle reicht, wie der Bestellabschnitt zeigt.</p>
+<h3 id="example-2">Rechenbeispiel 2: Platte 10 × 8 m</h3>
+<p>Stellen Sie Länge 10 m, Breite 8 m, Abstand 200 mm, Draht je Bindung 300 mm, gebundene Kreuzungspunkte 100 % ein.</p>
+<p>Entlang der Länge: floor(10 ÷ 0,2) + 1 = 51 Reihen. Entlang der Breite: floor(8 ÷ 0,2) + 1 = 41 Reihen.</p>
+<p><strong>Kreuzungspunkte = 51 × 41 = 2.091; Länge = 2.091 × 0,3 = 627,30 m; Gewicht = 9,90 kg.</strong> Merken Sie sich den Zufall: Dieselben 627,30 m ergeben sich für eine Platte 5 × 4 m bei 100 mm Abstand, weil beide Netze 2.091 Kreuzungspunkte haben. Der Draht folgt der Kreuzungspunktzahl, nicht der Plattenfläche — ein kleines dichtes Netz kann mehr Draht brauchen als ein großes weitmaschiges.</p>
+<h3 id="example-3">Rechenbeispiel 3: Hälfte der Kreuzungspunkte gebunden</h3>
+<p>Stellen Sie Länge 6 m, Breite 5 m, Abstand 150 mm, Draht je Bindung 300 mm, gebundene Kreuzungspunkte 50 % ein.</p>
+<p>Entlang der Länge: floor(6 ÷ 0,15) + 1 = 41 Reihen. Entlang der Breite: floor(5 ÷ 0,15) + 1 = 34 Reihen. Kreuzungspunkte = 41 × 34 = 1.394.</p>
+<p><strong>Bindungen = 1.394 × 50 % = 697; Länge = 697 × 0,3 = 209,10 m; Gewicht = 3,30 kg.</strong> Das ist der realistische Baustellenfall, auf den die ursprüngliche FAQ anspielt — jeder Randkreuzungspunkt gebunden, etwa die Hälfte des Feldes — und es ist der Fall, der innerhalb der Pro-Tonne-Regel landet, wie der Einordnungsabschnitt zeigt.</p>
+<h3 id="spacing-table">Draht nach Stababstand</h3>
+<p>Gleiche Platte (5 × 4 m), gleiche 300 mm je Bindung, gleiche 100 % Bindung, fünf Abstände. Der Abstand wirkt in beide Richtungen, sodass der Draht grob mit 1 ÷ Abstand² skaliert: Eine Halbierung des Abstands von 200 mm auf 100 mm vervierfacht den Draht fast.</p>
+<div class="formula-table"><table>
+<tr><th>Stababstand</th><th>Netz</th><th>Kreuzungspunkte</th><th>Drahtlänge</th><th>Drahtgewicht</th></tr>
+<tr><td>100 mm</td><td>51 × 41</td><td>2.091</td><td>627,30 m</td><td>9,90 kg</td></tr>
+<tr><td>125 mm</td><td>41 × 33</td><td>1.353</td><td>405,90 m</td><td>6,40 kg</td></tr>
+<tr><td>150 mm</td><td>34 × 27</td><td>918</td><td>275,40 m</td><td>4,34 kg</td></tr>
+<tr><td>175 mm</td><td>29 × 23</td><td>667</td><td>200,10 m</td><td>3,16 kg</td></tr>
+<tr><td>200 mm</td><td>26 × 21</td><td>546</td><td>163,80 m</td><td>2,58 kg</td></tr>
+</table></div>
+<p>Die praktische Folge: Der Abstand ist der größte Hebel auf die Drahtmenge, den Sie steuern. Der Wechsel einer Platte 5 × 4 m von 150 mm auf 200 mm Abstand senkt den Draht von 4,34 kg auf 2,58 kg — eine Ersparnis von 41 % — aber der Abstand kommt aus der Zeichnung, nicht aus dem Drahtbudget, behandeln Sie diese Tabelle also als Schätzwissen, nicht als Grund, ein Netz weiter zu machen.</p>
+<h3 id="per-tie-table">Draht je Bindung, nach Stabgröße</h3>
+<p>Der Standardwert des Rechners von 300 mm ist eine Zahl für jeden Stab, aber eine Bindung um einen 20-mm-Stab braucht ehrlich mehr Draht als eine Bindung um einen 8-mm-Stab. Eine veröffentlichte Umwicklungsformel — vier Umwicklungen um den Stab plus 16 cm Verdrehzugabe — ergibt diese Tabelle, mit dem Gesamtgewicht des Netzes bei den 918 Bindungen der Standardwerte zum Maßstab. Jede Zeile lässt sich aus dem Rechner nachvollziehen: Geben Sie den gezeigten Wert für Draht je Bindung ein, und Länge und Gewicht folgen.</p>
+<div class="formula-table"><table>
+<tr><th>Stabgröße</th><th>Draht je Bindung</th><th>Länge bei 918 Bindungen</th><th>Gewicht bei 918 Bindungen</th></tr>
+<tr><td>8 mm</td><td>261 mm</td><td>239,60 m</td><td>3,78 kg</td></tr>
+<tr><td>10 mm</td><td>286 mm</td><td>262,55 m</td><td>4,14 kg</td></tr>
+<tr><td>12 mm</td><td>311 mm</td><td>285,50 m</td><td>4,50 kg</td></tr>
+<tr><td>16 mm</td><td>361 mm</td><td>331,40 m</td><td>5,23 kg</td></tr>
+<tr><td>20 mm</td><td>411 mm</td><td>377,30 m</td><td>5,95 kg</td></tr>
+</table></div>
+<p>Zwei Erkenntnisse daraus. Erstens ist der Standardwert von 300 mm ein guter Mittelwert — zwischen den Zeilen für 10 mm und 12 mm — sodass die meisten Plattenarbeiten mit dem Standardwert geschätzt knapp danebenliegen. Zweitens wächst der Fehler mit der Stabgröße: Bei 20-mm-Stäben zählt der Standardwert je Bindung 111 mm zu wenig, das sind 101,90 m über 918 Bindungen. Sind die Stäbe 16 mm oder größer, stellen Sie das Feld für Draht je Bindung nach dieser Tabelle ein, statt den Standardwert zu lassen.</p>
+<h3 id="ratio-table">Draht nach Bindeanteil</h3>
+<p>Gleiche Standardplatte (5 × 4 m, 150 mm, 300 mm je Bindung), vier Bindeanteile. Der Anteil ist nach dem Abstand der zweitgrößte Hebel, und er ist derjenige, den die Zeichnung tatsächlich steuert.</p>
+<div class="formula-table"><table>
+<tr><th>Gebundene Kreuzungspunkte</th><th>Bindungen</th><th>Drahtlänge</th><th>Drahtgewicht</th></tr>
+<tr><td>100 %</td><td>918</td><td>275,40 m</td><td>4,34 kg</td></tr>
+<tr><td>75 %</td><td>688,50 → 689</td><td>206,70 m</td><td>3,26 kg</td></tr>
+<tr><td>50 %</td><td>459</td><td>137,70 m</td><td>2,17 kg</td></tr>
+<tr><td>25 %</td><td>229,50 → 230</td><td>69,00 m</td><td>1,09 kg</td></tr>
+</table></div>
+<p>Die Bruchzeilen sind der Punkt: Der Rechner zeigt 688,50 und 229,50 Bindungen an, weil er nicht rundet, runden Sie also vor der Bestellung auf — 689 und 230 Bindungen, wie gezeigt. Abrunden würde Kreuzungen ungebunden lassen, was den Zweck des Drahts zunichtemacht.</p>
+<h3 id="per-tonne">Die 9–13-kg-pro-Tonne-Regel, eingeordnet</h3>
+<p>Jeder Leitfaden zitiert sie: 9–13 kg Bindedraht je Tonne Stahl, mit kleineren Stäben am oberen Ende der Spanne (8 mm → 12 kg/t) und größeren Stäben am unteren Ende (28–32 mm → 7 kg/t). Und eine der Quellen selbst räumt ein, dass die IS-Norm tatsächlich keine Menge vorschreibt — es ist eine Faustregel aus Erfahrung. Was also tun, wenn Ihre Netzzählung ihr widerspricht?</p>
+<p>Rechnen Sie es an der Standardplatte durch. Der Plattenrechner ergibt 232,57 kg Stahl für dieselbe Platte 5 × 4 m bei 150 mm Abstand mit 12-mm-Stäben und 40 mm Betondeckung. Gegen diesen Stahl:</p>
+<div class="formula-table"><table>
+<tr><th>Bindeanteil</th><th>Drahtgewicht</th><th>Kg je Tonne Stahl</th><th>Gegen die 9–13-Regel</th></tr>
+<tr><td>100 %</td><td>4,34 kg</td><td>18,7 kg/t</td><td>Über der Regel</td></tr>
+<tr><td>75 %</td><td>3,26 kg</td><td>14,0 kg/t</td><td>Knapp über der Regel</td></tr>
+<tr><td>50 %</td><td>2,17 kg</td><td>9,3 kg/t</td><td>Innerhalb der Regel</td></tr>
+</table></div>
+<p>Die Einordnung ist einfach: Die Regel setzt voraus, dass man nicht alles bindet. Sie mittelt über Balken, Stützen, Fundamente und Platten, über große und kleine Stäbe und über das übliche Baustellenmuster aus jedem Randkreuzungspunkt plus etwa der Hälfte des Feldes. Ein dichtes Plattennetz bei 100 % Bindung braucht ehrlich mehr Draht je Tonne als dieser Durchschnitt — 18,7 kg/t ist kein Fehler, sondern das, was 100 % Bindung kostet. Nutzen Sie die Regel also als Plausibilitätsprüfung für ein ganzes Projekt (wenn Ihr Gesamtdraht weit außerhalb von 9–13 kg/t liegt, prüfen Sie Ihre Eingaben) und die Netzzählung für die tatsächliche Bestellung. Eine Genauigkeitsanmerkung: Die Stahlzahl stammt aus dem betondeckungsbereinigten Plattennetz (891 Kreuzungen), während die Drahtzahl aus dem Rand-zu-Rand-Netz (918) stammt, sodass die kg/t-Werte innerhalb dieser 3-%-Lücke näherungsweise gelten — genau genug für eine Plausibilitätsprüfung, nicht für einen Exaktheitsanspruch.</p>
+<h3 id="gauge-table">Meter je Kilogramm, nach Drahtstärke</h3>
+<p>Draht wird nach Gewicht verkauft, aber nach Länge verbraucht, sodass die Umrechnung der ganze Einkauf ist. Alle Zeilen sind nach derselben d²/162,28-Regel berechnet, die der Rechner nutzt, sodass sie exakt zu seiner 1,6-mm-Annahme passen:</p>
+<div class="formula-table"><table>
+<tr><th>Drahtdurchmesser</th><th>Gewicht je Meter</th><th>Meter je Kilogramm</th></tr>
+<tr><td>1,0 mm</td><td>0,006162 kg/m</td><td>162,28 m/kg</td></tr>
+<tr><td>1,2 mm</td><td>0,008874 kg/m</td><td>112,69 m/kg</td></tr>
+<tr><td>1,22 mm (18 SWG)</td><td>0,009172 kg/m</td><td>109,03 m/kg</td></tr>
+<tr><td>1,6 mm (Draht des Rechners)</td><td>0,015775 kg/m</td><td>63,39 m/kg</td></tr>
+<tr><td>1,63 mm (16 SWG)</td><td>0,016372 kg/m</td><td>61,08 m/kg</td></tr>
+<tr><td>1,8 mm</td><td>0,019965 kg/m</td><td>50,09 m/kg</td></tr>
+<tr><td>2,0 mm</td><td>0,024649 kg/m</td><td>40,57 m/kg</td></tr>
+</table></div>
+<p>Zwei Verwendungen. Erstens: Ist Ihre Rolle nicht 1,6 mm, rechnen Sie vor dem Vergleichen um: Eine 5-kg-Rolle mit 1,2-mm-Draht fasst 563,45 m, nicht 316,95 m. Zweitens sind Stärkennummern eine Falle: SWG und AWG nummerieren denselben Durchmesser unterschiedlich, und der „typische 0,6–1,2 mm“ eines Leitfadens widerspricht dem „schweren 8–10 Gauge“ eines anderen — prüfen Sie also das Rollenetikett auf den Millimeterdurchmesser und nutzen Sie diese Tabelle, nicht die Stärkennummer, für die Umrechnung. Als Gegenprüfung impliziert das Beispiel eines Leitfadens von „1 kg = 50 m“ 1,80-mm-Draht nach dieser Tabelle, was ein sinnvoller schwerer Baustellendraht ist.</p>
+<h3 id="order">Vom Nettoergebnis zur Bestellung</h3>
+<p>Der Rechner gibt das Nettoergebnis des Netzes an. Die Bestellung ist dieses Ergebnis, plus Verschnitt, in Rollen, bepreist.</p>
+<p>Beispiel: Die Standardwerte ergeben 4,34 kg. Rechnen Sie eine Reserve von 5–15 % für Schnitt-, Überdreh-, Nachbinde- und Handhabungsverluste hinzu: +5 % → 4,56 kg, +10 % → 4,78 kg, +15 % → 5,00 kg. Beim 1,6-mm-Draht des Rechners fasst eine 5-kg-Rolle 316,95 m, sodass eine 5-kg-Rolle die 275,40 m der Standardwerte mit Raum für die Reserve abdeckt. Bei einem Beispielpreis von 3,00 €/kg kosten die Standardwerte 13,03 € netto, 13,69 € bei +5 %.</p>
+<p>Beispiel: Die große Platte (20 × 10 m bei 150 mm) ergibt 2.693,40 m, 42,49 kg. Bei +5 % sind das 44,61 kg, bestellen Sie also zwei 25-kg-Rollen (50 kg), statt nach exakt 44,61 kg zu suchen — Rollen gibt es in festen Größen, und die übrige Rolle ist der Draht der nächsten Platte. Zum selben Beispielpreis sind das 127,47 € netto, 133,84 € bei +5 %. Für die vollständige Mengenermittlung über alle Bauteile nutzen Sie den <a href="/de/bewehrungsmengen-rechner">Mengen- & Abrechnungsrechner</a> und bepreisen Sie sie mit dem <a href="/de/bewehrungskosten-rechner">Kostenrechner</a>.</p>
+<h3 id="imperial">Zoll-Umrechnungen</h3>
+<p>Der Rechner nimmt Meter und Millimeter, rechnen Sie also zuerst um: 1 m = 3,28 ft, 1 kg = 2,20 lb, 1 in = 25,4 mm.</p>
+<p>Rechenbeispiel: Eine Platte 20 × 16 ft ist 6,096 × 4,8768 m. Bei einem 6-in-Netz (152,4 mm), 300 mm je Bindung, 100 % gebunden: floor(6,096 ÷ 0,1524) + 1 = 41 Reihen, floor(4,8768 ÷ 0,1524) + 1 = 33 Reihen — <strong>41 × 33 = 1.353 Kreuzungspunkte, 405,90 m, 6,40 kg</strong>.</p>
+<p>Längen je Bindung in Zoll: 250 mm = 9,84 in, 300 mm = 11,81 in, 350 mm = 13,78 in. Längen in Fuß: 275,40 m = 903,54 ft, 627,30 m = 2.058,07 ft. Gewichte in Pfund: 4,34 kg = 9,58 lb, 9,90 kg = 21,82 lb. Die Formel ist einheitenfrei — dasselbe (floor + 1) × (floor + 1) × je Bindung funktioniert in Fuß und Zoll, wenn jede Eingabe in denselben Einheiten steht — aber der Rechner nimmt metrische Werte, rechnen Sie also vor der Eingabe um.</p>
+<h3 id="not-included">Was dieser Rechner nicht abdeckt</h3>
+<ul>
+<li>Stabzahl und Stahlgewicht — das Netz, das er zählt, ist ein Drahtnetz, keine Stahlliste; die Matte selbst kommt aus dem <a href="/de/bewehrungsrechner-fuer-betonplatten">Plattenrechner</a>.</li>
+<li>Übergreifungen und Übergreifungsbindungen — übergreifende Stäbe brauchen zusätzliche Bindungen an der Überlappung; Übergreifungslängen kommen aus dem <a href="/de/uebergreifungslaengen-rechner">Übergreifungslängen-Rechner</a>, und die zusätzlichen Bindungen kommen auf diese Netzzählung obendrauf.</li>
+<li>Abstandhalter und Stützen — Abstandhalter werden ebenfalls an Stäbe gebunden, aber ihre Zahl kommt aus dem <a href="/de/abstandhalter-rechner">Abstandhalter-Rechner</a>.</li>
+<li>Bügel, Stützen, Balken und Wände — dieser Rechner zählt ein flaches Netz; Körbe und vertikale Bauteile haben eigene Bindemuster, und der <a href="/de/buegel-schnittlaengen-rechner">Bügelrechner</a> deckt Bügel-Schnittlängen ab.</li>
+<li>Eck-, Anschluss- und Hakenbindungen über das Netz hinaus — ein Leitfaden schlägt vor, 10–20 % zusätzliche Bindungen für Balken-Platten-Ränder, Stützen-Balken-Knoten, Übergreifungen und Haken hinzuzurechnen; behandeln Sie das als Teil der Verschnittreserve, nicht als Netzkreuzungspunkte.</li>
+<li>Drahtstärkenwahl und Bindemethode — der Rechner setzt 1,6-mm-Draht und eine Bindung je gebundenem Kreuzungspunkt voraus; Stärkenwahl und einfache vs. doppelte vs. maschinelle Bindung kommen aus der Zeichnung und der Baustellenpraxis.</li>
+<li>Kosten — der Bestellabschnitt zeigt die Handrechnung; der <a href="/de/bewehrungskosten-rechner">Kostenrechner</a> bepreist eine vollständige Mengenermittlung, und die Stahltonnage kommt aus dem <a href="/de/bewehrungstonnage-rechner">Tonnage-Rechner</a>.</li>
+</ul>
+<h3 id="mistakes">5 häufige Fehler</h3>
+<ol>
+<li><strong>Das +1 in jeder Richtung vergessen.</strong> floor(L ÷ Abstand) × floor(W ÷ Abstand) statt (floor + 1) × (floor + 1) zu zählen, ergibt bei den Standardwerten 33 × 26 = 858 Kreuzungen statt 918 — 60 Bindungen, 18,0 m und 0,28 kg zu wenig vor Verschnitt. Die Randreihen sind echte Bindungen.</li>
+<li><strong>100 % binden, wenn die Zeichnung 50 % im Feld sagt.</strong> Bei den Standardwerten verdoppelt das den Draht von 2,17 kg auf 4,34 kg. Stellen Sie den Anteil nach der Zeichnung ein, nicht nach dem Standardwert — der Standardwert ist 100 %, weil er die sichere Obergrenze ist, nicht weil er das übliche Muster wäre.</li>
+<li><strong>Eine Länge je Bindung für jede Stabgröße.</strong> 300 mm bei 12-mm-Stäben zu lassen, zählt je Bindung 11 mm zu wenig (311 mm aus der Umwicklungstabelle), das sind 10,10 m und 0,16 kg zu wenig über 918 Bindungen — und bei 20-mm-Stäben beträgt die Lücke 111 mm je Bindung. Stellen Sie das Feld für Draht je Bindung nach der Stabgrößentabelle ein, für Stäbe ab 16 mm.</li>
+<li><strong>Das Nettoergebnis ohne Reserve bestellen.</strong> Schnitt-, Überdreh-, Nachbinde- und Handhabungsverluste sind real; ein veröffentlichter Rechner empfiehlt 5–15 %. Bei den Standardwerten spart das Weglassen der Reserve höchstens 0,66 € bei einem Beispielpreis von 3,00 €/kg und riskiert eine stillstehende Betonage.</li>
+<li><strong>Bruchbindungen bestellen oder gegen die Pro-Tonne-Regel vergleichen, ohne den Anteil zu bereinigen.</strong> Der Rechner zeigt bei 75 % 688,50 Bindungen an — bestellen Sie 689, nicht 688,50 und nicht 688. Und ein dichtes Netz bei 100 % Bindung mit 18,7 kg/t ist kein Beweis, dass die Zählung falsch ist: Die 9–13-kg/t-Regel setzt Teilbindung voraus, bereinigen Sie also zuerst den Anteil, bevor Sie das Netz anzweifeln.</li>
+</ol>
+<p>Zuletzt geprüft: Oktober 2026.</p>`
+}
+},
+    { id:"column", slug:"column-rebar-calculator", cat:"Members",
     metaTitle:"Column Rebar Calculator — Main Bars, Ties & kg, Free",
     h1:"Column Rebar Calculator",
     desc:"Total rebar for a rectangular column: vertical main bars plus lateral ties, with weights. Defaults = 44.38 kg. Free, with code-minimum checks.",
@@ -4435,7 +4572,6 @@ ${renderToolShell(lang, null)}
 ${enEducationSections}
   <section class="related">
     <h2>${u.all}</h2>
-    ${lang === "es" ? `<p><a href="/es/calculadora-de-varilla"><strong>Calculadora de varilla</strong></a> — peso por metro de cada diámetro (métrico y #3 a #11), número de barras de una losa y costo.</p>` : ""}
     ${directory}
   </section>
 
