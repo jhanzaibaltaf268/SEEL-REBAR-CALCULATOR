@@ -1416,9 +1416,103 @@ const PAGES = [
           ["What is the difference between development length and lap length?","Development length anchors one bar into concrete; lap length overlaps two bars to transfer force between them. A lap must be at least the development length, but lap rules add their own conditions — see the lap calculator."],
           ["Does stronger concrete reduce development length?","Yes. Higher grades raise the bond stress, so Ld falls: Fe500 in tension needs 56.64 × d in M20 but only 35.77 × d in M40."],
           ["Does the ×d multiple change with bar size?","No. For fixed steel and concrete grades the multiple is constant — only the length in mm grows with diameter. Fe500 in M25 is 48.55 × d whether the bar is 12 mm or 20 mm."],
-          ["Does this calculator follow ACI or IS 456?","IS 456. The ACI method uses different factors (casting position, epoxy coating, bar size, concrete strength) and gives different lengths — do not mix the two methods on one detail."]] },
-
-  { id:"lap", slug:"rebar-lap-length-calculator", cat:"Detailing",
+          ["Does this calculator follow ACI or IS 456?","IS 456. The ACI method uses different factors (casting position, epoxy coating, bar size, concrete strength) and gives different lengths — do not mix the two methods on one detail."]] ,
+    de: {
+  metaTitle: "Verankerungslängen-Rechner — Ld nach IS 456, gratis",
+  desc: "Verankerungslängen-Rechner: Ld für Rippenstäbe nach IS 456 aus Durchmesser, Stahl- und Betongüte berechnen. Beispiel: 12 mm, Fe500, M25 = 582,59 mm. Kostenlos.",
+  formula: "Ld = (φ × 0,87 × fy) ÷ (4 × τbd). τbd ist die Bemessungs-Verbundspannung (60% höher für Rippenstäbe, +25% für Druck).",
+  kw: "verankerungslängen-rechner, verankerungslänge von bewehrung, verankerungslänge ld, bewehrung verankern",
+  howto: ["Stabdurchmesser wählen.", "Stahlgüte (Fe250–Fe550) und Betongüte (M20–M40) wählen.", "Zug oder Druck wählen.", "Ld in mm, als Vielfaches des Durchmessers und in Metern ablesen — plus das verwendete τbd.", "Vor der Detailplanung mit den Tabellen unten vergleichen."],
+  faqs: [["Was ist die Verankerungslänge von Bewehrung?", "Die Länge, über die ein Stab in Beton eingebettet sein muss, um seine Bemessungskraft sicher zu übertragen. Ohne ausreichende Einbettung rutscht der Stab oder wird herausgezogen, bevor er seine Bemessungsspannung erreicht."],
+          ["Wie groß ist die Verankerungslänge für Fe500 in M25?", "Etwa 47–49-mal der Stabdurchmesser bei Zug für Rippenstäbe — genau 48,55 × d mit diesem Rechner: 582,59 mm für einen 12-mm-Stab, 776,79 mm für einen 16-mm-Stab, jeweils in M25 bei Zug."],
+          ["Ist die Verankerungslänge bei Zug und Druck verschieden?", "Ja. Bei Druck steigt die Verbundspannung um 25%, sodass Ld 80% des Zugwerts beträgt: Ein 12-mm-Stab aus Fe500 in M25 benötigt 582,59 mm bei Zug, aber nur 466,07 mm bei Druck."],
+          ["Warum beträgt die Spannung 0,87 × fy und nicht fy?", "0,87 ist 1 ÷ 1,15, der Teilsicherheitsbeiwert für Stahl nach IS 456. Die Bemessungsspannung ist die Streckgrenze, abgemindert um diesen Faktor — mit der vollen Streckgrenze fy würde Ld um 15% überschätzt."],
+          ["Brauchen Rippenstäbe eine kürzere Verankerungslänge als Glattstäbe?", "Ja — Rippenstäbe erhalten eine 60% höhere Verbundspannung (zum Beispiel M25: 2,24 statt 1,4 N/mm²), sodass ihre Ld entsprechend kürzer ausfällt. Dieser Rechner verwendet bereits die Werte für Rippenstäbe."],
+          ["Kann eine Biegung oder ein Haken die gerade Verankerungslänge ersetzen?", "Teilweise. Eine 90°-Biegung zählt 8 × d und ein U-Haken 16 × d auf Ld an; der Rest wird als gerade Länge ausgeführt. Für Schnittlängen verwenden Sie den Hakenrechner."],
+          ["Was ist der Unterschied zwischen Verankerungslänge und Übergreifungslänge?", "Die Verankerungslänge verankert einen einzelnen Stab im Beton; die Übergreifungslänge überlappt zwei Stäbe, um die Kraft zwischen ihnen zu übertragen. Eine Übergreifung muss mindestens so lang sein wie die Verankerungslänge, doch für Übergreifungen gelten eigene Regeln — siehe Übergreifungsrechner."],
+          ["Verringert festerer Beton die Verankerungslänge?", "Ja. Höhere Güten erhöhen die Verbundspannung, sodass Ld sinkt: Fe500 bei Zug benötigt 56,64 × d in M20, aber nur 35,77 × d in M40."],
+          ["Ändert sich das ×d-Vielfache mit der Stabdicke?", "Nein. Bei festen Stahl- und Betongüten ist das Vielfache konstant — nur die Länge in mm wächst mit dem Durchmesser. Fe500 in M25 ergibt 48,55 × d, ob der Stab 12 mm oder 20 mm dick ist."],
+          ["Folgt dieser Rechner ACI oder IS 456?", "IS 456. Das ACI-Verfahren verwendet andere Faktoren (Einbaulage, Epoxidbeschichtung, Stabdicke, Betonfestigkeit) und liefert andere Längen — mischen Sie die beiden Verfahren nicht in einem Detail."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite">
+    <h2>Auf dieser Seite</h2>
+    <ul>
+      <li><a href="#how-to">Rechner benutzen</a></li>
+      <li><a href="#formula">Die Formel, erklärt</a></li>
+      <li><a href="#example-1">Rechenbeispiel 1: 12 mm, Fe500, M25 (Standardwerte)</a></li>
+      <li><a href="#example-2">Rechenbeispiel 2: 16 mm, Fe500, M25</a></li>
+      <li><a href="#example-3">Rechenbeispiel 3: Druck</a></li>
+      <li><a href="#tbd-table">Tabelle der Bemessungs-Verbundspannung (IS 456)</a></li>
+      <li><a href="#multiples-table">Ld als Vielfaches des Durchmessers</a></li>
+      <li><a href="#hooks-table">Anrechnungswert von Biegungen und Haken</a></li>
+      <li><a href="#dev-vs-lap">Verankerungslänge vs. Übergreifungslänge</a></li>
+      <li><a href="#not-included">Was der Rechner nicht berücksichtigt</a></li>
+      <li><a href="#mistakes">Häufige Fehler</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>`,
+  extra: `<p><strong>Warum 0,87 × fy?</strong> Die Bemessungsspannung im Stab ist die Streckgrenze geteilt durch den Teilsicherheitsbeiwert für Stahl (1,15), und 1 ÷ 1,15 = 0,87. <strong>Warum 4 × τbd?</strong> Der Verbund wirkt über den Stabumfang (π × φ) auf der Länge Ld, während die Stabkraft auf die Querschnittsfläche wirkt (π × φ² ÷ 4) — beides gleichgesetzt ergibt Ld = φ × σs ÷ (4 × τbd). <strong>Warum wächst Ld mit dem Durchmesser?</strong> Ein dickerer Stab trägt eine Kraft proportional zu φ², haftet aber nur proportional zu φ, sodass die Länge mit φ wachsen muss, um dieselbe Spannung zu entwickeln.</p>
+    <h3 id="example-1">Rechenbeispiel 1: 12 mm, Fe500, M25 (Standardwerte)</h3>
+    <p>Stab 12 mm, Fe500 (fy = 500 N/mm²), Beton M25, Zug. Dies sind die Werte, mit denen der Rechner startet, sodass Sie das Ergebnis sofort prüfen können:</p>
+    <ol class="howto"><li>Bemessungsspannung: 0,87 × 500 = 435 N/mm².</li><li>Verbundspannung für Rippenstäbe in M25: 1,4 × 1,6 = 2,24 N/mm² (siehe Tabelle unten).</li><li>Ld = (12 × 435) ÷ (4 × 2,24) = 5.220 ÷ 8,96 = 582,59 mm — das sind 48,55 × der Stabdurchmesser oder 0,583 m.</li></ol>
+    <p>Probieren Sie es selbst: Geben Sie dieselben Werte oben in den Rechner ein, und Sie erhalten dasselbe Ergebnis.</p>
+    <h3 id="example-2">Rechenbeispiel 2: 16 mm, Fe500, M25</h3>
+    <p>Dieselben Güten, dickerer Stab:</p>
+    <ol class="howto"><li>Ld = (16 × 435) ÷ (4 × 2,24) = 6.960 ÷ 8,96 = 776,79 mm.</li><li>Als Vielfaches: 776,79 ÷ 16 = 48,55 × d — dasselbe Vielfache wie in Beispiel 1, weil das Vielfache nicht von der Stabdicke abhängt (siehe unten).</li></ol>
+    <p>Die Länge wächst mit dem Stab, doch das ×d-Vielfache bleibt für eine gegebene Stahl- und Betongüte fest. Deshalb geben Ingenieure Ld oft als „etwa 49 Durchmesser" für Fe500 in M25 an.</p>
+    <h3 id="example-3">Rechenbeispiel 3: Druck</h3>
+    <p>Derselbe Stab und dieselben Güten wie in Beispiel 1, aber bei Druck:</p>
+    <ol class="howto"><li>Die Verbundspannung steigt um 25%: 2,24 × 1,25 = 2,80 N/mm².</li><li>Ld = (12 × 435) ÷ (4 × 2,80) = 5.220 ÷ 11,20 = 466,07 mm — das sind 38,84 × d.</li></ol>
+    <p>Bei Druck genügen 80% der Zuglänge (1 ÷ 1,25), weil der Verbund besser ist, wenn der Stab gedrückt statt gezogen wird. Der Rechner wendet dies automatisch an, wenn Sie die Beanspruchungsart wechseln.</p>
+    <h3 id="tbd-table">Tabelle der Bemessungs-Verbundspannung (IS 456)</h3>
+    <p>IS 456 gibt die Verbundspannung für Glattstäbe an; Rippenstäbe (der übliche Fall) erhalten eine Erhöhung um 60%. Dieser Rechner verwendet die genauen Werte für Rippenstäbe:</p>
+    <div class="formula-table"><table>
+      <tr><th>Betongüte</th><th>τbd, Glattstäbe (N/mm²)</th><th>τbd, Rippenstäbe (N/mm²) — Rechner</th></tr>
+      <tr><td>M20</td><td>1,2</td><td>1,92</td></tr>
+      <tr><td>M25</td><td>1,4</td><td>2,24</td></tr>
+      <tr><td>M30</td><td>1,5</td><td>2,40</td></tr>
+      <tr><td>M35</td><td>1,7</td><td>2,72</td></tr>
+      <tr><td>M40</td><td>1,9</td><td>3,04</td></tr>
+    </table></div>
+    <p>Manche Anleitungen runden die Werte für Rippenstäbe (1,6; 1,9; 2,0; 2,2; 2,4) oder rechnen mit den Werten für Glattstäbe — deshalb weichen ihre Ergebnisse leicht von denen dieses Rechners ab. Der Rechner verwendet die ungerundeten Produkte, sodass seine Ergebnisse exakt zur Formel passen.</p>
+    <h3 id="multiples-table">Ld als Vielfaches des Durchmessers (Zug, Rippenstäbe)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Stahl \ Beton</th><th>M20</th><th>M25</th><th>M30</th><th>M35</th><th>M40</th></tr>
+      <tr><td>Fe415</td><td>47,01 × d</td><td>40,30 × d</td><td>37,61 × d</td><td>33,18 × d</td><td>29,69 × d</td></tr>
+      <tr><td>Fe500</td><td>56,64 × d</td><td>48,55 × d</td><td>45,31 × d</td><td>39,98 × d</td><td>35,77 × d</td></tr>
+    </table></div>
+    <p>Zwei Muster zum Merken: Festerer Stahl braucht längere Verankerung (Fe500 > Fe415 bei jeder Güte), und festerer Beton braucht kürzere Verankerung (jede Zeile fällt von links nach rechts). Die Vielfachen bei Druck betragen 80% dieser Werte.</p>
+    <h3 id="hooks-table">Anrechnungswert von Biegungen und Haken</h3>
+    <p>Wenn die gerade Einbettung nicht passt, zählt eine Biegung oder ein Haken auf Ld an (IS 456, Abschnitt 26.2.2.1):</p>
+    <div class="formula-table"><table>
+      <tr><th>Biegung / Haken</th><th>Anrechnungswert</th></tr>
+      <tr><td>45°-Biegung</td><td>4 × d</td></tr>
+      <tr><td>90°-Biegung</td><td>8 × d</td></tr>
+      <tr><td>135°-Biegung</td><td>12 × d</td></tr>
+      <tr><td>U-Haken (180°)</td><td>16 × d</td></tr>
+    </table></div>
+    <p>Beispiel: Ein 12-mm-Stab, der 582,59 mm bei Zug benötigt, kann eine 90°-Biegung im Wert von 8 × 12 = 96 mm plus 486,59 mm gerade Länge nutzen. Für Schnittlängen von Biegungen und Haken verwenden Sie den <a href="/de/haken-biege-schnittlaengen-rechner">Hakenrechner</a>.</p>
+    <h3 id="dev-vs-lap">Verankerungslänge vs. Übergreifungslänge</h3>
+    <div class="formula-table"><table>
+      <tr><th></th><th>Verankerungslänge (Ld)</th><th>Übergreifungslänge</th></tr>
+      <tr><td>Zweck</td><td>Einen Stab im Beton verankern, sodass er seine volle Festigkeit entwickelt</td><td>Zwei Stäbe überlappen, sodass die Kraft von einem auf den anderen übertragen wird</td></tr>
+      <tr><td>Einsatzort</td><td>Balkenenden, Plattenenden, Stützenfüße, Auflager</td><td>Wo Stäbe weitergeführt werden (Stöße)</td></tr>
+      <tr><td>Hängt ab von</td><td>Stabdurchmesser, Stahlgüte, Betongüte, Zug/Druck</td><td>Stabdurchmesser und Betonbedingungen</td></tr>
+    </table></div>
+    <p>Beide hängen zusammen, sind aber nicht austauschbar: Eine Übergreifung muss mindestens so lang sein wie die Verankerungslänge, doch für Übergreifungen gelten eigene Regeln. Für Stoßlängen verwenden Sie den <a href="/de/uebergreifungslaengen-rechner">Übergreifungsrechner</a>.</p>
+    <h3 id="not-included">Was der Rechner nicht berücksichtigt</h3>
+    <ul>
+      <li><strong>Übergreifungsstöße.</strong> Ld verankert einen Stab; zwei Stäbe zu verbinden ist eine Übergreifung — siehe den <a href="/de/uebergreifungslaengen-rechner">Übergreifungsrechner</a>.</li>
+      <li><strong>Schnittlängen von Biegungen und Haken.</strong> Die Anrechnungswerte oben sind Zulagen, keine Schnittlängen — siehe den <a href="/de/haken-biege-schnittlaengen-rechner">Hakenrechner</a>.</li>
+      <li><strong>Erdbeben- und Duktilitätsbewehrung.</strong> Besondere Umschnürung, Haken und Verankerungsregeln für Erdbebenzonen gehen über dieses Werkzeug hinaus.</li>
+      <li><strong>Verankerungslänge nach ACI.</strong> Dieses Werkzeug folgt IS 456. Das ACI-Verfahren verwendet andere Faktoren (Einbaulage, Beschichtung, Stabdicke, Betonfestigkeit) und liefert andere Längen.</li>
+      <li><strong>Abgeminderte Spannung.</strong> Ld geht hier davon aus, dass der Stab seine volle Bemessungsspannung (0,87 × fy) entwickelt. Ein Stab, der geringer beansprucht wird, benötigt entsprechend weniger — das Werkzeug nimmt keine abgeminderte Spannung als Eingabe.</li>
+    </ul>
+    <h3 id="mistakes">5 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Verbundspannung für Glattstäbe bei Rippenstäben verwenden.</strong> Das unterschätzt τbd und überschätzt Ld um 60% — oder, wenn Sie ein Beispiel für Glattstäbe übernehmen, unterschätzt es die tatsächliche Anforderung. Dieser Rechner wendet die Erhöhung um 60% bereits an.</li><li><strong>Den Druckfaktor vergessen — oder falsch herum anwenden.</strong> Bei Druck steigt τbd um 25%, sodass Ld kürzer wird (× 0,8), nicht länger.</li><li><strong>fy statt 0,87 × fy verwenden.</strong> Die Bemessungsspannung beträgt 0,87 × fy, nicht fy. Mit fy wird Ld um 15% überschätzt.</li><li><strong>Ld mit der Übergreifungslänge verwechseln.</strong> Ld verankert einen Stab im Beton; eine Übergreifung verbindet zwei Stäbe. Ähnliche Größenordnung, anderes Detail — ersetzen Sie nicht das eine durch das andere.</li><li><strong>Annehmen, dass sich das ×d-Vielfache mit der Stabdicke ändert.</strong> Das tut es nicht: Bei festen Güten ist Ld ÷ d konstant. Ein 20-mm-Stab benötigt 48,55 × 20 = 971 mm bei Fe500/M25 unter Zug, kein anderes Vielfaches.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Formel und Verbundspannungen nach IS 456:2000 für Rippenstäbe; Anrechnungswerte nach Abschnitt 26.2.2.1. Immer anhand Ihrer statischen Pläne und der geltenden Norm prüfen.</p>`
+}
+},
+    { id:"lap", slug:"rebar-lap-length-calculator", cat:"Detailing",
     metaTitle:"Lap Length Calculator — Tension & Compression Splices",
     h1:"Rebar Lap / Splice Length Calculator",
     desc:"Correct lap (splice) length every time: tension lap = max(Ld, 30d), compression lap = max(Ld, 24d). Free calculator with bar schedules. Try it free.",
