@@ -173,9 +173,101 @@ const PAGES = [
     </ul>
     <h3 id="mistakes">4 common mistakes</h3>
     <ol class="howto"><li><strong>Forgetting the edge cover.</strong> The bars stop short of the slab edge by the cover amount — that changes both the count and the bar length.</li><li><strong>Mixing up mm and m.</strong> Spacing and cover are in millimetres, slab size in metres. Entering 200 as metres instead of millimetres breaks the result completely.</li><li><strong>Counting one direction only.</strong> A slab grid runs both ways. The second direction usually adds about as much steel again.</li><li><strong>Ordering exactly the calculated weight.</strong> Add laps, hooks and cutting waste on top — the calculator gives the neat grid weight, not the order quantity.</li></ol>
-    <p class="muted">Last reviewed: October 2026. Bar weights follow the d² ÷ 162.28 formula (ASTM A615 / IS 456 practice). Results are estimates for guidance only — always verify against your structural drawings and design code.</p>` },
-
-  { id:"footing", slug:"footing-rebar-calculator", cat:"Estimating",
+    <p class="muted">Last reviewed: October 2026. Bar weights follow the d² ÷ 162.28 formula (ASTM A615 / IS 456 practice). Results are estimates for guidance only — always verify against your structural drawings and design code.</p>` ,
+    de: {
+  metaTitle: "Bewehrungsrechner für Betonplatten — Stäbe & kg gratis",
+  desc: "Bewehrungsrechner für Betonplatten: Stabanzahl, Gesamtlänge, Kreuzungspunkte und Gewicht berechnen. Beispiel: 6 m × 4 m Platte = 209,6 kg. Kostenlos.",
+  formula: "Stäbe in einer Richtung = floor((Maß − 2 × Deckung) ÷ Abstand) + 1, für beide Richtungen wiederholt. Gesamtgewicht = Gesamtstablänge × kg/m.",
+  kw: "bewehrungsrechner für betonplatten, bewehrung für platte berechnen, bewehrung für betonplatte, plattenbewehrung berechnen",
+  howto: ["Plattenlänge und -breite eingeben.", "Bewehrungsabstand (Achsabstand) und Betondeckung festlegen.", "Stabdurchmesser wählen, um Stabanzahl und Gesamtgewicht zu erhalten.", "Ergebnisse ablesen: Stabanzahl in jeder Richtung, Gesamtlänge, Kreuzungspunkte und Gesamtgewicht.", "Zusätzlich für Übergreifungen und Verschnitt bestellen — Übergreifungen sind in diesem Rechner nicht enthalten (siehe <a href=\"/de/uebergreifungslaengen-rechner\">Übergreifungslängen-Rechner</a>)."],
+  faqs: [["Wie viel Bewehrung brauche ich für eine Betonplatte?", "Jedes Plattenmaß (abzüglich Deckung) durch den Abstand teilen, eins addieren — und das in beiden Richtungen. Jede Reihe mit der Stablänge und dem kg/m-Wert des Stabes multiplizieren."],
+  ["Welcher Abstand ist für Plattenbewehrung richtig?", "Wohnungsbauplatten verwenden üblicherweise 150–300 mm Achsabstand; maßgeblich ist immer Ihre statische Bemessung."],
+  ["Wie berechne ich das Plattenbewehrungsgewicht von Hand?", "Stäbe in jeder Richtung zählen mit floor((Maß − 2 × Deckung) ÷ Abstand) + 1, jede Anzahl mit ihrer Stablänge multiplizieren, beide Richtungen addieren und die Gesamtlänge mit dem kg/m-Wert des Stabes multiplizieren."],
+  ["Welche Stabgröße wird für eine Hausplatte verwendet?", "10-mm- und 12-mm-Stäbe sind für Wohnungsbauplatten am gebräuchlichsten, aber Größe und Abstand müssen aus Ihrer statischen Bemessung stammen."],
+  ["Muss ich zusätzlich für Übergreifungen und Verschnitt rechnen?", "Ja. Dieser Rechner liefert das reine Netzgewicht. Stäbe, die länger als die verfügbare Lieferlänge sind, brauchen Übergreifungen, und beim Schneiden fällt immer Verschnitt an — beides vor der Bestellung auf das berechnete Gewicht aufschlagen."],
+  ["Kann ich diesen Rechner für eine Einfahrtsplatte verwenden?", "Ja, die Netzmathematik ist dieselbe. Für Einfahrten startet der eigene <a href=\"/de/bewehrungsrechner-fuer-einfahrten\">Bewehrungsrechner für Einfahrten</a> mit typischen Einfahrtsmaßen."],
+  ["Wie viel Bewehrung steckt in einer Platte von 10 m × 10 m?", "Bei 200 mm Abstand, 50 mm Deckung und 12-mm-Stäben: 50 Stäbe × 9,9 m in jeder Richtung, insgesamt 990 m, 879,1 kg und 2.500 Kreuzungspunkte."],
+  ["Was kostet die Bewehrung für eine Platte?", "Gesamtgewicht mit dem örtlichen Preis pro kg multiplizieren. Beispiel: 209,6 kg × 1,20 €/kg = 251,52 €. Die Preise variieren je nach Region, Lieferant und Stabgröße — holen Sie also ein aktuelles Angebot ein."],
+  ["Enthält der Rechner Übergreifungen und Haken?", "Nein. Er liefert nur das reine Netzgewicht. Übergreifungen, Haken, Biegungen und Verschnitt müssen vor der Bestellung separat addiert werden."],
+  ["Was ist Betondeckung und warum ist sie wichtig?", "Betondeckung ist der Beton zwischen den Stabenden und dem Plattenrand. Sie schützt den Stahl vor Korrosion und Feuer und hält die Stäbe in Position. Der Rechner zieht die doppelte Deckung von jedem Plattenmaß ab, bevor er die Stäbe zählt."]],
+  toc: `<nav class="content-block" aria-label="Auf dieser Seite"><h2>Auf dieser Seite</h2><ul><li><a href="#how-to">So benutzen Sie den Rechner</a></li><li><a href="#formula">Die Formel, erklärt</a></li><li><a href="#example-1">Rechenbeispiel 1: Platte 6 m × 4 m</a></li><li><a href="#example-2">Rechenbeispiel 2: Platte 5 m × 4 m</a></li><li><a href="#bar-table">Stabgewichtstabelle</a></li><li><a href="#spacing-table">Abstandsrichtlinie: Stäbe pro Meter</a></li><li><a href="#cost">Kosten schätzen</a></li><li><a href="#imperial">Metrische und imperiale Einheiten</a></li><li><a href="#not-included">Was der Rechner nicht enthält</a></li><li><a href="#mistakes">Häufige Fehler</a></li><li><a href="#faq">FAQ</a></li></ul></nav>`,
+  extra: `<p><strong>Warum zweimal die Deckung abziehen?</strong> Die Stäbe enden auf beiden Seiten vor dem Plattenrand, deshalb wird die Deckung an jedem Ende abgezogen, bevor gezählt wird. <strong>Warum plus eins?</strong> Der erste Stab sitzt an der Deckungslinie, danach folgt bei jedem Abstandsschritt ein weiterer Stab — die Anzahl ist also die Zahl der Abstände plus eins, nicht nur die Zahl der Abstände. <strong>Warum beide Richtungen?</strong> Ein Plattennetz verläuft in zwei Richtungen, und die zweite Richtung bringt meist etwa noch einmal so viel Stahl.</p>
+    <p>Das Stabgewicht pro Meter folgt der Standardformel kg/m = d² ÷ 162,28, wobei d der Stabdurchmesser in mm ist. Für einen 12-mm-Stab: 12² ÷ 162,28 = 0,888 kg/m — derselbe Wert, den der Rechner verwendet.</p>
+    <svg viewBox="0 0 520 330" role="img" aria-label="Diagramm eines Bewehrungsnetzes für eine Platte mit Länge, Breite, Bewehrungsabstand und Betondeckung" style="width:100%;max-width:520px;height:auto;display:block;margin:12px 0;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+      <rect x="30" y="30" width="460" height="240" fill="none" stroke="#0f172a" stroke-width="2"/>
+      <rect x="58" y="58" width="404" height="184" fill="none" stroke="#f97316" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <g stroke="#0f172a" stroke-width="1.5">
+        <line x1="98" y1="58" x2="98" y2="242"/><line x1="158" y1="58" x2="158" y2="242"/><line x1="218" y1="58" x2="218" y2="242"/><line x1="278" y1="58" x2="278" y2="242"/><line x1="338" y1="58" x2="338" y2="242"/><line x1="398" y1="58" x2="398" y2="242"/>
+        <line x1="58" y1="98" x2="462" y2="98"/><line x1="58" y1="158" x2="462" y2="158"/><line x1="58" y1="218" x2="462" y2="218"/>
+      </g>
+      <g font-family="sans-serif" font-size="13" fill="#0f172a">
+        <text x="260" y="18" text-anchor="middle">L = Plattenlänge</text>
+        <text x="14" y="155" text-anchor="middle" transform="rotate(-90 14 155)">W = Plattenbreite</text>
+        <text x="128" y="52" text-anchor="middle" fill="#f97316">Abstand</text>
+        <text x="44" y="80" fill="#f97316">Deckung</text>
+      </g>
+      <g stroke="#f97316" stroke-width="1.5">
+        <line x1="98" y1="44" x2="158" y2="44"/><line x1="98" y1="40" x2="98" y2="48"/><line x1="158" y1="40" x2="158" y2="48"/>
+        <line x1="34" y1="30" x2="58" y2="58"/>
+      </g>
+    </svg>
+    <p>Die orange gestrichelte Linie markiert, wo die Stäbe tatsächlich verlaufen: innerhalb der Deckung, auf beiden Seiten. Die Stäbe kreuzen sich in beiden Richtungen, und jede Kreuzung ist ein Kreuzungspunkt.</p>
+    <h3 id="example-1">Rechenbeispiel 1: Platte 6 m × 4 m</h3>
+    <p>Platte 6 m × 4 m, 12-mm-Stäbe (0,888 kg/m), 200 mm Abstand, 40 mm Deckung:</p>
+    <ol class="howto"><li>Stäbe in Richtung der 6-m-Seite: floor((4.000 − 80) ÷ 200) + 1 = 20 Stäbe, je 5,92 m lang = 118,4 m.</li><li>Stäbe in Richtung der 4-m-Seite: floor((6.000 − 80) ÷ 200) + 1 = 30 Stäbe, je 3,92 m lang = 117,6 m.</li><li>Gesamtstablänge: 118,4 + 117,6 = 236,0 m.</li><li>Gesamtgewicht: 236,0 × 0,888 = 209,6 kg (etwa 210 kg).</li><li>Kreuzungspunkte: 20 × 30 = 600.</li></ol>
+    <p>Probieren Sie es selbst aus: Geben Sie dieselben Zahlen oben in den Rechner ein, und Sie erhalten dasselbe Ergebnis.</p>
+    <h3 id="example-2">Rechenbeispiel 2: Platte 5 m × 4 m</h3>
+    <p>Platte 5 m × 4 m, 10-mm-Stäbe (0,617 kg/m), 150 mm Abstand, 50 mm Deckung:</p>
+    <ol class="howto"><li>Stäbe in Richtung der 5-m-Seite: floor((4.000 − 100) ÷ 150) + 1 = 27 Stäbe, je 4,90 m lang = 132,3 m.</li><li>Stäbe in Richtung der 4-m-Seite: floor((5.000 − 100) ÷ 150) + 1 = 33 Stäbe, je 3,90 m lang = 128,7 m.</li><li>Gesamtstablänge: 132,3 + 128,7 = 261,0 m.</li><li>Gesamtgewicht: 261,0 × 0,617 = 161,0 kg.</li><li>Kreuzungspunkte: 27 × 33 = 891.</li></ol>
+    <p>Beachten Sie, wie der engere Abstand von 150 mm und die kleineren 10-mm-Stäbe trotzdem eine ähnliche Gesamtlänge ergeben, aber ein geringeres Gewicht — die Stabgröße zählt ebenso wie der Abstand.</p>
+    <h3 id="bar-table">Stabgewichtstabelle (kg/m)</h3>
+    <div class="formula-table"><table>
+      <tr><th>Stabdurchmesser</th><th>kg/m</th><th>Stäbe pro Tonne</th></tr>
+      <tr><td>8 mm</td><td>0,395</td><td>2.532</td></tr>
+      <tr><td>10 mm</td><td>0,617</td><td>1.621</td></tr>
+      <tr><td>12 mm</td><td>0,888</td><td>1.126</td></tr>
+      <tr><td>16 mm</td><td>1,578</td><td>634</td></tr>
+      <tr><td>20 mm</td><td>2,466</td><td>406</td></tr>
+    </table></div>
+    <p>Stäbe pro Tonne = 1.000 ÷ kg/m. Die Zahl sagt, wie viele 1-Meter-Stäbe eine Tonne ergeben — praktisch, wenn ein Lieferant pro Tonne abrechnet. <a href="/de/#charts">Zur vollständigen Bewehrungsgewichtstabelle (kg/m &amp; lb/ft) →</a></p>
+    <h3 id="spacing-table">Abstandsrichtlinie: Stäbe pro Meter Plattenbreite</h3>
+    <div class="formula-table"><table>
+      <tr><th>Abstand (Achsabstand)</th><th>Stäbe pro Meter</th></tr>
+      <tr><td>100 mm</td><td>10,00</td></tr>
+      <tr><td>150 mm</td><td>6,67</td></tr>
+      <tr><td>200 mm</td><td>5,00</td></tr>
+      <tr><td>250 mm</td><td>4,00</td></tr>
+      <tr><td>300 mm</td><td>3,33</td></tr>
+    </table></div>
+    <p>Stäbe pro Meter = 1.000 ÷ Abstand in mm. Halbiert man den Abstand, verdoppelt sich der Stahl ungefähr. Wohnungsbauplatten verwenden üblicherweise 150–300 mm Achsabstand — aber der Abstand ist eine Entscheidung aus Ihren statischen Plänen, niemals eine Schätzung aus einer Tabelle. Wenn Ihre Zeichnung 200 mm vorschreibt, verwenden Sie 200 mm, auch wenn 300 mm günstiger wäre.</p>
+    <h3 id="cost">Kosten schätzen</h3>
+    <p>Kosten = Gesamtgewicht × Preis pro kg (oder Gesamttonnen × Preis pro Tonne). Mit Rechenbeispiel 1: 209,6 kg × 1,20 €/kg = 251,52 €. Dasselbe Ergebnis pro Tonne: 0,2096 t × 1.200 €/t = 251,52 €. Die Preise variieren je nach Region, Lieferant und Stabgröße — holen Sie also vor der Budgetierung ein aktuelles Angebot ein. Und denken Sie daran: Die Bestellmenge liegt höher als das reine Netzgewicht, sobald Übergreifungen und Verschnitt hinzukommen. Für eine vollständige Kostenaufstellung nutzen Sie den <a href="/de/bewehrungskosten-rechner">Bewehrungskosten-Rechner</a>.</p>
+    <h3 id="imperial">Metrische und imperiale Einheiten</h3>
+    <p>Dieser Rechner arbeitet mit Metern, Millimetern und Kilogramm. Wenn Ihre Zeichnungen Fuß und Zoll verwenden:</p>
+    <div class="formula-table"><table>
+      <tr><th>Metrisch</th><th>Imperial (ca.)</th></tr>
+      <tr><td>150 mm Abstand</td><td>6 in</td></tr>
+      <tr><td>200 mm Abstand</td><td>8 in</td></tr>
+      <tr><td>250 mm Abstand</td><td>10 in</td></tr>
+      <tr><td>300 mm Abstand</td><td>12 in</td></tr>
+      <tr><td>209,6 kg</td><td>462 lb (× 2,205)</td></tr>
+      <tr><td>6 m × 4 m Platte</td><td>19,7 ft × 13,1 ft (× 3,281)</td></tr>
+    </table></div>
+    <p>Rechnen Sie zuerst um und geben Sie dann metrische Werte in den Rechner ein — mischen Sie keine Einheiten in einer Berechnung.</p>
+    <h3 id="not-included">Was der Rechner nicht enthält</h3>
+    <ul>
+      <li><strong>Übergreifungen (Stöße).</strong> Wenn ein Stabstrang länger als die Lieferlänge ist, müssen sich Stäbe überlappen. Die Überlappung finden Sie mit dem <a href="/de/uebergreifungslaengen-rechner">Übergreifungslängen-Rechner</a>; addieren Sie sie zur Länge.</li>
+      <li><strong>Haken und Biegungen.</strong> Randhaken und aufgebogene Stäbe verlängern den Stab. Nutzen Sie dafür den <a href="/de/haken-biege-schnittlaengen-rechner">Haken- und Schnittlängen-Rechner</a>.</li>
+      <li><strong>Verschnitt.</strong> Beim Zuschneiden der Stäbe bleiben immer Abschnitte übrig. Schlagen Sie vor der Bestellung einen Verschnittzuschlag auf das reine Gewicht auf.</li>
+      <li><strong>Geschweißte Matten.</strong> Wenn Sie Matten statt loser Stäbe kaufen, ist die Mattenanordnung anders — dieser Rechner gilt für Netze aus losen Stäben.</li>
+      <li><strong>Abstandhalter.</strong> Die Stäbe brauchen Unterstützung, um in der Platte auf der richtigen Höhe zu bleiben. Schätzen Sie diese mit dem <a href="/de/abstandhalter-rechner">Abstandhalter-Rechner</a>.</li>
+    </ul>
+    <h3 id="mistakes">4 häufige Fehler</h3>
+    <ol class="howto"><li><strong>Betondeckung vergessen.</strong> Die Stäbe enden um den Deckungsbetrag vor dem Plattenrand — das verändert sowohl die Anzahl als auch die Stablänge.</li><li><strong>mm und m verwechseln.</strong> Abstand und Deckung sind in Millimetern, Plattenmaße in Metern. Wer 200 als Meter statt als Millimeter eingibt, zerstört das Ergebnis vollständig.</li><li><strong>Nur eine Richtung zählen.</strong> Ein Plattennetz verläuft in beiden Richtungen. Die zweite Richtung bringt meist etwa noch einmal so viel Stahl.</li><li><strong>Genau das berechnete Gewicht bestellen.</strong> Übergreifungen, Haken und Verschnitt kommen noch dazu — der Rechner liefert das reine Netzgewicht, nicht die Bestellmenge.</li></ol>
+    <p class="muted">Zuletzt geprüft: Oktober 2026. Die Stabgewichte folgen der Formel d² ÷ 162,28 (Praxis nach ASTM A615 / IS 456). Die Ergebnisse sind Richtwerte zur Orientierung — prüfen Sie diese immer anhand Ihrer statischen Pläne und der Bemessungsnorm.</p>`
+}
+},
+    { id:"footing", slug:"footing-rebar-calculator", cat:"Estimating",
     metaTitle:"Footing Rebar Calculator — Bars, Length & Weight, Free",
     h1:"Footing Rebar Calculator",
     desc:"Size the bottom reinforcement for any isolated or strip footing: bars both ways, total length and weight. Free, with worked examples included.",
@@ -2453,11 +2545,13 @@ function altLinks(type, item){
 }
 /* localized getters (en uses the rich PAGES content) */
 const pH1   = (p,lang) => lang==="en" ? p.h1 : CALC[p.id].title[lang];
-const pDesc = (p,lang) => lang==="en" ? p.desc : CALC[p.id].desc[lang];
-const pTitle= (p,lang) => lang==="en" ? p.metaTitle : `${CALC[p.id].title[lang]} — ${TPL[lang].metaSuffix}`;
-const pIntro= (p,lang) => lang==="en" ? p.intro : CALC[p.id].desc[lang];
-const pHowto= (p,lang) => lang==="en" ? p.howto : TPL[lang].howto;
-const pFaqs = (p,lang) => lang==="en" ? p.faqs : TPL[lang].faq(CALC[p.id].title[lang], CALC[p.id].desc[lang]);
+const pDesc = (p,lang) => lang==="en" ? p.desc : (p[lang] && p[lang].desc) ? p[lang].desc : CALC[p.id].desc[lang];
+const pTitle= (p,lang) => lang==="en" ? p.metaTitle : (p[lang] && p[lang].metaTitle) ? p[lang].metaTitle : `${CALC[p.id].title[lang]} — ${TPL[lang].metaSuffix}`;
+const pIntro= (p,lang) => lang==="en" ? p.intro : (p[lang] && p[lang].desc) ? p[lang].desc : CALC[p.id].desc[lang];
+const pHowto= (p,lang) => lang==="en" ? p.howto : (p[lang] && p[lang].howto) ? p[lang].howto : TPL[lang].howto;
+const pFaqs = (p,lang) => lang==="en" ? p.faqs : (p[lang] && p[lang].faqs) ? p[lang].faqs : TPL[lang].faq(CALC[p.id].title[lang], CALC[p.id].desc[lang]);
+const pFormula = (p,lang) => lang==="en" ? p.formula : (p[lang] && p[lang].formula) ? p[lang].formula : p.formula;
+const pKw = (p,lang) => lang==="en" ? p.kw : (p[lang] && p[lang].kw) ? p[lang].kw : p.kw;
 
 /* ---------- shared HTML pieces ---------- */
 function langSwitch(curLang, type, item){
@@ -2663,6 +2757,7 @@ function renderPage(p, lang){
   const u = UI[lang];
   const h1 = pH1(p,lang), title = pTitle(p,lang), desc = pDesc(p,lang);
   const faqs = pFaqs(p,lang);
+  const lc = lang!=="en" ? p[lang] : null;
   const faqHtml = faqs.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><p>${a}</p></details>`).join("\n    ");
   const howHtml = pHowto(p,lang).map(s=>`<li>${s}</li>`).join("");
   const cleanH1 = h1.replace(/ \(.*/,"");
@@ -2687,7 +2782,7 @@ ${TRACKING_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${title}</title>
 <meta name="description" content="${desc}" />
-<meta name="keywords" content="${p.kw}" />
+<meta name="keywords" content="${pKw(p,lang)}" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="${urlFor(lang,curPageSlug)}" />
 ${altLinks('page', p)}
@@ -2714,16 +2809,16 @@ ${crumbTrail}
 ${renderToolShell(lang, p.id)}
 ${lang === "en" && p.hideCards ? "" : relatedGrid(p.id, lang)}
 ${lang === "en" && p.hideCards ? "" : workflowGrid(p.id, lang)}
-${lang==="en" && p.toc ? p.toc : ""}
+${lang==="en" && p.toc ? p.toc : lc && lc.toc ? lc.toc : ""}
 
   <section class="content-block">
-    <h2${lang === "en" ? ' id="how-to"' : ""}>${u.howtoH}: ${cleanH1}</h2>
+    <h2${(lang === "en" || lc) ? ' id="how-to"' : ""}>${u.howtoH}: ${cleanH1}</h2>
     <ol class="howto">${howHtml}</ol>
-    <h3${lang === "en" ? ' id="formula"' : ""}>${u.formulaH}</h3>
-    <p class="formula-callout">${p.formula}</p>
+    <h3${(lang === "en" || lc) ? ' id="formula"' : ""}>${u.formulaH}</h3>
+    <p class="formula-callout">${pFormula(p,lang)}</p>
     <p><a href="${homeHref(lang)}#charts">${u.seeChart}</a></p>
   </section>
-${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>` : ""}
+${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>` : lc && lc.extra ? `<section class="content-block">${lc.extra}</section>` : ""}
 
   <section id="faq" class="content-block">
     <h2>${cleanH1} — ${u.faq}</h2>
@@ -2732,7 +2827,7 @@ ${lang==="en" && p.extra ? `<section class="content-block">${p.extra}</section>`
 </main>
 ${footer(lang)}
 ${scripts(lang, p.id)}
-${lang === "en" ? `<script>(function(){
+${(lang === "en" || lc) ? `<script>(function(){
   var head = document.querySelector('.site-header');
   if (head) {
     var onScroll = function(){ head.classList.toggle('scrolled', window.scrollY > 4); };
