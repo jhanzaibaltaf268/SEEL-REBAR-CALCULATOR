@@ -287,7 +287,7 @@
          footer:"free steel rebar weight, estimating & detailing tools.",
          disclaimer:"Results are estimates for guidance only. Verify against your structural drawings and design code for construction." },
     es:{ allCalcs:"Calculadoras", weightChart:"Tabla de pesos", faq:"Preguntas",
-         heroSub:"La suite completa de calculadoras de acero — peso, losa, separación, anclaje y empalme, longitud de corte, columnas y vigas, tonelaje y coste.",
+         heroSub:"Calcule cuántos kilos de varilla lleva su losa, columna o viga, con la separación, el recubrimiento y el precio por kilo. Tablas de kg/m en milímetros y pulgadas.",
          badges:["21 calculadoras","kg/m y lb/ft","Según IS 456 / ACI","Resultados al instante"],
          more:"Más calculadoras de acero", all:"Todas las calculadoras",
          howtoH:"Cómo usar", formulaH:"Fórmula", faqH:"Preguntas frecuentes",

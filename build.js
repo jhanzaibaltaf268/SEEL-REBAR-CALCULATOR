@@ -3981,7 +3981,7 @@ const HUB_H1 = { en:"Steel Rebar Calculator", es:"Calculadora de Acero Corrugado
   sl:"Kalkulator Jeklene Armature", et:"Terassarruse Kalkulaator",
   lv:"Tērauda Stiegrojuma Kalkulators", lt:"Plieninės Armatūros Skaičiuotuvas" };
 const HUB_TAG = { en:"Free Steel Rebar Weight, Slab, Spacing & Cost Tools",
-  es:"Peso, losa, separación y coste de acero — gratis",
+  es:"Peso, losa, separación y coste de acero",
   fr:"Poids, dalle, espacement et coût d'armature — gratuit",
   de:"Bewehrungsgewicht, Platte, Abstand & Kosten — kostenlos",
   it:"Peso, soletta, interasse e costo armature — gratis",
@@ -4933,6 +4933,27 @@ function renderHub(lang){
     : TPL[lang].faq(h1, desc);
   const hubFaqHtml = hubFaqs.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><p>${a}</p></details>`).join("\n    ");
 
+  const esHowSection = (lang === "es") ? `
+  <section class="content-block">
+    <h2>Cómo funciona: un ejemplo paso a paso</h2>
+    <p>Elija la calculadora que necesita. Cada una pide solo las medidas de su obra y le da kilos, metros y número de barras. Este ejemplo sigue el caso más común: una losa.</p>
+    <div class="example"><strong>Ejemplo: losa de 6 m × 4 m, varilla de 12 mm, separación de 200 mm, recubrimiento de 25 mm</strong>
+      <ol>
+        <li>Barras paralelas al lado de 6 m: distancia útil 4.000 − 50 = 3.950 mm; 3.950 ÷ 200 = 19,75; parte entera 19 + 1 = <strong>20 barras</strong> de 5,95 m = 119,00 m.</li>
+        <li>Barras paralelas al lado de 4 m: distancia útil 6.000 − 50 = 5.950 mm; 5.950 ÷ 200 = 29,75; parte entera 29 + 1 = <strong>30 barras</strong> de 3,95 m = 118,50 m.</li>
+        <li>Longitud total: 119,00 + 118,50 = <strong>237,50 m</strong>. Peso: 237,50 × 0,887 = <strong>210,7 kg</strong>.</li>
+      </ol>
+    </div>
+    <h3>Qué hacer en cada paso</h3>
+    <ol>
+      <li>Mida la losa en metros y tome la separación y el recubrimiento del plano.</li>
+      <li>Lea el número de barras en cada dirección.</li>
+      <li>Multiplique la longitud total por el kg/m de su diámetro para obtener el peso.</li>
+      <li>Sume los traslapes, ganchos y desperdicio antes de pedir material.</li>
+    </ol>
+    <p>Use la <a href="/es/calculadora-de-acero-para-losa">calculadora de acero para losa</a> para hacer este cálculo con su propia losa, o la <a href="/es/calculadora-de-varilla">calculadora de varilla</a> si ya conoce la longitud y la cantidad de barras.</p>
+    <p class="hint">La calculadora da la malla exacta. Para comprar, sume traslapes y desperdicio; la <a href="/es/calculadora-de-cantidad-de-acero">calculadora de cantidad de acero</a> le ayuda con eso.</p>
+  </section>` : "";
   const enEducationSections = (lang === "en") ? `
   <section class="content-block">
     <h2>What is Rebar</h2>
@@ -5010,6 +5031,7 @@ ${header(lang, 'index', null, null)}
 <main class="wrap" id="calculator">
 ${renderToolShell(lang, null)}
 ${enEducationSections}
+${esHowSection}
   <section class="related">
     <h2>${u.all}</h2>
     ${directory}
