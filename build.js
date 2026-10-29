@@ -3956,7 +3956,12 @@ const PAGES = [
    p.es, which pHowto and pFaqs read the same way as the German overrides. */
 const CONTENT_ES = require("./content-es.js");
 const CONTENT_LINKS_ES = require("./content-links-es.js");
-PAGES.forEach(p => { if (CONTENT_ES[p.id]) p.es = CONTENT_ES[p.id].es; });
+const CONTENT_REST_ES = Object.assign({}, require("./content-es-rest-1.js"), require("./content-es-rest-2.js"), require("./content-es-rest-3.js"));
+PAGES.forEach(p => {
+  const base = CONTENT_ES[p.id] ? CONTENT_ES[p.id].es : undefined;
+  const rest = CONTENT_REST_ES[p.id] ? CONTENT_REST_ES[p.id].es : undefined;
+  if (base || rest) p.es = Object.assign({}, base, rest);
+});
 
 /* ---------- i18n ---------- */
 const I = require("./i18n.js");

@@ -1,0 +1,58 @@
+/* Spanish content, group 2: mat, area, quantity, concrete, tonnage.
+   Every number below comes from the calculator's own output for the example inputs. */
+module.exports = {
+  mat: { es: {
+    formula: "Barras a lo largo = parte entera((ancho − 2 × recubrimiento) ÷ separación) + 1, cada una de longitud (largo − 2 × recubrimiento). Barras a lo ancho: igual, cambiando largo por ancho. Peso = suma de longitudes × kg/m.",
+    howto: ["Introduzca el largo y el ancho de la parrilla en metros.", "Indique la separación en ambos sentidos y el recubrimiento en milímetros.", "Elija el diámetro de la barra.", "Lea las barras de cada sentido, los cruces y el peso total."],
+    faqs: [["¿Qué es una parrilla o malla de acero?", "Es un conjunto de barras que se cruzan en ángulo recto, formando una cuadrícula. Sirve para repartir los esfuerzos en una losa, zapata o piso."],
+           ["¿Qué son los cruces?", "Son los puntos donde se tocan dos barras. Cada cruce se puede atar con alambre. En el ejemplo hay 450 cruces."],
+           ["¿La parrilla se compra por metro o por pieza?", "Por pieza de la longitud comercial, normalmente de 6, 9 o 12 m. Por eso conviene revisar cuántas piezas salen de cada barra."],
+           ["¿Puedo usar distinta separación en cada sentido?", "Sí. Use los valores del plano. La calculadora calcula cada sentido por separado."],
+           ["¿Una parrilla es lo mismo que una malla electrosoldada?", "No. La malla electrosoldada viene de fábrica soldada en cada cruce. La parrilla de varilla se arma y se ata en obra. Use el plano para decidir cuál."]],
+    extra: "<h3>Ejemplo fácil: parrilla de 6 × 3 m</h3><p>Separación de 200 mm en los dos sentidos, recubrimiento de 25 mm, barras de 10 mm.</p><div class=\"example\"><ol><li><strong>Barras a lo largo:</strong> 15 barras de 5,95 m = 89,25 m.</li><li><strong>Barras a lo ancho:</strong> 30 barras de 2,95 m = 88,50 m.</li><li><strong>Longitud total:</strong> <strong>177,75 m</strong>. Peso: <strong>109,49 kg</strong>.</li><li><strong>Cruces para atar:</strong> 15 × 30 = <strong>450</strong>.</li></ol></div><h3>Paso a paso para contar</h3><ol><li>Reste 2 veces el recubrimiento al largo y al ancho.</li><li>Divida el ancho útil entre la separación y sume 1: ese es el número de barras a lo largo.</li><li>Haga lo mismo con el largo útil: ese es el número de barras a lo ancho.</li><li>Multiplique cada grupo por su longitud y sume.</li></ol><h3>Errores que pasan seguido</h3><ul><li>Olvidar una de las dos direcciones.</li><li>Contar los cruces como barras.</li><li>Comprar por kilos sin revisar la longitud de la pieza comercial.</li></ul>"
+  } },
+
+  area: { es: {
+    formula: "Área de una barra = π × d² ÷ 4. Área total Ast = nº de barras × área de una barra. Porcentaje de acero = Ast ÷ (ancho × peralte) × 100.",
+    howto: ["Elija el diámetro de la barra.", "Introduzca cuántas barras hay en la sección.", "Si quiere el porcentaje, introduzca el ancho y el peralte de la sección en milímetros.", "Lea el área de una barra, el área total Ast y el porcentaje."],
+    faqs: [["¿Qué es el área de acero Ast?", "Es el área de la sección de todas las barras juntas, medida en mm² o cm². Dice cuánto acero hay en un corte de la pieza."],
+           ["¿Cómo calculo el área de una barra?", "Con la fórmula del círculo: π × diámetro² ÷ 4. Por ejemplo, una barra de 12 mm tiene 113,1 mm²."],
+           ["¿Qué es el porcentaje de acero?", "Es la parte de la sección que ocupa el acero. Se calcula dividiendo el Ast entre el área de la sección de concreto. Las normas fijan un mínimo y un máximo."],
+           ["¿Por qué la calculadora pide el ancho y el peralte?", "Solo para el porcentaje. Si no los introduce, la calculadora da el Ast igual."],
+           ["¿El Ast sirve para diseñar la viga?", "Sirve para revisar. El diseño lo hace el ingeniero con las cargas y la norma. Compare el Ast calculado con el que pide el plano."]],
+    extra: "<h3>Ejemplo fácil: cuatro barras de 12 mm</h3><div class=\"example\"><ol><li><strong>Área de una barra:</strong> π × 12² ÷ 4 = <strong>113,1 mm²</strong>.</li><li><strong>Área total:</strong> 4 × 113,1 = <strong>452,4 mm²</strong>, es decir <strong>4,52 cm²</strong>.</li><li><strong>Porcentaje en una sección de 300 × 450 mm:</strong> 452,4 ÷ (300 × 450) × 100 = <strong>0,34 %</strong>.</li></ol></div><h3>Tabla de áreas por diámetro</h3><table><caption>Área de una barra según el diámetro</caption><tr><th scope=\"col\">Diámetro</th><th scope=\"col\">Área (mm²)</th></tr><tr><td>8 mm</td><td>50,3</td></tr><tr><td>10 mm</td><td>78,5</td></tr><tr><td>12 mm</td><td>113,1</td></tr><tr><td>16 mm</td><td>201,1</td></tr><tr><td>20 mm</td><td>314,2</td></tr><tr><td>25 mm</td><td>490,9</td></tr></table><h3>Errores que pasan seguido</h3><ul><li>Usar el radio en lugar del diámetro: el área sale cuatro veces menor.</li><li>Mezclar cm² y mm²: 1 cm² = 100 mm².</li><li>Sumar barras de distintos diámetros con la misma área.</li></ul>"
+  } },
+
+  quantity: { es: {
+    formula: "Acero por m² = 2 × kg/m ÷ separación (en metros), porque hay dos capas de barras. Peso total = área × acero por m².",
+    howto: ["Introduzca el área de la losa en m².", "Indique la separación en ambos sentidos en milímetros.", "Elija el diámetro de la barra.", "Lea el acero por m², la longitud de barra y el peso total."],
+    faqs: [["¿Cuántos kilos de acero por metro cuadrado lleva una losa?", "Con dos capas de barras, el resultado es 2 × kg/m ÷ separación. Con varilla de 10 mm a 200 mm: 2 × 0,616 ÷ 0,20 = 6,16 kg/m²."],
+           ["¿Por qué la cifra por m² es mayor con barras más juntas?", "Porque hay más barras por metro. Con una separación de 100 mm, el acero se duplica frente a 200 mm."],
+           ["¿Sirve para una losa con nervios o bloques?", "No directamente. En una losa con nervios el acero va en cada nervio. Esta cifra es para una losa maciza."],
+           ["¿Por qué el resultado de una losa real es un poco menor?", "Porque en los bordes la malla pierde barras. El cálculo exacto de la losa, con sus dimensiones, sale algo menos que la cifra por m²."],
+           ["¿Cómo paso kg/m² a kg por pie cuadrado?", "Multiplique por 0,0929. Por ejemplo, 6,16 kg/m² son 0,57 kg/ft², el mismo valor que muestra la calculadora."]],
+    extra: "<h3>Ejemplo fácil: 50 m² con varilla de 10 mm a 200 mm</h3><div class=\"example\"><ol><li><strong>Acero por m²:</strong> 2 × 0,616 ÷ 0,20 = <strong>6,16 kg/m²</strong>.</li><li><strong>Peso total:</strong> 50 × 6,16 = <strong>308 kg</strong>, es decir 0,31 t.</li><li><strong>Longitud de barra:</strong> 2 × 50 ÷ 0,20 = <strong>500 m</strong>.</li></ol></div><h3>Tabla de kg/m² según la separación</h3><table><caption>Acero por m² con dos capas de barras (kg/m²)</caption><tr><th scope=\"col\">Varilla</th><th scope=\"col\">Cada 15 cm</th><th scope=\"col\">Cada 20 cm</th><th scope=\"col\">Cada 25 cm</th><th scope=\"col\">Cada 30 cm</th></tr><tr><td>10 mm</td><td>8,21</td><td>6,16</td><td>4,93</td><td>4,11</td></tr><tr><td>12 mm</td><td>11,83</td><td>8,87</td><td>7,10</td><td>5,91</td></tr></table><p class=\"hint\">Para el detalle completo de 8 a 16 mm, vea la calculadora de acero para losa.</p><h3>Errores que pasan seguido</h3><ul><li>Olvidar multiplicar por 2 las capas.</li><li>Usar la separación en centímetros sin pasarla a metros (20 cm = 0,20 m).</li></ul>"
+  } },
+
+  concrete: { es: {
+    formula: "Volumen de concreto (m³) = largo × ancho × espesor (en m). Acero estimado (kg) = volumen × cuantía (kg/m³).",
+    howto: ["Introduzca el largo y el ancho de la losa en metros.", "Introduzca el espesor en milímetros.", "Indique la cuantía de acero en kg por m³ de concreto.", "Lea el volumen de concreto y el acero estimado."],
+    faqs: [["¿Qué es la cuantía de acero?", "Es el kilo de acero por metro cúbico de concreto. Es un valor de anteproyecto para presupuestar; el plano define el valor real."],
+           ["¿Qué cuantía puedo usar si no tengo plano?", "El ejemplo usa 80 kg/m³. Sirve para una estimación inicial. Cambie el valor cuando tenga el plano."],
+           ["¿El volumen incluye la pérdida de concreto?", "No. Muchas obras suman entre 5 % y 10 % más de concreto por desperdicio y nivelación."],
+           ["¿Cómo paso de m³ a yardas cúbicas?", "Multiplique por 1,308. Por ejemplo, 3 m³ son 3,92 yd³."],
+           ["¿Esta calculadora sirve para una columna o una viga?", "No. Es para una losa o un volumen rectangular. Las columnas y vigas tienen calculadoras propias en esta misma familia."]],
+    extra: "<h3>Ejemplo fácil: losa de 5 × 4 m y 15 cm</h3><div class=\"example\"><ol><li><strong>Espesor en metros:</strong> 150 mm = 0,15 m.</li><li><strong>Volumen:</strong> 5 × 4 × 0,15 = <strong>3 m³</strong>. Son 3,92 yd³ o 105,9 ft³.</li><li><strong>Acero estimado:</strong> 3 × 80 = <strong>240 kg</strong>, es decir 0,24 t.</li></ol></div><h3>Cómo ir de la losa al pedido</h3><ol><li>Calcule el volumen de concreto.</li><li>Calcule el acero con la cuantía estimada, o con la malla del plano.</li><li>Añada el 5 % a 10 % de desperdicio al concreto y al acero.</li></ol><h3>Errores que pasan seguido</h3><ul><li>Dejar el espesor en milímetros al multiplicar.</li><li>Confundir el espesor de la losa con su altura total.</li><li>Tomar la cuantía de otra obra sin comprobar el tipo de elemento.</li></ul>"
+  } },
+
+  tonnage: { es: {
+    formula: "Peso por barra (kg) = kg/m × longitud (m). Peso total (kg) = peso por barra × cantidad. Toneladas métricas = kg ÷ 1.000. Toneladas cortas (EE. UU.) = kg ÷ 907,185.",
+    howto: ["Elija el diámetro de la barra.", "Introduzca la longitud de cada barra en metros.", "Introduzca la cantidad de piezas.", "Lea el peso en kilos, las toneladas métricas y las toneladas cortas."],
+    faqs: [["¿Qué es el tonelaje?", "Es el peso total de un pedido de acero, expresado en toneladas. Es lo que se cotiza y se transporta."],
+           ["¿Cuál es la diferencia entre tonelada métrica y tonelada corta?", "La métrica son 1.000 kg. La corta de EE. UU. son 907,185 kg. Por eso la misma carga cambia de cifra según la unidad."],
+           ["¿Cuántas barras de 12 m hacen una tonelada?", "Con 16 mm son unas 53 barras. Cada una pesa 18,94 kg, así que 53 barras son 1.003,6 kg."],
+           ["¿El tonelaje incluye el desperdicio?", "No. El tonelaje es de las barras que introduce. Para el pedido, sume el desperdicio o use la calculadora de coste de acero."],
+           ["¿Cómo sé cuántas barras necesito para un tonelaje?", "Divida las toneladas entre el peso de una barra. Por ejemplo, 9,47 t entre 18,94 kg da unas 500 barras."]],
+    extra: "<h3>Ejemplo fácil: 500 barras de 16 mm de 12 m</h3><div class=\"example\"><ol><li><strong>Peso de una barra:</strong> 1,578 kg/m × 12 m = <strong>18,94 kg</strong>.</li><li><strong>Peso total:</strong> 18,94 × 500 = <strong>9.468 kg</strong>.</li><li><strong>Toneladas métricas:</strong> 9.468 ÷ 1.000 = <strong>9,47 t</strong>.</li><li><strong>Toneladas cortas:</strong> 9.468 ÷ 907,185 = <strong>10,44 t cortas</strong>.</li></ol></div><h3>Tabla: la misma carga en tres unidades</h3><table><caption>Un pedido de 9.468 kg</caption><tr><th scope=\"col\">Unidad</th><th scope=\"col\">Cifra</th></tr><tr><td>Kilos</td><td>9.468 kg</td></tr><tr><td>Toneladas métricas</td><td>9,47 t</td></tr><tr><td>Toneladas cortas (EE. UU.)</td><td>10,44 t</td></tr></table><p class=\"hint\">Antes de cotizar, confirme la unidad con el proveedor. Un \"10 toneladas\" en EE. UU. no es igual a 10 toneladas métricas.</p><h3>Errores que pasan seguido</h3><ul><li>Mezclar toneladas métricas con cortas.</li><li>Olvidar que la longitud de la barra es la comercial, no la de la malla.</li></ul>"
+  } }
+};
