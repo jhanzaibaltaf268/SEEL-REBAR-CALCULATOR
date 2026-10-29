@@ -3956,6 +3956,7 @@ const PAGES = [
    p.es, which pHowto and pFaqs read the same way as the German overrides. */
 const CONTENT_ES = require("./content-es.js");
 const CONTENT_LINKS_ES = require("./content-links-es.js");
+const CONTENT_LINKS_DE = require("./content-links-de.js");
 const CONTENT_REST_ES = Object.assign({}, require("./content-es-rest-1.js"), require("./content-es-rest-2.js"), require("./content-es-rest-3.js"));
 PAGES.forEach(p => {
   const base = CONTENT_ES[p.id] ? CONTENT_ES[p.id].es : undefined;
@@ -4274,9 +4275,50 @@ const SILO_ES = {
            ["¿Qué diferencia hay entre tonelada métrica y tonelada corta?", "La métrica son 1.000 kg; la corta de EE. UU. son 907,185 kg."]]
   }
 };
+/* German hub headings, intros and questions (silo structure for /de/) */
+const SILO_H1_DE = {
+  Weight:     "Bewehrungsgewicht & Stahlfläche",
+  Estimating: "Mengenermittlung für Bewehrung",
+  Detailing:  "Abstand, Verankerung & Stoß",
+  Members:    "Stützen-, Balken- & Wandbewehrung",
+  Commercial: "Bewehrungskosten & Tonnage"
+};
+const SILO_DE = {
+  Weight: {
+    heroSub: "Bewehrungsgewicht, Stahlfläche (Ast) und Stahlmenge berechnen: kg/m je Stab, Tonnen je Auftrag und Stäbe je Platte — mit Tabellen für metrische und Zoll-Stäbe.",
+    faqs: [["Welchen Rechner nutze ich für das Bewehrungsgewicht?", "Beginnen Sie mit dem Bewehrungsgewicht-Rechner: Er berechnet kg/m, Gesamtgewicht und Stäbe je Platte. Wenn Sie nur das Gewicht eines Auftrags brauchen, reicht der Gewichtsrechner."],
+           ["Wie rechne ich einen Auftrag in Tonnen in Stäbe um?", "Teilen Sie die Tonnen durch das Gewicht eines vollen Stabes. Beispiel: Bei 12-mm-Stäben und 12-m-Stäben sind eine Tonne etwa 94 Stäbe."],
+           ["Was ist der Unterschied zwischen Stahlfläche und Gewicht?", "Die Stahlfläche (Ast) misst den Querschnitt des Stahls; das Gewicht misst, wie viele Kilo dieser Querschnitt je Meter wiegt. Die Fläche dient der Bemessung, das Gewicht dem Einkauf."]]
+  },
+  Estimating: {
+    heroSub: "Stahlmengen für Platten, Fundamente, Einfahrten und Matten berechnen: aus Maßen, Abstand und Deckung — Stäbe, Kreuzungspunkte und Gewicht je Bauteil.",
+    faqs: [["Wie ermittle ich die Stahlmenge einer Platte?", "Zählen Sie die Stäbe in jeder Richtung aus Nutzmaß und Abstand und multiplizieren Sie mit der Stablänge. Der Bewehrungsrechner für Betonplatten rechnet das."],
+           ["Was ist eine Bewehrungsmatte?", "Ein Netz aus Stäben in zwei Richtungen. Der Bewehrungsmatten-Rechner zählt Stäbe und Kreuzungspunkte und gibt das Gewicht der Matte an."],
+           ["Wozu dient der Beton- & Bewehrungs-Schätzer?", "Er berechnet das Betonvolumen und schätzt die Bewehrung über eine Kennzahl in kg/m³. Er dient der Kalkulation, nicht der Bemessung."]]
+  },
+  Detailing: {
+    heroSub: "Abstand, Verankerung, Übergreifung, Haken, Bügel, Abstandhalter und Bindedraht: die Details, die jede Stablänge und damit Gewicht und Stückzahl verändern.",
+    faqs: [["Warum verändert die Bewehrungsführung die Stablänge?", "Haken, Biegungen, Verankerungen und Übergreifungen addieren oder subtrahieren Länge. Diese Länge verändert Gewicht und Stückzahl im Einkauf."],
+           ["Was ist die Verankerungslänge?", "Die Länge, die ein Stab im Beton einbetoniert sein muss, um seine Kraft zu übertragen. Nutzen Sie den Verankerungslängen-Rechner."],
+           ["Was ist der Unterschied zwischen Verankerung und Übergreifung?", "Die Verankerung ist die Länge im Beton; die Übergreifung ist die Überlappung zweier Stäbe. Für beides gibt es einen eigenen Rechner."]]
+  },
+  Members: {
+    heroSub: "Bewehrung für Stützen, Balken, Wände und Pools: Längsstäbe, Horizontalstäbe und Bügel — je Bauteil getrennt berechnet, gewogen und aufsummiert.",
+    faqs: [["Welche Bewehrung braucht eine Stütze?", "Längsstäbe und Bügel. Der Stützenbewehrungs-Rechner summiert beides und gibt das Gesamtgewicht an."],
+           ["Warum wird der Bügel separat berechnet?", "Weil seine Länge von den Querschnittsmaßen und den Biegungen abhängt. Nutzen Sie den Bügel-Schnittlängen-Rechner."],
+           ["Wird eine Blockwand genauso bewehrt wie eine Betonwand?", "Nicht unbedingt. Maßgeblich sind die anzuwendende Norm und der Wandplan."]]
+  },
+  Commercial: {
+    heroSub: "Was Bewehrung kostet und wie viele Tonnen eine Baustelle braucht: mit Verschnitt, Preis je kg und Umrechnung in metrische Tonnen und US-Tonnen.",
+    faqs: [["Wie berechne ich die Bewehrungskosten?", "Kosten = kg mit Verschnitt × Preis je kg. Nutzen Sie den Bewehrungskosten-Rechner."],
+           ["Was ist eine Stahlliste?", "Die Liste der Stäbe mit Durchmesser, Länge und Stückzahl. Der Bewehrungstonnage-Rechner rechnet sie in Tonnen um."],
+           ["Was ist der Unterschied zwischen metrischer Tonne und US-Tonne?", "Die metrische Tonne sind 1.000 kg; die US-Tonne (short ton) sind 907,185 kg."]]
+  }
+};
 const siloH1   = (silo, lang) => lang === "en"
   ? SILO_H1_EN[silo.cat]
-  : lang === "es" ? SILO_H1_ES[silo.cat] : `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
+  : lang === "es" ? SILO_H1_ES[silo.cat]
+  : lang === "de" ? SILO_H1_DE[silo.cat] : `${trG(silo.cat, lang)} — ${CALCSWORD[lang]}`;
 
 /* ---------- Transliteration & Multilingual Slug Generation ---------- */
 const SPECIAL_CHARS = {
@@ -4378,9 +4420,10 @@ const pHowto= (p,lang) => lang==="en" ? p.howto : (p[lang] && p[lang].howto) ? p
 const pFaqs = (p,lang) => {
   if (lang === "en") return p.faqs;
   const base = (p[lang] && p[lang].faqs) ? p[lang].faqs : TPL[lang].faq(CALC[p.id].title[lang], CALC[p.id].desc[lang]);
-  // Spanish: one contextual link is added to the last answer (content-links-es.js)
-  if (lang !== "es" || !CONTENT_LINKS_ES[p.id]) return base;
-  return base.map((qa, i) => i === base.length - 1 ? [qa[0], qa[1] + " " + CONTENT_LINKS_ES[p.id]] : qa);
+  // Spanish/German: one contextual link is added to the last answer
+  const links = lang === "es" ? CONTENT_LINKS_ES : lang === "de" ? CONTENT_LINKS_DE : null;
+  if (!links || !links[p.id]) return base;
+  return base.map((qa, i) => i === base.length - 1 ? [qa[0], qa[1] + " " + links[p.id]] : qa);
 };
 const pFormula = (p,lang) => lang==="en" ? p.formula : (p[lang] && p[lang].formula) ? p[lang].formula : p.formula;
 const pKw = (p,lang) => lang==="en" ? p.kw : (p[lang] && p[lang].kw) ? p[lang].kw : p.kw;
@@ -4425,7 +4468,7 @@ function footer(lang){
     const links = children.map(p => `<li><a href="${pageHref(p, lang)}">${pH1(p, lang)}</a></li>`).join("\n          ");
     return `
       <div class="footer-col">
-        <h4>${(lang === "en" || lang === "es") ? `<a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a>` : `${siloName(s, lang)} ${CALCSWORD[lang]}`}</h4>
+        <h4>${(lang === "en" || lang === "es" || lang === "de") ? `<a href="${siloHref(s, lang)}">${siloName(s, lang)} ${CALCSWORD[lang]}</a>` : `${siloName(s, lang)} ${CALCSWORD[lang]}`}</h4>
         <ul>
           ${links}
         </ul>
@@ -4597,12 +4640,12 @@ function renderPage(p, lang){
   const curPageSlug = pageSlug(p, lang);
   const crumbTrail = crumbs(lang, [
     {name:HOMEWORD[lang], href:homeHref(lang)},
-    {name:siloName(silo,lang), href: (lang === "en" || lang === "es") ? siloHref(silo,lang) : undefined},
+    {name:siloName(silo,lang), href: (lang === "en" || lang === "es" || lang === "de") ? siloHref(silo,lang) : undefined},
     {name:cleanH1}
   ]);
   const crumbLd = breadcrumbJsonLd([
     {name:HOMEWORD[lang], url:urlFor(lang,"index")},
-    ...((lang === "en" || lang === "es") ? [{name:siloName(silo,lang), url:urlFor(lang,siloSlug(silo,lang))}] : []),
+    ...((lang === "en" || lang === "es" || lang === "de") ? [{name:siloName(silo,lang), url:urlFor(lang,siloSlug(silo,lang))}] : []),
     {name:h1, url:urlFor(lang,curPageSlug)}
   ]);
   return `<!DOCTYPE html>
@@ -4722,7 +4765,7 @@ function renderSilo(silo, lang){
   const pages = siloPages(silo);
   const title = `${h1} | ${HUB_H1[lang]}`;
   const sc = SILO_CONTENT[silo.cat] || {};
-  const sces = (lang === "es" && SILO_ES[silo.cat]) || null;
+  const sces = ((lang === "es" && SILO_ES[silo.cat]) || (lang === "de" && SILO_DE[silo.cat])) || null;
   const desc = sces ? sces.heroSub : (lang === "en" && sc.heroSub)
     ? sc.heroSub
     : `${CALCSWORD[lang]}: ${pages.map(p=>pH1(p,lang)).join(", ")}`.slice(0,158);
@@ -4814,7 +4857,7 @@ ${crumbTrail}
 
 <main class="wrap">
   <section class="related">
-    <h2>${CALCSWORD[lang]} in this Category</h2>
+    <h2>${lang === "de" ? "Rechner in dieser Kategorie" : `${CALCSWORD[lang]} in this Category`}</h2>
     <div class="related-grid">
       ${cards}
     </div>
@@ -4823,14 +4866,14 @@ ${crumbTrail}
   ${enOverviewBlock}
 
   <section class="content-block">
-    <h2>Calculator Selection Guide</h2>
+    <h2>${lang === "de" ? "Rechner-Auswahlhilfe" : "Calculator Selection Guide"}</h2>
     <div class="formula-table">
       <table class="silo-matrix-table">
         <thead>
           <tr>
-            <th>Calculator</th>
-            <th>Best For</th>
-            <th>Primary Outputs</th>
+            <th>${lang === "de" ? "Rechner" : "Calculator"}</th>
+            <th>${lang === "de" ? "Am besten für" : "Best For"}</th>
+            <th>${lang === "de" ? "Wichtigste Ergebnisse" : "Primary Outputs"}</th>
           </tr>
         </thead>
         <tbody>
@@ -5100,7 +5143,7 @@ LANGS.forEach(l => {
 
     if (lang === "en") {
       fs.writeFileSync(path.join(OUT, s.slug + ".html"), renderSilo(s, lang));
-    } else if (lang === "es") {
+    } else if (lang === "es" || lang === "de") {
       fs.writeFileSync(path.join(OUT, l.dir, curSiloSlug + ".html"), renderSilo(s, lang));
     } else {
       redirects.push({
@@ -5263,7 +5306,7 @@ function buildLanguageSitemapSection(code) {
   // Category Order: Calculators grouped by category
   SILOS.forEach(silo => {
     chunks.push("\n  <!-- Category: " + silo.cat + " Calculators (" + code + ") -->");
-    if (isEn || code === "es") chunks.push(renderSitemapUrl("silo", silo, code, today, "monthly", "0.8"));
+    if (isEn || code === "es" || code === "de") chunks.push(renderSitemapUrl("silo", silo, code, today, "monthly", "0.8"));
 
     // Calculators belonging to this specific Category
     const childPages = PAGES.filter(p => p.cat === silo.cat);
