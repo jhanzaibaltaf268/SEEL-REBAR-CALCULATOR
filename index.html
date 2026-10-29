@@ -229,6 +229,27 @@ footer .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
   .hero{padding-top:26px}
 }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+/* ---------- Site footer — same structure as other pages ---------- */
+.site-footer{background:var(--surface);color:var(--muted);border-top:1px solid var(--line);padding:3rem 0 2rem;margin-top:3.5rem;text-align:left}
+.footer-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2rem}
+.footer-col h4{margin:0 0 .8rem;font-size:.88rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);padding-bottom:.45rem}
+.footer-col h4 a{color:var(--ink);text-decoration:none}
+.footer-col h4 a:hover{color:var(--accent)}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.45rem}
+.footer-col li a{color:var(--muted);font-size:.83rem;line-height:1.4;text-decoration:none}
+.footer-col li a:hover{color:var(--ink);text-decoration:underline}
+.footer-bottom{border-top:1px solid var(--line);padding-top:1.8rem;text-align:center;margin-top:2rem}
+.footer-brand-wrap{margin-bottom:.8rem;display:flex;justify-content:center}
+.site-footer .brand{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink);font-weight:700}
+.site-footer .brand-icon{display:inline-flex;color:var(--accent)}
+.site-footer .brand-text span{color:var(--accent)}
+.footer-links{display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:center;margin-bottom:1rem}
+.footer-links a{color:var(--muted);font-size:.85rem;text-decoration:none}
+.footer-links a:hover{color:var(--ink);text-decoration:underline}
+.footer-copy{font-size:.82rem;color:var(--muted);max-width:760px;margin:0 auto}
+@media (max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -555,64 +576,90 @@ footer .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;a
       <details class="faq"><summary>Is this steel rebar calculator for steel only, or fiberglass too?</summary><p>Steel only. Every weight in the tables and the calculator comes from steel's density (7,850 kg/m³, the d² ÷ 162.28 formula). Fiberglass (GFRP) rebar weighs roughly a quarter as much and is sized and spaced differently — do not use these numbers for it.</p></details>
     </section>
 
-    <!-- All 21 tools — as a full-width grid section, NOT a sidebar -->
-    <section class="block" id="tools">
-      <h2>All 21 rebar calculators</h2>
-      <p>The homepage calculator above handles the standard slab, footing and wall grid. For a single job type in more detail, use the dedicated tool — each one is free and runs instantly:</p>
-
-      <div class="group-label">Weight &amp; Takeoff</div>
-      <div class="tools">
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-weight-calculator"><b>Rebar Weight Calculator</b><span>Weight by bar size, length and quantity in kg, lb and tons.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-area-calculator"><b>Rebar Area Calculator (Ast)</b><span>Cross-sectional area of one bar and total steel area Ast.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-quantity-calculator"><b>Rebar Quantity &amp; Takeoff</b><span>Steel per m² / ft² from spacing alone.</span></a>
-      </div>
-
-      <div class="group-label">Pour Estimating</div>
-      <div class="tools">
-        <a class="tool" href="https://steelrebarcalculator.com/concrete-slab-rebar-calculator"><b>Concrete Slab Rebar</b><span>Bars both directions, total length, ties and weight.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/footing-rebar-calculator"><b>Footing Rebar Calculator</b><span>Mesh for isolated or strip footings, both ways.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-mat-grid-calculator"><b>Rebar Mat &amp; Grid</b><span>Rectangular mats: bars each way, ties and weight.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"><b>Concrete &amp; Rebar Estimator</b><span>Concrete volume plus steel from a kg/m³ ratio.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/driveway-rebar-calculator"><b>Driveway Rebar Calculator</b><span>Single mats for driveways, bar count and weight.</span></a>
-      </div>
-
-      <div class="group-label">Detailing &amp; Splicing</div>
-      <div class="tools">
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-spacing-calculator"><b>Rebar Spacing Calculator</b><span>Bar count and actual centre-to-centre spacing.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-development-length-calculator"><b>Development Length</b><span>Anchorage length Ld, IS 456 tension &amp; compression.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-lap-length-calculator"><b>Lap / Splice Length</b><span>Tension and compression lap lengths.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-hook-bend-cutting-length-calculator"><b>Hook, Bend &amp; Cutting Length</b><span>Cutting length with hooks and bend deductions.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/stirrup-tie-cutting-length-calculator"><b>Stirrup &amp; Tie Cutting Length</b><span>Rectangular stirrups with hooks and deductions.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-chair-calculator"><b>Rebar Chair Calculator</b><span>Supports to hold top mats on a square grid.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"><b>Rebar Tie Wire Calculator</b><span>Binding wire from slab size, spacing and wire per tie.</span></a>
-      </div>
-
-      <div class="group-label">Structural Members</div>
-      <div class="tools">
-        <a class="tool" href="https://steelrebarcalculator.com/column-rebar-calculator"><b>Column Rebar Calculator</b><span>Main bars plus lateral ties, with schedule weights.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/beam-rebar-calculator"><b>Beam Rebar Calculator</b><span>Top and bottom bars plus stirrups along the span.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/wall-rebar-calculator"><b>Wall Rebar Calculator</b><span>Vertical and horizontal bars for concrete walls.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/pool-rebar-calculator"><b>Swimming Pool Rebar</b><span>Reinforcement for pool wall panels.</span></a>
-      </div>
-
-      <div class="group-label">Commercial &amp; Orders</div>
-      <div class="tools">
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-cost-calculator"><b>Rebar Cost Calculator</b><span>Cost from weight, unit price and wastage.</span></a>
-        <a class="tool" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"><b>Rebar Tonnage Calculator</b><span>Bar schedules into metric tons and US short tons.</span></a>
-      </div>
-    </section>
+    
   </main>
 
-  <footer>
-    <div class="row">
-      <span><b>Steel Rebar Calculator</b> — steelrebarcalculator.com · Methods follow IS 456:2000 and ACI 318 practice. Estimates are for ordering and budgeting; structural design must come from engineered drawings.</span>
+  <footer class="site-footer">
+  <div class="wrap">
+<div class="footer-grid">
+      <div class="footer-col">
+        <h4><a href="/rebar-weight-calculators">Weight &amp; Takeoff</a></h4>
+        <ul>
+          <li><a href="/rebar-weight-calculator">Rebar Weight Calculator</a></li>
+          <li><a href="/rebar-area-calculator">Rebar Area Calculator (Ast)</a></li>
+          <li><a href="/rebar-quantity-calculator">Rebar Quantity Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="/concrete-rebar-estimating-calculators">Pour Estimating</a></h4>
+        <ul>
+          <li><a href="/concrete-slab-rebar-calculator">Concrete Slab Rebar</a></li>
+          <li><a href="/footing-rebar-calculator">Footing Rebar Calculator</a></li>
+          <li><a href="/rebar-mat-grid-calculator">Rebar Mat &amp; Grid</a></li>
+          <li><a href="/concrete-and-rebar-calculator">Concrete &amp; Rebar Estimator</a></li>
+          <li><a href="/driveway-rebar-calculator">Driveway Rebar Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="/rebar-detailing-calculators">Detailing &amp; Splicing</a></h4>
+        <ul>
+          <li><a href="/rebar-spacing-calculator">Rebar Spacing Calculator</a></li>
+          <li><a href="/rebar-development-length-calculator">Development Length (Ld)</a></li>
+          <li><a href="/rebar-lap-length-calculator">Lap / Splice Length</a></li>
+          <li><a href="/rebar-hook-bend-cutting-length-calculator">Hook, Bend &amp; Cutting Length</a></li>
+          <li><a href="/stirrup-tie-cutting-length-calculator">Stirrup &amp; Tie Cutting Length</a></li>
+          <li><a href="/rebar-chair-calculator">Rebar Chair Supports</a></li>
+          <li><a href="/rebar-tie-wire-calculator">Rebar Tie Wire</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="/structural-rebar-calculators">Structural Members</a></h4>
+        <ul>
+          <li><a href="/column-rebar-calculator">Column Rebar Calculator</a></li>
+          <li><a href="/beam-rebar-calculator">Beam Rebar Calculator</a></li>
+          <li><a href="/wall-rebar-calculator">Wall Rebar Calculator</a></li>
+          <li><a href="/pool-rebar-calculator">Swimming Pool Rebar</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><a href="/rebar-cost-tonnage-calculators">Commercial &amp; Orders</a></h4>
+        <ul>
+          <li><a href="/rebar-cost-calculator">Rebar Cost Calculator</a></li>
+          <li><a href="/rebar-tonnage-calculator">Rebar Tonnage Calculator</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="row" style="margin-top:10px"><span>All calculator groups: <a href="https://steelrebarcalculator.com/rebar-weight-calculators">Weight &amp; Takeoff</a> · <a href="https://steelrebarcalculator.com/concrete-rebar-estimating-calculators">Pour Estimating</a> · <a href="https://steelrebarcalculator.com/rebar-detailing-calculators">Detailing &amp; Splicing</a> · <a href="https://steelrebarcalculator.com/structural-rebar-calculators">Structural Members</a> · <a href="https://steelrebarcalculator.com/rebar-cost-tonnage-calculators">Commercial &amp; Orders</a></span><span><a href="https://steelrebarcalculator.com/privacy">Privacy</a> · <a href="https://steelrebarcalculator.com/about">About</a> · <a href="https://steelrebarcalculator.com/contact">Contact</a></span></div>
-    <div class="row" style="margin-top:10px">
-      <span>Worked example on this page: 20 × 15 ft slab, 12 in spacing, #4 bars → 37 bars, 635 ft, 424.2 lb, $360.55.</span>
-      <span><a href="#calculator">Back to the calculator ↑</a></span>
+
+    <div class="footer-bottom">
+      <div class="footer-brand-wrap">
+        <a class="brand" href="/">
+          <span class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M3 9h18"></path>
+              <path d="M3 15h18"></path>
+              <path d="M9 3v18"></path>
+              <path d="M15 3v18"></path>
+            </svg>
+          </span>
+          <span class="brand-text">Rebar<span>Calc</span></span>
+        </a>
+      </div>
+
+      <div class="footer-links">
+        <a href="#calculator">Calculator</a> <a href="#sizes">Bar sizes</a> <a href="#how-to">How to calculate</a> <a href="#spacing">Spacing</a> <a href="#faq">FAQ</a> <a href="/sitemap.xml">XML Sitemap</a> <a href="/privacy">Privacy Policy</a> <a href="/about">About</a> <a href="/contact">Contact</a>
+      </div>
+
+      <p class="footer-copy">
+        &copy; 2026 SteelRebarCalculator.com &middot; Calculations are provided for material estimation and procurement planning. Structural reinforcement design must comply with local building codes (IS 456:2000, ACI 318, BS 4449, Eurocode 2) and certified engineering drawings.
+      </p>
     </div>
-  </footer>
+  </div>
+</footer>
 </div>
 
 <div class="toast" id="toast" role="status"></div>
