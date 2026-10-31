@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- ============================================================ -->
+  <!-- Language: Slovenčina (sk) -->
+  <!-- ============================================================ -->
+  <!-- Main Hub / Homepage (sk) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Category: Weight Calculators (sk) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-hmotnosti-vystuze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-weight-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-peso-de-varilla"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-poids-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsgewicht-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-peso-tondino"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-peso-de-vergalhao"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningsgewicht-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-masy-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-greutate-armatura"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/armeringsviktkalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-hmotnosti-vyztuze"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/armeringsvaegt-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-varous-oplismou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/vasalas-toemeg-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/raudoituksen-painolaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-teglo-na-armirovka"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-tezine-armature"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-hmotnosti-vystuze"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-teze-armature"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sarruse-kaalu-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/stiegrojuma-svara-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/armaturos-svorio-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-weight-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-plochy-ocele-ast</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-area-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-area-de-acero-ast"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-aire-d-acier-ast"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/stahlflaechen-rechner-ast"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-area-d-acciaio-ast"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-area-de-aco-ast"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/staaloppervlak-calculator-ast"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-pola-stali-ast"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-arie-otel-ast"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/staalareakalkylator-ast"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-plochy-oceli-ast"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/staalareal-beregner-ast"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-epifaneias-chalyva-ast"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/acelteruelet-kalkulator-ast"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/teraespinta-alan-laskuri-ast"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-plosht-stomana-ast"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-povrsine-celika-ast"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-plochy-ocele-ast"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-povrsine-jekla-ast"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/terase-pindala-kalkulaator-ast"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/terauda-laukuma-kalkulators-ast"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/plieno-ploto-skaiciuotuvas-ast"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-area-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-mnozstva-vystuze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-quantity-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-cantidad-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-quantite-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsmengen-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-quantita-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-quantidade-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningshoeveelheid-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-ilosci-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-cantitate-armatura"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/armeringsmaengdskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-mnozstvi-vyztuze"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/armeringsmaengde-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-posotitas-oplismou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/vasalas-mennyiseg-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/raudoitusmaeaeraen-laskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-kolichestvo-armirovka"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-kolicine-armature"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-mnozstva-vystuze"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-kolicine-armature"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sarruse-koguse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/stiegrojuma-daudzuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/armaturos-kiekio-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-quantity-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Category: Estimating Calculators (sk) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-dosky</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-slab-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-losa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-de-dalle"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsrechner-fuer-betonplatten"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-soletta"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-laje"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningscalculator-voor-vloerplaten"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-plyty"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-placa"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/plattarmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-desky"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/pladearmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-plakas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/lemez-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/laatan-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-plocha"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-ploce"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-dosky"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-plosce"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/plaadi-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/platnes-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/plokstes-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/concrete-slab-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-paetky</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/footing-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-zapatas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-de-semelle"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsrechner-fuer-fundamente"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-plinto"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-sapata"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningscalculator-voor-funderingen"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-stop"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-fundatie"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/grundarmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-patky"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/fundamentarmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-pedilou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/alaptest-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/anturan-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-fundament"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-temelja"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-paetky"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-temelja"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/vundamendi-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/pamata-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/pamato-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/footing-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuznej-siete</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-mat-grid-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-parrilla-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-nappe-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsmatten-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-rete-di-armatura"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-malha-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningsnet-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-siatki-zbrojeniowej"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-plasa-de-armatura"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/armeringsnaetskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuzne-site"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/armeringsnet-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-plegmatos-oplismou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/vashalo-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/raudoitusverkon-laskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovachna-mrezha"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armaturne-mreze"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuznej-siete"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armaturne-mreze"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sarrusvorgu-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/stiegrojuma-tikla-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/armaturos-tinklo-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-mat-grid-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-betonu-a-vystuze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/estimador-de-hormigon-y-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/estimateur-beton-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/beton-bewehrungs-schaetzer"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/stimatore-calcestruzzo-e-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/estimador-de-concreto-e-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/beton-wapeningschatter"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-betonu-i-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/estimator-beton-si-armatura"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/betong-och-armeringsberaeknare"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-betonu-a-vyztuze"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/beton-og-armeringsberegner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ektimitis-skyrodematos-oplismou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/beton-es-vasalas-becslo"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/betoni-ja-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-beton-i-armirovka"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-betona-i-armature"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-betonu-a-vystuze"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-betona-in-armature"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/betooni-ja-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/betona-un-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/betono-ir-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/concrete-and-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-prijazdu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/driveway-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-entradas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-d-allee"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsrechner-fuer-einfahrten"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-vialetto"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-entrada"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/opritwapening-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-podjazdu"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-alee"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/uppfartsarmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-prijezdu"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/indkoerselsarmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-eisodou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/kocsibeallo-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/ajotien-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-aleya"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-prilaza"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-prijazdu"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-dovoza"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sissesoidu-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/piebraucama-cela-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/ivaziavimo-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/driveway-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Category: Detailing Calculators (sk) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-rozstupu-prutov</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-spacing-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-separacion-de-barras"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-espacement-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsabstand-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-interasse-barre"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-espacamento-de-barras"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/staafafstand-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-rozstawu-pretow"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-distanta-bare"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/staangavstaandskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-roztece-prutu"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/stangafstand-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-apostasis-ravdon"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/vas-kiosztas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/tankojaon-laskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-razstoyanie-mezhdu-prati"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-razmaka-sipki"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-rozstupu-prutov"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-razmika-palic"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/varraste-sammu-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/stienu-atstatuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/strypu-zingsnio-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-spacing-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-kotevnej-dlzky</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-development-length-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-longitud-de-anclaje"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-longueur-d-ancrage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/verankerungslaengen-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-lunghezza-di-ancoraggio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-comprimento-de-ancoragem"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/verankeringslengte-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-dlugosci-zakotwienia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-lungime-de-ancorare"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/foerankringslaengdskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-kotevni-delky"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/forankringslaengde-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-mikous-agkyrosis"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/lehorgonyzasi-hossz-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/ankkurointipituuden-laskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-ankerna-dalzhina"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-sidrene-duljine"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-kotevnej-dlzky"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-sidrne-dolzine"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/ankurduspikkuse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/enkurojuma-garuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/inkaravimo-ilgio-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-development-length-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-dlzky-presahu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-lap-length-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-longitud-de-empalme"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-longueur-de-recouvrement"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/uebergreifungslaengen-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-lunghezza-di-sovrapposizione"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-comprimento-de-emenda"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/overlaplengte-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-dlugosci-zakladu"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-lungime-de-suprapunere"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/skarvlaengdskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-delky-presahu"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/stoedlaengde-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-mikous-yperkalypsis"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/atfedesi-hossz-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/jatkospituuden-laskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-dalzhina-na-zastapvane"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-duljine-preklopa"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-dlzky-presahu"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-dolzine-prekrivanja"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/jaetkupikkuse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/parlaiduma-garuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/sanduros-ilgio-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-lap-length-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-hakov-ohybov-a-strihania</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-hook-bend-cutting-length-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-ganchos-dobleces-y-corte"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-crochets-plis-et-coupe"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/haken-biege-schnittlaengen-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-ganci-pieghe-e-taglio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-ganchos-dobras-e-corte"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/haken-buig-kniplengte-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-hakow-giec-i-ciecia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-carlige-indoiri-si-taiere"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/krok-boej-och-kapkalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-haku-ohybu-a-strihani"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/kroge-boeje-og-klippeberegner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-agkistron-kampseon-kopis"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/kampo-hajlitas-es-vagas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/koukku-taivutus-ja-katkaisulaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-kuki-ogavaniya-i-ryazane"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-kuka-savijanja-i-rezanja"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-hakov-ohybov-a-strihania"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-kavljev-upogibov-in-rezanja"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/konksu-painde-ja-loike-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/aku-liekumu-un-griesanas-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/kabliuku-lenkimu-ir-kirpimo-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-hook-bend-cutting-length-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-strihania-strmenov</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/stirrup-tie-cutting-length-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-corte-de-estribos"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-coupe-de-cadres"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/buegel-schnittlaengen-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-taglio-staffe"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-corte-de-estribos"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/beugel-kniplengte-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-ciecia-strzemion"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-taiere-etrieri"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/bygelkapkalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-strihani-trminku"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/boejleklipning-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-kopis-syndetiron"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/kengyel-vagas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/hakojen-katkaisulaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-ryazane-na-stremena"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-rezanja-spona"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-strihania-strmenov"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-rezanja-stremen"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/solede-loike-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/apskavu-griesanas-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/apkabu-kirpimo-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/stirrup-tie-cutting-length-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-distancnikov</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-chair-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-soportes-separadores"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-cales-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/abstandhalter-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-distanziatori"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-espacadores"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/afstandhouder-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-dystansow"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-distantieri"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/distanskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-distancniku"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/afstandsholder-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-apostaton"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/tavtarto-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/vaelikelaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-distantsioneri"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-distancera"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-distancnikov"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-distancnikov"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/tugede-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/distanceru-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/fiksatoriu-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-chair-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-viazacieho-drotu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-alambre-de-atar"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-fil-a-ligaturer"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bindedraht-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-filo-di-legatura"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-arame-de-amarrar"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/binddraad-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-drutu-wiazalkowego"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-sarma-de-legat"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/bindtraadskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vazaciho-dratu"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/bindetraad-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-syrmatos-desimatos"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/koetoezodrot-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/sidontalangan-laskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-vrazvashta-tel"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-vezne-zice"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-viazacieho-drotu"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-vezne-zice"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sidumistraadi-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/sasaistes-stieples-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/risimo-vielos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-tie-wire-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Category: Members Calculators (sk) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-stlpa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/column-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-columnas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-de-poteau"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/stuetzenbewehrungs-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-pilastro"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-pilar"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/kolomwapening-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-slupa"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-stalp"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/pelararmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-sloupu"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/soejlearmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-ypostylomatos"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/oszlop-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/pilarin-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-kolona"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-stupa"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-stlpa"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-stebra"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/samba-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/kolonnas-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/kolonos-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/column-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-nosnika</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/beam-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-vigas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-de-poutre"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/balkenbewehrungs-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-trave"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-viga"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/balkwapening-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-belki"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-grinda"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/balkarmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-nosniku"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/bjaelkearmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-dokou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/gerenda-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/palkin-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-greda"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-grede"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-nosnika"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-nosilca"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/tala-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/sijas-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/sijos-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/beam-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-steny</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/wall-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-muros"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-de-mur"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/wandbewehrungs-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-muro"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-muro"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wandwapening-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-sciany"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-perete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/vaeggarmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-steny"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/vaegarmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-toichou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/fal-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/seinaen-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-stena"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-zida"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-steny"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-stene"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/seina-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/sienas-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/sienos-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/wall-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-vystuze-bazena</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/pool-rebar-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-acero-para-piscinas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-d-armature-de-piscine"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungsrechner-fuer-pools"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-armatura-piscina"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-aco-para-piscina"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/zwembadwapening-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-zbrojenia-basenu"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-armatura-piscina"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/poolarmeringskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-vyztuze-bazenu"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/poolarmering-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-oplismou-pisinas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/medence-vasalas-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/altaan-raudoituslaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-armirovka-na-baseyn"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-armature-bazena"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-vystuze-bazena"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-armature-bazena"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/basseini-sarruse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/baseina-stiegrojuma-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/baseino-armaturos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/pool-rebar-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Category: Commercial Calculators (sk) -->
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-ceny-vystuze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-coste-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-cout-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungskosten-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-costo-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-custo-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningskosten-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-kosztu-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-cost-armatura"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/armeringskostnadskalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-ceny-vyztuze"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/armeringspris-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-kostous-oplismou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/vasalas-koeltseg-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/raudoituksen-hintalaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-tsena-na-armirovka"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-troska-armature"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-ceny-vystuze"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-stroska-armature"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sarruse-maksumuse-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/stiegrojuma-izmaksu-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/armaturos-kainos-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-cost-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://steelrebarcalculator.com/sk/kalkulacka-tonaze-vystuze</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/calculadora-de-tonelaje-de-acero"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/calculateur-de-tonnage-d-armature"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/bewehrungstonnage-rechner"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/calcolatore-tonnellaggio-acciaio"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/calculadora-de-tonelagem-de-aco"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/wapeningstonnage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/kalkulator-tonazu-zbrojenia"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/calculator-tonaj-armatura"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/armeringstonnagekalkylator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/kalkulator-tonaze-vyztuze"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/armeringstonnage-beregner"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/ypologistis-tonon-oplismou"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/vasalas-tonna-kalkulator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/raudoituksen-tonnilaskuri"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/kalkulator-za-tonazh-na-armirovka"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/kalkulator-tonaze-armature"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/kalkulacka-tonaze-vystuze"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/kalkulator-tonaze-armature"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/sarruse-tonnaazi-kalkulaator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/stiegrojuma-tonnazas-kalkulators"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/armaturos-tonazo-skaiciuotuvas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/rebar-tonnage-calculator"/>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

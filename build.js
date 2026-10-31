@@ -5388,7 +5388,7 @@ fs.writeFileSync(path.join(OUT, "vercel.json"), JSON.stringify(vercelConfig, nul
    - Beautiful XSLT stylesheet (sitemap.xsl) for browser presentation
    ---------------------------------------- */
 const today = new Date().toISOString().slice(0, 10);
-const SITEMAP_LANGS = ["en", "es", "fr", "de", "it", "pt", "nl", "pl"];
+const SITEMAP_LANGS = ["en", "es", "fr", "de", "it", "pt", "nl", "pl", "ro", "sv", "cs", "da", "el", "hu", "fi", "bg", "hr", "sk", "sl", "et", "lv", "lt"];
 
 function renderSitemapUrl(type, item, lang, lastmod, changefreq, priority) {
   let loc;
@@ -5408,7 +5408,7 @@ function renderSitemapUrl(type, item, lang, lastmod, changefreq, priority) {
   lines.push("  <url>");
   lines.push("    <loc>" + loc + "</loc>");
 
-  // Alternate links for all 8 languages: en, es, fr, de, it, pt, nl, pl
+  // Alternate links for every language in SITEMAP_LANGS
   // Silo hubs exist in English only, so they carry no localized alternates
   const altLangs = type === "silo" ? SITEMAP_LANGS.filter(l => l === lang) : SITEMAP_LANGS;
   altLangs.forEach(l => {
