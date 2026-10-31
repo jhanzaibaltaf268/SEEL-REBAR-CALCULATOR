@@ -5478,7 +5478,6 @@ SITEMAP_LANGS.forEach(code => {
 
   const langSitemapXml =
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
-    '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
     section + '\n' +
     '</urlset>\n';
@@ -5489,7 +5488,6 @@ SITEMAP_LANGS.forEach(code => {
 // 2. Generate Master Sitemap Index (sitemap_index.xml and sitemap.xml)
 const sitemapIndexXml =
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
-  '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n' +
   '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   SITEMAP_LANGS.map(code => {
     return '  <sitemap>\n' +
@@ -5506,7 +5504,6 @@ fs.writeFileSync(path.join(OUT, "sitemap.xml"), sitemapIndexXml);
 const allSections = SITEMAP_LANGS.map(code => languageXmlSections[code]).join('\n');
 const masterSitemapXml =
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
-  '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n' +
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
   allSections + '\n' +
   '</urlset>\n';
