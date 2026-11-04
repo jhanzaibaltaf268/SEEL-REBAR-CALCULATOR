@@ -150,6 +150,16 @@
       "permanent": true
     },
     {
+      "source": "/es/house-steel-calculator",
+      "destination": "/es/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/es/house-steel-calculator.html",
+      "destination": "/es/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/es/rebar-spacing-calculator",
       "destination": "/es/calculadora-de-separacion-de-barras",
       "permanent": true
@@ -460,6 +470,16 @@
       "permanent": true
     },
     {
+      "source": "/fr/house-steel-calculator",
+      "destination": "/fr/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/fr/house-steel-calculator.html",
+      "destination": "/fr/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/fr/rebar-spacing-calculator",
       "destination": "/fr/calculateur-d-espacement-d-armature",
       "permanent": true
@@ -667,6 +687,16 @@
     {
       "source": "/de/driveway-rebar-calculator.html",
       "destination": "/de/bewehrungsrechner-fuer-einfahrten",
+      "permanent": true
+    },
+    {
+      "source": "/de/house-steel-calculator",
+      "destination": "/de/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/de/house-steel-calculator.html",
+      "destination": "/de/house-steel-calculator",
       "permanent": true
     },
     {
@@ -980,6 +1010,16 @@
       "permanent": true
     },
     {
+      "source": "/it/house-steel-calculator",
+      "destination": "/it/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/it/house-steel-calculator.html",
+      "destination": "/it/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/it/rebar-spacing-calculator",
       "destination": "/it/calcolatore-interasse-barre",
       "permanent": true
@@ -1287,6 +1327,16 @@
     {
       "source": "/pt/driveway-rebar-calculator.html",
       "destination": "/pt/calculadora-de-aco-para-entrada",
+      "permanent": true
+    },
+    {
+      "source": "/pt/house-steel-calculator",
+      "destination": "/pt/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/pt/house-steel-calculator.html",
+      "destination": "/pt/house-steel-calculator",
       "permanent": true
     },
     {
@@ -1600,6 +1650,16 @@
       "permanent": true
     },
     {
+      "source": "/nl/house-steel-calculator",
+      "destination": "/nl/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nl/house-steel-calculator.html",
+      "destination": "/nl/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/nl/rebar-spacing-calculator",
       "destination": "/nl/staafafstand-calculator",
       "permanent": true
@@ -1907,6 +1967,16 @@
     {
       "source": "/pl/driveway-rebar-calculator.html",
       "destination": "/pl/kalkulator-zbrojenia-podjazdu",
+      "permanent": true
+    },
+    {
+      "source": "/pl/house-steel-calculator",
+      "destination": "/pl/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/pl/house-steel-calculator.html",
+      "destination": "/pl/house-steel-calculator",
       "permanent": true
     },
     {
@@ -2220,6 +2290,16 @@
       "permanent": true
     },
     {
+      "source": "/ro/house-steel-calculator",
+      "destination": "/ro/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/ro/house-steel-calculator.html",
+      "destination": "/ro/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/ro/rebar-spacing-calculator",
       "destination": "/ro/calculator-distanta-bare",
       "permanent": true
@@ -2527,6 +2607,16 @@
     {
       "source": "/sv/driveway-rebar-calculator.html",
       "destination": "/sv/uppfartsarmeringskalkylator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/house-steel-calculator",
+      "destination": "/sv/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/sv/house-steel-calculator.html",
+      "destination": "/sv/house-steel-calculator",
       "permanent": true
     },
     {
@@ -2840,6 +2930,16 @@
       "permanent": true
     },
     {
+      "source": "/cs/house-steel-calculator",
+      "destination": "/cs/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/cs/house-steel-calculator.html",
+      "destination": "/cs/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/cs/rebar-spacing-calculator",
       "destination": "/cs/kalkulator-roztece-prutu",
       "permanent": true
@@ -3147,6 +3247,16 @@
     {
       "source": "/da/driveway-rebar-calculator.html",
       "destination": "/da/indkoerselsarmering-beregner",
+      "permanent": true
+    },
+    {
+      "source": "/da/house-steel-calculator",
+      "destination": "/da/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/da/house-steel-calculator.html",
+      "destination": "/da/house-steel-calculator",
       "permanent": true
     },
     {
@@ -3460,6 +3570,16 @@
       "permanent": true
     },
     {
+      "source": "/el/house-steel-calculator",
+      "destination": "/el/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/el/house-steel-calculator.html",
+      "destination": "/el/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/el/rebar-spacing-calculator",
       "destination": "/el/ypologistis-apostasis-ravdon",
       "permanent": true
@@ -3767,6 +3887,16 @@
     {
       "source": "/hu/driveway-rebar-calculator.html",
       "destination": "/hu/kocsibeallo-vasalas-kalkulator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/house-steel-calculator",
+      "destination": "/hu/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/hu/house-steel-calculator.html",
+      "destination": "/hu/house-steel-calculator",
       "permanent": true
     },
     {
@@ -4080,6 +4210,16 @@
       "permanent": true
     },
     {
+      "source": "/fi/house-steel-calculator",
+      "destination": "/fi/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/fi/house-steel-calculator.html",
+      "destination": "/fi/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/fi/rebar-spacing-calculator",
       "destination": "/fi/tankojaon-laskuri",
       "permanent": true
@@ -4387,6 +4527,16 @@
     {
       "source": "/bg/driveway-rebar-calculator.html",
       "destination": "/bg/kalkulator-za-armirovka-na-aleya",
+      "permanent": true
+    },
+    {
+      "source": "/bg/house-steel-calculator",
+      "destination": "/bg/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/bg/house-steel-calculator.html",
+      "destination": "/bg/house-steel-calculator",
       "permanent": true
     },
     {
@@ -4700,6 +4850,16 @@
       "permanent": true
     },
     {
+      "source": "/hr/house-steel-calculator",
+      "destination": "/hr/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/hr/house-steel-calculator.html",
+      "destination": "/hr/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/hr/rebar-spacing-calculator",
       "destination": "/hr/kalkulator-razmaka-sipki",
       "permanent": true
@@ -5007,6 +5167,16 @@
     {
       "source": "/sk/driveway-rebar-calculator.html",
       "destination": "/sk/kalkulacka-vystuze-prijazdu",
+      "permanent": true
+    },
+    {
+      "source": "/sk/house-steel-calculator",
+      "destination": "/sk/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/sk/house-steel-calculator.html",
+      "destination": "/sk/house-steel-calculator",
       "permanent": true
     },
     {
@@ -5320,6 +5490,16 @@
       "permanent": true
     },
     {
+      "source": "/sl/house-steel-calculator",
+      "destination": "/sl/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/sl/house-steel-calculator.html",
+      "destination": "/sl/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/sl/rebar-spacing-calculator",
       "destination": "/sl/kalkulator-razmika-palic",
       "permanent": true
@@ -5627,6 +5807,16 @@
     {
       "source": "/et/driveway-rebar-calculator.html",
       "destination": "/et/sissesoidu-sarruse-kalkulaator",
+      "permanent": true
+    },
+    {
+      "source": "/et/house-steel-calculator",
+      "destination": "/et/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/et/house-steel-calculator.html",
+      "destination": "/et/house-steel-calculator",
       "permanent": true
     },
     {
@@ -5940,6 +6130,16 @@
       "permanent": true
     },
     {
+      "source": "/lv/house-steel-calculator",
+      "destination": "/lv/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/lv/house-steel-calculator.html",
+      "destination": "/lv/house-steel-calculator",
+      "permanent": true
+    },
+    {
       "source": "/lv/rebar-spacing-calculator",
       "destination": "/lv/stienu-atstatuma-kalkulators",
       "permanent": true
@@ -6247,6 +6447,16 @@
     {
       "source": "/lt/driveway-rebar-calculator.html",
       "destination": "/lt/ivaziavimo-armaturos-skaiciuotuvas",
+      "permanent": true
+    },
+    {
+      "source": "/lt/house-steel-calculator",
+      "destination": "/lt/house-steel-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/lt/house-steel-calculator.html",
+      "destination": "/lt/house-steel-calculator",
       "permanent": true
     },
     {

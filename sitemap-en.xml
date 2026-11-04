@@ -286,6 +286,36 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://steelrebarcalculator.com/house-steel-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://steelrebarcalculator.com/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://steelrebarcalculator.com/es/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://steelrebarcalculator.com/fr/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://steelrebarcalculator.com/de/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://steelrebarcalculator.com/it/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://steelrebarcalculator.com/pt/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://steelrebarcalculator.com/nl/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://steelrebarcalculator.com/pl/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://steelrebarcalculator.com/ro/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://steelrebarcalculator.com/sv/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://steelrebarcalculator.com/cs/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://steelrebarcalculator.com/da/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://steelrebarcalculator.com/el/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://steelrebarcalculator.com/hu/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://steelrebarcalculator.com/fi/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://steelrebarcalculator.com/bg/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://steelrebarcalculator.com/hr/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://steelrebarcalculator.com/sk/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://steelrebarcalculator.com/sl/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="et" href="https://steelrebarcalculator.com/et/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://steelrebarcalculator.com/lv/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://steelrebarcalculator.com/lt/house-steel-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://steelrebarcalculator.com/house-steel-calculator"/>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Category: Detailing Calculators (en) -->
   <url>
     <loc>https://steelrebarcalculator.com/rebar-detailing-calculators</loc>

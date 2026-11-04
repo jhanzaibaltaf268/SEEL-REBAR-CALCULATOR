@@ -8,6 +8,7 @@ window.REBAR_SLUGS = {
     "mat": "rebar-mat-grid-calculator",
     "concrete": "concrete-and-rebar-calculator",
     "driveway": "driveway-rebar-calculator",
+    "house": "house-steel-calculator",
     "spacing": "rebar-spacing-calculator",
     "develop": "rebar-development-length-calculator",
     "lap": "rebar-lap-length-calculator",

@@ -470,6 +470,32 @@ const CALCS = {
     }
   },
 
+  /* ---- HOUSE STEEL ---- */
+  house: {
+    cat:"Estimating", name:"House Steel",
+    title:"House Steel Calculator",
+    desc:"Estimate total steel for a house from built-up area and storeys — kg and tonnes, plus the order quantity with 5% wastage.",
+    fields:[
+      {k:"area", label:"Built-up area", type:"number", default:1000},
+      {k:"unit", label:"Area unit", type:"select", options:[{v:"sqft",t:"sq ft"},{v:"m2",t:"m²"}], default:"sqft"},
+      {k:"storeys", label:"Storeys", type:"select", options:[{v:"ground",t:"Ground only"},{v:"g1",t:"Ground + 1 floor"}], default:"ground"},
+    ],
+    compute(v){
+      const sqft = v.unit === "m2" ? v.area*10.7639 : v.area;
+      const lo = v.storeys === "g1" ? 4.0 : 3.5;
+      const hi = v.storeys === "g1" ? 4.5 : 4.0;
+      const low = sqft*lo, high = sqft*hi;
+      return { rows:[
+        {label:"Order quantity (high + 5% wastage)", value:high*1.05, unit:"kg", primary:true},
+        {label:"Neat steel (low)", value:low, unit:"kg"},
+        {label:"Neat steel (high)", value:high, unit:"kg"},
+        {label:"Neat steel (low)", value:low/1000, unit:"tonnes"},
+        {label:"Neat steel (high)", value:high/1000, unit:"tonnes"},
+        {label:"Order quantity (low + 5% wastage)", value:low*1.05, unit:"kg"},
+      ], note:`${Math.round(sqft)} sq ft × ${lo}–${hi} kg/sq ft, +5% wastage` };
+    }
+  },
+
   /* ---- CONCRETE + REBAR ---- */
   concrete: {
     cat:"Estimating", name:"Concrete + Rebar",
